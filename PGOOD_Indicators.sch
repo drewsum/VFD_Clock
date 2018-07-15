@@ -75,7 +75,7 @@ F 3 "" H 2100 2490 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2060 2140 2170 2140
+	2060 2140 2100 2140
 Wire Wire Line
 	2100 2140 2100 2190
 Text GLabel 2060 2140 0    60   Input ~ 0
@@ -184,7 +184,7 @@ F 3 "" H 4730 2490 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4690 2140 4800 2140
+	4690 2140 4730 2140
 Wire Wire Line
 	4730 2140 4730 2190
 Text GLabel 4690 2140 0    60   Input ~ 0
@@ -293,7 +293,7 @@ F 3 "" H 2100 4740 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2060 4390 2170 4390
+	2060 4390 2100 4390
 Wire Wire Line
 	2100 4390 2100 4440
 Text GLabel 2060 4390 0    60   Input ~ 0
@@ -402,7 +402,7 @@ F 3 "" H 4730 4740 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4690 4390 4800 4390
+	4690 4390 4730 4390
 Wire Wire Line
 	4730 4390 4730 4440
 Text GLabel 4690 4390 0    60   Input ~ 0
@@ -450,4 +450,12 @@ Wire Wire Line
 	5850 4270 5850 4340
 Wire Wire Line
 	5850 4340 5350 4340
+Wire Wire Line
+	2100 2140 2170 2140
+Wire Wire Line
+	4730 2140 4800 2140
+Wire Wire Line
+	2100 4390 2170 4390
+Wire Wire Line
+	4730 4390 4800 4390
 $EndSCHEMATC

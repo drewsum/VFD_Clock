@@ -117,7 +117,7 @@ F 6 "1/10W" V 2030 1800 50  0000 C CNN "Wattage"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1880 1800 2520 1800
+	1880 1800 2350 1800
 Wire Wire Line
 	2350 1880 2350 1800
 Connection ~ 2350 1800
@@ -414,7 +414,7 @@ Connection ~ 2900 6380
 Wire Wire Line
 	2900 6460 2900 6380
 Wire Wire Line
-	2430 6380 3070 6380
+	2430 6380 2900 6380
 $Comp
 L Custom-Library:R_Custom R1002
 U 1 1 5A56AA4D
@@ -507,4 +507,8 @@ F 3 "" H 3270 6380 60  0000 C CNN
 	1    3270 6380
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2350 1800 2520 1800
+Wire Wire Line
+	2900 6380 3070 6380
 $EndSCHEMATC
