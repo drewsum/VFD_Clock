@@ -604,8 +604,6 @@ F 3 "" H 3230 6730 50  0000 C CNN
 	1    3230 6730
 	1    0    0    -1  
 $EndComp
-Text GLabel 6260 1330 2    60   Input ~ 0
-POSBATT_ADC
 Text GLabel 3760 3530 0    60   UnSpc ~ 0
 ~Status_Set_Date
 Text GLabel 3760 3430 0    60   UnSpc ~ 0
@@ -616,19 +614,6 @@ Text GLabel 3760 3230 0    60   UnSpc ~ 0
 ~Status_Heartbeat
 Text GLabel 3760 1430 0    60   Input ~ 0
 POS24_CS_ADC
-$Comp
-L VFD_Clock-rescue:PIC18(L)F67K40-I_PT U301
-U 1 1 5B3C23A0
-P 5010 2980
-AR Path="/5B3C23A0" Ref="U301"  Part="1" 
-AR Path="/5A0A42E8/5B3C23A0" Ref="U301"  Part="1" 
-F 0 "U301" H 6060 1180 50  0000 R CNN
-F 1 "PIC18LF67K40-I/PT" H 5010 3030 50  0000 C CNN
-F 2 "Housings_QFP:TQFP-64_10x10mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
-F 3 "" H 4360 3630 50  0001 C CNN
-	1    5010 2980
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5010 4960 5010 4920
 Wire Wire Line
@@ -638,8 +623,6 @@ Wire Wire Line
 Wire Wire Line
 	4960 4920 4960 4880
 Connection ~ 5010 4920
-Text GLabel 3760 1530 0    60   UnSpc ~ 0
-~Status_Battery_Low
 Text GLabel 3760 3730 0    60   UnSpc ~ 0
 ~Status_Alarm_On
 Text GLabel 3760 3630 0    60   UnSpc ~ 0
@@ -654,8 +637,6 @@ Text GLabel 6260 3330 2    60   Input ~ 0
 POS3P3_TEMP
 Text GLabel 6260 3230 2    60   Input ~ 0
 VAN_Temp
-NoConn ~ 6260 4130
-NoConn ~ 6260 4230
 Wire Wire Line
 	4750 6770 5070 6770
 Wire Wire Line
@@ -688,4 +669,17 @@ Wire Wire Line
 	3230 7150 3230 7190
 Wire Wire Line
 	5010 4920 5060 4920
+$Comp
+L VFD_Clock-rescue:PIC18(L)F67K40-I_PT U301
+U 1 1 5B3C23A0
+P 5010 2980
+AR Path="/5B3C23A0" Ref="U301"  Part="1" 
+AR Path="/5A0A42E8/5B3C23A0" Ref="U301"  Part="1" 
+F 0 "U301" H 6060 1180 50  0000 R CNN
+F 1 "PIC18LF67K40-I/PT" H 5010 3030 50  0000 C CNN
+F 2 "Housings_QFP:TQFP-64_10x10mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
+F 3 "" H 4360 3630 50  0001 C CNN
+	1    5010 2980
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

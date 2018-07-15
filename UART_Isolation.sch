@@ -19,7 +19,7 @@ USB_UART_TX_ISO
 Text GLabel 7300 3600 2    60   Input ~ 0
 USB_UART_RX_ISO
 Text GLabel 7300 3700 2    60   Input ~ 0
-~USB_DTR_ISO
+USB_DTR_ISO
 $Comp
 L Custom-Library:GND_USB #PWR908
 U 1 1 5B33B4C2
@@ -56,24 +56,8 @@ Wire Wire Line
 Wire Wire Line
 	4810 3900 4890 3900
 Connection ~ 4810 4000
-$Comp
-L Custom-Library:R_Custom R905
-U 1 1 5B330ED8
-P 6530 2940
-F 0 "R905" H 6470 2940 50  0000 R CNN
-F 1 "10k" V 6530 2940 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 6530 2940 50  0001 C CNN
-F 3 "" H 6530 2940 50  0001 C CNN
-F 4 "0603" H 6600 3020 50  0000 L CNN "display_footprint"
-F 5 "1%" H 6600 2940 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 6600 2870 50  0000 L CNN "Wattage"
-	1    6530 2940
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	5690 3600 6220 3600
-Wire Wire Line
-	5690 3700 6530 3700
 Wire Wire Line
 	5690 3800 6860 3800
 $Comp
@@ -126,9 +110,6 @@ F 3 "" H 6860 4200 50  0001 C CNN
 	1    6860 4200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6530 3090 6530 3700
-Connection ~ 6530 3700
 Wire Wire Line
 	6860 3900 6860 3800
 Connection ~ 6860 3800
@@ -243,23 +224,12 @@ F 3 "" H 4830 4600 50  0000 C CNN
 	1    4830 4600
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom-Library:+5V_USB #PWR913
-U 1 1 5B334AE5
-P 6530 2790
-F 0 "#PWR913" H 6530 2640 50  0001 C CNN
-F 1 "+5V_USB" H 6530 2930 50  0000 C CNN
-F 2 "" H 6530 2790 50  0001 C CNN
-F 3 "" H 6530 2790 50  0001 C CNN
-	1    6530 2790
-	1    0    0    -1  
-$EndComp
 Text GLabel 3280 3800 0    60   Input ~ 0
 USB_UART_TX
 Text GLabel 3280 3600 0    60   Output ~ 0
 USB_UART_RX
 Text GLabel 3280 3700 0    60   Output ~ 0
-~USB_DTR
+USB_DTR
 $Comp
 L Custom-Library:R_Custom R902
 U 1 1 5B334B6B
@@ -355,8 +325,6 @@ Wire Wire Line
 Wire Wire Line
 	4810 4000 4810 4080
 Wire Wire Line
-	6530 3700 7300 3700
-Wire Wire Line
 	6860 3800 7300 3800
 Wire Wire Line
 	6220 3600 7300 3600
@@ -370,6 +338,17 @@ Wire Wire Line
 	3720 3800 4890 3800
 Wire Wire Line
 	4360 3600 4890 3600
-Text Notes 4480 1990 0    60   ~ 0
-SWITCH TO DUAL SIGNAL ISOLATOR INSTEAD
+Wire Wire Line
+	5690 3700 7300 3700
+$Comp
+L Isolator:ISO7331C U901
+U 1 1 5B50F39B
+P 5290 3700
+F 0 "U901" H 5040 4150 50  0000 C CNN
+F 1 "ISO7331C" H 5560 4150 50  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 5290 3200 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/iso7331c.pdf" H 5290 4100 50  0001 C CNN
+	1    5290 3700
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
