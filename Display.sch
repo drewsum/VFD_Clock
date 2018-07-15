@@ -320,4 +320,6 @@ F 3 "" H 4420 4830 60  0000 C CNN
 $EndComp
 Text GLabel 4020 5780 3    60   UnSpc ~ 0
 Grid_0
+Text Notes 7350 4880 0    60   ~ 0
+ADD TH 3MM LED COLONS
 $EndSCHEMATC

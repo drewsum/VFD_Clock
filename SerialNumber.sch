@@ -106,11 +106,11 @@ F 3 "" H 6900 3110 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7160 3490 5070 3490
+	7160 3490 6350 3490
 Wire Wire Line
 	6350 3410 6350 3490
 Wire Wire Line
-	7160 3590 5070 3590
+	7160 3590 6900 3590
 Wire Wire Line
 	6900 3590 6900 3410
 Connection ~ 6350 3490
@@ -190,7 +190,7 @@ F 6 "1/10W" H 5720 3990 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	5650 3410 5650 3910
+	5650 3410 5650 3690
 Wire Wire Line
 	5650 3690 5070 3690
 $Comp
@@ -231,4 +231,10 @@ F 3 "" H 5650 3110 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5650 3690
+Wire Wire Line
+	6350 3490 5070 3490
+Wire Wire Line
+	6900 3590 5070 3590
+Wire Wire Line
+	5650 3690 5650 3910
 $EndSCHEMATC

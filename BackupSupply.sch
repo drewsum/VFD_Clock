@@ -202,7 +202,7 @@ F 0 "C?" H 4285 3530 50  0000 L CNN
 F 1 "C" H 4285 3330 50  0000 L CNN
 F 2 "" H 4260 3430 50  0001 C CNN
 F 3 "" H 4285 3530 50  0001 C CNN
-F 4 "TH" H 4110 3330 50  0000 R CNN "display_foot"
+F 4 "TH" H 4110 3330 50  0000 R CNN "display_footprint"
 F 5 "V" H 4110 3530 50  0000 R CNN "Voltage"
 	1    4260 3430
 	1    0    0    -1  
@@ -215,7 +215,7 @@ F 0 "C?" H 4285 4090 50  0000 L CNN
 F 1 "C" H 4285 3890 50  0000 L CNN
 F 2 "" H 4260 3990 50  0001 C CNN
 F 3 "" H 4285 4090 50  0001 C CNN
-F 4 "TH" H 4110 3890 50  0000 R CNN "display_foot"
+F 4 "TH" H 4110 3890 50  0000 R CNN "display_footprint"
 F 5 "V" H 4110 4090 50  0000 R CNN "Voltage"
 	1    4260 3990
 	1    0    0    -1  
