@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -202,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L BC856W Q1103
+L Transistor_BJT:BC856W Q1103
 U 1 1 5A2D3423
 P 2380 1920
 F 0 "Q1103" H 2580 1995 50  0000 L CNN
@@ -213,7 +26,7 @@ F 3 "" H 2380 1920 50  0001 L CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L R R1103
+L Device:R R1103
 U 1 1 5A2D342D
 P 2100 1690
 F 0 "R1103" V 2180 1690 50  0000 C CNN
@@ -227,7 +40,7 @@ F 6 "1/10W" H 2000 1590 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1104
+L Device:R R1104
 U 1 1 5A2D3437
 P 2100 2150
 F 0 "R1104" V 2180 2150 50  0000 C CNN
@@ -246,7 +59,7 @@ Wire Wire Line
 	2100 1920 2180 1920
 Connection ~ 2100 1920
 $Comp
-L VAN #PWR1105
+L Custom-Library:VAN #PWR1105
 U 1 1 5A2D3441
 P 2480 1540
 F 0 "#PWR1105" H 2480 1390 50  0001 C CNN
@@ -257,7 +70,7 @@ F 3 "" H 2480 1540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1101
+L Custom-Library:VAN #PWR1101
 U 1 1 5A2D3447
 P 2100 1540
 F 0 "#PWR1101" H 2100 1390 50  0001 C CNN
@@ -270,7 +83,7 @@ $EndComp
 Wire Wire Line
 	2480 1540 2480 1720
 $Comp
-L BC847W Q1101
+L Transistor_BJT:BC847W Q1101
 U 1 1 5A2D344E
 P 2000 2500
 F 0 "Q1101" H 2200 2575 50  0000 L CNN
@@ -283,7 +96,7 @@ $EndComp
 Wire Wire Line
 	2480 2400 2480 2120
 $Comp
-L GND #PWR1102
+L power:GND #PWR1102
 U 1 1 5A2D3460
 P 2100 2700
 F 0 "#PWR1102" H 2100 2450 50  0001 C CNN
@@ -294,7 +107,7 @@ F 3 "" H 2100 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1106
+L power:GND #PWR1106
 U 1 1 5A2D3466
 P 2480 2700
 F 0 "#PWR1106" H 2480 2450 50  0001 C CNN
@@ -305,7 +118,7 @@ F 3 "" H 2480 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1101
+L Device:R R1101
 U 1 1 5A2D3F92
 P 1440 2500
 F 0 "R1101" V 1520 2500 50  0000 C CNN
@@ -342,7 +155,7 @@ Wire Wire Line
 	2540 2260 2480 2260
 Connection ~ 2480 2260
 $Comp
-L BC856W Q1107
+L Transistor_BJT:BC856W Q1107
 U 1 1 5A2D6BC3
 P 4710 1920
 F 0 "Q1107" H 4910 1995 50  0000 L CNN
@@ -358,7 +171,7 @@ Wire Wire Line
 	4430 1920 4510 1920
 Connection ~ 4430 1920
 $Comp
-L VAN #PWR1113
+L Custom-Library:VAN #PWR1113
 U 1 1 5A2D6BDE
 P 4810 1540
 F 0 "#PWR1113" H 4810 1390 50  0001 C CNN
@@ -369,7 +182,7 @@ F 3 "" H 4810 1540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1109
+L Custom-Library:VAN #PWR1109
 U 1 1 5A2D6BE4
 P 4430 1540
 F 0 "#PWR1109" H 4430 1390 50  0001 C CNN
@@ -382,7 +195,7 @@ $EndComp
 Wire Wire Line
 	4810 1540 4810 1720
 $Comp
-L BC847W Q1105
+L Transistor_BJT:BC847W Q1105
 U 1 1 5A2D6BEB
 P 4330 2500
 F 0 "Q1105" H 4530 2575 50  0000 L CNN
@@ -395,7 +208,7 @@ $EndComp
 Wire Wire Line
 	4810 2400 4810 2120
 $Comp
-L GND #PWR1110
+L power:GND #PWR1110
 U 1 1 5A2D6BFB
 P 4430 2700
 F 0 "#PWR1110" H 4430 2450 50  0001 C CNN
@@ -406,7 +219,7 @@ F 3 "" H 4430 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1114
+L power:GND #PWR1114
 U 1 1 5A2D6C01
 P 4810 2700
 F 0 "#PWR1114" H 4810 2450 50  0001 C CNN
@@ -429,7 +242,7 @@ Wire Wire Line
 	6840 1920 6920 1920
 Connection ~ 6840 1920
 $Comp
-L VAN #PWR1121
+L Custom-Library:VAN #PWR1121
 U 1 1 5A2D6DC2
 P 7220 1540
 F 0 "#PWR1121" H 7220 1390 50  0001 C CNN
@@ -440,7 +253,7 @@ F 3 "" H 7220 1540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1117
+L Custom-Library:VAN #PWR1117
 U 1 1 5A2D6DC8
 P 6840 1540
 F 0 "#PWR1117" H 6840 1390 50  0001 C CNN
@@ -453,7 +266,7 @@ $EndComp
 Wire Wire Line
 	7220 1540 7220 1720
 $Comp
-L BC847W Q1109
+L Transistor_BJT:BC847W Q1109
 U 1 1 5A2D6DCF
 P 6740 2500
 F 0 "Q1109" H 6940 2575 50  0000 L CNN
@@ -466,7 +279,7 @@ $EndComp
 Wire Wire Line
 	7220 2400 7220 2120
 $Comp
-L GND #PWR1118
+L power:GND #PWR1118
 U 1 1 5A2D6DDF
 P 6840 2700
 F 0 "#PWR1118" H 6840 2450 50  0001 C CNN
@@ -477,7 +290,7 @@ F 3 "" H 6840 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1122
+L power:GND #PWR1122
 U 1 1 5A2D6DE5
 P 7220 2700
 F 0 "#PWR1122" H 7220 2450 50  0001 C CNN
@@ -495,7 +308,7 @@ Wire Wire Line
 	7280 2260 7220 2260
 Connection ~ 7220 2260
 $Comp
-L BC856W Q1115
+L Transistor_BJT:BC856W Q1115
 U 1 1 5A2D6F01
 P 9450 1920
 F 0 "Q1115" H 9650 1995 50  0000 L CNN
@@ -511,7 +324,7 @@ Wire Wire Line
 	9170 1920 9250 1920
 Connection ~ 9170 1920
 $Comp
-L VAN #PWR1129
+L Custom-Library:VAN #PWR1129
 U 1 1 5A2D6F1C
 P 9550 1540
 F 0 "#PWR1129" H 9550 1390 50  0001 C CNN
@@ -522,7 +335,7 @@ F 3 "" H 9550 1540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1125
+L Custom-Library:VAN #PWR1125
 U 1 1 5A2D6F22
 P 9170 1540
 F 0 "#PWR1125" H 9170 1390 50  0001 C CNN
@@ -535,7 +348,7 @@ $EndComp
 Wire Wire Line
 	9550 1540 9550 1720
 $Comp
-L BC847W Q1113
+L Transistor_BJT:BC847W Q1113
 U 1 1 5A2D6F29
 P 9070 2500
 F 0 "Q1113" H 9270 2575 50  0000 L CNN
@@ -548,7 +361,7 @@ $EndComp
 Wire Wire Line
 	9550 2400 9550 2120
 $Comp
-L GND #PWR1126
+L power:GND #PWR1126
 U 1 1 5A2D6F39
 P 9170 2700
 F 0 "#PWR1126" H 9170 2450 50  0001 C CNN
@@ -559,7 +372,7 @@ F 3 "" H 9170 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1130
+L power:GND #PWR1130
 U 1 1 5A2D6F3F
 P 9550 2700
 F 0 "#PWR1130" H 9550 2450 50  0001 C CNN
@@ -577,7 +390,7 @@ Wire Wire Line
 	9610 2260 9550 2260
 Connection ~ 9550 2260
 $Comp
-L BC856W Q1104
+L Transistor_BJT:BC856W Q1104
 U 1 1 5A2D84F4
 P 2380 4250
 F 0 "Q1104" H 2580 4325 50  0000 L CNN
@@ -593,7 +406,7 @@ Wire Wire Line
 	2100 4250 2180 4250
 Connection ~ 2100 4250
 $Comp
-L VAN #PWR1107
+L Custom-Library:VAN #PWR1107
 U 1 1 5A2D850F
 P 2480 3870
 F 0 "#PWR1107" H 2480 3720 50  0001 C CNN
@@ -604,7 +417,7 @@ F 3 "" H 2480 3870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1103
+L Custom-Library:VAN #PWR1103
 U 1 1 5A2D8515
 P 2100 3870
 F 0 "#PWR1103" H 2100 3720 50  0001 C CNN
@@ -617,7 +430,7 @@ $EndComp
 Wire Wire Line
 	2480 3870 2480 4050
 $Comp
-L BC847W Q1102
+L Transistor_BJT:BC847W Q1102
 U 1 1 5A2D851C
 P 2000 4830
 F 0 "Q1102" H 2200 4905 50  0000 L CNN
@@ -630,7 +443,7 @@ $EndComp
 Wire Wire Line
 	2480 4730 2480 4450
 $Comp
-L GND #PWR1104
+L power:GND #PWR1104
 U 1 1 5A2D852C
 P 2100 5030
 F 0 "#PWR1104" H 2100 4780 50  0001 C CNN
@@ -641,7 +454,7 @@ F 3 "" H 2100 5030 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1108
+L power:GND #PWR1108
 U 1 1 5A2D8532
 P 2480 5030
 F 0 "#PWR1108" H 2480 4780 50  0001 C CNN
@@ -659,7 +472,7 @@ Wire Wire Line
 	2540 4590 2480 4590
 Connection ~ 2480 4590
 $Comp
-L BC856W Q1108
+L Transistor_BJT:BC856W Q1108
 U 1 1 5A2D8546
 P 4710 4250
 F 0 "Q1108" H 4910 4325 50  0000 L CNN
@@ -675,7 +488,7 @@ Wire Wire Line
 	4430 4250 4510 4250
 Connection ~ 4430 4250
 $Comp
-L VAN #PWR1115
+L Custom-Library:VAN #PWR1115
 U 1 1 5A2D8561
 P 4810 3870
 F 0 "#PWR1115" H 4810 3720 50  0001 C CNN
@@ -686,7 +499,7 @@ F 3 "" H 4810 3870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1111
+L Custom-Library:VAN #PWR1111
 U 1 1 5A2D8567
 P 4430 3870
 F 0 "#PWR1111" H 4430 3720 50  0001 C CNN
@@ -699,7 +512,7 @@ $EndComp
 Wire Wire Line
 	4810 3870 4810 4050
 $Comp
-L BC847W Q1106
+L Transistor_BJT:BC847W Q1106
 U 1 1 5A2D856E
 P 4330 4830
 F 0 "Q1106" H 4530 4905 50  0000 L CNN
@@ -712,7 +525,7 @@ $EndComp
 Wire Wire Line
 	4810 4730 4810 4450
 $Comp
-L GND #PWR1112
+L power:GND #PWR1112
 U 1 1 5A2D857E
 P 4430 5030
 F 0 "#PWR1112" H 4430 4780 50  0001 C CNN
@@ -723,7 +536,7 @@ F 3 "" H 4430 5030 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1116
+L power:GND #PWR1116
 U 1 1 5A2D8584
 P 4810 5030
 F 0 "#PWR1116" H 4810 4780 50  0001 C CNN
@@ -741,7 +554,7 @@ Wire Wire Line
 	4870 4590 4810 4590
 Connection ~ 4810 4590
 $Comp
-L BC856W Q1112
+L Transistor_BJT:BC856W Q1112
 U 1 1 5A2D8598
 P 7120 4250
 F 0 "Q1112" H 7320 4325 50  0000 L CNN
@@ -757,7 +570,7 @@ Wire Wire Line
 	6840 4250 6920 4250
 Connection ~ 6840 4250
 $Comp
-L VAN #PWR1123
+L Custom-Library:VAN #PWR1123
 U 1 1 5A2D85B3
 P 7220 3870
 F 0 "#PWR1123" H 7220 3720 50  0001 C CNN
@@ -768,7 +581,7 @@ F 3 "" H 7220 3870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1119
+L Custom-Library:VAN #PWR1119
 U 1 1 5A2D85B9
 P 6840 3870
 F 0 "#PWR1119" H 6840 3720 50  0001 C CNN
@@ -781,7 +594,7 @@ $EndComp
 Wire Wire Line
 	7220 3870 7220 4050
 $Comp
-L BC847W Q1110
+L Transistor_BJT:BC847W Q1110
 U 1 1 5A2D85C0
 P 6740 4830
 F 0 "Q1110" H 6940 4905 50  0000 L CNN
@@ -794,7 +607,7 @@ $EndComp
 Wire Wire Line
 	7220 4730 7220 4450
 $Comp
-L GND #PWR1120
+L power:GND #PWR1120
 U 1 1 5A2D85D0
 P 6840 5030
 F 0 "#PWR1120" H 6840 4780 50  0001 C CNN
@@ -805,7 +618,7 @@ F 3 "" H 6840 5030 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1124
+L power:GND #PWR1124
 U 1 1 5A2D85D6
 P 7220 5030
 F 0 "#PWR1124" H 7220 4780 50  0001 C CNN
@@ -823,7 +636,7 @@ Wire Wire Line
 	7280 4590 7220 4590
 Connection ~ 7220 4590
 $Comp
-L BC856W Q1116
+L Transistor_BJT:BC856W Q1116
 U 1 1 5A2D85EA
 P 9450 4250
 F 0 "Q1116" H 9650 4325 50  0000 L CNN
@@ -839,7 +652,7 @@ Wire Wire Line
 	9170 4250 9250 4250
 Connection ~ 9170 4250
 $Comp
-L VAN #PWR1131
+L Custom-Library:VAN #PWR1131
 U 1 1 5A2D8605
 P 9550 3870
 F 0 "#PWR1131" H 9550 3720 50  0001 C CNN
@@ -850,7 +663,7 @@ F 3 "" H 9550 3870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAN #PWR1127
+L Custom-Library:VAN #PWR1127
 U 1 1 5A2D860B
 P 9170 3870
 F 0 "#PWR1127" H 9170 3720 50  0001 C CNN
@@ -863,7 +676,7 @@ $EndComp
 Wire Wire Line
 	9550 3870 9550 4050
 $Comp
-L BC847W Q1114
+L Transistor_BJT:BC847W Q1114
 U 1 1 5A2D8612
 P 9070 4830
 F 0 "Q1114" H 9270 4905 50  0000 L CNN
@@ -876,7 +689,7 @@ $EndComp
 Wire Wire Line
 	9550 4730 9550 4450
 $Comp
-L GND #PWR1128
+L power:GND #PWR1128
 U 1 1 5A2D8622
 P 9170 5030
 F 0 "#PWR1128" H 9170 4780 50  0001 C CNN
@@ -887,7 +700,7 @@ F 3 "" H 9170 5030 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1132
+L power:GND #PWR1132
 U 1 1 5A2D8628
 P 9550 5030
 F 0 "#PWR1132" H 9550 4780 50  0001 C CNN
@@ -905,7 +718,7 @@ Wire Wire Line
 	9610 4590 9550 4590
 Connection ~ 9550 4590
 $Comp
-L R R1107
+L Device:R R1107
 U 1 1 5A2E03C8
 P 2480 2550
 F 0 "R1107" V 2560 2550 50  0000 C CNN
@@ -919,7 +732,7 @@ F 6 "1/10W" H 2380 2450 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1109
+L Device:R R1109
 U 1 1 5A348E3A
 P 3770 2500
 F 0 "R1109" V 3850 2500 50  0000 C CNN
@@ -933,7 +746,7 @@ F 6 "1/10W" V 3670 2500 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1117
+L Device:R R1117
 U 1 1 5A349061
 P 6180 2500
 F 0 "R1117" V 6260 2500 50  0000 C CNN
@@ -947,7 +760,7 @@ F 6 "1/10W" V 6080 2500 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1125
+L Device:R R1125
 U 1 1 5A34925D
 P 8510 2500
 F 0 "R1125" V 8590 2500 50  0000 C CNN
@@ -961,7 +774,7 @@ F 6 "1/10W" V 8410 2500 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1126
+L Device:R R1126
 U 1 1 5A349467
 P 8510 4830
 F 0 "R1126" V 8590 4830 50  0000 C CNN
@@ -975,7 +788,7 @@ F 6 "1/10W" V 8410 4830 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1118
+L Device:R R1118
 U 1 1 5A349644
 P 6180 4830
 F 0 "R1118" V 6260 4830 50  0000 C CNN
@@ -989,7 +802,7 @@ F 6 "1/10W" V 6080 4830 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1110
+L Device:R R1110
 U 1 1 5A349836
 P 3770 4830
 F 0 "R1110" V 3850 4830 50  0000 C CNN
@@ -1003,7 +816,7 @@ F 6 "1/10W" V 3670 4830 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1102
+L Device:R R1102
 U 1 1 5A349A64
 P 1440 4830
 F 0 "R1102" V 1520 4830 50  0000 C CNN
@@ -1017,7 +830,7 @@ F 6 "1/10W" V 1340 4830 50  0000 C CNN "Wattage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1111
+L Device:R R1111
 U 1 1 5A34A598
 P 4430 1690
 F 0 "R1111" V 4510 1690 50  0000 C CNN
@@ -1031,7 +844,7 @@ F 6 "1/10W" H 4330 1590 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1119
+L Device:R R1119
 U 1 1 5A34A72D
 P 6840 1690
 F 0 "R1119" V 6920 1690 50  0000 C CNN
@@ -1045,7 +858,7 @@ F 6 "1/10W" H 6740 1590 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1127
+L Device:R R1127
 U 1 1 5A34A91C
 P 9170 1690
 F 0 "R1127" V 9250 1690 50  0000 C CNN
@@ -1059,7 +872,7 @@ F 6 "1/10W" H 9070 1590 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1129
+L Device:R R1129
 U 1 1 5A34AA88
 P 9170 4020
 F 0 "R1129" V 9250 4020 50  0000 C CNN
@@ -1073,7 +886,7 @@ F 6 "1/10W" H 9070 3920 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1121
+L Device:R R1121
 U 1 1 5A34ACC7
 P 6840 4020
 F 0 "R1121" V 6920 4020 50  0000 C CNN
@@ -1087,7 +900,7 @@ F 6 "1/10W" H 6740 3920 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1113
+L Device:R R1113
 U 1 1 5A34AE73
 P 4430 4020
 F 0 "R1113" V 4510 4020 50  0000 C CNN
@@ -1101,7 +914,7 @@ F 6 "1/10W" H 4330 3920 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1105
+L Device:R R1105
 U 1 1 5A34AFFE
 P 2100 4020
 F 0 "R1105" V 2180 4020 50  0000 C CNN
@@ -1115,7 +928,7 @@ F 6 "1/10W" H 2000 3920 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L BC856W Q1111
+L Transistor_BJT:BC856W Q1111
 U 1 1 5A2D6DA7
 P 7120 1920
 F 0 "Q1111" H 7320 1995 50  0000 L CNN
@@ -1126,7 +939,7 @@ F 3 "" H 7120 1920 50  0001 L CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L R R1112
+L Device:R R1112
 U 1 1 5A34BEDC
 P 4430 2150
 F 0 "R1112" V 4510 2150 50  0000 C CNN
@@ -1140,7 +953,7 @@ F 6 "1/10W" H 4330 2050 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1120
+L Device:R R1120
 U 1 1 5A34C114
 P 6840 2150
 F 0 "R1120" V 6920 2150 50  0000 C CNN
@@ -1154,7 +967,7 @@ F 6 "1/10W" H 6740 2050 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1128
+L Device:R R1128
 U 1 1 5A34C257
 P 9170 2150
 F 0 "R1128" V 9250 2150 50  0000 C CNN
@@ -1168,7 +981,7 @@ F 6 "1/10W" H 9070 2050 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1130
+L Device:R R1130
 U 1 1 5A34C442
 P 9170 4480
 F 0 "R1130" V 9250 4480 50  0000 C CNN
@@ -1182,7 +995,7 @@ F 6 "1/10W" H 9070 4380 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1122
+L Device:R R1122
 U 1 1 5A34C707
 P 6840 4480
 F 0 "R1122" V 6920 4480 50  0000 C CNN
@@ -1196,7 +1009,7 @@ F 6 "1/10W" H 6740 4380 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1114
+L Device:R R1114
 U 1 1 5A34C8B2
 P 4430 4480
 F 0 "R1114" V 4510 4480 50  0000 C CNN
@@ -1210,7 +1023,7 @@ F 6 "1/10W" H 4330 4380 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1106
+L Device:R R1106
 U 1 1 5A34C9DD
 P 2100 4480
 F 0 "R1106" V 2180 4480 50  0000 C CNN
@@ -1224,7 +1037,7 @@ F 6 "1/10W" H 2000 4380 50  0000 R CNN "Wattage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1115
+L Device:R R1115
 U 1 1 5A34D7D2
 P 4810 2550
 F 0 "R1115" V 4890 2550 50  0000 C CNN
@@ -1238,7 +1051,7 @@ F 6 "1/10W" H 4710 2450 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1123
+L Device:R R1123
 U 1 1 5A34D963
 P 7220 2550
 F 0 "R1123" V 7300 2550 50  0000 C CNN
@@ -1252,7 +1065,7 @@ F 6 "1/10W" H 7120 2450 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1131
+L Device:R R1131
 U 1 1 5A34DACD
 P 9550 2550
 F 0 "R1131" V 9630 2550 50  0000 C CNN
@@ -1266,7 +1079,7 @@ F 6 "1/10W" H 9450 2450 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1132
+L Device:R R1132
 U 1 1 5A34DC3A
 P 9550 4880
 F 0 "R1132" V 9630 4880 50  0000 C CNN
@@ -1280,7 +1093,7 @@ F 6 "1/10W" H 9450 4780 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1124
+L Device:R R1124
 U 1 1 5A34DDB8
 P 7220 4880
 F 0 "R1124" V 7300 4880 50  0000 C CNN
@@ -1294,7 +1107,7 @@ F 6 "1/10W" H 7120 4780 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1116
+L Device:R R1116
 U 1 1 5A34DF6E
 P 4810 4880
 F 0 "R1116" V 4890 4880 50  0000 C CNN
@@ -1308,7 +1121,7 @@ F 6 "1/10W" H 4710 4780 50  0000 R CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1108
+L Device:R R1108
 U 1 1 5A34E1EA
 P 2480 4880
 F 0 "R1108" V 2560 4880 50  0000 C CNN

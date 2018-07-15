@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -208,18 +21,7 @@ USB_UART_RX_ISO
 Text GLabel 7300 3700 2    60   Input ~ 0
 ~USB_DTR_ISO
 $Comp
-L ISO7331C U901
-U 1 1 5B33AAEC
-P 5290 3700
-F 0 "U901" H 5040 4150 50  0000 C CNN
-F 1 "ISO7331C" H 5560 4150 50  0000 C CNN
-F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 5290 3200 50  0001 C CIN
-F 3 "" H 5290 4100 50  0001 C CNN
-	1    5290 3700
-	-1   0    0    -1  
-$EndComp
-$Comp
-L GND_USB #PWR908
+L Custom-Library:GND_USB #PWR908
 U 1 1 5B33B4C2
 P 5770 4080
 F 0 "#PWR908" H 5770 3830 50  0001 C CNN
@@ -230,14 +32,14 @@ F 3 "" H 5770 4080 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5770 3900 5770 4080
+	5770 3900 5770 4000
 Wire Wire Line
 	5770 4000 5690 4000
 Wire Wire Line
 	5770 3900 5690 3900
 Connection ~ 5770 4000
 $Comp
-L GND #PWR905
+L power:GND #PWR905
 U 1 1 5B33B4E7
 P 4810 4080
 F 0 "#PWR905" H 4810 3830 50  0001 C CNN
@@ -248,14 +50,14 @@ F 3 "" H 4810 4080 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4810 3900 4810 4080
+	4810 3900 4810 4000
 Wire Wire Line
 	4810 4000 4890 4000
 Wire Wire Line
 	4810 3900 4890 3900
 Connection ~ 4810 4000
 $Comp
-L R_Custom R905
+L Custom-Library:R_Custom R905
 U 1 1 5B330ED8
 P 6530 2940
 F 0 "R905" H 6470 2940 50  0000 R CNN
@@ -269,13 +71,13 @@ F 6 "1/10W" H 6600 2870 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	5690 3600 7300 3600
+	5690 3600 6220 3600
 Wire Wire Line
-	5690 3700 7300 3700
+	5690 3700 6530 3700
 Wire Wire Line
-	5690 3800 7300 3800
+	5690 3800 6860 3800
 $Comp
-L R_Custom R904
+L Custom-Library:R_Custom R904
 U 1 1 5B33344F
 P 6220 4050
 F 0 "R904" H 6160 4050 50  0000 R CNN
@@ -289,7 +91,7 @@ F 6 "1/10W" H 6290 3980 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 $Comp
-L R_Custom R906
+L Custom-Library:R_Custom R906
 U 1 1 5B333478
 P 6860 4050
 F 0 "R906" H 6800 4050 50  0000 R CNN
@@ -303,7 +105,7 @@ F 6 "1/10W" H 6930 3980 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 $Comp
-L GND_USB #PWR912
+L Custom-Library:GND_USB #PWR912
 U 1 1 5B3334DB
 P 6220 4200
 F 0 "#PWR912" H 6220 3950 50  0001 C CNN
@@ -314,7 +116,7 @@ F 3 "" H 6220 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND_USB #PWR914
+L Custom-Library:GND_USB #PWR914
 U 1 1 5B3334F2
 P 6860 4200
 F 0 "#PWR914" H 6860 3950 50  0001 C CNN
@@ -334,7 +136,7 @@ Wire Wire Line
 	6220 3900 6220 3600
 Connection ~ 6220 3600
 $Comp
-L C_Custom C902
+L Custom-Library:C_Custom C902
 U 1 1 5B333AEF
 P 5940 4750
 F 0 "C902" H 5965 4850 50  0000 L CNN
@@ -348,7 +150,7 @@ F 6 "X7R" H 5790 4650 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C901
+L Custom-Library:C_Custom C901
 U 1 1 5B333B14
 P 4830 4750
 F 0 "C901" H 4855 4850 50  0000 L CNN
@@ -362,7 +164,7 @@ F 6 "X7R" H 4680 4650 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR907
+L power:GND #PWR907
 U 1 1 5B333B49
 P 4830 4900
 F 0 "#PWR907" H 4830 4650 50  0001 C CNN
@@ -373,7 +175,7 @@ F 3 "" H 4830 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND_USB #PWR910
+L Custom-Library:GND_USB #PWR910
 U 1 1 5B333B66
 P 5940 4900
 F 0 "#PWR910" H 5940 4650 50  0001 C CNN
@@ -384,7 +186,7 @@ F 3 "" H 5940 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V_USB #PWR911
+L Custom-Library:+5V_USB #PWR911
 U 1 1 5B333B91
 P 6000 3320
 F 0 "#PWR911" H 6000 3170 50  0001 C CNN
@@ -395,14 +197,14 @@ F 3 "" H 6000 3320 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6000 3320 6000 3500
+	6000 3320 6000 3400
 Wire Wire Line
 	6000 3400 5690 3400
 Wire Wire Line
 	6000 3500 5690 3500
 Connection ~ 6000 3400
 $Comp
-L +3.3V #PWR904
+L Custom-Library:+3.3V #PWR904
 U 1 1 5B334082
 P 4660 3320
 F 0 "#PWR904" H 4660 3170 50  0001 C CNN
@@ -413,14 +215,14 @@ F 3 "" H 4660 3320 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4660 3320 4660 3500
+	4660 3320 4660 3400
 Wire Wire Line
 	4660 3400 4890 3400
 Wire Wire Line
 	4660 3500 4890 3500
 Connection ~ 4660 3400
 $Comp
-L +5V_USB #PWR909
+L Custom-Library:+5V_USB #PWR909
 U 1 1 5B33458B
 P 5940 4600
 F 0 "#PWR909" H 5940 4450 50  0001 C CNN
@@ -431,7 +233,7 @@ F 3 "" H 5940 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR906
+L Custom-Library:+3.3V #PWR906
 U 1 1 5B3345D2
 P 4830 4600
 F 0 "#PWR906" H 4830 4450 50  0001 C CNN
@@ -442,7 +244,7 @@ F 3 "" H 4830 4600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V_USB #PWR913
+L Custom-Library:+5V_USB #PWR913
 U 1 1 5B334AE5
 P 6530 2790
 F 0 "#PWR913" H 6530 2640 50  0001 C CNN
@@ -459,7 +261,7 @@ USB_UART_RX
 Text GLabel 3280 3700 0    60   Output ~ 0
 ~USB_DTR
 $Comp
-L R_Custom R902
+L Custom-Library:R_Custom R902
 U 1 1 5B334B6B
 P 4050 2940
 F 0 "R902" H 3990 2940 50  0000 R CNN
@@ -473,13 +275,13 @@ F 6 "1/10W" H 4120 2870 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	3280 3600 4890 3600
+	3280 3600 4360 3600
 Wire Wire Line
-	3280 3700 4890 3700
+	3280 3700 4050 3700
 Wire Wire Line
-	3280 3800 4890 3800
+	3280 3800 3720 3800
 $Comp
-L R_Custom R903
+L Custom-Library:R_Custom R903
 U 1 1 5B334B77
 P 4360 4050
 F 0 "R903" H 4300 4050 50  0000 R CNN
@@ -493,7 +295,7 @@ F 6 "1/10W" H 4430 3980 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R_Custom R901
+L Custom-Library:R_Custom R901
 U 1 1 5B334B80
 P 3720 4050
 F 0 "R901" H 3660 4050 50  0000 R CNN
@@ -516,7 +318,7 @@ Wire Wire Line
 	4360 3900 4360 3600
 Connection ~ 4360 3600
 $Comp
-L +3.3V #PWR902
+L Custom-Library:+3.3V #PWR902
 U 1 1 5B334D0F
 P 4050 2790
 F 0 "#PWR902" H 4050 2640 50  0001 C CNN
@@ -527,7 +329,7 @@ F 3 "" H 4050 2790 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR903
+L power:GND #PWR903
 U 1 1 5B334D88
 P 4360 4200
 F 0 "#PWR903" H 4360 3950 50  0001 C CNN
@@ -538,7 +340,7 @@ F 3 "" H 4360 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR901
+L power:GND #PWR901
 U 1 1 5B33526C
 P 3720 4200
 F 0 "#PWR901" H 3720 3950 50  0001 C CNN
@@ -548,4 +350,26 @@ F 3 "" H 3720 4200 50  0001 C CNN
 	1    3720 4200
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5770 4000 5770 4080
+Wire Wire Line
+	4810 4000 4810 4080
+Wire Wire Line
+	6530 3700 7300 3700
+Wire Wire Line
+	6860 3800 7300 3800
+Wire Wire Line
+	6220 3600 7300 3600
+Wire Wire Line
+	6000 3400 6000 3500
+Wire Wire Line
+	4660 3400 4660 3500
+Wire Wire Line
+	4050 3700 4890 3700
+Wire Wire Line
+	3720 3800 4890 3800
+Wire Wire Line
+	4360 3600 4890 3600
+Text Notes 4480 1990 0    60   ~ 0
+SWITCH TO DUAL SIGNAL ISOLATOR INSTEAD
 $EndSCHEMATC

@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -202,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Conn_01x06 J1601
+L Connector_Generic:Conn_01x06 J1601
 U 1 1 5A519E87
 P 8790 2490
 F 0 "J1601" H 8790 2790 50  0000 C CNN
@@ -220,7 +33,7 @@ Text GLabel 8590 2590 0    60   BiDi ~ 0
 ICSPDAT
 NoConn ~ 8590 2790
 $Comp
-L +3.3V-RESCUE-VFD_Clock #PWR1616
+L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR1616
 U 1 1 5A519E92
 P 7960 2350
 F 0 "#PWR1616" H 7960 2200 50  0001 C CNN
@@ -231,7 +44,7 @@ F 3 "" H 7960 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1617
+L power:GND #PWR1617
 U 1 1 5A519E98
 P 7960 2530
 F 0 "#PWR1617" H 7960 2280 50  0001 C CNN
@@ -250,7 +63,7 @@ Wire Wire Line
 Wire Wire Line
 	7960 2390 7960 2350
 $Comp
-L TL331 U1601
+L Custom-Library:TL331 U1601
 U 1 1 5A51AD7B
 P 3590 4720
 F 0 "U1601" H 3640 4920 50  0000 C CNN
@@ -261,7 +74,7 @@ F 3 "" H 3590 4920 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1605
+L power:GND #PWR1605
 U 1 1 5A51AD82
 P 3490 5020
 F 0 "#PWR1605" H 3490 4770 50  0001 C CNN
@@ -272,7 +85,7 @@ F 3 "" H 3490 5020 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L +24V #PWR1604
+L power:+24V #PWR1604
 U 1 1 5A51AD88
 P 3490 4420
 F 0 "#PWR1604" H 3490 4270 50  0001 C CNN
@@ -285,7 +98,7 @@ $EndComp
 Text GLabel 3290 4620 0    60   Input ~ 0
 ~MCLR
 $Comp
-L ZENER_Custom Z1601
+L Custom-Library:ZENER_Custom Z1601
 U 1 1 5A51AD91
 P 2110 5100
 F 0 "Z1601" V 2110 5300 50  0000 C CNN
@@ -298,7 +111,7 @@ F 5 "5.6V" V 2210 5000 50  0000 R CNN "Voltage"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR1603
+L power:GND #PWR1603
 U 1 1 5A51AD98
 P 2740 5270
 F 0 "#PWR1603" H 2740 5020 50  0001 C CNN
@@ -311,9 +124,9 @@ $EndComp
 Wire Wire Line
 	2740 4970 2740 4820
 Wire Wire Line
-	3290 4820 2110 4820
+	3290 4820 2740 4820
 $Comp
-L C_Custom C1601
+L Custom-Library:C_Custom C1601
 U 1 1 5A51ADA3
 P 2740 5120
 F 0 "C1601" H 2765 5220 50  0000 L CNN
@@ -327,7 +140,7 @@ F 6 "X7R" H 2590 5020 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1602
+L power:GND #PWR1602
 U 1 1 5A51ADAA
 P 2110 5300
 F 0 "#PWR1602" H 2110 5050 50  0001 C CNN
@@ -338,10 +151,10 @@ F 3 "" H 2110 5300 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	2110 4730 2110 4900
+	2110 4730 2110 4820
 Connection ~ 2740 4820
 $Comp
-L R_Custom R1601
+L Custom-Library:R_Custom R1601
 U 1 1 5A51ADB5
 P 2110 4580
 F 0 "R1601" H 2050 4580 50  0000 R CNN
@@ -355,7 +168,7 @@ F 6 "1/10W" H 2180 4510 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L +24V #PWR1601
+L power:+24V #PWR1601
 U 1 1 5A51ADBC
 P 2110 4430
 F 0 "#PWR1601" H 2110 4280 50  0001 C CNN
@@ -367,7 +180,7 @@ F 3 "" H 2110 4430 50  0001 C CNN
 $EndComp
 Connection ~ 2110 4820
 $Comp
-L R_Custom R1602
+L Custom-Library:R_Custom R1602
 U 1 1 5A51ADC6
 P 4140 4490
 F 0 "R1602" H 4080 4490 50  0000 R CNN
@@ -381,11 +194,11 @@ F 6 "1/10W" H 4210 4420 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	5070 4720 3890 4720
+	5070 4720 4140 4720
 Wire Wire Line
 	4140 4720 4140 4640
 $Comp
-L +3.3V #PWR1608
+L Custom-Library:+3.3V #PWR1608
 U 1 1 5A51ADCF
 P 4140 4340
 F 0 "#PWR1608" H 4140 4190 50  0001 C CNN
@@ -396,7 +209,7 @@ F 3 "" H 4140 4340 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L 74LVC1G86 U1602
+L 74xGxx:74LVC1G86 U1602
 U 1 1 5A51ADD5
 P 5370 4770
 F 0 "U1602" H 5270 4920 50  0000 C CNN
@@ -408,7 +221,7 @@ F 3 "" H 5370 4770 50  0001 C CNN
 $EndComp
 Connection ~ 4140 4720
 $Comp
-L R_Custom R1604
+L Custom-Library:R_Custom R1604
 U 1 1 5A51ADE0
 P 4780 5110
 F 0 "R1604" H 4720 5110 50  0000 R CNN
@@ -422,7 +235,7 @@ F 6 "1/10W" H 4850 5040 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 $Comp
-L GND #PWR1610
+L power:GND #PWR1610
 U 1 1 5A51ADE7
 P 4780 5260
 F 0 "#PWR1610" H 4780 5010 50  0001 C CNN
@@ -433,11 +246,11 @@ F 3 "" H 4780 5260 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4780 4640 4780 4960
+	4780 4640 4780 4820
 Wire Wire Line
 	4780 4820 5070 4820
 $Comp
-L R_Custom R1603
+L Custom-Library:R_Custom R1603
 U 1 1 5A51ADF2
 P 4780 4490
 F 0 "R1603" H 4720 4490 50  0000 R CNN
@@ -452,7 +265,7 @@ F 6 "1/10W" H 4850 4420 50  0000 L CNN "Wattage"
 $EndComp
 Connection ~ 4780 4820
 $Comp
-L +3.3V #PWR1609
+L Custom-Library:+3.3V #PWR1609
 U 1 1 5A51ADFA
 P 4780 4340
 F 0 "#PWR1609" H 4780 4190 50  0001 C CNN
@@ -463,7 +276,7 @@ F 3 "" H 4780 4340 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1612
+L power:GND #PWR1612
 U 1 1 5A51AE00
 P 5370 4870
 F 0 "#PWR1612" H 5370 4620 50  0001 C CNN
@@ -474,7 +287,7 @@ F 3 "" H 5370 4870 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR1611
+L Custom-Library:+3.3V #PWR1611
 U 1 1 5A51AE06
 P 5370 4670
 F 0 "#PWR1611" H 5370 4520 50  0001 C CNN
@@ -485,7 +298,7 @@ F 3 "" H 5370 4670 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L C_Custom C1603
+L Custom-Library:C_Custom C1603
 U 1 1 5A51AE0F
 P 5430 5450
 F 0 "C1603" H 5455 5550 50  0000 L CNN
@@ -499,7 +312,7 @@ F 6 "X7R" H 5280 5350 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1614
+L power:GND #PWR1614
 U 1 1 5A51AE16
 P 5430 5600
 F 0 "#PWR1614" H 5430 5350 50  0001 C CNN
@@ -510,7 +323,7 @@ F 3 "" H 5430 5600 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR1613
+L Custom-Library:+3.3V #PWR1613
 U 1 1 5A51AE1C
 P 5430 5300
 F 0 "#PWR1613" H 5430 5150 50  0001 C CNN
@@ -521,7 +334,7 @@ F 3 "" H 5430 5300 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R_Custom R1605
+L Custom-Library:R_Custom R1605
 U 1 1 5A51AE25
 P 6090 5080
 F 0 "R1605" H 6030 5080 50  0000 R CNN
@@ -535,7 +348,7 @@ F 6 "1/10W" H 6160 5010 50  0000 L CNN "Wattage"
 	1    0    0    1   
 $EndComp
 $Comp
-L GND #PWR1615
+L power:GND #PWR1615
 U 1 1 5A51AE2C
 P 6090 5230
 F 0 "#PWR1615" H 6090 4980 50  0001 C CNN
@@ -548,10 +361,10 @@ $EndComp
 Wire Wire Line
 	6090 4930 6090 4770
 Wire Wire Line
-	5620 4770 6500 4770
+	5620 4770 6090 4770
 Connection ~ 6090 4770
 $Comp
-L C_Custom C1602
+L Custom-Library:C_Custom C1602
 U 1 1 5A51AE42
 P 3820 5430
 F 0 "C1602" H 3845 5530 50  0000 L CNN
@@ -565,7 +378,7 @@ F 6 "X7R" H 3670 5330 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1607
+L power:GND #PWR1607
 U 1 1 5A51AE49
 P 3820 5580
 F 0 "#PWR1607" H 3820 5330 50  0001 C CNN
@@ -576,7 +389,7 @@ F 3 "" H 3820 5580 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L +24V #PWR1606
+L power:+24V #PWR1606
 U 1 1 5A51AE4F
 P 3820 5280
 F 0 "#PWR1606" H 3820 5130 50  0001 C CNN
@@ -588,4 +401,14 @@ F 3 "" H 3820 5280 50  0001 C CNN
 $EndComp
 Text GLabel 6500 4770 2    60   Output ~ 0
 ICSP_DETECT
+Wire Wire Line
+	2740 4820 2110 4820
+Wire Wire Line
+	2110 4820 2110 4900
+Wire Wire Line
+	4140 4720 3890 4720
+Wire Wire Line
+	4780 4820 4780 4960
+Wire Wire Line
+	6090 4770 6500 4770
 $EndSCHEMATC

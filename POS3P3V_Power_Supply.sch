@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -202,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LT8620-MSE U401
+L Custom-Library:LT8620-MSE U401
 U 1 1 5A284DCC
 P 5880 4210
 F 0 "U401" H 6330 3110 60  0000 C CNN
@@ -213,7 +26,7 @@ F 3 "" H 5880 5710 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR410
+L power:GND #PWR410
 U 1 1 5A285154
 P 5780 5410
 F 0 "#PWR410" H 5780 5160 50  0001 C CNN
@@ -224,7 +37,7 @@ F 3 "" H 5780 5410 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR411
+L power:GND #PWR411
 U 1 1 5A28516D
 P 5980 5410
 F 0 "#PWR411" H 5980 5160 50  0001 C CNN
@@ -235,7 +48,7 @@ F 3 "" H 5980 5410 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R405
+L Custom-Library:R_Custom R405
 U 1 1 5A285532
 P 5010 5380
 F 0 "R405" H 4950 5380 50  0000 R CNN
@@ -249,7 +62,7 @@ F 6 "1/10W" H 5080 5310 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR409
+L power:GND #PWR409
 U 1 1 5A285592
 P 5010 5530
 F 0 "#PWR409" H 5010 5280 50  0001 C CNN
@@ -260,7 +73,7 @@ F 3 "" H 5010 5530 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C402
+L Custom-Library:C_Custom C402
 U 1 1 5A285C0D
 P 4410 5390
 F 0 "C402" H 4435 5490 50  0000 L CNN
@@ -274,7 +87,7 @@ F 6 "X7R" H 4260 5290 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR406
+L power:GND #PWR406
 U 1 1 5A285D8F
 P 4410 5540
 F 0 "#PWR406" H 4410 5290 50  0001 C CNN
@@ -285,7 +98,7 @@ F 3 "" H 4410 5540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR405
+L power:GND #PWR405
 U 1 1 5A285DA6
 P 3810 5540
 F 0 "#PWR405" H 3810 5290 50  0001 C CNN
@@ -296,7 +109,7 @@ F 3 "" H 3810 5540 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L L_Custom L401
+L Custom-Library:L_Custom L401
 U 1 1 5A2867A7
 P 7550 3910
 F 0 "L401" V 7500 3910 50  0000 C CNN
@@ -310,7 +123,7 @@ F 6 "20%" V 7900 3910 50  0000 C CNN "Tolerance"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C_Custom C404
+L Custom-Library:C_Custom C404
 U 1 1 5A286B9F
 P 7010 3560
 F 0 "C404" H 7035 3660 50  0000 L CNN
@@ -324,7 +137,7 @@ F 6 "X7R" H 6860 3460 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R406
+L Custom-Library:R_Custom R406
 U 1 1 5A287E73
 P 8580 4340
 F 0 "R406" H 8520 4340 50  0000 R CNN
@@ -338,7 +151,7 @@ F 6 "1/10W" H 8650 4270 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R_Custom R407
+L Custom-Library:R_Custom R407
 U 1 1 5A287F3C
 P 8580 5300
 F 0 "R407" H 8520 5300 50  0000 R CNN
@@ -352,7 +165,7 @@ F 6 "1/10W" H 8650 5230 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR413
+L power:GND #PWR413
 U 1 1 5A2883AC
 P 8580 5450
 F 0 "#PWR413" H 8580 5200 50  0001 C CNN
@@ -363,7 +176,7 @@ F 3 "" H 8580 5450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R404
+L Custom-Library:R_Custom R404
 U 1 1 5A289C4B
 P 3210 5400
 F 0 "R404" H 3150 5400 50  0000 R CNN
@@ -377,7 +190,7 @@ F 6 "1/10W" H 3280 5330 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR404
+L power:GND #PWR404
 U 1 1 5A289CE3
 P 3210 5550
 F 0 "#PWR404" H 3210 5300 50  0001 C CNN
@@ -388,7 +201,7 @@ F 3 "" H 3210 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R403
+L Custom-Library:R_Custom R403
 U 1 1 5A28A4AF
 P 2610 5400
 F 0 "R403" H 2550 5400 50  0000 R CNN
@@ -402,7 +215,7 @@ F 6 "1/10W" H 2680 5330 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR403
+L power:GND #PWR403
 U 1 1 5A28A51F
 P 2610 5550
 F 0 "#PWR403" H 2610 5300 50  0001 C CNN
@@ -413,7 +226,7 @@ F 3 "" H 2610 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V-RESCUE-VFD_Clock #PWR412
+L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR412
 U 1 1 5A28AA8D
 P 6710 4170
 F 0 "#PWR412" H 6710 4020 50  0001 C CNN
@@ -424,7 +237,7 @@ F 3 "" H 6710 4170 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C406
+L Custom-Library:C_Custom C406
 U 1 1 5A28AE6E
 P 9180 4340
 F 0 "C406" H 9205 4440 50  0000 L CNN
@@ -438,7 +251,7 @@ F 6 "X7R" H 9030 4240 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR414
+L power:GND #PWR414
 U 1 1 5A28B328
 P 9180 4490
 F 0 "#PWR414" H 9180 4240 50  0001 C CNN
@@ -449,7 +262,7 @@ F 3 "" H 9180 4490 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR416
+L power:GND #PWR416
 U 1 1 5A28B37B
 P 9780 4490
 F 0 "#PWR416" H 9780 4240 50  0001 C CNN
@@ -460,7 +273,7 @@ F 3 "" H 9780 4490 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V-RESCUE-VFD_Clock #PWR415
+L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR415
 U 1 1 5A28B773
 P 9780 3830
 F 0 "#PWR415" H 9780 3680 50  0001 C CNN
@@ -471,7 +284,7 @@ F 3 "" H 9780 3830 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR408
+L power:GND #PWR408
 U 1 1 5A28EBE4
 P 4780 3690
 F 0 "#PWR408" H 4780 3440 50  0001 C CNN
@@ -482,7 +295,7 @@ F 3 "" H 4780 3690 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R401
+L Custom-Library:R_Custom R401
 U 1 1 5A292F97
 P 2080 3540
 F 0 "R401" H 2020 3540 50  0000 R CNN
@@ -585,7 +398,7 @@ SW
 Text Label 6650 4810 0    60   ~ 0
 FB
 $Comp
-L C_Custom C403
+L Custom-Library:C_Custom C403
 U 1 1 5A29E424
 P 4780 3540
 F 0 "C403" H 4805 3640 50  0000 L CNN
@@ -599,7 +412,7 @@ F 6 "X7R" H 4630 3440 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C401
+L Custom-Library:C_Custom C401
 U 1 1 5A29F4DA
 P 3810 5390
 F 0 "C401" H 3835 5490 50  0000 L CNN
@@ -613,7 +426,7 @@ F 6 "X7R" H 3660 5290 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C407
+L Custom-Library:C_Custom C407
 U 1 1 5A2A1B34
 P 9780 4340
 F 0 "C407" H 9805 4440 50  0000 L CNN
@@ -627,7 +440,7 @@ F 6 "X7R" H 9630 4240 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C405
+L Custom-Library:C_Custom C405
 U 1 1 5A2A23EB
 P 7980 4340
 F 0 "C405" H 8005 4440 50  0000 L CNN
@@ -641,7 +454,7 @@ F 6 "NP0" H 7830 4240 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V-RESCUE-VFD_Clock #PWR401
+L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR401
 U 1 1 5A368A78
 P 2080 3390
 F 0 "#PWR401" H 2080 3240 50  0001 C CNN
@@ -656,7 +469,7 @@ Wire Wire Line
 Wire Wire Line
 	2610 4310 5130 4310
 $Comp
-L R_Custom R402
+L Custom-Library:R_Custom R402
 U 1 1 5A4A9CAD
 P 2610 3540
 F 0 "R402" H 2550 3540 50  0000 R CNN
@@ -671,7 +484,7 @@ F 6 "1/10W" H 2680 3470 50  0000 L CNN "Wattage"
 $EndComp
 Connection ~ 2610 4310
 $Comp
-L +24V #PWR402
+L power:+24V #PWR402
 U 1 1 5A4AA439
 P 2610 3390
 F 0 "#PWR402" H 2610 3240 50  0001 C CNN
@@ -686,7 +499,7 @@ Wire Wire Line
 Wire Wire Line
 	4780 3310 5130 3310
 $Comp
-L +24V #PWR407
+L power:+24V #PWR407
 U 1 1 5AEEA5AF
 P 4780 3230
 F 0 "#PWR407" H 4780 3080 50  0001 C CNN
@@ -698,7 +511,7 @@ F 3 "" H 4780 3230 50  0001 C CNN
 $EndComp
 Connection ~ 4780 3310
 $Comp
-L PWR_FLAG #FLG401
+L power:PWR_FLAG #FLG401
 U 1 1 5B3CD3EE
 P 10260 3840
 F 0 "#FLG401" H 10260 3915 50  0001 C CNN
@@ -709,7 +522,7 @@ F 3 "" H 10260 3840 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR417
+L Custom-Library:+3.3V #PWR417
 U 1 1 5B3CD462
 P 10260 3840
 F 0 "#PWR417" H 10260 3690 50  0001 C CNN

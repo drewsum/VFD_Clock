@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -204,7 +17,7 @@ $EndDescr
 Text Notes 4660 1100 0    60   ~ 0
 +1.2V Filament Voltage Power Supply
 $Comp
-L TPS62150 U601
+L Regulator_Switching:TPS62150 U601
 U 1 1 5B331940
 P 5560 3620
 F 0 "U601" H 5710 4170 50  0000 L CNN
@@ -215,7 +28,7 @@ F 3 "" H 5560 3620 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L L_Custom L601
+L Custom-Library:L_Custom L601
 U 1 1 5B331E00
 P 6410 3420
 F 0 "L601" V 6360 3420 50  0000 C CNN
@@ -237,7 +50,7 @@ Wire Wire Line
 Wire Wire Line
 	6560 3420 7760 3420
 $Comp
-L Res_Custom R603
+L VFD_Clock-rescue:Res_Custom R603
 U 1 1 5B333947
 P 7130 3650
 F 0 "R603" V 7030 3650 50  0000 C CNN
@@ -258,7 +71,7 @@ Wire Wire Line
 Wire Wire Line
 	7130 3800 7130 3860
 $Comp
-L Res_Custom R604
+L VFD_Clock-rescue:Res_Custom R604
 U 1 1 5B333979
 P 7130 4010
 F 0 "R604" V 7030 4010 50  0000 C CNN
@@ -272,7 +85,7 @@ F 6 "1/10W" H 7190 4060 50  0000 L CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR608
+L power:GND #PWR608
 U 1 1 5B3339E2
 P 7130 4160
 F 0 "#PWR608" H 7130 3910 50  0001 C CNN
@@ -284,7 +97,7 @@ F 3 "" H 7130 4160 50  0001 C CNN
 $EndComp
 Connection ~ 7130 3820
 $Comp
-L C_Custom C603
+L Custom-Library:C_Custom C603
 U 1 1 5B33478F
 P 7760 3620
 F 0 "C603" H 7785 3720 50  0000 L CNN
@@ -302,7 +115,7 @@ Wire Wire Line
 	7760 3380 7760 3470
 Connection ~ 7130 3420
 $Comp
-L GND #PWR610
+L power:GND #PWR610
 U 1 1 5B3347FF
 P 7760 3770
 F 0 "#PWR610" H 7760 3520 50  0001 C CNN
@@ -313,7 +126,7 @@ F 3 "" H 7760 3770 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VFF #PWR609
+L Custom-Library:VFF #PWR609
 U 1 1 5B33515C
 P 7760 3380
 F 0 "#PWR609" H 7760 3230 50  0001 C CNN
@@ -325,7 +138,7 @@ F 3 "" H 7760 3380 60  0000 C CNN
 $EndComp
 Connection ~ 7760 3420
 $Comp
-L GND #PWR607
+L power:GND #PWR607
 U 1 1 5B335F4D
 P 5560 4200
 F 0 "#PWR607" H 5560 3950 50  0001 C CNN
@@ -354,7 +167,7 @@ Wire Wire Line
 	7370 4580 7370 3420
 Connection ~ 7370 3420
 $Comp
-L GND #PWR606
+L power:GND #PWR606
 U 1 1 5B336DDC
 P 5100 3770
 F 0 "#PWR606" H 5100 3520 50  0001 C CNN
@@ -369,7 +182,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 3620 5160 3620
 $Comp
-L C_Custom C601
+L Custom-Library:C_Custom C601
 U 1 1 5B337285
 P 4560 3870
 F 0 "C601" H 4585 3970 50  0000 L CNN
@@ -388,7 +201,7 @@ Wire Wire Line
 Wire Wire Line
 	4560 3520 5160 3520
 $Comp
-L GND #PWR603
+L power:GND #PWR603
 U 1 1 5B337796
 P 4560 4020
 F 0 "#PWR603" H 4560 3770 50  0001 C CNN
@@ -399,7 +212,7 @@ F 3 "" H 4560 4020 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Res_Custom R601
+L VFD_Clock-rescue:Res_Custom R601
 U 1 1 5B338171
 P 3930 3850
 F 0 "R601" V 3830 3850 50  0000 C CNN
@@ -413,7 +226,7 @@ F 6 "1/10W" H 3990 3900 50  0000 L CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR601
+L power:GND #PWR601
 U 1 1 5B338212
 P 3930 4000
 F 0 "#PWR601" H 3930 3750 50  0001 C CNN
@@ -431,7 +244,7 @@ Text GLabel 3850 3420 0    60   Input ~ 0
 VFF_RUN
 Connection ~ 3930 3420
 $Comp
-L C_Custom C602
+L Custom-Library:C_Custom C602
 U 1 1 5B338BF3
 P 4700 2930
 F 0 "C602" H 4725 3030 50  0000 L CNN
@@ -446,7 +259,7 @@ F 7 "PN" H 5125 3430 60  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR605
+L power:GND #PWR605
 U 1 1 5B338C29
 P 4700 3080
 F 0 "#PWR605" H 4700 2830 50  0001 C CNN
@@ -466,7 +279,7 @@ Wire Wire Line
 	5660 2650 5660 3120
 Connection ~ 5460 2650
 $Comp
-L +3.3V #PWR604
+L Custom-Library:+3.3V #PWR604
 U 1 1 5B339A79
 P 4700 2610
 F 0 "#PWR604" H 4700 2460 50  0001 C CNN
@@ -478,7 +291,7 @@ F 3 "" H 4700 2610 50  0000 C CNN
 $EndComp
 Connection ~ 4700 2650
 $Comp
-L Res_Custom R602
+L VFD_Clock-rescue:Res_Custom R602
 U 1 1 5B339F81
 P 3930 4660
 F 0 "R602" V 3830 4660 50  0000 C CNN
@@ -492,7 +305,7 @@ F 6 "1/10W" H 3990 4710 50  0000 L CNN "Wattage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR602
+L Custom-Library:+3.3V #PWR602
 U 1 1 5B33A04D
 P 3930 4510
 F 0 "#PWR602" H 3930 4360 50  0001 C CNN
@@ -514,7 +327,7 @@ Text GLabel 3850 4940 0    60   Output ~ 0
 VFF_PGOOD
 Connection ~ 3930 4940
 $Comp
-L VFF #PWR611
+L Custom-Library:VFF #PWR611
 U 1 1 5B3D14B1
 P 8240 3380
 F 0 "#PWR611" H 8240 3230 50  0001 C CNN
@@ -525,7 +338,7 @@ F 3 "" H 8240 3380 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG601
+L power:PWR_FLAG #FLG601
 U 1 1 5B3D14D0
 P 8240 3380
 F 0 "#FLG601" H 8240 3455 50  0001 C CNN

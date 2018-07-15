@@ -1,0 +1,586 @@
+EESchema Schematic File Version 2
+LIBS:Custom Library
+LIBS:4xxx
+LIBS:4xxx_IEEE
+LIBS:74xGxx
+LIBS:74xx
+LIBS:74xx_IEEE
+LIBS:Amplifier_Audio
+LIBS:Amplifier_Buffer
+LIBS:Amplifier_Current
+LIBS:Amplifier_Difference
+LIBS:Amplifier_Instrumentation
+LIBS:Amplifier_Operational
+LIBS:Amplifier_Video
+LIBS:Analog
+LIBS:Analog_ADC
+LIBS:Analog_DAC
+LIBS:Analog_Switch
+LIBS:Audio
+LIBS:Battery_Management
+LIBS:Comparator
+LIBS:Connector
+LIBS:Connector_Generic
+LIBS:Connector_Generic_MountingPin
+LIBS:Connector_Generic_Shielded
+LIBS:Connector_Specialized
+LIBS:Converter_ACDC
+LIBS:Converter_DCDC
+LIBS:CPLD_Altera
+LIBS:CPLD_Xilinx
+LIBS:CPU
+LIBS:CPU_NXP_6800
+LIBS:CPU_NXP_68000
+LIBS:CPU_PowerPC
+LIBS:Device
+LIBS:Diode
+LIBS:Diode_Bridge
+LIBS:Diode_Laser
+LIBS:Display_Character
+LIBS:Display_Graphic
+LIBS:Driver_Display
+LIBS:Driver_FET
+LIBS:Driver_LED
+LIBS:Driver_Motor
+LIBS:Driver_Relay
+LIBS:DSP_Freescale
+LIBS:DSP_Microchip_DSPIC33
+LIBS:DSP_Motorola
+LIBS:DSP_Texas
+LIBS:Filter
+LIBS:FPGA_Actel
+LIBS:FPGA_Microsemi
+LIBS:FPGA_Xilinx
+LIBS:FPGA_Xilinx_Artix7
+LIBS:FPGA_Xilinx_Kintex7
+LIBS:FPGA_Xilinx_Spartan6
+LIBS:FPGA_Xilinx_Virtex5
+LIBS:FPGA_Xilinx_Virtex6
+LIBS:FPGA_Xilinx_Virtex7
+LIBS:GPU
+LIBS:Graphic
+LIBS:Interface
+LIBS:Interface_CAN_LIN
+LIBS:Interface_CurrentLoop
+LIBS:Interface_Ethernet
+LIBS:Interface_Expansion
+LIBS:Interface_HID
+LIBS:Interface_LineDriver
+LIBS:Interface_Optical
+LIBS:Interface_Telecom
+LIBS:Interface_UART
+LIBS:Interface_USB
+LIBS:Isolator
+LIBS:Isolator_Analog
+LIBS:Jumper
+LIBS:LED
+LIBS:Logic_LevelTranslator
+LIBS:Logic_Programmable
+LIBS:MCU_AnalogDevices
+LIBS:MCU_Cypress
+LIBS:MCU_Espressif
+LIBS:MCU_Infineon
+LIBS:MCU_Intel
+LIBS:MCU_Microchip_8051
+LIBS:MCU_Microchip_ATmega
+LIBS:MCU_Microchip_ATtiny
+LIBS:MCU_Microchip_AVR
+LIBS:MCU_Microchip_PIC10
+LIBS:MCU_Microchip_PIC12
+LIBS:MCU_Microchip_PIC16
+LIBS:MCU_Microchip_PIC18
+LIBS:MCU_Microchip_PIC24
+LIBS:MCU_Microchip_PIC32
+LIBS:MCU_Microchip_SAME
+LIBS:MCU_Microchip_SAML
+LIBS:MCU_Module
+LIBS:MCU_Nordic
+LIBS:MCU_NXP_ColdFire
+LIBS:MCU_NXP_HC11
+LIBS:MCU_NXP_HC12
+LIBS:MCU_NXP_HCS12
+LIBS:MCU_NXP_Kinetis
+LIBS:MCU_NXP_LPC
+LIBS:MCU_NXP_MAC7100
+LIBS:MCU_NXP_MCore
+LIBS:MCU_NXP_S08
+LIBS:MCU_Parallax
+LIBS:MCU_SiFive
+LIBS:MCU_SiliconLabs
+LIBS:MCU_ST_STM8
+LIBS:MCU_ST_STM32
+LIBS:MCU_ST_STM32F0
+LIBS:MCU_ST_STM32F1
+LIBS:MCU_ST_STM32F2
+LIBS:MCU_ST_STM32F3
+LIBS:MCU_ST_STM32F4
+LIBS:MCU_ST_STM32F7
+LIBS:MCU_ST_STM32H7
+LIBS:MCU_ST_STM32L0
+LIBS:MCU_ST_STM32L1
+LIBS:MCU_ST_STM32L4
+LIBS:MCU_ST_STM32L4+
+LIBS:MCU_Texas
+LIBS:MCU_Texas_MSP430
+LIBS:Mechanical
+LIBS:Memory_Controller
+LIBS:Memory_EEPROM
+LIBS:Memory_EPROM
+LIBS:Memory_Flash
+LIBS:Memory_NVRAM
+LIBS:Memory_RAM
+LIBS:Memory_ROM
+LIBS:Memory_UniqueID
+LIBS:Motor
+LIBS:Oscillator
+LIBS:Potentiometer_Digital
+LIBS:power
+LIBS:Power_Management
+LIBS:Power_Protection
+LIBS:Power_Supervisor
+LIBS:pspice
+LIBS:Reference_Current
+LIBS:Reference_Voltage
+LIBS:Regulator_Controller
+LIBS:Regulator_Current
+LIBS:Regulator_Linear
+LIBS:Regulator_SwitchedCapacitor
+LIBS:Regulator_Switching
+LIBS:Relay
+LIBS:Relay_SolidState
+LIBS:RF
+LIBS:RF_AM_FM
+LIBS:RF_Amplifier
+LIBS:RF_Bluetooth
+LIBS:RF_GPS
+LIBS:RF_Mixer
+LIBS:RF_Module
+LIBS:RF_RFID
+LIBS:RF_Switch
+LIBS:RF_WiFi
+LIBS:RF_ZigBee
+LIBS:Sensor
+LIBS:Sensor_Audio
+LIBS:Sensor_Current
+LIBS:Sensor_Gas
+LIBS:Sensor_Humidity
+LIBS:Sensor_Magnetic
+LIBS:Sensor_Motion
+LIBS:Sensor_Optical
+LIBS:Sensor_Pressure
+LIBS:Sensor_Proximity
+LIBS:Sensor_Temperature
+LIBS:Sensor_Touch
+LIBS:Sensor_Voltage
+LIBS:Switch
+LIBS:Timer
+LIBS:Timer_PLL
+LIBS:Timer_RTC
+LIBS:Transformer
+LIBS:Transistor_Array
+LIBS:Transistor_BJT
+LIBS:Transistor_FET
+LIBS:Transistor_IGBT
+LIBS:Triac_Thyristor
+LIBS:Valve
+LIBS:Video
+LIBS:nixie
+LIBS:vfd
+LIBS:VFD_Clock-cache
+EELAYER 25 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 17 21
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L TPS2413PWR U1701
+U 1 1 5B2DC52F
+P 5090 3080
+F 0 "U1701" H 5290 2430 50  0000 C CNN
+F 1 "TPS2413PWR" H 5490 2530 50  0000 C CNN
+F 2 "Housings_SSOP:TSSOP-8_4.4x3mm_Pitch0.65mm" H 5240 2330 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps2413.pdf" H 5240 2130 50  0001 L CNN
+F 4 "296-41732-1-ND" H 5240 2230 50  0001 L CNN "Digi-Key PN"
+	1    5090 3080
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1706
+U 1 1 5B2DC5E1
+P 5090 3760
+F 0 "#PWR1706" H 5090 3510 50  0001 C CNN
+F 1 "GND" H 5090 3610 50  0000 C CNN
+F 2 "" H 5090 3760 50  0001 C CNN
+F 3 "" H 5090 3760 50  0001 C CNN
+	1    5090 3760
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5090 3680 5090 3760
+Wire Wire Line
+	5090 3720 4990 3720
+Wire Wire Line
+	4990 3720 4990 3680
+Connection ~ 5090 3720
+$Comp
+L GND #PWR1704
+U 1 1 5B2DC657
+P 4690 3980
+F 0 "#PWR1704" H 4690 3730 50  0001 C CNN
+F 1 "GND" H 4690 3830 50  0000 C CNN
+F 2 "" H 4690 3980 50  0001 C CNN
+F 3 "" H 4690 3980 50  0001 C CNN
+	1    4690 3980
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Custom C1701
+U 1 1 5B2DC720
+P 4840 2290
+F 0 "C1701" H 4865 2390 50  0000 L CNN
+F 1 "2200pF" H 4690 2110 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0603" H 4878 2140 50  0001 C CNN
+F 3 "" H 4865 2390 50  0001 C CNN
+F 4 "0603" H 4690 2390 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4690 2290 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4690 2190 50  0000 R CNN "Dielectric"
+F 7 "PN" H 5265 2790 60  0001 C CNN "Digi-Key PN"
+	1    4840 2290
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4840 2480 4840 2440
+Wire Wire Line
+	5340 2480 5340 2290
+Wire Wire Line
+	4540 1910 4540 2480
+Wire Wire Line
+	4540 1990 5140 1990
+Wire Wire Line
+	4840 2140 4840 1990
+Connection ~ 4840 1990
+Wire Wire Line
+	5640 1990 5640 2480
+Wire Wire Line
+	5540 1990 7340 1990
+Wire Wire Line
+	5540 2480 5540 2440
+Wire Wire Line
+	5540 2440 6220 2440
+Connection ~ 5640 2440
+$Comp
+L TPS2413PWR U1702
+U 1 1 5B2DD167
+P 5090 6020
+F 0 "U1702" H 5290 5370 50  0000 C CNN
+F 1 "TPS2413PWR" H 5490 5470 50  0000 C CNN
+F 2 "Housings_SSOP:TSSOP-8_4.4x3mm_Pitch0.65mm" H 5240 5270 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps2413.pdf" H 5240 5070 50  0001 L CNN
+F 4 "296-41732-1-ND" H 5240 5170 50  0001 L CNN "Digi-Key PN"
+	1    5090 6020
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1707
+U 1 1 5B2DD16D
+P 5090 6700
+F 0 "#PWR1707" H 5090 6450 50  0001 C CNN
+F 1 "GND" H 5090 6550 50  0000 C CNN
+F 2 "" H 5090 6700 50  0001 C CNN
+F 3 "" H 5090 6700 50  0001 C CNN
+	1    5090 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5090 6620 5090 6700
+Wire Wire Line
+	5090 6660 4990 6660
+Wire Wire Line
+	4990 6660 4990 6620
+Connection ~ 5090 6660
+$Comp
+L GND #PWR1705
+U 1 1 5B2DD181
+P 4690 6920
+F 0 "#PWR1705" H 4690 6670 50  0001 C CNN
+F 1 "GND" H 4690 6770 50  0000 C CNN
+F 2 "" H 4690 6920 50  0001 C CNN
+F 3 "" H 4690 6920 50  0001 C CNN
+	1    4690 6920
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4840 5420 4840 5380
+Wire Wire Line
+	5340 5420 5340 5230
+Wire Wire Line
+	4540 4850 4540 5420
+Wire Wire Line
+	3690 4930 5140 4930
+Wire Wire Line
+	4840 5080 4840 4930
+Connection ~ 4840 4930
+Wire Wire Line
+	5640 4930 5640 5420
+Wire Wire Line
+	6670 4930 5540 4930
+Wire Wire Line
+	5540 5420 5540 5380
+Wire Wire Line
+	5540 5380 6170 5380
+Connection ~ 5640 5380
+Wire Wire Line
+	7340 1910 7340 2070
+Connection ~ 5640 1990
+$Comp
+L GND #PWR1711
+U 1 1 5B2DD788
+P 7340 2370
+F 0 "#PWR1711" H 7340 2120 50  0001 C CNN
+F 1 "GND" H 7340 2220 50  0000 C CNN
+F 2 "" H 7340 2370 50  0001 C CNN
+F 3 "" H 7340 2370 50  0001 C CNN
+	1    7340 2370
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6670 1920 6670 4930
+Connection ~ 6670 1990
+Connection ~ 5640 4930
+$Comp
+L +3.3V_MNG #PWR1710
+U 1 1 5B2DD8CE
+P 7340 1910
+F 0 "#PWR1710" H 7340 1760 50  0001 C CNN
+F 1 "+3.3V_MNG" H 7340 2050 50  0000 C CNN
+F 2 "" H 7340 1910 50  0000 C CNN
+F 3 "" H 7340 1910 50  0000 C CNN
+	1    7340 1910
+	1    0    0    -1  
+$EndComp
+Connection ~ 7340 1990
+$Comp
+L Battery_Cell BT1701
+U 1 1 5B2DDD33
+P 3690 5250
+F 0 "BT1701" H 3790 5350 50  0000 L CNN
+F 1 "BR-1632A/VAN" H 3790 5250 50  0000 L CNN
+F 2 "Custom Footprints Library:BR-1632A_VAN" V 3690 5310 50  0001 C CNN
+F 3 "" V 3690 5310 50  0001 C CNN
+F 4 "P024-ND" H 3690 5250 60  0001 C CNN "Digi-Key PN"
+	1    3690 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1702
+U 1 1 5B2DE1F8
+P 3690 5350
+F 0 "#PWR1702" H 3690 5100 50  0001 C CNN
+F 1 "GND" H 3690 5200 50  0000 C CNN
+F 2 "" H 3690 5350 50  0001 C CNN
+F 3 "" H 3690 5350 50  0001 C CNN
+	1    3690 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3690 4850 3690 5050
+Connection ~ 4540 4930
+$Comp
+L +3.3V #PWR1703
+U 1 1 5B2DE681
+P 4540 1910
+F 0 "#PWR1703" H 4540 1760 50  0001 C CNN
+F 1 "+3.3V" H 4540 2050 50  0000 C CNN
+F 2 "" H 4540 1910 50  0000 C CNN
+F 3 "" H 4540 1910 50  0000 C CNN
+	1    4540 1910
+	1    0    0    -1  
+$EndComp
+Connection ~ 4540 1990
+$Comp
+L C_Custom C1702
+U 1 1 5B2DF028
+P 4840 5230
+F 0 "C1702" H 4865 5330 50  0000 L CNN
+F 1 "2200pF" H 4690 5050 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0603" H 4878 5080 50  0001 C CNN
+F 3 "" H 4865 5330 50  0001 C CNN
+F 4 "0603" H 4690 5330 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4690 5230 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4690 5130 50  0000 R CNN "Dielectric"
+F 7 "PN" H 5265 5730 60  0001 C CNN "Digi-Key PN"
+	1    4840 5230
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CP_Tant_Custom C1705
+U 1 1 5B2E0247
+P 7340 2220
+F 0 "C1705" H 7365 2320 50  0000 L CNN
+F 1 "47uF" H 7365 2120 50  0000 L CNN
+F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow" H 7378 2070 50  0001 C CNN
+F 3 "" H 7365 2320 50  0001 C CNN
+F 4 "7343" H 7190 2320 50  0000 R CNN "display_footprint"
+F 5 "16V" H 7190 2220 50  0000 R CNN "Voltage"
+F 6 "10%" H 7190 2120 50  0000 R CNN "Tolerance"
+	1    7340 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR1701
+U 1 1 5B2E20C3
+P 3690 4850
+F 0 "#PWR1701" H 3690 4700 50  0001 C CNN
+F 1 "+BATT" H 3690 4990 50  0000 C CNN
+F 2 "" H 3690 4850 50  0001 C CNN
+F 3 "" H 3690 4850 50  0001 C CNN
+	1    3690 4850
+	1    0    0    -1  
+$EndComp
+Connection ~ 3690 4930
+$Comp
+L Res_Custom R1701
+U 1 1 5B333341
+P 4690 3830
+F 0 "R1701" V 4590 3830 50  0000 C CNN
+F 1 "1k" V 4690 3830 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4690 3830 50  0001 C CNN
+F 3 "" H 4690 3830 50  0001 C CNN
+F 4 "0603" H 4760 3730 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4760 3810 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 4750 3880 50  0000 L CNN "Wattage"
+	1    4690 3830
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Res_Custom R1702
+U 1 1 5B333382
+P 4690 6770
+F 0 "R1702" V 4590 6770 50  0000 C CNN
+F 1 "1k" V 4690 6770 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4690 6770 50  0001 C CNN
+F 3 "" H 4690 6770 50  0001 C CNN
+F 4 "0603" H 4760 6670 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4760 6750 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 4750 6820 50  0000 L CNN "Wattage"
+	1    4690 6770
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Q_NMOS_GDSD Q1701
+U 1 1 5B331A10
+P 5340 2090
+F 0 "Q1701" V 5620 2090 50  0000 C CNN
+F 1 "PMT560ENEA" V 5710 2090 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 5540 2190 50  0001 C CNN
+F 3 "" H 5340 2090 50  0001 C CNN
+	1    5340 2090
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5140 1890 5100 1890
+Wire Wire Line
+	5100 1890 5100 1990
+Connection ~ 5100 1990
+$Comp
+L Q_NMOS_GDSD Q1702
+U 1 1 5B331B07
+P 5340 5030
+F 0 "Q1702" V 5620 5030 50  0000 C CNN
+F 1 "PMT560ENEA" V 5710 5030 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 5540 5130 50  0001 C CNN
+F 3 "" H 5340 5030 50  0001 C CNN
+	1    5340 5030
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5140 4830 5100 4830
+Wire Wire Line
+	5100 4830 5100 4930
+Connection ~ 5100 4930
+$Comp
+L C_Custom C1704
+U 1 1 5B347EAC
+P 6220 2720
+F 0 "C1704" H 6245 2820 50  0000 L CNN
+F 1 "10nF" H 6245 2620 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 6258 2570 50  0001 C CNN
+F 3 "" H 6245 2820 50  0001 C CNN
+F 4 "0603" H 6070 2820 50  0000 R CNN "display_footprint"
+F 5 "50V" H 6070 2720 50  0000 R CNN "Voltage"
+F 6 "X7R" H 6070 2620 50  0000 R CNN "Dielectric"
+	1    6220 2720
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1709
+U 1 1 5B347EB3
+P 6220 2870
+F 0 "#PWR1709" H 6220 2620 50  0001 C CNN
+F 1 "GND" H 6220 2720 50  0000 C CNN
+F 2 "" H 6220 2870 50  0001 C CNN
+F 3 "" H 6220 2870 50  0001 C CNN
+	1    6220 2870
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6220 2440 6220 2570
+$Comp
+L C_Custom C1703
+U 1 1 5B347F85
+P 6170 5700
+F 0 "C1703" H 6195 5800 50  0000 L CNN
+F 1 "10nF" H 6195 5600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 6208 5550 50  0001 C CNN
+F 3 "" H 6195 5800 50  0001 C CNN
+F 4 "0603" H 6020 5800 50  0000 R CNN "display_footprint"
+F 5 "50V" H 6020 5700 50  0000 R CNN "Voltage"
+F 6 "X7R" H 6020 5600 50  0000 R CNN "Dielectric"
+	1    6170 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1708
+U 1 1 5B347F8C
+P 6170 5850
+F 0 "#PWR1708" H 6170 5600 50  0001 C CNN
+F 1 "GND" H 6170 5700 50  0000 C CNN
+F 2 "" H 6170 5850 50  0001 C CNN
+F 3 "" H 6170 5850 50  0001 C CNN
+	1    6170 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6170 5380 6170 5550
+$Comp
+L PWR_FLAG #FLG1702
+U 1 1 5B3CC817
+P 6670 1920
+F 0 "#FLG1702" H 6670 1995 50  0001 C CNN
+F 1 "PWR_FLAG" H 6670 2070 50  0000 C CNN
+F 2 "" H 6670 1920 50  0001 C CNN
+F 3 "" H 6670 1920 50  0001 C CNN
+	1    6670 1920
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG1701
+U 1 1 5B3CCD8E
+P 4540 4850
+F 0 "#FLG1701" H 4540 4925 50  0001 C CNN
+F 1 "PWR_FLAG" H 4540 5000 50  0000 C CNN
+F 2 "" H 4540 4850 50  0001 C CNN
+F 3 "" H 4540 4850 50  0001 C CNN
+	1    4540 4850
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

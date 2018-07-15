@@ -1,193 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Custom Library
-LIBS:4xxx
-LIBS:4xxx_IEEE
-LIBS:74xGxx
-LIBS:74xx
-LIBS:74xx_IEEE
-LIBS:Amplifier_Audio
-LIBS:Amplifier_Buffer
-LIBS:Amplifier_Current
-LIBS:Amplifier_Difference
-LIBS:Amplifier_Instrumentation
-LIBS:Amplifier_Operational
-LIBS:Amplifier_Video
-LIBS:Analog
-LIBS:Analog_ADC
-LIBS:Analog_DAC
-LIBS:Analog_Switch
-LIBS:Audio
-LIBS:Battery_Management
-LIBS:Comparator
-LIBS:Connector
-LIBS:Connector_Generic
-LIBS:Connector_Generic_MountingPin
-LIBS:Connector_Generic_Shielded
-LIBS:Connector_Specialized
-LIBS:Converter_ACDC
-LIBS:Converter_DCDC
-LIBS:CPLD_Altera
-LIBS:CPLD_Xilinx
-LIBS:CPU
-LIBS:CPU_NXP_6800
-LIBS:CPU_NXP_68000
-LIBS:CPU_PowerPC
-LIBS:Device
-LIBS:Diode
-LIBS:Diode_Bridge
-LIBS:Diode_Laser
-LIBS:Display_Character
-LIBS:Display_Graphic
-LIBS:Driver_Display
-LIBS:Driver_FET
-LIBS:Driver_LED
-LIBS:Driver_Motor
-LIBS:Driver_Relay
-LIBS:DSP_Freescale
-LIBS:DSP_Microchip_DSPIC33
-LIBS:DSP_Motorola
-LIBS:DSP_Texas
-LIBS:Filter
-LIBS:FPGA_Actel
-LIBS:FPGA_Microsemi
-LIBS:FPGA_Xilinx
-LIBS:FPGA_Xilinx_Artix7
-LIBS:FPGA_Xilinx_Kintex7
-LIBS:FPGA_Xilinx_Spartan6
-LIBS:FPGA_Xilinx_Virtex5
-LIBS:FPGA_Xilinx_Virtex6
-LIBS:FPGA_Xilinx_Virtex7
-LIBS:GPU
-LIBS:Graphic
-LIBS:Interface
-LIBS:Interface_CAN_LIN
-LIBS:Interface_CurrentLoop
-LIBS:Interface_Ethernet
-LIBS:Interface_Expansion
-LIBS:Interface_HID
-LIBS:Interface_LineDriver
-LIBS:Interface_Optical
-LIBS:Interface_Telecom
-LIBS:Interface_UART
-LIBS:Interface_USB
-LIBS:Isolator
-LIBS:Isolator_Analog
-LIBS:Jumper
-LIBS:LED
-LIBS:Logic_LevelTranslator
-LIBS:Logic_Programmable
-LIBS:MCU_AnalogDevices
-LIBS:MCU_Cypress
-LIBS:MCU_Espressif
-LIBS:MCU_Infineon
-LIBS:MCU_Intel
-LIBS:MCU_Microchip_8051
-LIBS:MCU_Microchip_ATmega
-LIBS:MCU_Microchip_ATtiny
-LIBS:MCU_Microchip_AVR
-LIBS:MCU_Microchip_PIC10
-LIBS:MCU_Microchip_PIC12
-LIBS:MCU_Microchip_PIC16
-LIBS:MCU_Microchip_PIC18
-LIBS:MCU_Microchip_PIC24
-LIBS:MCU_Microchip_PIC32
-LIBS:MCU_Microchip_SAME
-LIBS:MCU_Microchip_SAML
-LIBS:MCU_Module
-LIBS:MCU_Nordic
-LIBS:MCU_NXP_ColdFire
-LIBS:MCU_NXP_HC11
-LIBS:MCU_NXP_HC12
-LIBS:MCU_NXP_HCS12
-LIBS:MCU_NXP_Kinetis
-LIBS:MCU_NXP_LPC
-LIBS:MCU_NXP_MAC7100
-LIBS:MCU_NXP_MCore
-LIBS:MCU_NXP_S08
-LIBS:MCU_Parallax
-LIBS:MCU_SiFive
-LIBS:MCU_SiliconLabs
-LIBS:MCU_ST_STM8
-LIBS:MCU_ST_STM32
-LIBS:MCU_ST_STM32F0
-LIBS:MCU_ST_STM32F1
-LIBS:MCU_ST_STM32F2
-LIBS:MCU_ST_STM32F3
-LIBS:MCU_ST_STM32F4
-LIBS:MCU_ST_STM32F7
-LIBS:MCU_ST_STM32H7
-LIBS:MCU_ST_STM32L0
-LIBS:MCU_ST_STM32L1
-LIBS:MCU_ST_STM32L4
-LIBS:MCU_ST_STM32L4+
-LIBS:MCU_Texas
-LIBS:MCU_Texas_MSP430
-LIBS:Mechanical
-LIBS:Memory_Controller
-LIBS:Memory_EEPROM
-LIBS:Memory_EPROM
-LIBS:Memory_Flash
-LIBS:Memory_NVRAM
-LIBS:Memory_RAM
-LIBS:Memory_ROM
-LIBS:Memory_UniqueID
-LIBS:Motor
-LIBS:Oscillator
-LIBS:Potentiometer_Digital
-LIBS:power
-LIBS:Power_Management
-LIBS:Power_Protection
-LIBS:Power_Supervisor
-LIBS:pspice
-LIBS:Reference_Current
-LIBS:Reference_Voltage
-LIBS:Regulator_Controller
-LIBS:Regulator_Current
-LIBS:Regulator_Linear
-LIBS:Regulator_SwitchedCapacitor
-LIBS:Regulator_Switching
-LIBS:Relay
-LIBS:Relay_SolidState
-LIBS:RF
-LIBS:RF_AM_FM
-LIBS:RF_Amplifier
-LIBS:RF_Bluetooth
-LIBS:RF_GPS
-LIBS:RF_Mixer
-LIBS:RF_Module
-LIBS:RF_RFID
-LIBS:RF_Switch
-LIBS:RF_WiFi
-LIBS:RF_ZigBee
-LIBS:Sensor
-LIBS:Sensor_Audio
-LIBS:Sensor_Current
-LIBS:Sensor_Gas
-LIBS:Sensor_Humidity
-LIBS:Sensor_Magnetic
-LIBS:Sensor_Motion
-LIBS:Sensor_Optical
-LIBS:Sensor_Pressure
-LIBS:Sensor_Proximity
-LIBS:Sensor_Temperature
-LIBS:Sensor_Touch
-LIBS:Sensor_Voltage
-LIBS:Switch
-LIBS:Timer
-LIBS:Timer_PLL
-LIBS:Timer_RTC
-LIBS:Transformer
-LIBS:Transistor_Array
-LIBS:Transistor_BJT
-LIBS:Transistor_FET
-LIBS:Transistor_IGBT
-LIBS:Triac_Thyristor
-LIBS:Valve
-LIBS:Video
-LIBS:nixie
-LIBS:vfd
+EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -202,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L BARREL_JACK J201
+L VFD_Clock-rescue:BARREL_JACK J201
 U 1 1 58B20C4F
 P 1360 2060
 F 0 "J201" H 1360 2310 50  0000 C CNN
@@ -213,7 +26,7 @@ F 3 "" H 1360 2060 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR202
+L power:GND #PWR202
 U 1 1 58B20F99
 P 1740 2240
 F 0 "#PWR202" H 1740 1990 50  0001 C CNN
@@ -226,7 +39,7 @@ $EndComp
 Text Label 1690 1960 0    50   ~ 0
 POS24Vin_Unfused
 $Comp
-L GND #PWR201
+L power:GND #PWR201
 U 1 1 58B2DD85
 P 1510 3010
 F 0 "#PWR201" H 1510 2760 50  0001 C CNN
@@ -237,7 +50,7 @@ F 3 "" H 1510 3010 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG201
+L power:PWR_FLAG #FLG201
 U 1 1 58B2DDD2
 P 1510 3010
 F 0 "#FLG201" H 1510 3105 50  0001 C CNN
@@ -252,7 +65,7 @@ Input Overvoltage/Undervoltage/Reverse Polarity Lockout
 Text Notes 1680 1730 0    50   ~ 0
 VIN:\nMIN 22V,\nNOM 24V,\nMAX 26V
 $Comp
-L Polyfuse_custom F201
+L Custom-Library:Polyfuse_custom F201
 U 1 1 5A2838E6
 P 2700 1960
 F 0 "F201" V 2600 1960 50  0000 C CNN
@@ -266,7 +79,7 @@ F 6 "507-1080-2-ND" V 2700 1960 60  0001 C CNN "Digi-Key PN"
 	0    1    1    0   
 $EndComp
 $Comp
-L ACS722xLCTR-05AB U201
+L Sensor_Current:ACS722xLCTR-05AB U201
 U 1 1 5B2E6A24
 P 3350 5110
 F 0 "U201" V 3220 4730 50  0000 R CNN
@@ -277,7 +90,7 @@ F 3 "" H 3350 5110 50  0001 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L TPS2411PWR U203
+L Custom-Library:TPS2411PWR U203
 U 1 1 5B2E6E5F
 P 6030 3090
 F 0 "U203" H 6230 2440 50  0000 C CNN
@@ -289,7 +102,7 @@ F 4 "296-41730-1-ND" H 6180 2240 50  0001 L CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Si2319CDS Q201
+L Transistor_FET:Si2319CDS Q201
 U 1 1 5B2E76FD
 P 3340 2060
 F 0 "Q201" V 3680 2060 50  0000 C CNN
@@ -300,7 +113,7 @@ F 3 "" H 3340 2060 50  0001 L CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L ZENER_Custom Z201
+L Custom-Library:ZENER_Custom Z201
 U 1 1 5B2E7C77
 P 3620 2240
 F 0 "Z201" V 3810 2140 50  0000 R CNN
@@ -313,7 +126,7 @@ F 5 "10V" V 3720 2140 50  0000 R CNN "Voltage"
 	0    -1   1    0   
 $EndComp
 $Comp
-L R_Custom R202
+L Custom-Library:R_Custom R202
 U 1 1 5B2E8755
 P 3340 2720
 F 0 "R202" H 3280 2720 50  0000 R CNN
@@ -327,7 +140,7 @@ F 6 "1/10W" H 3410 2650 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR209
+L power:GND #PWR209
 U 1 1 5B2E8796
 P 3340 2870
 F 0 "#PWR209" H 3340 2620 50  0001 C CNN
@@ -338,7 +151,7 @@ F 3 "" H 3340 2870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C207
+L Custom-Library:C_Custom C207
 U 1 1 5B2EA44A
 P 5480 2220
 F 0 "C207" H 5330 2400 50  0000 R CNN
@@ -353,7 +166,7 @@ F 7 "PN" H 5905 2720 60  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L C_Custom C208
+L Custom-Library:C_Custom C208
 U 1 1 5B2EB831
 P 6030 2220
 F 0 "C208" H 5880 2400 50  0000 R CNN
@@ -368,7 +181,7 @@ F 7 "PN" H 6455 2720 60  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR220
+L power:GND #PWR220
 U 1 1 5B2EC6C0
 P 6030 3770
 F 0 "#PWR220" H 6030 3520 50  0001 C CNN
@@ -379,7 +192,7 @@ F 3 "" H 6030 3770 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R208
+L Custom-Library:R_Custom R208
 U 1 1 5B2ECCE7
 P 5630 3840
 F 0 "R208" H 5570 3840 50  0000 R CNN
@@ -393,7 +206,7 @@ F 6 "1/10W" H 5700 3770 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR219
+L power:GND #PWR219
 U 1 1 5B2ECCED
 P 5630 3990
 F 0 "#PWR219" H 5630 3740 50  0001 C CNN
@@ -404,7 +217,7 @@ F 3 "" H 5630 3990 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R206
+L Custom-Library:R_Custom R206
 U 1 1 5B2ED1F1
 P 4730 3280
 F 0 "R206" H 4670 3280 50  0000 R CNN
@@ -418,7 +231,7 @@ F 6 "1/10W" H 4800 3210 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R_Custom R205
+L Custom-Library:R_Custom R205
 U 1 1 5B2ED29D
 P 4730 2860
 F 0 "R205" H 4670 2860 50  0000 R CNN
@@ -432,7 +245,7 @@ F 6 "1/10W" H 4800 2790 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R_Custom R207
+L Custom-Library:R_Custom R207
 U 1 1 5B2ED32A
 P 4730 3720
 F 0 "R207" H 4670 3720 50  0000 R CNN
@@ -446,7 +259,7 @@ F 6 "1/10W" H 4800 3650 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR216
+L power:GND #PWR216
 U 1 1 5B2ED3BB
 P 4730 3870
 F 0 "#PWR216" H 4730 3620 50  0001 C CNN
@@ -457,7 +270,7 @@ F 3 "" H 4730 3870 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR213
+L power:GND #PWR213
 U 1 1 5B2EE5E9
 P 3790 5150
 F 0 "#PWR213" H 3790 4900 50  0001 C CNN
@@ -468,7 +281,7 @@ F 3 "" H 3790 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR207
+L Custom-Library:+3.3V #PWR207
 U 1 1 5B2EF54E
 P 2910 5070
 F 0 "#PWR207" H 2910 4920 50  0001 C CNN
@@ -479,7 +292,7 @@ F 3 "" H 2910 5070 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +24V #PWR210
+L power:+24V #PWR210
 U 1 1 5B2EFAB4
 P 3450 4630
 F 0 "#PWR210" H 3450 4480 50  0001 C CNN
@@ -490,7 +303,7 @@ F 3 "" H 3450 4630 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR215
+L power:GND #PWR215
 U 1 1 5B2F017A
 P 4300 4990
 F 0 "#PWR215" H 4300 4740 50  0001 C CNN
@@ -501,7 +314,7 @@ F 3 "" H 4300 4990 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP_Tant_Custom C205
+L Custom-Library:CP_Tant_Custom C205
 U 1 1 5B2F0189
 P 4300 4840
 F 0 "C205" H 4325 4940 50  0000 L CNN
@@ -515,7 +328,7 @@ F 6 "10%" H 4150 4740 50  0000 R CNN "Tolerance"
 	1    0    0    -1  
 $EndComp
 $Comp
-L +24V #PWR214
+L power:+24V #PWR214
 U 1 1 5B2F01FA
 P 4300 4690
 F 0 "#PWR214" H 4300 4540 50  0001 C CNN
@@ -526,7 +339,7 @@ F 3 "" H 4300 4690 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C203
+L Custom-Library:C_Custom C203
 U 1 1 5B2F085B
 P 2490 5290
 F 0 "C203" H 2515 5390 50  0000 L CNN
@@ -540,7 +353,7 @@ F 6 "X7R" H 2340 5190 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR205
+L Custom-Library:+3.3V #PWR205
 U 1 1 5B2F0884
 P 2490 5140
 F 0 "#PWR205" H 2490 4990 50  0001 C CNN
@@ -551,7 +364,7 @@ F 3 "" H 2490 5140 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR206
+L power:GND #PWR206
 U 1 1 5B2F08CF
 P 2490 5440
 F 0 "#PWR206" H 2490 5190 50  0001 C CNN
@@ -562,7 +375,7 @@ F 3 "" H 2490 5440 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NCS325 U202
+L Amplifier_Operational:NCS325 U202
 U 1 1 5B2F0D9A
 P 3560 6200
 F 0 "U202" H 3560 6450 50  0000 L CNN
@@ -573,7 +386,7 @@ F 3 "" H 3710 6350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR211
+L Custom-Library:+3.3V #PWR211
 U 1 1 5B2F1009
 P 3460 5900
 F 0 "#PWR211" H 3460 5750 50  0001 C CNN
@@ -584,7 +397,7 @@ F 3 "" H 3460 5900 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_Custom R201
+L Custom-Library:R_Custom R201
 U 1 1 5B2F158E
 P 3150 7050
 F 0 "R201" H 3090 7050 50  0000 R CNN
@@ -598,7 +411,7 @@ F 6 "1/10W" H 3220 6980 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR208
+L power:GND #PWR208
 U 1 1 5B2F17E4
 P 3150 7200
 F 0 "#PWR208" H 3150 6950 50  0001 C CNN
@@ -609,7 +422,7 @@ F 3 "" H 3150 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR212
+L power:GND #PWR212
 U 1 1 5B2F1CEA
 P 3460 6500
 F 0 "#PWR212" H 3460 6250 50  0001 C CNN
@@ -620,7 +433,7 @@ F 3 "" H 3460 6500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR204
+L power:GND #PWR204
 U 1 1 5B2F1EAC
 P 2360 6420
 F 0 "#PWR204" H 2360 6170 50  0001 C CNN
@@ -631,7 +444,7 @@ F 3 "" H 2360 6420 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C201
+L Custom-Library:C_Custom C201
 U 1 1 5B2F1EBF
 P 2040 6190
 F 0 "C201" H 2065 6290 50  0000 L CNN
@@ -645,7 +458,7 @@ F 6 "X7R" H 1890 6090 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C204
+L Custom-Library:C_Custom C204
 U 1 1 5B2F1EC9
 P 2680 6190
 F 0 "C204" H 2705 6290 50  0000 L CNN
@@ -659,7 +472,7 @@ F 6 "X7R" H 2530 6090 50  0001 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Custom C202
+L Custom-Library:C_Custom C202
 U 1 1 5B2F1ED3
 P 2360 6190
 F 0 "C202" H 2385 6290 50  0000 L CNN
@@ -673,7 +486,7 @@ F 6 "X7R" H 2210 6090 50  0001 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V_MNG #PWR203
+L Custom-Library:+3.3V_MNG #PWR203
 U 1 1 5B2F1EDA
 P 2360 5960
 F 0 "#PWR203" H 2360 5810 50  0001 C CNN
@@ -688,7 +501,7 @@ POS24_CS
 Text GLabel 2990 4550 0    60   Input ~ 0
 POS24_CS
 $Comp
-L R_Custom R203
+L Custom-Library:R_Custom R203
 U 1 1 5B2F3FF9
 P 3720 6840
 F 0 "R203" V 3620 6840 50  0000 C CNN
@@ -702,7 +515,7 @@ F 6 "1/16W" V 4020 6840 50  0000 C CNN "Wattage"
 	0    1    1    0   
 $EndComp
 $Comp
-L R_Custom R204
+L Custom-Library:R_Custom R204
 U 1 1 5B2F42A0
 P 4460 6200
 F 0 "R204" V 4360 6200 50  0000 C CNN
@@ -716,7 +529,7 @@ F 6 "1/16W" V 4760 6200 50  0000 C CNN "Wattage"
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Custom C206
+L Custom-Library:C_Custom C206
 U 1 1 5B2F47F9
 P 5010 6410
 F 0 "C206" H 5035 6510 50  0000 L CNN
@@ -730,7 +543,7 @@ F 6 "X7R" H 4860 6310 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR218
+L power:GND #PWR218
 U 1 1 5B2F487E
 P 5010 6560
 F 0 "#PWR218" H 5010 6310 50  0001 C CNN
@@ -743,7 +556,7 @@ $EndComp
 Text GLabel 5090 6200 2    60   Output ~ 0
 POS24_CS_ADC
 $Comp
-L R_Custom R209
+L Custom-Library:R_Custom R209
 U 1 1 5B2F5DA0
 P 7490 2510
 F 0 "R209" H 7430 2510 50  0000 R CNN
@@ -759,7 +572,7 @@ $EndComp
 NoConn ~ 7080 3190
 NoConn ~ 7080 3490
 $Comp
-L +3.3V #PWR221
+L Custom-Library:+3.3V #PWR221
 U 1 1 5B2F6886
 P 7490 2360
 F 0 "#PWR221" H 7490 2210 50  0001 C CNN
@@ -772,7 +585,7 @@ $EndComp
 Text GLabel 7570 2890 2    60   Output ~ 0
 POS24_PGOOD
 $Comp
-L Q_NMOS_GDSD Q202
+L Device:Q_NMOS_GDSD Q202
 U 1 1 5B33733D
 P 6580 2060
 F 0 "Q202" V 6860 2060 50  0000 C CNN
@@ -783,7 +596,7 @@ F 3 "" H 6580 2060 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	1740 2060 1740 2240
+	1740 2060 1740 2160
 Wire Wire Line
 	1660 1960 2550 1960
 Wire Wire Line
@@ -796,13 +609,13 @@ Wire Wire Line
 Wire Wire Line
 	3620 2040 3620 1960
 Wire Wire Line
-	3540 1960 6380 1960
+	3540 1960 3620 1960
 Wire Wire Line
 	3620 2440 3620 2500
 Wire Wire Line
 	3620 2500 3340 2500
 Wire Wire Line
-	3340 2260 3340 2570
+	3340 2260 3340 2500
 Connection ~ 3340 2500
 Wire Wire Line
 	5180 1960 5180 2490
@@ -816,7 +629,7 @@ Wire Wire Line
 Wire Wire Line
 	6580 2260 6580 2490
 Wire Wire Line
-	6880 1960 6880 2490
+	6880 1960 6880 2410
 Wire Wire Line
 	6780 2490 6780 2410
 Wire Wire Line
@@ -828,7 +641,7 @@ Wire Wire Line
 	6030 2370 6030 2490
 Connection ~ 6030 1960
 Wire Wire Line
-	6030 3690 6030 3770
+	6030 3690 6030 3730
 Wire Wire Line
 	6030 3730 5930 3730
 Wire Wire Line
@@ -837,15 +650,15 @@ Connection ~ 6030 3730
 Wire Wire Line
 	4980 3490 4730 3490
 Wire Wire Line
-	4730 3430 4730 3570
+	4730 3430 4730 3490
 Connection ~ 4730 3490
 Wire Wire Line
-	4730 3010 4730 3130
+	4730 3010 4730 3090
 Wire Wire Line
 	4730 3090 4980 3090
 Connection ~ 4730 3090
 Wire Wire Line
-	4730 1880 4730 2710
+	4730 1880 4730 1960
 Connection ~ 4730 1960
 Connection ~ 6880 1960
 Wire Wire Line
@@ -857,7 +670,7 @@ Wire Wire Line
 Wire Wire Line
 	3450 5600 2910 5600
 Wire Wire Line
-	2910 5600 2910 5070
+	2910 5600 2910 5110
 Wire Wire Line
 	2910 5110 2950 5110
 Connection ~ 2910 5110
@@ -868,7 +681,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 6100 3150 5510
 Wire Wire Line
-	3150 6300 3150 6900
+	3150 6300 3150 6840
 Wire Wire Line
 	3150 6300 3260 6300
 Wire Wire Line
@@ -877,20 +690,20 @@ Connection ~ 2360 6000
 Wire Wire Line
 	2680 6000 2680 6040
 Wire Wire Line
-	2040 6000 2680 6000
+	2040 6000 2360 6000
 Wire Wire Line
-	2360 5960 2360 6040
+	2360 5960 2360 6000
 Wire Wire Line
 	2040 6380 2040 6340
 Connection ~ 2360 6380
 Wire Wire Line
 	2680 6380 2680 6340
 Wire Wire Line
-	2040 6380 2680 6380
+	2040 6380 2360 6380
 Wire Wire Line
-	2360 6340 2360 6420
+	2360 6340 2360 6380
 Wire Wire Line
-	6780 1960 8350 1960
+	6780 1960 6880 1960
 Wire Wire Line
 	2990 4550 3150 4550
 Wire Wire Line
@@ -903,17 +716,17 @@ Wire Wire Line
 Wire Wire Line
 	4150 6840 4150 6200
 Wire Wire Line
-	3860 6200 4310 6200
+	3860 6200 4150 6200
 Connection ~ 4150 6200
 Wire Wire Line
 	5010 6260 5010 6200
 Wire Wire Line
-	4610 6200 5090 6200
+	4610 6200 5010 6200
 Connection ~ 5010 6200
 Wire Wire Line
 	7490 2660 7490 2890
 Wire Wire Line
-	7080 2890 7570 2890
+	7080 2890 7490 2890
 Connection ~ 7490 2890
 Wire Wire Line
 	6380 1860 6340 1860
@@ -921,7 +734,7 @@ Wire Wire Line
 	6340 1860 6340 1960
 Connection ~ 6340 1960
 $Comp
-L C_Custom C209
+L Custom-Library:C_Custom C209
 U 1 1 5B347148
 P 8100 2190
 F 0 "C209" H 8125 2290 50  0000 L CNN
@@ -935,7 +748,7 @@ F 6 "X7R" H 7950 2090 50  0000 R CNN "Dielectric"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR222
+L power:GND #PWR222
 U 1 1 5B3471ED
 P 8100 2340
 F 0 "#PWR222" H 8100 2090 50  0001 C CNN
@@ -949,7 +762,7 @@ Wire Wire Line
 	8100 2040 8100 1960
 Connection ~ 8100 1960
 $Comp
-L PWR_FLAG #FLG202
+L power:PWR_FLAG #FLG202
 U 1 1 5B3CC109
 P 4730 1880
 F 0 "#FLG202" H 4730 1955 50  0001 C CNN
@@ -960,7 +773,7 @@ F 3 "" H 4730 1880 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +24V #PWR217
+L power:+24V #PWR217
 U 1 1 5B3CE14F
 P 4880 4690
 F 0 "#PWR217" H 4880 4540 50  0001 C CNN
@@ -971,7 +784,7 @@ F 3 "" H 4880 4690 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L PWR_FLAG #FLG203
+L power:PWR_FLAG #FLG203
 U 1 1 5B3CE26C
 P 4880 4690
 F 0 "#FLG203" H 4880 4765 50  0001 C CNN
@@ -981,4 +794,52 @@ F 3 "" H 4880 4690 50  0001 C CNN
 	1    4880 4690
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1740 2160 1740 2240
+Wire Wire Line
+	3340 2500 3340 2570
+Wire Wire Line
+	3620 1960 4730 1960
+Wire Wire Line
+	5180 1960 5480 1960
+Wire Wire Line
+	5480 1960 6030 1960
+Wire Wire Line
+	6880 2410 6880 2490
+Wire Wire Line
+	6030 1960 6340 1960
+Wire Wire Line
+	6030 3730 6030 3770
+Wire Wire Line
+	4730 3490 4730 3570
+Wire Wire Line
+	4730 3090 4730 3130
+Wire Wire Line
+	4730 1960 4730 2710
+Wire Wire Line
+	4730 1960 5180 1960
+Wire Wire Line
+	6880 1960 8100 1960
+Wire Wire Line
+	2910 5110 2910 5070
+Wire Wire Line
+	2360 6000 2680 6000
+Wire Wire Line
+	2360 6000 2360 6040
+Wire Wire Line
+	2360 6380 2680 6380
+Wire Wire Line
+	2360 6380 2360 6420
+Wire Wire Line
+	3150 6840 3150 6900
+Wire Wire Line
+	4150 6200 4310 6200
+Wire Wire Line
+	5010 6200 5090 6200
+Wire Wire Line
+	7490 2890 7570 2890
+Wire Wire Line
+	6340 1960 6380 1960
+Wire Wire Line
+	8100 1960 8350 1960
 $EndSCHEMATC
