@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 21
+Sheet 1 22
 Title ""
 Date ""
 Rev ""
@@ -140,4 +140,10 @@ Text Notes 730  5960 0    115  ~ 0
 02.\n\n03.\n\n04.\n\n05.\n\n06.\n\n07.\n\n08.\n\n09.\n\n10.\n\n11.\n\n12.\n\n13.
 Text Notes 3180 5960 0    115  ~ 0
 14.\n\n15.\n\n16.\n\n17.\n\n18.\n\n19.\n\n20.\n\n21.\n\n22.\n\n23.\n\n24.\n\n25.
+$Sheet
+S 3690 4730 500  150 
+U 5B4B0915
+F0 "Tube Life Timer" 60
+F1 "Tube_Life_Timer.sch" 60
+$EndSheet
 $EndSCHEMATC

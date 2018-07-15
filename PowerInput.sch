@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 21
+Sheet 2 22
 Title "Power Input"
 Date "2017-03-06"
 Rev "2"
