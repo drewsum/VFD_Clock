@@ -84,33 +84,33 @@ F 3 "" H 7780 3720 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8040 4100 7230 4100
+	8040 4200 7230 4200
 Wire Wire Line
-	7230 4020 7230 4100
+	7230 4020 7230 4200
 Wire Wire Line
 	8040 4300 7780 4300
 Wire Wire Line
 	7780 4300 7780 4020
-Connection ~ 7230 4100
+Connection ~ 7230 4200
 Connection ~ 7780 4300
-Text GLabel 8340 4100 2    60   Input ~ 0
+Text GLabel 8340 4200 2    60   Input ~ 0
 IIC_SCL
 Text GLabel 8340 4300 2    60   BiDi ~ 0
 IIC_SDA
 $Comp
 L VFD_Clock-rescue:Res_Custom R?
 U 1 1 5B5056D6
-P 8190 4100
+P 8190 4200
 AR Path="/5A0A42E8/5B5056D6" Ref="R?"  Part="1" 
 AR Path="/5B4B0915/5B5056D6" Ref="R?"  Part="1" 
-F 0 "R?" V 8090 4100 50  0000 C CNN
-F 1 "0" V 8190 4100 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 8190 4100 50  0001 C CNN
-F 3 "" H 8190 4100 50  0001 C CNN
-F 4 "0402" V 8290 4100 50  0001 C CNN "display_footprint"
-F 5 "1%" V 8390 4100 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 8490 4100 50  0001 C CNN "Wattage"
-	1    8190 4100
+F 0 "R?" V 8090 4200 50  0000 C CNN
+F 1 "0" V 8190 4200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8190 4200 50  0001 C CNN
+F 3 "" H 8190 4200 50  0001 C CNN
+F 4 "0402" V 8290 4200 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8390 4200 50  0001 C CNN "Tolerance"
+F 6 "1/16W" V 8490 4200 50  0001 C CNN "Wattage"
+	1    8190 4200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -162,7 +162,7 @@ F 6 "1/10W" H 7300 3800 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	7230 4100 5950 4100
+	7230 4200 5950 4200
 Wire Wire Line
 	7780 4300 5950 4300
 $Comp
