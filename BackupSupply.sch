@@ -579,7 +579,7 @@ Connection ~ 940  3450
 Wire Wire Line
 	2100 5050 1440 5050
 Text GLabel 1360 5050 0    60   Output ~ 0
-CAP_PGOOD
+HOLDUP_PGOOD
 Wire Wire Line
 	1360 5050 1440 5050
 Connection ~ 1440 5050
@@ -844,11 +844,50 @@ Wire Wire Line
 Text GLabel 8390 4210 2    60   Output ~ 0
 ~POS3P3_UV
 Text GLabel 8390 4310 2    60   Output ~ 0
-~CAP_UV
+~HOLDUP_UV
 Wire Wire Line
 	8390 4210 7610 4210
 Connection ~ 7610 4210
 Wire Wire Line
 	8390 4310 8310 4310
 Connection ~ 8310 4310
+$Comp
+L Custom_Library:VHU #PWR?
+U 1 1 5B50B4E4
+P 4260 3070
+F 0 "#PWR?" H 4260 2920 50  0001 C CNN
+F 1 "VHU" H 4260 3220 50  0000 C CNN
+F 2 "" H 4260 3070 50  0001 C CNN
+F 3 "" H 4260 3070 50  0001 C CNN
+	1    4260 3070
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4260 3070 4260 3150
+Text GLabel 9730 4420 3    60   Output ~ 0
+~HOLDUP_UV
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B51014B
+P 9730 4420
+F 0 "TP?" H 9730 4570 50  0000 C CNN
+F 1 "TP" H 9730 4570 50  0001 C CNN
+F 2 "" H 9730 4420 60  0000 C CNN
+F 3 "" H 9730 4420 60  0000 C CNN
+	1    9730 4420
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B51077B
+P 4960 3070
+F 0 "TP?" H 4960 3220 50  0000 C CNN
+F 1 "TP" H 4960 3220 50  0001 C CNN
+F 2 "" H 4960 3070 60  0000 C CNN
+F 3 "" H 4960 3070 60  0000 C CNN
+	1    4960 3070
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4960 3070 4960 3150
 $EndSCHEMATC

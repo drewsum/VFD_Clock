@@ -218,7 +218,7 @@ USB_UART_TX
 Text GLabel 6260 3630 2    60   Input ~ 0
 USB_UART_RX
 Text GLabel 3760 2330 0    60   Input ~ 0
-~USB_DTR
+USB_DTR
 $Comp
 L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR304
 U 1 1 5A4BF609
@@ -509,20 +509,6 @@ F 3 "" H 1620 6890 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom-Library:CP_Tant_Custom C301
-U 1 1 5AEE7C86
-P 1620 7040
-F 0 "C301" H 1645 7140 50  0000 L CNN
-F 1 "47uF" H 1645 6940 50  0000 L CNN
-F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow" H 1658 6890 50  0001 C CNN
-F 3 "" H 1645 7140 50  0001 C CNN
-F 4 "7343" H 1470 7140 50  0000 R CNN "display_footprint"
-F 5 "16V" H 1470 7040 50  0000 R CNN "Voltage"
-F 6 "10%" H 1470 6940 50  0000 R CNN "Tolerance"
-	1    1620 7040
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR306
 U 1 1 5AEE8EC0
 P 3230 7190
@@ -604,14 +590,8 @@ F 3 "" H 3230 6730 50  0000 C CNN
 	1    3230 6730
 	1    0    0    -1  
 $EndComp
-Text GLabel 3760 3530 0    60   UnSpc ~ 0
-~Status_Set_Date
-Text GLabel 3760 3430 0    60   UnSpc ~ 0
-~Status_Set_Time
-Text GLabel 3760 3330 0    60   UnSpc ~ 0
-~Status_COM_Error
 Text GLabel 3760 3230 0    60   UnSpc ~ 0
-~Status_Heartbeat
+~Status_COM_Error
 Text GLabel 3760 1430 0    60   Input ~ 0
 POS24_CS_ADC
 Wire Wire Line
@@ -623,10 +603,6 @@ Wire Wire Line
 Wire Wire Line
 	4960 4920 4960 4880
 Connection ~ 5010 4920
-Text GLabel 3760 3730 0    60   UnSpc ~ 0
-~Status_Alarm_On
-Text GLabel 3760 3630 0    60   UnSpc ~ 0
-~Status_Set_Alarm
 Text GLabel 6260 4030 2    60   Output ~ 0
 Buzzer
 Text GLabel 6260 3030 2    60   Input ~ 0
@@ -686,4 +662,20 @@ Text GLabel 6260 4130 2    60   Output ~ 0
 Colon_1
 Text GLabel 6260 4230 2    60   Output ~ 0
 Colon_2
+$Comp
+L Custom-Library:C_Custom C?
+U 1 1 5B4EE115
+P 1620 7040
+F 0 "C?" H 1645 7140 50  0000 L CNN
+F 1 "47uF" H 1645 6940 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1210" H 1658 6890 50  0001 C CNN
+F 3 "" H 1645 7140 50  0001 C CNN
+F 4 "1210" H 1470 7140 50  0000 R CNN "display_footprint"
+F 5 "16V" H 1470 7040 50  0000 R CNN "Voltage"
+F 6 "X7R" H 1470 6940 50  0000 R CNN "Dielectric"
+	1    1620 7040
+	1    0    0    -1  
+$EndComp
+Text GLabel 3760 3330 0    60   UnSpc ~ 0
+~Status_Heartbeat
 $EndSCHEMATC
