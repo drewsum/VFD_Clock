@@ -48,7 +48,7 @@ Wire Wire Line
 Wire Wire Line
 	6640 3620 6640 3420
 Wire Wire Line
-	6560 3420 7760 3420
+	6560 3420 6640 3420
 $Comp
 L VFD_Clock-rescue:Res_Custom R603
 U 1 1 5B333947
@@ -69,7 +69,7 @@ Connection ~ 6640 3420
 Wire Wire Line
 	5960 3820 7130 3820
 Wire Wire Line
-	7130 3800 7130 3860
+	7130 3800 7130 3820
 $Comp
 L VFD_Clock-rescue:Res_Custom R604
 U 1 1 5B333979
@@ -112,7 +112,7 @@ F 7 "PN" H 8185 4120 60  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7760 3380 7760 3470
+	7760 3380 7760 3420
 Connection ~ 7130 3420
 $Comp
 L power:GND #PWR610
@@ -149,9 +149,9 @@ F 3 "" H 5560 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5560 4200 5560 4120
+	5560 4200 5560 4160
 Wire Wire Line
-	5460 4160 5660 4160
+	5460 4160 5560 4160
 Wire Wire Line
 	5660 4160 5660 4120
 Connection ~ 5560 4160
@@ -237,7 +237,7 @@ F 3 "" H 3930 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 3420 5160 3420
+	3850 3420 3930 3420
 Wire Wire Line
 	3930 3420 3930 3700
 Text GLabel 3850 3420 0    60   Input ~ 0
@@ -272,9 +272,9 @@ $EndComp
 Wire Wire Line
 	5460 3120 5460 2650
 Wire Wire Line
-	4700 2650 5660 2650
+	4700 2650 5460 2650
 Wire Wire Line
-	4700 2610 4700 2780
+	4700 2610 4700 2650
 Wire Wire Line
 	5660 2650 5660 3120
 Connection ~ 5460 2650
@@ -318,7 +318,7 @@ $EndComp
 Wire Wire Line
 	3930 4810 3930 4940
 Wire Wire Line
-	3850 4940 6280 4940
+	3850 4940 3930 4940
 Wire Wire Line
 	6280 4940 6280 3720
 Wire Wire Line
@@ -348,4 +348,26 @@ F 3 "" H 8240 3380 50  0001 C CNN
 	1    8240 3380
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	6640 3420 7130 3420
+Wire Wire Line
+	7130 3820 7130 3860
+Wire Wire Line
+	7130 3420 7370 3420
+Wire Wire Line
+	7760 3420 7760 3470
+Wire Wire Line
+	5560 4160 5560 4120
+Wire Wire Line
+	5560 4160 5660 4160
+Wire Wire Line
+	7370 3420 7760 3420
+Wire Wire Line
+	3930 3420 5160 3420
+Wire Wire Line
+	5460 2650 5660 2650
+Wire Wire Line
+	4700 2650 4700 2780
+Wire Wire Line
+	3930 4940 6280 4940
 $EndSCHEMATC

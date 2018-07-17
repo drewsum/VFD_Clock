@@ -678,4 +678,10 @@ F 6 "X7R" H 1470 6940 50  0000 R CNN "Dielectric"
 $EndComp
 Text GLabel 3760 3330 0    60   UnSpc ~ 0
 ~Status_Heartbeat
+Text GLabel 3760 3430 0    60   Input ~ 0
+HOLDUP_PGOOD
+Text GLabel 6260 1330 2    60   Input ~ 0
+POS3P3_ADC
+Text GLabel 3760 3530 0    60   Input ~ 0
+HOLDUP_ADC
 $EndSCHEMATC

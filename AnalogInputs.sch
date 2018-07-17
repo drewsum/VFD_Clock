@@ -365,4 +365,92 @@ Wire Wire Line
 	3770 3470 3850 3470
 Wire Wire Line
 	6770 3470 6850 3470
+Text GLabel 3900 1970 2    60   Output ~ 0
+POS3P3_ADC
+$Comp
+L Custom-Library:R_Custom R?
+U 1 1 5B51A213
+P 3090 1740
+F 0 "R?" H 3030 1740 50  0000 R CNN
+F 1 "100k" V 3090 1740 40  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3090 1740 50  0001 C CNN
+F 3 "" H 3090 1740 50  0001 C CNN
+F 4 "0603" H 3160 1820 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3160 1740 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3160 1670 50  0000 L CNN "Wattage"
+	1    3090 1740
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom-Library:R_Custom R?
+U 1 1 5B51A21D
+P 3090 2210
+F 0 "R?" H 3030 2210 50  0000 R CNN
+F 1 "10k" V 3090 2210 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3090 2210 50  0001 C CNN
+F 3 "" H 3090 2210 50  0001 C CNN
+F 4 "0603" H 3160 2290 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3160 2210 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3160 2140 50  0000 L CNN "Wattage"
+	1    3090 2210
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom-Library:C_Custom C?
+U 1 1 5B51A227
+P 2500 2210
+F 0 "C?" H 2525 2310 50  0000 L CNN
+F 1 "0.1uF" H 2525 2110 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 2538 2060 50  0001 C CNN
+F 3 "" H 2525 2310 50  0001 C CNN
+F 4 "0603" H 2350 2310 50  0000 R CNN "display_footprint"
+F 5 "50V" H 2350 2210 50  0000 R CNN "Voltage"
+F 6 "X7R" H 2350 2110 50  0000 R CNN "Dielectric"
+	1    2500 2210
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B51A22E
+P 3090 2360
+F 0 "#PWR?" H 3090 2110 50  0001 C CNN
+F 1 "GND" H 3090 2210 50  0000 C CNN
+F 2 "" H 3090 2360 50  0001 C CNN
+F 3 "" H 3090 2360 50  0001 C CNN
+	1    3090 2360
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B51A234
+P 2500 2360
+F 0 "#PWR?" H 2500 2110 50  0001 C CNN
+F 1 "GND" H 2500 2210 50  0000 C CNN
+F 2 "" H 2500 2360 50  0001 C CNN
+F 3 "" H 2500 2360 50  0001 C CNN
+	1    2500 2360
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3090 1890 3090 1970
+Wire Wire Line
+	2500 1970 3090 1970
+Wire Wire Line
+	2500 1970 2500 2060
+Connection ~ 3090 1970
+Wire Wire Line
+	3090 1970 3090 2060
+$Comp
+L Custom_Library:+3.3V #PWR?
+U 1 1 5B51A61D
+P 3090 1590
+F 0 "#PWR?" H 3090 1440 50  0001 C CNN
+F 1 "+3.3V" H 3090 1730 50  0000 C CNN
+F 2 "" H 3090 1590 50  0000 C CNN
+F 3 "" H 3090 1590 50  0000 C CNN
+	1    3090 1590
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3090 1970 3900 1970
 $EndSCHEMATC

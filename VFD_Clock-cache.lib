@@ -747,6 +747,24 @@ X VCCIO 9 100 450 100 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
+# Custom_Library:R_Custom
+#
+DEF Custom_Library:R_Custom R 0 40 N N 1 F N
+F0 "R" -100 0 50 V V C CNN
+F1 "Custom_Library:R_Custom" 0 0 50 V V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+F4 "Foot" 100 0 50 V V C CNN "display_footprint"
+F5 "Tol" 200 0 50 V V C CNN "Tolerance"
+F6 "W" 300 0 50 V V C CNN "Wattage"
+F7 "PN" 300 400 60 H I C CNN "Digi-Key PN"
+DRAW
+S 40 100 -40 -100 0 1 10 N
+X 1 1 0 150 50 D 50 50 1 1 P
+X 2 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Custom_Library:TP
 #
 DEF ~Custom_Library:TP TP 0 0 N N 1 F N

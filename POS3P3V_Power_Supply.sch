@@ -325,9 +325,9 @@ Wire Wire Line
 Wire Wire Line
 	7010 3310 7010 3410
 Wire Wire Line
-	6630 3910 7400 3910
+	6630 3910 6670 3910
 Wire Wire Line
-	6670 3710 6670 3910
+	6670 3710 6670 3810
 Wire Wire Line
 	6670 3810 6630 3810
 Connection ~ 6670 3810
@@ -354,28 +354,28 @@ Wire Wire Line
 	9180 3910 9180 4190
 Connection ~ 8580 3910
 Wire Wire Line
-	9780 3830 9780 4190
+	9780 3830 9780 3910
 Connection ~ 9180 3910
 Connection ~ 9780 3910
 Wire Wire Line
-	6630 4810 8580 4810
+	6630 4810 7980 4810
 Wire Wire Line
-	7700 3910 9780 3910
+	7700 3910 7980 3910
 Connection ~ 5090 3310
 Wire Wire Line
-	4780 3230 4780 3390
+	4780 3230 4780 3310
 Wire Wire Line
 	6670 3710 6630 3710
 Wire Wire Line
 	7010 3310 6630 3310
 Connection ~ 7010 3910
 Wire Wire Line
-	8580 4490 8580 5150
+	8580 4490 8580 4810
 Connection ~ 8580 4810
 Wire Wire Line
 	7980 4810 7980 4490
 Wire Wire Line
-	1630 4010 5130 4010
+	1630 4010 2080 4010
 Wire Wire Line
 	2080 4010 2080 3690
 Connection ~ 2080 4010
@@ -465,7 +465,7 @@ F 3 "" H 2080 3390 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2610 3690 2610 5250
+	2610 3690 2610 4310
 Wire Wire Line
 	2610 4310 5130 4310
 $Comp
@@ -497,7 +497,7 @@ $EndComp
 Wire Wire Line
 	7010 3710 7010 3910
 Wire Wire Line
-	4780 3310 5130 3310
+	4780 3310 5090 3310
 $Comp
 L power:+24V #PWR407
 U 1 1 5AEEA5AF
@@ -532,4 +532,30 @@ F 3 "" H 10260 3840 50  0000 C CNN
 	1    10260 3840
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	6670 3810 6670 3910
+Wire Wire Line
+	6670 3910 7010 3910
+Wire Wire Line
+	7980 3910 8580 3910
+Wire Wire Line
+	7980 4810 8580 4810
+Wire Wire Line
+	8580 3910 9180 3910
+Wire Wire Line
+	9180 3910 9780 3910
+Wire Wire Line
+	9780 3910 9780 4190
+Wire Wire Line
+	5090 3310 5130 3310
+Wire Wire Line
+	7010 3910 7400 3910
+Wire Wire Line
+	8580 4810 8580 5150
+Wire Wire Line
+	2080 4010 5130 4010
+Wire Wire Line
+	2610 4310 2610 5250
+Wire Wire Line
+	4780 3310 4780 3390
 $EndSCHEMATC

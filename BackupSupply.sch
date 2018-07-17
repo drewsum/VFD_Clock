@@ -596,7 +596,7 @@ F 4 "LTC4419IDD#PBF" H 6500 3610 60  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5950 4510 4960 4510
+	5950 4510 5380 4510
 Connection ~ 4960 4510
 Wire Wire Line
 	4960 4510 4960 4430
@@ -890,4 +890,28 @@ F 3 "" H 4960 3070 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	4960 3070 4960 3150
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5B51C67B
+P 5630 5240
+F 0 "R?" V 5530 5240 50  0000 C CNN
+F 1 "0" V 5630 5240 50  0000 C CNN
+F 2 "" H 5630 5240 50  0001 C CNN
+F 3 "" H 5630 5240 50  0001 C CNN
+F 4 "0603" V 5730 5240 50  0000 C CNN "display_footprint"
+F 5 "1%" V 5830 5240 50  0000 C CNN "Tolerance"
+F 6 "1/10W" V 5930 5240 50  0000 C CNN "Wattage"
+F 7 "PN" H 5930 5640 60  0001 C CNN "Digi-Key PN"
+	1    5630 5240
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5480 5240 5380 5240
+Wire Wire Line
+	5380 5240 5380 4510
+Connection ~ 5380 4510
+Wire Wire Line
+	5380 4510 4960 4510
+Text GLabel 5780 5240 2    60   Output ~ 0
+HOLDUP_ADC
 $EndSCHEMATC
