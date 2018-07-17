@@ -754,6 +754,8 @@ $Comp
 L Custom_Library:TP TP?
 U 1 1 5B52EF33
 P 8650 1840
+AR Path="/5A557C58/5B52EF33" Ref="TP?"  Part="1" 
+AR Path="/5A0BC776/5B52EF33" Ref="TP?"  Part="1" 
 F 0 "TP?" H 8650 1990 50  0000 C CNN
 F 1 "TP" H 8650 1990 50  0001 C CNN
 F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8650 1840 60  0001 C CNN

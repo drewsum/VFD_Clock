@@ -611,6 +611,7 @@ U 1 1 5B53630B
 P 8170 3950
 AR Path="/5A557C58/5B53630B" Ref="TP?"  Part="1" 
 AR Path="/5A0A3EA5/5B53630B" Ref="TP?"  Part="1" 
+AR Path="/5A0A8BD0/5B53630B" Ref="TP?"  Part="1" 
 F 0 "TP?" H 8170 4100 50  0000 C CNN
 F 1 "TP" H 8170 4100 50  0001 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 8170 3950 60  0001 C CNN
