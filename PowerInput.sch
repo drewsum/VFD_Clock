@@ -756,7 +756,7 @@ Wire Wire Line
 Wire Wire Line
 	6040 1960 6490 1960
 Wire Wire Line
-	8190 1960 9410 1960
+	8190 1960 9040 1960
 Wire Wire Line
 	4440 2480 4440 2440
 Wire Wire Line
@@ -800,4 +800,62 @@ $EndComp
 Wire Wire Line
 	9410 1960 9410 1880
 Connection ~ 9410 1960
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B524479
+P 4680 1880
+AR Path="/5A557C58/5B524479" Ref="TP?"  Part="1" 
+AR Path="/5A0A3EA5/5B524479" Ref="TP?"  Part="1" 
+F 0 "TP?" H 4680 2030 50  0000 C CNN
+F 1 "TP" H 4680 2030 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4680 1880 60  0001 C CNN
+F 3 "" H 4680 1880 60  0000 C CNN
+	1    4680 1880
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4680 1880 4680 1960
+Connection ~ 4680 1960
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B5280A2
+P 9040 1890
+AR Path="/5A557C58/5B5280A2" Ref="TP?"  Part="1" 
+AR Path="/5A0A3EA5/5B5280A2" Ref="TP?"  Part="1" 
+F 0 "TP?" H 9040 2040 50  0000 C CNN
+F 1 "TP" H 9040 2040 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9040 1890 60  0001 C CNN
+F 3 "" H 9040 1890 60  0000 C CNN
+	1    9040 1890
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B5289DF
+P 940 2970
+AR Path="/5A557C58/5B5289DF" Ref="TP?"  Part="1" 
+AR Path="/5A0A3EA5/5B5289DF" Ref="TP?"  Part="1" 
+F 0 "TP?" H 940 3120 50  0000 C CNN
+F 1 "TP" H 940 3120 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 940 2970 60  0001 C CNN
+F 3 "" H 940 2970 60  0000 C CNN
+	1    940  2970
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B52A852
+P 940 2970
+F 0 "#PWR?" H 940 2720 50  0001 C CNN
+F 1 "GND" H 940 2820 50  0000 C CNN
+F 2 "" H 940 2970 50  0000 C CNN
+F 3 "" H 940 2970 50  0000 C CNN
+	1    940  2970
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9040 1890 9040 1960
+Connection ~ 9040 1960
+Wire Wire Line
+	9040 1960 9410 1960
 $EndSCHEMATC

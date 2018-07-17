@@ -750,4 +750,17 @@ Wire Wire Line
 	4090 5880 4190 5880
 Wire Wire Line
 	3490 5880 4090 5880
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B52EF33
+P 8650 1840
+F 0 "TP?" H 8650 1990 50  0000 C CNN
+F 1 "TP" H 8650 1990 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8650 1840 60  0001 C CNN
+F 3 "" H 8650 1840 60  0000 C CNN
+	1    8650 1840
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 1840 8650 1920
 $EndSCHEMATC

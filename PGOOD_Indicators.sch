@@ -569,4 +569,119 @@ Wire Wire Line
 	8370 2090 7870 2090
 Wire Wire Line
 	7250 2140 7320 2140
+$Comp
+L Custom_Library:74LVC1G240_Power U?
+U 1 1 5B54B76D
+P 7720 4260
+F 0 "U?" H 7620 4410 50  0000 R CNN
+F 1 "74LVC1G240" H 8120 4140 50  0000 C CNN
+F 2 "" H 7720 4260 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 7720 4260 50  0001 C CNN
+	1    7720 4260
+	1    0    0    -1  
+$EndComp
+Text GLabel 7720 4060 1    60   UnSpc ~ 0
+~HOLDUP_UV
+$Comp
+L VFD_Clock-rescue:Res_Custom R?
+U 1 1 5B54B778
+P 7350 4460
+F 0 "R?" V 7250 4460 50  0000 C CNN
+F 1 "10k" V 7350 4460 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7350 4460 50  0001 C CNN
+F 3 "" H 7350 4460 50  0001 C CNN
+F 4 "0603" H 7420 4360 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7420 4440 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 7410 4510 50  0000 L CNN "Wattage"
+	1    7350 4460
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B54B77F
+P 7350 4610
+AR Path="/5A1592EC/5B54B77F" Ref="#PWR?"  Part="1" 
+AR Path="/5A557C58/5B54B77F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7350 4360 50  0001 C CNN
+F 1 "GND" H 7350 4460 50  0000 C CNN
+F 2 "" H 7350 4610 50  0001 C CNN
+F 3 "" H 7350 4610 50  0001 C CNN
+	1    7350 4610
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7310 4260 7350 4260
+Wire Wire Line
+	7350 4260 7350 4310
+Text GLabel 7310 4260 0    60   Input ~ 0
+DIM_PWM
+Connection ~ 7350 4260
+Wire Wire Line
+	7350 4260 7420 4260
+$Comp
+L power:GND #PWR?
+U 1 1 5B54B78A
+P 7770 4310
+AR Path="/5A1592EC/5B54B78A" Ref="#PWR?"  Part="1" 
+AR Path="/5A557C58/5B54B78A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7770 4060 50  0001 C CNN
+F 1 "GND" H 7770 4160 50  0000 C CNN
+F 2 "" H 7770 4310 50  0001 C CNN
+F 3 "" H 7770 4310 50  0001 C CNN
+	1    7770 4310
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+3.3V #PWR?
+U 1 1 5B54B790
+P 7770 4210
+F 0 "#PWR?" H 7770 4060 50  0001 C CNN
+F 1 "+3.3V" H 7900 4330 50  0000 C CNN
+F 2 "" H 7770 4210 50  0000 C CNN
+F 3 "" H 7770 4210 50  0000 C CNN
+	1    7770 4210
+	1    0    0    -1  
+$EndComp
+$Comp
+L VFD_Clock-rescue:Res_Custom R?
+U 1 1 5B54C173
+P 8470 4040
+F 0 "R?" V 8370 4040 50  0000 C CNN
+F 1 "1k" V 8470 4040 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8470 4040 50  0001 C CNN
+F 3 "" H 8470 4040 50  0001 C CNN
+F 4 "0603" H 8540 3940 50  0000 L CNN "display_footprint"
+F 5 "1%" H 8540 4020 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 8530 4090 50  0000 L CNN "Wattage"
+	1    8470 4040
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:LED_ALT_Custom D?
+U 1 1 5B54C17C
+P 8470 3740
+F 0 "D?" H 8470 3840 50  0000 C CNN
+F 1 "Red" H 8470 3640 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 8470 3740 50  0001 C CNN
+F 3 "" H 8470 3740 50  0001 C CNN
+F 4 "0603" H 8470 3540 50  0000 C CNN "display_footprint"
+F 5 "PN" H 8670 4040 60  0001 C CNN "Digi-Key PN"
+	1    8470 3740
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom-Library:+3.3V #PWR?
+U 1 1 5B54C183
+P 8470 3590
+F 0 "#PWR?" H 8470 3440 50  0001 C CNN
+F 1 "+3.3V" H 8470 3730 50  0000 C CNN
+F 2 "" H 8470 3590 50  0000 C CNN
+F 3 "" H 8470 3590 50  0000 C CNN
+	1    8470 3590
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8470 4190 8470 4260
+Wire Wire Line
+	8470 4260 7970 4260
 $EndSCHEMATC

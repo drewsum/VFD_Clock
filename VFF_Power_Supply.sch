@@ -370,4 +370,17 @@ Wire Wire Line
 	4700 2650 4700 2780
 Wire Wire Line
 	3930 4940 6280 4940
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B5317EC
+P 7370 3380
+F 0 "TP?" H 7370 3530 50  0000 C CNN
+F 1 "TP" H 7370 3530 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7370 3380 60  0001 C CNN
+F 3 "" H 7370 3380 60  0000 C CNN
+	1    7370 3380
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7370 3380 7370 3420
 $EndSCHEMATC

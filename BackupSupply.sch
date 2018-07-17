@@ -864,30 +864,6 @@ F 3 "" H 4260 3070 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4260 3070 4260 3150
-Text GLabel 9730 4420 3    60   Output ~ 0
-~HOLDUP_UV
-$Comp
-L Custom_Library:TP TP?
-U 1 1 5B51014B
-P 9730 4420
-F 0 "TP?" H 9730 4570 50  0000 C CNN
-F 1 "TP" H 9730 4570 50  0001 C CNN
-F 2 "" H 9730 4420 60  0000 C CNN
-F 3 "" H 9730 4420 60  0000 C CNN
-	1    9730 4420
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:TP TP?
-U 1 1 5B51077B
-P 4960 3070
-F 0 "TP?" H 4960 3220 50  0000 C CNN
-F 1 "TP" H 4960 3220 50  0001 C CNN
-F 2 "" H 4960 3070 60  0000 C CNN
-F 3 "" H 4960 3070 60  0000 C CNN
-	1    4960 3070
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4960 3070 4960 3150
 $Comp
@@ -914,4 +890,37 @@ Wire Wire Line
 	5380 4510 4960 4510
 Text GLabel 5780 5240 2    60   Output ~ 0
 HOLDUP_ADC
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B523282
+P 10140 1630
+F 0 "TP?" H 10140 1780 50  0000 C CNN
+F 1 "TP" H 10140 1780 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 10140 1630 60  0001 C CNN
+F 3 "" H 10140 1630 60  0000 C CNN
+	1    10140 1630
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:+3.3V_MNG #PWR?
+U 1 1 5B5233DA
+P 10140 1630
+F 0 "#PWR?" H 10140 1480 50  0001 C CNN
+F 1 "+3.3V_MNG" H 10140 1770 50  0000 C CNN
+F 2 "" H 10140 1630 50  0000 C CNN
+F 3 "" H 10140 1630 50  0000 C CNN
+	1    10140 1630
+	-1   0    0    1   
+$EndComp
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5B523B1A
+P 4960 3070
+F 0 "TP?" H 4960 3220 50  0000 C CNN
+F 1 "TP" H 4960 3220 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4960 3070 60  0001 C CNN
+F 3 "" H 4960 3070 60  0000 C CNN
+	1    4960 3070
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
