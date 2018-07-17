@@ -682,4 +682,8 @@ F 3 "" H 4360 3630 50  0001 C CNN
 	1    5010 2980
 	1    0    0    -1  
 $EndComp
+Text GLabel 6260 4130 2    60   Output ~ 0
+Colon_1
+Text GLabel 6260 4230 2    60   Output ~ 0
+Colon_2
 $EndSCHEMATC
