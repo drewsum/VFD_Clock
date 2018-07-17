@@ -600,17 +600,6 @@ Wire Wire Line
 	2520 1760 2520 1720
 Connection ~ 2570 1760
 $Comp
-L power:VD #PWR?
-U 1 1 5B4F5CBA
-P 1230 1140
-F 0 "#PWR?" H 1230 990 50  0001 C CNN
-F 1 "VD" H 1230 1290 50  0000 C CNN
-F 2 "" H 1230 1140 50  0001 C CNN
-F 3 "" H 1230 1140 50  0001 C CNN
-	1    1230 1140
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom-Library:C_Custom C?
 U 1 1 5B4F5CC5
 P 1230 1450
@@ -830,6 +819,17 @@ F 1 "VD" H 8120 1080 50  0000 C CNN
 F 2 "" H 8120 930 50  0001 C CNN
 F 3 "" H 8120 930 50  0001 C CNN
 	1    8120 930 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+3.3V #PWR?
+U 1 1 5B521867
+P 1230 1140
+F 0 "#PWR?" H 1230 990 50  0001 C CNN
+F 1 "+3.3V" H 1230 1280 50  0000 C CNN
+F 2 "" H 1230 1140 50  0000 C CNN
+F 3 "" H 1230 1140 50  0000 C CNN
+	1    1230 1140
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
