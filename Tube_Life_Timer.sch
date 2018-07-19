@@ -139,9 +139,10 @@ F 0 "R?" H 7720 3870 50  0000 R CNN
 F 1 "10k" V 7780 3870 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 7780 3870 50  0001 C CNN
 F 3 "" H 7780 3870 50  0001 C CNN
-F 4 "0603" H 7850 3950 50  0000 L CNN "display_footprint"
-F 5 "1%" H 7850 3870 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 7850 3800 50  0000 L CNN "Wattage"
+F 4 "DNP" H 7840 3730 50  0000 L CNN "Config"
+F 5 "0603" H 7850 3950 50  0000 L CNN "display_footprint"
+F 6 "1%" H 7850 3870 50  0000 L CNN "Tolerance"
+F 7 "1/10W" H 7850 3800 50  0000 L CNN "Wattage"
 	1    7780 3870
 	-1   0    0    1   
 $EndComp
@@ -155,9 +156,10 @@ F 0 "R?" H 7170 3870 50  0000 R CNN
 F 1 "10k" V 7230 3870 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 7230 3870 50  0001 C CNN
 F 3 "" H 7230 3870 50  0001 C CNN
-F 4 "0603" H 7300 3950 50  0000 L CNN "display_footprint"
-F 5 "1%" H 7300 3870 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 7300 3800 50  0000 L CNN "Wattage"
+F 4 "DNP" H 7300 3730 50  0000 L CNN "Config"
+F 5 "0603" H 7300 3950 50  0000 L CNN "display_footprint"
+F 6 "1%" H 7300 3870 50  0000 L CNN "Tolerance"
+F 7 "1/10W" H 7300 3800 50  0000 L CNN "Wattage"
 	1    7230 3870
 	-1   0    0    1   
 $EndComp

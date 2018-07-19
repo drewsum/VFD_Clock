@@ -584,10 +584,8 @@ F 3 "" H 2540 3930 50  0001 C CNN
 	1    2540 3930
 	1    0    0    -1  
 $EndComp
-Text GLabel 1850 3480 0    60   Output ~ 0
+Text GLabel 1330 4790 0    60   Output ~ 0
 USB_DTR_ISO
-Wire Wire Line
-	1850 3480 2540 3480
 $Comp
 L Custom_Library:TP TP?
 U 1 1 5B532D6D
@@ -629,5 +627,80 @@ F 2 "" H 8170 3950 50  0001 C CNN
 F 3 "" H 8170 3950 50  0001 C CNN
 	1    8170 3950
 	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:GND_USB #PWR?
+U 1 1 5B50A840
+P 1580 4890
+F 0 "#PWR?" H 1580 4640 50  0001 C CNN
+F 1 "GND_USB" H 1580 4740 50  0000 C CNN
+F 2 "" H 1580 4890 50  0001 C CNN
+F 3 "" H 1580 4890 50  0001 C CNN
+	1    1580 4890
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:+5V_USB #PWR?
+U 1 1 5B50C4F8
+P 1580 4690
+F 0 "#PWR?" H 1580 4540 50  0001 C CNN
+F 1 "+5V_USB" H 1580 4840 50  0000 C CNN
+F 2 "" H 1580 4690 50  0001 C CNN
+F 3 "" H 1580 4690 50  0001 C CNN
+	1    1580 4690
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:C_Custom C?
+U 1 1 5B50DE5A
+P 1420 5510
+F 0 "C?" H 1445 5610 50  0000 L CNN
+F 1 "0.1uF" H 1445 5410 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 1458 5360 50  0001 C CNN
+F 3 "" H 1445 5610 50  0001 C CNN
+F 4 "0603" H 1270 5610 50  0000 R CNN "display_footprint"
+F 5 "50V" H 1270 5510 50  0000 R CNN "Voltage"
+F 6 "X7R" H 1270 5410 50  0000 R CNN "Dielectric"
+	1    1420 5510
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:GND_USB #PWR?
+U 1 1 5B50DE61
+P 1420 5660
+F 0 "#PWR?" H 1420 5410 50  0001 C CNN
+F 1 "GND_USB" H 1420 5510 50  0000 C CNN
+F 2 "" H 1420 5660 50  0001 C CNN
+F 3 "" H 1420 5660 50  0001 C CNN
+	1    1420 5660
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:+5V_USB #PWR?
+U 1 1 5B50DE67
+P 1420 5360
+F 0 "#PWR?" H 1420 5210 50  0001 C CNN
+F 1 "+5V_USB" H 1420 5500 50  0000 C CNN
+F 2 "" H 1420 5360 50  0001 C CNN
+F 3 "" H 1420 5360 50  0001 C CNN
+	1    1420 5360
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1880 4790 2090 4790
+Wire Wire Line
+	2090 4790 2090 3480
+Wire Wire Line
+	2090 3480 2540 3480
+$Comp
+L Custom_Library:74LVC1G17_Power U?
+U 1 1 5B519C6A
+P 1580 4790
+F 0 "U?" H 1480 4940 50  0000 R CNN
+F 1 "74LVC1G17" H 1200 4660 50  0000 C CNN
+F 2 "" H 1580 4790 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 1580 4790 50  0001 C CNN
+	1    1580 4790
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC

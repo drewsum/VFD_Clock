@@ -684,4 +684,30 @@ Text GLabel 6260 1330 2    60   Input ~ 0
 POS3P3_ADC
 Text GLabel 3760 3530 0    60   Input ~ 0
 HOLDUP_ADC
+$Comp
+L Connector_Generic:Conn_01x03 TP?
+U 1 1 5B5039B1
+P 1930 5460
+F 0 "TP?" H 1930 5660 50  0000 C CNN
+F 1 "I2C" H 1930 5260 50  0000 C CNN
+F 2 "" H 1930 5460 50  0001 C CNN
+F 3 "~" H 1930 5460 50  0001 C CNN
+	1    1930 5460
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B504108
+P 1730 5560
+F 0 "#PWR?" H 1730 5310 50  0001 C CNN
+F 1 "GND" H 1730 5410 50  0000 C CNN
+F 2 "" H 1730 5560 50  0001 C CNN
+F 3 "" H 1730 5560 50  0001 C CNN
+	1    1730 5560
+	1    0    0    -1  
+$EndComp
+Text GLabel 1730 5360 0    60   UnSpc ~ 0
+IIC_SCL
+Text GLabel 1730 5460 0    60   UnSpc ~ 0
+IIC_SDA
 $EndSCHEMATC

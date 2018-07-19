@@ -293,6 +293,7 @@ F 1 "AI-1027-TWT-3V-R" H 3030 6470 50  0000 L CNN
 F 2 "Custom Footprints Library:AI-1027-TWT-3V-R" V 2855 6620 50  0001 C CNN
 F 3 "" V 2855 6620 50  0001 C CNN
 F 4 "AI-1027-TWT-3V-R" H 2880 6520 60  0001 C CNN "Digi-Key PN"
+F 5 "ALL" H 0   0   50  0001 C CNN "Config"
 	1    2880 6520
 	1    0    0    -1  
 $EndComp
@@ -484,9 +485,10 @@ F 0 "R?" H 3020 3240 50  0000 R CNN
 F 1 "10k" V 3080 3240 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 3080 3240 50  0001 C CNN
 F 3 "" H 3080 3240 50  0001 C CNN
-F 4 "0603" H 3150 3320 50  0000 L CNN "display_footprint"
-F 5 "1%" H 3150 3240 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 3150 3170 50  0000 L CNN "Wattage"
+F 4 "DNP" H 3150 3100 50  0000 L CNN "Config"
+F 5 "0603" H 3150 3320 50  0000 L CNN "display_footprint"
+F 6 "1%" H 3150 3240 50  0000 L CNN "Tolerance"
+F 7 "1/10W" H 3150 3170 50  0000 L CNN "Wattage"
 	1    3080 3240
 	1    0    0    1   
 $EndComp
@@ -500,9 +502,10 @@ F 0 "R?" H 3570 3240 50  0000 R CNN
 F 1 "10k" V 3630 3240 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 3630 3240 50  0001 C CNN
 F 3 "" H 3630 3240 50  0001 C CNN
-F 4 "0603" H 3700 3320 50  0000 L CNN "display_footprint"
-F 5 "1%" H 3700 3240 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 3700 3170 50  0000 L CNN "Wattage"
+F 4 "DNP" H 3700 3100 50  0000 L CNN "Config"
+F 5 "0603" H 3700 3320 50  0000 L CNN "display_footprint"
+F 6 "1%" H 3700 3240 50  0000 L CNN "Tolerance"
+F 7 "1/10W" H 3700 3170 50  0000 L CNN "Wattage"
 	1    3630 3240
 	1    0    0    1   
 $EndComp
@@ -546,37 +549,6 @@ Wire Wire Line
 	3280 1140 3280 1220
 Wire Wire Line
 	3280 1220 2920 1220
-$Comp
-L Custom-Library:C_Custom C?
-U 1 1 5B4F2FF5
-P 3280 1450
-AR Path="/5A0A3EA5/5B4F2FF5" Ref="C?"  Part="1" 
-AR Path="/5B3320A2/5B4F2FF5" Ref="C?"  Part="1" 
-AR Path="/5A1A6820/5B4F2FF5" Ref="C?"  Part="1" 
-F 0 "C?" H 3305 1550 50  0000 L CNN
-F 1 "0.1uF" H 3305 1350 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3318 1300 50  0001 C CNN
-F 3 "" H 3305 1550 50  0001 C CNN
-F 4 "0603" H 3130 1550 50  0000 R CNN "display_footprint"
-F 5 "50V" H 3130 1450 50  0000 R CNN "Voltage"
-F 6 "X7R" H 3130 1350 50  0000 R CNN "Dielectric"
-	1    3280 1450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3280 1220 3280 1300
-Connection ~ 3280 1220
-$Comp
-L power:GND #PWR?
-U 1 1 5B4F3F5C
-P 3280 1600
-F 0 "#PWR?" H 3280 1350 50  0001 C CNN
-F 1 "GND" H 3280 1450 50  0000 C CNN
-F 2 "" H 3280 1600 50  0001 C CNN
-F 3 "" H 3280 1600 50  0001 C CNN
-	1    3280 1600
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5B4F3FAA

@@ -14,11 +14,11 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 7300 3800 2    60   Output ~ 0
+Text GLabel 8000 3800 2    60   Output ~ 0
 USB_UART_TX_ISO
-Text GLabel 7300 3600 2    60   Input ~ 0
+Text GLabel 8000 3600 2    60   Input ~ 0
 USB_UART_RX_ISO
-Text GLabel 7300 3700 2    60   Input ~ 0
+Text GLabel 8000 3700 2    60   Input ~ 0
 USB_DTR_ISO
 $Comp
 L Custom-Library:GND_USB #PWR908
@@ -224,32 +224,12 @@ F 3 "" H 4830 4600 50  0000 C CNN
 	1    4830 4600
 	1    0    0    -1  
 $EndComp
-Text GLabel 3280 3800 0    60   Input ~ 0
+Text GLabel 2580 3800 0    60   Input ~ 0
 USB_UART_TX
-Text GLabel 3280 3600 0    60   Output ~ 0
+Text GLabel 2580 3600 0    60   Output ~ 0
 USB_UART_RX
-Text GLabel 3280 3700 0    60   Output ~ 0
+Text GLabel 2580 3700 0    60   Output ~ 0
 USB_DTR
-$Comp
-L Custom-Library:R_Custom R902
-U 1 1 5B334B6B
-P 4050 2940
-F 0 "R902" H 3990 2940 50  0000 R CNN
-F 1 "10k" V 4050 2940 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 4050 2940 50  0001 C CNN
-F 3 "" H 4050 2940 50  0001 C CNN
-F 4 "0603" H 4120 3020 50  0000 L CNN "display_footprint"
-F 5 "1%" H 4120 2940 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 4120 2870 50  0000 L CNN "Wattage"
-	1    4050 2940
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3280 3600 4360 3600
-Wire Wire Line
-	3280 3700 4050 3700
-Wire Wire Line
-	3280 3800 3720 3800
 $Comp
 L Custom-Library:R_Custom R903
 U 1 1 5B334B77
@@ -279,25 +259,11 @@ F 6 "1/10W" H 3790 3980 50  0000 L CNN "Wattage"
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	4050 3090 4050 3700
-Connection ~ 4050 3700
-Wire Wire Line
 	3720 3900 3720 3800
 Connection ~ 3720 3800
 Wire Wire Line
 	4360 3900 4360 3600
 Connection ~ 4360 3600
-$Comp
-L Custom-Library:+3.3V #PWR902
-U 1 1 5B334D0F
-P 4050 2790
-F 0 "#PWR902" H 4050 2640 50  0001 C CNN
-F 1 "+3.3V" H 4050 2930 50  0000 C CNN
-F 2 "" H 4050 2790 50  0000 C CNN
-F 3 "" H 4050 2790 50  0000 C CNN
-	1    4050 2790
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR903
 U 1 1 5B334D88
@@ -325,21 +291,13 @@ Wire Wire Line
 Wire Wire Line
 	4810 4000 4810 4080
 Wire Wire Line
-	6860 3800 7300 3800
-Wire Wire Line
-	6220 3600 7300 3600
-Wire Wire Line
 	6000 3400 6000 3500
 Wire Wire Line
 	4660 3400 4660 3500
 Wire Wire Line
-	4050 3700 4890 3700
-Wire Wire Line
 	3720 3800 4890 3800
 Wire Wire Line
 	4360 3600 4890 3600
-Wire Wire Line
-	5690 3700 7300 3700
 $Comp
 L Isolator:ISO7331C U901
 U 1 1 5B50F39B
@@ -351,4 +309,76 @@ F 3 "http://www.ti.com/lit/ds/symlink/iso7331c.pdf" H 5290 4100 50  0001 C CNN
 	1    5290 3700
 	-1   0    0    -1  
 $EndComp
+Wire Wire Line
+	6220 3600 8000 3600
+Wire Wire Line
+	6860 3800 8000 3800
+Wire Wire Line
+	5690 3700 7530 3700
+Wire Wire Line
+	2580 3600 4360 3600
+$Comp
+L Custom-Library:R_Custom R?
+U 1 1 5B51D46D
+P 3110 4050
+F 0 "R?" H 3050 4050 50  0000 R CNN
+F 1 "10k" V 3110 4050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3110 4050 50  0001 C CNN
+F 3 "" H 3110 4050 50  0001 C CNN
+F 4 "0603" H 3180 4130 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3180 4050 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3180 3980 50  0000 L CNN "Wattage"
+	1    3110 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B51D49E
+P 3110 4200
+F 0 "#PWR?" H 3110 3950 50  0001 C CNN
+F 1 "GND" H 3110 4050 50  0000 C CNN
+F 2 "" H 3110 4200 50  0001 C CNN
+F 3 "" H 3110 4200 50  0001 C CNN
+	1    3110 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3110 3900 3110 3700
+Wire Wire Line
+	2580 3800 3720 3800
+Wire Wire Line
+	2580 3700 3110 3700
+Connection ~ 3110 3700
+Wire Wire Line
+	3110 3700 4890 3700
+$Comp
+L Custom-Library:R_Custom R?
+U 1 1 5B51DA55
+P 7530 4050
+F 0 "R?" H 7470 4050 50  0000 R CNN
+F 1 "10k" V 7530 4050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7530 4050 50  0001 C CNN
+F 3 "" H 7530 4050 50  0001 C CNN
+F 4 "0603" H 7600 4130 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7600 4050 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 7600 3980 50  0000 L CNN "Wattage"
+	1    7530 4050
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom-Library:GND_USB #PWR?
+U 1 1 5B51DA86
+P 7530 4200
+F 0 "#PWR?" H 7530 3950 50  0001 C CNN
+F 1 "GND_USB" H 7530 4050 50  0000 C CNN
+F 2 "" H 7530 4200 50  0001 C CNN
+F 3 "" H 7530 4200 50  0001 C CNN
+	1    7530 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7530 3900 7530 3700
+Connection ~ 7530 3700
+Wire Wire Line
+	7530 3700 8000 3700
 $EndSCHEMATC
