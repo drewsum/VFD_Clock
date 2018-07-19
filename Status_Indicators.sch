@@ -358,31 +358,6 @@ F 3 "" H 5500 7340 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom-Library:R_Custom R1003
-U 1 1 5B2E1279
-P 5030 7370
-F 0 "R1003" H 4970 7370 50  0000 R CNN
-F 1 "10k" V 5030 7370 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 5030 7370 50  0001 C CNN
-F 3 "" H 5030 7370 50  0001 C CNN
-F 4 "0603" H 5100 7450 50  0000 L CNN "display_footprint"
-F 5 "1%" H 5100 7370 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 5100 7300 50  0000 L CNN "Wattage"
-	1    5030 7370
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR1001
-U 1 1 5B2E127F
-P 5030 7520
-F 0 "#PWR1001" H 5030 7270 50  0001 C CNN
-F 1 "GND" H 5030 7370 50  0000 C CNN
-F 2 "" H 5030 7520 50  0001 C CNN
-F 3 "" H 5030 7520 50  0001 C CNN
-	1    5030 7520
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom-Library:R_Custom R1001
 U 1 1 5B2E1288
 P 4410 7140
@@ -396,13 +371,6 @@ F 6 "1/10W" V 4710 7140 50  0000 C CNN "Wattage"
 	1    4410 7140
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4560 7140 5030 7140
-Wire Wire Line
-	5030 7220 5030 7140
-Connection ~ 5030 7140
-Wire Wire Line
-	5030 7140 5200 7140
 $Comp
 L VFD_Clock-rescue:+3.3V-RESCUE-VFD_Clock #PWR?
 U 1 1 5B4E9EB2
@@ -802,6 +770,49 @@ F 1 "+3.3V" H 1230 1280 50  0000 C CNN
 F 2 "" H 1230 1140 50  0000 C CNN
 F 3 "" H 1230 1140 50  0000 C CNN
 	1    1230 1140
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4560 7140 5200 7140
+Wire Wire Line
+	9030 1230 9030 1300
+$Comp
+L Custom-Library:LED_ALT_Custom D?
+U 1 1 5B5282AC
+P 9030 1080
+F 0 "D?" H 9030 1180 50  0000 C CNN
+F 1 "Red" H 9030 980 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 9030 1080 50  0001 C CNN
+F 3 "" H 9030 1080 50  0001 C CNN
+F 4 "0603" H 9030 880 50  0000 C CNN "display_footprint"
+	1    9030 1080
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom-Library:R_Custom R?
+U 1 1 5B5282B6
+P 9030 1450
+F 0 "R?" H 8970 1450 50  0000 R CNN
+F 1 "1k" V 9030 1450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 9030 1450 50  0001 C CNN
+F 3 "" H 9030 1450 50  0001 C CNN
+F 4 "0603" H 9100 1530 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9100 1450 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 9100 1380 50  0000 L CNN "Wattage"
+	1    9030 1450
+	1    0    0    1   
+$EndComp
+Text GLabel 9030 1600 3    60   UnSpc ~ 0
+~Status_Power_Error
+$Comp
+L power:VD #PWR?
+U 1 1 5B5282BE
+P 9030 930
+F 0 "#PWR?" H 9030 780 50  0001 C CNN
+F 1 "VD" H 9030 1080 50  0000 C CNN
+F 2 "" H 9030 930 50  0001 C CNN
+F 3 "" H 9030 930 50  0001 C CNN
+	1    9030 930 
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

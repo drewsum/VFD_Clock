@@ -85,7 +85,7 @@ F 6 "X7R" H 4600 6860 50  0001 R CNN "Dielectric"
 	1    4750 6960
 	1    0    0    -1  
 $EndComp
-Text GLabel 6260 3530 2    60   Input ~ 0
+Text GLabel 6260 3530 2    40   Input ~ 0
 ~MCLR
 Text GLabel 3760 2730 0    60   Input ~ 0
 ICSPCLK
@@ -356,20 +356,18 @@ F 3 "" H 1620 7190 50  0001 C CNN
 $EndComp
 Text Notes 1900 7030 0    60   ~ 0
 Bulk
-Text GLabel 6260 1430 2    60   Input ~ 0
+Text GLabel 6260 1430 2    40   Input ~ 0
 ~Time
-Text GLabel 6260 1530 2    60   Input ~ 0
+Text GLabel 6260 1530 2    40   Input ~ 0
 ~Date
-Text GLabel 6260 1630 2    60   Input ~ 0
+Text GLabel 6260 1630 2    40   Input ~ 0
 ~Alarm
-Text GLabel 6260 1730 2    60   Input ~ 0
+Text GLabel 6260 1730 2    40   Input ~ 0
 ~Display
-Text GLabel 6260 1830 2    60   Input ~ 0
+Text GLabel 6260 1830 2    40   Input ~ 0
 ~Brightness
-Text GLabel 6260 1930 2    60   Input ~ 0
+Text GLabel 6260 1930 2    40   Input ~ 0
 ~Encoder_PB
-Text GLabel 3760 2130 0    60   Input ~ 0
-~Encoder_A
 Text GLabel 3760 2530 0    60   Input ~ 0
 VFF_PGOOD
 Text GLabel 3760 1730 0    60   Input ~ 0
@@ -382,8 +380,6 @@ Text GLabel 6260 3930 2    60   Output ~ 0
 VAN_RUN
 Text GLabel 3760 2430 0    60   Output ~ 0
 VFF_RUN
-Text GLabel 3760 2230 0    60   Input ~ 0
-~Encoder_B
 Text GLabel 8130 5520 1    60   UnSpc ~ 0
 uC_SOSC2
 Text GLabel 7430 5520 1    60   UnSpc ~ 0
@@ -590,7 +586,7 @@ F 3 "" H 3230 6730 50  0000 C CNN
 	1    3230 6730
 	1    0    0    -1  
 $EndComp
-Text GLabel 3760 3230 0    60   UnSpc ~ 0
+Text GLabel 3760 3230 0    40   UnSpc ~ 0
 ~Status_COM_Error
 Text GLabel 3760 1430 0    60   Input ~ 0
 POS24_CS_ADC
@@ -676,7 +672,7 @@ F 6 "X7R" H 1470 6940 50  0000 R CNN "Dielectric"
 	1    1620 7040
 	1    0    0    -1  
 $EndComp
-Text GLabel 3760 3330 0    60   UnSpc ~ 0
+Text GLabel 3760 3330 0    40   UnSpc ~ 0
 ~Status_Heartbeat
 Text GLabel 3760 3430 0    60   Input ~ 0
 HOLDUP_PGOOD
@@ -710,4 +706,10 @@ Text GLabel 1730 5360 0    60   UnSpc ~ 0
 IIC_SCL
 Text GLabel 1730 5460 0    60   UnSpc ~ 0
 IIC_SDA
+Text GLabel 3760 1530 0    40   UnSpc ~ 0
+~Status_Power_Error
+Text GLabel 3760 2230 0    60   Input ~ 0
+Encoder_DIR
+Text GLabel 3760 2130 0    60   Input ~ 0
+Encoder_STEP
 $EndSCHEMATC
