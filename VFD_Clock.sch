@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 22
+Sheet 1 23
 Title ""
 Date ""
 Rev ""
@@ -145,5 +145,11 @@ S 3690 4730 500  150
 U 5B4B0915
 F0 "Tube Life Timer" 60
 F1 "Tube_Life_Timer.sch" 60
+$EndSheet
+$Sheet
+S 3690 5130 500  150 
+U 5B583C3D
+F0 "Mechanical" 60
+F1 "Mechanical.sch" 60
 $EndSheet
 $EndSCHEMATC

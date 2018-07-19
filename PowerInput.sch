@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 22
+Sheet 2 23
 Title "Power Input"
 Date "2017-03-06"
 Rev "2"
@@ -68,7 +68,7 @@ U 1 1 5A2838E6
 P 2180 1960
 F 0 "F201" V 2080 1960 50  0000 C CNN
 F 1 "C1Q 2" V 2280 1960 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206" H 2230 1760 50  0001 L CNN
+F 2 "Fuse_Holders_and_Fuses:Fuse_SMD1206_Reflow" H 2230 1760 50  0001 L CNN
 F 3 "" V 2080 1960 50  0001 C CNN
 F 4 "2A" V 2480 1960 60  0000 C CNN "Amperage"
 F 5 "1206" V 2380 1960 50  0000 C CNN "display_footprint"
