@@ -712,4 +712,15 @@ Text GLabel 3760 2230 0    60   Input ~ 0
 Encoder_DIR
 Text GLabel 3760 2130 0    60   Input ~ 0
 Encoder_STEP
+$Comp
+L Custom_Library:I2C_Address A?
+U 1 1 5B5967AF
+P 5010 5460
+F 0 "A?" H 5010 5710 60  0001 C CNN
+F 1 "MASTER" H 4560 5460 60  0000 L CNN
+F 2 "" H 5010 5810 60  0001 C CNN
+F 3 "" H 5010 5810 60  0001 C CNN
+	1    5010 5460
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

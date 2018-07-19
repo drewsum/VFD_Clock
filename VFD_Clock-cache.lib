@@ -852,6 +852,19 @@ X VCCIO 9 100 450 100 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
+# Custom_Library:I2C_Address
+#
+DEF Custom_Library:I2C_Address A 0 40 Y Y 1 F N
+F0 "A" 0 250 60 H I C CNN
+F1 "Custom_Library:I2C_Address" -450 0 60 H V L CNN
+F2 "" 0 350 60 H I C CNN
+F3 "" 0 350 60 H I C CNN
+DRAW
+T 0 -450 100 60 0 0 0 "I2C 7-Bit Address:" Normal 1 L C
+S -500 200 500 -100 0 0 10 N
+ENDDRAW
+ENDDEF
+#
 # Custom_Library:R_Custom
 #
 DEF Custom_Library:R_Custom R 0 40 N N 1 F N

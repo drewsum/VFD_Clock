@@ -815,4 +815,15 @@ F 3 "" H 9030 930 50  0001 C CNN
 	1    9030 930 
 	1    0    0    -1  
 $EndComp
+$Comp
+L Custom_Library:I2C_Address A?
+U 1 1 5B596FBB
+P 6030 4240
+F 0 "A?" H 6030 4490 60  0001 C CNN
+F 1 "0x41" H 5580 4240 60  0000 L CNN
+F 2 "" H 6030 4590 60  0001 C CNN
+F 3 "" H 6030 4590 60  0001 C CNN
+	1    6030 4240
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
