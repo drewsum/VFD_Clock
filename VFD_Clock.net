@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "C:\\Users\\Drew Maatman\\Documents\\KiCad Projects\\Projects\\VFD_Clock\\VFD_Clock.sch")
-    (date "7/22/2018 9:51:01 PM")
+    (date "7/22/2018 10:03:13 PM")
     (tool "Eeschema (5.0.0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -3899,7 +3899,7 @@
       (tstamp 5B4D7778))
     (comp (ref D1901)
       (value Green)
-      (footprint LEDs:LED_D3.0mm_Horizontal_O1.27mm_Z10.0mm)
+      (footprint LEDs:LED_D3.0mm_Horizontal_O3.81mm_Z10.0mm)
       (fields
         (field (name "Digi-Key PN") PN)
         (field (name display_footprint) TH))
@@ -3937,7 +3937,7 @@
       (tstamp 5B4D7E55))
     (comp (ref D1903)
       (value Green)
-      (footprint LEDs:LED_D3.0mm_Horizontal_O1.27mm_Z10.0mm)
+      (footprint LEDs:LED_D3.0mm_Horizontal_O3.81mm_Z10.0mm)
       (fields
         (field (name "Digi-Key PN") PN)
         (field (name display_footprint) TH))
