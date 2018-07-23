@@ -3,7 +3,7 @@ EESchema-LIBRARY Version 2.4
 #
 # Amplifier_Operational:NCS325
 #
-DEF Amplifier_Operational:NCS325 U 0 20 Y Y 1 F N
+DEF Amplifier_Operational:NCS325 U 0 5 Y Y 1 F N
 F0 "U" 0 250 50 H V L CNN
 F1 "Amplifier_Operational:NCS325" 0 150 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23-5" 0 0 50 H I C CNN
@@ -850,7 +850,7 @@ ENDDEF
 DEF Custom_Library:I2C_Address A 0 40 Y Y 1 F N
 F0 "A" 0 250 60 H I C CNN
 F1 "Custom_Library:I2C_Address" -450 0 60 H V L CNN
-F2 "" 0 350 60 H I C CNN
+F2 "Oddities:Dummy_Empty" 0 350 60 H I C CNN
 F3 "" 0 350 60 H I C CNN
 DRAW
 T 0 -450 100 60 0 0 0 "I2C 7-Bit Address:" Normal 1 L C
@@ -1627,7 +1627,7 @@ F0 "Q" 200 75 50 H V L CNN
 F1 "Transistor_FET:Si2319CDS" 200 0 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23" 200 -75 50 H I L CIN
 F3 "" 0 0 50 H I L CNN
-ALIAS VP0610T BSS84 NTR2101P BSS83P Si2319CDS
+ALIAS VP0610T BSS84 NTR2101P BSS83P Si2319CDS IRLML6402
 $FPLIST
  SOT?23*
 $ENDFPLIST
