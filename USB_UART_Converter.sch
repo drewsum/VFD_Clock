@@ -28,17 +28,6 @@ F 4 "0603" H 8800 4650 50  0000 C CNN "display_footprint"
 	1    8800 4850
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Connector:USB_B J701
-U 1 1 5A1943A5
-P 9500 3180
-F 0 "J701" H 9300 3630 50  0000 L CNN
-F 1 "USB_B" H 9300 3530 50  0000 L CNN
-F 2 "Connectors:USB_B" H 9650 3130 50  0001 C CNN
-F 3 "" H 9650 3130 50  0001 C CNN
-	1    9500 3180
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	8190 2980 8270 2980
 $Comp
@@ -724,4 +713,17 @@ $EndComp
 Wire Wire Line
 	8680 1980 8680 2060
 Connection ~ 8680 2060
+$Comp
+L Connector:USB_B_Micro J701
+U 1 1 5B57F956
+P 9500 3180
+F 0 "J701" H 9300 3630 50  0000 L CNN
+F 1 "USB_B_Micro" H 9300 3530 50  0000 L CNN
+F 2 "Connectors_USB:USB_Micro-B_Wuerth-629105150521_CircularHoles" H 9650 3130 50  0001 C CNN
+F 3 "~" H 9650 3130 50  0001 C CNN
+F 4 "732-5960-1-ND" H 9500 3180 50  0001 C CNN "Digi-Key PN"
+	1    9500 3180
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 9200 3380
 $EndSCHEMATC
