@@ -590,15 +590,6 @@ Text GLabel 3760 3230 0    40   UnSpc ~ 0
 ~Status_COM_Error
 Text GLabel 3760 1430 0    60   Input ~ 0
 POS24_CS_ADC
-Wire Wire Line
-	5010 4960 5010 4920
-Wire Wire Line
-	4960 4920 5010 4920
-Wire Wire Line
-	5060 4920 5060 4880
-Wire Wire Line
-	4960 4920 4960 4880
-Connection ~ 5010 4920
 Text GLabel 6260 4030 2    60   Output ~ 0
 Buzzer
 Text GLabel 6260 3030 2    60   Input ~ 0
@@ -639,21 +630,6 @@ Wire Wire Line
 	3230 7150 3550 7150
 Wire Wire Line
 	3230 7150 3230 7190
-Wire Wire Line
-	5010 4920 5060 4920
-$Comp
-L VFD_Clock-rescue:PIC18(L)F67K40-I_PT U301
-U 1 1 5B3C23A0
-P 5010 2980
-AR Path="/5B3C23A0" Ref="U301"  Part="1" 
-AR Path="/5A0A42E8/5B3C23A0" Ref="U301"  Part="1" 
-F 0 "U301" H 6060 1180 50  0000 R CNN
-F 1 "PIC18LF67K40-I/PT" H 5010 3030 50  0000 C CNN
-F 2 "Housings_QFP:TQFP-64_10x10mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
-F 3 "" H 4360 3630 50  0001 C CNN
-	1    5010 2980
-	1    0    0    -1  
-$EndComp
 Text GLabel 6260 4130 2    60   Output ~ 0
 Colon_1
 Text GLabel 6260 4230 2    60   Output ~ 0
@@ -726,4 +702,29 @@ $EndComp
 NoConn ~ 3760 3730
 Text GLabel 3760 3630 0    40   Input ~ 0
 ~POS3P3_UV
+$Comp
+L Custom_Library:PIC18(L)F67K40-I_MR U301
+U 1 1 5B5806FA
+P 5010 2980
+F 0 "U301" H 6060 1180 50  0000 R CNN
+F 1 "PIC18LF67K40-I_MR" H 5010 3030 50  0000 C CNN
+F 2 "Housings_DFN_QFN:QFN-64-1EP_9x9mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
+F 3 "" H 4360 3630 50  0001 C CNN
+F 4 "PIC18LF67K40T-I/MRCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
+	1    5010 2980
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5010 4960 5010 4920
+Wire Wire Line
+	5010 4920 5110 4920
+Wire Wire Line
+	5110 4920 5110 4880
+Connection ~ 5010 4920
+Wire Wire Line
+	5010 4920 5010 4880
+Wire Wire Line
+	5010 4920 4910 4920
+Wire Wire Line
+	4910 4920 4910 4880
 $EndSCHEMATC

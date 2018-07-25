@@ -636,7 +636,7 @@ U 1 1 5B4FE54B
 P 5410 3370
 F 0 "U1002" H 5060 3620 50  0000 C CNN
 F 1 "PCA9536DP" H 5660 3620 50  0000 C CNN
-F 2 "Package_SO:TSSOP-8_3x3mm_P0.65mm" H 6410 3020 50  0001 C CNN
+F 2 "Housings_SSOP:TSSOP-8_3x3mm_Pitch0.65mm" H 6410 3020 50  0001 C CNN
 F 3 "http://www.nxp.com/documents/data_sheet/PCA9536.pdf" H 5210 1670 50  0001 C CNN
 	1    5410 3370
 	1    0    0    -1  
