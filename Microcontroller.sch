@@ -54,6 +54,7 @@ F 3 "" H 4455 7060 50  0001 C CNN
 F 4 "0603" H 4280 7060 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4280 6960 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4280 6860 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4430 6960
 	1    0    0    -1  
 $EndComp
@@ -68,6 +69,7 @@ F 3 "" H 5095 7060 50  0001 C CNN
 F 4 "0603" H 4920 7060 50  0001 R CNN "display_footprint"
 F 5 "50V" H 4920 6960 50  0001 R CNN "Voltage"
 F 6 "X7R" H 4920 6860 50  0001 R CNN "Dielectric"
+F 7 "399-1083-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5070 6960
 	1    0    0    -1  
 $EndComp
@@ -82,6 +84,7 @@ F 3 "" H 4775 7060 50  0001 C CNN
 F 4 "0603" H 4600 7060 50  0001 R CNN "display_footprint"
 F 5 "50V" H 4600 6960 50  0001 R CNN "Voltage"
 F 6 "X7R" H 4600 6860 50  0001 R CNN "Dielectric"
+F 7 "399-1092-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4750 6960
 	1    0    0    -1  
 $EndComp
@@ -102,89 +105,12 @@ F 3 "" H 5690 7010 50  0001 C CNN
 F 4 "0603" H 5760 7090 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5760 7010 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5760 6940 50  0000 L CNN "Wattage"
+F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5690 7010
 	-1   0    0    1   
 $EndComp
 Text GLabel 5690 7160 3    60   UnSpc ~ 0
 ~MCLR
-Text GLabel 9860 5520 1    60   UnSpc ~ 0
-uC_OSC2
-Text GLabel 9160 5520 1    60   UnSpc ~ 0
-uC_OSC1
-$Comp
-L Custom-Library:C_Custom C310
-U 1 1 5A49CF0D
-P 9160 5950
-F 0 "C310" H 9185 6050 50  0000 L CNN
-F 1 "18pF" H 9185 5850 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 9198 5800 50  0001 C CNN
-F 3 "" H 9185 6050 50  0001 C CNN
-F 4 "0603" H 9010 6050 50  0000 R CNN "display_footprint"
-F 5 "50V" H 9010 5950 50  0000 R CNN "Voltage"
-F 6 "NP0" H 9010 5850 50  0000 R CNN "Dielectric"
-	1    9160 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Crystal Y302
-U 1 1 5A49D355
-P 9510 5600
-F 0 "Y302" H 9510 5750 50  0000 C CNN
-F 1 "16MHz" H 9510 5450 50  0000 C CNN
-F 2 "Crystals:Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm" H 9510 5600 50  0001 C CNN
-F 3 "" H 9510 5600 50  0001 C CNN
-F 4 "SER3686CT-ND" H 9510 5600 60  0001 C CNN "Digi-Key PN"
-	1    9510 5600
-	1    0    0    1   
-$EndComp
-$Comp
-L Custom-Library:C_Custom C311
-U 1 1 5A49D3FB
-P 9860 5950
-F 0 "C311" H 9885 6050 50  0000 L CNN
-F 1 "18pF" H 9885 5850 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 9898 5800 50  0001 C CNN
-F 3 "" H 9885 6050 50  0001 C CNN
-F 4 "0603" H 9710 6050 50  0000 R CNN "display_footprint"
-F 5 "50V" H 9710 5950 50  0000 R CNN "Voltage"
-F 6 "NP0" H 9710 5850 50  0000 R CNN "Dielectric"
-	1    9860 5950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0315
-U 1 1 5A49D84A
-P 9860 6100
-F 0 "#PWR0315" H 9860 5850 50  0001 C CNN
-F 1 "GND" H 9860 5950 50  0000 C CNN
-F 2 "" H 9860 6100 50  0001 C CNN
-F 3 "" H 9860 6100 50  0001 C CNN
-	1    9860 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0314
-U 1 1 5A49D889
-P 9160 6100
-F 0 "#PWR0314" H 9160 5850 50  0001 C CNN
-F 1 "GND" H 9160 5950 50  0000 C CNN
-F 2 "" H 9160 6100 50  0001 C CNN
-F 3 "" H 9160 6100 50  0001 C CNN
-	1    9160 6100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9160 5520 9160 5600
-Wire Wire Line
-	9160 5600 9360 5600
-Wire Wire Line
-	9660 5600 9860 5600
-Wire Wire Line
-	9860 5520 9860 5600
-Connection ~ 9160 5600
-Connection ~ 9860 5600
-Text Notes 8800 4970 0    60   ~ 0
-4X PLL -> FOSC = 64MHz
 Text GLabel 6260 2130 2    60   Output ~ 0
 drive_Anode_A
 Text GLabel 6260 2230 2    60   Output ~ 0
@@ -294,6 +220,7 @@ F 3 "" H 1930 4300 50  0001 C CNN
 F 4 "0603" H 2000 4380 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2000 4300 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2000 4230 50  0000 L CNN "Wattage"
+F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    1930 4300
 	1    0    0    1   
 $EndComp
@@ -308,6 +235,7 @@ F 3 "" H 2480 4300 50  0001 C CNN
 F 4 "0603" H 2550 4380 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2550 4300 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2550 4230 50  0000 L CNN "Wattage"
+F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2480 4300
 	1    0    0    1   
 $EndComp
@@ -319,10 +247,6 @@ Text GLabel 3760 2630 0    60   Input ~ 0
 VFF_ADC
 Text GLabel 3760 1330 0    60   Input ~ 0
 POS24_ADC
-Text GLabel 3760 1930 0    60   UnSpc ~ 0
-uC_OSC1
-Text GLabel 3760 1830 0    60   UnSpc ~ 0
-uC_OSC2
 $Comp
 L power:GND #PWR0310
 U 1 1 5A4D9A45
@@ -343,19 +267,6 @@ Wire Wire Line
 Wire Wire Line
 	5060 940  5060 980 
 Connection ~ 5010 940 
-$Comp
-L power:GND #PWR0302
-U 1 1 5A4E0653
-P 1620 7190
-F 0 "#PWR0302" H 1620 6940 50  0001 C CNN
-F 1 "GND" H 1620 7040 50  0000 C CNN
-F 2 "" H 1620 7190 50  0001 C CNN
-F 3 "" H 1620 7190 50  0001 C CNN
-	1    1620 7190
-	1    0    0    -1  
-$EndComp
-Text Notes 1900 7030 0    60   ~ 0
-Bulk
 Text GLabel 6260 1430 2    40   Input ~ 0
 ~Time
 Text GLabel 6260 1530 2    40   Input ~ 0
@@ -395,6 +306,7 @@ F 3 "" H 7455 6050 50  0001 C CNN
 F 4 "0603" H 7280 6050 50  0000 R CNN "display_footprint"
 F 5 "50V" H 7280 5950 50  0000 R CNN "Voltage"
 F 6 "NP0" H 7280 5850 50  0000 R CNN "Dielectric"
+F 7 "445-5046-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    7430 5950
 	1    0    0    -1  
 $EndComp
@@ -421,6 +333,7 @@ F 3 "" H 8155 6050 50  0001 C CNN
 F 4 "0603" H 7980 6050 50  0000 R CNN "display_footprint"
 F 5 "50V" H 7980 5950 50  0000 R CNN "Voltage"
 F 6 "NP0" H 7980 5850 50  0000 R CNN "Dielectric"
+F 7 "445-5046-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    8130 5950
 	-1   0    0    -1  
 $EndComp
@@ -494,17 +407,6 @@ F 3 "" H 5690 6860 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom-Library:+3.3V_MNG #PWR0301
-U 1 1 5A55F493
-P 1620 6890
-F 0 "#PWR0301" H 1620 6740 50  0001 C CNN
-F 1 "+3.3V_MNG" H 1620 7030 50  0000 C CNN
-F 2 "" H 1620 6890 50  0000 C CNN
-F 3 "" H 1620 6890 50  0000 C CNN
-	1    1620 6890
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0306
 U 1 1 5AEE8EC0
 P 3230 7190
@@ -544,6 +446,7 @@ F 3 "" H 2935 7060 50  0001 C CNN
 F 4 "0603" H 2760 7060 50  0000 R CNN "display_footprint"
 F 5 "50V" H 2760 6960 50  0000 R CNN "Voltage"
 F 6 "X7R" H 2760 6860 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2910 6960
 	1    0    0    -1  
 $EndComp
@@ -558,6 +461,7 @@ F 3 "" H 3575 7060 50  0001 C CNN
 F 4 "0603" H 3400 7060 50  0001 R CNN "display_footprint"
 F 5 "50V" H 3400 6960 50  0001 R CNN "Voltage"
 F 6 "X7R" H 3400 6860 50  0001 R CNN "Dielectric"
+F 7 "399-1083-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3550 6960
 	1    0    0    -1  
 $EndComp
@@ -572,6 +476,7 @@ F 3 "" H 3255 7060 50  0001 C CNN
 F 4 "0603" H 3080 7060 50  0001 R CNN "display_footprint"
 F 5 "50V" H 3080 6960 50  0001 R CNN "Voltage"
 F 6 "X7R" H 3080 6860 50  0001 R CNN "Dielectric"
+F 7 "399-1092-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3230 6960
 	1    0    0    -1  
 $EndComp
@@ -609,10 +514,6 @@ Wire Wire Line
 Wire Wire Line
 	4750 7150 4750 7190
 Wire Wire Line
-	9160 5600 9160 5800
-Wire Wire Line
-	9860 5600 9860 5800
-Wire Wire Line
 	2480 4530 3760 4530
 Wire Wire Line
 	1930 4630 3760 4630
@@ -634,20 +535,6 @@ Text GLabel 6260 4130 2    60   Output ~ 0
 Colon_1
 Text GLabel 6260 4230 2    60   Output ~ 0
 Colon_2
-$Comp
-L Custom-Library:C_Custom C301
-U 1 1 5B4EE115
-P 1620 7040
-F 0 "C301" H 1645 7140 50  0000 L CNN
-F 1 "47uF" H 1645 6940 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1210" H 1658 6890 50  0001 C CNN
-F 3 "" H 1645 7140 50  0001 C CNN
-F 4 "1210" H 1470 7140 50  0000 R CNN "display_footprint"
-F 5 "16V" H 1470 7040 50  0000 R CNN "Voltage"
-F 6 "X7R" H 1470 6940 50  0000 R CNN "Dielectric"
-	1    1620 7040
-	1    0    0    -1  
-$EndComp
 Text GLabel 3760 3330 0    40   UnSpc ~ 0
 ~Status_Heartbeat
 Text GLabel 3760 3430 0    60   Input ~ 0
