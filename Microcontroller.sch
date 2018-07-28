@@ -491,7 +491,7 @@ F 3 "" H 3230 6730 50  0000 C CNN
 	1    3230 6730
 	1    0    0    -1  
 $EndComp
-Text GLabel 3760 3230 0    40   UnSpc ~ 0
+Text GLabel 3760 1830 0    40   UnSpc ~ 0
 ~Status_COM_Error
 Text GLabel 3760 1430 0    60   Input ~ 0
 POS24_CS_ADC
@@ -535,13 +535,13 @@ Text GLabel 6260 4130 2    60   Output ~ 0
 Colon_1
 Text GLabel 6260 4230 2    60   Output ~ 0
 Colon_2
-Text GLabel 3760 3330 0    40   UnSpc ~ 0
+Text GLabel 3760 1930 0    40   UnSpc ~ 0
 ~Status_Heartbeat
-Text GLabel 3760 3430 0    60   Input ~ 0
+Text GLabel 3760 3230 0    60   Input ~ 0
 HOLDUP_PGOOD
 Text GLabel 6260 1330 2    60   Input ~ 0
 POS3P3_ADC
-Text GLabel 3760 3530 0    60   Input ~ 0
+Text GLabel 3760 3330 0    60   Input ~ 0
 HOLDUP_ADC
 $Comp
 L Connector_Generic:Conn_01x03 TP301
@@ -586,21 +586,8 @@ F 3 "" H 5010 5810 60  0001 C CNN
 	1    5010 5460
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3760 3730
-Text GLabel 3760 3630 0    40   Input ~ 0
+Text GLabel 3760 3430 0    40   Input ~ 0
 ~POS3P3_UV
-$Comp
-L Custom_Library:PIC18(L)F67K40-I_MR U301
-U 1 1 5B5806FA
-P 5010 2980
-F 0 "U301" H 6060 1180 50  0000 R CNN
-F 1 "PIC18LF67K40-I_MR" H 5010 3030 50  0000 C CNN
-F 2 "Housings_DFN_QFN:QFN-64-1EP_9x9mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
-F 3 "" H 4360 3630 50  0001 C CNN
-F 4 "PIC18LF67K40T-I/MRCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
-	1    5010 2980
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5010 4960 5010 4920
 Wire Wire Line
@@ -614,4 +601,20 @@ Wire Wire Line
 	5010 4920 4910 4920
 Wire Wire Line
 	4910 4920 4910 4880
+Text GLabel 3760 3530 0    60   Output ~ 0
+ACCUM
+$Comp
+L Custom_Library:PIC18(L)F67K40-I_MR U301
+U 1 1 5B5806FA
+P 5010 2980
+F 0 "U301" H 6060 1180 50  0000 R CNN
+F 1 "PIC18LF67K40-I_MR" H 5010 3030 50  0000 C CNN
+F 2 "Housings_DFN_QFN:QFN-64-1EP_9x9mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
+F 3 "" H 4360 3630 50  0001 C CNN
+F 4 "PIC18LF67K40T-I/MRCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
+	1    5010 2980
+	1    0    0    -1  
+$EndComp
+Text GLabel 3760 3630 0    60   Output ~ 0
+REF_CLK
 $EndSCHEMATC
