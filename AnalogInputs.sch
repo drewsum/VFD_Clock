@@ -46,7 +46,7 @@ F 3 "" H 6040 2210 50  0001 C CNN
 F 4 "0603" H 6110 2290 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6110 2210 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6110 2140 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    6040 2210
 	1    0    0    1   
 $EndComp
@@ -104,6 +104,7 @@ F 2 "Diodes_SMD:D_SOD-323" H 6770 2250 60  0001 C CNN
 F 3 "" H 6770 2250 60  0000 C CNN
 F 4 "SOD323" V 6770 2150 50  0000 R CNN "display_footprint"
 F 5 "3.3V" V 6870 2150 50  0000 R CNN "Voltage"
+F 6 "BZT52C3V3S-FDICT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    6770 2250
 	0    -1   1    0   
 $EndComp
@@ -146,7 +147,7 @@ F 3 "" H 3040 3710 50  0001 C CNN
 F 4 "0603" H 3110 3790 50  0000 L CNN "display_footprint"
 F 5 "1%" H 3110 3710 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3110 3640 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3040 3710
 	1    0    0    1   
 $EndComp
@@ -220,7 +221,7 @@ F 3 "" H 6040 3710 50  0001 C CNN
 F 4 "0603" H 6110 3790 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6110 3710 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6110 3640 50  0000 L CNN "Wattage"
-F 7 "" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT1K00CT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    6040 3710
 	1    0    0    1   
 $EndComp
@@ -340,7 +341,7 @@ F 3 "" H 3090 2210 50  0001 C CNN
 F 4 "0603" H 3160 2290 50  0000 L CNN "display_footprint"
 F 5 "1%" H 3160 2210 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3160 2140 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3090 2210
 	1    0    0    1   
 $EndComp
@@ -431,9 +432,12 @@ F 2 "Diodes_SMD:D_SOD-323" H 6770 3750 60  0001 C CNN
 F 3 "" H 6770 3750 60  0000 C CNN
 F 4 "SOD323" V 6770 3650 50  0000 R CNN "display_footprint"
 F 5 "3.3V" V 6870 3650 50  0000 R CNN "Voltage"
+F 6 "BZT52C3V3S-FDICT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    6770 3750
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	3040 3470 3850 3470
+Text Notes 4580 970  0    100  ~ 20
+ADC Dividers/Filters
 $EndSCHEMATC

@@ -105,7 +105,7 @@ F 3 "" H 5690 7010 50  0001 C CNN
 F 4 "0603" H 5760 7090 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5760 7010 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5760 6940 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5690 7010
 	-1   0    0    1   
 $EndComp
@@ -189,9 +189,10 @@ F 0 "R301" V 1420 4530 50  0000 C CNN
 F 1 "0" V 1520 4530 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1520 4530 50  0001 C CNN
 F 3 "" H 1520 4530 50  0001 C CNN
-F 4 "0402" V 1620 4530 50  0001 C CNN "display_footprint"
+F 4 "0603" V 1620 4530 50  0001 C CNN "display_footprint"
 F 5 "1%" V 1720 4530 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 1820 4530 50  0001 C CNN "Wattage"
+F 6 "1/10W" V 1820 4530 50  0001 C CNN "Wattage"
+F 7 "P0.0GCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    1520 4530
 	0    -1   1    0   
 $EndComp
@@ -203,9 +204,10 @@ F 0 "R302" V 1420 4630 50  0000 C CNN
 F 1 "0" V 1510 4630 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1520 4630 50  0001 C CNN
 F 3 "" H 1520 4630 50  0001 C CNN
-F 4 "0402" V 1620 4630 50  0001 C CNN "display_footprint"
+F 4 "0603" V 1620 4630 50  0001 C CNN "display_footprint"
 F 5 "1%" V 1720 4630 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 1820 4630 50  0001 C CNN "Wattage"
+F 6 "1/10W" V 1820 4630 50  0001 C CNN "Wattage"
+F 7 "P0.0GCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    1520 4630
 	0    -1   -1   0   
 $EndComp
@@ -220,7 +222,7 @@ F 3 "" H 1930 4300 50  0001 C CNN
 F 4 "0603" H 2000 4380 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2000 4300 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2000 4230 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    1930 4300
 	1    0    0    1   
 $EndComp
@@ -235,7 +237,7 @@ F 3 "" H 2480 4300 50  0001 C CNN
 F 4 "0603" H 2550 4380 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2550 4300 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2550 4230 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2480 4300
 	1    0    0    1   
 $EndComp
@@ -615,4 +617,34 @@ F 4 "PIC18LF67K40T-I/MRCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
 $EndComp
 Text GLabel 3760 3630 0    60   Output ~ 0
 REF_CLK
+NoConn ~ 3760 1430
+NoConn ~ 3760 3730
+$Comp
+L Connector_Generic:Conn_01x03 TP302
+U 1 1 5B5F52C3
+P 3430 5460
+F 0 "TP302" H 3430 5660 50  0000 C CNN
+F 1 "USB_UART" H 3430 5260 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3430 5460 50  0001 C CNN
+F 3 "~" H 3430 5460 50  0001 C CNN
+	1    3430 5460
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0301
+U 1 1 5B5F52CA
+P 3230 5560
+F 0 "#PWR0301" H 3230 5310 50  0001 C CNN
+F 1 "GND" H 3230 5410 50  0000 C CNN
+F 2 "" H 3230 5560 50  0001 C CNN
+F 3 "" H 3230 5560 50  0001 C CNN
+	1    3230 5560
+	1    0    0    -1  
+$EndComp
+Text GLabel 3230 5460 0    60   UnSpc ~ 0
+USB_UART_TX
+Text GLabel 3230 5360 0    60   UnSpc ~ 0
+USB_UART_RX
+Text Notes 5710 750  0    100  ~ 20
+8 Bit High Performance Microcontroller
 $EndSCHEMATC

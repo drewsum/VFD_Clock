@@ -121,7 +121,7 @@ F 3 "" H 4530 4280 50  0001 C CNN
 F 4 "0603" H 4610 4360 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4610 4280 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4610 4200 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 4830 4680 60  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 4830 4680 60  0001 C CNN "Digi-Key PN"
 	1    4530 4280
 	1    0    0    -1  
 $EndComp
@@ -229,4 +229,6 @@ F 3 "" H 4070 5290 60  0001 C CNN
 	1    4070 4940
 	1    0    0    -1  
 $EndComp
+Text Notes 4090 980  0    100  ~ 20
+Ambient Light Sensor
 $EndSCHEMATC

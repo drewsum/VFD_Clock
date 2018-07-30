@@ -22,6 +22,7 @@ F 0 "U502" H 6150 1920 60  0000 C CNN
 F 1 "LT3757" H 6050 3670 60  0000 C CNN
 F 2 "Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm" H 5650 3670 60  0001 C CNN
 F 3 "" H 5650 3670 60  0001 C CNN
+F 4 "LT3757EDD#PBF-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5650 2970
 	1    0    0    -1  
 $EndComp
@@ -246,7 +247,7 @@ F 3 "" H 4610 2630 50  0001 C CNN
 F 4 "0603" H 4680 2530 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4680 2610 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4670 2680 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4610 2630
 	-1   0    0    -1  
 $EndComp
@@ -351,7 +352,7 @@ F 3 "" H 8090 4190 50  0001 C CNN
 F 4 "0603" H 8160 4090 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8160 4170 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8150 4240 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    8090 4190
 	-1   0    0    -1  
 $EndComp
@@ -424,6 +425,7 @@ F 0 "U501" H 3150 5630 60  0000 C CNN
 F 1 "LT6700-1-S6" H 2850 6130 60  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 2850 6730 60  0001 C CNN
 F 3 "" H 2850 6730 60  0001 C CNN
+F 4 "LT6700CS6-1#TRMPBFCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2850 6130
 	1    0    0    -1  
 $EndComp
@@ -596,7 +598,7 @@ F 3 "" H 4090 5590 50  0001 C CNN
 F 4 "0603" H 4160 5670 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4160 5590 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4160 5520 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4090 5590
 	-1   0    0    1   
 $EndComp
@@ -849,4 +851,6 @@ Wire Wire Line
 Wire Wire Line
 	2240 1840 2240 1920
 Connection ~ 2240 1920
+Text Notes 2960 1060 0    100  ~ 20
+Anode/Grid +60V, 50mA Power Supply
 $EndSCHEMATC

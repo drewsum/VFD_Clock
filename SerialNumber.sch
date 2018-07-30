@@ -22,6 +22,7 @@ F 0 "U1801" H 4370 3840 50  0000 C CNN
 F 1 "AT24CS01-STUM" H 4770 3340 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23-5" H 4670 3590 50  0001 C CNN
 F 3 "" H 4670 3590 50  0001 C CNN
+F 4 "AT24CS01-STUM-TCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4670 3590
 	1    0    0    -1  
 $EndComp
@@ -128,9 +129,10 @@ F 0 "R1805" V 7210 3490 50  0000 C CNN
 F 1 "0" V 7310 3490 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 7310 3490 50  0001 C CNN
 F 3 "" H 7310 3490 50  0001 C CNN
-F 4 "0402" V 7410 3490 50  0001 C CNN "display_footprint"
+F 4 "0603" V 7410 3490 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7510 3490 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 7610 3490 50  0001 C CNN "Wattage"
+F 6 "1/10W" V 7610 3490 50  0001 C CNN "Wattage"
+F 7 "P0.0GCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    7310 3490
 	0    1    1    0   
 $EndComp
@@ -142,9 +144,10 @@ F 0 "R1806" V 7210 3590 50  0000 C CNN
 F 1 "0" V 7300 3590 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 7310 3590 50  0001 C CNN
 F 3 "" H 7310 3590 50  0001 C CNN
-F 4 "0402" V 7410 3590 50  0001 C CNN "display_footprint"
+F 4 "0603" V 7410 3590 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7510 3590 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 7610 3590 50  0001 C CNN "Wattage"
+F 6 "1/10W" V 7610 3590 50  0001 C CNN "Wattage"
+F 7 "P0.0GCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    7310 3590
 	0    1    -1   0   
 $EndComp
@@ -191,7 +194,7 @@ F 3 "" H 5650 4060 50  0001 C CNN
 F 4 "0603" H 5720 4140 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5720 4060 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5720 3990 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5650 4060
 	1    0    0    1   
 $EndComp
@@ -255,4 +258,6 @@ F 3 "" H 4390 4790 60  0001 C CNN
 	1    4390 4440
 	1    0    0    -1  
 $EndComp
+Text Notes 4820 980  0    100  ~ 20
+Serial Number
 $EndSCHEMATC

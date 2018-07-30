@@ -42,7 +42,7 @@ F 3 "" H 8800 5150 50  0001 C CNN
 F 4 "0603" H 8870 5050 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8870 5130 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8860 5200 50  0000 L CNN "Wattage"
-F 7 "" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT1K00CT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    8800 5150
 	-1   0    0    -1  
 $EndComp
@@ -554,7 +554,7 @@ F 3 "" H 2540 2650 50  0001 C CNN
 F 4 "0603" H 2610 2550 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2610 2630 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2600 2700 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2540 2650
 	-1   0    0    -1  
 $EndComp
@@ -741,4 +741,6 @@ F 4 "732-5960-1-ND" H 9500 3180 50  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 NoConn ~ 9200 3380
+Text Notes 4260 1110 0    100  ~ 20
+UART to USB Bridge
 $EndSCHEMATC

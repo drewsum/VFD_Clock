@@ -70,6 +70,7 @@ F 0 "U1601" H 3640 4920 50  0000 C CNN
 F 1 "TL331" H 3740 4520 50  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23-5" H 3590 4820 50  0001 C CNN
 F 3 "" H 3590 4920 50  0001 C CNN
+F 4 "296-36003-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3590 4720
 	1    0    0    -1  
 $EndComp
@@ -107,6 +108,7 @@ F 2 "Diodes_SMD:D_SOD-323" H 2110 5100 60  0001 C CNN
 F 3 "" H 2110 5100 60  0000 C CNN
 F 4 "SOD323" V 2110 5000 50  0000 R CNN "display_footprint"
 F 5 "5.6V" V 2210 5000 50  0000 R CNN "Voltage"
+F 6 "BZT52C5V6S-TPMSCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2110 5100
 	0    1    1    0   
 $EndComp
@@ -165,7 +167,7 @@ F 3 "" H 2110 4580 50  0001 C CNN
 F 4 "0603" H 2180 4660 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2180 4580 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2180 4510 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    2110 4580
 	-1   0    0    1   
 $EndComp
@@ -192,7 +194,7 @@ F 3 "" H 4140 4490 50  0001 C CNN
 F 4 "0603" H 4210 4570 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4210 4490 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4210 4420 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4140 4490
 	1    0    0    1   
 $EndComp
@@ -253,7 +255,7 @@ F 3 "" H 4780 4490 50  0001 C CNN
 F 4 "0603" H 4850 4570 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4850 4490 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4850 4420 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    4780 4490
 	1    0    0    1   
 $EndComp
@@ -339,7 +341,7 @@ F 3 "" H 6090 5080 50  0001 C CNN
 F 4 "0603" H 6160 5160 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6160 5080 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6160 5010 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    6090 5080
 	1    0    0    1   
 $EndComp
@@ -416,7 +418,10 @@ F 0 "U1602" H 5270 4920 50  0000 R CNN
 F 1 "74LVC1G86" H 5460 4630 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 5370 4770 50  0001 C CNN
 F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 5370 4770 50  0001 C CNN
+F 4 "296-9854-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5370 4770
 	1    0    0    -1  
 $EndComp
+Text Notes 3890 1070 0    100  ~ 20
+Programming Header/ICSP Detection
 $EndSCHEMATC

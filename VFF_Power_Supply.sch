@@ -14,8 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4660 1100 0    60   ~ 0
-+1.2V Filament Voltage Power Supply
 $Comp
 L Regulator_Switching:TPS62150 U601
 U 1 1 5B331940
@@ -24,6 +22,7 @@ F 0 "U601" H 5710 4170 50  0000 L CNN
 F 1 "TPS62150" H 5710 4070 50  0000 L CNN
 F 2 "Housings_DFN_QFN:QFN-16-1EP_3x3mm_Pitch0.5mm" H 5710 3170 50  0001 L CNN
 F 3 "" H 5560 3620 50  0001 C CNN
+F 4 "296-37684-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    5560 3620
 	1    0    0    -1  
 $EndComp
@@ -225,7 +224,7 @@ F 3 "" H 3930 3850 50  0001 C CNN
 F 4 "0603" H 4000 3750 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4000 3830 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3990 3900 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3930 3850
 	-1   0    0    -1  
 $EndComp
@@ -305,7 +304,7 @@ F 3 "" H 3930 4660 50  0001 C CNN
 F 4 "0603" H 4000 4560 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4000 4640 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3990 4710 50  0000 L CNN "Wattage"
-F 7 "541-10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
+F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    3930 4660
 	-1   0    0    -1  
 $EndComp
@@ -390,4 +389,6 @@ F 3 "" H 7370 3380 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	7370 3380 7370 3420
+Text Notes 2950 1250 0    100  ~ 20
+Filament +1.2V, 1A Power Supply
 $EndSCHEMATC
