@@ -493,8 +493,6 @@ F 3 "" H 3230 6730 50  0000 C CNN
 $EndComp
 Text GLabel 3760 1830 0    40   UnSpc ~ 0
 ~Status_COM_Error
-Text GLabel 3760 1430 0    60   Input ~ 0
-POS24_CS_ADC
 Text GLabel 6260 4030 2    60   Output ~ 0
 Buzzer
 Text GLabel 6260 3030 2    60   Input ~ 0
