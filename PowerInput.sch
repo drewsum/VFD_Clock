@@ -20,7 +20,7 @@ U 1 1 58B20C4F
 P 1360 2060
 F 0 "J201" H 1360 2310 50  0000 C CNN
 F 1 "Power Input" H 1360 1860 50  0000 C CNN
-F 2 "Connect:BARREL_JACK" H 1360 2060 50  0001 C CNN
+F 2 "Connectors:BARREL_JACK" H 1360 2060 50  0001 C CNN
 F 3 "" H 1360 2060 50  0000 C CNN
 F 4 "SC1313-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 	1    1360 2060
@@ -384,21 +384,6 @@ Wire Wire Line
 	8090 1860 8090 1960
 Connection ~ 8090 1960
 $Comp
-L Custom-Library:C_Custom C209
-U 1 1 5B347148
-P 9850 2190
-F 0 "C209" H 9875 2290 50  0000 L CNN
-F 1 "10nF" H 9875 2090 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 9888 2040 50  0001 C CNN
-F 3 "" H 9875 2290 50  0001 C CNN
-F 4 "0603" H 9700 2290 50  0000 R CNN "display_footprint"
-F 5 "50V" H 9700 2190 50  0000 R CNN "Voltage"
-F 6 "X7R" H 9700 2090 50  0000 R CNN "Dielectric"
-F 7 "399-1092-1-ND" H 440 0   50  0001 C CNN "Digi-Key PN"
-	1    9850 2190
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0222
 U 1 1 5B3471ED
 P 9850 2340
@@ -478,19 +463,6 @@ Wire Wire Line
 Connection ~ 9850 1960
 $Comp
 L Custom_Library:TP TP?
-U 1 1 5B524479
-P 3420 1840
-AR Path="/5A557C58/5B524479" Ref="TP?"  Part="1" 
-AR Path="/5A0A3EA5/5B524479" Ref="TP202"  Part="1" 
-F 0 "TP202" H 3420 1990 50  0000 C CNN
-F 1 "TP" H 3420 1990 50  0001 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3420 1840 60  0001 C CNN
-F 3 "" H 3420 1840 60  0000 C CNN
-	1    3420 1840
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:TP TP?
 U 1 1 5B5280A2
 P 9480 1890
 AR Path="/5A557C58/5B5280A2" Ref="TP?"  Part="1" 
@@ -531,10 +503,6 @@ Wire Wire Line
 Connection ~ 9480 1960
 Wire Wire Line
 	9480 1960 9850 1960
-Wire Wire Line
-	3420 1840 3420 1960
-Wire Wire Line
-	3420 1960 3020 1960
 $Comp
 L Custom_Library:R_Custom R211
 U 1 1 5B5EB8FC
@@ -557,7 +525,6 @@ Wire Wire Line
 	9110 1960 9480 1960
 Wire Wire Line
 	4660 1960 4360 1960
-Connection ~ 3420 1960
 Wire Wire Line
 	4960 1960 5260 1960
 $Comp
@@ -580,8 +547,6 @@ Wire Wire Line
 Wire Wire Line
 	4360 2440 4360 2370
 Connection ~ 4360 1960
-Wire Wire Line
-	4360 1960 3420 1960
 $Comp
 L power:GND #PWR0213
 U 1 1 5B5F4BC4
@@ -1025,4 +990,23 @@ F 3 "" H 4360 1880 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4360 1880 4360 1960
+Wire Wire Line
+	3020 1960 4360 1960
+$Comp
+L Custom_Library:CP_Tant_Custom C?
+U 1 1 5B61E27F
+P 9850 2190
+AR Path="/5A0BC776/5B61E27F" Ref="C?"  Part="1" 
+AR Path="/5A0A3EA5/5B61E27F" Ref="C209"  Part="1" 
+F 0 "C209" H 9875 2290 50  0000 L CNN
+F 1 "47uF" H 9875 2090 50  0000 L CNN
+F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow" H 9888 2040 50  0001 C CNN
+F 3 "" H 9875 2290 50  0001 C CNN
+F 4 "7343" H 9700 2290 50  0000 R CNN "display_footprint"
+F 5 "35V" H 9700 2190 50  0000 R CNN "Voltage"
+F 6 "20%" H 9700 2090 50  0000 R CNN "Tolerance"
+F 7 "399-5938-1-ND" H 9850 2190 50  0001 C CNN "Digi-Key PN"
+	1    9850 2190
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
