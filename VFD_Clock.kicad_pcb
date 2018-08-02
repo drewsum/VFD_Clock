@@ -9907,8 +9907,8 @@
       (net 41 "Net-(F201-Pad1)"))
   )
 
-  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer (layer F.Cu) (tedit 5B6267AB) (tstamp 5B556F3E)
-    (at 196 -9)
+  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer locked (layer F.Cu) (tedit 5B6267AB) (tstamp 5B556F3E)
+    (at 197.9295 -9.017)
     (descr "Circular Fiducial, 0.5mm bare copper top; 1mm keepout (Level C)")
     (tags marker)
     (path /5B583C3D/5B587208)
@@ -9928,8 +9928,8 @@
       (solder_mask_margin 0.25) (clearance 0.25))
   )
 
-  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer (layer F.Cu) (tedit 5B62678C) (tstamp 5B556F46)
-    (at 4 -41)
+  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer locked (layer F.Cu) (tedit 5B62678C) (tstamp 5B556F46)
+    (at 2.095 -41)
     (descr "Circular Fiducial, 0.5mm bare copper top; 1mm keepout (Level C)")
     (tags marker)
     (path /5B583C3D/5B587917)
@@ -9949,8 +9949,8 @@
       (solder_mask_margin 0.25) (clearance 0.25))
   )
 
-  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer (layer F.Cu) (tedit 5B626776) (tstamp 5B556F4E)
-    (at 4 -9)
+  (module Fiducials:Fiducial_0.5mm_Dia_1mm_Outer locked (layer F.Cu) (tedit 5B626776) (tstamp 5B556F4E)
+    (at 2.095 -9)
     (descr "Circular Fiducial, 0.5mm bare copper top; 1mm keepout (Level C)")
     (tags marker)
     (path /5B583C3D/5B587FB8)
@@ -10186,7 +10186,7 @@
     )
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B6266C7) (tstamp 5B55700B)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B6266C7) (tstamp 5B55700B)
     (at 4 -46)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10206,7 +10206,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B626758) (tstamp 5B557013)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B626758) (tstamp 5B557013)
     (at 68 -46)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10226,7 +10226,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B626694) (tstamp 5B627DB7)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B626694) (tstamp 5B627DB7)
     (at 4 -4)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10246,7 +10246,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B6266A9) (tstamp 5B627DDB)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B6266A9) (tstamp 5B627DDB)
     (at 196 -4)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10266,7 +10266,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B6266DC) (tstamp 5B55702B)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B6266DC) (tstamp 5B55702B)
     (at 196 -46)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10286,7 +10286,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B62673D) (tstamp 5B557033)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B62673D) (tstamp 5B557033)
     (at 132 -46)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10306,7 +10306,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B62672E) (tstamp 5B55703B)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B62672E) (tstamp 5B55703B)
     (at 132 -4)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
@@ -10326,7 +10326,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   )
 
-  (module Mounting_Holes:MountingHole_3mm (layer F.Cu) (tedit 5B626716) (tstamp 5B557043)
+  (module Mounting_Holes:MountingHole_3mm locked (layer F.Cu) (tedit 5B626716) (tstamp 5B557043)
     (at 68 -4)
     (descr "Mounting Hole 3mm, no annular")
     (tags "mounting hole 3mm no annular")
