@@ -159,12 +159,12 @@ $EndComp
 $Comp
 L power:GND #PWR01301
 U 1 1 5A4D2A4C
-P 1910 5640
-F 0 "#PWR01301" H 1910 5390 50  0001 C CNN
-F 1 "GND" H 1910 5490 50  0000 C CNN
-F 2 "" H 1910 5640 50  0001 C CNN
-F 3 "" H 1910 5640 50  0001 C CNN
-	1    1910 5640
+P 1800 5440
+F 0 "#PWR01301" H 1800 5190 50  0001 C CNN
+F 1 "GND" H 1800 5290 50  0000 C CNN
+F 2 "" H 1800 5440 50  0001 C CNN
+F 3 "" H 1800 5440 50  0001 C CNN
+	1    1800 5440
 	0    1    1    0   
 $EndComp
 $Comp
@@ -196,8 +196,6 @@ Text GLabel 7520 3770 2    60   Output ~ 0
 ~Brightness
 Text GLabel 4290 3770 2    60   Output ~ 0
 ~Encoder_PB
-Wire Wire Line
-	1910 5440 1870 5440
 $Comp
 L VFD_Clock-rescue:Res_Custom R1308
 U 1 1 5B52E12B
@@ -1274,8 +1272,6 @@ F 3 "" H 5690 4380 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1870 5440 1870 3770
-Wire Wire Line
 	1870 3770 2720 3770
 Wire Wire Line
 	4210 1270 3880 1270
@@ -1297,4 +1293,10 @@ Wire Wire Line
 Connection ~ 6880 3770
 Text Notes 9010 1090 0    100  ~ 20
 Pushbuttons/\nRotary Encoder
+Wire Wire Line
+	1870 5640 1910 5640
+Wire Wire Line
+	1870 3770 1870 5640
+Wire Wire Line
+	1800 5440 1910 5440
 $EndSCHEMATC
