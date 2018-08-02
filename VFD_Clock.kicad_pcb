@@ -900,7 +900,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-143 (layer B.Cu) (tedit 5B57DF2C) (tstamp 5B57E353)
-    (at 494.2205 220.9165 180)
+    (at 94.234 -44.196 180)
     (descr SOT-143)
     (tags SOT-143)
     (path /5A2E03CB/5B59BFB8)
@@ -982,7 +982,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-143 (layer B.Cu) (tedit 5B57DEF5) (tstamp 5B57E32D)
-    (at 470.4461 218.21775 180)
+    (at 52.6161 -44.22775 180)
     (descr SOT-143)
     (tags SOT-143)
     (path /5A2E03CB/5B59A8FC)
@@ -1023,7 +1023,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-143 (layer B.Cu) (tedit 5B57DEE3) (tstamp 5B57E31A)
-    (at 492.88954 207.072231 180)
+    (at 107.19054 -44.260769 180)
     (descr SOT-143)
     (tags SOT-143)
     (path /5A2E03CB/5B59A8C0)
@@ -1064,7 +1064,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-143 (layer B.Cu) (tedit 5B57DEC8) (tstamp 5B636BE5)
-    (at 466.9155 195.6054 180)
+    (at 158.369 -44.3611 180)
     (descr SOT-143)
     (tags SOT-143)
     (path /5A2E03CB/5B599E76)
@@ -1105,7 +1105,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B57DF32) (tstamp 5B57E2F7)
-    (at 494.2205 223.52 180)
+    (at 94.234 -41.5925 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2E03CB/5B59BFCE)
@@ -1177,7 +1177,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B57DEFD) (tstamp 5B57E2D7)
-    (at 470.4461 220.82125 180)
+    (at 52.6161 -41.62425 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2E03CB/5B59A912)
@@ -1213,7 +1213,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B57DEE8) (tstamp 5B57E2C7)
-    (at 492.887 209.677 180)
+    (at 107.188 -41.656 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2E03CB/5B59A8D6)
@@ -1249,7 +1249,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B57DEDB) (tstamp 5B636C1B)
-    (at 466.9155 198.2089 180)
+    (at 158.369 -41.7576 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2E03CB/5B599E8C)
@@ -1285,7 +1285,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B57DF38) (tstamp 5B57E2A7)
-    (at 494.2205 218.3765)
+    (at 94.234 -46.736)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2E03CB/5B59BFB0)
@@ -1357,7 +1357,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B57DF0B) (tstamp 5B57E287)
-    (at 470.4461 215.67775)
+    (at 52.6161 -46.76775)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2E03CB/5B59A8F4)
@@ -1393,7 +1393,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B57DEEF) (tstamp 5B57E277)
-    (at 492.88954 204.532231)
+    (at 107.19054 -46.800769)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2E03CB/5B59A8B8)
@@ -1429,7 +1429,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B57DED3) (tstamp 5B636BB2)
-    (at 466.9155 193.0654)
+    (at 158.369 -46.9011)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2E03CB/5B599E6E)
@@ -14333,7 +14333,7 @@
   )
 
   (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5B62767F) (tstamp 5B55795B)
-    (at 509.143 213.4235)
+    (at 167.894 -46.5455)
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5A2E03CB/5A4C64DE)
@@ -14384,7 +14384,7 @@
   )
 
   (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5B6275B6) (tstamp 5B55797A)
-    (at 463.55 193.421)
+    (at 155.0035 -46.5455)
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5A2E03CB/5A4C7388)
@@ -14435,7 +14435,7 @@
   )
 
   (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5B627682) (tstamp 5B557999)
-    (at 489.585 204.851)
+    (at 103.886 -46.482)
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5A2E03CB/5A4C7462)
@@ -14486,7 +14486,7 @@
   )
 
   (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5B6275DC) (tstamp 5B5579B8)
-    (at 467.1695 216.027)
+    (at 49.3395 -46.4185)
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5A2E03CB/5A4C7468)
@@ -14536,12 +14536,12 @@
     )
   )
 
-  (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5923F252) (tstamp 5B5579D7)
-    (at 490.982 218.6305)
+  (module Buttons_Switches_THT:SW_PUSH_6mm (layer F.Cu) (tedit 5B62812F) (tstamp 5B5579D7)
+    (at 90.9955 -46.482)
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5A2E03CB/5A4C7596)
-    (fp_text reference SW1305 (at 3.25 -2) (layer F.SilkS)
+    (fp_text reference SW1305 (at 3.25 -2) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value Brightness (at 3.75 6.7) (layer F.Fab)
@@ -16294,7 +16294,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B57DE07) (tstamp 5B57E00E)
-    (at 512.41706 213.1822)
+    (at 171.16806 -46.7868)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2E03CB/5A4BB072)
@@ -16330,7 +16330,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B57DE98) (tstamp 5B57E074)
-    (at 512.3815 218.313 180)
+    (at 171.1325 -41.656 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2E03CB/5B597074)
@@ -16561,7 +16561,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-143 (layer B.Cu) (tedit 58CE4E7E) (tstamp 5B57E141)
-    (at 512.41706 215.7222 180)
+    (at 171.16806 -44.2468 180)
     (descr SOT-143)
     (tags SOT-143)
     (path /5A2E03CB/5B5966BD)
@@ -18377,7 +18377,7 @@
   (gr_text "+3.3V MNG" (at 85.4075 -9.398 90) (layer F.SilkS) (tstamp 5B63AF95)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text VHU (at 68.961 -9.779) (layer F.SilkS) (tstamp 5B63AF91)
+  (gr_text VHU (at 68.2625 -9.525) (layer F.SilkS) (tstamp 5B63AF91)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (gr_text "VAN PGOOD" (at 17.526 -48.514) (layer F.SilkS) (tstamp 5B63957A)
