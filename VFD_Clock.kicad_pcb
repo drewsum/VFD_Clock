@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 86)
+    (drawings 68)
     (tracks 0)
     (zones 0)
     (modules 477)
@@ -5200,7 +5200,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440BE2) (tstamp 5B43129A)
-    (at 366.2045 122.2756 90)
+    (at 377.7615 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5AEE8ED3)
@@ -5236,7 +5236,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440BDF) (tstamp 5B4312A0)
-    (at 369.0493 122.2756 90)
+    (at 380.6063 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5AEE8EE5)
@@ -5272,7 +5272,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440BCE) (tstamp 5B4312A6)
-    (at 367.6269 122.2756 90)
+    (at 379.1839 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5AEE8EDC)
@@ -5308,7 +5308,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440C1B) (tstamp 5B4312AC)
-    (at 380.9365 122.2756 90)
+    (at 392.4935 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5A49B30E)
@@ -5344,7 +5344,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440C12) (tstamp 5B4312B2)
-    (at 378.0917 122.2756 90)
+    (at 389.6487 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5A49B322)
@@ -5380,7 +5380,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B440C05) (tstamp 5B4312B8)
-    (at 379.5141 122.2756 90)
+    (at 391.0711 34.2646 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5A49B318)
@@ -5416,7 +5416,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 5B440EE2) (tstamp 5B4312BE)
-    (at 373.126 133.2992 270)
+    (at 384.683 45.2882 270)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5A55A45C)
@@ -5452,7 +5452,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 5B440ED5) (tstamp 5B4312C4)
-    (at 374.5484 133.2992 270)
+    (at 386.1054 45.2882 270)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A0A42E8/5A55A46B)
@@ -5488,7 +5488,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B431390)
-    (at 267.484762 223.2213)
+    (at 365.274762 58.3118)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2ED377/5B51A227)
@@ -5524,7 +5524,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B431396)
-    (at 246.684762 224.8213)
+    (at 344.474762 59.9118)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2ED377/5A4DDF70)
@@ -5560,7 +5560,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B43139C)
-    (at 260.944762 213.2213)
+    (at 358.734762 48.3118)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2ED377/5A4DDD96)
@@ -5596,7 +5596,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B4313A2)
-    (at 251.214762 219.0213)
+    (at 349.004762 54.1118)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A2ED377/5A4DDFAA)
@@ -5632,7 +5632,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B4410EC) (tstamp 5B4313A8)
-    (at 477.012 109.728 180)
+    (at 415.29 -6.35 180)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A51948C/5A51ADA3)
@@ -5668,7 +5668,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer B.Cu) (tedit 5B4410D1) (tstamp 5B4313AE)
-    (at 483.616 110.1852 90)
+    (at 421.894 -5.8928 90)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A51948C/5A51AE42)
@@ -5704,7 +5704,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 5B441167) (tstamp 5B4313B4)
-    (at 482.8032 110.3884 270)
+    (at 421.0812 -5.6896 270)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5A51948C/5A51AE0F)
@@ -5740,7 +5740,7 @@
   )
 
   (module "Custom Footprints Library:PICKIT3_Header" (layer F.Cu) (tedit 5AED410F) (tstamp 5B431489)
-    (at 458.121801 119.8182)
+    (at 396.399801 3.7402)
     (descr "Through hole angled pin header, 1x06, 2.54mm pitch, 6mm pin length, single row")
     (tags "Through hole angled pin header THT 1x06 2.54mm single row")
     (path /5A51948C/5A519E87)
@@ -5947,7 +5947,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4315D0)
-    (at 395.460171 130.8833)
+    (at 407.017171 42.8723)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A0A42E8/5A4BF622)
@@ -5983,7 +5983,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4315D6)
-    (at 400.020171 120.8333)
+    (at 411.577171 32.8223)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A0A42E8/5A4BF62C)
@@ -6019,7 +6019,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4315DC)
-    (at 400.020171 125.8333)
+    (at 411.577171 37.8223)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A0A42E8/5A4BF636)
@@ -6055,7 +6055,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4315E2)
-    (at 391.210171 130.9333)
+    (at 402.767171 42.9223)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A0A42E8/5A4BF640)
@@ -6091,7 +6091,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B440F29) (tstamp 5B4315E8)
-    (at 366.776 120.015 180)
+    (at 378.333 32.004 180)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A0A42E8/5A49C9A3)
@@ -6343,7 +6343,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318AC)
-    (at 262.284762 223.2213)
+    (at 360.074762 58.3118)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5B51A213)
@@ -6379,7 +6379,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318B2)
-    (at 241.484762 224.7713)
+    (at 339.274762 59.8618)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5B51A21D)
@@ -6415,7 +6415,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318B8)
-    (at 266.814762 218.1713)
+    (at 364.604762 53.2618)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDF5E)
@@ -6451,7 +6451,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318BE)
-    (at 257.084762 223.9713)
+    (at 354.874762 59.0618)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDF67)
@@ -6487,7 +6487,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318C4)
-    (at 261.614762 218.2213)
+    (at 359.404762 53.3118)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDD84)
@@ -6523,7 +6523,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318CA)
-    (at 266.144762 213.1713)
+    (at 363.934762 48.2618)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDD8D)
@@ -6559,7 +6559,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318D0)
-    (at 251.884762 224.0213)
+    (at 349.674762 59.1118)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDF98)
@@ -6595,7 +6595,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B4318D6)
-    (at 256.414762 218.9713)
+    (at 354.204762 54.0618)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A2ED377/5A4DDFA1)
@@ -6631,7 +6631,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer B.Cu) (tedit 5B4410FD) (tstamp 5B4318DC)
-    (at 480.8728 112.8268)
+    (at 419.1508 -3.2512)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A51948C/5A51ADB5)
@@ -6667,7 +6667,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B441171) (tstamp 5B4318E2)
-    (at 480.06 107.7468)
+    (at 418.338 -8.3312)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A51948C/5A51ADC6)
@@ -6703,7 +6703,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B441187) (tstamp 5B4318E8)
-    (at 477.1136 111.2012 270)
+    (at 415.3916 -4.8768 270)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A51948C/5A51ADF2)
@@ -6739,7 +6739,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B441198) (tstamp 5B4318EE)
-    (at 477.1136 108.458 270)
+    (at 415.3916 -7.62 270)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A51948C/5A51ADE0)
@@ -6775,7 +6775,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B441190) (tstamp 5B4318F4)
-    (at 480.0092 113.1824)
+    (at 418.2872 -2.8956)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A51948C/5A51AE25)
@@ -6811,7 +6811,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-23-5 (layer B.Cu) (tedit 5B4410F4) (tstamp 5B431AC4)
-    (at 480.8728 110.0836)
+    (at 419.1508 -5.9944)
     (descr "5-pin SOT23 package")
     (tags SOT-23-5)
     (path /5A51948C/5A51AD7B)
@@ -6889,7 +6889,7 @@
   )
 
   (module Crystals:Crystal_SMD_2012-2pin_2.0x1.2mm (layer F.Cu) (tedit 5B440EC3) (tstamp 5B431B7F)
-    (at 373.8372 130.81)
+    (at 385.3942 42.799)
     (descr "SMD Crystal 2012/2 http://txccrystal.com/images/pdf/9ht11.pdf, 2.0x1.2mm^2 package")
     (tags "SMD SMT crystal")
     (path /5A0A42E8/5A55A462)
@@ -6931,7 +6931,7 @@
   )
 
   (module Diodes_SMD:D_SOD-323 (layer F.Cu) (tedit 58641739) (tstamp 5B431B99)
-    (at 253.376667 213.5713)
+    (at 351.166667 48.6618)
     (descr SOD-323)
     (tags SOD-323)
     (path /5A2ED377/5A4DDDAE)
@@ -6974,7 +6974,7 @@
   )
 
   (module Diodes_SMD:D_SOD-323 (layer F.Cu) (tedit 58641739) (tstamp 5B431B9F)
-    (at 243.646667 219.3713)
+    (at 341.436667 54.4618)
     (descr SOD-323)
     (tags SOD-323)
     (path /5A2ED377/5A4DDFC2)
@@ -7017,7 +7017,7 @@
   )
 
   (module Diodes_SMD:D_SOD-323 (layer B.Cu) (tedit 5B4410E1) (tstamp 5B431BA5)
-    (at 476.9104 111.5568 180)
+    (at 415.1884 -4.5212 180)
     (descr SOD-323)
     (tags SOD-323)
     (path /5A51948C/5A51AD91)
@@ -9086,7 +9086,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B556CEE)
-    (at 312.42 233.2355)
+    (at 410.21 68.326)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5B3E071A/5AEDC465)
@@ -9122,7 +9122,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B556CFF)
-    (at 296.672 222.4405)
+    (at 394.462 57.531)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5B3E071A/5AEDC4E9)
@@ -9158,7 +9158,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B556D32)
-    (at 299.085 234.1245)
+    (at 396.875 69.215)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5B3E071A/5AEDC54C)
@@ -9194,7 +9194,7 @@
   )
 
   (module Capacitors_SMD:C_0603 (layer F.Cu) (tedit 59958EE7) (tstamp 5B556D43)
-    (at 311.023 222.4405)
+    (at 408.813 57.531)
     (descr "Capacitor SMD 0603, reflow soldering, AVX (see smccp.pdf)")
     (tags "capacitor 0603")
     (path /5B3E071A/5AEDC681)
@@ -9460,7 +9460,7 @@
   )
 
   (module LEDs:LED_0603 (layer F.Cu) (tedit 5B57E4E5) (tstamp 5B556DEB)
-    (at 492.5695 109.347 180)
+    (at 430.8475 -6.731 180)
     (descr "LED 0603 smd package")
     (tags "LED led 0603 SMD smd SMT smt smdled SMDLED smtled SMTLED")
     (path /5A1A6820/5B2E08B8)
@@ -10682,7 +10682,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-23 (layer F.Cu) (tedit 5B57E4C7) (tstamp 5B557109)
-    (at 492.506 111.9505)
+    (at 430.784 -4.1275)
     (descr "SOT-23, Standard")
     (tags SOT-23)
     (path /5A1A6820/5B2E089F)
@@ -12173,7 +12173,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B57E4C0) (tstamp 5B557496)
-    (at 489.9025 111.9505 270)
+    (at 428.1805 -4.1275 270)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A1A6820/5B2E1288)
@@ -12281,7 +12281,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 5B57E4D6) (tstamp 5B5574C9)
-    (at 495.1095 111.0615 90)
+    (at 433.3875 -5.0165 90)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5A1A6820/5B2E08AF)
@@ -14009,7 +14009,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B5578B4)
-    (at 307.848 233.7435)
+    (at 405.638 68.834)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5B3E071A/5AB842BB)
@@ -14045,7 +14045,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B5578C5)
-    (at 297.18 225.1075)
+    (at 394.97 60.198)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5B3E071A/5AB843B5)
@@ -14081,7 +14081,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B5578D6)
-    (at 298.704 232.2195)
+    (at 396.494 67.31)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5B3E071A/5AB84555)
@@ -14117,7 +14117,7 @@
   )
 
   (module Resistors_SMD:R_0603 (layer F.Cu) (tedit 58E0A804) (tstamp 5B5578E7)
-    (at 312.916 224.7265)
+    (at 410.706 59.817)
     (descr "Resistor SMD 0603, reflow soldering, Vishay (see dcrcw.pdf)")
     (tags "resistor 0603")
     (path /5B3E071A/5AB85573)
@@ -14673,7 +14673,7 @@
   )
 
   (module Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm (layer F.Cu) (tedit 59650532) (tstamp 5B557A21)
-    (at 484.505 128.016)
+    (at 422.783 11.938)
     (descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x03 2.54mm single row")
     (path /5A0A42E8/5B5039B1)
@@ -15503,7 +15503,7 @@
   )
 
   (module TO_SOT_Packages_SMD:SOT-353_SC-70-5 (layer F.Cu) (tedit 58CE4E7F) (tstamp 5B557BF0)
-    (at 480.0092 110.3884)
+    (at 418.2872 -5.6896)
     (descr "SOT-353, SC-70-5")
     (tags "SOT-353 SC-70-5")
     (path /5A51948C/5B4C6593)
@@ -16366,7 +16366,7 @@
   )
 
   (module Housings_DFN_QFN:QFN-64-1EP_9x9mm_Pitch0.5mm (layer F.Cu) (tedit 54130A77) (tstamp 5B63CD4B)
-    (at 373.5705 121.7295)
+    (at 385.1275 33.7185)
     (descr "64-Lead Plastic Quad Flat, No Lead Package (MR) - 9x9x0.9 mm Body [QFN]; (see Microchip Packaging Specification 00000049BS.pdf)")
     (tags "QFN 0.5")
     (path /5A0A42E8/5B5806FA)
@@ -18365,6 +18365,21 @@
     )
   )
 
+  (gr_text "SET TIME" (at 171.196 -48.895 180) (layer F.SilkS) (tstamp 5B63EB30)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text "SET DATE" (at 158.4325 -48.895 180) (layer F.SilkS) (tstamp 5B63EB2A)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text "SET ALARM" (at 107.2515 -48.895 180) (layer F.SilkS) (tstamp 5B63EB26)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text BRIGHTNESS (at 94.234 -48.895 180) (layer F.SilkS) (tstamp 5B63EB23)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text POWER (at 52.6415 -48.895 180) (layer F.SilkS) (tstamp 5B63EB10)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
   (gr_text "VFF\nPGOOD" (at 28.8925 -46.0375) (layer F.SilkS) (tstamp 5B63D173)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -18425,14 +18440,6 @@
   (gr_line (start 423.291 237.109) (end 365.9505 237.109) (layer Eco1.User) (width 0.2))
   (gr_line (start 423.291 165.862) (end 423.291 237.109) (layer Eco1.User) (width 0.2))
   (gr_line (start 358.14 165.862) (end 423.291 165.862) (layer Eco1.User) (width 0.2))
-  (gr_line (start 451.0405 173.4185) (end 451.2945 173.6725) (layer Cmts.User) (width 0.2) (tstamp 5B57EBB1))
-  (gr_line (start 451.2945 243.459) (end 451.2945 173.6725) (layer Cmts.User) (width 0.2))
-  (gr_line (start 531.8125 243.459) (end 451.2945 243.459) (layer Cmts.User) (width 0.2))
-  (gr_line (start 531.8125 172.1485) (end 531.8125 243.459) (layer Cmts.User) (width 0.2))
-  (gr_line (start 447.6115 172.1485) (end 531.8125 172.1485) (layer Cmts.User) (width 0.2))
-  (gr_text Encoder/Switches (at 493.9665 177.8635) (layer Cmts.User)
-    (effects (font (size 1.5 1.5) (thickness 0.3)))
-  )
   (gr_text "Temp Sensors" (at 280.543 279.4635) (layer Cmts.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
@@ -18473,33 +18480,12 @@
   (gr_line (start 131.0386 222.5675) (end 52.705 222.5675) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_line (start 131.0386 182.4355) (end 131.0386 222.5675) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_line (start 52.6542 182.4355) (end 131.0386 182.4355) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_text "ADC Filters" (at 262.382 204.3557) (layer Cmts.User) (tstamp 5B445694)
-    (effects (font (size 5.08 5.08) (thickness 0.3)))
-  )
-  (gr_line (start 229.108 196.1261) (end 229.108 196.6341) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 316.8904 196.1261) (end 229.108 196.1261) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 316.8904 247.6881) (end 316.8904 196.1261) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 227.584 247.6881) (end 316.8904 247.6881) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 227.584 195.8721) (end 227.584 247.6881) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_text ICSP (at 477.6724 100.2792) (layer Cmts.User) (tstamp 5B44568D)
-    (effects (font (size 5.08 5.08) (thickness 0.3)))
-  )
-  (gr_line (start 448.2084 146.2532) (end 447.7004 146.2532) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 448.2084 93.4212) (end 448.2084 146.2532) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 510.794 93.4212) (end 448.2084 93.4212) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 510.794 146.5072) (end 510.794 93.4212) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 447.9544 146.5072) (end 510.794 146.5072) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_text "Anode Drivers" (at 250.19 115.2652) (layer Cmts.User)
     (effects (font (size 5.08 5.08) (thickness 0.3)))
   )
-  (gr_text Micro (at 398.272 100.6348) (layer Cmts.User)
+  (gr_text Micro (at 369.6335 10.3505) (layer Cmts.User)
     (effects (font (size 5.08 5.08) (thickness 0.3)))
   )
-  (gr_line (start 350.9772 89.9668) (end 350.52 89.9668) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 350.9772 147.5232) (end 350.9772 89.9668) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 420.1668 147.5232) (end 350.9772 147.5232) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 420.1668 89.7128) (end 420.1668 147.5232) (angle 90) (layer Cmts.User) (width 0.2))
-  (gr_line (start 350.52 89.7128) (end 420.1668 89.7128) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_line (start 214.9348 84.836) (end 219.964 84.836) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_line (start 214.9348 127.0508) (end 214.9348 84.836) (angle 90) (layer Cmts.User) (width 0.2))
   (gr_line (start 318.3128 127.0508) (end 214.9348 127.0508) (angle 90) (layer Cmts.User) (width 0.2))
