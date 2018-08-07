@@ -743,4 +743,12 @@ $EndComp
 NoConn ~ 9200 3380
 Text Notes 4260 1110 0    100  ~ 20
 UART to USB Bridge
+Text Label 4120 3180 0    60   ~ 0
+BRIDGE_USB+
+Text Label 4120 3280 0    60   ~ 0
+BRIDGE_USB-
+Text Label 6700 3180 0    60   ~ 0
+CONN_USB+
+Text Label 6700 3280 0    60   ~ 0
+CONN_USB-
 $EndSCHEMATC

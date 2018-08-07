@@ -283,9 +283,9 @@ VAN_RUN
 Text GLabel 3760 2430 0    60   Output ~ 0
 VFF_RUN
 Text GLabel 8130 5520 1    60   UnSpc ~ 0
-uC_SOSC2
+uC_SOSC-
 Text GLabel 7430 5520 1    60   UnSpc ~ 0
-uC_SOSC1
+uC_SOSC+
 $Comp
 L Custom-Library:C_Custom C308
 U 1 1 5A55A45C
@@ -361,9 +361,9 @@ Wire Wire Line
 Connection ~ 7430 5600
 Connection ~ 8130 5600
 Text GLabel 3760 3130 0    60   UnSpc ~ 0
-uC_SOSC1
+uC_SOSC+
 Text GLabel 3760 3030 0    60   UnSpc ~ 0
-uC_SOSC2
+uC_SOSC-
 $Comp
 L Custom-Library:+3.3V_MNG #PWR0309
 U 1 1 5A55ED44
