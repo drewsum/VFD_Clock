@@ -258,15 +258,15 @@ Wire Wire Line
 Wire Wire Line
 	5060 940  5060 980 
 Connection ~ 5010 940 
-Text GLabel 6260 1430 2    40   Input ~ 0
+Text GLabel 6260 1830 2    40   Input ~ 0
 ~Time
-Text GLabel 6260 1530 2    40   Input ~ 0
+Text GLabel 6260 1730 2    40   Input ~ 0
 ~Date
 Text GLabel 6260 1630 2    40   Input ~ 0
 ~Alarm
-Text GLabel 6260 1730 2    40   Input ~ 0
+Text GLabel 6260 1430 2    40   Input ~ 0
 ~Display
-Text GLabel 6260 1830 2    40   Input ~ 0
+Text GLabel 6260 1530 2    40   Input ~ 0
 ~Brightness
 Text GLabel 6260 1930 2    40   Input ~ 0
 ~Encoder_PB
