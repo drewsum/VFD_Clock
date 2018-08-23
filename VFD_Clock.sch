@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 23
+Sheet 1 24
 Title ""
 Date ""
 Rev ""
@@ -151,5 +151,11 @@ S 3690 5130 500  150
 U 5B583C3D
 F0 "Mechanical" 60
 F1 "Mechanical.sch" 60
+$EndSheet
+$Sheet
+S 3690 5470 500  150 
+U 5B7F5EA1
+F0 "Reset Detection" 60
+F1 "Reset_Detection.sch" 60
 $EndSheet
 $EndSCHEMATC

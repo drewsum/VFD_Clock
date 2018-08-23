@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 3 23
+Sheet 3 24
 Title ""
 Date ""
 Rev ""
@@ -582,7 +582,6 @@ ACCUM
 Text GLabel 3760 3630 0    60   Output ~ 0
 REF_CLK
 NoConn ~ 3760 1430
-NoConn ~ 3760 3730
 $Comp
 L Connector_Generic:Conn_01x03 TP302
 U 1 1 5B5F52C3
@@ -612,18 +611,6 @@ USB_UART_RX
 Text Notes 5710 750  0    100  ~ 20
 8 Bit High Performance Microcontroller
 $Comp
-L Custom_Library:PIC18(L)F67K40-I_PT U301
-U 1 1 5B668926
-P 5010 2980
-F 0 "U301" H 6060 1180 50  0000 R CNN
-F 1 "PIC18LF67K40-I_PT" H 5010 3030 50  0000 C CNN
-F 2 "Housings_QFP:TQFP-64_10x10mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
-F 3 "" H 4360 3630 50  0001 C CNN
-F 4 "PIC18LF67K40T-I/PTCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
-	1    5010 2980
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0302
 U 1 1 5B66A6B7
 P 5010 4960
@@ -645,4 +632,18 @@ Wire Wire Line
 Wire Wire Line
 	5060 4920 5060 4880
 Connection ~ 5010 4920
+$Comp
+L Custom_Library:PIC18(L)F67K40-I_PT U301
+U 1 1 5B668926
+P 5010 2980
+F 0 "U301" H 6060 1180 50  0000 R CNN
+F 1 "PIC18LF67K40-I_PT" H 5010 3030 50  0000 C CNN
+F 2 "Housings_QFP:TQFP-64_10x10mm_Pitch0.5mm" H 5010 5080 50  0001 C CNN
+F 3 "" H 4360 3630 50  0001 C CNN
+F 4 "PIC18LF67K40T-I/PTCT-ND" H 5010 2980 50  0001 C CNN "Digi-Key PN"
+	1    5010 2980
+	1    0    0    -1  
+$EndComp
+Text GLabel 3760 3730 0    60   Output ~ 0
+Watchdog_Poke
 $EndSCHEMATC

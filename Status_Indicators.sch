@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 10 23
+Sheet 10 24
 Title ""
 Date ""
 Rev ""
@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 4260 7140 0    60   UnSpc ~ 0
+Text GLabel 4260 7140 0    60   Input ~ 0
 ICSP_DETECT
 $Comp
 L Custom-Library:LED_ALT_Custom D1001
@@ -858,4 +858,87 @@ F 3 "" H 6030 5540 60  0001 C CNN
 $EndComp
 Text Notes 4570 910  0    100  ~ 20
 Status Indicators
+Text GLabel 8350 5770 0    60   Input ~ 0
+Reset_Detect
+$Comp
+L Custom-Library:LED_ALT_Custom D1009
+U 1 1 5B80AF85
+P 9590 5050
+F 0 "D1009" H 9590 5150 50  0000 C CNN
+F 1 "Red" H 9590 4950 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 9590 5050 50  0001 C CNN
+F 3 "" H 9590 5050 50  0001 C CNN
+F 4 "0603" H 9590 4850 50  0000 C CNN "display_footprint"
+F 5 "511-1297-1-ND" H 4090 -1370 50  0001 C CNN "Digi-Key PN"
+	1    9590 5050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9590 5200 9590 5270
+$Comp
+L Custom-Library:+3.3V #PWR01024
+U 1 1 5B80AF8D
+P 9590 4900
+F 0 "#PWR01024" H 9590 4750 50  0001 C CNN
+F 1 "+3.3V" H 9590 5040 50  0000 C CNN
+F 2 "" H 9590 4900 50  0000 C CNN
+F 3 "" H 9590 4900 50  0000 C CNN
+	1    9590 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:R_Custom R1018
+U 1 1 5B80AF97
+P 9590 5420
+F 0 "R1018" H 9530 5420 50  0000 R CNN
+F 1 "1k" V 9590 5420 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 9590 5420 50  0001 C CNN
+F 3 "" H 9590 5420 50  0001 C CNN
+F 4 "0603" H 9660 5500 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9660 5420 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 9660 5350 50  0000 L CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 4090 -1370 50  0001 C CNN "Digi-Key PN"
+	1    9590 5420
+	1    0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:2N7002 Q1003
+U 1 1 5B80AF9F
+P 9490 5770
+F 0 "Q1003" H 9700 5820 50  0000 L CNN
+F 1 "2N7002" H 9990 5720 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 9690 5870 29  0001 C CNN
+F 3 "" H 9490 5770 60  0000 C CNN
+F 4 "2N7002-GMCCT-ND" H 4090 -1370 50  0001 C CNN "Digi-Key PN"
+	1    9490 5770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01025
+U 1 1 5B80AFA6
+P 9590 5970
+F 0 "#PWR01025" H 9590 5720 50  0001 C CNN
+F 1 "GND" H 9590 5820 50  0000 C CNN
+F 2 "" H 9590 5970 50  0001 C CNN
+F 3 "" H 9590 5970 50  0001 C CNN
+	1    9590 5970
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:R_Custom R1017
+U 1 1 5B80AFB0
+P 8500 5770
+F 0 "R1017" V 8400 5770 50  0000 C CNN
+F 1 "10" V 8500 5770 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8500 5770 50  0001 C CNN
+F 3 "" H 8500 5770 50  0001 C CNN
+F 4 "0603" V 8600 5770 50  0000 C CNN "display_footprint"
+F 5 "1%" V 8700 5770 50  0000 C CNN "Tolerance"
+F 6 "1/10W" V 8800 5770 50  0000 C CNN "Wattage"
+F 7 "RMCF0603FT10R0CT-ND" H 4090 -1370 50  0001 C CNN "Digi-Key PN"
+	1    8500 5770
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8650 5770 9290 5770
 $EndSCHEMATC
