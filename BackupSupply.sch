@@ -956,4 +956,73 @@ Wire Wire Line
 	5710 2330 5710 2410
 Text Notes 3400 1050 0    100  ~ 20
 Supercap Backup Circuit/+3.3V Management Supply
+$Comp
+L Custom-Library:C_Custom C?
+U 1 1 5B7E8C56
+P 3710 7240
+AR Path="/5A0A42E8/5B7E8C56" Ref="C?"  Part="1" 
+AR Path="/5A557C58/5B7E8C56" Ref="C1710"  Part="1" 
+F 0 "C1710" H 3735 7340 50  0000 L CNN
+F 1 "0.1uF" H 3735 7140 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 3748 7090 50  0001 C CNN
+F 3 "" H 3735 7340 50  0001 C CNN
+F 4 "0603" H 3560 7340 50  0000 R CNN "display_footprint"
+F 5 "50V" H 3560 7240 50  0000 R CNN "Voltage"
+F 6 "X7R" H 3560 7140 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 800 280 50  0001 C CNN "Digi-Key PN"
+	1    3710 7240
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom-Library:C_Custom C?
+U 1 1 5B7EBBFF
+P 3710 7620
+AR Path="/5A0A42E8/5B7EBBFF" Ref="C?"  Part="1" 
+AR Path="/5A557C58/5B7EBBFF" Ref="C1711"  Part="1" 
+F 0 "C1711" H 3735 7720 50  0000 L CNN
+F 1 "0.1uF" H 3735 7520 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 3748 7470 50  0001 C CNN
+F 3 "" H 3735 7720 50  0001 C CNN
+F 4 "0603" H 3560 7720 50  0000 R CNN "display_footprint"
+F 5 "50V" H 3560 7620 50  0000 R CNN "Voltage"
+F 6 "X7R" H 3560 7520 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 800 660 50  0001 C CNN "Digi-Key PN"
+	1    3710 7620
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01724
+U 1 1 5B7EBCC4
+P 3710 7770
+F 0 "#PWR01724" H 3710 7520 50  0001 C CNN
+F 1 "GND" H 3710 7620 50  0000 C CNN
+F 2 "" H 3710 7770 50  0001 C CNN
+F 3 "" H 3710 7770 50  0001 C CNN
+	1    3710 7770
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:VHU #PWR01723
+U 1 1 5B7EBDB5
+P 3710 7090
+F 0 "#PWR01723" H 3710 6940 50  0001 C CNN
+F 1 "VHU" H 3710 7240 50  0000 C CNN
+F 2 "" H 3710 7090 50  0001 C CNN
+F 3 "" H 3710 7090 50  0001 C CNN
+	1    3710 7090
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3710 7470 3710 7430
+Wire Wire Line
+	3710 7430 4050 7430
+Connection ~ 3710 7430
+Wire Wire Line
+	3710 7430 3710 7390
+Text GLabel 4050 7430 2    60   UnSpc ~ 0
+MID
+Text GLabel 4320 3750 2    60   UnSpc ~ 0
+MID
+Wire Wire Line
+	4320 3750 4260 3750
 $EndSCHEMATC
