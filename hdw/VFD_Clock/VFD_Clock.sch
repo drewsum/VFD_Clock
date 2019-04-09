@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 14
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -29,14 +29,14 @@ $EndSheet
 $Sheet
 S 6400 2310 500  150 
 U 5A0BC776
-F0 "VAN Power Supply" 50
-F1 "VAN_Power_Supply.sch" 50
+F0 "POS60 VAN Power Supply" 50
+F1 "POS60_VAN_Power_Supply.sch" 50
 $EndSheet
 $Sheet
 S 6400 2660 500  150 
 U 5A0A7E5F
-F0 "VFF Power Supply" 50
-F1 "VFF_Power_Supply.sch" 50
+F0 "POS1P2 VFF Power Supply" 50
+F1 "POS1P2_VFF_Power_Supply.sch" 50
 $EndSheet
 $Sheet
 S 1180 5100 500  150 
