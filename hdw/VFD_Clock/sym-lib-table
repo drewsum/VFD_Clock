@@ -1,0 +1,9 @@
+(sym_lib_table
+  (lib (name VFD_Clock-rescue)(type Legacy)(uri ${KIPRJMOD}/VFD_Clock-rescue.lib)(options "")(descr ""))
+  (lib (name Connector_Specialized)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/Connector_Specialized.lib)(options "")(descr ""))
+  (lib (name FPGA_Actel)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/FPGA_Actel.lib)(options "")(descr ""))
+  (lib (name MCU_Infineon)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/MCU_Infineon.lib)(options "")(descr ""))
+  (lib (name MCU_ST_STM32)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/MCU_ST_STM32.lib)(options "")(descr ""))
+  (lib (name nixie)(type Legacy)(uri "C:/Users/Drew Maatman/Documents/KiCad Projects/Libraries/KiCad-libs/nixie.lib")(options "")(descr ""))
+  (lib (name vfd)(type Legacy)(uri "C:/Users/Drew Maatman/Documents/KiCad Projects/Libraries/KiCad-libs/vfd.lib")(options "")(descr ""))
+)
