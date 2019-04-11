@@ -4,11 +4,11 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 8 14
-Title ""
-Date ""
-Rev ""
-Comp ""
+Sheet 8 19
+Title "VFD Clock"
+Date "2019-04-11"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -63,6 +63,7 @@ P 2290 990
 AR Path="/5BAAE1F3/5CB2CD24" Ref="R?"  Part="1" 
 AR Path="/5BAAE1DC/5CB2CD24" Ref="R?"  Part="1" 
 AR Path="/5CAD2DA3/5CB2CD24" Ref="R?"  Part="1" 
+AR Path="/5B3E071A/5CB2CD24" Ref="R?"  Part="1" 
 F 0 "R?" H 2230 990 50  0000 R CNN
 F 1 "10k" V 2290 990 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 2290 990 50  0001 C CNN
@@ -81,6 +82,7 @@ P 2990 990
 AR Path="/5BAAE1F3/5CB2CD2E" Ref="R?"  Part="1" 
 AR Path="/5BAAE1DC/5CB2CD2E" Ref="R?"  Part="1" 
 AR Path="/5CAD2DA3/5CB2CD2E" Ref="R?"  Part="1" 
+AR Path="/5B3E071A/5CB2CD2E" Ref="R?"  Part="1" 
 F 0 "R?" H 2930 990 50  0000 R CNN
 F 1 "10k" V 2990 990 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 2990 990 50  0001 C CNN
@@ -129,6 +131,7 @@ AR Path="/5BB6CF6D/5CB2CD4A" Ref="R?"  Part="1"
 AR Path="/5BBE424C/5CB2CD4A" Ref="R?"  Part="1" 
 AR Path="/5BAAE1DC/5CB2CD4A" Ref="R?"  Part="1" 
 AR Path="/5CAD2DA3/5CB2CD4A" Ref="R?"  Part="1" 
+AR Path="/5B3E071A/5CB2CD4A" Ref="R?"  Part="1" 
 F 0 "R?" V 1660 1190 50  0000 R CNN
 F 1 "100" V 1700 1330 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1700 1330 50  0001 C CNN
@@ -149,6 +152,7 @@ AR Path="/5BB6CF6D/5CB2CD54" Ref="R?"  Part="1"
 AR Path="/5BBE424C/5CB2CD54" Ref="R?"  Part="1" 
 AR Path="/5BAAE1DC/5CB2CD54" Ref="R?"  Part="1" 
 AR Path="/5CAD2DA3/5CB2CD54" Ref="R?"  Part="1" 
+AR Path="/5B3E071A/5CB2CD54" Ref="R?"  Part="1" 
 F 0 "R?" V 1660 1290 50  0000 R CNN
 F 1 "100" V 1700 1430 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1700 1430 50  0001 C CNN

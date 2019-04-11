@@ -4,11 +4,11 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 11 14
-Title ""
-Date ""
-Rev ""
-Comp ""
+Sheet 11 19
+Title "VFD Clock"
+Date "2019-04-11"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""

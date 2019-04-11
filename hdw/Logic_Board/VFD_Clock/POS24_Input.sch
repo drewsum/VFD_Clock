@@ -4,11 +4,11 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 14
-Title "QI Charger"
-Date "2019-01-03"
+Sheet 14 19
+Title "VFD Clock"
+Date "2019-04-11"
 Rev "A"
-Comp ""
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -46,7 +46,7 @@ AR Path="/5BB86F23/5BB576E9" Ref="R?"  Part="1"
 AR Path="/5C1D5C9E/5BB576E9" Ref="R?"  Part="1" 
 AR Path="/5CB364CC/5BB576E9" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 4080 50  0000 R CNN
-F 1 "R" V 1920 4080 40  0000 C CNN
+F 1 "1.3M" V 1920 4080 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 4080 50  0001 C CNN
 F 3 "" H 1920 4080 50  0001 C CNN
 F 4 "541-6.04MHCT-ND" H 2220 4480 60  0001 C CNN "Digi-Key PN"
@@ -158,7 +158,7 @@ AR Path="/5BB86F23/5BB57974" Ref="R?"  Part="1"
 AR Path="/5C1D5C9E/5BB57974" Ref="R?"  Part="1" 
 AR Path="/5CB364CC/5BB57974" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 4610 50  0000 R CNN
-F 1 "R" V 1920 4610 40  0000 C CNN
+F 1 "4.64k" V 1920 4610 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 4610 50  0001 C CNN
 F 3 "" H 1920 4610 50  0001 C CNN
 F 4 "311-86.6KHRCT-ND" H 2220 5010 60  0001 C CNN "Digi-Key PN"
@@ -178,7 +178,7 @@ AR Path="/5BB86F23/5BB579AE" Ref="R?"  Part="1"
 AR Path="/5C1D5C9E/5BB579AE" Ref="R?"  Part="1" 
 AR Path="/5CB364CC/5BB579AE" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 5110 50  0000 R CNN
-F 1 "R" V 1920 5110 40  0000 C CNN
+F 1 "25.5k" V 1920 5110 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 5110 50  0001 C CNN
 F 3 "" H 1920 5110 50  0001 C CNN
 F 4 "311-243KHRCT-ND" H 2220 5510 60  0001 C CNN "Digi-Key PN"
@@ -958,7 +958,7 @@ F 3 "" H 5130 3810 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 2730 5270 0    50   ~ 0
-UVLO threshold set to TBD\nOVLO threshold set to TBD
+UVLO threshold set to 22V\nOVLO threshold set to 26V
 $Comp
 L Device:D_TVS_ALT D?
 U 1 1 5CB4988D

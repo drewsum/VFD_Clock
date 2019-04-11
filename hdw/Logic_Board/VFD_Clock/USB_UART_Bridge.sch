@@ -4,11 +4,11 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 14
-Title "Electronic Display Logic Board"
-Date "2018-12-15"
+Sheet 12 19
+Title "VFD Clock"
+Date "2019-04-11"
 Rev "A"
-Comp "Marquette University Senior Design 2018/2019 Group E44"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -627,7 +627,7 @@ F 0 "DOC?" H 8930 5100 60  0001 C CNN
 F 1 "COM_Port_Settings" H 8930 5200 60  0001 C CNN
 F 2 "" H 8930 5200 60  0001 C CNN
 F 3 "" H 8930 5200 60  0001 C CNN
-F 4 "921600 bps" H 9680 4850 60  0000 R CNN "Baud_Rate"
+F 4 "115200 bps" H 9680 4850 60  0000 R CNN "Baud_Rate"
 F 5 "8 bit" H 9680 4750 60  0000 R CNN "Data_Length"
 F 6 "None" H 9680 4650 60  0000 R CNN "Parity"
 F 7 "1" H 9680 4550 60  0000 R CNN "Stop_Bits"
