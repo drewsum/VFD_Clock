@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:VFD_Clock-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 7 21
+Sheet 3 3
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -31,28 +30,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 1920 2180 1920
 Connection ~ 2100 1920
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAE91
-P 2480 1540
-F 0 "#PWR?" H 2480 1390 50  0001 C CNN
-F 1 "VAN" H 2480 1690 50  0000 C CNN
-F 2 "" H 2480 1540 50  0001 C CNN
-F 3 "" H 2480 1540 50  0001 C CNN
-	1    2480 1540
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAE97
-P 2100 1540
-F 0 "#PWR?" H 2100 1390 50  0001 C CNN
-F 1 "VAN" H 2100 1690 50  0000 C CNN
-F 2 "" H 2100 1540 50  0001 C CNN
-F 3 "" H 2100 1540 50  0001 C CNN
-	1    2100 1540
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2480 1540 2480 1720
 $Comp
@@ -125,28 +102,6 @@ Wire Wire Line
 Wire Wire Line
 	4430 1920 4510 1920
 Connection ~ 4430 1920
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAED2
-P 4810 1540
-F 0 "#PWR?" H 4810 1390 50  0001 C CNN
-F 1 "VAN" H 4810 1690 50  0000 C CNN
-F 2 "" H 4810 1540 50  0001 C CNN
-F 3 "" H 4810 1540 50  0001 C CNN
-	1    4810 1540
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAED8
-P 4430 1540
-F 0 "#PWR?" H 4430 1390 50  0001 C CNN
-F 1 "VAN" H 4430 1690 50  0000 C CNN
-F 2 "" H 4430 1540 50  0001 C CNN
-F 3 "" H 4430 1540 50  0001 C CNN
-	1    4430 1540
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4810 1540 4810 1720
 $Comp
@@ -207,28 +162,6 @@ Wire Wire Line
 Wire Wire Line
 	6840 1920 6920 1920
 Connection ~ 6840 1920
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAF0B
-P 7220 1540
-F 0 "#PWR?" H 7220 1390 50  0001 C CNN
-F 1 "VAN" H 7220 1690 50  0000 C CNN
-F 2 "" H 7220 1540 50  0001 C CNN
-F 3 "" H 7220 1540 50  0001 C CNN
-	1    7220 1540
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAF11
-P 6840 1540
-F 0 "#PWR?" H 6840 1390 50  0001 C CNN
-F 1 "VAN" H 6840 1690 50  0000 C CNN
-F 2 "" H 6840 1540 50  0001 C CNN
-F 3 "" H 6840 1540 50  0001 C CNN
-	1    6840 1540
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7220 1540 7220 1720
 $Comp
@@ -289,28 +222,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 4250 2180 4250
 Connection ~ 2100 4250
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAF7D
-P 2480 3870
-F 0 "#PWR?" H 2480 3720 50  0001 C CNN
-F 1 "VAN" H 2480 4020 50  0000 C CNN
-F 2 "" H 2480 3870 50  0001 C CNN
-F 3 "" H 2480 3870 50  0001 C CNN
-	1    2480 3870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAF83
-P 2100 3870
-F 0 "#PWR?" H 2100 3720 50  0001 C CNN
-F 1 "VAN" H 2100 4020 50  0000 C CNN
-F 2 "" H 2100 3870 50  0001 C CNN
-F 3 "" H 2100 3870 50  0001 C CNN
-	1    2100 3870
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2480 3870 2480 4050
 $Comp
@@ -371,28 +282,6 @@ Wire Wire Line
 Wire Wire Line
 	4430 4250 4510 4250
 Connection ~ 4430 4250
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAFB6
-P 4810 3870
-F 0 "#PWR?" H 4810 3720 50  0001 C CNN
-F 1 "VAN" H 4810 4020 50  0000 C CNN
-F 2 "" H 4810 3870 50  0001 C CNN
-F 3 "" H 4810 3870 50  0001 C CNN
-	1    4810 3870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAFBC
-P 4430 3870
-F 0 "#PWR?" H 4430 3720 50  0001 C CNN
-F 1 "VAN" H 4430 4020 50  0000 C CNN
-F 2 "" H 4430 3870 50  0001 C CNN
-F 3 "" H 4430 3870 50  0001 C CNN
-	1    4430 3870
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4810 3870 4810 4050
 $Comp
@@ -453,28 +342,6 @@ Wire Wire Line
 Wire Wire Line
 	6840 4250 6920 4250
 Connection ~ 6840 4250
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAFEF
-P 7220 3870
-F 0 "#PWR?" H 7220 3720 50  0001 C CNN
-F 1 "VAN" H 7220 4020 50  0000 C CNN
-F 2 "" H 7220 3870 50  0001 C CNN
-F 3 "" H 7220 3870 50  0001 C CNN
-	1    7220 3870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:VAN #PWR?
-U 1 1 5A2FAFF5
-P 6840 3870
-F 0 "#PWR?" H 6840 3720 50  0001 C CNN
-F 1 "VAN" H 6840 4020 50  0000 C CNN
-F 2 "" H 6840 3870 50  0001 C CNN
-F 3 "" H 6840 3870 50  0001 C CNN
-	1    6840 3870
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7220 3870 7220 4050
 $Comp

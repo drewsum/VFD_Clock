@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 8 19
+Sheet 7 21
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -176,4 +176,97 @@ Text GLabel 1550 1330 0    50   BiDi ~ 0
 TEMP_ISC_SDA
 Text GLabel 1550 1430 0    50   Input ~ 0
 TEMP_ISC_SCL
+$Comp
+L power:GND #PWR?
+U 1 1 5CB20A43
+P 2080 2250
+F 0 "#PWR?" H 2080 2000 50  0001 C CNN
+F 1 "GND" H 2080 2100 50  0000 C CNN
+F 2 "" H 2080 2250 50  0000 C CNN
+F 3 "" H 2080 2250 50  0000 C CNN
+	1    2080 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5CB20A4D
+P 1760 2020
+F 0 "C?" H 1785 2120 50  0000 L CNN
+F 1 "0.1uF" H 1785 1920 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 1798 1870 50  0001 C CNN
+F 3 "" H 1785 2120 50  0001 C CNN
+F 4 "0603" H 1610 2120 50  0000 R CNN "display_footprint"
+F 5 "50V" H 1610 2020 50  0000 R CNN "Voltage"
+F 6 "X7R" H 1610 1920 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H -2150 -4860 50  0001 C CNN "Digi-Key PN"
+	1    1760 2020
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5CB20A57
+P 2400 2020
+F 0 "C?" H 2425 2120 50  0000 L CNN
+F 1 "1nF" H 2425 1920 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 2438 1870 50  0001 C CNN
+F 3 "" H 2425 2120 50  0001 C CNN
+F 4 "0603" H 2250 2120 50  0001 R CNN "display_footprint"
+F 5 "50V" H 2250 2020 50  0001 R CNN "Voltage"
+F 6 "X7R" H 2250 1920 50  0001 R CNN "Dielectric"
+F 7 "399-1083-1-ND" H -2150 -4860 50  0001 C CNN "Digi-Key PN"
+	1    2400 2020
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5CB20A61
+P 2080 2020
+F 0 "C?" H 2105 2120 50  0000 L CNN
+F 1 "10nF" H 2105 1920 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 2118 1870 50  0001 C CNN
+F 3 "" H 2105 2120 50  0001 C CNN
+F 4 "0603" H 1930 2120 50  0001 R CNN "display_footprint"
+F 5 "50V" H 1930 2020 50  0001 R CNN "Voltage"
+F 6 "X7R" H 1930 1920 50  0001 R CNN "Dielectric"
+F 7 "399-1092-1-ND" H -2150 -4860 50  0001 C CNN "Digi-Key PN"
+	1    2080 2020
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CB20A67
+P 2080 1790
+F 0 "#PWR?" H 2080 1640 50  0001 C CNN
+F 1 "+3.3V" H 2080 1930 50  0000 C CNN
+F 2 "" H 2080 1790 50  0000 C CNN
+F 3 "" H 2080 1790 50  0000 C CNN
+	1    2080 1790
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1760 1830 1760 1870
+Connection ~ 2080 1830
+Wire Wire Line
+	2400 1830 2400 1870
+Wire Wire Line
+	1760 1830 2080 1830
+Wire Wire Line
+	2080 1790 2080 1830
+Wire Wire Line
+	1760 2210 1760 2170
+Connection ~ 2080 2210
+Wire Wire Line
+	2400 2210 2400 2170
+Wire Wire Line
+	1760 2210 2080 2210
+Wire Wire Line
+	2080 2170 2080 2210
+Wire Wire Line
+	2080 1830 2400 1830
+Wire Wire Line
+	2080 1830 2080 1870
+Wire Wire Line
+	2080 2210 2400 2210
+Wire Wire Line
+	2080 2210 2080 2250
 $EndSCHEMATC

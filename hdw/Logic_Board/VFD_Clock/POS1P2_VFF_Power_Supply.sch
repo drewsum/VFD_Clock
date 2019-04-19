@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 5 19
+Sheet 4 21
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -61,13 +61,6 @@ Wire Wire Line
 	6640 4420 6640 4230
 Wire Wire Line
 	6640 4230 6030 4230
-Wire Wire Line
-	6640 3530 6640 3230
-Wire Wire Line
-	6030 3230 6030 3530
-Connection ~ 6030 3230
-Wire Wire Line
-	6030 3230 5820 3230
 Connection ~ 6030 4230
 Wire Wire Line
 	6030 4230 5220 4230
@@ -314,11 +307,6 @@ Wire Wire Line
 Wire Wire Line
 	8080 3230 8080 3290
 Connection ~ 7440 3230
-Wire Wire Line
-	6030 3230 6640 3230
-Connection ~ 6640 3230
-Wire Wire Line
-	6640 3230 7440 3230
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5BE9E9A9
@@ -554,23 +542,6 @@ F 2 "" H 9180 3900 50  0001 C CNN
 F 3 "" H 9180 3900 50  0001 C CNN
 	1    9180 3900
 	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CB29476
-P 8880 3230
-AR Path="/5CB364CC/5CB29476" Ref="R?"  Part="1" 
-AR Path="/5A0A7E5F/5CB29476" Ref="R?"  Part="1" 
-F 0 "R?" V 8780 3230 50  0000 C CNN
-F 1 "0.02" V 8880 3230 40  0000 C CNN
-F 2 "Resistors_SMD:R_0612" H 8880 3230 50  0001 C CNN
-F 3 "" H 8880 3230 50  0001 C CNN
-F 4 "P16010CT-ND" H 9180 3630 60  0001 C CNN "Digi-Key PN"
-F 5 "0612" V 8980 3230 50  0000 C CNN "display_footprint"
-F 6 "1%" V 9080 3230 50  0000 C CNN "Tolerance"
-F 7 "1W" V 9180 3230 50  0000 C CNN "Wattage"
-	1    8880 3230
-	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8780 3700 8780 3560
@@ -849,6 +820,34 @@ F 3 "" H 7900 4370 50  0001 C CNN
 	1    7900 4370
 	1    0    0    -1  
 $EndComp
-Text Notes 9030 5190 0    50   ~ 0
-1.996 V/A
+Wire Wire Line
+	5820 3230 7440 3230
+Wire Wire Line
+	9110 3230 9110 2820
+Wire Wire Line
+	9110 2820 6640 2820
+Wire Wire Line
+	6030 2820 6030 3530
+Wire Wire Line
+	6640 3530 6640 2820
+Connection ~ 6640 2820
+Wire Wire Line
+	6640 2820 6030 2820
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5CB29476
+P 8880 3230
+AR Path="/5CB364CC/5CB29476" Ref="R?"  Part="1" 
+AR Path="/5A0A7E5F/5CB29476" Ref="R?"  Part="1" 
+F 0 "R?" V 8780 3230 50  0000 C CNN
+F 1 "0.02" V 8880 3230 40  0000 C CNN
+F 2 "Resistors_SMD:R_0612" H 8880 3230 50  0001 C CNN
+F 3 "" H 8880 3230 50  0001 C CNN
+F 4 "P16010CT-ND" H 9180 3630 60  0001 C CNN "Digi-Key PN"
+F 5 "0612" V 8980 3230 50  0000 C CNN "display_footprint"
+F 6 "1%" V 9080 3230 50  0000 C CNN "Tolerance"
+F 7 "1W" V 9180 3230 50  0000 C CNN "Wattage"
+	1    8880 3230
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

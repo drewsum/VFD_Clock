@@ -4,11 +4,11 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 20
-Title "VFD Clock"
-Date "2019-04-11"
+Sheet 18 21
+Title "QI Charger"
+Date "2019-01-03"
 Rev "A"
-Comp "Drew Maatman"
+Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -44,9 +44,9 @@ AR Path="/5BB2595E/5BB576E9" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB576E9" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB576E9" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB576E9" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB576E9" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB576E9" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 4080 50  0000 R CNN
-F 1 "1.3M" V 1920 4080 40  0000 C CNN
+F 1 "6.04M" V 1920 4080 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 4080 50  0001 C CNN
 F 3 "" H 1920 4080 50  0001 C CNN
 F 4 "541-6.04MHCT-ND" H 2220 4480 60  0001 C CNN "Digi-Key PN"
@@ -66,7 +66,7 @@ AR Path="/5BB2595E/5BB576FA" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5BB576FA" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5BB576FA" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5BB576FA" Ref="C?"  Part="1" 
 F 0 "C?" H 4255 5920 50  0000 L CNN
 F 1 "0.1uF" H 4255 5720 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4268 5670 50  0001 C CNN
@@ -88,7 +88,7 @@ AR Path="/5BB2595E/5BB57705" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5BB57705" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5BB57705" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5BB57705" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5BB57705" Ref="C?"  Part="1" 
 F 0 "C?" H 4555 5920 50  0000 L CNN
 F 1 "10nF" H 4555 5720 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4568 5670 50  0001 C CNN
@@ -110,7 +110,7 @@ AR Path="/5BB2595E/5BB57710" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5BB57710" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5BB57710" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5BB57710" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5BB57710" Ref="C?"  Part="1" 
 F 0 "C?" H 4855 5920 50  0000 L CNN
 F 1 "1nF" H 4855 5720 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4868 5670 50  0001 C CNN
@@ -156,9 +156,9 @@ AR Path="/5BB2595E/5BB57974" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB57974" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB57974" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB57974" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB57974" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB57974" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 4610 50  0000 R CNN
-F 1 "4.64k" V 1920 4610 40  0000 C CNN
+F 1 "86.6k" V 1920 4610 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 4610 50  0001 C CNN
 F 3 "" H 1920 4610 50  0001 C CNN
 F 4 "311-86.6KHRCT-ND" H 2220 5010 60  0001 C CNN "Digi-Key PN"
@@ -176,9 +176,9 @@ AR Path="/5BB2595E/5BB579AE" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB579AE" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB579AE" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB579AE" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB579AE" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB579AE" Ref="R?"  Part="1" 
 F 0 "R?" H 1860 5110 50  0000 R CNN
-F 1 "25.5k" V 1920 5110 40  0000 C CNN
+F 1 "243k" V 1920 5110 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 1920 5110 50  0001 C CNN
 F 3 "" H 1920 5110 50  0001 C CNN
 F 4 "311-243KHRCT-ND" H 2220 5510 60  0001 C CNN "Digi-Key PN"
@@ -217,7 +217,7 @@ AR Path="/5BB2595E/5BB590A5" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB590A5" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB590A5" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB590A5" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB590A5" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB590A5" Ref="R?"  Part="1" 
 F 0 "R?" H 2390 3590 50  0000 R CNN
 F 1 "100k" V 2450 3590 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 2450 3590 50  0001 C CNN
@@ -279,7 +279,7 @@ AR Path="/5BB2595E/5BB5D0CA" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB5D0CA" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB5D0CA" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB5D0CA" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB5D0CA" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB5D0CA" Ref="R?"  Part="1" 
 F 0 "R?" H 6020 3570 50  0000 R CNN
 F 1 "5.1k" V 6080 3570 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 6080 3570 50  0001 C CNN
@@ -337,6 +337,17 @@ Wire Wire Line
 Wire Wire Line
 	3490 2270 3570 2270
 Connection ~ 1920 2270
+$Comp
+L Custom_Library:+12Vin #PWR?
+U 1 1 5BB687E3
+P 2450 2190
+F 0 "#PWR?" H 2450 2040 50  0001 C CNN
+F 1 "+12Vin" H 2450 2340 50  0000 C CNN
+F 2 "" H 2450 2190 50  0000 C CNN
+F 3 "" H 2450 2190 50  0000 C CNN
+	1    2450 2190
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	2450 2190 2450 2270
 $Comp
@@ -356,6 +367,21 @@ Wire Wire Line
 	5640 3340 5640 2270
 Wire Wire Line
 	5640 2270 5320 2270
+$Comp
+L Custom_Library:CP_Tant_Custom C?
+U 1 1 5BB7221C
+P 9370 2570
+F 0 "C?" H 9395 2670 50  0000 L CNN
+F 1 "100uF" H 9395 2470 50  0000 L CNN
+F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow" H 9408 2420 50  0001 C CNN
+F 3 "" H 9395 2670 50  0001 C CNN
+F 4 "718-1102-1-ND" H 9370 2570 50  0001 C CNN "Digi-Key PN"
+F 5 "7343" H 9220 2670 50  0000 R CNN "display_footprint"
+F 6 "16V" H 9220 2570 50  0000 R CNN "Voltage"
+F 7 "10%" H 9220 2470 50  0000 R CNN "Tolerance"
+	1    9370 2570
+	1    0    0    -1  
+$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5BB72223
@@ -379,7 +405,7 @@ AR Path="/5BB2595E/5BB7655D" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5BB7655D" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5BB7655D" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5BB7655D" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5BB7655D" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB7655D" Ref="R?"  Part="1" 
 F 0 "R?" H 5070 3960 50  0000 R CNN
 F 1 "10k" V 5130 3960 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 5130 3960 50  0001 C CNN
@@ -396,7 +422,7 @@ Wire Wire Line
 Wire Wire Line
 	5130 4340 5130 4110
 Text GLabel 5210 4340 2    50   Output ~ 0
-POS24_PGOOD
+POS12_PGOOD
 Wire Wire Line
 	5210 4340 5130 4340
 Connection ~ 5130 4340
@@ -422,6 +448,18 @@ Wire Wire Line
 	1920 4340 4040 4340
 Wire Wire Line
 	1920 4840 4040 4840
+$Comp
+L Device:D_TVS_ALT D?
+U 1 1 5BC52DC5
+P 2980 2560
+F 0 "D?" V 2934 2639 50  0000 L CNN
+F 1 "24V" V 3025 2639 50  0000 L CNN
+F 2 "Diodes_SMD:D_SMA" H 2980 2560 50  0001 C CNN
+F 3 "~" H 2980 2560 50  0001 C CNN
+F 4 "SMAJ24CALFCT-ND" H 2980 2560 50  0001 C CNN "Digi-Key PN"
+	1    2980 2560
+	0    1    1    0   
+$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5BC52ED8
@@ -479,7 +517,7 @@ L Connector:Barrel_Jack_Switch J?
 U 1 1 5BF0E9C8
 P 1150 2370
 F 0 "J?" H 1150 2580 50  0000 C CNN
-F 1 "+24V IN" H 1150 2170 50  0000 C CNN
+F 1 "+12V IN" H 1150 2170 50  0000 C CNN
 F 2 "Connectors:BARREL_JACK" H 1200 2330 50  0001 C CNN
 F 3 "~" H 1200 2330 50  0001 C CNN
 F 4 "CP-202BH-ND" H -1010 -660 50  0001 C CNN "Digi-Key PN"
@@ -506,6 +544,8 @@ Wire Wire Line
 Wire Wire Line
 	1530 2370 1450 2370
 Connection ~ 1530 2470
+Text Notes 2730 5270 0    50   ~ 0
+UVLO threshold set to 10V\nOVLO threshold set to 14V
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5C025CB2
@@ -516,7 +556,7 @@ AR Path="/5BB2595E/5C025CB2" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5C025CB2" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5C025CB2" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5C025CB2" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5C025CB2" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5C025CB2" Ref="C?"  Part="1" 
 F 0 "C?" H 6105 3970 50  0000 L CNN
 F 1 "0.1uF" H 6105 3770 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6118 3720 50  0001 C CNN
@@ -565,7 +605,7 @@ AR Path="/5BB2595E/5C2DE30A" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5C2DE30A" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5C2DE30A" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5C2DE30A" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5C2DE30A" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5C2DE30A" Ref="C?"  Part="1" 
 F 0 "C?" H 6845 3390 50  0000 L CNN
 F 1 "0.1uF" H 6845 3190 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 6858 3140 50  0001 C CNN
@@ -587,7 +627,7 @@ AR Path="/5BB2595E/5C2DE315" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5C2DE315" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5C2DE315" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5C2DE315" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5C2DE315" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5C2DE315" Ref="C?"  Part="1" 
 F 0 "C?" H 7145 3390 50  0000 L CNN
 F 1 "10nF" H 7145 3190 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7158 3140 50  0001 C CNN
@@ -609,7 +649,7 @@ AR Path="/5BB2595E/5C2DE320" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5C2DE320" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5C2DE320" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5C2DE320" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5C2DE320" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5C2DE320" Ref="C?"  Part="1" 
 F 0 "C?" H 7445 3390 50  0000 L CNN
 F 1 "1nF" H 7445 3190 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 7458 3140 50  0001 C CNN
@@ -701,7 +741,7 @@ AR Path="/5BB2595E/5C30901B" Ref="R?"  Part="1"
 AR Path="/5BAAE0FA/5C30901B" Ref="R?"  Part="1" 
 AR Path="/5BB86F23/5C30901B" Ref="R?"  Part="1" 
 AR Path="/5C1D5C9E/5C30901B" Ref="R?"  Part="1" 
-AR Path="/5CB364CC/5C30901B" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5C30901B" Ref="R?"  Part="1" 
 F 0 "R?" H 8230 3650 50  0000 R CNN
 F 1 "499k" V 8290 3650 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 8290 3650 50  0001 C CNN
@@ -722,6 +762,17 @@ F 1 "GND" H 8290 3650 50  0000 C CNN
 F 2 "" H 8290 3800 50  0001 C CNN
 F 3 "" H 8290 3800 50  0001 C CNN
 	1    8290 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5C3102C9
+P 9370 2190
+F 0 "#PWR?" H 9370 2040 50  0001 C CNN
+F 1 "+12V" H 9370 2330 50  0000 C CNN
+F 2 "" H 9370 2190 50  0001 C CNN
+F 3 "" H 9370 2190 50  0001 C CNN
+	1    9370 2190
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -748,7 +799,7 @@ F 3 "" H 9030 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9110 3420 2    50   Output ~ 0
-POS24_ISNS
+POS12_ISNS
 Wire Wire Line
 	9110 3420 9030 3420
 Connection ~ 9030 3420
@@ -764,7 +815,7 @@ AR Path="/5BB2595E/5C324884" Ref="C?"  Part="1"
 AR Path="/5BAAE0FA/5C324884" Ref="C?"  Part="1" 
 AR Path="/5BB86F23/5C324884" Ref="C?"  Part="1" 
 AR Path="/5C1D5C9E/5C324884" Ref="C?"  Part="1" 
-AR Path="/5CB364CC/5C324884" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5C324884" Ref="C?"  Part="1" 
 F 0 "C?" H 9055 3750 50  0000 L CNN
 F 1 "1nF" H 9055 3550 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 9068 3500 50  0001 C CNN
@@ -791,12 +842,23 @@ F 3 "~" H 9980 2190 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
+L power:+12V #PWR?
+U 1 1 5C313C57
+P 9980 2190
+F 0 "#PWR?" H 9980 2040 50  0001 C CNN
+F 1 "+12V" H 9980 2330 50  0000 C CNN
+F 2 "" H 9980 2190 50  0001 C CNN
+F 3 "" H 9980 2190 50  0001 C CNN
+	1    9980 2190
+	1    0    0    -1  
+$EndComp
+$Comp
 L Custom_Library:TP TP?
 U 1 1 5C358180
 P 1230 3170
 AR Path="/5C1D5CD8/5C358180" Ref="TP?"  Part="1" 
 AR Path="/5C1D5C9E/5C358180" Ref="TP?"  Part="1" 
-AR Path="/5CB364CC/5C358180" Ref="TP?"  Part="1" 
+AR Path="/5CB6F1ED/5C358180" Ref="TP?"  Part="1" 
 F 0 "TP?" H 1230 3320 50  0000 C CNN
 F 1 "TP" H 1230 3320 50  0001 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.54mm" H 1230 3170 60  0001 C CNN
@@ -821,7 +883,7 @@ U 1 1 5C35D7C8
 P 2980 2190
 AR Path="/5C1D5CD8/5C35D7C8" Ref="TP?"  Part="1" 
 AR Path="/5C1D5C9E/5C35D7C8" Ref="TP?"  Part="1" 
-AR Path="/5CB364CC/5C35D7C8" Ref="TP?"  Part="1" 
+AR Path="/5CB6F1ED/5C35D7C8" Ref="TP?"  Part="1" 
 F 0 "TP?" H 2980 2340 50  0000 C CNN
 F 1 "TP" H 2980 2340 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 2980 2190 60  0001 C CNN
@@ -837,7 +899,7 @@ U 1 1 5C361228
 P 8990 2200
 AR Path="/5C1D5CD8/5C361228" Ref="TP?"  Part="1" 
 AR Path="/5C1D5C9E/5C361228" Ref="TP?"  Part="1" 
-AR Path="/5CB364CC/5C361228" Ref="TP?"  Part="1" 
+AR Path="/5CB6F1ED/5C361228" Ref="TP?"  Part="1" 
 F 0 "TP?" H 8990 2350 50  0000 C CNN
 F 1 "TP" H 8990 2350 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 8990 2200 60  0001 C CNN
@@ -856,7 +918,7 @@ U 1 1 5C3D9362
 P 1610 3170
 AR Path="/5C1D5CD8/5C3D9362" Ref="TP?"  Part="1" 
 AR Path="/5C1D5C9E/5C3D9362" Ref="TP?"  Part="1" 
-AR Path="/5CB364CC/5C3D9362" Ref="TP?"  Part="1" 
+AR Path="/5CB6F1ED/5C3D9362" Ref="TP?"  Part="1" 
 F 0 "TP?" H 1610 3320 50  0000 C CNN
 F 1 "TP" H 1610 3320 50  0001 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.54mm" H 1610 3170 60  0001 C CNN
@@ -878,55 +940,19 @@ $EndComp
 Text Notes 540  690  0    100  ~ 20
 02. +12V Input
 $Comp
-L power:+24V #PWR?
-U 1 1 5CB3F0AD
-P 9370 2190
-F 0 "#PWR?" H 9370 2040 50  0001 C CNN
-F 1 "+24V" H 9370 2330 50  0000 C CNN
-F 2 "" H 9370 2190 50  0001 C CNN
-F 3 "" H 9370 2190 50  0001 C CNN
-	1    9370 2190
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+24V #PWR?
-U 1 1 5CB3F685
-P 9980 2190
-F 0 "#PWR?" H 9980 2040 50  0001 C CNN
-F 1 "+24V" H 9980 2330 50  0000 C CNN
-F 2 "" H 9980 2190 50  0001 C CNN
-F 3 "" H 9980 2190 50  0001 C CNN
-	1    9980 2190
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:+24Vin #PWR?
-U 1 1 5CB3FA2D
-P 2450 2190
-F 0 "#PWR?" H 2450 2040 50  0001 C CNN
-F 1 "+24Vin" H 2450 2340 50  0000 C CNN
-F 2 "" H 2450 2190 50  0000 C CNN
-F 3 "" H 2450 2190 50  0000 C CNN
-	1    2450 2190
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:CP_Tant_Custom C?
-U 1 1 5CB41B3E
-P 9370 2570
-F 0 "C?" H 9395 2670 50  0000 L CNN
-F 1 "C" H 9395 2470 50  0000 L CNN
-F 2 "" H 9408 2420 50  0001 C CNN
-F 3 "" H 9395 2670 50  0001 C CNN
-F 4 "Foot" H 9220 2670 50  0000 R CNN "display_footprint"
-F 5 "V" H 9220 2570 50  0000 R CNN "Voltage"
-F 6 "Tol" H 9220 2470 50  0000 R CNN "Tolerance"
-	1    9370 2570
+L power:+3.3V #PWR?
+U 1 1 5CB6E44A
+P 5130 3810
+F 0 "#PWR?" H 5130 3660 50  0001 C CNN
+F 1 "+3.3V" H 5130 3950 50  0000 C CNN
+F 2 "" H 5130 3810 50  0001 C CNN
+F 3 "" H 5130 3810 50  0001 C CNN
+	1    5130 3810
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CB42FD0
+U 1 1 5CB6ED96
 P 7120 3060
 F 0 "#PWR?" H 7120 2910 50  0001 C CNN
 F 1 "+3.3V" H 7120 3200 50  0000 C CNN
@@ -937,7 +963,7 @@ F 3 "" H 7120 3060 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CB4368D
+U 1 1 5CB6F464
 P 7990 2940
 F 0 "#PWR?" H 7990 2790 50  0001 C CNN
 F 1 "+3.3V" V 7990 3080 50  0000 L CNN
@@ -945,29 +971,5 @@ F 2 "" H 7990 2940 50  0001 C CNN
 F 3 "" H 7990 2940 50  0001 C CNN
 	1    7990 2940
 	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB449D1
-P 5130 3810
-F 0 "#PWR?" H 5130 3660 50  0001 C CNN
-F 1 "+3.3V" H 5130 3950 50  0000 C CNN
-F 2 "" H 5130 3810 50  0001 C CNN
-F 3 "" H 5130 3810 50  0001 C CNN
-	1    5130 3810
-	1    0    0    -1  
-$EndComp
-Text Notes 2730 5270 0    50   ~ 0
-UVLO threshold set to 22V\nOVLO threshold set to 26V
-$Comp
-L Device:D_TVS_ALT D?
-U 1 1 5CB4988D
-P 2980 2560
-F 0 "D?" V 2934 2639 50  0000 L CNN
-F 1 "D_TVS_ALT" V 3025 2639 50  0000 L CNN
-F 2 "" H 2980 2560 50  0001 C CNN
-F 3 "~" H 2980 2560 50  0001 C CNN
-	1    2980 2560
-	0    1    1    0   
 $EndComp
 $EndSCHEMATC
