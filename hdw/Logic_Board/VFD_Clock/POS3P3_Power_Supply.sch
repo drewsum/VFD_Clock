@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 19 21
+Sheet 17 22
 Title ""
 Date ""
 Rev ""
@@ -1399,4 +1399,6 @@ F 3 "http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf" H 4700 3750 50  
 	1    4700 3750
 	0    1    1    0   
 $EndComp
+Text Notes 5340 6320 0    100  ~ 0
+Consider smaller FETs
 $EndSCHEMATC

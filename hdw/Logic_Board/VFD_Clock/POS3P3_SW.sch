@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 21 22
+Sheet 22 22
 Title ""
 Date ""
 Rev ""
@@ -14,6 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4410 3460 0    50   ~ 0
-Add cap touch input buffers, menu LED outptu buffers, display board detection, etc
+Text Notes 2690 4000 0    50   ~ 0
+Use a TI or LT solid state high side switch with current limit to switch +3.3V to the IO connector to bias +3.3V devices on power board\nSomething with a fault pin
 $EndSCHEMATC

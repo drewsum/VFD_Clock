@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 21
+Sheet 1 22
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -133,5 +133,11 @@ S 6400 5210 500  150
 U 5CC31B3E
 F0 "IO Buffers 2" 50
 F1 "IO_Buffers_2.sch" 50
+$EndSheet
+$Sheet
+S 6400 2660 500  150 
+U 5CBB4626
+F0 "+3.3V SW" 50
+F1 "POS3P3_SW.sch" 50
 $EndSheet
 $EndSCHEMATC

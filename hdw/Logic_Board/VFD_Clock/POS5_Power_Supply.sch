@@ -2,9 +2,9 @@ EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
 EELAYER 29 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A 11000 8500
 encoding utf-8
-Sheet 1 21
+Sheet 20 22
 Title ""
 Date ""
 Rev ""
@@ -14,4 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 5040 3680 0    50   ~ 0
+LT8606? LT8607?
 $EndSCHEMATC
