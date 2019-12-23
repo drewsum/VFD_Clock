@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 3 22
+Sheet 3 20
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -269,8 +269,6 @@ F 3 "" H 9410 1310 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8850 1860 9030 1860
-Wire Wire Line
 	9410 1860 9410 2020
 Wire Wire Line
 	4230 7160 4550 7160
@@ -336,17 +334,6 @@ F 3 "" H 9410 1310 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Current:AD8217 U?
-U 1 1 5CB5836E
-P 8650 3110
-F 0 "U?" H 8350 3535 50  0000 R CNN
-F 1 "AD8217" H 8350 3460 50  0000 R CNN
-F 2 "Package_SO:MSOP-8_3x3mm_P0.65mm" H 8650 3110 50  0001 C CNN
-F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8217.pdf" H 9300 2410 50  0001 C CNN
-	1    8650 3110
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom_Library:R_Custom R?
 U 1 1 5CB5F9AD
 P 8650 1860
@@ -364,32 +351,10 @@ F 7 "P3.3RCT-ND" H 8650 1860 50  0001 C CNN "Digi-Key PN"
 	1    8650 1860
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	8500 1860 8450 1860
-Wire Wire Line
-	8450 2710 8450 1860
-Wire Wire Line
-	8800 1860 8850 1860
-Wire Wire Line
-	8850 1860 8850 2710
-$Comp
-L power:GND #PWR?
-U 1 1 5CB6969D
-P 8650 3510
-F 0 "#PWR?" H 8650 3260 50  0001 C CNN
-F 1 "GND" H 8650 3360 50  0000 C CNN
-F 2 "" H 8650 3510 50  0001 C CNN
-F 3 "" H 8650 3510 50  0001 C CNN
-	1    8650 3510
-	1    0    0    -1  
-$EndComp
-Connection ~ 8850 1860
 Connection ~ 9410 1860
 Connection ~ 9030 1860
 Wire Wire Line
 	9030 1860 9410 1860
-Text GLabel 9050 3110 2    50   Output ~ 0
-POS60_VAN_ISNS
 $Comp
 L Custom_Library:+60V_VAN #PWR?
 U 1 1 5CB77D7E
@@ -401,7 +366,6 @@ F 3 "" H 2050 5950 50  0000 C CNN
 	1    2050 5950
 	1    0    0    -1  
 $EndComp
-Connection ~ 8450 1860
 Wire Wire Line
 	3660 3360 3820 3360
 Wire Wire Line
@@ -451,8 +415,6 @@ Connection ~ 2340 1860
 Connection ~ 1650 1860
 Wire Wire Line
 	1650 1860 2340 1860
-Wire Wire Line
-	8450 1860 7960 1860
 Wire Wire Line
 	7620 1860 7620 2020
 Wire Wire Line
@@ -939,4 +901,18 @@ Wire Wire Line
 	9970 1860 9410 1860
 Wire Wire Line
 	5420 3810 9970 3810
+Wire Wire Line
+	8800 1860 8850 1860
+Wire Wire Line
+	8850 1860 9030 1860
+Connection ~ 8850 1860
+Wire Wire Line
+	8850 1860 8850 2710
+Wire Wire Line
+	8450 1860 7960 1860
+Wire Wire Line
+	8500 1860 8450 1860
+Connection ~ 8450 1860
+Wire Wire Line
+	8450 2710 8450 1860
 $EndSCHEMATC

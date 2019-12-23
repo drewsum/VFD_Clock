@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 22
+Sheet 14 20
 Title "Electronic Display Logic Board"
 Date "2018-12-15"
 Rev "A"
@@ -468,22 +468,6 @@ $EndComp
 Text Notes 550  700  0    100  ~ 20
 I/O Buffers
 $Comp
-L 74xx:74HCT541 U?
-U 1 1 5BB6DAB4
-P 6400 2220
-AR Path="/5BAAE2B6/5BB6DAB4" Ref="U?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DAB4" Ref="U?"  Part="1" 
-AR Path="/5BBE424C/5BB6DAB4" Ref="U?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DAB4" Ref="U?"  Part="1" 
-F 0 "U?" H 6100 2870 50  0000 C CNN
-F 1 "74HCT541" H 6100 1570 50  0000 C CNN
-F 2 "Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm" H 6400 2220 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 6400 2220 50  0001 C CNN
-F 4 "296-26499-1-ND" H 900 0   50  0001 C CNN "Digi-Key PN"
-	1    6400 2220
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 5BB6DC87
 P 4220 1310
@@ -529,158 +513,6 @@ Wire Wire Line
 	3850 1820 4550 1820
 Wire Wire Line
 	4350 1720 3850 1720
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBCB605
-P 3700 2420
-AR Path="/5BAAE2B6/5CBCB605" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBCB605" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBCB605" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBCB605" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 2280 50  0000 R CNN
-F 1 "100" V 3700 2420 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 2420 50  0001 C CNN
-F 3 "" H 3700 2420 50  0001 C CNN
-F 4 "0603" V 3800 2420 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 2420 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 2420 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2820 60  0001 C CNN "Digi-Key PN"
-	1    3700 2420
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBCB3C3
-P 3700 2320
-AR Path="/5BAAE2B6/5CBCB3C3" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBCB3C3" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBCB3C3" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBCB3C3" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 2180 50  0000 R CNN
-F 1 "100" V 3700 2320 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 2320 50  0001 C CNN
-F 3 "" H 3700 2320 50  0001 C CNN
-F 4 "0603" V 3800 2320 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 2320 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 2320 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2720 60  0001 C CNN "Digi-Key PN"
-	1    3700 2320
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DC3C
-P 3700 2220
-AR Path="/5BAAE2B6/5BB6DC3C" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DC3C" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DC3C" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DC3C" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 2080 50  0000 R CNN
-F 1 "100" V 3700 2220 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 2220 50  0001 C CNN
-F 3 "" H 3700 2220 50  0001 C CNN
-F 4 "0603" V 3800 2220 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 2220 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 2220 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2620 60  0001 C CNN "Digi-Key PN"
-	1    3700 2220
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DC31
-P 3700 2120
-AR Path="/5BAAE2B6/5BB6DC31" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DC31" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DC31" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DC31" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 1980 50  0000 R CNN
-F 1 "100" V 3700 2120 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 2120 50  0001 C CNN
-F 3 "" H 3700 2120 50  0001 C CNN
-F 4 "0603" V 3800 2120 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 2120 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 2120 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2520 60  0001 C CNN "Digi-Key PN"
-	1    3700 2120
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DC26
-P 3700 2020
-AR Path="/5BAAE2B6/5BB6DC26" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DC26" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DC26" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DC26" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 1880 50  0000 R CNN
-F 1 "100" V 3700 2020 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 2020 50  0001 C CNN
-F 3 "" H 3700 2020 50  0001 C CNN
-F 4 "0603" V 3800 2020 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 2020 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 2020 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2420 60  0001 C CNN "Digi-Key PN"
-	1    3700 2020
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DC1B
-P 3700 1920
-AR Path="/5BAAE2B6/5BB6DC1B" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DC1B" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DC1B" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DC1B" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 1780 50  0000 R CNN
-F 1 "100" V 3700 1920 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 1920 50  0001 C CNN
-F 3 "" H 3700 1920 50  0001 C CNN
-F 4 "0603" V 3800 1920 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 1920 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 1920 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2320 60  0001 C CNN "Digi-Key PN"
-	1    3700 1920
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DC10
-P 3700 1820
-AR Path="/5BAAE2B6/5BB6DC10" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DC10" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DC10" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DC10" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 1680 50  0000 R CNN
-F 1 "100" V 3700 1820 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 1820 50  0001 C CNN
-F 3 "" H 3700 1820 50  0001 C CNN
-F 4 "0603" V 3800 1820 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 1820 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 1820 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2220 60  0001 C CNN "Digi-Key PN"
-	1    3700 1820
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BB6DBAA
-P 3700 1720
-AR Path="/5BAAE2B6/5BB6DBAA" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5BB6DBAA" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5BB6DBAA" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5BB6DBAA" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 1580 50  0000 R CNN
-F 1 "100" V 3700 1720 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 1720 50  0001 C CNN
-F 3 "" H 3700 1720 50  0001 C CNN
-F 4 "0603" V 3800 1720 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 1720 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 1720 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 2120 60  0001 C CNN "Digi-Key PN"
-	1    3700 1720
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	5550 2320 3850 2320
 Connection ~ 5550 2320
@@ -1144,22 +976,6 @@ F 3 "" H 3720 5260 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HCT541 U?
-U 1 1 5CBF01B1
-P 6400 4620
-AR Path="/5BAAE2B6/5CBF01B1" Ref="U?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF01B1" Ref="U?"  Part="1" 
-AR Path="/5BBE424C/5CBF01B1" Ref="U?"  Part="1" 
-AR Path="/5CB8A16A/5CBF01B1" Ref="U?"  Part="1" 
-F 0 "U?" H 6100 5270 50  0000 C CNN
-F 1 "74HCT541" H 6100 3970 50  0000 C CNN
-F 2 "Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm" H 6400 4620 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 6400 4620 50  0001 C CNN
-F 4 "296-26499-1-ND" H 900 2400 50  0001 C CNN "Digi-Key PN"
-	1    6400 4620
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 5CBF01BB
 P 4220 3710
@@ -1205,158 +1021,6 @@ Wire Wire Line
 	3850 4220 4550 4220
 Wire Wire Line
 	4350 4120 3850 4120
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF01DD
-P 3700 4820
-AR Path="/5BAAE2B6/5CBF01DD" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF01DD" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF01DD" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF01DD" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4680 50  0000 R CNN
-F 1 "100" V 3700 4820 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4820 50  0001 C CNN
-F 3 "" H 3700 4820 50  0001 C CNN
-F 4 "0603" V 3800 4820 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4820 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4820 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 5220 60  0001 C CNN "Digi-Key PN"
-	1    3700 4820
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF01EB
-P 3700 4720
-AR Path="/5BAAE2B6/5CBF01EB" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF01EB" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF01EB" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF01EB" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4580 50  0000 R CNN
-F 1 "100" V 3700 4720 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4720 50  0001 C CNN
-F 3 "" H 3700 4720 50  0001 C CNN
-F 4 "0603" V 3800 4720 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4720 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4720 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 5120 60  0001 C CNN "Digi-Key PN"
-	1    3700 4720
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF01F9
-P 3700 4620
-AR Path="/5BAAE2B6/5CBF01F9" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF01F9" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF01F9" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF01F9" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4480 50  0000 R CNN
-F 1 "100" V 3700 4620 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4620 50  0001 C CNN
-F 3 "" H 3700 4620 50  0001 C CNN
-F 4 "0603" V 3800 4620 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4620 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4620 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 5020 60  0001 C CNN "Digi-Key PN"
-	1    3700 4620
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF0207
-P 3700 4520
-AR Path="/5BAAE2B6/5CBF0207" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF0207" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF0207" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF0207" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4380 50  0000 R CNN
-F 1 "100" V 3700 4520 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4520 50  0001 C CNN
-F 3 "" H 3700 4520 50  0001 C CNN
-F 4 "0603" V 3800 4520 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4520 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4520 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 4920 60  0001 C CNN "Digi-Key PN"
-	1    3700 4520
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF0215
-P 3700 4420
-AR Path="/5BAAE2B6/5CBF0215" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF0215" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF0215" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF0215" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4280 50  0000 R CNN
-F 1 "100" V 3700 4420 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4420 50  0001 C CNN
-F 3 "" H 3700 4420 50  0001 C CNN
-F 4 "0603" V 3800 4420 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4420 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4420 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 4820 60  0001 C CNN "Digi-Key PN"
-	1    3700 4420
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF0223
-P 3700 4320
-AR Path="/5BAAE2B6/5CBF0223" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF0223" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF0223" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF0223" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4180 50  0000 R CNN
-F 1 "100" V 3700 4320 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4320 50  0001 C CNN
-F 3 "" H 3700 4320 50  0001 C CNN
-F 4 "0603" V 3800 4320 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4320 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4320 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 4720 60  0001 C CNN "Digi-Key PN"
-	1    3700 4320
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF0231
-P 3700 4220
-AR Path="/5BAAE2B6/5CBF0231" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF0231" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF0231" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF0231" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 4080 50  0000 R CNN
-F 1 "100" V 3700 4220 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4220 50  0001 C CNN
-F 3 "" H 3700 4220 50  0001 C CNN
-F 4 "0603" V 3800 4220 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4220 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4220 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 4620 60  0001 C CNN "Digi-Key PN"
-	1    3700 4220
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5CBF023F
-P 3700 4120
-AR Path="/5BAAE2B6/5CBF023F" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5CBF023F" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5CBF023F" Ref="R?"  Part="1" 
-AR Path="/5CB8A16A/5CBF023F" Ref="R?"  Part="1" 
-F 0 "R?" V 3660 3980 50  0000 R CNN
-F 1 "100" V 3700 4120 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3700 4120 50  0001 C CNN
-F 3 "" H 3700 4120 50  0001 C CNN
-F 4 "0603" V 3800 4120 50  0001 C CNN "display_footprint"
-F 5 "1%" V 3900 4120 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 4000 4120 50  0001 C CNN "Wattage"
-F 7 "A106047CT-ND" H 4000 4520 60  0001 C CNN "Digi-Key PN"
-	1    3700 4120
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	5550 4720 3850 4720
 Connection ~ 5550 4720
@@ -1368,37 +1032,37 @@ Wire Wire Line
 Wire Wire Line
 	4220 5020 4220 4010
 Connection ~ 5840 5020
-Text GLabel 3550 1720 0    50   Input ~ 0
+Text GLabel 3850 1720 0    50   Input ~ 0
 Anode_A_POS3P3
-Text GLabel 3550 1820 0    50   Input ~ 0
+Text GLabel 3850 1820 0    50   Input ~ 0
 Anode_B_POS3P3
-Text GLabel 3550 1920 0    50   Input ~ 0
+Text GLabel 3850 1920 0    50   Input ~ 0
 Anode_C_POS3P3
-Text GLabel 3550 2020 0    50   Input ~ 0
+Text GLabel 3850 2020 0    50   Input ~ 0
 Anode_D_POS3P3
-Text GLabel 3550 2120 0    50   Input ~ 0
+Text GLabel 3850 2120 0    50   Input ~ 0
 Anode_E_POS3P3
-Text GLabel 3550 2220 0    50   Input ~ 0
+Text GLabel 3850 2220 0    50   Input ~ 0
 Anode_F_POS3P3
-Text GLabel 3550 2320 0    50   Input ~ 0
+Text GLabel 3850 2320 0    50   Input ~ 0
 Anode_G_POS3P3
-Text GLabel 3550 2420 0    50   Input ~ 0
+Text GLabel 3850 2420 0    50   Input ~ 0
 Anode_DP_POS3P3
-Text GLabel 3550 4120 0    50   Input ~ 0
+Text GLabel 3850 4120 0    50   Input ~ 0
 Grid_0_POS3P3
-Text GLabel 3550 4220 0    50   Input ~ 0
+Text GLabel 3850 4220 0    50   Input ~ 0
 Grid_1_POS3P3
-Text GLabel 3550 4320 0    50   Input ~ 0
+Text GLabel 3850 4320 0    50   Input ~ 0
 Grid_2_POS3P3
-Text GLabel 3550 4420 0    50   Input ~ 0
+Text GLabel 3850 4420 0    50   Input ~ 0
 Grid_3_POS3P3
-Text GLabel 3550 4520 0    50   Input ~ 0
+Text GLabel 3850 4520 0    50   Input ~ 0
 Grid_4_POS3P3
-Text GLabel 3550 4620 0    50   Input ~ 0
+Text GLabel 3850 4620 0    50   Input ~ 0
 Grid_5_POS3P3
-Text GLabel 3550 4720 0    50   Input ~ 0
+Text GLabel 3850 4720 0    50   Input ~ 0
 Colon_0_POS3P3
-Text GLabel 3550 4820 0    50   Input ~ 0
+Text GLabel 3850 4820 0    50   Input ~ 0
 Colon_1_POS3P3
 Text GLabel 3550 2620 0    40   Input ~ 0
 ~IO_Level_Shift_Enable
@@ -1442,4 +1106,38 @@ Text GLabel 6900 4720 2    50   Output ~ 0
 Colon_0_POS5
 Text GLabel 6900 4820 2    50   Output ~ 0
 Colon_1_POS5
+$Comp
+L 74xx:74HCT541 U?
+U 1 1 5BB6DAB4
+P 6400 2220
+AR Path="/5BAAE2B6/5BB6DAB4" Ref="U?"  Part="1" 
+AR Path="/5BB6CF6D/5BB6DAB4" Ref="U?"  Part="1" 
+AR Path="/5BBE424C/5BB6DAB4" Ref="U?"  Part="1" 
+AR Path="/5CB8A16A/5BB6DAB4" Ref="U?"  Part="1" 
+F 0 "U?" H 6100 2870 50  0000 C CNN
+F 1 "74HCT541" H 6100 1570 50  0000 C CNN
+F 2 "Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm" H 6400 2220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 6400 2220 50  0001 C CNN
+F 4 "296-26499-1-ND" H 900 0   50  0001 C CNN "Digi-Key PN"
+	1    6400 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HCT541 U?
+U 1 1 5CBF01B1
+P 6400 4620
+AR Path="/5BAAE2B6/5CBF01B1" Ref="U?"  Part="1" 
+AR Path="/5BB6CF6D/5CBF01B1" Ref="U?"  Part="1" 
+AR Path="/5BBE424C/5CBF01B1" Ref="U?"  Part="1" 
+AR Path="/5CB8A16A/5CBF01B1" Ref="U?"  Part="1" 
+F 0 "U?" H 6100 5270 50  0000 C CNN
+F 1 "74HCT541" H 6100 3970 50  0000 C CNN
+F 2 "Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm" H 6400 4620 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 6400 4620 50  0001 C CNN
+F 4 "296-26499-1-ND" H 900 2400 50  0001 C CNN "Digi-Key PN"
+	1    6400 4620
+	1    0    0    -1  
+$EndComp
+Text Notes 7560 1310 0    50   ~ 0
+Switch to nexperia QFN line driver
 $EndSCHEMATC

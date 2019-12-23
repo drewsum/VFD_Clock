@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:VFD_Clock-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 22
+Sheet 1 20
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -33,12 +33,6 @@ F0 "+1.2V VFF Power Supply" 50
 F1 "POS1P2_VFF_Power_Supply.sch" 50
 $EndSheet
 $Sheet
-S 3690 4380 500  150 
-U 5B3E071A
-F0 "Temperature Sensors" 50
-F1 "Temperature_Sensors.sch" 50
-$EndSheet
-$Sheet
 S 3690 5080 500  150 
 U 5B583C3D
 F0 "Mechanical" 50
@@ -51,13 +45,13 @@ F0 "+3.3V BCKP Supply" 50
 F1 "POS3P3_BCKP_Supply.sch" 50
 $EndSheet
 $Sheet
-S 1180 3500 500  150 
+S 1180 3940 500  150 
 U 5CAD2D97
 F0 "USB UART Bridge" 50
 F1 "USB_UART_Bridge.sch" 50
 $EndSheet
 $Sheet
-S 1180 3850 500  150 
+S 1180 4290 500  150 
 U 5CAD2DA3
 F0 "USB UART Isolation" 50
 F1 "USB_UART_Isolation.sch" 50
@@ -99,7 +93,7 @@ F0 "Microcontroller Bypass" 50
 F1 "Microcontroller_Bypass.sch" 50
 $EndSheet
 $Sheet
-S 6400 1610 500  150 
+S 4780 1120 500  150 
 U 5CB6F1ED
 F0 "+12V Input" 50
 F1 "POS12_Input.sch" 50
@@ -109,18 +103,6 @@ S 6400 1960 500  150
 U 5CB7718D
 F0 "+3.3V Power Supply" 50
 F1 "POS3P3_Power_Supply.sch" 50
-$EndSheet
-$Sheet
-S 3690 3770 500  150 
-U 5CC7D654
-F0 "Rotary Encoder" 50
-F1 "Rotary_Encoder.sch" 50
-$EndSheet
-$Sheet
-S 3690 5690 500  150 
-U 5CB856E8
-F0 "Analog Conditioning" 50
-F1 "Analog_Conditioning.sch" 50
 $EndSheet
 $Sheet
 S 6400 2310 500  150 
@@ -135,9 +117,15 @@ F0 "IO Buffers 2" 50
 F1 "IO_Buffers_2.sch" 50
 $EndSheet
 $Sheet
-S 6400 2660 500  150 
-U 5CBB4626
-F0 "+3.3V SW" 50
-F1 "POS3P3_SW.sch" 50
+S 4780 1470 500  150 
+U 5E0652BA
+F0 "+12V Telemetry" 50
+F1 "POS12_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 1180 3300 500  150 
+U 5E0CF7BC
+F0 "TELEM I2C Buffer" 50
+F1 "TELEM_I2C_Buffer.sch" 50
 $EndSheet
 $EndSCHEMATC
