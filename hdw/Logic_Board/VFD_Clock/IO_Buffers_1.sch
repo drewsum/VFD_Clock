@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 12 25
+Sheet 12 26
 Title "Electronic Display Logic Board"
 Date "2018-12-15"
 Rev "A"

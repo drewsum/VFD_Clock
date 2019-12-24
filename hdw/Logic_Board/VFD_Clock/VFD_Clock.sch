@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 25
+Sheet 1 26
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -158,4 +158,12 @@ U 5E164364
 F0 "+60VAN Telemetry" 50
 F1 "POS60_VAN_Telemetry.sch" 50
 $EndSheet
+$Sheet
+S 1340 6130 500  150 
+U 5E052856
+F0 "USB Telemetry" 50
+F1 "USB_Telemetry.sch" 50
+$EndSheet
+Text Notes 4380 6270 0    50   ~ 0
+Consider adding net ties on all current sense chunt resistors for net isolation
 $EndSCHEMATC

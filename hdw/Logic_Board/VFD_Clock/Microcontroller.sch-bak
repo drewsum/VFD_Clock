@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 25
+Sheet 2 26
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -174,4 +174,10 @@ Text GLabel 3460 4710 0    50   Input ~ 0
 MCU_POSC
 Text GLabel 3460 4910 0    50   Input ~ 0
 MCU_SOSC
+Text GLabel 1650 2390 0    50   BiDi ~ 0
+TELEM_I2C_SDA_MCU
+Text GLabel 1650 2290 0    50   Input ~ 0
+TELEM_I2C_SCL_MCU
+Text GLabel 1650 2490 0    50   Input ~ 0
+TELEM_I2C_EN
 $EndSCHEMATC
