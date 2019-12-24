@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 16 20
+Sheet 14 25
 Title "QI Charger"
 Date "2019-01-03"
 Rev "A"
@@ -683,8 +683,6 @@ $EndComp
 Wire Wire Line
 	7810 2200 7810 2270
 Connection ~ 7810 2270
-Text Notes 540  690  0    100  ~ 20
-02. +12V Input
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5CB6E44A
@@ -697,84 +695,6 @@ F 3 "" H 5130 3810 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5640 2270
-Text GLabel 7040 3400 3    50   UnSpc ~ 0
-POS12_SNS_+
-Text GLabel 7180 3400 3    50   UnSpc ~ 0
-POS12_SNS_-
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E074F62
-P 6880 2580
-F 0 "R?" H 6990 2450 50  0000 L CNN
-F 1 "10" V 6880 2580 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 6880 2580 50  0001 C CNN
-F 3 "" H 6880 2580 50  0001 C CNN
-F 4 "YAG3351CT-ND" H 7180 2980 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" H 6990 2530 50  0000 L CNN "display_footprint"
-F 6 "1%" H 6990 2600 50  0000 L CNN "Tolerance"
-F 7 "1/10W" H 6990 2680 50  0000 L CNN "Wattage"
-	1    6880 2580
-	-1   0    0    1   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E076BDD
-P 7340 2580
-F 0 "R?" H 7450 2450 50  0000 L CNN
-F 1 "10" V 7340 2580 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 7340 2580 50  0001 C CNN
-F 3 "" H 7340 2580 50  0001 C CNN
-F 4 "YAG3351CT-ND" H 7640 2980 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" H 7450 2530 50  0000 L CNN "display_footprint"
-F 6 "1%" H 7450 2600 50  0000 L CNN "Tolerance"
-F 7 "1/10W" H 7450 2680 50  0000 L CNN "Wattage"
-	1    7340 2580
-	1    0    0    1   
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5E0794C5
-P 7110 2920
-AR Path="/5BAAE16C/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5BB181D8/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5BB2595E/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5BAAE0FA/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5BB86F23/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5C1D5C9E/5E0794C5" Ref="C?"  Part="1" 
-AR Path="/5CB6F1ED/5E0794C5" Ref="C?"  Part="1" 
-F 0 "C?" V 7360 2920 50  0000 C CNN
-F 1 "0.1uF" V 7270 2920 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0603" H 7148 2770 50  0001 C CNN
-F 3 "" H 7135 3020 50  0001 C CNN
-F 4 "0603" V 6730 2920 50  0000 C CNN "display_footprint"
-F 5 "50V" V 6830 2920 50  0000 C CNN "Voltage"
-F 6 "X7R" V 6930 2920 50  0000 C CNN "Dielectric"
-F 7 "311-1344-1-ND" H 7535 3420 60  0001 C CNN "Digi-Key PN"
-	1    7110 2920
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6880 2730 6880 2920
-Wire Wire Line
-	6880 2920 6960 2920
-Wire Wire Line
-	7260 2920 7340 2920
-Wire Wire Line
-	7340 2920 7340 2730
-Wire Wire Line
-	6880 2920 6880 3360
-Wire Wire Line
-	6880 3360 7040 3360
-Wire Wire Line
-	7040 3360 7040 3400
-Connection ~ 6880 2920
-Wire Wire Line
-	7340 2920 7340 3360
-Wire Wire Line
-	7340 3360 7180 3360
-Wire Wire Line
-	7180 3360 7180 3400
-Connection ~ 7340 2920
 Wire Wire Line
 	5640 2270 6880 2270
 Wire Wire Line
@@ -789,4 +709,10 @@ Wire Wire Line
 Connection ~ 6880 2270
 Wire Wire Line
 	6880 2270 6960 2270
+Text Notes 6740 1720 0    50   ~ 0
+Evaluate shunt value
+Text GLabel 7340 2430 3    50   UnSpc ~ 0
+POS12_SNS-
+Text GLabel 6880 2430 3    50   UnSpc ~ 0
+POS12_SNS+
 $EndSCHEMATC

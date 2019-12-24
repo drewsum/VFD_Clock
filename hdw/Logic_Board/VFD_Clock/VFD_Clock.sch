@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 20
+Sheet 1 25
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -21,16 +21,10 @@ F0 "Microcontroller" 50
 F1 "Microcontroller.sch" 50
 $EndSheet
 $Sheet
-S 6400 3010 500  150 
+S 8230 3350 500  150 
 U 5A0BC776
-F0 "+60V VAN Power Supply" 50
+F0 "+60VAN Power Supply" 50
 F1 "POS60_VAN_Power_Supply.sch" 50
-$EndSheet
-$Sheet
-S 6400 3360 500  150 
-U 5A0A7E5F
-F0 "+1.2V VFF Power Supply" 50
-F1 "POS1P2_VFF_Power_Supply.sch" 50
 $EndSheet
 $Sheet
 S 3690 5080 500  150 
@@ -45,13 +39,13 @@ F0 "+3.3V BCKP Supply" 50
 F1 "POS3P3_BCKP_Supply.sch" 50
 $EndSheet
 $Sheet
-S 1180 3940 500  150 
+S 1340 5430 500  150 
 U 5CAD2D97
 F0 "USB UART Bridge" 50
 F1 "USB_UART_Bridge.sch" 50
 $EndSheet
 $Sheet
-S 1180 4290 500  150 
+S 1340 5780 500  150 
 U 5CAD2DA3
 F0 "USB UART Isolation" 50
 F1 "USB_UART_Isolation.sch" 50
@@ -99,16 +93,10 @@ F0 "+12V Input" 50
 F1 "POS12_Input.sch" 50
 $EndSheet
 $Sheet
-S 6400 1960 500  150 
+S 6400 1230 500  150 
 U 5CB7718D
 F0 "+3.3V Power Supply" 50
 F1 "POS3P3_Power_Supply.sch" 50
-$EndSheet
-$Sheet
-S 6400 2310 500  150 
-U 5CC14207
-F0 "+5V Power Supply" 50
-F1 "POS5_Power_Supply.sch" 50
 $EndSheet
 $Sheet
 S 6400 5210 500  150 
@@ -123,9 +111,51 @@ F0 "+12V Telemetry" 50
 F1 "POS12_Telemetry.sch" 50
 $EndSheet
 $Sheet
-S 1180 3300 500  150 
+S 1180 4000 500  150 
 U 5E0CF7BC
 F0 "TELEM I2C Buffer" 50
 F1 "TELEM_I2C_Buffer.sch" 50
+$EndSheet
+$Sheet
+S 1180 3300 500  150 
+U 5E01BCC3
+F0 "Microcontroller Clocking" 50
+F1 "Microcontroller_Clocking.sch" 50
+$EndSheet
+$Sheet
+S 6400 1580 500  150 
+U 5E0A0E29
+F0 "+3.3V Telemetry" 50
+F1 "POS3P3_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 6400 2110 500  150 
+U 5E0DC082
+F0 "+5V Power Supply" 50
+F1 "POS5_Power_Supply.sch" 50
+$EndSheet
+$Sheet
+S 6400 2460 500  150 
+U 5E0DC084
+F0 "+5V Telemetry" 50
+F1 "POS5_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 7910 2110 500  150 
+U 5E0F9110
+F0 "+1.2VFF Power Supply" 50
+F1 "POS1P2_VFF_Power_Supply.sch" 50
+$EndSheet
+$Sheet
+S 7910 2460 500  150 
+U 5E0F9112
+F0 "+1.2VFF Telemetry" 50
+F1 "POS1P2_VFF_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 8230 3700 500  150 
+U 5E164364
+F0 "+60VAN Telemetry" 50
+F1 "POS60_VAN_Telemetry.sch" 50
 $EndSheet
 $EndSCHEMATC

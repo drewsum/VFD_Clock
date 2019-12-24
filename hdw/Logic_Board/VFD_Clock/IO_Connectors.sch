@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 13 20
+Sheet 11 25
 Title ""
 Date ""
 Rev ""
@@ -37,4 +37,6 @@ F 4 "SAM14119CT-ND" H 5540 3570 50  0001 C CNN "Digi-Key PN"
 	1    5540 3570
 	1    0    0    -1  
 $EndComp
+Text Notes 7360 4050 0    50   ~ 0
+Figure out something else that's good\nGet a good idea of this once you have\nI/O nailed down
 $EndSCHEMATC

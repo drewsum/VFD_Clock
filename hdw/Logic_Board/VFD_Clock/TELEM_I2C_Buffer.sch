@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 20 20
+Sheet 18 25
 Title ""
 Date ""
 Rev ""
@@ -27,4 +27,8 @@ F 3 "http://www.ti.com/lit/ds/symlink/tca9803.pdf" H 5400 3880 50  0001 C CNN
 $EndComp
 Text Notes 4880 4430 0    50   ~ 0
 READ DATASHEET, PULLUP/DECOUPLING WEIRDNESS
+Text GLabel 6100 3430 2    50   BiDi ~ 0
+TELEM_I2C_SDA
+Text GLabel 6100 3330 2    50   Output ~ 0
+TELEM_I2C_SCL
 $EndSCHEMATC

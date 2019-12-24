@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 20
+Sheet 2 25
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -169,4 +169,9 @@ Wire Wire Line
 	3290 5490 3290 5410
 Wire Wire Line
 	3290 5410 3460 5410
+NoConn ~ 7460 4210
+Text GLabel 3460 4710 0    50   Input ~ 0
+MCU_POSC
+Text GLabel 3460 4910 0    50   Input ~ 0
+MCU_SOSC
 $EndSCHEMATC

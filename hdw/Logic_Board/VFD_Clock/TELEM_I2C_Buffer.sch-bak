@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 20 20
+Sheet 18 25
 Title ""
 Date ""
 Rev ""
@@ -25,4 +25,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/tca9803.pdf" H 5400 3880 50  0001 C CNN
 	1    5700 3430
 	1    0    0    -1  
 $EndComp
+Text Notes 4880 4430 0    50   ~ 0
+READ DATASHEET, PULLUP/DECOUPLING WEIRDNESS
 $EndSCHEMATC
