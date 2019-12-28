@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 26 26
+Sheet 17 28
 Title ""
 Date ""
 Rev ""
@@ -76,7 +76,7 @@ F 3 "" H 4710 1640 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 5510 1740 2    50   Input ~ 0
-TELEM_I2C_SCL
+I2C_SCL
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5E0B2427
@@ -125,7 +125,7 @@ F 3 "" H 5110 3160 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 5510 1640 2    50   BiDi ~ 0
-TELEM_I2C_SDA
+I2C_SDA
 NoConn ~ 5510 1940
 $Comp
 L Custom_Library:I2C_Address DOC?
@@ -218,9 +218,9 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf" H 4860 4990 50 
 	-1   0    0    -1  
 $EndComp
 Text GLabel 5510 4340 2    50   Input ~ 0
-TELEM_I2C_SCL
+I2C_SCL
 Text GLabel 5510 4240 2    50   BiDi ~ 0
-TELEM_I2C_SDA
+I2C_SDA
 NoConn ~ 4710 4540
 $Comp
 L Custom_Library:C_Custom C?

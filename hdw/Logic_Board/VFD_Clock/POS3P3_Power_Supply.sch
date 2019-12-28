@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 15 26
+Sheet 15 28
 Title "QI Charger"
 Date "2019-01-03"
 Rev "A"
@@ -132,52 +132,7 @@ F 3 "" H 1360 2840 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1360 2840 1360 2920
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5C28103E
-P 3190 3250
-AR Path="/5BB27BA3/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5C28103E" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5C28103E" Ref="R?"  Part="1" 
-F 0 "R?" H 3110 3250 50  0000 R CNN
-F 1 "100k" V 3190 3250 40  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3190 3250 50  0001 C CNN
-F 3 "" H 3190 3250 50  0001 C CNN
-F 4 "0603" H 3290 3330 50  0000 L CNN "display_footprint"
-F 5 "1%" H 3290 3250 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 3300 3170 50  0000 L CNN "Wattage"
-F 7 "A106046CT-ND" H -210 830 50  0001 C CNN "Digi-Key PN"
-	1    3190 3250
-	1    0    0    -1  
-$EndComp
 Connection ~ 4070 2920
-Wire Wire Line
-	3190 3100 3190 2920
-Wire Wire Line
-	3190 2920 4070 2920
-Wire Wire Line
-	3190 3400 3190 3720
-Wire Wire Line
-	3190 3720 4410 3720
-$Comp
-L power:GND #PWR?
-U 1 1 5C281E24
-P 3190 4240
-AR Path="/5CB7718D/5C281E24" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C281E24" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5C281E24" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3190 3990 50  0001 C CNN
-F 1 "GND" H 3190 4090 50  0000 C CNN
-F 2 "" H 3190 4240 50  0001 C CNN
-F 3 "" H 3190 4240 50  0001 C CNN
-	1    3190 4240
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C288B4E
@@ -272,12 +227,6 @@ F 7 "RHM10KADCT-ND" H 2590 4490 60  0001 C CNN "Digi-Key PN"
 	1    2290 4090
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2290 2920 3190 2920
-Connection ~ 3190 2920
-Wire Wire Line
-	3190 3720 3190 3940
-Connection ~ 3190 3720
 Wire Wire Line
 	4410 4520 2290 4520
 Wire Wire Line
@@ -449,29 +398,6 @@ Wire Wire Line
 Wire Wire Line
 	7590 3320 7590 3410
 Connection ~ 6840 3320
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5C29F0DE
-P 3190 4090
-AR Path="/5BB27BA3/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5C29F0DE" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5C29F0DE" Ref="R?"  Part="1" 
-F 0 "R?" H 3110 4090 50  0000 R CNN
-F 1 "10.5k" V 3190 4090 40  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3190 4090 50  0001 C CNN
-F 3 "" H 3190 4090 50  0001 C CNN
-F 4 "0603" H 3290 4170 50  0000 L CNN "display_footprint"
-F 5 "1%" H 3290 4090 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 3300 4010 50  0000 L CNN "Wattage"
-F 7 "311-10.5KHRCT-ND" H -210 830 50  0001 C CNN "Digi-Key PN"
-	1    3190 4090
-	1    0    0    -1  
-$EndComp
 $Comp
 L Custom_Library:TPS62130 U?
 U 1 1 5C2754C7
@@ -710,4 +636,8 @@ $EndComp
 Wire Wire Line
 	9680 3240 9680 3320
 Connection ~ 9680 3320
+Text GLabel 4410 3720 0    50   Input ~ 0
+POS3P3_RUN
+Wire Wire Line
+	2290 2920 4070 2920
 $EndSCHEMATC

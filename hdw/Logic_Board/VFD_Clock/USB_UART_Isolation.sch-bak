@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 7 26
+Sheet 7 28
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -488,9 +488,9 @@ F 7 "RMCF0603FT10K0CT-ND" H 7620 4370 60  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 Text GLabel 5100 4200 0    50   BiDi ~ 0
-TELEM_I2C_SDA
+I2C_SDA
 Text GLabel 5100 4300 0    50   Input ~ 0
-TELEM_I2C_SCL
+I2C_SCL
 Wire Wire Line
 	7660 4200 7320 4200
 Wire Wire Line
@@ -528,9 +528,9 @@ F 3 "" H 7320 3820 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7660 4300 2    50   Output ~ 0
-TELEM_I2C_SCL_USB
+I2C_USB_SCL
 Text GLabel 7660 4200 2    50   BiDi ~ 0
-TELEM_I2C_SDA_USB
+I2C_USB_SDA
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5E091062

@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 26
+Sheet 14 28
 Title "QI Charger"
 Date "2019-01-03"
 Rev "A"
@@ -683,17 +683,6 @@ $EndComp
 Wire Wire Line
 	7810 2200 7810 2270
 Connection ~ 7810 2270
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB6E44A
-P 5130 3810
-F 0 "#PWR?" H 5130 3660 50  0001 C CNN
-F 1 "+3.3V" H 5130 3950 50  0000 C CNN
-F 2 "" H 5130 3810 50  0001 C CNN
-F 3 "" H 5130 3810 50  0001 C CNN
-	1    5130 3810
-	1    0    0    -1  
-$EndComp
 Connection ~ 5640 2270
 Wire Wire Line
 	5640 2270 6880 2270
@@ -715,4 +704,6 @@ Text GLabel 7340 2430 3    50   UnSpc ~ 0
 POS12_SNS-
 Text GLabel 6880 2430 3    50   UnSpc ~ 0
 POS12_SNS+
+Text Notes 5560 4810 0    50   ~ 0
+Figure out POS12_PGOOD divider stuff so it's not pulled to POS3P3
 $EndSCHEMATC

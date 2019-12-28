@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 26
+Sheet 1 28
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -113,8 +113,8 @@ $EndSheet
 $Sheet
 S 1180 4000 500  150 
 U 5E0CF7BC
-F0 "TELEM I2C Buffer" 50
-F1 "TELEM_I2C_Buffer.sch" 50
+F0 "I2C Buffer" 50
+F1 "I2C_Buffer.sch" 50
 $EndSheet
 $Sheet
 S 1180 3300 500  150 
@@ -165,5 +165,17 @@ F0 "USB Telemetry" 50
 F1 "USB_Telemetry.sch" 50
 $EndSheet
 Text Notes 4380 6270 0    50   ~ 0
-Consider adding net ties on all current sense chunt resistors for net isolation
+Consider adding net ties on all current sense shunt resistors for net isolation
+$Sheet
+S 1180 4350 500  150 
+U 5E07B870
+F0 "Time of Flight" 50
+F1 "Time_of_Flight.sch" 50
+$EndSheet
+$Sheet
+S 8230 4290 500  150 
+U 5E1352F5
+F0 "Misc Power" 50
+F1 "Misc_Power.sch" 50
+$EndSheet
 $EndSCHEMATC
