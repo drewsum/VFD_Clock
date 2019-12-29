@@ -787,4 +787,139 @@ F 4 "296-8484-1-ND" H 2980 4370 50  0001 C CNN "Digi-Key PN"
 $EndComp
 Text GLabel 2680 4370 0    50   Input ~ 0
 POS5_PGOOD
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E1D006C
+P 4870 3680
+AR Path="/5BAAE1F3/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D006C" Ref="C?"  Part="1" 
+F 0 "C?" H 4895 3780 50  0000 L CNN
+F 1 "0.1uF" H 4895 3580 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4908 3530 50  0001 C CNN
+F 3 "" H 4895 3780 50  0001 C CNN
+F 4 "311-1344-1-ND" H 5295 4180 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" H 4720 3780 50  0000 R CNN "display_footprint"
+F 6 "50V" H 4720 3680 50  0000 R CNN "Voltage"
+F 7 "X7R" H 4720 3580 50  0000 R CNN "Dielectric"
+	1    4870 3680
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E1D0077
+P 5550 4100
+AR Path="/5BB844FD/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D0077" Ref="D?"  Part="1" 
+F 0 "D?" V 5589 3983 50  0000 R CNN
+F 1 "Green" V 5498 3983 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 5550 4100 50  0001 C CNN
+F 3 "~" H 5550 4100 50  0001 C CNN
+F 4 "160-1446-1-ND" H 390 -2220 50  0001 C CNN "Digi-Key PN"
+	1    5550 4100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5230 4370 5550 4370
+Wire Wire Line
+	5550 4370 5550 4250
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1D0087
+P 5550 3800
+AR Path="/5BAAE1F3/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D0087" Ref="R?"  Part="1" 
+F 0 "R?" H 5490 3800 50  0000 R CNN
+F 1 "1k" V 5550 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5550 3800 50  0001 C CNN
+F 3 "" H 5550 3800 50  0001 C CNN
+F 4 "0603" H 5620 3880 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5620 3800 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5620 3730 50  0000 L CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 5850 4200 60  0001 C CNN "Digi-Key PN"
+	1    5550 3800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G06_Power U?
+U 1 1 5E1D00C4
+P 4980 4370
+F 0 "U?" H 5080 4520 50  0000 L CNN
+F 1 "74LVC1G06" H 5080 4270 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4980 4420 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4980 4370 50  0001 C CNN
+F 4 "296-8484-1-ND" H 4980 4370 50  0001 C CNN "Digi-Key PN"
+	1    4980 4370
+	1    0    0    -1  
+$EndComp
+Text GLabel 4680 4370 0    50   Input ~ 0
+POS5_USB_PGOOD
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E1DA581
+P 4870 3830
+F 0 "#PWR?" H 4870 3580 50  0001 C CNN
+F 1 "GND_USB" H 4870 3680 50  0000 C CNN
+F 2 "" H 4870 3830 50  0001 C CNN
+F 3 "" H 4870 3830 50  0001 C CNN
+	1    4870 3830
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E1DA814
+P 4980 4470
+F 0 "#PWR?" H 4980 4220 50  0001 C CNN
+F 1 "GND_USB" H 4980 4320 50  0000 C CNN
+F 2 "" H 4980 4470 50  0001 C CNN
+F 3 "" H 4980 4470 50  0001 C CNN
+	1    4980 4470
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E1DAB35
+P 4870 3530
+F 0 "#PWR?" H 4870 3380 50  0001 C CNN
+F 1 "+5V_USB" H 4870 3670 50  0000 C CNN
+F 2 "" H 4870 3530 50  0001 C CNN
+F 3 "" H 4870 3530 50  0001 C CNN
+	1    4870 3530
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E1DB33B
+P 4980 4270
+F 0 "#PWR?" H 4980 4120 50  0001 C CNN
+F 1 "+5V_USB" H 4980 4410 50  0000 C CNN
+F 2 "" H 4980 4270 50  0001 C CNN
+F 3 "" H 4980 4270 50  0001 C CNN
+	1    4980 4270
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E1DB665
+P 5550 3650
+F 0 "#PWR?" H 5550 3500 50  0001 C CNN
+F 1 "+5V_USB" H 5550 3790 50  0000 C CNN
+F 2 "" H 5550 3650 50  0001 C CNN
+F 3 "" H 5550 3650 50  0001 C CNN
+	1    5550 3650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

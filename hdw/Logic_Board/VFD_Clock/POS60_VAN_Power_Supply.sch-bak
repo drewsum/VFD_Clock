@@ -41,18 +41,6 @@ F 7 "490-4789-1-ND" H 200 -400 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:LT6700-1-S6 U?
-U 1 1 5A4ABE2A
-P 2850 6600
-F 0 "U?" H 3150 6100 50  0000 C CNN
-F 1 "LT6700-1-S6" H 2850 6600 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 2850 7200 60  0001 C CNN
-F 3 "" H 2850 7200 60  0001 C CNN
-F 4 "LT6700CS6-1#TRMPBFCT-ND" H 0   470 50  0001 C CNN "Digi-Key PN"
-	1    2850 6600
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5A4AC392
 P 4230 7580
@@ -959,4 +947,16 @@ Wire Wire Line
 Connection ~ 8870 1520
 Wire Wire Line
 	8870 1520 9030 1520
+$Comp
+L Custom_Library:TLV6700 U?
+U 1 1 5E1F15CF
+P 2850 6600
+F 0 "U?" H 3150 6100 50  0000 C CNN
+F 1 "TLV6700" H 2850 6600 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TSOT-23-6" H 2850 7200 60  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv6700.pdf" H 2850 6600 60  0001 C CNN
+F 4 "296-51696-1-ND" H 2850 6600 50  0001 C CNN "Digi-Key PN"
+	1    2850 6600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

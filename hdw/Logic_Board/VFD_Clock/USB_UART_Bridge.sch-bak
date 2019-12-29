@@ -634,18 +634,6 @@ F 8 "None" H 9680 4450 60  0000 R CNN "Flow_Control"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:LT6700-1-S6 U?
-U 1 1 5BF9D1D8
-P 2790 6840
-F 0 "U?" H 3090 6340 50  0000 C CNN
-F 1 "LT6700-1-S6" H 2790 6840 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:TSOT-23-6" H 2790 6840 60  0001 C CNN
-F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/6700123fh.pdf" H 2790 6840 60  0001 C CNN
-F 4 "LT6700CS6-1#TRMPBFCT-ND" H 2790 6840 50  0001 C CNN "Digi-Key PN"
-	1    2790 6840
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom_Library:R_Custom R?
 U 1 1 5BF9D312
 P 1840 6830
@@ -762,25 +750,6 @@ Connection ~ 3470 6590
 Wire Wire Line
 	3470 6590 3470 6390
 $Comp
-L Custom_Library:C_Custom C?
-U 1 1 5BFA8DF9
-P 4440 7310
-AR Path="/5BAAE1F3/5BFA8DF9" Ref="C?"  Part="1" 
-AR Path="/5BAAE1CB/5BFA8DF9" Ref="C?"  Part="1" 
-AR Path="/5BE48F98/5BFA8DF9" Ref="C?"  Part="1" 
-AR Path="/5CAD2D97/5BFA8DF9" Ref="C?"  Part="1" 
-F 0 "C?" H 4465 7410 50  0000 L CNN
-F 1 "0.1uF" H 4465 7210 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4478 7160 50  0001 C CNN
-F 3 "" H 4465 7410 50  0001 C CNN
-F 4 "311-1344-1-ND" H 4865 7810 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" H 4290 7410 50  0000 R CNN "display_footprint"
-F 6 "50V" H 4290 7310 50  0000 R CNN "Voltage"
-F 7 "X7R" H 4290 7210 50  0000 R CNN "Dielectric"
-	1    4440 7310
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Custom_Library:GND_USB #PWR?
 U 1 1 5BFAE111
 P 1840 7470
@@ -802,118 +771,6 @@ F 3 "" H 2790 7440 50  0001 C CNN
 	1    2790 7440
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:GND_USB #PWR?
-U 1 1 5BFAE29A
-P 4440 7460
-F 0 "#PWR?" H 4440 7210 50  0001 C CNN
-F 1 "GND_USB" H 4440 7310 50  0000 C CNN
-F 2 "" H 4440 7460 50  0001 C CNN
-F 3 "" H 4440 7460 50  0001 C CNN
-	1    4440 7460
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:GND_USB #PWR?
-U 1 1 5BFAE3A9
-P 4590 6690
-F 0 "#PWR?" H 4590 6440 50  0001 C CNN
-F 1 "GND_USB" H 4590 6540 50  0000 C CNN
-F 2 "" H 4590 6690 50  0001 C CNN
-F 3 "" H 4590 6690 50  0001 C CNN
-	1    4590 6690
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:+5V_USB #PWR?
-U 1 1 5BFAE4B8
-P 4590 6490
-F 0 "#PWR?" H 4590 6340 50  0001 C CNN
-F 1 "+5V_USB" H 4590 6630 50  0000 C CNN
-F 2 "" H 4590 6490 50  0001 C CNN
-F 3 "" H 4590 6490 50  0001 C CNN
-	1    4590 6490
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:+5V_USB #PWR?
-U 1 1 5BFAE545
-P 4440 7160
-F 0 "#PWR?" H 4440 7010 50  0001 C CNN
-F 1 "+5V_USB" H 4440 7300 50  0000 C CNN
-F 2 "" H 4440 7160 50  0001 C CNN
-F 3 "" H 4440 7160 50  0001 C CNN
-	1    4440 7160
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5BFB06FB
-P 4590 6590
-F 0 "U?" H 4690 6740 50  0000 L CNN
-F 1 "74LVC1G06" H 4690 6490 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4590 6640 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4590 6590 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4590 6590 50  0001 C CNN "Digi-Key PN"
-	1    4590 6590
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 5BFB28AA
-P 5160 6320
-AR Path="/5BB844FD/5BFB28AA" Ref="D?"  Part="1" 
-AR Path="/5BF346B3/5BFB28AA" Ref="D?"  Part="1" 
-AR Path="/5BAAE1F3/5BFB28AA" Ref="D?"  Part="1" 
-AR Path="/5CAD2D97/5BFB28AA" Ref="D?"  Part="1" 
-F 0 "D?" V 5198 6203 50  0000 R CNN
-F 1 "Green" V 5107 6203 50  0000 R CNN
-F 2 "LEDs:LED_0603" H 5160 6320 50  0001 C CNN
-F 3 "~" H 5160 6320 50  0001 C CNN
-F 4 "160-1446-1-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
-	1    5160 6320
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BFB28B5
-P 5160 6020
-AR Path="/5BAAE1F3/5BFB28B5" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5BFB28B5" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5BFB28B5" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5BFB28B5" Ref="R?"  Part="1" 
-AR Path="/5BF346B3/5BFB28B5" Ref="R?"  Part="1" 
-AR Path="/5CAD2D97/5BFB28B5" Ref="R?"  Part="1" 
-F 0 "R?" H 5100 6020 50  0000 R CNN
-F 1 "1k" V 5160 6020 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 5160 6020 50  0001 C CNN
-F 3 "" H 5160 6020 50  0001 C CNN
-F 4 "0603" H 5230 6100 50  0000 L CNN "display_footprint"
-F 5 "1%" H 5230 6020 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 5240 5950 50  0000 L CNN "Wattage"
-F 7 "RMCF0603FT1K00CT-ND" H 5460 6420 60  0001 C CNN "Digi-Key PN"
-	1    5160 6020
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	4840 6590 5160 6590
-Wire Wire Line
-	5160 6590 5160 6470
-$Comp
-L Custom_Library:+5V_USB #PWR?
-U 1 1 5BFB3CC8
-P 5160 5870
-F 0 "#PWR?" H 5160 5720 50  0001 C CNN
-F 1 "+5V_USB" H 5160 6010 50  0000 C CNN
-F 2 "" H 5160 5870 50  0001 C CNN
-F 3 "" H 5160 5870 50  0001 C CNN
-	1    5160 5870
-	1    0    0    -1  
-$EndComp
-Text Label 3510 6590 0    50   ~ 0
-POS5_USB_PGOOD
-Wire Wire Line
-	3470 6590 4290 6590
 $Comp
 L Graphic:SYM_ESD_Large #SYM?
 U 1 1 5C009D69
@@ -1027,4 +884,20 @@ Wire Wire Line
 Connection ~ 5710 2220
 Wire Wire Line
 	5710 2220 6180 2220
+Text GLabel 3780 6590 2    50   Output ~ 0
+POS5_USB_PGOOD
+Wire Wire Line
+	3780 6590 3470 6590
+$Comp
+L Custom_Library:TLV6700 U?
+U 1 1 5E1EE9A5
+P 2790 6840
+F 0 "U?" H 3090 6340 50  0000 C CNN
+F 1 "TLV6700" H 2790 6840 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TSOT-23-6" H 2790 7440 60  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv6700.pdf" H 2790 6840 60  0001 C CNN
+F 4 "296-51696-1-ND" H 2790 6840 50  0001 C CNN "Digi-Key PN"
+	1    2790 6840
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

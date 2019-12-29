@@ -375,6 +375,174 @@ F 3 "" H 2810 1940 50  0001 C CNN
 	1    2810 1940
 	0    -1   -1   0   
 $EndComp
-Text Notes 8120 3240 0    50   ~ 0
-LTC4151
+$Comp
+L Custom_Library:LTC4151DD U?
+U 1 1 5E11F17D
+P 7730 2310
+F 0 "U?" H 8180 2860 50  0000 R CNN
+F 1 "LTC4151DD" H 7730 2460 50  0000 C CNN
+F 2 "Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm" H 7730 2310 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/4151ff.pdf" H 7730 2310 50  0001 C CNN
+F 4 "LTC4151CDD#PBF-ND" H 7730 2310 50  0001 C CNN "Digi-Key PN"
+	1    7730 2310
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E1215D9
+P 7730 2990
+F 0 "#PWR?" H 7730 2740 50  0001 C CNN
+F 1 "GND" H 7730 2840 50  0000 C CNN
+F 2 "" H 7730 2990 50  0001 C CNN
+F 3 "" H 7730 2990 50  0001 C CNN
+	1    7730 2990
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7730 2990 7730 2950
+Wire Wire Line
+	7730 2950 7680 2950
+Wire Wire Line
+	7680 2950 7680 2910
+Wire Wire Line
+	7730 2950 7780 2950
+Wire Wire Line
+	7780 2950 7780 2910
+Connection ~ 7730 2950
+$Comp
+L Custom_Library:I2C_Address DOC?
+U 1 1 5E123985
+P 9250 3180
+AR Path="/5E0652BA/5E123985" Ref="DOC?"  Part="1" 
+AR Path="/5E0A0E29/5E123985" Ref="DOC?"  Part="1" 
+AR Path="/5E0DC084/5E123985" Ref="DOC?"  Part="1" 
+AR Path="/5E0F9112/5E123985" Ref="DOC?"  Part="1" 
+AR Path="/5E164364/5E123985" Ref="DOC?"  Part="1" 
+F 0 "DOC?" H 9250 3430 60  0001 C CNN
+F 1 "kjwqenflkjndsf" H 8800 3180 60  0000 L CNN
+F 2 "" H 9250 3530 60  0001 C CNN
+F 3 "" H 9250 3530 60  0001 C CNN
+	1    9250 3180
+	1    0    0    -1  
+$EndComp
+Text GLabel 8280 2310 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 8280 2410 2    50   BiDi ~ 0
+I2C_SDA
+NoConn ~ 8280 1910
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E12E158
+P 7730 1710
+F 0 "#PWR?" H 7730 1560 50  0001 C CNN
+F 1 "+60VAN" H 7730 1850 50  0000 C CNN
+F 2 "" H 7730 1710 50  0000 C CNN
+F 3 "" H 7730 1710 50  0000 C CNN
+	1    7730 1710
+	1    0    0    -1  
+$EndComp
+Text GLabel 5960 2130 0    50   UnSpc ~ 0
+POS60_VAN_SNS_OUT+
+Text GLabel 5960 2590 0    50   UnSpc ~ 0
+POS60_VAN_SNS_OUT-
+Wire Wire Line
+	6700 2590 6700 2510
+Wire Wire Line
+	6700 2210 6700 2130
+Wire Wire Line
+	6700 2590 7140 2590
+Wire Wire Line
+	7140 2590 7140 2410
+Wire Wire Line
+	7140 2410 7180 2410
+Connection ~ 6700 2590
+Wire Wire Line
+	6700 2130 7140 2130
+Wire Wire Line
+	7140 2130 7140 2310
+Wire Wire Line
+	7140 2310 7180 2310
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E1334DD
+P 6700 2360
+AR Path="/5B3E071A/5E1334DD" Ref="C?"  Part="1" 
+AR Path="/5E0652BA/5E1334DD" Ref="C?"  Part="1" 
+AR Path="/5E0A0E29/5E1334DD" Ref="C?"  Part="1" 
+AR Path="/5E0DC084/5E1334DD" Ref="C?"  Part="1" 
+AR Path="/5E0F9112/5E1334DD" Ref="C?"  Part="1" 
+AR Path="/5E164364/5E1334DD" Ref="C?"  Part="1" 
+F 0 "C?" H 6725 2460 50  0000 L CNN
+F 1 "0.1uF" H 6725 2260 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 6738 2210 50  0001 C CNN
+F 3 "" H 6725 2460 50  0001 C CNN
+F 4 "0603" H 6550 2460 50  0000 R CNN "display_footprint"
+F 5 "50V" H 6550 2360 50  0000 R CNN "Voltage"
+F 6 "X7R" H 6550 2260 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 2790 -4520 50  0001 C CNN "Digi-Key PN"
+	1    6700 2360
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1334EB
+P 6110 2590
+AR Path="/5CB6F1ED/5E1334EB" Ref="R?"  Part="1" 
+AR Path="/5E0652BA/5E1334EB" Ref="R?"  Part="1" 
+AR Path="/5E0A0E29/5E1334EB" Ref="R?"  Part="1" 
+AR Path="/5E0DC084/5E1334EB" Ref="R?"  Part="1" 
+AR Path="/5E0F9112/5E1334EB" Ref="R?"  Part="1" 
+AR Path="/5E164364/5E1334EB" Ref="R?"  Part="1" 
+F 0 "R?" V 6010 2590 50  0000 C CNN
+F 1 "10" V 6110 2590 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 6110 2590 50  0001 C CNN
+F 3 "" H 6110 2590 50  0001 C CNN
+F 4 "YAG3351CT-ND" H 6410 2990 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" V 6210 2590 50  0000 C CNN "display_footprint"
+F 6 "1%" V 6310 2590 50  0000 C CNN "Tolerance"
+F 7 "1/10W" V 6410 2590 50  0000 C CNN "Wattage"
+	1    6110 2590
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6260 2590 6700 2590
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1334FA
+P 6110 2130
+AR Path="/5CB6F1ED/5E1334FA" Ref="R?"  Part="1" 
+AR Path="/5E0652BA/5E1334FA" Ref="R?"  Part="1" 
+AR Path="/5E0A0E29/5E1334FA" Ref="R?"  Part="1" 
+AR Path="/5E0DC084/5E1334FA" Ref="R?"  Part="1" 
+AR Path="/5E0F9112/5E1334FA" Ref="R?"  Part="1" 
+AR Path="/5E164364/5E1334FA" Ref="R?"  Part="1" 
+F 0 "R?" V 6010 2130 50  0000 C CNN
+F 1 "10" V 6110 2130 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 6110 2130 50  0001 C CNN
+F 3 "" H 6110 2130 50  0001 C CNN
+F 4 "YAG3351CT-ND" H 6410 2530 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" V 6210 2130 50  0000 C CNN "display_footprint"
+F 6 "1%" V 6310 2130 50  0000 C CNN "Tolerance"
+F 7 "1/10W" V 6410 2130 50  0000 C CNN "Wattage"
+	1    6110 2130
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6260 2130 6700 2130
+Connection ~ 6700 2130
+$Comp
+L power:GND #PWR?
+U 1 1 5E137C8A
+P 7100 2790
+F 0 "#PWR?" H 7100 2540 50  0001 C CNN
+F 1 "GND" H 7100 2640 50  0000 C CNN
+F 2 "" H 7100 2790 50  0001 C CNN
+F 3 "" H 7100 2790 50  0001 C CNN
+	1    7100 2790
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7180 2710 7100 2710
+Wire Wire Line
+	7100 2710 7100 2790
 $EndSCHEMATC

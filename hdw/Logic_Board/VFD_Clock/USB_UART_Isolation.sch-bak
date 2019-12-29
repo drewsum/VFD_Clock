@@ -664,21 +664,6 @@ F 3 "" H 5120 5510 50  0001 C CNN
 	1    5120 5510
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:GND_USB #PWR?
-U 1 1 5E0AFA5F
-P 5880 6280
-F 0 "#PWR?" H 5880 6030 50  0001 C CNN
-F 1 "GND_USB" H 5880 6130 50  0000 C CNN
-F 2 "" H 5880 6280 50  0001 C CNN
-F 3 "" H 5880 6280 50  0001 C CNN
-	1    5880 6280
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5880 6280 5880 6200
-Wire Wire Line
-	5880 6200 5800 6200
 Wire Wire Line
 	5120 6280 5120 6200
 Wire Wire Line
@@ -687,6 +672,25 @@ Wire Wire Line
 	5200 6000 5120 6000
 Wire Wire Line
 	5120 6000 5120 5810
+Text GLabel 4800 6000 0    50   Output ~ 0
+~USB_Detect
+Wire Wire Line
+	4800 6000 5120 6000
+Connection ~ 5120 6000
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E0BA4BC
+P 5880 5510
+AR Path="/5BAAE1F3/5E0BA4BC" Ref="#PWR?"  Part="1" 
+AR Path="/5BAAE1DC/5E0BA4BC" Ref="#PWR?"  Part="1" 
+AR Path="/5CAD2DA3/5E0BA4BC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5880 5360 50  0001 C CNN
+F 1 "+5V_USB" H 5880 5650 50  0000 C CNN
+F 2 "" H 5880 5510 50  0001 C CNN
+F 3 "" H 5880 5510 50  0001 C CNN
+	1    5880 5510
+	1    0    0    -1  
+$EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E0B8E79
@@ -705,26 +709,48 @@ F 7 "PN" H 6180 6060 60  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5880 5810 5880 6000
-Wire Wire Line
 	5880 6000 5800 6000
+Wire Wire Line
+	5880 5810 5880 6000
+$Comp
+L Custom_Library:74LVC1G06_Power U?
+U 1 1 5E1C530D
+P 6640 6200
+F 0 "U?" H 6740 6350 50  0000 L CNN
+F 1 "74LVC1G06" H 6740 6100 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6640 6250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6640 6200 50  0001 C CNN
+F 4 "296-8484-1-ND" H 6640 6200 50  0001 C CNN "Digi-Key PN"
+	1    6640 6200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6390 6200 5800 6200
 $Comp
 L Custom_Library:+5V_USB #PWR?
-U 1 1 5E0BA4BC
-P 5880 5510
-AR Path="/5BAAE1F3/5E0BA4BC" Ref="#PWR?"  Part="1" 
-AR Path="/5BAAE1DC/5E0BA4BC" Ref="#PWR?"  Part="1" 
-AR Path="/5CAD2DA3/5E0BA4BC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5880 5360 50  0001 C CNN
-F 1 "+5V_USB" H 5880 5650 50  0000 C CNN
-F 2 "" H 5880 5510 50  0001 C CNN
-F 3 "" H 5880 5510 50  0001 C CNN
-	1    5880 5510
+U 1 1 5E1C71F0
+P 6640 6100
+AR Path="/5BAAE1F3/5E1C71F0" Ref="#PWR?"  Part="1" 
+AR Path="/5BAAE1DC/5E1C71F0" Ref="#PWR?"  Part="1" 
+AR Path="/5CAD2DA3/5E1C71F0" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6640 5950 50  0001 C CNN
+F 1 "+5V_USB" H 6640 6240 50  0000 C CNN
+F 2 "" H 6640 6100 50  0001 C CNN
+F 3 "" H 6640 6100 50  0001 C CNN
+	1    6640 6100
 	1    0    0    -1  
 $EndComp
-Text GLabel 4800 6000 0    50   Output ~ 0
-~USB_Detect
-Wire Wire Line
-	4800 6000 5120 6000
-Connection ~ 5120 6000
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E1C7C26
+P 6640 6300
+F 0 "#PWR?" H 6640 6050 50  0001 C CNN
+F 1 "GND_USB" H 6640 6150 50  0000 C CNN
+F 2 "" H 6640 6300 50  0001 C CNN
+F 3 "" H 6640 6300 50  0001 C CNN
+	1    6640 6300
+	1    0    0    -1  
+$EndComp
+Text GLabel 6940 6200 2    50   Input ~ 0
+POS5_USB_PGOOD
 $EndSCHEMATC

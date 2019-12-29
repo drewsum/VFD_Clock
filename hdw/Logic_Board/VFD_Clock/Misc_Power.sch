@@ -14,6 +14,382 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4550 2250 0    50   ~ 0
-Add output discharge, sequencing, anything else
+$Comp
+L power:GND #PWR?
+U 1 1 5E0B4119
+P 2810 2560
+AR Path="/5CB0BC26/5E0B4119" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0B4119" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2810 2310 50  0001 C CNN
+F 1 "GND" H 2810 2410 50  0000 C CNN
+F 2 "" H 2810 2560 50  0001 C CNN
+F 3 "" H 2810 2560 50  0001 C CNN
+	1    2810 2560
+	1    0    0    -1  
+$EndComp
+Text GLabel 2510 2360 0    50   Input ~ 0
+POS3P3_RUN
+$Comp
+L power:GND #PWR?
+U 1 1 5E0B6E82
+P 3680 2280
+AR Path="/5CB0BC26/5E0B6E82" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0B6E82" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3680 2030 50  0001 C CNN
+F 1 "GND" H 3680 2130 50  0000 C CNN
+F 2 "" H 3680 2280 50  0001 C CNN
+F 3 "" H 3680 2280 50  0001 C CNN
+	1    3680 2280
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0BC29E
+P 2810 1850
+AR Path="/5A0BC776/5E0BC29E" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0BC29E" Ref="R?"  Part="1" 
+F 0 "R?" H 2750 1850 50  0000 R CNN
+F 1 "10k" V 2810 1850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 2810 1850 50  0001 C CNN
+F 3 "" H 2810 1850 50  0001 C CNN
+F 4 "0603" H 2880 1930 50  0000 L CNN "display_footprint"
+F 5 "1%" H 2880 1850 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 2880 1780 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H -1280 -3740 50  0001 C CNN "Digi-Key PN"
+	1    2810 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML2060 Q?
+U 1 1 5E0C21AF
+P 3580 2080
+F 0 "Q?" H 3780 2155 50  0000 L CNN
+F 1 "IRLML2060" H 3780 2080 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3780 2005 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml2060pbf.pdf?fileId=5546d462533600a401535664b7fb25ee" H 3580 2080 50  0001 L CNN
+	1    3580 2080
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5E0C4183
+P 2810 1700
+F 0 "#PWR?" H 2810 1550 50  0001 C CNN
+F 1 "+12V" H 2810 1840 50  0000 C CNN
+F 2 "" H 2810 1700 50  0001 C CNN
+F 3 "" H 2810 1700 50  0001 C CNN
+	1    2810 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0C96F8
+P 3680 1730
+AR Path="/5A0BC776/5E0C96F8" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0C96F8" Ref="R?"  Part="1" 
+F 0 "R?" H 3580 1730 50  0000 R CNN
+F 1 "237" V 3680 1730 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3680 1730 50  0001 C CNN
+F 3 "" H 3680 1730 50  0001 C CNN
+F 4 "0603" H 3750 1630 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3750 1710 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3740 1780 50  0000 L CNN "Wattage"
+F 7 "541-237HCT-ND" H 1630 -4400 50  0001 C CNN "Digi-Key PN"
+	1    3680 1730
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E0C9CCB
+P 3680 1580
+F 0 "#PWR?" H 3680 1430 50  0001 C CNN
+F 1 "+3.3V" H 3680 1720 50  0000 C CNN
+F 2 "" H 3680 1580 50  0001 C CNN
+F 3 "" H 3680 1580 50  0001 C CNN
+	1    3680 1580
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E0CC8B3
+P 2710 2360
+AR Path="/5BAAE16C/5E0CC8B3" Ref="Q?"  Part="1" 
+AR Path="/5BB844FD/5E0CC8B3" Ref="Q?"  Part="1" 
+AR Path="/5C1D5CB6/5E0CC8B3" Ref="Q?"  Part="1" 
+AR Path="/5CB0BC26/5E0CC8B3" Ref="Q?"  Part="1" 
+AR Path="/5E1352F5/5E0CC8B3" Ref="Q?"  Part="1" 
+F 0 "Q?" H 2910 2435 50  0000 L CNN
+F 1 "BSS214NW" H 2910 2360 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-323_SC-70" H 2910 2285 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 2710 2360 50  0001 L CNN
+F 4 "BSS214NWH6327XTSA1CT-ND" H -3700 -410 50  0001 C CNN "Digi-Key PN"
+	1    2710 2360
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2810 2000 2810 2080
+Wire Wire Line
+	3380 2080 2810 2080
+Connection ~ 2810 2080
+Wire Wire Line
+	2810 2080 2810 2160
+$Comp
+L power:GND #PWR?
+U 1 1 5E0E4352
+P 5060 2560
+AR Path="/5CB0BC26/5E0E4352" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0E4352" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5060 2310 50  0001 C CNN
+F 1 "GND" H 5060 2410 50  0000 C CNN
+F 2 "" H 5060 2560 50  0001 C CNN
+F 3 "" H 5060 2560 50  0001 C CNN
+	1    5060 2560
+	1    0    0    -1  
+$EndComp
+Text GLabel 4760 2360 0    50   Input ~ 0
+POS5_RUN
+$Comp
+L power:GND #PWR?
+U 1 1 5E0E435D
+P 5930 2280
+AR Path="/5CB0BC26/5E0E435D" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0E435D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5930 2030 50  0001 C CNN
+F 1 "GND" H 5930 2130 50  0000 C CNN
+F 2 "" H 5930 2280 50  0001 C CNN
+F 3 "" H 5930 2280 50  0001 C CNN
+	1    5930 2280
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0E436B
+P 5060 1850
+AR Path="/5A0BC776/5E0E436B" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0E436B" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 1850 50  0000 R CNN
+F 1 "10k" V 5060 1850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5060 1850 50  0001 C CNN
+F 3 "" H 5060 1850 50  0001 C CNN
+F 4 "0603" H 5130 1930 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5130 1850 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5130 1780 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 970 -3740 50  0001 C CNN "Digi-Key PN"
+	1    5060 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML2060 Q?
+U 1 1 5E0E4375
+P 5830 2080
+F 0 "Q?" H 6030 2155 50  0000 L CNN
+F 1 "IRLML2060" H 6030 2080 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6030 2005 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml2060pbf.pdf?fileId=5546d462533600a401535664b7fb25ee" H 5830 2080 50  0001 L CNN
+	1    5830 2080
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5E0E437F
+P 5060 1700
+F 0 "#PWR?" H 5060 1550 50  0001 C CNN
+F 1 "+12V" H 5060 1840 50  0000 C CNN
+F 2 "" H 5060 1700 50  0001 C CNN
+F 3 "" H 5060 1700 50  0001 C CNN
+	1    5060 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0E438D
+P 5930 1730
+AR Path="/5A0BC776/5E0E438D" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0E438D" Ref="R?"  Part="1" 
+F 0 "R?" H 5830 1730 50  0000 R CNN
+F 1 "237" V 5930 1730 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5930 1730 50  0001 C CNN
+F 3 "" H 5930 1730 50  0001 C CNN
+F 4 "0603" H 6000 1630 50  0000 L CNN "display_footprint"
+F 5 "1%" H 6000 1710 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5990 1780 50  0000 L CNN "Wattage"
+F 7 "541-237HCT-ND" H 3880 -4400 50  0001 C CNN "Digi-Key PN"
+	1    5930 1730
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E0E43A2
+P 4960 2360
+AR Path="/5BAAE16C/5E0E43A2" Ref="Q?"  Part="1" 
+AR Path="/5BB844FD/5E0E43A2" Ref="Q?"  Part="1" 
+AR Path="/5C1D5CB6/5E0E43A2" Ref="Q?"  Part="1" 
+AR Path="/5CB0BC26/5E0E43A2" Ref="Q?"  Part="1" 
+AR Path="/5E1352F5/5E0E43A2" Ref="Q?"  Part="1" 
+F 0 "Q?" H 5160 2435 50  0000 L CNN
+F 1 "BSS214NW" H 5160 2360 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-323_SC-70" H 5160 2285 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 4960 2360 50  0001 L CNN
+F 4 "BSS214NWH6327XTSA1CT-ND" H -1450 -410 50  0001 C CNN "Digi-Key PN"
+	1    4960 2360
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5060 2000 5060 2080
+Wire Wire Line
+	5630 2080 5060 2080
+Connection ~ 5060 2080
+Wire Wire Line
+	5060 2080 5060 2160
+$Comp
+L power:+5V #PWR?
+U 1 1 5E0EC615
+P 5930 1580
+F 0 "#PWR?" H 5930 1430 50  0001 C CNN
+F 1 "+5V" H 5930 1720 50  0000 C CNN
+F 2 "" H 5930 1580 50  0001 C CNN
+F 3 "" H 5930 1580 50  0001 C CNN
+	1    5930 1580
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E0EE5D2
+P 7310 2560
+AR Path="/5CB0BC26/5E0EE5D2" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0EE5D2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7310 2310 50  0001 C CNN
+F 1 "GND" H 7310 2410 50  0000 C CNN
+F 2 "" H 7310 2560 50  0001 C CNN
+F 3 "" H 7310 2560 50  0001 C CNN
+	1    7310 2560
+	1    0    0    -1  
+$EndComp
+Text GLabel 7010 2360 0    50   Input ~ 0
+POS1P2_VFF_RUN
+$Comp
+L power:GND #PWR?
+U 1 1 5E0EE5DD
+P 8180 2280
+AR Path="/5CB0BC26/5E0EE5DD" Ref="#PWR?"  Part="1" 
+AR Path="/5E1352F5/5E0EE5DD" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8180 2030 50  0001 C CNN
+F 1 "GND" H 8180 2130 50  0000 C CNN
+F 2 "" H 8180 2280 50  0001 C CNN
+F 3 "" H 8180 2280 50  0001 C CNN
+	1    8180 2280
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0EE5EB
+P 7310 1850
+AR Path="/5A0BC776/5E0EE5EB" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0EE5EB" Ref="R?"  Part="1" 
+F 0 "R?" H 7250 1850 50  0000 R CNN
+F 1 "10k" V 7310 1850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7310 1850 50  0001 C CNN
+F 3 "" H 7310 1850 50  0001 C CNN
+F 4 "0603" H 7380 1930 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7380 1850 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 7380 1780 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 3220 -3740 50  0001 C CNN "Digi-Key PN"
+	1    7310 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML2060 Q?
+U 1 1 5E0EE5F5
+P 8080 2080
+F 0 "Q?" H 8280 2155 50  0000 L CNN
+F 1 "IRLML2060" H 8280 2080 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8280 2005 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml2060pbf.pdf?fileId=5546d462533600a401535664b7fb25ee" H 8080 2080 50  0001 L CNN
+	1    8080 2080
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5E0EE5FF
+P 7310 1700
+F 0 "#PWR?" H 7310 1550 50  0001 C CNN
+F 1 "+12V" H 7310 1840 50  0000 C CNN
+F 2 "" H 7310 1700 50  0001 C CNN
+F 3 "" H 7310 1700 50  0001 C CNN
+	1    7310 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E0EE60D
+P 8180 1730
+AR Path="/5A0BC776/5E0EE60D" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E0EE60D" Ref="R?"  Part="1" 
+F 0 "R?" H 8080 1730 50  0000 R CNN
+F 1 "237" V 8180 1730 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8180 1730 50  0001 C CNN
+F 3 "" H 8180 1730 50  0001 C CNN
+F 4 "0603" H 8250 1630 50  0000 L CNN "display_footprint"
+F 5 "1%" H 8250 1710 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 8240 1780 50  0000 L CNN "Wattage"
+F 7 "541-237HCT-ND" H 6130 -4400 50  0001 C CNN "Digi-Key PN"
+	1    8180 1730
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E0EE618
+P 7210 2360
+AR Path="/5BAAE16C/5E0EE618" Ref="Q?"  Part="1" 
+AR Path="/5BB844FD/5E0EE618" Ref="Q?"  Part="1" 
+AR Path="/5C1D5CB6/5E0EE618" Ref="Q?"  Part="1" 
+AR Path="/5CB0BC26/5E0EE618" Ref="Q?"  Part="1" 
+AR Path="/5E1352F5/5E0EE618" Ref="Q?"  Part="1" 
+F 0 "Q?" H 7410 2435 50  0000 L CNN
+F 1 "BSS214NW" H 7410 2360 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-323_SC-70" H 7410 2285 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 7210 2360 50  0001 L CNN
+F 4 "BSS214NWH6327XTSA1CT-ND" H 800 -410 50  0001 C CNN "Digi-Key PN"
+	1    7210 2360
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7310 2000 7310 2080
+Wire Wire Line
+	7880 2080 7310 2080
+Connection ~ 7310 2080
+Wire Wire Line
+	7310 2080 7310 2160
+$Comp
+L Custom_Library:+1.2VFF #PWR?
+U 1 1 5E0F574D
+P 8180 1580
+F 0 "#PWR?" H 8180 1430 50  0001 C CNN
+F 1 "+1.2VFF" H 8180 1720 50  0000 C CNN
+F 2 "" H 8180 1580 50  0000 C CNN
+F 3 "" H 8180 1580 50  0000 C CNN
+	1    8180 1580
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1059E9
+P 3170 3930
+AR Path="/5CB0BC26/5E1059E9" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5E1059E9" Ref="R?"  Part="1" 
+F 0 "R?" V 3070 3930 50  0000 C CNN
+F 1 "100" V 3170 3930 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3170 3930 50  0001 C CNN
+F 3 "" H 3170 3930 50  0001 C CNN
+F 4 "0603" V 3270 3930 50  0000 C CNN "display_footprint"
+F 5 "1%" V 3370 3930 50  0000 C CNN "Tolerance"
+F 6 "1/10W" V 3470 3930 50  0000 C CNN "Wattage"
+F 7 "A106047CT-ND" H 3470 4330 60  0001 C CNN "Digi-Key PN"
+	1    3170 3930
+	0    1    1    0   
+$EndComp
+Text GLabel 3020 3930 0    50   Input ~ 0
+POS12_PGOOD
+Text GLabel 3320 3930 2    50   Output ~ 0
+POS3P3_RUN
 $EndSCHEMATC

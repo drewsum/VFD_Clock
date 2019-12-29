@@ -407,13 +407,12 @@ AR Path="/5BB86F23/5BB7655D" Ref="R?"  Part="1"
 AR Path="/5C1D5C9E/5BB7655D" Ref="R?"  Part="1" 
 AR Path="/5CB6F1ED/5BB7655D" Ref="R?"  Part="1" 
 F 0 "R?" H 5070 3960 50  0000 R CNN
-F 1 "10k" V 5130 3960 50  0000 C CNN
+F 1 "13.7k" V 5130 3960 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 5130 3960 50  0001 C CNN
 F 3 "" H 5130 3960 50  0001 C CNN
-F 4 "RMCF0603FT10K0CT-ND" H 5430 4360 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" H 5210 4040 50  0000 L CNN "display_footprint"
-F 6 "1%" H 5210 3960 50  0000 L CNN "Tolerance"
-F 7 "1/10W" H 5210 3880 50  0000 L CNN "Wattage"
+F 4 "0603" H 5210 4040 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5210 3960 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5210 3880 50  0000 L CNN "Wattage"
 	1    5130 3960
 	-1   0    0    -1  
 $EndComp
@@ -704,6 +703,47 @@ Text GLabel 7340 2430 3    50   UnSpc ~ 0
 POS12_SNS-
 Text GLabel 6880 2430 3    50   UnSpc ~ 0
 POS12_SNS+
-Text Notes 5560 4810 0    50   ~ 0
-Figure out POS12_PGOOD divider stuff so it's not pulled to POS3P3
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E109792
+P 5130 4670
+AR Path="/5BB2595E/5E109792" Ref="R?"  Part="1" 
+AR Path="/5BAAE0FA/5E109792" Ref="R?"  Part="1" 
+AR Path="/5BB86F23/5E109792" Ref="R?"  Part="1" 
+AR Path="/5C1D5C9E/5E109792" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5E109792" Ref="R?"  Part="1" 
+F 0 "R?" H 5070 4670 50  0000 R CNN
+F 1 "13.7k" V 5130 4670 40  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5130 4670 50  0001 C CNN
+F 3 "" H 5130 4670 50  0001 C CNN
+F 4 "0603" H 5210 4750 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5210 4670 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5210 4590 50  0000 L CNN "Wattage"
+	1    5130 4670
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E109F30
+P 5130 4820
+F 0 "#PWR?" H 5130 4570 50  0001 C CNN
+F 1 "GND" H 5130 4670 50  0000 C CNN
+F 2 "" H 5130 4820 50  0001 C CNN
+F 3 "" H 5130 4820 50  0001 C CNN
+	1    5130 4820
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5130 4520 5130 4340
+$Comp
+L power:+12V #PWR?
+U 1 1 5E10B9FF
+P 5130 3810
+F 0 "#PWR?" H 5130 3660 50  0001 C CNN
+F 1 "+12V" H 5130 3950 50  0000 C CNN
+F 2 "" H 5130 3810 50  0001 C CNN
+F 3 "" H 5130 3810 50  0001 C CNN
+	1    5130 3810
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -1,9 +1,9 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 3
+Sheet 2 5
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -115,24 +115,22 @@ F 7 "P10.0KHCT-ND" H 0   0   50  0001 C CNN "Digi-Key PN"
 $EndComp
 Wire Wire Line
 	1800 2500 1590 2500
-Text GLabel 1290 2500 0    60   Input ~ 12
+Text GLabel 1290 2500 0    50   Input ~ 0
 drive_Anode_A
-Text GLabel 3620 2500 0    60   Input ~ 12
+Text GLabel 3620 2500 0    50   Input ~ 0
 drive_Anode_B
-Text GLabel 6030 2500 0    60   Input ~ 12
+Text GLabel 6030 2500 0    50   Input ~ 0
 drive_Anode_C
-Text GLabel 8360 2500 0    60   Input ~ 12
+Text GLabel 8360 2500 0    50   Input ~ 0
 drive_Anode_D
-Text GLabel 1290 4830 0    60   Input ~ 12
+Text GLabel 1290 4830 0    50   Input ~ 0
 drive_Anode_E
-Text GLabel 3620 4830 0    60   Input ~ 12
+Text GLabel 3620 4830 0    50   Input ~ 0
 drive_Anode_F
-Text GLabel 6030 4830 0    60   Input ~ 12
+Text GLabel 6030 4830 0    50   Input ~ 0
 drive_Anode_G
-Text GLabel 8360 4830 0    60   Input ~ 12
+Text GLabel 8360 4830 0    50   Input ~ 0
 drive_Anode_DP
-Text GLabel 2540 2260 2    60   Output ~ 12
-Anode_A
 Wire Wire Line
 	2540 2260 2480 2260
 Connection ~ 2480 2260
@@ -193,7 +191,7 @@ F 3 "" H 4810 2700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4130 2500 3920 2500
-Text GLabel 4870 2260 2    60   Output ~ 12
+Text GLabel 4870 2260 2    50   Output ~ 0
 Anode_B
 Wire Wire Line
 	4870 2260 4810 2260
@@ -243,7 +241,7 @@ F 3 "" H 7220 2700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6540 2500 6330 2500
-Text GLabel 7280 2260 2    60   Output ~ 12
+Text GLabel 7280 2260 2    50   Output ~ 0
 Anode_C
 Wire Wire Line
 	7280 2260 7220 2260
@@ -305,7 +303,7 @@ F 3 "" H 9550 2700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8870 2500 8660 2500
-Text GLabel 9610 2260 2    60   Output ~ 12
+Text GLabel 9610 2260 2    50   Output ~ 0
 Anode_D
 Wire Wire Line
 	9610 2260 9550 2260
@@ -367,7 +365,7 @@ F 3 "" H 2480 5030 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1800 4830 1590 4830
-Text GLabel 2540 4590 2    60   Output ~ 12
+Text GLabel 2540 4590 2    50   Output ~ 0
 Anode_E
 Wire Wire Line
 	2540 4590 2480 4590
@@ -429,7 +427,7 @@ F 3 "" H 4810 5030 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4130 4830 3920 4830
-Text GLabel 4870 4590 2    60   Output ~ 12
+Text GLabel 4870 4590 2    50   Output ~ 0
 Anode_F
 Wire Wire Line
 	4870 4590 4810 4590
@@ -491,7 +489,7 @@ F 3 "" H 7220 5030 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6540 4830 6330 4830
-Text GLabel 7280 4590 2    60   Output ~ 12
+Text GLabel 7280 4590 2    50   Output ~ 0
 Anode_G
 Wire Wire Line
 	7280 4590 7220 4590
@@ -553,7 +551,7 @@ F 3 "" H 9550 5030 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8870 4830 8660 4830
-Text GLabel 9610 4590 2    60   Output ~ 12
+Text GLabel 9610 4590 2    50   Output ~ 0
 Anode_DP
 Wire Wire Line
 	9610 4590 9550 4590
@@ -1037,4 +1035,182 @@ Wire Wire Line
 	9170 4250 9170 4330
 Wire Wire Line
 	9550 4590 9550 4450
+Text GLabel 2540 2260 2    50   Output ~ 0
+Anode_A
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E0985F3
+P 2100 1540
+F 0 "#PWR?" H 2100 1390 50  0001 C CNN
+F 1 "+60VAN" H 2100 1680 50  0000 C CNN
+F 2 "" H 2100 1540 50  0000 C CNN
+F 3 "" H 2100 1540 50  0000 C CNN
+	1    2100 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E098FFE
+P 2480 1540
+F 0 "#PWR?" H 2480 1390 50  0001 C CNN
+F 1 "+60VAN" H 2480 1680 50  0000 C CNN
+F 2 "" H 2480 1540 50  0000 C CNN
+F 3 "" H 2480 1540 50  0000 C CNN
+	1    2480 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09967E
+P 4430 1540
+F 0 "#PWR?" H 4430 1390 50  0001 C CNN
+F 1 "+60VAN" H 4430 1680 50  0000 C CNN
+F 2 "" H 4430 1540 50  0000 C CNN
+F 3 "" H 4430 1540 50  0000 C CNN
+	1    4430 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E099BB3
+P 4810 1540
+F 0 "#PWR?" H 4810 1390 50  0001 C CNN
+F 1 "+60VAN" H 4810 1680 50  0000 C CNN
+F 2 "" H 4810 1540 50  0000 C CNN
+F 3 "" H 4810 1540 50  0000 C CNN
+	1    4810 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E099F99
+P 6840 1540
+F 0 "#PWR?" H 6840 1390 50  0001 C CNN
+F 1 "+60VAN" H 6840 1680 50  0000 C CNN
+F 2 "" H 6840 1540 50  0000 C CNN
+F 3 "" H 6840 1540 50  0000 C CNN
+	1    6840 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09A4A2
+P 7220 1540
+F 0 "#PWR?" H 7220 1390 50  0001 C CNN
+F 1 "+60VAN" H 7220 1680 50  0000 C CNN
+F 2 "" H 7220 1540 50  0000 C CNN
+F 3 "" H 7220 1540 50  0000 C CNN
+	1    7220 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09A854
+P 9170 1540
+F 0 "#PWR?" H 9170 1390 50  0001 C CNN
+F 1 "+60VAN" H 9170 1680 50  0000 C CNN
+F 2 "" H 9170 1540 50  0000 C CNN
+F 3 "" H 9170 1540 50  0000 C CNN
+	1    9170 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09ACD4
+P 9550 1540
+F 0 "#PWR?" H 9550 1390 50  0001 C CNN
+F 1 "+60VAN" H 9550 1680 50  0000 C CNN
+F 2 "" H 9550 1540 50  0000 C CNN
+F 3 "" H 9550 1540 50  0000 C CNN
+	1    9550 1540
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09B095
+P 9550 3870
+F 0 "#PWR?" H 9550 3720 50  0001 C CNN
+F 1 "+60VAN" H 9550 4010 50  0000 C CNN
+F 2 "" H 9550 3870 50  0000 C CNN
+F 3 "" H 9550 3870 50  0000 C CNN
+	1    9550 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09B6D8
+P 9170 3870
+F 0 "#PWR?" H 9170 3720 50  0001 C CNN
+F 1 "+60VAN" H 9170 4010 50  0000 C CNN
+F 2 "" H 9170 3870 50  0000 C CNN
+F 3 "" H 9170 3870 50  0000 C CNN
+	1    9170 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09BA28
+P 7220 3870
+F 0 "#PWR?" H 7220 3720 50  0001 C CNN
+F 1 "+60VAN" H 7220 4010 50  0000 C CNN
+F 2 "" H 7220 3870 50  0000 C CNN
+F 3 "" H 7220 3870 50  0000 C CNN
+	1    7220 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09BF92
+P 6840 3870
+F 0 "#PWR?" H 6840 3720 50  0001 C CNN
+F 1 "+60VAN" H 6840 4010 50  0000 C CNN
+F 2 "" H 6840 3870 50  0000 C CNN
+F 3 "" H 6840 3870 50  0000 C CNN
+	1    6840 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09C220
+P 4810 3870
+F 0 "#PWR?" H 4810 3720 50  0001 C CNN
+F 1 "+60VAN" H 4810 4010 50  0000 C CNN
+F 2 "" H 4810 3870 50  0000 C CNN
+F 3 "" H 4810 3870 50  0000 C CNN
+	1    4810 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09C8C7
+P 4430 3870
+F 0 "#PWR?" H 4430 3720 50  0001 C CNN
+F 1 "+60VAN" H 4430 4010 50  0000 C CNN
+F 2 "" H 4430 3870 50  0000 C CNN
+F 3 "" H 4430 3870 50  0000 C CNN
+	1    4430 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09CAE0
+P 2480 3870
+F 0 "#PWR?" H 2480 3720 50  0001 C CNN
+F 1 "+60VAN" H 2480 4010 50  0000 C CNN
+F 2 "" H 2480 3870 50  0000 C CNN
+F 3 "" H 2480 3870 50  0000 C CNN
+	1    2480 3870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+60VAN #PWR?
+U 1 1 5E09D038
+P 2100 3870
+F 0 "#PWR?" H 2100 3720 50  0001 C CNN
+F 1 "+60VAN" H 2100 4010 50  0000 C CNN
+F 2 "" H 2100 3870 50  0000 C CNN
+F 3 "" H 2100 3870 50  0000 C CNN
+	1    2100 3870
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

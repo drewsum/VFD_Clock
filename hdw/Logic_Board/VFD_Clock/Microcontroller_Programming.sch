@@ -113,29 +113,6 @@ F 7 "311-1344-1-ND" H 7975 3330 60  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:R_Custom R?
-U 1 1 5BC15CB4
-P 7550 2490
-AR Path="/5BAAE1F3/5BC15CB4" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5BC15CB4" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5BC15CB4" Ref="R?"  Part="1" 
-AR Path="/5C1D5CB6/5BC15CB4" Ref="R?"  Part="1" 
-AR Path="/5CB0BC26/5BC15CB4" Ref="R?"  Part="1" 
-F 0 "R?" H 7490 2490 50  0000 R CNN
-F 1 "0" V 7550 2490 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 7550 2490 50  0001 C CNN
-F 3 "" H 7550 2490 50  0001 C CNN
-F 4 "DNP" H 7630 2650 50  0000 L CNN "Config"
-F 5 "311-0.0GRCT-ND" H 7850 2890 60  0001 C CNN "Digi-Key PN"
-F 6 "0603" H 7740 2570 50  0000 C CNN "display_footprint"
-F 7 "1%" H 7730 2490 50  0000 C CNN "Tolerance"
-F 8 "1/10W" H 7760 2420 50  0000 C CNN "Wattage"
-	1    7550 2490
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7550 2640 7550 2680
-$Comp
 L power:GND #PWR?
 U 1 1 5BC15E18
 P 7550 2980
@@ -166,8 +143,6 @@ Wire Wire Line
 Wire Wire Line
 	7930 2250 7550 2250
 Connection ~ 7550 2250
-Wire Wire Line
-	7550 2250 7550 2340
 Text GLabel 8230 2250 2    50   UnSpc ~ 0
 ~MCLR
 $Comp
@@ -335,4 +310,6 @@ F 3 "" H 2460 1880 50  0000 C CNN
 	1    2460 1880
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7550 2680 7550 2250
 $EndSCHEMATC

@@ -201,4 +201,8 @@ F 3 "" H 6030 3820 50  0000 C CNN
 	1    6030 3820
 	1    0    0    -1  
 $EndComp
+Text GLabel 5950 4200 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 5950 4300 2    50   BiDi ~ 0
+I2C_SDA
 $EndSCHEMATC

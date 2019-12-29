@@ -377,37 +377,37 @@ Wire Wire Line
 	4220 5020 4220 4010
 Connection ~ 5840 5020
 Text GLabel 3850 1720 0    50   Input ~ 0
-Anode_A_POS3P3
+Anode_A
 Text GLabel 3850 1820 0    50   Input ~ 0
-Anode_B_POS3P3
+Anode_B
 Text GLabel 3850 1920 0    50   Input ~ 0
-Anode_C_POS3P3
+Anode_C
 Text GLabel 3850 2020 0    50   Input ~ 0
-Anode_D_POS3P3
+Anode_D
 Text GLabel 3850 2120 0    50   Input ~ 0
-Anode_E_POS3P3
+Anode_E
 Text GLabel 3850 2220 0    50   Input ~ 0
-Anode_F_POS3P3
+Anode_F
 Text GLabel 3850 2320 0    50   Input ~ 0
-Anode_G_POS3P3
+Anode_G
 Text GLabel 3850 2420 0    50   Input ~ 0
-Anode_DP_POS3P3
+Anode_DP
 Text GLabel 3850 4120 0    50   Input ~ 0
-Grid_0_POS3P3
+Grid_0
 Text GLabel 3850 4220 0    50   Input ~ 0
-Grid_1_POS3P3
+Grid_1
 Text GLabel 3850 4320 0    50   Input ~ 0
-Grid_2_POS3P3
+Grid_2
 Text GLabel 3850 4420 0    50   Input ~ 0
-Grid_3_POS3P3
+Grid_3
 Text GLabel 3850 4520 0    50   Input ~ 0
-Grid_4_POS3P3
+Grid_4
 Text GLabel 3850 4620 0    50   Input ~ 0
-Grid_5_POS3P3
+Grid_5
 Text GLabel 3850 4720 0    50   Input ~ 0
-Colon_0_POS3P3
+Colon_0
 Text GLabel 3850 4820 0    50   Input ~ 0
-Colon_1_POS3P3
+Colon_1
 Text GLabel 3550 2620 0    40   Input ~ 0
 ~IO_Level_Shift_Enable
 Wire Wire Line
@@ -419,37 +419,37 @@ Wire Wire Line
 	3550 5020 4220 5020
 Connection ~ 4220 5020
 Text GLabel 6900 1720 2    50   Output ~ 0
-Anode_A_POS5
+Anode_A_DSP
 Text GLabel 6900 1820 2    50   Output ~ 0
-Anode_B_POS5
+Anode_B_DSP
 Text GLabel 6900 1920 2    50   Output ~ 0
-Anode_C_POS5
+Anode_C_DSP
 Text GLabel 6900 2020 2    50   Output ~ 0
-Anode_D_POS5
+Anode_D_DSP
 Text GLabel 6900 2120 2    50   Output ~ 0
-Anode_E_POS5
+Anode_E_DSP
 Text GLabel 6900 2220 2    50   Output ~ 0
-Anode_F_POS5
+Anode_F_DSP
 Text GLabel 6900 2320 2    50   Output ~ 0
-Anode_G_POS5
+Anode_G_DSP
 Text GLabel 6900 2420 2    50   Output ~ 0
-Anode_DP_POS5
+Anode_DP_DSP
 Text GLabel 6900 4120 2    50   Output ~ 0
-Grid_0_POS5
+Grid_0_DSP
 Text GLabel 6900 4220 2    50   Output ~ 0
-Grid_1_POS5
+Grid_1_DSP
 Text GLabel 6900 4320 2    50   Output ~ 0
-Grid_2_POS5
+Grid_2_DSP
 Text GLabel 6900 4420 2    50   Output ~ 0
-Grid_3_POS5
+Grid_3_DSP
 Text GLabel 6900 4520 2    50   Output ~ 0
-Grid_4_POS5
+Grid_4_DSP
 Text GLabel 6900 4620 2    50   Output ~ 0
-Grid_5_POS5
+Grid_5_DSP
 Text GLabel 6900 4720 2    50   Output ~ 0
-Colon_0_POS5
+Colon_0_DSP
 Text GLabel 6900 4820 2    50   Output ~ 0
-Colon_1_POS5
+Colon_1_DSP
 $Comp
 L Custom_Library:74VHC541 U?
 U 1 1 5E1A8051
