@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 28
+Sheet 1 29
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -177,5 +177,11 @@ S 8230 4290 500  150
 U 5E1352F5
 F0 "Misc Power" 50
 F1 "Misc_Power.sch" 50
+$EndSheet
+$Sheet
+S 6400 4060 500  150 
+U 5E213465
+F0 "Backup RTC" 50
+F1 "Backup_RTC.sch" 50
 $EndSheet
 $EndSCHEMATC

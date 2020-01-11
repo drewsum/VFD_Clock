@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 17 28
+Sheet 17 29
 Title ""
 Date ""
 Rev ""
@@ -14,24 +14,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Custom_Library:INA231A U?
-U 1 1 5E073058
-P 5110 1940
-AR Path="/5E0652BA/5E073058" Ref="U?"  Part="1" 
-AR Path="/5E0A0E29/5E073058" Ref="U?"  Part="1" 
-AR Path="/5E052856/5E073058" Ref="U?"  Part="1" 
-F 0 "U?" H 4860 2390 50  0000 C CNN
-F 1 "INA231A" H 5260 2390 50  0000 C CNN
-F 2 "Custom Footprints Library:Texas_DSBGA-12_1.65x1.39mm_Layout3x4_P0.4mm" H 5910 1490 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina231.pdf" H 5460 1840 50  0001 C CNN
-F 4 "296-41263-1-ND" H 5110 1940 50  0001 C CNN "Digi-Key PN"
-	1    5110 1940
-	1    0    0    -1  
-$EndComp
-Text GLabel 3490 1860 0    50   UnSpc ~ 0
+Text GLabel 3490 1800 0    50   UnSpc ~ 0
 POS12_SNS+
-Text GLabel 3490 2320 0    50   UnSpc ~ 0
+Text GLabel 3490 2260 0    50   UnSpc ~ 0
 POS12_SNS-
 $Comp
 L power:GND #PWR?
@@ -50,32 +35,18 @@ $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5E0AD665
-P 5110 1440
+P 5110 1640
 AR Path="/5E0652BA/5E0AD665" Ref="#PWR?"  Part="1" 
 AR Path="/5E0A0E29/5E0AD665" Ref="#PWR?"  Part="1" 
 AR Path="/5E052856/5E0AD665" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5110 1290 50  0001 C CNN
-F 1 "+3.3V" H 5110 1580 50  0000 C CNN
-F 2 "" H 5110 1440 50  0001 C CNN
-F 3 "" H 5110 1440 50  0001 C CNN
-	1    5110 1440
+F 0 "#PWR?" H 5110 1490 50  0001 C CNN
+F 1 "+3.3V" H 5110 1780 50  0000 C CNN
+F 2 "" H 5110 1640 50  0001 C CNN
+F 3 "" H 5110 1640 50  0001 C CNN
+	1    5110 1640
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+12V #PWR?
-U 1 1 5E0AD80E
-P 4710 1640
-AR Path="/5E0652BA/5E0AD80E" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0AD80E" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E0AD80E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4710 1490 50  0001 C CNN
-F 1 "+12V" V 4710 1770 50  0000 L CNN
-F 2 "" H 4710 1640 50  0001 C CNN
-F 3 "" H 4710 1640 50  0001 C CNN
-	1    4710 1640
-	0    -1   -1   0   
-$EndComp
-Text GLabel 5510 1740 2    50   Input ~ 0
+Text GLabel 5510 1940 2    50   Input ~ 0
 I2C_SCL
 $Comp
 L Custom_Library:C_Custom C?
@@ -124,9 +95,8 @@ F 3 "" H 5110 3160 50  0001 C CNN
 	1    5110 3160
 	1    0    0    -1  
 $EndComp
-Text GLabel 5510 1640 2    50   BiDi ~ 0
+Text GLabel 5510 1840 2    50   BiDi ~ 0
 I2C_SDA
-NoConn ~ 5510 1940
 $Comp
 L Custom_Library:I2C_Address DOC?
 U 1 1 5E0B8BC8
@@ -135,7 +105,7 @@ AR Path="/5E0652BA/5E0B8BC8" Ref="DOC?"  Part="1"
 AR Path="/5E0A0E29/5E0B8BC8" Ref="DOC?"  Part="1" 
 AR Path="/5E052856/5E0B8BC8" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 6010 3130 60  0001 C CNN
-F 1 "0x40" H 5560 2880 60  0000 L CNN
+F 1 "ljbfadsf" H 5560 2880 60  0000 L CNN
 F 2 "" H 6010 3230 60  0001 C CNN
 F 3 "" H 6010 3230 60  0001 C CNN
 	1    6010 2880
@@ -313,82 +283,94 @@ Connection ~ 5590 4840
 Wire Wire Line
 	5590 4840 5590 4740
 Wire Wire Line
-	4230 2320 4230 2240
+	4230 2260 4230 2180
 Wire Wire Line
-	4230 1940 4230 1860
-Wire Wire Line
-	4230 2320 4670 2320
-Wire Wire Line
-	4670 2320 4670 2140
-Wire Wire Line
-	4670 2140 4710 2140
-Connection ~ 4230 2320
-Wire Wire Line
-	4230 1860 4670 1860
-Wire Wire Line
-	4670 1860 4670 2040
-Wire Wire Line
-	4670 2040 4710 2040
+	4230 1880 4230 1800
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5E07E0FD
-P 4230 2090
+P 4230 2030
 AR Path="/5B3E071A/5E07E0FD" Ref="C?"  Part="1" 
 AR Path="/5E0652BA/5E07E0FD" Ref="C?"  Part="1" 
 AR Path="/5E0A0E29/5E07E0FD" Ref="C?"  Part="1" 
 AR Path="/5E052856/5E07E0FD" Ref="C?"  Part="1" 
-F 0 "C?" H 4255 2190 50  0000 L CNN
-F 1 "0.1uF" H 4255 1990 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4268 1940 50  0001 C CNN
-F 3 "" H 4255 2190 50  0001 C CNN
-F 4 "0603" H 4080 2190 50  0000 R CNN "display_footprint"
-F 5 "50V" H 4080 2090 50  0000 R CNN "Voltage"
-F 6 "X7R" H 4080 1990 50  0000 R CNN "Dielectric"
-F 7 "399-6856-1-ND" H 320 -4790 50  0001 C CNN "Digi-Key PN"
-	1    4230 2090
+F 0 "C?" H 4255 2130 50  0000 L CNN
+F 1 "0.1uF" H 4255 1930 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4268 1880 50  0001 C CNN
+F 3 "" H 4255 2130 50  0001 C CNN
+F 4 "0603" H 4080 2130 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4080 2030 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4080 1930 50  0000 R CNN "Dielectric"
+F 7 "399-6856-1-ND" H 320 -4850 50  0001 C CNN "Digi-Key PN"
+	1    4230 2030
 	1    0    0    -1  
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E082EBB
-P 3640 2320
+P 3640 2260
 AR Path="/5CB6F1ED/5E082EBB" Ref="R?"  Part="1" 
 AR Path="/5E0652BA/5E082EBB" Ref="R?"  Part="1" 
 AR Path="/5E0A0E29/5E082EBB" Ref="R?"  Part="1" 
 AR Path="/5E052856/5E082EBB" Ref="R?"  Part="1" 
-F 0 "R?" V 3540 2320 50  0000 C CNN
-F 1 "10" V 3640 2320 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3640 2320 50  0001 C CNN
-F 3 "" H 3640 2320 50  0001 C CNN
-F 4 "YAG3351CT-ND" H 3940 2720 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" V 3740 2320 50  0000 C CNN "display_footprint"
-F 6 "1%" V 3840 2320 50  0000 C CNN "Tolerance"
-F 7 "1/10W" V 3940 2320 50  0000 C CNN "Wattage"
-	1    3640 2320
+F 0 "R?" V 3540 2260 50  0000 C CNN
+F 1 "10" V 3640 2260 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3640 2260 50  0001 C CNN
+F 3 "" H 3640 2260 50  0001 C CNN
+F 4 "YAG3351CT-ND" H 3940 2660 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" V 3740 2260 50  0000 C CNN "display_footprint"
+F 6 "1%" V 3840 2260 50  0000 C CNN "Tolerance"
+F 7 "1/10W" V 3940 2260 50  0000 C CNN "Wattage"
+	1    3640 2260
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3790 2320 4230 2320
+	3790 2260 4230 2260
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E083C4C
-P 3640 1860
+P 3640 1800
 AR Path="/5CB6F1ED/5E083C4C" Ref="R?"  Part="1" 
 AR Path="/5E0652BA/5E083C4C" Ref="R?"  Part="1" 
 AR Path="/5E0A0E29/5E083C4C" Ref="R?"  Part="1" 
 AR Path="/5E052856/5E083C4C" Ref="R?"  Part="1" 
-F 0 "R?" V 3540 1860 50  0000 C CNN
-F 1 "10" V 3640 1860 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3640 1860 50  0001 C CNN
-F 3 "" H 3640 1860 50  0001 C CNN
-F 4 "YAG3351CT-ND" H 3940 2260 60  0001 C CNN "Digi-Key PN"
-F 5 "0603" V 3740 1860 50  0000 C CNN "display_footprint"
-F 6 "1%" V 3840 1860 50  0000 C CNN "Tolerance"
-F 7 "1/10W" V 3940 1860 50  0000 C CNN "Wattage"
-	1    3640 1860
+F 0 "R?" V 3540 1800 50  0000 C CNN
+F 1 "10" V 3640 1800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3640 1800 50  0001 C CNN
+F 3 "" H 3640 1800 50  0001 C CNN
+F 4 "YAG3351CT-ND" H 3940 2200 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" V 3740 1800 50  0000 C CNN "display_footprint"
+F 6 "1%" V 3840 1800 50  0000 C CNN "Tolerance"
+F 7 "1/10W" V 3940 1800 50  0000 C CNN "Wattage"
+	1    3640 1800
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	3790 1860 4230 1860
-Connection ~ 4230 1860
+	3790 1800 4230 1800
+$Comp
+L Analog_ADC:INA219BxDCN U?
+U 1 1 5E1AAC3C
+P 5110 2040
+F 0 "U?" H 4860 2390 50  0000 C CNN
+F 1 "INA219BxDCN" H 5360 2390 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-8" H 5760 1690 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina219.pdf" H 5460 1940 50  0001 C CNN
+F 4 "296-46420-1-ND" H 5110 2040 50  0001 C CNN "Digi-Key PN"
+	1    5110 2040
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4710 1940 4540 1940
+Wire Wire Line
+	4540 1940 4540 1800
+Wire Wire Line
+	4540 1800 4230 1800
+Connection ~ 4230 1800
+Wire Wire Line
+	4710 2140 4540 2140
+Wire Wire Line
+	4540 2140 4540 2260
+Wire Wire Line
+	4540 2260 4230 2260
+Connection ~ 4230 2260
 $EndSCHEMATC

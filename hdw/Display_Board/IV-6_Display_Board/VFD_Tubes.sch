@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:IV-6_Display_Board-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 4 5
+Sheet 4 7
 Title ""
 Date ""
 Rev ""

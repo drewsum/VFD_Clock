@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 11 28
+Sheet 11 29
 Title ""
 Date ""
 Rev ""
@@ -15,28 +15,15 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L power:GND #PWR?
-U 1 1 5CB769C3
-P 5590 5270
-F 0 "#PWR?" H 5590 5020 50  0001 C CNN
-F 1 "GND" H 5590 5120 50  0000 C CNN
-F 2 "" H 5590 5270 50  0001 C CNN
-F 3 "" H 5590 5270 50  0001 C CNN
-	1    5590 5270
+L Connector_Generic:Conn_02x30_Odd_Even J?
+U 1 1 5E205E81
+P 4910 3810
+F 0 "J?" H 4960 5310 50  0000 C CNN
+F 1 "IO_Connector" H 4960 2210 50  0000 C CNN
+F 2 "Connector_Samtec:Samtec_LSHM-130-xx.x-x-DV-N_2x30_P0.50mm_Vertical" H 4910 3810 50  0001 C CNN
+F 3 "~" H 4910 3810 50  0001 C CNN
+F 4 "SAM14116CT-ND" H 4910 3810 50  0001 C CNN "Digi-Key PN"
+	1    4910 3810
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic_Shielded:Conn_02x30_Odd_Even_Shielded J?
-U 1 1 5CC36E7D
-P 5540 3570
-F 0 "J?" H 5600 5060 50  0000 C CNN
-F 1 "Board Interface Connector" H 5630 1980 50  0000 L CNN
-F 2 "Connectors_Samtec:LSHM-130-xxx-x-DV-A-S" H 5540 3570 50  0001 C CNN
-F 3 "~" H 5540 3570 50  0001 C CNN
-F 4 "SAM14119CT-ND" H 5540 3570 50  0001 C CNN "Digi-Key PN"
-	1    5540 3570
-	1    0    0    -1  
-$EndComp
-Text Notes 7360 4050 0    50   ~ 0
-Figure out something else that's good\nGet a good idea of this once you have\nI/O nailed down
 $EndSCHEMATC

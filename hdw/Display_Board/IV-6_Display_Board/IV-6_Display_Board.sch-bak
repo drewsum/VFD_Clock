@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:IV-6_Display_Board-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 5
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -36,5 +37,17 @@ S 1640 2460 500  150
 U 5E0A7959
 F0 "Menu LEDs" 50
 F1 "Menu_LEDs.sch" 50
+$EndSheet
+$Sheet
+S 1640 2810 500  150 
+U 5E28CFDF
+F0 "Pushbuttons" 50
+F1 "Pushbuttons.sch" 50
+$EndSheet
+$Sheet
+S 1640 3160 500  150 
+U 5E2AA002
+F0 "IO Connector" 50
+F1 "IO_Connector.sch" 50
 $EndSheet
 $EndSCHEMATC

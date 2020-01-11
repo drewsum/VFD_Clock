@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:IV-6_Display_Board-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 5 5
+Sheet 5 7
 Title ""
 Date ""
 Rev ""
@@ -62,6 +63,6 @@ Text GLabel 4360 2510 0    50   BiDi ~ 0
 I2C_DSP_SDA
 Text GLabel 4360 2610 0    50   Input ~ 0
 I2C_DSP_SCL
-Text Notes 6750 3280 0    50   ~ 0
+Text Notes 7780 3350 0    50   ~ 0
 Menu LEDs
 $EndSCHEMATC
