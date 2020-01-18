@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 7
+Sheet 1 9
 Title ""
 Date ""
 Rev ""
@@ -41,13 +41,25 @@ $EndSheet
 $Sheet
 S 1640 2810 500  150 
 U 5E28CFDF
-F0 "Pushbuttons" 50
-F1 "Pushbuttons.sch" 50
+F0 "Pushbuttons 1" 50
+F1 "Pushbuttons_1.sch" 50
 $EndSheet
 $Sheet
-S 1640 3160 500  150 
+S 1640 3860 500  150 
 U 5E2AA002
 F0 "IO Connector" 50
 F1 "IO_Connector.sch" 50
+$EndSheet
+$Sheet
+S 1640 3160 500  150 
+U 5E3C97B4
+F0 "Pushbuttons 2" 50
+F1 "Pushbuttons_2.sch" 50
+$EndSheet
+$Sheet
+S 1640 3510 500  150 
+U 5E3CBFDA
+F0 "Pushbuttons 3" 50
+F1 "Pushbuttons_3.sch" 50
 $EndSheet
 $EndSCHEMATC
