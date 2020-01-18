@@ -712,18 +712,6 @@ Wire Wire Line
 	5880 6000 5800 6000
 Wire Wire Line
 	5880 5810 5880 6000
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5E1C530D
-P 6640 6200
-F 0 "U?" H 6740 6350 50  0000 L CNN
-F 1 "74LVC1G06" H 6740 6100 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6640 6250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6640 6200 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6640 6200 50  0001 C CNN "Digi-Key PN"
-	1    6640 6200
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	6390 6200 5800 6200
 $Comp
@@ -753,4 +741,17 @@ F 3 "" H 6640 6300 50  0001 C CNN
 $EndComp
 Text GLabel 6940 6200 2    50   Input ~ 0
 POS5_USB_PGOOD
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2FCF1C
+P 6640 6200
+AR Path="/5CB7A8BC/5E2FCF1C" Ref="U?"  Part="7" 
+AR Path="/5CAD2DA3/5E2FCF1C" Ref="U?"  Part="7" 
+F 0 "U?" H 6700 6350 50  0000 L CNN
+F 1 "74LVC1G97" H 6700 6050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6690 6200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6690 6200 50  0001 C CNN
+	7    6640 6200
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

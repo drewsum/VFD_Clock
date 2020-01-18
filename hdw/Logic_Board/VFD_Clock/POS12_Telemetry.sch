@@ -136,12 +136,12 @@ Wire Wire Line
 Connection ~ 5590 2240
 $Comp
 L power:GND #PWR?
-U 1 1 5E0BDB8A
+U 1 1 5E2AA995
 P 5110 5120
-AR Path="/5B3E071A/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E0BDB8A" Ref="#PWR?"  Part="1" 
+AR Path="/5B3E071A/5E2AA995" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA995" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA995" Ref="#PWR?"  Part="1" 
+AR Path="/5E052856/5E2AA995" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 4870 50  0001 C CNN
 F 1 "GND" H 5110 4970 50  0000 C CNN
 F 2 "" H 5110 5120 50  0001 C CNN
@@ -160,11 +160,11 @@ Wire Wire Line
 Connection ~ 5110 5080
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5E0BDB95
+U 1 1 5E2AA99A
 P 5110 4040
-AR Path="/5E0652BA/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E0BDB95" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA99A" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA99A" Ref="#PWR?"  Part="1" 
+AR Path="/5E052856/5E2AA99A" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 3890 50  0001 C CNN
 F 1 "+3.3V" H 5110 4180 50  0000 C CNN
 F 2 "" H 5110 4040 50  0001 C CNN
@@ -174,12 +174,12 @@ F 3 "" H 5110 4040 50  0001 C CNN
 $EndComp
 $Comp
 L Sensor_Temperature:MCP9804_DFN U?
-U 1 1 5E0BDB9D
+U 1 1 5E2AA99D
 P 5110 4540
-AR Path="/5B3E071A/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E052856/5E0BDB9D" Ref="U?"  Part="1" 
+AR Path="/5B3E071A/5E2AA99D" Ref="U?"  Part="1" 
+AR Path="/5E0652BA/5E2AA99D" Ref="U?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA99D" Ref="U?"  Part="1" 
+AR Path="/5E052856/5E2AA99D" Ref="U?"  Part="1" 
 F 0 "U?" H 4860 4990 50  0000 C CNN
 F 1 "MCP9804" H 5510 4990 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 4010 4040 50  0001 C CNN
@@ -194,12 +194,12 @@ I2C_SDA
 NoConn ~ 4710 4540
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5E0CB7AA
+U 1 1 5E2AA9A1
 P 5110 5690
-AR Path="/5B3E071A/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0652BA/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E052856/5E0CB7AA" Ref="C?"  Part="1" 
+AR Path="/5B3E071A/5E2AA9A1" Ref="C?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A1" Ref="C?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A1" Ref="C?"  Part="1" 
+AR Path="/5E052856/5E2AA9A1" Ref="C?"  Part="1" 
 F 0 "C?" H 5135 5790 50  0000 L CNN
 F 1 "0.1uF" H 5135 5590 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5148 5540 50  0001 C CNN
@@ -213,11 +213,11 @@ F 7 "399-6856-1-ND" H 1200 -1190 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5E0CB7B0
+U 1 1 5E2AA9A6
 P 5110 5540
-AR Path="/5E0652BA/5E0CB7B0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7B0" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E0CB7B0" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E052856/5E2AA9A6" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 5390 50  0001 C CNN
 F 1 "+3.3V" H 5110 5680 50  0000 C CNN
 F 2 "" H 5110 5540 50  0001 C CNN
@@ -227,11 +227,11 @@ F 3 "" H 5110 5540 50  0001 C CNN
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5E0CB7B6
+U 1 1 5E2AA9AD
 P 5110 5840
-AR Path="/5E0652BA/5E0CB7B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E0CB7B6" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9AD" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9AD" Ref="#PWR?"  Part="1" 
+AR Path="/5E052856/5E2AA9AD" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 5590 50  0001 C CNN
 F 1 "GND" H 5110 5690 50  0000 C CNN
 F 2 "" H 5110 5840 50  0001 C CNN
@@ -241,11 +241,11 @@ F 3 "" H 5110 5840 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:I2C_Address DOC?
-U 1 1 5E0CB7BC
+U 1 1 5E2AA9AF
 P 6010 5560
-AR Path="/5E0652BA/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E052856/5E0CB7BC" Ref="DOC?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9AF" Ref="DOC?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9AF" Ref="DOC?"  Part="1" 
+AR Path="/5E052856/5E2AA9AF" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 6010 5810 60  0001 C CNN
 F 1 "0x18" H 5560 5560 60  0000 L CNN
 F 2 "" H 6010 5910 60  0001 C CNN

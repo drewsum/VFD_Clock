@@ -34,20 +34,20 @@ F 7 "20%" V 6200 3320 50  0000 C CNN "Tolerance"
 $EndComp
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C26F85F
+U 1 1 5E2AA96A
 P 4070 3250
-AR Path="/5BB27BA3/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27B84/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27B24/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27BB5/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27BF7/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1DE17A/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1E3A0B/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5E0F263A/5C26F85F" Ref="C?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5BB27B84/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5BB27B24/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5BB27BB5/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA96A" Ref="C?"  Part="1" 
+AR Path="/5E0F263A/5E2AA96A" Ref="C?"  Part="1" 
 F 0 "C?" H 4095 3350 50  0000 L CNN
 F 1 "0.1uF" H 4095 3150 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4108 3100 50  0001 C CNN
@@ -61,11 +61,11 @@ F 7 "490-8020-1-ND" H 4495 3750 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C26F8EC
+U 1 1 5E2AA96B
 P 4070 3400
-AR Path="/5CB7718D/5C26F8EC" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C26F8EC" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5C26F8EC" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA96B" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA96B" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E2AA96B" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 4070 3150 50  0001 C CNN
 F 1 "GND" H 4070 3250 50  0000 C CNN
 F 2 "" H 4070 3400 50  0001 C CNN
@@ -97,11 +97,11 @@ F 7 "1276-7031-1-ND" H 2715 3750 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C27043B
+U 1 1 5E2AA970
 P 2290 3400
-AR Path="/5CB7718D/5C27043B" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C27043B" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5C27043B" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA970" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA970" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E2AA970" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 2290 3150 50  0001 C CNN
 F 1 "GND" H 2290 3250 50  0000 C CNN
 F 2 "" H 2290 3400 50  0001 C CNN
@@ -118,11 +118,11 @@ Wire Wire Line
 Connection ~ 4070 3020
 $Comp
 L power:+12V #PWR?
-U 1 1 5C2705E0
+U 1 1 5E2AA972
 P 1360 2840
-AR Path="/5CB7718D/5C2705E0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C2705E0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5C2705E0" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA972" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA972" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E2AA972" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 1360 2690 50  0001 C CNN
 F 1 "+12V" H 1360 2980 50  0000 C CNN
 F 2 "" H 1360 2840 50  0001 C CNN
@@ -206,16 +206,16 @@ F 7 "1276-3148-1-ND" H 7265 4060 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5C2908D2
+U 1 1 5E2AA97B
 P 2290 4090
-AR Path="/5BB27BA3/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5C2908D2" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5C2908D2" Ref="R?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E2AA97B" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E2AA97B" Ref="R?"  Part="1" 
 F 0 "R?" H 2210 4090 50  0000 R CNN
 F 1 "10k" V 2290 4090 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 2290 4090 50  0001 C CNN
@@ -238,16 +238,16 @@ Wire Wire Line
 Connection ~ 2290 4520
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C293FFC
+U 1 1 5E2AA97D
 P 3710 5050
-AR Path="/5C1D5CD8/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1D5CCA/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1E3A0B/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5E0F263A/5C293FFC" Ref="C?"  Part="1" 
+AR Path="/5C1D5CD8/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5C1D5CCA/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA97D" Ref="C?"  Part="1" 
+AR Path="/5E0F263A/5E2AA97D" Ref="C?"  Part="1" 
 F 0 "C?" H 3735 5150 50  0000 L CNN
 F 1 "10nF" H 3735 4950 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3748 4900 50  0001 C CNN
@@ -302,16 +302,16 @@ F 7 "311-562KHRCT-ND" H 9230 4090 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5C295A52
+U 1 1 5E2AA981
 P 9230 5000
-AR Path="/5BB27BA3/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5C295A52" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5C295A52" Ref="R?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E2AA981" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E2AA981" Ref="R?"  Part="1" 
 F 0 "R?" H 9150 5000 50  0000 R CNN
 F 1 "180k" V 9230 5000 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 9230 5000 50  0001 C CNN
@@ -325,11 +325,11 @@ F 7 "749-1763-1-ND" H 9230 5000 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C295AD9
+U 1 1 5E2AA982
 P 9230 5150
-AR Path="/5CB7718D/5C295AD9" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C295AD9" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5C295AD9" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA982" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA982" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E2AA982" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 9230 4900 50  0001 C CNN
 F 1 "GND" H 9230 5000 50  0000 C CNN
 F 2 "" H 9230 5150 50  0001 C CNN
@@ -415,11 +415,11 @@ F 4 "296-37878-1-ND" H 4810 4020 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG?
-U 1 1 5C316D54
+U 1 1 5E2AA98B
 P 10150 3240
-AR Path="/5CB7718D/5C316D54" Ref="#FLG?"  Part="1" 
-AR Path="/5E0DC082/5C316D54" Ref="#FLG?"  Part="1" 
-AR Path="/5E0F263A/5C316D54" Ref="#FLG?"  Part="1" 
+AR Path="/5CB7718D/5E2AA98B" Ref="#FLG?"  Part="1" 
+AR Path="/5E0DC082/5E2AA98B" Ref="#FLG?"  Part="1" 
+AR Path="/5E0F263A/5E2AA98B" Ref="#FLG?"  Part="1" 
 F 0 "#FLG?" H 10150 3315 50  0001 C CNN
 F 1 "PWR_FLAG" H 10150 3390 50  0000 C CNN
 F 2 "" H 10150 3240 50  0001 C CNN
@@ -539,12 +539,12 @@ F 3 "" H 5410 3720 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5E092883
+U 1 1 5E2AA992
 P 1590 2920
-AR Path="/5CB6F1ED/5E092883" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5E092883" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5E092883" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5E092883" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5E2AA992" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E2AA992" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E2AA992" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E2AA992" Ref="R?"  Part="1" 
 F 0 "R?" V 1490 2920 50  0000 C CNN
 F 1 "0.02" V 1590 2920 40  0000 C CNN
 F 2 "Resistors_SMD:R_0612" H 1590 2920 50  0001 C CNN
@@ -576,20 +576,20 @@ Connection ~ 2290 2920
 Connection ~ 9230 3320
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5E0D49BD
+U 1 1 5E2AA9B3
 P 9680 3550
-AR Path="/5BB27BA3/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5BB27B84/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5BB27B24/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5BB27BB5/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5BB27BF7/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5C1DE17A/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5C1E3A0B/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5E0D49BD" Ref="C?"  Part="1" 
-AR Path="/5E0F263A/5E0D49BD" Ref="C?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5BB27B84/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5BB27B24/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5BB27BB5/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA9B3" Ref="C?"  Part="1" 
+AR Path="/5E0F263A/5E2AA9B3" Ref="C?"  Part="1" 
 F 0 "C?" H 9705 3650 50  0000 L CNN
 F 1 "0.1uF" H 9705 3450 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 9718 3400 50  0001 C CNN
@@ -603,11 +603,11 @@ F 7 "490-8020-1-ND" H 10105 4050 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5E0D49C3
+U 1 1 5E2AA9B5
 P 9680 3700
-AR Path="/5CB7718D/5E0D49C3" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5E0D49C3" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263A/5E0D49C3" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA9B5" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA9B5" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E2AA9B5" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 9680 3450 50  0001 C CNN
 F 1 "GND" H 9680 3550 50  0000 C CNN
 F 2 "" H 9680 3700 50  0001 C CNN

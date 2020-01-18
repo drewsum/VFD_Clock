@@ -29,12 +29,12 @@ Wire Wire Line
 Connection ~ 5110 5080
 $Comp
 L Sensor_Temperature:MCP9804_DFN U?
-U 1 1 5E0BDB9D
+U 1 1 5E2AA99E
 P 5110 4540
-AR Path="/5B3E071A/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E052856/5E0BDB9D" Ref="U?"  Part="1" 
+AR Path="/5B3E071A/5E2AA99E" Ref="U?"  Part="1" 
+AR Path="/5E0652BA/5E2AA99E" Ref="U?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA99E" Ref="U?"  Part="1" 
+AR Path="/5E052856/5E2AA99E" Ref="U?"  Part="1" 
 F 0 "U?" H 4860 4990 50  0000 C CNN
 F 1 "MCP9804" H 5510 4990 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 4010 4040 50  0001 C CNN
@@ -49,12 +49,12 @@ I2C_USB_SDA
 NoConn ~ 4710 4540
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5E0CB7AA
+U 1 1 5E2AA9A2
 P 5110 5690
-AR Path="/5B3E071A/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0652BA/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E052856/5E0CB7AA" Ref="C?"  Part="1" 
+AR Path="/5B3E071A/5E2AA9A2" Ref="C?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A2" Ref="C?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A2" Ref="C?"  Part="1" 
+AR Path="/5E052856/5E2AA9A2" Ref="C?"  Part="1" 
 F 0 "C?" H 5135 5790 50  0000 L CNN
 F 1 "0.1uF" H 5135 5590 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5148 5540 50  0001 C CNN

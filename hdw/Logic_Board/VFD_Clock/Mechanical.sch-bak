@@ -454,4 +454,64 @@ F 3 "" H 6320 5460 50  0001 C CNN
 	1    6320 5110
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5E2283CF
+P 9230 1810
+F 0 "J?" H 9230 2010 50  0000 C CNN
+F 1 "I2C" H 9230 1610 50  0000 C CNN
+F 2 "" H 9230 1810 50  0001 C CNN
+F 3 "~" H 9230 1810 50  0001 C CNN
+	1    9230 1810
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E228E89
+P 8950 1990
+F 0 "#PWR?" H 8950 1740 50  0001 C CNN
+F 1 "GND" H 8950 1840 50  0000 C CNN
+F 2 "" H 8950 1990 50  0001 C CNN
+F 3 "" H 8950 1990 50  0001 C CNN
+	1    8950 1990
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1990 8950 1910
+Wire Wire Line
+	8950 1910 9030 1910
+Text GLabel 9030 1710 0    50   UnSpc ~ 0
+I2C_SCL
+Text GLabel 9030 1810 0    50   UnSpc ~ 0
+I2C_SDA
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5E22E3B0
+P 9230 2560
+F 0 "J?" H 9230 2760 50  0000 C CNN
+F 1 "I2C" H 9230 2360 50  0000 C CNN
+F 2 "" H 9230 2560 50  0001 C CNN
+F 3 "~" H 9230 2560 50  0001 C CNN
+	1    9230 2560
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E22E3BA
+P 8950 2740
+F 0 "#PWR?" H 8950 2490 50  0001 C CNN
+F 1 "GND" H 8950 2590 50  0000 C CNN
+F 2 "" H 8950 2740 50  0001 C CNN
+F 3 "" H 8950 2740 50  0001 C CNN
+	1    8950 2740
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 2740 8950 2660
+Wire Wire Line
+	8950 2660 9030 2660
+Text GLabel 9030 2460 0    50   UnSpc ~ 0
+USB_UART_TX
+Text GLabel 9030 2560 0    50   UnSpc ~ 0
+USB_UART_RX
 $EndSCHEMATC

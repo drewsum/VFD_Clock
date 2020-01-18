@@ -22,6 +22,7 @@ F 0 "U?" H 5120 3880 50  0000 R CNN
 F 1 "DS3231MZ" H 5870 3880 50  0000 R CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5420 3030 50  0001 C CNN
 F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 5420 2930 50  0001 C CNN
+F 4 "DS3231MZ+-ND" H 5420 3530 50  0001 C CNN "Digi-Key PN"
 	1    5420 3530
 	1    0    0    -1  
 $EndComp

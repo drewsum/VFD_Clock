@@ -16,20 +16,20 @@ Comment4 ""
 $EndDescr
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C26F85F
+U 1 1 5E2AA969
 P 4070 3250
-AR Path="/5BB27BA3/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27B84/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27B24/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27BB5/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5BB27BF7/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1DE17A/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1E3A0B/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C26F85F" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5C26F85F" Ref="C?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5BB27B84/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5BB27B24/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5BB27BB5/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA969" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/5E2AA969" Ref="C?"  Part="1" 
 F 0 "C?" H 4095 3350 50  0000 L CNN
 F 1 "0.1uF" H 4095 3150 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4108 3100 50  0001 C CNN
@@ -61,11 +61,11 @@ Wire Wire Line
 	4070 3020 4070 3100
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C2703C2
+U 1 1 5E2AA96D
 P 2290 3250
-AR Path="/5CB7718D/5C2703C2" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C2703C2" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5C2703C2" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA96D" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA96D" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/5E2AA96D" Ref="C?"  Part="1" 
 F 0 "C?" H 2315 3350 50  0000 L CNN
 F 1 "10uF" H 2315 3150 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 2328 3100 50  0001 C CNN
@@ -79,11 +79,11 @@ F 7 "1276-7031-1-ND" H 2715 3750 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C27043B
+U 1 1 5E2AA96F
 P 2290 3400
-AR Path="/5CB7718D/5C27043B" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C27043B" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C27043B" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA96F" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA96F" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA96F" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 2290 3150 50  0001 C CNN
 F 1 "GND" H 2290 3250 50  0000 C CNN
 F 2 "" H 2290 3400 50  0001 C CNN
@@ -100,11 +100,11 @@ Wire Wire Line
 Connection ~ 4070 3020
 $Comp
 L power:+12V #PWR?
-U 1 1 5C2705E0
+U 1 1 5E2AA971
 P 1360 2840
-AR Path="/5CB7718D/5C2705E0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C2705E0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C2705E0" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA971" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA971" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA971" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 1360 2690 50  0001 C CNN
 F 1 "+12V" H 1360 2980 50  0000 C CNN
 F 2 "" H 1360 2840 50  0001 C CNN
@@ -117,11 +117,11 @@ Wire Wire Line
 Connection ~ 4070 2920
 $Comp
 L power:GND #PWR?
-U 1 1 5C288B4E
+U 1 1 5E2AA975
 P 4910 5400
-AR Path="/5CB7718D/5C288B4E" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C288B4E" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C288B4E" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA975" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA975" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA975" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 4910 5150 50  0001 C CNN
 F 1 "GND" H 4910 5250 50  0000 C CNN
 F 2 "" H 4910 5400 50  0001 C CNN
@@ -144,11 +144,11 @@ Wire Wire Line
 	4810 5360 4810 5320
 $Comp
 L power:GND #PWR?
-U 1 1 5C28E698
+U 1 1 5E2AA978
 P 4330 5200
-AR Path="/5CB7718D/5C28E698" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C28E698" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C28E698" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA978" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA978" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA978" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 4330 4950 50  0001 C CNN
 F 1 "GND" H 4330 5050 50  0000 C CNN
 F 2 "" H 4330 5200 50  0001 C CNN
@@ -160,14 +160,14 @@ Wire Wire Line
 	4330 4920 4410 4920
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C28FDD2
+U 1 1 5E2AA97A
 P 6840 3560
-AR Path="/5C1E3A0B/5C28FDD2" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C28FDD2" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C28FDD2" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C28FDD2" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C28FDD2" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5C28FDD2" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA97A" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA97A" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA97A" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA97A" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA97A" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/5E2AA97A" Ref="C?"  Part="1" 
 F 0 "C?" H 6865 3660 50  0000 L CNN
 F 1 "22uF" H 6865 3460 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 6878 3410 50  0001 C CNN
@@ -213,16 +213,16 @@ Wire Wire Line
 Connection ~ 2290 4520
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C293FFC
+U 1 1 5E2AA97E
 P 3710 5050
-AR Path="/5C1D5CD8/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1D5CCA/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1E3A0B/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C293FFC" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5C293FFC" Ref="C?"  Part="1" 
+AR Path="/5C1D5CD8/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5C1D5CCA/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA97E" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/5E2AA97E" Ref="C?"  Part="1" 
 F 0 "C?" H 3735 5150 50  0000 L CNN
 F 1 "10nF" H 3735 4950 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3748 4900 50  0001 C CNN
@@ -236,11 +236,11 @@ F 7 "1276-1921-1-ND" H -210 830 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C294444
+U 1 1 5E2AA980
 P 3710 5200
-AR Path="/5CB7718D/5C294444" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C294444" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C294444" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA980" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA980" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA980" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 3710 4950 50  0001 C CNN
 F 1 "GND" H 3710 5050 50  0000 C CNN
 F 2 "" H 3710 5200 50  0001 C CNN
@@ -273,11 +273,11 @@ Wire Wire Line
 	9230 4520 9230 4850
 $Comp
 L power:GND #PWR?
-U 1 1 5C298A57
+U 1 1 5E2AA985
 P 6840 3710
-AR Path="/5CB7718D/5C298A57" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C298A57" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C298A57" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA985" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA985" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA985" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 6840 3460 50  0001 C CNN
 F 1 "GND" H 6840 3560 50  0000 C CNN
 F 2 "" H 6840 3710 50  0001 C CNN
@@ -289,14 +289,14 @@ Wire Wire Line
 	6840 3410 6840 3320
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5C29AF9B
+U 1 1 5E2AA986
 P 7590 3560
-AR Path="/5C1E3A0B/5C29AF9B" Ref="C?"  Part="1" 
-AR Path="/5C1E3A08/5C29AF9B" Ref="C?"  Part="1" 
-AR Path="/5D779AE1/5C29AF9B" Ref="C?"  Part="1" 
-AR Path="/5CB7718D/5C29AF9B" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5C29AF9B" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5C29AF9B" Ref="C?"  Part="1" 
+AR Path="/5C1E3A0B/5E2AA986" Ref="C?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA986" Ref="C?"  Part="1" 
+AR Path="/5D779AE1/5E2AA986" Ref="C?"  Part="1" 
+AR Path="/5CB7718D/5E2AA986" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/5E2AA986" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/5E2AA986" Ref="C?"  Part="1" 
 F 0 "C?" H 7615 3660 50  0000 L CNN
 F 1 "22uF" H 7615 3460 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 7628 3410 50  0001 C CNN
@@ -310,11 +310,11 @@ F 7 "1276-3148-1-ND" H 8015 4060 60  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5C29AFE1
+U 1 1 5E2AA989
 P 7590 3710
-AR Path="/5CB7718D/5C29AFE1" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5C29AFE1" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5C29AFE1" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA989" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA989" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA989" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 7590 3460 50  0001 C CNN
 F 1 "GND" H 7590 3560 50  0000 C CNN
 F 2 "" H 7590 3710 50  0001 C CNN
@@ -329,11 +329,11 @@ Wire Wire Line
 Connection ~ 6840 3320
 $Comp
 L Custom_Library:TPS62130 U?
-U 1 1 5C2754C7
+U 1 1 5E2AA973
 P 4910 4020
-AR Path="/5CB7718D/5C2754C7" Ref="U?"  Part="1" 
-AR Path="/5E0DC082/5C2754C7" Ref="U?"  Part="1" 
-AR Path="/5E0F9110/5C2754C7" Ref="U?"  Part="1" 
+AR Path="/5CB7718D/5E2AA973" Ref="U?"  Part="1" 
+AR Path="/5E0DC082/5E2AA973" Ref="U?"  Part="1" 
+AR Path="/5E0F9110/5E2AA973" Ref="U?"  Part="1" 
 F 0 "U?" H 4910 5270 50  0000 C CNN
 F 1 "TPS62130" H 4910 4020 50  0000 C CNN
 F 2 "Housings_DFN_QFN:QFN-16-1EP_3x3mm_Pitch0.5mm" H 4910 4020 50  0001 C CNN
@@ -358,15 +358,15 @@ F 3 "~" H 10150 3240 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:TP TP?
-U 1 1 5C3650A7
+U 1 1 5E2AA98D
 P 9230 3240
-AR Path="/5C1D5CD8/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5C1D5C9E/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5C1E3A08/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5D779AE1/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5CB7718D/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5E0DC082/5C3650A7" Ref="TP?"  Part="1" 
-AR Path="/5E0F9110/5C3650A7" Ref="TP?"  Part="1" 
+AR Path="/5C1D5CD8/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5C1D5C9E/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5D779AE1/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5CB7718D/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5E0DC082/5E2AA98D" Ref="TP?"  Part="1" 
+AR Path="/5E0F9110/5E2AA98D" Ref="TP?"  Part="1" 
 F 0 "TP?" H 9230 3390 50  0000 C CNN
 F 1 "TP" H 9230 3390 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 9230 3240 60  0001 C CNN
@@ -378,11 +378,11 @@ Wire Wire Line
 	5410 3320 5700 3320
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5DEA7247
+U 1 1 5E2AA98E
 P 2290 3940
-AR Path="/5CB7718D/5DEA7247" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5DEA7247" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5DEA7247" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7718D/5E2AA98E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E2AA98E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9110/5E2AA98E" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 2290 3790 50  0001 C CNN
 F 1 "+3.3V" H 2290 4080 50  0000 C CNN
 F 2 "" H 2290 3940 50  0001 C CNN
@@ -392,12 +392,12 @@ F 3 "" H 2290 3940 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5E06F7D6
+U 1 1 5E2AA991
 P 8530 3320
-AR Path="/5CB6F1ED/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5E0F9110/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5E2AA991" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E2AA991" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E2AA991" Ref="R?"  Part="1" 
+AR Path="/5E0F9110/5E2AA991" Ref="R?"  Part="1" 
 F 0 "R?" V 8430 3320 50  0000 C CNN
 F 1 "0.02" V 8530 3320 40  0000 C CNN
 F 2 "Resistors_SMD:R_0612" H 8530 3320 50  0001 C CNN
@@ -572,16 +572,16 @@ Wire Wire Line
 Connection ~ 4080 3720
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5E0EA1C5
+U 1 1 5E2AA9B9
 P 9230 4090
-AR Path="/5BB27BA3/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5E0EA1C5" Ref="R?"  Part="1" 
-AR Path="/5E0F9110/5E0EA1C5" Ref="R?"  Part="1" 
+AR Path="/5BB27BA3/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E2AA9B9" Ref="R?"  Part="1" 
+AR Path="/5E0F9110/5E2AA9B9" Ref="R?"  Part="1" 
 F 0 "R?" H 9150 4090 50  0000 R CNN
 F 1 "R" V 9230 4090 40  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 9230 4090 50  0001 C CNN

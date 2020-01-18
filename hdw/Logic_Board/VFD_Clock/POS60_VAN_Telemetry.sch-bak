@@ -20,14 +20,14 @@ Text GLabel 1590 2620 0    50   UnSpc ~ 0
 POS60_VAN_SNS_IN-
 $Comp
 L power:GND #PWR?
-U 1 1 5E0BDB8A
+U 1 1 5E2AA997
 P 3160 5440
-AR Path="/5B3E071A/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9112/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E164364/5E0BDB8A" Ref="#PWR?"  Part="1" 
+AR Path="/5B3E071A/5E2AA997" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA997" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA997" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA997" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9112/5E2AA997" Ref="#PWR?"  Part="1" 
+AR Path="/5E164364/5E2AA997" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 3160 5190 50  0001 C CNN
 F 1 "GND" H 3160 5290 50  0000 C CNN
 F 2 "" H 3160 5440 50  0001 C CNN
@@ -46,13 +46,13 @@ Wire Wire Line
 Connection ~ 3160 5400
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5E0BDB95
+U 1 1 5E2AA999
 P 3160 4360
-AR Path="/5E0652BA/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9112/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E164364/5E0BDB95" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA999" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA999" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA999" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9112/5E2AA999" Ref="#PWR?"  Part="1" 
+AR Path="/5E164364/5E2AA999" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 3160 4210 50  0001 C CNN
 F 1 "+3.3V" H 3160 4500 50  0000 C CNN
 F 2 "" H 3160 4360 50  0001 C CNN
@@ -62,14 +62,14 @@ F 3 "" H 3160 4360 50  0001 C CNN
 $EndComp
 $Comp
 L Sensor_Temperature:MCP9804_DFN U?
-U 1 1 5E0BDB9D
+U 1 1 5E2AA9A0
 P 3160 4860
-AR Path="/5B3E071A/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0DC084/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E0F9112/5E0BDB9D" Ref="U?"  Part="1" 
-AR Path="/5E164364/5E0BDB9D" Ref="U?"  Part="1" 
+AR Path="/5B3E071A/5E2AA9A0" Ref="U?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A0" Ref="U?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A0" Ref="U?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9A0" Ref="U?"  Part="1" 
+AR Path="/5E0F9112/5E2AA9A0" Ref="U?"  Part="1" 
+AR Path="/5E164364/5E2AA9A0" Ref="U?"  Part="1" 
 F 0 "U?" H 2910 5310 50  0000 C CNN
 F 1 "MCP9804" H 3560 5310 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 2060 4360 50  0001 C CNN
@@ -84,14 +84,14 @@ I2C_SDA
 NoConn ~ 2760 4860
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5E0CB7AA
+U 1 1 5E2AA9A3
 P 3160 6010
-AR Path="/5B3E071A/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0652BA/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0F9112/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E164364/5E0CB7AA" Ref="C?"  Part="1" 
+AR Path="/5B3E071A/5E2AA9A3" Ref="C?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A3" Ref="C?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A3" Ref="C?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9A3" Ref="C?"  Part="1" 
+AR Path="/5E0F9112/5E2AA9A3" Ref="C?"  Part="1" 
+AR Path="/5E164364/5E2AA9A3" Ref="C?"  Part="1" 
 F 0 "C?" H 3185 6110 50  0000 L CNN
 F 1 "0.1uF" H 3185 5910 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 3198 5860 50  0001 C CNN
@@ -137,13 +137,13 @@ F 3 "" H 3160 6160 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:I2C_Address DOC?
-U 1 1 5E0CB7BC
+U 1 1 5E2AA9B1
 P 4060 5880
-AR Path="/5E0652BA/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0F9112/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E164364/5E0CB7BC" Ref="DOC?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9B1" Ref="DOC?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9B1" Ref="DOC?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9B1" Ref="DOC?"  Part="1" 
+AR Path="/5E0F9112/5E2AA9B1" Ref="DOC?"  Part="1" 
+AR Path="/5E164364/5E2AA9B1" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 4060 6130 60  0001 C CNN
 F 1 "askjdfasdf" H 3610 5880 60  0000 L CNN
 F 2 "" H 4060 6230 60  0001 C CNN

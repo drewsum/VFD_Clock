@@ -35,20 +35,6 @@ F 7 "X7R" H 2140 1430 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CB7B41E
-P 2400 2220
-AR Path="/5CAD2D97/5CB7B41E" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CB7B41E" Ref="U?"  Part="1" 
-F 0 "U?" H 2500 2370 50  0000 L CNN
-F 1 "74LVC1G06" H 2500 2120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 2400 2270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 2400 2220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 2400 2220 50  0001 C CNN "Digi-Key PN"
-	1    2400 2220
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:LED D?
 U 1 1 5CB7B425
 P 2970 1950
@@ -104,17 +90,6 @@ F 3 "" H 2970 1500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CB7DB1C
-P 2400 2120
-F 0 "#PWR?" H 2400 1970 50  0001 C CNN
-F 1 "+3.3V" H 2400 2260 50  0000 C CNN
-F 2 "" H 2400 2120 50  0001 C CNN
-F 3 "" H 2400 2120 50  0001 C CNN
-	1    2400 2120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CB7E1F3
 P 2290 1380
 F 0 "#PWR?" H 2290 1230 50  0001 C CNN
@@ -122,17 +97,6 @@ F 1 "+3.3V" H 2290 1520 50  0000 C CNN
 F 2 "" H 2290 1380 50  0001 C CNN
 F 3 "" H 2290 1380 50  0001 C CNN
 	1    2290 1380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CB7E78E
-P 2400 2320
-F 0 "#PWR?" H 2400 2070 50  0001 C CNN
-F 1 "GND" H 2400 2170 50  0000 C CNN
-F 2 "" H 2400 2320 50  0001 C CNN
-F 3 "" H 2400 2320 50  0001 C CNN
-	1    2400 2320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -209,20 +173,6 @@ F 7 "X7R" H 4140 1430 50  0000 R CNN "Dielectric"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBCC6D6
-P 4400 2220
-AR Path="/5CAD2D97/5CBCC6D6" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CBCC6D6" Ref="U?"  Part="1" 
-F 0 "U?" H 4500 2370 50  0000 L CNN
-F 1 "74LVC1G06" H 4500 2120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4400 2270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4400 2220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4400 2220 50  0001 C CNN "Digi-Key PN"
-	1    4400 2220
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:LED D?
 U 1 1 5CBCC6E1
 P 4970 1950
@@ -277,17 +227,6 @@ F 3 "" H 4970 1500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CBCC705
-P 4400 2120
-F 0 "#PWR?" H 4400 1970 50  0001 C CNN
-F 1 "+3.3V" H 4400 2260 50  0000 C CNN
-F 2 "" H 4400 2120 50  0001 C CNN
-F 3 "" H 4400 2120 50  0001 C CNN
-	1    4400 2120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CBCC70F
 P 4290 1380
 F 0 "#PWR?" H 4290 1230 50  0001 C CNN
@@ -295,17 +234,6 @@ F 1 "+3.3V" H 4290 1520 50  0000 C CNN
 F 2 "" H 4290 1380 50  0001 C CNN
 F 3 "" H 4290 1380 50  0001 C CNN
 	1    4290 1380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBCC719
-P 4400 2320
-F 0 "#PWR?" H 4400 2070 50  0001 C CNN
-F 1 "GND" H 4400 2170 50  0000 C CNN
-F 2 "" H 4400 2320 50  0001 C CNN
-F 3 "" H 4400 2320 50  0001 C CNN
-	1    4400 2320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -381,20 +309,6 @@ F 7 "X7R" H 6140 1430 50  0000 R CNN "Dielectric"
 	1    6290 1530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBD523B
-P 6400 2220
-AR Path="/5CAD2D97/5CBD523B" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CBD523B" Ref="U?"  Part="1" 
-F 0 "U?" H 6500 2370 50  0000 L CNN
-F 1 "74LVC1G06" H 6500 2120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6400 2270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6400 2220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6400 2220 50  0001 C CNN "Digi-Key PN"
-	1    6400 2220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6650 2220 6970 2220
 Wire Wire Line
@@ -434,17 +348,6 @@ F 3 "" H 6970 1500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CBD526A
-P 6400 2120
-F 0 "#PWR?" H 6400 1970 50  0001 C CNN
-F 1 "+3.3V" H 6400 2260 50  0000 C CNN
-F 2 "" H 6400 2120 50  0001 C CNN
-F 3 "" H 6400 2120 50  0001 C CNN
-	1    6400 2120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CBD5274
 P 6290 1380
 F 0 "#PWR?" H 6290 1230 50  0001 C CNN
@@ -452,17 +355,6 @@ F 1 "+3.3V" H 6290 1520 50  0000 C CNN
 F 2 "" H 6290 1380 50  0001 C CNN
 F 3 "" H 6290 1380 50  0001 C CNN
 	1    6290 1380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBD527E
-P 6400 2320
-F 0 "#PWR?" H 6400 2070 50  0001 C CNN
-F 1 "GND" H 6400 2170 50  0000 C CNN
-F 2 "" H 6400 2320 50  0001 C CNN
-F 3 "" H 6400 2320 50  0001 C CNN
-	1    6400 2320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -554,20 +446,6 @@ F 7 "X7R" H 8140 1430 50  0000 R CNN "Dielectric"
 	1    8290 1530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBDCE2C
-P 8400 2220
-AR Path="/5CAD2D97/5CBDCE2C" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CBDCE2C" Ref="U?"  Part="1" 
-F 0 "U?" H 8500 2370 50  0000 L CNN
-F 1 "74LVC1G06" H 8500 2120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 8400 2270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 8400 2220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 8400 2220 50  0001 C CNN "Digi-Key PN"
-	1    8400 2220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8650 2220 8970 2220
 Wire Wire Line
@@ -607,17 +485,6 @@ F 3 "" H 8970 1500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CBDCE50
-P 8400 2120
-F 0 "#PWR?" H 8400 1970 50  0001 C CNN
-F 1 "+3.3V" H 8400 2260 50  0000 C CNN
-F 2 "" H 8400 2120 50  0001 C CNN
-F 3 "" H 8400 2120 50  0001 C CNN
-	1    8400 2120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CBDCE5A
 P 8290 1380
 F 0 "#PWR?" H 8290 1230 50  0001 C CNN
@@ -625,17 +492,6 @@ F 1 "+3.3V" H 8290 1520 50  0000 C CNN
 F 2 "" H 8290 1380 50  0001 C CNN
 F 3 "" H 8290 1380 50  0001 C CNN
 	1    8290 1380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBDCE64
-P 8400 2320
-F 0 "#PWR?" H 8400 2070 50  0001 C CNN
-F 1 "GND" H 8400 2170 50  0000 C CNN
-F 2 "" H 8400 2320 50  0001 C CNN
-F 3 "" H 8400 2320 50  0001 C CNN
-	1    8400 2320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -727,20 +583,6 @@ F 7 "X7R" H 6140 3430 50  0000 R CNN "Dielectric"
 	1    6290 3530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBEAC9E
-P 6400 4220
-AR Path="/5CAD2D97/5CBEAC9E" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CBEAC9E" Ref="U?"  Part="1" 
-F 0 "U?" H 6500 4370 50  0000 L CNN
-F 1 "74LVC1G06" H 6500 4120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6400 4270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6400 4220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6400 4220 50  0001 C CNN "Digi-Key PN"
-	1    6400 4220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6650 4220 6970 4220
 Wire Wire Line
@@ -780,17 +622,6 @@ F 3 "" H 6970 3500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CBEACC2
-P 6400 4120
-F 0 "#PWR?" H 6400 3970 50  0001 C CNN
-F 1 "+3.3V" H 6400 4260 50  0000 C CNN
-F 2 "" H 6400 4120 50  0001 C CNN
-F 3 "" H 6400 4120 50  0001 C CNN
-	1    6400 4120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CBEACCC
 P 6290 3380
 F 0 "#PWR?" H 6290 3230 50  0001 C CNN
@@ -798,17 +629,6 @@ F 1 "+3.3V" H 6290 3520 50  0000 C CNN
 F 2 "" H 6290 3380 50  0001 C CNN
 F 3 "" H 6290 3380 50  0001 C CNN
 	1    6290 3380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBEACD6
-P 6400 4320
-F 0 "#PWR?" H 6400 4070 50  0001 C CNN
-F 1 "GND" H 6400 4170 50  0000 C CNN
-F 2 "" H 6400 4320 50  0001 C CNN
-F 3 "" H 6400 4320 50  0001 C CNN
-	1    6400 4320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -898,20 +718,6 @@ F 7 "X7R" H 8140 3430 50  0000 R CNN "Dielectric"
 	1    8290 3530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBEAD20
-P 8400 4220
-AR Path="/5CAD2D97/5CBEAD20" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CBEAD20" Ref="U?"  Part="1" 
-F 0 "U?" H 8500 4370 50  0000 L CNN
-F 1 "74LVC1G06" H 8500 4120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 8400 4270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 8400 4220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 8400 4220 50  0001 C CNN "Digi-Key PN"
-	1    8400 4220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8650 4220 8970 4220
 Wire Wire Line
@@ -951,17 +757,6 @@ F 3 "" H 8970 3500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CBEAD44
-P 8400 4120
-F 0 "#PWR?" H 8400 3970 50  0001 C CNN
-F 1 "+3.3V" H 8400 4260 50  0000 C CNN
-F 2 "" H 8400 4120 50  0001 C CNN
-F 3 "" H 8400 4120 50  0001 C CNN
-	1    8400 4120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CBEAD4E
 P 8290 3380
 F 0 "#PWR?" H 8290 3230 50  0001 C CNN
@@ -969,17 +764,6 @@ F 1 "+3.3V" H 8290 3520 50  0000 C CNN
 F 2 "" H 8290 3380 50  0001 C CNN
 F 3 "" H 8290 3380 50  0001 C CNN
 	1    8290 3380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBEAD58
-P 8400 4320
-F 0 "#PWR?" H 8400 4070 50  0001 C CNN
-F 1 "GND" H 8400 4170 50  0000 C CNN
-F 2 "" H 8400 4320 50  0001 C CNN
-F 3 "" H 8400 4320 50  0001 C CNN
-	1    8400 4320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1069,20 +853,6 @@ F 7 "X7R" H 2140 3430 50  0000 R CNN "Dielectric"
 	1    2290 3530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CC25470
-P 2400 4220
-AR Path="/5CAD2D97/5CC25470" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CC25470" Ref="U?"  Part="1" 
-F 0 "U?" H 2500 4370 50  0000 L CNN
-F 1 "74LVC1G06" H 2500 4120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 2400 4270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 2400 4220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 2400 4220 50  0001 C CNN "Digi-Key PN"
-	1    2400 4220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2650 4220 2970 4220
 Wire Wire Line
@@ -1122,17 +892,6 @@ F 3 "" H 2970 3500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CC25494
-P 2400 4120
-F 0 "#PWR?" H 2400 3970 50  0001 C CNN
-F 1 "+3.3V" H 2400 4260 50  0000 C CNN
-F 2 "" H 2400 4120 50  0001 C CNN
-F 3 "" H 2400 4120 50  0001 C CNN
-	1    2400 4120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CC2549E
 P 2290 3380
 F 0 "#PWR?" H 2290 3230 50  0001 C CNN
@@ -1140,17 +899,6 @@ F 1 "+3.3V" H 2290 3520 50  0000 C CNN
 F 2 "" H 2290 3380 50  0001 C CNN
 F 3 "" H 2290 3380 50  0001 C CNN
 	1    2290 3380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CC254A8
-P 2400 4320
-F 0 "#PWR?" H 2400 4070 50  0001 C CNN
-F 1 "GND" H 2400 4170 50  0000 C CNN
-F 2 "" H 2400 4320 50  0001 C CNN
-F 3 "" H 2400 4320 50  0001 C CNN
-	1    2400 4320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1242,20 +990,6 @@ F 7 "X7R" H 4140 3430 50  0000 R CNN "Dielectric"
 	1    4290 3530
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CC254F2
-P 4400 4220
-AR Path="/5CAD2D97/5CC254F2" Ref="U?"  Part="1" 
-AR Path="/5CB7A8BC/5CC254F2" Ref="U?"  Part="1" 
-F 0 "U?" H 4500 4370 50  0000 L CNN
-F 1 "74LVC1G06" H 4500 4120 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4400 4270 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4400 4220 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4400 4220 50  0001 C CNN "Digi-Key PN"
-	1    4400 4220
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4650 4220 4970 4220
 Wire Wire Line
@@ -1295,17 +1029,6 @@ F 3 "" H 4970 3500 50  0001 C CNN
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5CC25516
-P 4400 4120
-F 0 "#PWR?" H 4400 3970 50  0001 C CNN
-F 1 "+3.3V" H 4400 4260 50  0000 C CNN
-F 2 "" H 4400 4120 50  0001 C CNN
-F 3 "" H 4400 4120 50  0001 C CNN
-	1    4400 4120
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
 U 1 1 5CC25520
 P 4290 3380
 F 0 "#PWR?" H 4290 3230 50  0001 C CNN
@@ -1313,17 +1036,6 @@ F 1 "+3.3V" H 4290 3520 50  0000 C CNN
 F 2 "" H 4290 3380 50  0001 C CNN
 F 3 "" H 4290 3380 50  0001 C CNN
 	1    4290 3380
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CC2552A
-P 4400 4320
-F 0 "#PWR?" H 4400 4070 50  0001 C CNN
-F 1 "GND" H 4400 4170 50  0000 C CNN
-F 2 "" H 4400 4320 50  0001 C CNN
-F 3 "" H 4400 4320 50  0001 C CNN
-	1    4400 4320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1397,4 +1109,268 @@ Text GLabel 3770 4220 0    50   Input ~ 0
 CPU_Exception_LED
 Text GLabel 5770 4220 0    50   Input ~ 0
 Other_Error_LED
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E278B31
+P 2400 2220
+F 0 "U?" H 2460 2370 50  0000 L CNN
+F 1 "74LVC1G97" H 2460 2070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2450 2220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2450 2220 50  0001 C CNN
+	7    2400 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2C3C4C
+P 2400 2120
+F 0 "#PWR?" H 2400 1970 50  0001 C CNN
+F 1 "+3.3V" H 2400 2260 50  0000 C CNN
+F 2 "" H 2400 2120 50  0001 C CNN
+F 3 "" H 2400 2120 50  0001 C CNN
+	1    2400 2120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2C460C
+P 2400 2320
+F 0 "#PWR?" H 2400 2070 50  0001 C CNN
+F 1 "GND" H 2400 2170 50  0000 C CNN
+F 2 "" H 2400 2320 50  0001 C CNN
+F 3 "" H 2400 2320 50  0001 C CNN
+	1    2400 2320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2CF334
+P 4400 2220
+F 0 "U?" H 4460 2370 50  0000 L CNN
+F 1 "74LVC1G97" H 4460 2070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4450 2220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4450 2220 50  0001 C CNN
+	7    4400 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2CF33A
+P 4400 2120
+F 0 "#PWR?" H 4400 1970 50  0001 C CNN
+F 1 "+3.3V" H 4400 2260 50  0000 C CNN
+F 2 "" H 4400 2120 50  0001 C CNN
+F 3 "" H 4400 2120 50  0001 C CNN
+	1    4400 2120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2CF340
+P 4400 2320
+F 0 "#PWR?" H 4400 2070 50  0001 C CNN
+F 1 "GND" H 4400 2170 50  0000 C CNN
+F 2 "" H 4400 2320 50  0001 C CNN
+F 3 "" H 4400 2320 50  0001 C CNN
+	1    4400 2320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2D4A11
+P 6400 2220
+F 0 "U?" H 6460 2370 50  0000 L CNN
+F 1 "74LVC1G97" H 6460 2070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6450 2220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6450 2220 50  0001 C CNN
+	7    6400 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2D4A17
+P 6400 2120
+F 0 "#PWR?" H 6400 1970 50  0001 C CNN
+F 1 "+3.3V" H 6400 2260 50  0000 C CNN
+F 2 "" H 6400 2120 50  0001 C CNN
+F 3 "" H 6400 2120 50  0001 C CNN
+	1    6400 2120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2D4A1D
+P 6400 2320
+F 0 "#PWR?" H 6400 2070 50  0001 C CNN
+F 1 "GND" H 6400 2170 50  0000 C CNN
+F 2 "" H 6400 2320 50  0001 C CNN
+F 3 "" H 6400 2320 50  0001 C CNN
+	1    6400 2320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2DA9FD
+P 8400 2220
+F 0 "U?" H 8460 2370 50  0000 L CNN
+F 1 "74LVC1G97" H 8460 2070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 8450 2220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 8450 2220 50  0001 C CNN
+	7    8400 2220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2DAA03
+P 8400 2120
+F 0 "#PWR?" H 8400 1970 50  0001 C CNN
+F 1 "+3.3V" H 8400 2260 50  0000 C CNN
+F 2 "" H 8400 2120 50  0001 C CNN
+F 3 "" H 8400 2120 50  0001 C CNN
+	1    8400 2120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2DAA09
+P 8400 2320
+F 0 "#PWR?" H 8400 2070 50  0001 C CNN
+F 1 "GND" H 8400 2170 50  0000 C CNN
+F 2 "" H 8400 2320 50  0001 C CNN
+F 3 "" H 8400 2320 50  0001 C CNN
+	1    8400 2320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2E2561
+P 6400 4220
+F 0 "U?" H 6460 4370 50  0000 L CNN
+F 1 "74LVC1G97" H 6460 4070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6450 4220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6450 4220 50  0001 C CNN
+	7    6400 4220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2E2567
+P 6400 4120
+F 0 "#PWR?" H 6400 3970 50  0001 C CNN
+F 1 "+3.3V" H 6400 4260 50  0000 C CNN
+F 2 "" H 6400 4120 50  0001 C CNN
+F 3 "" H 6400 4120 50  0001 C CNN
+	1    6400 4120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2E256D
+P 6400 4320
+F 0 "#PWR?" H 6400 4070 50  0001 C CNN
+F 1 "GND" H 6400 4170 50  0000 C CNN
+F 2 "" H 6400 4320 50  0001 C CNN
+F 3 "" H 6400 4320 50  0001 C CNN
+	1    6400 4320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2E6E40
+P 4400 4220
+F 0 "U?" H 4460 4370 50  0000 L CNN
+F 1 "74LVC1G97" H 4460 4070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4450 4220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4450 4220 50  0001 C CNN
+	7    4400 4220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2E6E46
+P 4400 4120
+F 0 "#PWR?" H 4400 3970 50  0001 C CNN
+F 1 "+3.3V" H 4400 4260 50  0000 C CNN
+F 2 "" H 4400 4120 50  0001 C CNN
+F 3 "" H 4400 4120 50  0001 C CNN
+	1    4400 4120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2E6E4C
+P 4400 4320
+F 0 "#PWR?" H 4400 4070 50  0001 C CNN
+F 1 "GND" H 4400 4170 50  0000 C CNN
+F 2 "" H 4400 4320 50  0001 C CNN
+F 3 "" H 4400 4320 50  0001 C CNN
+	1    4400 4320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2EB73D
+P 2400 4220
+F 0 "U?" H 2460 4370 50  0000 L CNN
+F 1 "74LVC1G97" H 2460 4070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2450 4220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2450 4220 50  0001 C CNN
+	7    2400 4220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2EB743
+P 2400 4120
+F 0 "#PWR?" H 2400 3970 50  0001 C CNN
+F 1 "+3.3V" H 2400 4260 50  0000 C CNN
+F 2 "" H 2400 4120 50  0001 C CNN
+F 3 "" H 2400 4120 50  0001 C CNN
+	1    2400 4120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2EB749
+P 2400 4320
+F 0 "#PWR?" H 2400 4070 50  0001 C CNN
+F 1 "GND" H 2400 4170 50  0000 C CNN
+F 2 "" H 2400 4320 50  0001 C CNN
+F 3 "" H 2400 4320 50  0001 C CNN
+	1    2400 4320
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E2F284C
+P 8400 4220
+F 0 "U?" H 8460 4370 50  0000 L CNN
+F 1 "74LVC1G97" H 8460 4070 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 8450 4220 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 8450 4220 50  0001 C CNN
+	7    8400 4220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E2F2852
+P 8400 4120
+F 0 "#PWR?" H 8400 3970 50  0001 C CNN
+F 1 "+3.3V" H 8400 4260 50  0000 C CNN
+F 2 "" H 8400 4120 50  0001 C CNN
+F 3 "" H 8400 4120 50  0001 C CNN
+	1    8400 4120
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E2F2858
+P 8400 4320
+F 0 "#PWR?" H 8400 4070 50  0001 C CNN
+F 1 "GND" H 8400 4170 50  0000 C CNN
+F 2 "" H 8400 4320 50  0001 C CNN
+F 3 "" H 8400 4320 50  0001 C CNN
+	1    8400 4320
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

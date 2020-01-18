@@ -503,54 +503,6 @@ Text GLabel 2680 2870 0    50   Input ~ 0
 POS12_PGOOD
 Text GLabel 4680 2870 0    50   Input ~ 0
 POS60_VAN_PGOOD
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBA0DAC
-P 2980 2870
-F 0 "U?" H 3080 3020 50  0000 L CNN
-F 1 "74LVC1G06" H 3080 2770 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 2980 2920 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 2980 2870 50  0001 C CNN
-F 4 "296-8484-1-ND" H 2980 2870 50  0001 C CNN "Digi-Key PN"
-	1    2980 2870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBA1635
-P 4980 2870
-F 0 "U?" H 5080 3020 50  0000 L CNN
-F 1 "74LVC1G06" H 5080 2770 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4980 2920 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4980 2870 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4980 2870 50  0001 C CNN "Digi-Key PN"
-	1    4980 2870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBA1B8E
-P 6980 2870
-F 0 "U?" H 7080 3020 50  0000 L CNN
-F 1 "74LVC1G06" H 7080 2770 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6980 2920 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6980 2870 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6980 2870 50  0001 C CNN "Digi-Key PN"
-	1    6980 2870
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5CBA2001
-P 8980 2870
-F 0 "U?" H 9080 3020 50  0000 L CNN
-F 1 "74LVC1G06" H 9080 2770 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 8980 2920 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 8980 2870 50  0001 C CNN
-F 4 "296-8484-1-ND" H 8980 2870 50  0001 C CNN "Digi-Key PN"
-	1    8980 2870
-	1    0    0    -1  
-$EndComp
 Text GLabel 6680 2870 0    50   Input ~ 0
 POS1P2_VFF_PGOOD
 Text GLabel 8680 2870 0    50   Input ~ 0
@@ -773,18 +725,6 @@ F 3 "" H 2870 3830 50  0001 C CNN
 	1    2870 3830
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5E1829FC
-P 2980 4370
-F 0 "U?" H 3080 4520 50  0000 L CNN
-F 1 "74LVC1G06" H 3080 4270 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 2980 4420 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 2980 4370 50  0001 C CNN
-F 4 "296-8484-1-ND" H 2980 4370 50  0001 C CNN "Digi-Key PN"
-	1    2980 4370
-	1    0    0    -1  
-$EndComp
 Text GLabel 2680 4370 0    50   Input ~ 0
 POS5_PGOOD
 $Comp
@@ -853,18 +793,6 @@ F 7 "RMCF0603FT1K00CT-ND" H 5850 4200 60  0001 C CNN "Digi-Key PN"
 	1    5550 3800
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5E1D00C4
-P 4980 4370
-F 0 "U?" H 5080 4520 50  0000 L CNN
-F 1 "74LVC1G06" H 5080 4270 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4980 4420 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4980 4370 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4980 4370 50  0001 C CNN "Digi-Key PN"
-	1    4980 4370
-	1    0    0    -1  
-$EndComp
 Text GLabel 4680 4370 0    50   Input ~ 0
 POS5_USB_PGOOD
 $Comp
@@ -920,6 +848,76 @@ F 1 "+5V_USB" H 5550 3790 50  0000 C CNN
 F 2 "" H 5550 3650 50  0001 C CNN
 F 3 "" H 5550 3650 50  0001 C CNN
 	1    5550 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E3086CD
+P 2980 2870
+AR Path="/5CB7A8BC/5E3086CD" Ref="U?"  Part="7" 
+AR Path="/5CB7A8C3/5E3086CD" Ref="U?"  Part="7" 
+F 0 "U?" H 3040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 3040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3030 2870 50  0001 C CNN
+	7    2980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E30E3BC
+P 4980 2870
+F 0 "U?" H 5040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 5040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 5030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 5030 2870 50  0001 C CNN
+	7    4980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E3138DB
+P 6980 2870
+F 0 "U?" H 7040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 7040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7030 2870 50  0001 C CNN
+	7    6980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E3185E1
+P 8980 2870
+F 0 "U?" H 9040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 9040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 9030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 9030 2870 50  0001 C CNN
+	7    8980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E31D788
+P 4980 4370
+F 0 "U?" H 5040 4520 50  0000 L CNN
+F 1 "74LVC1G97" H 5040 4220 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 5030 4370 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 5030 4370 50  0001 C CNN
+	7    4980 4370
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 7 1 5E320FF7
+P 2980 4370
+AR Path="/5CB7A8BC/5E320FF7" Ref="U?"  Part="7" 
+AR Path="/5CB7A8C3/5E320FF7" Ref="U?"  Part="7" 
+F 0 "U?" H 3040 4520 50  0000 L CNN
+F 1 "74LVC1G97" H 3040 4220 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3030 4370 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3030 4370 50  0001 C CNN
+	7    2980 4370
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

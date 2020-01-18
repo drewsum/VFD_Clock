@@ -20,13 +20,13 @@ Text GLabel 1850 2430 0    50   UnSpc ~ 0
 POS3P3_SNS_IN-
 $Comp
 L power:GND #PWR?
-U 1 1 5E0BDB8A
+U 1 1 5E2AA996
 P 5430 5420
-AR Path="/5B3E071A/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0652BA/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0BDB8A" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E0BDB8A" Ref="#PWR?"  Part="1" 
+AR Path="/5B3E071A/5E2AA996" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA996" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA996" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA996" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263C/5E2AA996" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5430 5170 50  0001 C CNN
 F 1 "GND" H 5430 5270 50  0000 C CNN
 F 2 "" H 5430 5420 50  0001 C CNN
@@ -45,12 +45,12 @@ Wire Wire Line
 Connection ~ 5430 5380
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5E0BDB95
+U 1 1 5E2AA998
 P 5430 4340
-AR Path="/5E0652BA/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0BDB95" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E0BDB95" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA998" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA998" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA998" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263C/5E2AA998" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5430 4190 50  0001 C CNN
 F 1 "+3.3V" H 5430 4480 50  0000 C CNN
 F 2 "" H 5430 4340 50  0001 C CNN
@@ -81,13 +81,13 @@ I2C_SDA
 NoConn ~ 5030 4840
 $Comp
 L Custom_Library:C_Custom C?
-U 1 1 5E0CB7AA
+U 1 1 5E2AA9A5
 P 5430 5990
-AR Path="/5B3E071A/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0652BA/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7AA" Ref="C?"  Part="1" 
-AR Path="/5E0F263C/5E0CB7AA" Ref="C?"  Part="1" 
+AR Path="/5B3E071A/5E2AA9A5" Ref="C?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A5" Ref="C?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A5" Ref="C?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9A5" Ref="C?"  Part="1" 
+AR Path="/5E0F263C/5E2AA9A5" Ref="C?"  Part="1" 
 F 0 "C?" H 5455 6090 50  0000 L CNN
 F 1 "0.1uF" H 5455 5890 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 5468 5840 50  0001 C CNN
@@ -101,12 +101,12 @@ F 7 "399-6856-1-ND" H 1520 -890 50  0001 C CNN "Digi-Key PN"
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5E0CB7B0
+U 1 1 5E2AA9A9
 P 5430 5840
-AR Path="/5E0652BA/5E0CB7B0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7B0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7B0" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E0CB7B0" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9A9" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9A9" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9A9" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263C/5E2AA9A9" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5430 5690 50  0001 C CNN
 F 1 "+3.3V" H 5430 5980 50  0000 C CNN
 F 2 "" H 5430 5840 50  0001 C CNN
@@ -116,12 +116,12 @@ F 3 "" H 5430 5840 50  0001 C CNN
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5E0CB7B6
+U 1 1 5E2AA9AC
 P 5430 6140
-AR Path="/5E0652BA/5E0CB7B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E0CB7B6" Ref="#PWR?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9AC" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9AC" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9AC" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263C/5E2AA9AC" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5430 5890 50  0001 C CNN
 F 1 "GND" H 5430 5990 50  0000 C CNN
 F 2 "" H 5430 6140 50  0001 C CNN
@@ -131,12 +131,12 @@ F 3 "" H 5430 6140 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:I2C_Address DOC?
-U 1 1 5E0CB7BC
+U 1 1 5E2AA9B2
 P 6330 5860
-AR Path="/5E0652BA/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0A0E29/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0DC084/5E0CB7BC" Ref="DOC?"  Part="1" 
-AR Path="/5E0F263C/5E0CB7BC" Ref="DOC?"  Part="1" 
+AR Path="/5E0652BA/5E2AA9B2" Ref="DOC?"  Part="1" 
+AR Path="/5E0A0E29/5E2AA9B2" Ref="DOC?"  Part="1" 
+AR Path="/5E0DC084/5E2AA9B2" Ref="DOC?"  Part="1" 
+AR Path="/5E0F263C/5E2AA9B2" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 6330 6110 60  0001 C CNN
 F 1 "askjdfasdf" H 5880 5860 60  0000 L CNN
 F 2 "" H 6330 6210 60  0001 C CNN

@@ -47,17 +47,6 @@ Wire Wire Line
 Wire Wire Line
 	6030 3900 5950 3900
 $Comp
-L Custom_Library:74LVC1G08_Power U?
-U 1 1 5B505EF8
-P 3040 4100
-F 0 "U?" H 2940 4250 50  0000 R CNN
-F 1 "74LVC1G08" H 3350 3990 50  0000 C CNN
-F 2 "" H 3040 4100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3040 4100 50  0001 C CNN
-	1    3040 4100
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5B50648E
 P 3040 4200
@@ -205,4 +194,15 @@ Text GLabel 5950 4200 2    50   Input ~ 0
 I2C_SCL
 Text GLabel 5950 4300 2    50   BiDi ~ 0
 I2C_SDA
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 1 1 5E32F245
+P 3040 4100
+F 0 "U?" H 3100 4250 50  0000 L CNN
+F 1 "74LVC1G97" H 3100 3950 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3090 4100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3090 4100 50  0001 C CNN
+	1    3040 4100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
