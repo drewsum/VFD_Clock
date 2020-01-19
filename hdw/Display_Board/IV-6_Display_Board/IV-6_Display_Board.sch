@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 9
+Sheet 1 12
 Title ""
 Date ""
 Rev ""
@@ -61,5 +61,23 @@ S 1640 3510 500  150
 U 5E3CBFDA
 F0 "Pushbuttons 3" 50
 F1 "Pushbuttons_3.sch" 50
+$EndSheet
+$Sheet
+S 1640 4210 500  150 
+U 5E3D888C
+F0 "Display Telemetry" 50
+F1 "Display_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 1640 4560 500  150 
+U 5E24454D
+F0 "Colons" 50
+F1 "Colons.sch" 50
+$EndSheet
+$Sheet
+S 1640 4910 500  150 
+U 5E249DA1
+F0 "Bulk Capacitance" 50
+F1 "Bulk_Capacitance.sch" 50
 $EndSheet
 $EndSCHEMATC
