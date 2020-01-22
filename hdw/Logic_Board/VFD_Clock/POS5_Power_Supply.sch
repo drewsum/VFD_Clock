@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 21 30
+Sheet 6 30
 Title "QI Charger"
 Date "2019-01-03"
 Rev "A"

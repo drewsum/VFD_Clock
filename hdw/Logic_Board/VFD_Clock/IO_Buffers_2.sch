@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 16 30
+Sheet 28 30
 Title ""
 Date ""
 Rev ""
@@ -891,15 +891,15 @@ Text GLabel 2810 4140 0    50   Output ~ 0
 Cap_Touch_Down
 Text GLabel 2810 4240 0    50   Output ~ 0
 Cap_Touch_Power
-Text GLabel 7910 3840 2    50   Input ~ 0
+Text GLabel 8210 3840 2    50   Input ~ 0
 Cap_Touch_Left_DSP
-Text GLabel 7910 3940 2    50   Input ~ 0
+Text GLabel 8210 3940 2    50   Input ~ 0
 Cap_Touch_Right_DSP
-Text GLabel 7910 4040 2    50   Input ~ 0
+Text GLabel 8210 4040 2    50   Input ~ 0
 Cap_Touch_Up_DSP
-Text GLabel 7910 4140 2    50   Input ~ 0
+Text GLabel 8210 4140 2    50   Input ~ 0
 Cap_Touch_Down_DSP
-Text GLabel 7910 4240 2    50   Input ~ 0
+Text GLabel 8210 4240 2    50   Input ~ 0
 Cap_Touch_Power_DSP
 $Comp
 L power:+3.3V #PWR?
@@ -916,5 +916,90 @@ F 2 "" H 2680 4980 50  0001 C CNN
 F 3 "" H 2680 4980 50  0001 C CNN
 	1    2680 4980
 	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E292B90
+P 8060 4240
+AR Path="/5CB0BC26/5E292B90" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E292B90" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 4120 50  0000 R CNN
+F 1 "1k" V 8060 4240 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 4240 50  0001 C CNN
+F 3 "" H 8060 4240 50  0001 C CNN
+F 4 "0603" V 8160 4240 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 4240 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 4240 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4640 60  0001 C CNN "Digi-Key PN"
+	1    8060 4240
+	0    1    1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E29587B
+P 8060 4140
+AR Path="/5CB0BC26/5E29587B" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E29587B" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 4020 50  0000 R CNN
+F 1 "1k" V 8060 4140 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 4140 50  0001 C CNN
+F 3 "" H 8060 4140 50  0001 C CNN
+F 4 "0603" V 8160 4140 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 4140 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 4140 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4540 60  0001 C CNN "Digi-Key PN"
+	1    8060 4140
+	0    1    1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E295A4D
+P 8060 4040
+AR Path="/5CB0BC26/5E295A4D" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E295A4D" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 3920 50  0000 R CNN
+F 1 "1k" V 8060 4040 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 4040 50  0001 C CNN
+F 3 "" H 8060 4040 50  0001 C CNN
+F 4 "0603" V 8160 4040 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 4040 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 4040 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4440 60  0001 C CNN "Digi-Key PN"
+	1    8060 4040
+	0    1    1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E295C06
+P 8060 3940
+AR Path="/5CB0BC26/5E295C06" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E295C06" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 3820 50  0000 R CNN
+F 1 "1k" V 8060 3940 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 3940 50  0001 C CNN
+F 3 "" H 8060 3940 50  0001 C CNN
+F 4 "0603" V 8160 3940 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 3940 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 3940 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4340 60  0001 C CNN "Digi-Key PN"
+	1    8060 3940
+	0    1    1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E295E67
+P 8060 3840
+AR Path="/5CB0BC26/5E295E67" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E295E67" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 3720 50  0000 R CNN
+F 1 "1k" V 8060 3840 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 3840 50  0001 C CNN
+F 3 "" H 8060 3840 50  0001 C CNN
+F 4 "0603" V 8160 3840 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 3840 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 3840 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4240 60  0001 C CNN "Digi-Key PN"
+	1    8060 3840
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

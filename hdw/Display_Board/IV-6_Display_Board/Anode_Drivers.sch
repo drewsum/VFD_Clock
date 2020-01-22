@@ -117,21 +117,21 @@ $EndComp
 Wire Wire Line
 	1800 2500 1590 2500
 Text GLabel 1290 2500 0    50   Input ~ 0
-drive_Anode_A
+drive_Anode_A_DSP
 Text GLabel 3620 2500 0    50   Input ~ 0
-drive_Anode_B
+drive_Anode_B_DSP
 Text GLabel 6030 2500 0    50   Input ~ 0
-drive_Anode_C
+drive_Anode_C_DSP
 Text GLabel 8360 2500 0    50   Input ~ 0
-drive_Anode_D
+drive_Anode_D_DSP
 Text GLabel 1290 4830 0    50   Input ~ 0
-drive_Anode_E
+drive_Anode_E_DSP
 Text GLabel 3620 4830 0    50   Input ~ 0
-drive_Anode_F
+drive_Anode_F_DSP
 Text GLabel 6030 4830 0    50   Input ~ 0
-drive_Anode_G
+drive_Anode_G_DSP
 Text GLabel 8360 4830 0    50   Input ~ 0
-drive_Anode_DP
+drive_Anode_DP_DSP
 Wire Wire Line
 	2540 2260 2480 2260
 Connection ~ 2480 2260
@@ -193,7 +193,7 @@ $EndComp
 Wire Wire Line
 	4130 2500 3920 2500
 Text GLabel 4870 2260 2    50   Output ~ 0
-Anode_B
+Anode_B_VFD
 Wire Wire Line
 	4870 2260 4810 2260
 Connection ~ 4810 2260
@@ -243,7 +243,7 @@ $EndComp
 Wire Wire Line
 	6540 2500 6330 2500
 Text GLabel 7280 2260 2    50   Output ~ 0
-Anode_C
+Anode_C_VFD
 Wire Wire Line
 	7280 2260 7220 2260
 Connection ~ 7220 2260
@@ -305,7 +305,7 @@ $EndComp
 Wire Wire Line
 	8870 2500 8660 2500
 Text GLabel 9610 2260 2    50   Output ~ 0
-Anode_D
+Anode_D_VFD
 Wire Wire Line
 	9610 2260 9550 2260
 Connection ~ 9550 2260
@@ -367,7 +367,7 @@ $EndComp
 Wire Wire Line
 	1800 4830 1590 4830
 Text GLabel 2540 4590 2    50   Output ~ 0
-Anode_E
+Anode_E_VFD
 Wire Wire Line
 	2540 4590 2480 4590
 Connection ~ 2480 4590
@@ -428,8 +428,6 @@ F 3 "" H 4810 5030 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4130 4830 3920 4830
-Text GLabel 4870 4590 2    50   Output ~ 0
-Anode_F
 Wire Wire Line
 	4870 4590 4810 4590
 Connection ~ 4810 4590
@@ -491,7 +489,7 @@ $EndComp
 Wire Wire Line
 	6540 4830 6330 4830
 Text GLabel 7280 4590 2    50   Output ~ 0
-Anode_G
+Anode_G_VFD
 Wire Wire Line
 	7280 4590 7220 4590
 Connection ~ 7220 4590
@@ -553,7 +551,7 @@ $EndComp
 Wire Wire Line
 	8870 4830 8660 4830
 Text GLabel 9610 4590 2    50   Output ~ 0
-Anode_DP
+Anode_DP_VFD
 Wire Wire Line
 	9610 4590 9550 4590
 Connection ~ 9550 4590
@@ -1037,7 +1035,7 @@ Wire Wire Line
 Wire Wire Line
 	9550 4590 9550 4450
 Text GLabel 2540 2260 2    50   Output ~ 0
-Anode_A
+Anode_A_VFD
 $Comp
 L Custom_Library:+60VAN #PWR?
 U 1 1 5E0985F3
@@ -1214,4 +1212,6 @@ F 3 "" H 2100 3870 50  0000 C CNN
 	1    2100 3870
 	1    0    0    -1  
 $EndComp
+Text GLabel 4870 4590 2    50   Output ~ 0
+Anode_F_VFD
 $EndSCHEMATC

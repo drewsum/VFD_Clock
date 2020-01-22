@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 19 30
+Sheet 17 30
 Title ""
 Date ""
 Rev ""
@@ -355,51 +355,6 @@ Wire Wire Line
 Wire Wire Line
 	6260 5190 6560 5190
 $Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E0562D1
-P 4960 5420
-AR Path="/5BAAE1F3/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5BF346B3/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5CAD2D97/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5CB7A8BC/5E0562D1" Ref="R?"  Part="1" 
-AR Path="/5E01BCC3/5E0562D1" Ref="R?"  Part="1" 
-F 0 "R?" H 4900 5420 50  0000 R CNN
-F 1 "10k" V 4960 5420 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 4960 5420 50  0001 C CNN
-F 3 "" H 4960 5420 50  0001 C CNN
-F 4 "0603" H 5030 5500 50  0000 L CNN "display_footprint"
-F 5 "1%" H 5030 5420 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 5030 5350 50  0000 L CNN "Wattage"
-F 7 "RMCF0603FT10K0CT-ND" H 4960 5420 50  0001 C CNN "Digi-Key PN"
-	1    4960 5420
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5E0562DB
-P 4960 5570
-AR Path="/5CB7A8BC/5E0562DB" Ref="#PWR?"  Part="1" 
-AR Path="/5E01BCC3/5E0562DB" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4960 5320 50  0001 C CNN
-F 1 "GND" H 4960 5420 50  0000 C CNN
-F 2 "" H 4960 5570 50  0001 C CNN
-F 3 "" H 4960 5570 50  0001 C CNN
-	1    4960 5570
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5210 5190 4960 5190
-Wire Wire Line
-	4960 5190 4960 5270
-Connection ~ 4960 5190
-Wire Wire Line
-	4660 5190 4960 5190
-Text GLabel 4660 5190 0    50   Input ~ 0
-MCU_SOSC_Enable
-$Comp
 L power:GND #PWR?
 U 1 1 5E0562EA
 P 6400 4790
@@ -504,7 +459,7 @@ $EndComp
 Wire Wire Line
 	5190 4290 5510 4290
 Wire Wire Line
-	5510 4290 5510 4890
+	5510 4290 5510 4750
 Wire Wire Line
 	5510 4290 6400 4290
 Wire Wire Line
@@ -537,4 +492,13 @@ F 4 "XC1751CT-ND" H 5510 5190 50  0001 C CNN "Digi-Key PN"
 	1    5510 5190
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5210 5190 5130 5190
+Wire Wire Line
+	5130 5190 5130 4750
+Wire Wire Line
+	5130 4750 5510 4750
+Connection ~ 5510 4750
+Wire Wire Line
+	5510 4750 5510 4890
 $EndSCHEMATC
