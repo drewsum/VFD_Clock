@@ -925,7 +925,6 @@ AR Path="/5BB844FD/5E3503EA" Ref="R?"  Part="1"
 AR Path="/5C1D5CB6/5E3503EA" Ref="R?"  Part="1" 
 AR Path="/5CB0BC26/5E3503EA" Ref="R?"  Part="1" 
 AR Path="/5E0CF7BC/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E3503EA" Ref="R?"  Part="1" 
 F 0 "R?" H 6100 1920 50  0000 R CNN
 F 1 "10k" V 6160 1920 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 6160 1920 50  0001 C CNN
@@ -948,7 +947,6 @@ AR Path="/5BB844FD/5E3503F4" Ref="R?"  Part="1"
 AR Path="/5C1D5CB6/5E3503F4" Ref="R?"  Part="1" 
 AR Path="/5CB0BC26/5E3503F4" Ref="R?"  Part="1" 
 AR Path="/5E0CF7BC/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E3503F4" Ref="R?"  Part="1" 
 F 0 "R?" H 6680 1920 50  0000 R CNN
 F 1 "10k" V 6740 1920 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 6740 1920 50  0001 C CNN
@@ -971,7 +969,6 @@ AR Path="/5BB844FD/5E356684" Ref="R?"  Part="1"
 AR Path="/5C1D5CB6/5E356684" Ref="R?"  Part="1" 
 AR Path="/5CB0BC26/5E356684" Ref="R?"  Part="1" 
 AR Path="/5E0CF7BC/5E356684" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E356684" Ref="R?"  Part="1" 
 F 0 "R?" H 3880 1920 50  0000 R CNN
 F 1 "10k" V 3940 1920 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 3940 1920 50  0001 C CNN
@@ -994,7 +991,6 @@ AR Path="/5BB844FD/5E35668E" Ref="R?"  Part="1"
 AR Path="/5C1D5CB6/5E35668E" Ref="R?"  Part="1" 
 AR Path="/5CB0BC26/5E35668E" Ref="R?"  Part="1" 
 AR Path="/5E0CF7BC/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E35668E" Ref="R?"  Part="1" 
 F 0 "R?" H 4460 1920 50  0000 R CNN
 F 1 "10k" V 4520 1920 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 4520 1920 50  0001 C CNN
