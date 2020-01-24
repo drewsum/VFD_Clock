@@ -176,4 +176,108 @@ Text GLabel 3460 4910 0    50   Input ~ 0
 MCU_SOSC
 Text Notes 2840 7060 0    50   ~ 0
 CONSIDER SWITCHING TO 252MHZ OPTION
+Text GLabel 3460 3260 0    50   BiDi ~ 0
+ICSPDAT
+Text GLabel 3460 3160 0    50   Input ~ 0
+ICSPCLK
+Text GLabel 3460 2310 0    50   BiDi ~ 0
+I2C_MCU_SDA
+Text GLabel 3460 2210 0    50   Output ~ 0
+I2C_MCU_SCL
+Text GLabel 1060 1670 0    50   Input ~ 0
+I2C_EN
+Text GLabel 610  1890 2    50   Output ~ 0
+POS12_PGOOD
+Text GLabel 1130 2090 0    50   Output ~ 0
+POS3P3_PGOOD
+Text GLabel 1090 2390 0    50   Input ~ 0
+POS5_RUN
+Text GLabel 1090 2580 0    50   Input ~ 0
+POS5_PGOOD
+Text GLabel 640  2830 2    50   Output ~ 0
+VBAT_PGOOD
+Text GLabel 640  3030 2    50   Output ~ 0
+BCKP_ON
+Text GLabel 1060 3190 0    50   Input ~ 0
+VBAT_Enable
+Text GLabel 1210 3410 0    50   Input ~ 0
+POS1P2_VFF_RUN
+Text GLabel 1230 3610 0    50   Output ~ 0
+POS1P2_VFF_PGOOD
+Text GLabel 1200 3830 0    50   Input ~ 0
+POS60_VAN_RUN
+Text GLabel 590  1480 2    50   Output ~ 0
+POS60_VAN_PGOOD
+Text GLabel 1260 1190 0    50   Input ~ 0
+MCU_POSC_Enable
+Text GLabel 1190 4150 0    50   Input ~ 0
+Buzzer_Enable
+Text GLabel 1180 4370 0    50   Input ~ 0
+Heartbeat_LED
+Text GLabel 1240 4590 0    50   Input ~ 0
+Analog_Error_LED
+Text GLabel 1060 4910 0    50   Input ~ 0
+Reset_LED
+Text GLabel 1080 5140 0    50   Input ~ 0
+CPU_Exception_LED
+Text GLabel 1010 5300 0    50   Input ~ 0
+USB_Error_LED
+Text GLabel 1030 5460 0    50   Input ~ 0
+Other_Error_LED
+Text GLabel 990  5710 0    50   Input ~ 0
+I2C_Error_LED
+Text GLabel 7460 2410 2    50   Input ~ 0
+USB_UART_RX
+Text GLabel 7460 2310 2    50   Output ~ 0
+USB_UART_TX
+Text GLabel 1070 5910 0    50   Output ~ 0
+~USB_Detect
+Text GLabel 1220 6440 0    50   Input ~ 0
+Anode_A
+Text GLabel 1220 6640 0    50   Input ~ 0
+Anode_C
+Text GLabel 1220 6740 0    50   Input ~ 0
+Anode_D
+Text GLabel 1220 6840 0    50   Input ~ 0
+Anode_E
+Text GLabel 1220 6940 0    50   Input ~ 0
+Anode_F
+Text GLabel 1220 7040 0    50   Input ~ 0
+Anode_G
+Text GLabel 1220 7140 0    50   Input ~ 0
+Anode_DP
+Text GLabel 920  7340 0    40   Input ~ 0
+~IO_Level_Shift_Enable
+Text GLabel 2080 6480 0    50   Input ~ 0
+Grid_0
+Text GLabel 2080 6580 0    50   Input ~ 0
+Grid_1
+Text GLabel 2080 6680 0    50   Input ~ 0
+Grid_2
+Text GLabel 2080 6780 0    50   Input ~ 0
+Grid_3
+Text GLabel 2080 6880 0    50   Input ~ 0
+Grid_4
+Text GLabel 2080 6980 0    50   Input ~ 0
+Grid_5
+Text GLabel 2080 7080 0    50   Input ~ 0
+Colon_0
+Text GLabel 2080 7180 0    50   Input ~ 0
+Colon_1
+Text GLabel 1510 7560 0    50   Input ~ 0
+I2C_DSP_EN
+Text GLabel 2500 7420 0    50   Output ~ 0
+Cap_Touch_Left
+Text GLabel 2500 7520 0    50   Output ~ 0
+Cap_Touch_Right
+Text GLabel 2500 7620 0    50   Output ~ 0
+Cap_Touch_Up
+Text GLabel 2500 7720 0    50   Output ~ 0
+Cap_Touch_Down
+Text GLabel 2500 7820 0    50   Output ~ 0
+Cap_Touch_Power
+Text GLabel 3590 7680 0    50   Output ~ 0
+Display_Detect
+Text GLabel 1220 6540 0    50   Input ~ 0
+Anode_B
 $EndSCHEMATC

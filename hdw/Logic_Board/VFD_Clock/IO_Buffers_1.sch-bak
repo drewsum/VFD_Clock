@@ -377,37 +377,37 @@ Wire Wire Line
 	4220 5020 4220 4010
 Connection ~ 5840 5020
 Text GLabel 3850 1720 0    50   Input ~ 0
-Anode_A
+Anode_A_MCU
 Text GLabel 3850 1820 0    50   Input ~ 0
-Anode_B
+Anode_B_MCU
 Text GLabel 3850 1920 0    50   Input ~ 0
-Anode_C
+Anode_C_MCU
 Text GLabel 3850 2020 0    50   Input ~ 0
-Anode_D
+Anode_D_MCU
 Text GLabel 3850 2120 0    50   Input ~ 0
-Anode_E
+Anode_E_MCU
 Text GLabel 3850 2220 0    50   Input ~ 0
-Anode_F
+Anode_F_MCU
 Text GLabel 3850 2320 0    50   Input ~ 0
-Anode_G
+Anode_G_MCU
 Text GLabel 3850 2420 0    50   Input ~ 0
-Anode_DP
+Anode_DP_MCU
 Text GLabel 3850 4120 0    50   Input ~ 0
-Grid_0
+Grid_0_MCU
 Text GLabel 3850 4220 0    50   Input ~ 0
-Grid_1
+Grid_1_MCU
 Text GLabel 3850 4320 0    50   Input ~ 0
-Grid_2
+Grid_2_MCU
 Text GLabel 3850 4420 0    50   Input ~ 0
-Grid_3
+Grid_3_MCU
 Text GLabel 3850 4520 0    50   Input ~ 0
-Grid_4
+Grid_4_MCU
 Text GLabel 3850 4620 0    50   Input ~ 0
-Grid_5
+Grid_5_MCU
 Text GLabel 3850 4720 0    50   Input ~ 0
-Colon_0
+Colon_0_MCU
 Text GLabel 3850 4820 0    50   Input ~ 0
-Colon_1
+Colon_1_MCU
 Text GLabel 3550 2620 0    40   Input ~ 0
 ~IO_Level_Shift_Enable
 Wire Wire Line

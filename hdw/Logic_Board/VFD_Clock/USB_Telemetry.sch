@@ -125,36 +125,6 @@ F 3 "" H 5110 5840 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
-U 1 1 5E200B06
-P 5110 2500
-AR Path="/5E0652BA/5E200B06" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E200B06" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E200B06" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5110 2250 50  0001 C CNN
-F 1 "GND" H 5110 2350 50  0000 C CNN
-F 2 "" H 5110 2500 50  0001 C CNN
-F 3 "" H 5110 2500 50  0001 C CNN
-	1    5110 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E200B0C
-P 5110 1700
-AR Path="/5E0652BA/5E200B0C" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E200B0C" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E200B0C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5110 1550 50  0001 C CNN
-F 1 "+3.3V" H 5110 1840 50  0000 C CNN
-F 2 "" H 5110 1700 50  0001 C CNN
-F 3 "" H 5110 1700 50  0001 C CNN
-	1    5110 1700
-	1    0    0    -1  
-$EndComp
-Text GLabel 5510 2000 2    50   Input ~ 0
-I2C_SCL
-$Comp
 L Custom_Library:C_Custom C?
 U 1 1 5E200B17
 P 5110 3070
@@ -173,36 +143,6 @@ F 7 "399-6856-1-ND" H 1200 -3810 50  0001 C CNN "Digi-Key PN"
 	1    5110 3070
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E200B1D
-P 5110 2920
-AR Path="/5E0652BA/5E200B1D" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E200B1D" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E200B1D" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5110 2770 50  0001 C CNN
-F 1 "+3.3V" H 5110 3060 50  0000 C CNN
-F 2 "" H 5110 2920 50  0001 C CNN
-F 3 "" H 5110 2920 50  0001 C CNN
-	1    5110 2920
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5E200B23
-P 5110 3220
-AR Path="/5E0652BA/5E200B23" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E200B23" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E200B23" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5110 2970 50  0001 C CNN
-F 1 "GND" H 5110 3070 50  0000 C CNN
-F 2 "" H 5110 3220 50  0001 C CNN
-F 3 "" H 5110 3220 50  0001 C CNN
-	1    5110 3220
-	1    0    0    -1  
-$EndComp
-Text GLabel 5510 1900 2    50   BiDi ~ 0
-I2C_SDA
 $Comp
 L Custom_Library:I2C_Address DOC?
 U 1 1 5E200B2A
@@ -270,73 +210,98 @@ Wire Wire Line
 Wire Wire Line
 	4540 2320 4230 2320
 Connection ~ 4230 2320
-Text GLabel 5510 2200 2    50   BiDi ~ 0
-I2C_SDA
+Text GLabel 5510 2000 2    50   Input ~ 0
+I2C_USB_SCL
+Text GLabel 5510 1900 2    50   BiDi ~ 0
+I2C_USB_SDA
 $Comp
-L power:GND #PWR?
-U 1 1 5E34368C
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E42C648
+P 5110 1700
+F 0 "#PWR?" H 5110 1550 50  0001 C CNN
+F 1 "+5V_USB" H 5110 1840 50  0000 C CNN
+F 2 "" H 5110 1700 50  0001 C CNN
+F 3 "" H 5110 1700 50  0001 C CNN
+	1    5110 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E42CB13
+P 5110 2920
+F 0 "#PWR?" H 5110 2770 50  0001 C CNN
+F 1 "+5V_USB" H 5110 3060 50  0000 C CNN
+F 2 "" H 5110 2920 50  0001 C CNN
+F 3 "" H 5110 2920 50  0001 C CNN
+	1    5110 2920
+	1    0    0    -1  
+$EndComp
+Text GLabel 5510 2200 2    50   BiDi ~ 0
+I2C_USB_SDA
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E42F98E
+P 5110 2500
+F 0 "#PWR?" H 5110 2250 50  0001 C CNN
+F 1 "GND_USB" H 5110 2350 50  0000 C CNN
+F 2 "" H 5110 2500 50  0001 C CNN
+F 3 "" H 5110 2500 50  0001 C CNN
+	1    5110 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E42FE27
+P 5110 3220
+F 0 "#PWR?" H 5110 2970 50  0001 C CNN
+F 1 "GND_USB" H 5110 3070 50  0000 C CNN
+F 2 "" H 5110 3220 50  0001 C CNN
+F 3 "" H 5110 3220 50  0001 C CNN
+	1    5110 3220
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E4302E4
 P 5510 2300
-AR Path="/5E0652BA/5E34368C" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E34368C" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E34368C" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5510 2050 50  0001 C CNN
-F 1 "GND" V 5510 2150 50  0000 R CNN
+F 1 "GND_USB" V 5510 2150 50  0000 R CNN
 F 2 "" H 5510 2300 50  0001 C CNN
 F 3 "" H 5510 2300 50  0001 C CNN
 	1    5510 2300
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+3.3V #PWR?
-U 1 1 5E37A693
-P 5510 4840
-AR Path="/5E0652BA/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9112/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E164364/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E2843EF/5E37A693" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E37A693" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5510 4690 50  0001 C CNN
-F 1 "+3.3V" V 5510 4980 50  0000 L CNN
-F 2 "" H 5510 4840 50  0001 C CNN
-F 3 "" H 5510 4840 50  0001 C CNN
-	1    5510 4840
-	0    1    -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E37A69F
-P 5510 4740
-AR Path="/5E0652BA/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E0A0E29/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F263C/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9112/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E164364/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E2843EF/5E37A69F" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E37A69F" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5510 4590 50  0001 C CNN
-F 1 "+3.3V" V 5510 4880 50  0000 L CNN
-F 2 "" H 5510 4740 50  0001 C CNN
-F 3 "" H 5510 4740 50  0001 C CNN
-	1    5510 4740
-	0    1    -1   0   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5E37A699
+L Custom_Library:GND_USB #PWR?
+U 1 1 5E43080C
 P 5510 4640
-AR Path="/5E0A0E29/5E37A699" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC084/5E37A699" Ref="#PWR?"  Part="1" 
-AR Path="/5E164364/5E37A699" Ref="#PWR?"  Part="1" 
-AR Path="/5E052856/5E37A699" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5510 4390 50  0001 C CNN
-F 1 "GND" V 5510 4490 50  0000 R CNN
+F 1 "GND_USB" V 5510 4490 50  0000 R CNN
 F 2 "" H 5510 4640 50  0001 C CNN
 F 3 "" H 5510 4640 50  0001 C CNN
 	1    5510 4640
-	0    -1   1    0   
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E431507
+P 5510 4740
+F 0 "#PWR?" H 5510 4590 50  0001 C CNN
+F 1 "+5V_USB" V 5510 4880 50  0000 L CNN
+F 2 "" H 5510 4740 50  0001 C CNN
+F 3 "" H 5510 4740 50  0001 C CNN
+	1    5510 4740
+	0    1    1    0   
+$EndComp
+$Comp
+L Custom_Library:+5V_USB #PWR?
+U 1 1 5E431E8C
+P 5510 4840
+F 0 "#PWR?" H 5510 4690 50  0001 C CNN
+F 1 "+5V_USB" V 5510 4980 50  0000 L CNN
+F 2 "" H 5510 4840 50  0001 C CNN
+F 3 "" H 5510 4840 50  0001 C CNN
+	1    5510 4840
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

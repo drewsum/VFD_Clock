@@ -26,21 +26,21 @@ F 3 "" H 2340 1850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 2440 1700 0    50   UnSpc ~ 0
-Anode_B
+Anode_B_VFD
 Text GLabel 2440 1850 0    50   UnSpc ~ 0
-Anode_A
+Anode_A_VFD
 Text GLabel 2440 2000 0    50   UnSpc ~ 0
-Anode_G
+Anode_G_VFD
 Text GLabel 2440 2150 0    50   UnSpc ~ 0
-Anode_F
+Anode_F_VFD
 Text GLabel 2440 2300 0    50   UnSpc ~ 0
-Anode_E
+Anode_E_VFD
 Text GLabel 2440 2450 0    50   UnSpc ~ 0
-Anode_D
+Anode_D_VFD
 Text GLabel 2440 2600 0    50   UnSpc ~ 0
-Anode_C
+Anode_C_VFD
 Text GLabel 2440 2750 0    50   UnSpc ~ 0
-Anode_DP
+Anode_DP_VFD
 $Comp
 L power:GND #PWR?
 U 1 1 5E093AE1
@@ -64,7 +64,7 @@ F 3 "" H 3290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 2890 3250 3    50   UnSpc ~ 0
-Grid_0
+Grid_0_VFD
 $Comp
 L vfd:IV-6 VFD?
 U 1 1 5E09E42E
@@ -76,22 +76,6 @@ F 3 "" H 4340 1850 60  0001 C CNN
 	1    4340 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 4440 1700 0    50   UnSpc ~ 0
-Anode_B
-Text GLabel 4440 1850 0    50   UnSpc ~ 0
-Anode_A
-Text GLabel 4440 2000 0    50   UnSpc ~ 0
-Anode_G
-Text GLabel 4440 2150 0    50   UnSpc ~ 0
-Anode_F
-Text GLabel 4440 2300 0    50   UnSpc ~ 0
-Anode_E
-Text GLabel 4440 2450 0    50   UnSpc ~ 0
-Anode_D
-Text GLabel 4440 2600 0    50   UnSpc ~ 0
-Anode_C
-Text GLabel 4440 2750 0    50   UnSpc ~ 0
-Anode_DP
 $Comp
 L power:GND #PWR?
 U 1 1 5E09E43C
@@ -115,7 +99,7 @@ F 3 "" H 5290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 4890 3250 3    50   UnSpc ~ 0
-Grid_1
+Grid_1_VFD
 $Comp
 L vfd:IV-6 VFD?
 U 1 1 5E09E57F
@@ -127,22 +111,6 @@ F 3 "" H 6340 1850 60  0001 C CNN
 	1    6340 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 6440 1700 0    50   UnSpc ~ 0
-Anode_B
-Text GLabel 6440 1850 0    50   UnSpc ~ 0
-Anode_A
-Text GLabel 6440 2000 0    50   UnSpc ~ 0
-Anode_G
-Text GLabel 6440 2150 0    50   UnSpc ~ 0
-Anode_F
-Text GLabel 6440 2300 0    50   UnSpc ~ 0
-Anode_E
-Text GLabel 6440 2450 0    50   UnSpc ~ 0
-Anode_D
-Text GLabel 6440 2600 0    50   UnSpc ~ 0
-Anode_C
-Text GLabel 6440 2750 0    50   UnSpc ~ 0
-Anode_DP
 $Comp
 L power:GND #PWR?
 U 1 1 5E09E591
@@ -166,7 +134,7 @@ F 3 "" H 7290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 6890 3250 3    50   UnSpc ~ 0
-Grid_2
+Grid_2_VFD
 $Comp
 L vfd:IV-6 VFD?
 U 1 1 5E0A247C
@@ -178,22 +146,6 @@ F 3 "" H 2340 4350 60  0001 C CNN
 	1    2340 4350
 	1    0    0    -1  
 $EndComp
-Text GLabel 2440 4200 0    50   UnSpc ~ 0
-Anode_B
-Text GLabel 2440 4350 0    50   UnSpc ~ 0
-Anode_A
-Text GLabel 2440 4500 0    50   UnSpc ~ 0
-Anode_G
-Text GLabel 2440 4650 0    50   UnSpc ~ 0
-Anode_F
-Text GLabel 2440 4800 0    50   UnSpc ~ 0
-Anode_E
-Text GLabel 2440 4950 0    50   UnSpc ~ 0
-Anode_D
-Text GLabel 2440 5100 0    50   UnSpc ~ 0
-Anode_C
-Text GLabel 2440 5250 0    50   UnSpc ~ 0
-Anode_DP
 $Comp
 L power:GND #PWR?
 U 1 1 5E0A248E
@@ -217,7 +169,7 @@ F 3 "" H 3290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 2890 5750 3    50   UnSpc ~ 0
-Grid_3
+Grid_3_VFD
 $Comp
 L vfd:IV-6 VFD?
 U 1 1 5E0A24A3
@@ -229,22 +181,6 @@ F 3 "" H 4340 4350 60  0001 C CNN
 	1    4340 4350
 	1    0    0    -1  
 $EndComp
-Text GLabel 4440 4200 0    50   UnSpc ~ 0
-Anode_B
-Text GLabel 4440 4350 0    50   UnSpc ~ 0
-Anode_A
-Text GLabel 4440 4500 0    50   UnSpc ~ 0
-Anode_G
-Text GLabel 4440 4650 0    50   UnSpc ~ 0
-Anode_F
-Text GLabel 4440 4800 0    50   UnSpc ~ 0
-Anode_E
-Text GLabel 4440 4950 0    50   UnSpc ~ 0
-Anode_D
-Text GLabel 4440 5100 0    50   UnSpc ~ 0
-Anode_C
-Text GLabel 4440 5250 0    50   UnSpc ~ 0
-Anode_DP
 $Comp
 L power:GND #PWR?
 U 1 1 5E0A24B5
@@ -268,7 +204,7 @@ F 3 "" H 5290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 4890 5750 3    50   UnSpc ~ 0
-Grid_4
+Grid_4_VFD
 $Comp
 L vfd:IV-6 VFD?
 U 1 1 5E0A24CA
@@ -280,22 +216,6 @@ F 3 "" H 6340 4350 60  0001 C CNN
 	1    6340 4350
 	1    0    0    -1  
 $EndComp
-Text GLabel 6440 4200 0    50   UnSpc ~ 0
-Anode_B
-Text GLabel 6440 4350 0    50   UnSpc ~ 0
-Anode_A
-Text GLabel 6440 4500 0    50   UnSpc ~ 0
-Anode_G
-Text GLabel 6440 4650 0    50   UnSpc ~ 0
-Anode_F
-Text GLabel 6440 4800 0    50   UnSpc ~ 0
-Anode_E
-Text GLabel 6440 4950 0    50   UnSpc ~ 0
-Anode_D
-Text GLabel 6440 5100 0    50   UnSpc ~ 0
-Anode_C
-Text GLabel 6440 5250 0    50   UnSpc ~ 0
-Anode_DP
 $Comp
 L power:GND #PWR?
 U 1 1 5E0A24DC
@@ -319,5 +239,85 @@ F 3 "" H 7290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 6890 5750 3    50   UnSpc ~ 0
-Grid_5
+Grid_5_VFD
+Text GLabel 2440 4200 0    50   UnSpc ~ 0
+Anode_B_VFD
+Text GLabel 2440 4350 0    50   UnSpc ~ 0
+Anode_A_VFD
+Text GLabel 2440 4500 0    50   UnSpc ~ 0
+Anode_G_VFD
+Text GLabel 2440 4650 0    50   UnSpc ~ 0
+Anode_F_VFD
+Text GLabel 2440 4800 0    50   UnSpc ~ 0
+Anode_E_VFD
+Text GLabel 2440 4950 0    50   UnSpc ~ 0
+Anode_D_VFD
+Text GLabel 2440 5100 0    50   UnSpc ~ 0
+Anode_C_VFD
+Text GLabel 2440 5250 0    50   UnSpc ~ 0
+Anode_DP_VFD
+Text GLabel 4440 1700 0    50   UnSpc ~ 0
+Anode_B_VFD
+Text GLabel 4440 1850 0    50   UnSpc ~ 0
+Anode_A_VFD
+Text GLabel 4440 2000 0    50   UnSpc ~ 0
+Anode_G_VFD
+Text GLabel 4440 2150 0    50   UnSpc ~ 0
+Anode_F_VFD
+Text GLabel 4440 2300 0    50   UnSpc ~ 0
+Anode_E_VFD
+Text GLabel 4440 2450 0    50   UnSpc ~ 0
+Anode_D_VFD
+Text GLabel 4440 2600 0    50   UnSpc ~ 0
+Anode_C_VFD
+Text GLabel 4440 2750 0    50   UnSpc ~ 0
+Anode_DP_VFD
+Text GLabel 4440 4200 0    50   UnSpc ~ 0
+Anode_B_VFD
+Text GLabel 4440 4350 0    50   UnSpc ~ 0
+Anode_A_VFD
+Text GLabel 4440 4500 0    50   UnSpc ~ 0
+Anode_G_VFD
+Text GLabel 4440 4650 0    50   UnSpc ~ 0
+Anode_F_VFD
+Text GLabel 4440 4800 0    50   UnSpc ~ 0
+Anode_E_VFD
+Text GLabel 4440 4950 0    50   UnSpc ~ 0
+Anode_D_VFD
+Text GLabel 4440 5100 0    50   UnSpc ~ 0
+Anode_C_VFD
+Text GLabel 4440 5250 0    50   UnSpc ~ 0
+Anode_DP_VFD
+Text GLabel 6440 1700 0    50   UnSpc ~ 0
+Anode_B_VFD
+Text GLabel 6440 1850 0    50   UnSpc ~ 0
+Anode_A_VFD
+Text GLabel 6440 2000 0    50   UnSpc ~ 0
+Anode_G_VFD
+Text GLabel 6440 2150 0    50   UnSpc ~ 0
+Anode_F_VFD
+Text GLabel 6440 2300 0    50   UnSpc ~ 0
+Anode_E_VFD
+Text GLabel 6440 2450 0    50   UnSpc ~ 0
+Anode_D_VFD
+Text GLabel 6440 2600 0    50   UnSpc ~ 0
+Anode_C_VFD
+Text GLabel 6440 2750 0    50   UnSpc ~ 0
+Anode_DP_VFD
+Text GLabel 6440 4200 0    50   UnSpc ~ 0
+Anode_B_VFD
+Text GLabel 6440 4350 0    50   UnSpc ~ 0
+Anode_A_VFD
+Text GLabel 6440 4500 0    50   UnSpc ~ 0
+Anode_G_VFD
+Text GLabel 6440 4650 0    50   UnSpc ~ 0
+Anode_F_VFD
+Text GLabel 6440 4800 0    50   UnSpc ~ 0
+Anode_E_VFD
+Text GLabel 6440 4950 0    50   UnSpc ~ 0
+Anode_D_VFD
+Text GLabel 6440 5100 0    50   UnSpc ~ 0
+Anode_C_VFD
+Text GLabel 6440 5250 0    50   UnSpc ~ 0
+Anode_DP_VFD
 $EndSCHEMATC

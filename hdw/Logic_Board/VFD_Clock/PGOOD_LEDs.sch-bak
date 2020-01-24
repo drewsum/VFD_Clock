@@ -920,4 +920,147 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3030 4370 50  0001 C CN
 	7    2980 4370
 	1    0    0    -1  
 $EndComp
+Text GLabel 6680 4370 0    50   Input ~ 0
+VBAT_PGOOD
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E3A3719
+P 6870 3680
+AR Path="/5BAAE1F3/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3719" Ref="C?"  Part="1" 
+F 0 "C?" H 6895 3780 50  0000 L CNN
+F 1 "0.1uF" H 6895 3580 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 6908 3530 50  0001 C CNN
+F 3 "" H 6895 3780 50  0001 C CNN
+F 4 "311-1344-1-ND" H 7295 4180 60  0001 C CNN "Digi-Key PN"
+F 5 "0603" H 6720 3780 50  0000 R CNN "display_footprint"
+F 6 "50V" H 6720 3680 50  0000 R CNN "Voltage"
+F 7 "X7R" H 6720 3580 50  0000 R CNN "Dielectric"
+	1    6870 3680
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E3A3724
+P 7550 4100
+AR Path="/5BB844FD/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3724" Ref="D?"  Part="1" 
+F 0 "D?" V 7589 3983 50  0000 R CNN
+F 1 "Red" V 7498 3983 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 7550 4100 50  0001 C CNN
+F 3 "~" H 7550 4100 50  0001 C CNN
+	1    7550 4100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7230 4370 7550 4370
+Wire Wire Line
+	7550 4370 7550 4250
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3A3734
+P 7550 3800
+AR Path="/5BAAE1F3/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3734" Ref="R?"  Part="1" 
+F 0 "R?" H 7490 3800 50  0000 R CNN
+F 1 "1k" V 7550 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7550 3800 50  0001 C CNN
+F 3 "" H 7550 3800 50  0001 C CNN
+F 4 "0603" H 7620 3880 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7620 3800 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 7620 3730 50  0000 L CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 7850 4200 60  0001 C CNN "Digi-Key PN"
+	1    7550 3800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E3A373E
+P 7550 3650
+AR Path="/5CB7A8BC/5E3A373E" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A373E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7550 3500 50  0001 C CNN
+F 1 "+3.3V" H 7550 3790 50  0000 C CNN
+F 2 "" H 7550 3650 50  0001 C CNN
+F 3 "" H 7550 3650 50  0001 C CNN
+	1    7550 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E3A3748
+P 6980 4270
+AR Path="/5CB7A8BC/5E3A3748" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3748" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6980 4120 50  0001 C CNN
+F 1 "+3.3V" H 6980 4410 50  0000 C CNN
+F 2 "" H 6980 4270 50  0001 C CNN
+F 3 "" H 6980 4270 50  0001 C CNN
+	1    6980 4270
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E3A3752
+P 6870 3530
+AR Path="/5CB7A8BC/5E3A3752" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3752" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6870 3380 50  0001 C CNN
+F 1 "+3.3V" H 6870 3670 50  0000 C CNN
+F 2 "" H 6870 3530 50  0001 C CNN
+F 3 "" H 6870 3530 50  0001 C CNN
+	1    6870 3530
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3A375C
+P 6980 4470
+AR Path="/5CB7A8BC/5E3A375C" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A375C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6980 4220 50  0001 C CNN
+F 1 "GND" H 6980 4320 50  0000 C CNN
+F 2 "" H 6980 4470 50  0001 C CNN
+F 3 "" H 6980 4470 50  0001 C CNN
+	1    6980 4470
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3A3766
+P 6870 3830
+AR Path="/5CB7A8BC/5E3A3766" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3766" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6870 3580 50  0001 C CNN
+F 1 "GND" H 6870 3680 50  0000 C CNN
+F 2 "" H 6870 3830 50  0001 C CNN
+F 3 "" H 6870 3830 50  0001 C CNN
+	1    6870 3830
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power U?
+U 8 1 5E3B8925
+P 6980 4370
+F 0 "U?" H 7040 4520 50  0000 L CNN
+F 1 "74LVC1G97" H 7040 4220 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7030 4370 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7030 4370 50  0001 C CNN
+	8    6980 4370
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

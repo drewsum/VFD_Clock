@@ -1006,4 +1006,31 @@ F 7 "DNP" H 4690 1770 50  0000 C CNN "Digi-Key PN"
 	1    4520 1920
 	-1   0    0    -1  
 $EndComp
+Wire Wire Line
+	7910 4340 6620 4340
+Text GLabel 8210 4340 2    50   Input ~ 0
+Display_Detect_DSP
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E442D14
+P 8060 4340
+AR Path="/5CB0BC26/5E442D14" Ref="R?"  Part="1" 
+AR Path="/5CC31B3E/5E442D14" Ref="R?"  Part="1" 
+F 0 "R?" V 8010 4220 50  0000 R CNN
+F 1 "1k" V 8060 4340 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8060 4340 50  0001 C CNN
+F 3 "" H 8060 4340 50  0001 C CNN
+F 4 "0603" V 8160 4340 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8260 4340 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8360 4340 50  0001 C CNN "Wattage"
+F 7 "RMCF0603FT1K00CT-ND" H 8360 4740 60  0001 C CNN "Digi-Key PN"
+	1    8060 4340
+	0    1    1    0   
+$EndComp
+Connection ~ 6620 4340
+Text GLabel 2810 4340 0    50   Output ~ 0
+Display_Detect
+Wire Wire Line
+	2810 4340 4100 4340
+Connection ~ 4100 4340
 $EndSCHEMATC

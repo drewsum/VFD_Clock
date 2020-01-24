@@ -319,7 +319,7 @@ Wire Wire Line
 Wire Wire Line
 	3820 6350 3820 6430
 Text GLabel 3740 6350 0    50   Input ~ 0
-VBAT_EN
+VBAT_Enable
 Wire Wire Line
 	3740 6350 3820 6350
 Connection ~ 3820 6350
@@ -370,7 +370,7 @@ F 0 "BT?" H 2230 6430 50  0000 L CNN
 F 1 "CR2032" H 2230 6330 50  0000 L CNN
 F 2 "Battery_Holders:Keystone_1058_1x2032-CoinCell" V 2130 6390 50  0001 C CNN
 F 3 "~" V 2130 6390 50  0001 C CNN
-F 4 "DNP" H 2310 6250 50  0000 C CNN "CFG"
+F 4 "DNP" H 2310 6240 50  0000 C CNN "Digi-Key PN"
 	1    2130 6330
 	1    0    0    -1  
 $EndComp
@@ -522,7 +522,7 @@ V1 to V2 switchover\n@ POS3P3 = +3.0V
 Text Notes 1380 5100 0    50   ~ 0
 VBAT undervoltage\n@ 2.5V
 Text GLabel 5600 4670 2    50   Output ~ 0
-BCKUP_ON
+BCKP_ON
 Wire Wire Line
 	5600 4670 5120 4670
 Connection ~ 5120 4670
@@ -865,22 +865,6 @@ F 7 "P10.0KHCT-ND" H 330 -1450 50  0001 C CNN "Digi-Key PN"
 	1    4420 4140
 	-1   0    0    1   
 $EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E30F0F6
-P 7180 1330
-F 0 "R?" V 7080 1330 50  0000 C CNN
-F 1 "0" V 7180 1330 50  0000 C CNN
-F 2 "" H 7180 1330 50  0001 C CNN
-F 3 "" H 7180 1330 50  0001 C CNN
-F 4 "0805" V 7280 1330 50  0000 C CNN "display_footprint"
-F 5 "1%" V 7380 1330 50  0000 C CNN "Tolerance"
-F 6 "1/10W" V 7480 1330 50  0000 C CNN "Wattage"
-F 7 "RMCF0805ZT0R00CT-ND" H 7480 1730 60  0001 C CNN "Digi-Key PN"
-F 8 "DNP" V 7010 1330 50  0000 C CNN "CFG"
-	1    7180 1330
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7030 1330 5560 1330
 Wire Wire Line
@@ -900,8 +884,7 @@ F 3 "" H 3450 1330 50  0001 C CNN
 F 4 "0805" V 3550 1330 50  0000 C CNN "display_footprint"
 F 5 "1%" V 3650 1330 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 3750 1330 50  0000 C CNN "Wattage"
-F 7 "RMCF0805ZT0R00CT-ND" H 3750 1730 60  0001 C CNN "Digi-Key PN"
-F 8 "DNP" V 3280 1330 50  0000 C CNN "CFG"
+F 7 "DNP" V 3260 1330 60  0000 C CNN "Digi-Key PN"
 	1    3450 1330
 	0    -1   -1   0   
 $EndComp
@@ -920,8 +903,7 @@ F 0 "BT?" H 1320 6430 50  0000 L CNN
 F 1 "BR-2/3AE5SPN" H 1320 6330 50  0000 L CNN
 F 2 "Custom Footprints Library:BR-2_3AE5SPN" V 1220 6390 50  0001 C CNN
 F 3 "~" V 1220 6390 50  0001 C CNN
-F 4 "DNP" H 1400 6250 50  0000 C CNN "CFG"
-F 5 "P226-ND" H 1220 6330 50  0001 C CNN "Digi-Key PN"
+F 4 "DNP" H 1400 6250 50  0000 C CNN "Digi-Key PN"
 	1    1220 6330
 	1    0    0    -1  
 $EndComp
@@ -945,4 +927,19 @@ Wire Wire Line
 Wire Wire Line
 	1220 6050 1220 6130
 Connection ~ 2130 6050
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3DFB0F
+P 7180 1330
+F 0 "R?" V 7080 1330 50  0000 C CNN
+F 1 "0" V 7180 1330 50  0000 C CNN
+F 2 "" H 7180 1330 50  0001 C CNN
+F 3 "" H 7180 1330 50  0001 C CNN
+F 4 "0805" V 7280 1330 50  0000 C CNN "display_footprint"
+F 5 "1%" V 7380 1330 50  0000 C CNN "Tolerance"
+F 6 "1/10W" V 7480 1330 50  0000 C CNN "Wattage"
+F 7 "DNP" V 6990 1330 60  0000 C CNN "Digi-Key PN"
+	1    7180 1330
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

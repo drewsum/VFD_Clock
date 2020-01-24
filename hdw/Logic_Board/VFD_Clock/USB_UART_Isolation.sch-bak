@@ -14,10 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 2830 1700 0    50   Output ~ 0
-USB_UART_RX
-Text GLabel 2830 1800 0    50   Input ~ 0
-USB_UART_TX
 Text GLabel 8290 1700 2    50   Input ~ 0
 USB_UART_RX_ISO
 Text GLabel 8290 1800 2    50   Output ~ 0
@@ -754,4 +750,8 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6690 6200 50  0001 C CN
 	7    6640 6200
 	-1   0    0    -1  
 $EndComp
+Text GLabel 2830 1800 0    50   Input ~ 0
+USB_UART_TX
+Text GLabel 2830 1700 0    50   Output ~ 0
+USB_UART_RX
 $EndSCHEMATC
