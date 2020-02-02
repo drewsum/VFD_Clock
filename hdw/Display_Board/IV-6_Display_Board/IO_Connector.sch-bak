@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 7 12
+Sheet 7 13
 Title ""
 Date ""
 Rev ""
@@ -68,8 +68,6 @@ Text GLabel 5140 5070 0    50   Input ~ 0
 Cap_Touch_Down_DSP
 Text GLabel 5140 5170 0    50   Input ~ 0
 Cap_Touch_Power_DSP
-Text GLabel 5140 5270 0    50   Input ~ 0
-Display_Detect_DSP
 Text GLabel 5640 4870 2    50   BiDi ~ 0
 I2C_DSP_SDA
 Text GLabel 5640 4770 2    50   Output ~ 0
@@ -439,5 +437,16 @@ F 2 "" H 5140 4670 50  0001 C CNN
 F 3 "" H 5140 4670 50  0001 C CNN
 	1    5140 4670
 	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E2C991B
+P 5140 5270
+F 0 "#PWR?" H 5140 5120 50  0001 C CNN
+F 1 "+5V" V 5140 5410 50  0000 L CNN
+F 2 "" H 5140 5270 50  0001 C CNN
+F 3 "" H 5140 5270 50  0001 C CNN
+	1    5140 5270
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC

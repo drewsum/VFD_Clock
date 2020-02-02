@@ -68,8 +68,8 @@ Text GLabel 5140 5070 0    50   Output ~ 0
 Cap_Touch_Down_DSP
 Text GLabel 5140 5170 0    50   Output ~ 0
 Cap_Touch_Power_DSP
-Text GLabel 5140 5270 0    50   Output ~ 0
-Display_Detect_DSP
+Text GLabel 5140 5270 0    40   Output ~ 0
+~Display_Detect_DSP
 Text GLabel 5640 4870 2    50   BiDi ~ 0
 I2C_DSP_SDA
 Text GLabel 5640 4770 2    50   Input ~ 0

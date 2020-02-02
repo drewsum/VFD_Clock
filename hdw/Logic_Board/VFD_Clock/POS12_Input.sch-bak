@@ -742,4 +742,42 @@ Wire Wire Line
 	6880 2270 6960 2270
 Wire Wire Line
 	7340 2270 7340 2190
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5BB7655D
+P 5130 3960
+AR Path="/5BB2595E/5BB7655D" Ref="R?"  Part="1" 
+AR Path="/5BAAE0FA/5BB7655D" Ref="R?"  Part="1" 
+AR Path="/5BB86F23/5BB7655D" Ref="R?"  Part="1" 
+AR Path="/5C1D5C9E/5BB7655D" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5BB7655D" Ref="R?"  Part="1" 
+F 0 "R?" H 5070 3960 50  0000 R CNN
+F 1 "13.7k" V 5130 3960 40  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5130 3960 50  0001 C CNN
+F 3 "" H 5130 3960 50  0001 C CNN
+F 4 "0603" H 5210 4040 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5210 3960 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5210 3880 50  0000 L CNN "Wattage"
+	1    5130 3960
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E4ADC46
+P 5130 4670
+AR Path="/5BB2595E/5E4ADC46" Ref="R?"  Part="1" 
+AR Path="/5BAAE0FA/5E4ADC46" Ref="R?"  Part="1" 
+AR Path="/5BB86F23/5E4ADC46" Ref="R?"  Part="1" 
+AR Path="/5C1D5C9E/5E4ADC46" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5E4ADC46" Ref="R?"  Part="1" 
+F 0 "R?" H 5070 4670 50  0000 R CNN
+F 1 "5.23k" V 5130 4670 40  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5130 4670 50  0001 C CNN
+F 3 "" H 5130 4670 50  0001 C CNN
+F 4 "0603" H 5210 4750 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5210 4670 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5210 4590 50  0000 L CNN "Wattage"
+	1    5130 4670
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

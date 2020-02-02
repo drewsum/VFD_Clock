@@ -573,48 +573,38 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5E123C8C
-P 3950 5420
+P 3900 5420
 AR Path="/5BAAE2B6/5E123C8C" Ref="#PWR?"  Part="1" 
 AR Path="/5BB6CF6D/5E123C8C" Ref="#PWR?"  Part="1" 
 AR Path="/5BBE424C/5E123C8C" Ref="#PWR?"  Part="1" 
 AR Path="/5CB8A16A/5E123C8C" Ref="#PWR?"  Part="1" 
 AR Path="/5CC31B3E/5E123C8C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3950 5170 50  0001 C CNN
-F 1 "GND" H 3950 5270 50  0000 C CNN
-F 2 "" H 3950 5420 50  0001 C CNN
-F 3 "" H 3950 5420 50  0001 C CNN
-	1    3950 5420
+F 0 "#PWR?" H 3900 5170 50  0001 C CNN
+F 1 "GND" H 3900 5270 50  0000 C CNN
+F 2 "" H 3900 5420 50  0001 C CNN
+F 3 "" H 3900 5420 50  0001 C CNN
+	1    3900 5420
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3950 5420 3950 5380
-Wire Wire Line
-	3950 5380 3900 5380
+	3900 5420 3900 5380
 Wire Wire Line
 	3600 5380 3600 5340
 Wire Wire Line
-	3950 5380 4000 5380
+	3900 5380 4000 5380
 Wire Wire Line
 	4300 5380 4300 5340
-Connection ~ 3950 5380
+Connection ~ 3900 5380
 Wire Wire Line
 	4200 5340 4200 5380
 Connection ~ 4200 5380
 Wire Wire Line
 	4200 5380 4300 5380
 Wire Wire Line
-	4100 5340 4100 5380
-Connection ~ 4100 5380
-Wire Wire Line
-	4100 5380 4200 5380
-Wire Wire Line
 	4000 5340 4000 5380
 Connection ~ 4000 5380
 Wire Wire Line
-	4000 5380 4100 5380
-Wire Wire Line
 	3900 5340 3900 5380
-Connection ~ 3900 5380
 Wire Wire Line
 	3900 5380 3800 5380
 Wire Wire Line
@@ -718,48 +708,38 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5E1666A8
-P 6770 5420
+P 6820 5420
 AR Path="/5BAAE2B6/5E1666A8" Ref="#PWR?"  Part="1" 
 AR Path="/5BB6CF6D/5E1666A8" Ref="#PWR?"  Part="1" 
 AR Path="/5BBE424C/5E1666A8" Ref="#PWR?"  Part="1" 
 AR Path="/5CB8A16A/5E1666A8" Ref="#PWR?"  Part="1" 
 AR Path="/5CC31B3E/5E1666A8" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6770 5170 50  0001 C CNN
-F 1 "GND" H 6770 5270 50  0000 C CNN
-F 2 "" H 6770 5420 50  0001 C CNN
-F 3 "" H 6770 5420 50  0001 C CNN
-	1    6770 5420
+F 0 "#PWR?" H 6820 5170 50  0001 C CNN
+F 1 "GND" H 6820 5270 50  0000 C CNN
+F 2 "" H 6820 5420 50  0001 C CNN
+F 3 "" H 6820 5420 50  0001 C CNN
+	1    6820 5420
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	6770 5420 6770 5380
-Wire Wire Line
-	6770 5380 6820 5380
+	6820 5420 6820 5380
 Wire Wire Line
 	7120 5380 7120 5340
 Wire Wire Line
-	6770 5380 6720 5380
+	6820 5380 6720 5380
 Wire Wire Line
 	6420 5380 6420 5340
-Connection ~ 6770 5380
+Connection ~ 6820 5380
 Wire Wire Line
 	6520 5340 6520 5380
 Connection ~ 6520 5380
 Wire Wire Line
 	6520 5380 6420 5380
 Wire Wire Line
-	6620 5340 6620 5380
-Connection ~ 6620 5380
-Wire Wire Line
-	6620 5380 6520 5380
-Wire Wire Line
 	6720 5340 6720 5380
 Connection ~ 6720 5380
 Wire Wire Line
-	6720 5380 6620 5380
-Wire Wire Line
 	6820 5340 6820 5380
-Connection ~ 6820 5380
 Wire Wire Line
 	6820 5380 6920 5380
 Wire Wire Line
@@ -1008,8 +988,8 @@ F 7 "DNP" H 4690 1770 50  0000 C CNN "Digi-Key PN"
 $EndComp
 Wire Wire Line
 	7910 4340 6620 4340
-Text GLabel 8210 4340 2    50   Input ~ 0
-Display_Detect_DSP
+Text GLabel 8210 4340 2    40   Input ~ 0
+~Display_Detect_DSP
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E442D14
@@ -1033,4 +1013,34 @@ Display_Detect
 Wire Wire Line
 	2810 4340 4100 4340
 Connection ~ 4100 4340
+Wire Wire Line
+	6520 5380 6720 5380
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E379BCF
+P 6620 5430
+F 0 "#PWR?" H 6620 5280 50  0001 C CNN
+F 1 "+3.3V" H 6620 5570 50  0000 C CNN
+F 2 "" H 6620 5430 50  0001 C CNN
+F 3 "" H 6620 5430 50  0001 C CNN
+	1    6620 5430
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6620 5430 6620 5340
+Wire Wire Line
+	4000 5380 4200 5380
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E389EB8
+P 4100 5430
+F 0 "#PWR?" H 4100 5280 50  0001 C CNN
+F 1 "+3.3V" H 4100 5570 50  0000 C CNN
+F 2 "" H 4100 5430 50  0001 C CNN
+F 3 "" H 4100 5430 50  0001 C CNN
+	1    4100 5430
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4100 5430 4100 5340
 $EndSCHEMATC

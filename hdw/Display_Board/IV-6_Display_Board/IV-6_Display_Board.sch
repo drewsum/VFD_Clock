@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -79,5 +79,11 @@ S 1640 4910 500  150
 U 5E249DA1
 F0 "Bulk Capacitance" 50
 F1 "Bulk_Capacitance.sch" 50
+$EndSheet
+$Sheet
+S 1640 5270 500  150 
+U 5E2A7EE3
+F0 "Time of Flight" 50
+F1 "Time_of_Flight.sch" 50
 $EndSheet
 $EndSCHEMATC

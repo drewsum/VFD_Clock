@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 7 12
+Sheet 7 13
 Title ""
 Date ""
 Rev ""
@@ -439,14 +439,14 @@ F 3 "" H 5140 4670 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+5V #PWR?
-U 1 1 5E2C991B
+L power:GND #PWR?
+U 1 1 5E3630FC
 P 5140 5270
-F 0 "#PWR?" H 5140 5120 50  0001 C CNN
-F 1 "+5V" V 5140 5410 50  0000 L CNN
+F 0 "#PWR?" H 5140 5020 50  0001 C CNN
+F 1 "GND" V 5140 5120 50  0000 R CNN
 F 2 "" H 5140 5270 50  0001 C CNN
 F 3 "" H 5140 5270 50  0001 C CNN
 	1    5140 5270
-	0    -1   -1   0   
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
