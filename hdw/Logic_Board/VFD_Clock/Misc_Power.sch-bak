@@ -374,22 +374,388 @@ $EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E1059E9
-P 3170 3930
+P 2500 3930
 AR Path="/5CB0BC26/5E1059E9" Ref="R?"  Part="1" 
 AR Path="/5E1352F5/5E1059E9" Ref="R?"  Part="1" 
-F 0 "R?" V 3070 3930 50  0000 C CNN
-F 1 "100" V 3170 3930 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3170 3930 50  0001 C CNN
-F 3 "" H 3170 3930 50  0001 C CNN
-F 4 "0603" V 3270 3930 50  0000 C CNN "display_footprint"
-F 5 "1%" V 3370 3930 50  0000 C CNN "Tolerance"
-F 6 "1/10W" V 3470 3930 50  0000 C CNN "Wattage"
-F 7 "A106047CT-ND" H 3470 4330 60  0001 C CNN "Digi-Key PN"
-	1    3170 3930
+F 0 "R?" V 2400 3930 50  0000 C CNN
+F 1 "100" V 2500 3930 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 2500 3930 50  0001 C CNN
+F 3 "" H 2500 3930 50  0001 C CNN
+F 4 "0603" V 2600 3930 50  0000 C CNN "display_footprint"
+F 5 "1%" V 2700 3930 50  0000 C CNN "Tolerance"
+F 6 "1/10W" V 2800 3930 50  0000 C CNN "Wattage"
+F 7 "A106047CT-ND" H 2800 4330 60  0001 C CNN "Digi-Key PN"
+	1    2500 3930
 	0    1    1    0   
 $EndComp
-Text GLabel 3020 3930 0    50   Input ~ 0
+Text GLabel 2350 3930 0    50   Input ~ 0
 POS12_PGOOD
-Text GLabel 3320 3930 2    50   Output ~ 0
+Text GLabel 2650 3930 2    50   Output ~ 0
 POS3P3_RUN
+$Comp
+L Transistor_FET:TP0610T Q?
+U 1 1 5E3AF3EF
+P 5710 4570
+F 0 "Q?" H 5910 4645 50  0000 L CNN
+F 1 "TP0610T" H 5910 4570 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5910 4495 50  0001 L CIN
+F 3 "http://www.vishay.com/docs/70209/70209.pdf" H 5710 4570 50  0001 L CNN
+	1    5710 4570
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3AF3F9
+P 4970 4340
+AR Path="/5A0BC776/5E3AF3F9" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3AF3F9" Ref="R?"  Part="1" 
+F 0 "R?" H 4910 4340 50  0000 R CNN
+F 1 "10k" V 4970 4340 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4970 4340 50  0001 C CNN
+F 3 "" H 4970 4340 50  0001 C CNN
+F 4 "0603" H 5040 4420 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5040 4340 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5040 4270 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 880 -1250 50  0001 C CNN "Digi-Key PN"
+	1    4970 4340
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom_Library:VBAT #PWR?
+U 1 1 5E3AF3FF
+P 4970 4190
+F 0 "#PWR?" H 4970 4040 50  0001 C CNN
+F 1 "VBAT" H 4970 4340 50  0000 C CNN
+F 2 "" H 4970 4190 50  0001 C CNN
+F 3 "" H 4970 4190 50  0001 C CNN
+	1    4970 4190
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:VBAT #PWR?
+U 1 1 5E3AF405
+P 5810 4190
+F 0 "#PWR?" H 5810 4040 50  0001 C CNN
+F 1 "VBAT" H 5810 4340 50  0000 C CNN
+F 2 "" H 5810 4190 50  0001 C CNN
+F 3 "" H 5810 4190 50  0001 C CNN
+	1    5810 4190
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5810 4190 5810 4370
+Wire Wire Line
+	5510 4570 4970 4570
+Wire Wire Line
+	4970 4570 4970 4490
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3AF412
+P 5810 5000
+AR Path="/5A0BC776/5E3AF412" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3AF412" Ref="R?"  Part="1" 
+F 0 "R?" H 5750 5000 50  0000 R CNN
+F 1 "10k" V 5810 5000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5810 5000 50  0001 C CNN
+F 3 "" H 5810 5000 50  0001 C CNN
+F 4 "0603" H 5880 5080 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5880 5000 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5880 4930 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 1720 -590 50  0001 C CNN "Digi-Key PN"
+	1    5810 5000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5810 4850 5810 4770
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3AF41D
+P 5810 5460
+AR Path="/5A0BC776/5E3AF41D" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3AF41D" Ref="R?"  Part="1" 
+F 0 "R?" H 5750 5460 50  0000 R CNN
+F 1 "10k" V 5810 5460 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5810 5460 50  0001 C CNN
+F 3 "" H 5810 5460 50  0001 C CNN
+F 4 "0603" H 5880 5540 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5880 5460 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5880 5390 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 1720 -130 50  0001 C CNN "Digi-Key PN"
+	1    5810 5460
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3AF423
+P 5810 5610
+F 0 "#PWR?" H 5810 5360 50  0001 C CNN
+F 1 "GND" H 5810 5460 50  0000 C CNN
+F 2 "" H 5810 5610 50  0001 C CNN
+F 3 "" H 5810 5610 50  0001 C CNN
+	1    5810 5610
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5810 5310 5810 5220
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E3AF42B
+P 4870 5220
+AR Path="/5BAAE16C/5E3AF42B" Ref="Q?"  Part="1" 
+AR Path="/5BB844FD/5E3AF42B" Ref="Q?"  Part="1" 
+AR Path="/5C1D5CB6/5E3AF42B" Ref="Q?"  Part="1" 
+AR Path="/5CB0BC26/5E3AF42B" Ref="Q?"  Part="1" 
+F 0 "Q?" H 5070 5295 50  0000 L CNN
+F 1 "BSS214NW" H 5070 5220 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-323_SC-70" H 5070 5145 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 4870 5220 50  0001 L CNN
+F 4 "BSS214NWH6327XTSA1CT-ND" H -1540 2450 50  0001 C CNN "Digi-Key PN"
+	1    4870 5220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3AF431
+P 4970 5420
+F 0 "#PWR?" H 4970 5170 50  0001 C CNN
+F 1 "GND" H 4970 5270 50  0000 C CNN
+F 2 "" H 4970 5420 50  0001 C CNN
+F 3 "" H 4970 5420 50  0001 C CNN
+	1    4970 5420
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3AF43B
+P 4380 5450
+AR Path="/5BAAE1F3/5E3AF43B" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E3AF43B" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E3AF43B" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E3AF43B" Ref="R?"  Part="1" 
+AR Path="/5C1D5CB6/5E3AF43B" Ref="R?"  Part="1" 
+AR Path="/5CB0BC26/5E3AF43B" Ref="R?"  Part="1" 
+F 0 "R?" H 4320 5450 50  0000 R CNN
+F 1 "10k" V 4380 5450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4380 5450 50  0001 C CNN
+F 3 "" H 4380 5450 50  0001 C CNN
+F 4 "0603" H 4570 5530 50  0000 C CNN "display_footprint"
+F 5 "1%" H 4560 5450 50  0000 C CNN "Tolerance"
+F 6 "1/10W" H 4590 5380 50  0000 C CNN "Wattage"
+F 7 "RMCF0603FT10K0CT-ND" H 4680 5850 60  0001 C CNN "Digi-Key PN"
+	1    4380 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3AF441
+P 4380 5600
+F 0 "#PWR?" H 4380 5350 50  0001 C CNN
+F 1 "GND" H 4380 5450 50  0000 C CNN
+F 2 "" H 4380 5600 50  0001 C CNN
+F 3 "" H 4380 5600 50  0001 C CNN
+	1    4380 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4670 5220 4380 5220
+Wire Wire Line
+	4380 5300 4380 5220
+Connection ~ 4380 5220
+Wire Wire Line
+	4380 5220 4080 5220
+Connection ~ 4970 4570
+Text GLabel 4080 5220 0    50   Input ~ 0
+VBAT_ADC_Enable
+Text GLabel 5890 5220 2    50   Output ~ 0
+VBAT_ADC
+Wire Wire Line
+	5890 5220 5810 5220
+Connection ~ 5810 5220
+Wire Wire Line
+	5810 5220 5810 5150
+Wire Wire Line
+	4970 4570 4970 5020
+$Comp
+L Transistor_FET:TP0610T Q?
+U 1 1 5E3B4EE1
+P 9310 4570
+F 0 "Q?" H 9510 4645 50  0000 L CNN
+F 1 "TP0610T" H 9510 4570 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9510 4495 50  0001 L CIN
+F 3 "http://www.vishay.com/docs/70209/70209.pdf" H 9310 4570 50  0001 L CNN
+	1    9310 4570
+	1    0    0    1   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3B4EEF
+P 8570 4340
+AR Path="/5A0BC776/5E3B4EEF" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3B4EEF" Ref="R?"  Part="1" 
+F 0 "R?" H 8510 4340 50  0000 R CNN
+F 1 "10k" V 8570 4340 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8570 4340 50  0001 C CNN
+F 3 "" H 8570 4340 50  0001 C CNN
+F 4 "0603" H 8640 4420 50  0000 L CNN "display_footprint"
+F 5 "1%" H 8640 4340 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 8640 4270 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 4480 -1250 50  0001 C CNN "Digi-Key PN"
+	1    8570 4340
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	9410 4190 9410 4370
+Wire Wire Line
+	9110 4570 8570 4570
+Wire Wire Line
+	8570 4570 8570 4490
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3B4F14
+P 9410 5000
+AR Path="/5A0BC776/5E3B4F14" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3B4F14" Ref="R?"  Part="1" 
+F 0 "R?" H 9350 5000 50  0000 R CNN
+F 1 "10k" V 9410 5000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 9410 5000 50  0001 C CNN
+F 3 "" H 9410 5000 50  0001 C CNN
+F 4 "0603" H 9480 5080 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9480 5000 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 9480 4930 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 5320 -590 50  0001 C CNN "Digi-Key PN"
+	1    9410 5000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9410 4850 9410 4770
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3B4F23
+P 9410 5460
+AR Path="/5A0BC776/5E3B4F23" Ref="R?"  Part="1" 
+AR Path="/5A557C58/5E3B4F23" Ref="R?"  Part="1" 
+F 0 "R?" H 9350 5460 50  0000 R CNN
+F 1 "10k" V 9410 5460 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 9410 5460 50  0001 C CNN
+F 3 "" H 9410 5460 50  0001 C CNN
+F 4 "0603" H 9480 5540 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9480 5460 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 9480 5390 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 5320 -130 50  0001 C CNN "Digi-Key PN"
+	1    9410 5460
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3B4F2D
+P 9410 5610
+F 0 "#PWR?" H 9410 5360 50  0001 C CNN
+F 1 "GND" H 9410 5460 50  0000 C CNN
+F 2 "" H 9410 5610 50  0001 C CNN
+F 3 "" H 9410 5610 50  0001 C CNN
+	1    9410 5610
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9410 5310 9410 5220
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E3B4F39
+P 8470 5220
+AR Path="/5BAAE16C/5E3B4F39" Ref="Q?"  Part="1" 
+AR Path="/5BB844FD/5E3B4F39" Ref="Q?"  Part="1" 
+AR Path="/5C1D5CB6/5E3B4F39" Ref="Q?"  Part="1" 
+AR Path="/5CB0BC26/5E3B4F39" Ref="Q?"  Part="1" 
+F 0 "Q?" H 8670 5295 50  0000 L CNN
+F 1 "BSS214NW" H 8670 5220 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-323_SC-70" H 8670 5145 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 8470 5220 50  0001 L CNN
+F 4 "BSS214NWH6327XTSA1CT-ND" H 2060 2450 50  0001 C CNN "Digi-Key PN"
+	1    8470 5220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3B4F43
+P 8570 5420
+F 0 "#PWR?" H 8570 5170 50  0001 C CNN
+F 1 "GND" H 8570 5270 50  0000 C CNN
+F 2 "" H 8570 5420 50  0001 C CNN
+F 3 "" H 8570 5420 50  0001 C CNN
+	1    8570 5420
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3B4F51
+P 7980 5450
+AR Path="/5BAAE1F3/5E3B4F51" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E3B4F51" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E3B4F51" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E3B4F51" Ref="R?"  Part="1" 
+AR Path="/5C1D5CB6/5E3B4F51" Ref="R?"  Part="1" 
+AR Path="/5CB0BC26/5E3B4F51" Ref="R?"  Part="1" 
+F 0 "R?" H 7920 5450 50  0000 R CNN
+F 1 "10k" V 7980 5450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7980 5450 50  0001 C CNN
+F 3 "" H 7980 5450 50  0001 C CNN
+F 4 "0603" H 8170 5530 50  0000 C CNN "display_footprint"
+F 5 "1%" H 8160 5450 50  0000 C CNN "Tolerance"
+F 6 "1/10W" H 8190 5380 50  0000 C CNN "Wattage"
+F 7 "RMCF0603FT10K0CT-ND" H 8280 5850 60  0001 C CNN "Digi-Key PN"
+	1    7980 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3B4F5B
+P 7980 5600
+F 0 "#PWR?" H 7980 5350 50  0001 C CNN
+F 1 "GND" H 7980 5450 50  0000 C CNN
+F 2 "" H 7980 5600 50  0001 C CNN
+F 3 "" H 7980 5600 50  0001 C CNN
+	1    7980 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8270 5220 7980 5220
+Wire Wire Line
+	7980 5300 7980 5220
+Connection ~ 7980 5220
+Wire Wire Line
+	7980 5220 7680 5220
+Connection ~ 8570 4570
+Text GLabel 7680 5220 0    50   Input ~ 0
+POS3P3_BCKP_ADC_Enable
+Text GLabel 9490 5220 2    50   Output ~ 0
+VBAT_ADC
+Wire Wire Line
+	9490 5220 9410 5220
+Connection ~ 9410 5220
+Wire Wire Line
+	9410 5220 9410 5150
+Wire Wire Line
+	8570 4570 8570 5020
+$Comp
+L Custom_Library:+3.3V_BCKP #PWR?
+U 1 1 5E3C6EA3
+P 8570 4190
+F 0 "#PWR?" H 8570 4040 50  0001 C CNN
+F 1 "+3.3V_BCKP" H 8570 4330 50  0000 C CNN
+F 2 "" H 8570 4190 50  0000 C CNN
+F 3 "" H 8570 4190 50  0000 C CNN
+	1    8570 4190
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:+3.3V_BCKP #PWR?
+U 1 1 5E3C78DF
+P 9410 4190
+F 0 "#PWR?" H 9410 4040 50  0001 C CNN
+F 1 "+3.3V_BCKP" H 9410 4330 50  0000 C CNN
+F 2 "" H 9410 4190 50  0000 C CNN
+F 3 "" H 9410 4190 50  0000 C CNN
+	1    9410 4190
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
