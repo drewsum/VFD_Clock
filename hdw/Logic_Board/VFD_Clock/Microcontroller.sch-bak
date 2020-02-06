@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 14 30
+Sheet 14 31
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -15,23 +15,23 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Custom_Library:PIC32MZ2048EFG100_IPT U?
+L Custom_Library:PIC32MZ2048EFG100_IPT U1401
 U 1 1 5CAFD57E
 P 5460 3560
-F 0 "U?" H 7260 1060 50  0000 R CNN
+F 0 "U1401" H 7260 1060 50  0000 R CNN
 F 1 "PIC32MZ2048EFG100_IPT" H 5460 4160 50  0000 C CNN
 F 2 "Housings_QFP:TQFP-100_14x14mm_Pitch0.5mm" H 5460 3560 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5460 3560 50  0001 C CNN
-F 4 "ALL" H 5460 3560 50  0001 C CNN "Config"
+F 4 "" H 5460 3560 50  0001 C CNN "Config"
 F 5 "PIC32MZ2048EFG100-I/PT-ND" H 5460 3560 50  0001 C CNN "Digi-Key PN"
 	1    5460 3560
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:+3.3V_BCKP #PWR?
+L Custom_Library:+3.3V_BCKP #PWR01404
 U 1 1 5CB01078
 P 5310 880
-F 0 "#PWR?" H 5310 730 50  0001 C CNN
+F 0 "#PWR01404" H 5310 730 50  0001 C CNN
 F 1 "+3.3V_BCKP" H 5310 1020 50  0000 C CNN
 F 2 "" H 5310 880 50  0000 C CNN
 F 3 "" H 5310 880 50  0000 C CNN
@@ -72,10 +72,10 @@ Connection ~ 5510 920
 Wire Wire Line
 	5510 920  5410 920 
 $Comp
-L power:GND #PWR?
+L power:GND #PWR01405
 U 1 1 5CB03EF2
 P 5460 6240
-F 0 "#PWR?" H 5460 5990 50  0001 C CNN
+F 0 "#PWR01405" H 5460 5990 50  0001 C CNN
 F 1 "GND" H 5460 6090 50  0000 C CNN
 F 2 "" H 5460 6240 50  0001 C CNN
 F 3 "" H 5460 6240 50  0001 C CNN
@@ -124,10 +124,10 @@ Connection ~ 5710 6200
 Wire Wire Line
 	5710 6200 5810 6200
 $Comp
-L power:GNDA #PWR?
+L power:GNDA #PWR01403
 U 1 1 5CB07CEA
 P 4810 6240
-F 0 "#PWR?" H 4810 5990 50  0001 C CNN
+F 0 "#PWR01403" H 4810 5990 50  0001 C CNN
 F 1 "GNDA" H 4810 6090 50  0000 C CNN
 F 2 "" H 4810 6240 50  0001 C CNN
 F 3 "" H 4810 6240 50  0001 C CNN
@@ -137,10 +137,10 @@ $EndComp
 Wire Wire Line
 	4810 6160 4810 6240
 $Comp
-L power:+3.3VA #PWR?
+L power:+3.3VA #PWR01402
 U 1 1 5CB087D9
 P 4810 880
-F 0 "#PWR?" H 4810 730 50  0001 C CNN
+F 0 "#PWR01402" H 4810 730 50  0001 C CNN
 F 1 "+3.3VA" H 4810 1020 50  0000 C CNN
 F 2 "" H 4810 880 50  0001 C CNN
 F 3 "" H 4810 880 50  0001 C CNN
@@ -155,10 +155,10 @@ NoConn ~ 3460 5510
 NoConn ~ 3460 5610
 NoConn ~ 3460 5310
 $Comp
-L power:GND #PWR?
+L power:GND #PWR01401
 U 1 1 5CB14B21
 P 3290 5490
-F 0 "#PWR?" H 3290 5240 50  0001 C CNN
+F 0 "#PWR01401" H 3290 5240 50  0001 C CNN
 F 1 "GND" H 3290 5340 50  0000 C CNN
 F 2 "" H 3290 5490 50  0001 C CNN
 F 3 "" H 3290 5490 50  0001 C CNN
@@ -174,8 +174,6 @@ Text GLabel 3460 4710 0    50   Input ~ 0
 MCU_POSC
 Text GLabel 3460 4910 0    50   Input ~ 0
 MCU_SOSC
-Text Notes 2840 7060 0    50   ~ 0
-CONSIDER SWITCHING TO 252MHZ OPTION
 Text GLabel 3460 3260 0    50   BiDi ~ 0
 ICSPDAT
 Text GLabel 3460 3160 0    50   Input ~ 0
@@ -184,100 +182,130 @@ Text GLabel 3460 2310 0    50   BiDi ~ 0
 I2C_MCU_SDA
 Text GLabel 3460 2210 0    50   Output ~ 0
 I2C_MCU_SCL
-Text GLabel 1060 1670 0    50   Input ~ 0
+Text GLabel 7460 1810 2    50   Output ~ 0
 I2C_EN
-Text GLabel 610  1890 2    50   Output ~ 0
+Text GLabel 7460 5410 2    50   Input ~ 0
 POS12_PGOOD
-Text GLabel 1130 2090 0    50   Output ~ 0
+Text GLabel 7460 5510 2    50   Input ~ 0
 POS3P3_PGOOD
-Text GLabel 1090 2390 0    50   Input ~ 0
+Text GLabel 7460 5010 2    50   Output ~ 0
 POS5_RUN
-Text GLabel 1090 2580 0    50   Input ~ 0
+Text GLabel 7460 5110 2    50   Input ~ 0
 POS5_PGOOD
-Text GLabel 640  2830 2    50   Output ~ 0
+Text GLabel 7460 2210 2    50   Input ~ 0
 VBAT_PGOOD
-Text GLabel 640  3030 2    50   Output ~ 0
+Text GLabel 7460 4710 2    50   Input ~ 0
 BCKP_ON
-Text GLabel 1060 3190 0    50   Input ~ 0
+Text GLabel 7460 2110 2    50   Output ~ 0
 VBAT_Enable
-Text GLabel 1210 3410 0    50   Input ~ 0
+Text GLabel 7460 5210 2    50   Output ~ 0
 POS1P2_VFF_RUN
-Text GLabel 1230 3610 0    50   Output ~ 0
+Text GLabel 7460 5310 2    50   Input ~ 0
 POS1P2_VFF_PGOOD
-Text GLabel 1200 3830 0    50   Input ~ 0
+Text GLabel 7460 5710 2    50   Output ~ 0
 POS60_VAN_RUN
-Text GLabel 590  1480 2    50   Output ~ 0
+Text GLabel 7460 5610 2    50   Input ~ 0
 POS60_VAN_PGOOD
-Text GLabel 1260 1190 0    50   Input ~ 0
+Text GLabel 3460 5010 0    50   Output ~ 0
 MCU_POSC_Enable
-Text GLabel 1190 4150 0    50   Input ~ 0
+Text GLabel 3460 1910 0    50   Output ~ 0
 Buzzer_Enable
-Text GLabel 1180 4370 0    50   Input ~ 0
+Text GLabel 3460 1210 0    50   Output ~ 0
 Heartbeat_LED
-Text GLabel 1240 4590 0    50   Input ~ 0
+Text GLabel 3460 1310 0    50   Output ~ 0
 Analog_Error_LED
-Text GLabel 1060 4910 0    50   Input ~ 0
+Text GLabel 3460 1410 0    50   Output ~ 0
 Reset_LED
-Text GLabel 1080 5140 0    50   Input ~ 0
+Text GLabel 3460 1510 0    50   Output ~ 0
 CPU_Exception_LED
-Text GLabel 1010 5300 0    50   Input ~ 0
+Text GLabel 3460 1610 0    50   Output ~ 0
 USB_Error_LED
-Text GLabel 1030 5460 0    50   Input ~ 0
+Text GLabel 3460 1710 0    50   Output ~ 0
 Other_Error_LED
-Text GLabel 990  5710 0    50   Input ~ 0
+Text GLabel 3460 1810 0    50   Output ~ 0
 I2C_Error_LED
 Text GLabel 7460 2410 2    50   Input ~ 0
 USB_UART_RX
 Text GLabel 7460 2310 2    50   Output ~ 0
 USB_UART_TX
-Text GLabel 1070 5910 0    50   Output ~ 0
+Text GLabel 7460 4610 2    40   Input ~ 0
 ~USB_Detect
-Text GLabel 1220 6440 0    50   Input ~ 0
+Text GLabel 3460 3360 0    50   Output ~ 0
 Anode_A
-Text GLabel 1220 6640 0    50   Input ~ 0
+Text GLabel 3460 3560 0    50   Output ~ 0
 Anode_C
-Text GLabel 1220 6740 0    50   Input ~ 0
+Text GLabel 3460 3660 0    50   Output ~ 0
 Anode_D
-Text GLabel 1220 6840 0    50   Input ~ 0
+Text GLabel 3460 3760 0    50   Output ~ 0
 Anode_E
-Text GLabel 1220 6940 0    50   Input ~ 0
+Text GLabel 3460 3860 0    50   Output ~ 0
 Anode_F
-Text GLabel 1220 7040 0    50   Input ~ 0
+Text GLabel 3460 3960 0    50   Output ~ 0
 Anode_G
-Text GLabel 1220 7140 0    50   Input ~ 0
+Text GLabel 3460 4060 0    50   Output ~ 0
 Anode_DP
-Text GLabel 920  7340 0    40   Input ~ 0
+Text GLabel 3460 4310 0    40   Output ~ 0
 ~IO_Level_Shift_Enable
-Text GLabel 2080 6480 0    50   Input ~ 0
+Text GLabel 7460 2710 2    50   Output ~ 0
 Grid_0
-Text GLabel 2080 6580 0    50   Input ~ 0
+Text GLabel 7460 2810 2    50   Output ~ 0
 Grid_1
-Text GLabel 2080 6680 0    50   Input ~ 0
+Text GLabel 7460 2910 2    50   Output ~ 0
 Grid_2
-Text GLabel 2080 6780 0    50   Input ~ 0
+Text GLabel 7460 3010 2    50   Output ~ 0
 Grid_3
-Text GLabel 2080 6880 0    50   Input ~ 0
+Text GLabel 7460 3110 2    50   Output ~ 0
 Grid_4
-Text GLabel 2080 6980 0    50   Input ~ 0
+Text GLabel 7460 3210 2    50   Output ~ 0
 Grid_5
-Text GLabel 2080 7080 0    50   Input ~ 0
+Text GLabel 7460 3310 2    50   Output ~ 0
 Colon_0
-Text GLabel 2080 7180 0    50   Input ~ 0
+Text GLabel 7460 3410 2    50   Output ~ 0
 Colon_1
-Text GLabel 1510 7560 0    50   Input ~ 0
+Text GLabel 3460 4410 0    50   Output ~ 0
 I2C_DSP_EN
-Text GLabel 2500 7420 0    50   Output ~ 0
+Text GLabel 7460 1210 2    50   Input ~ 0
 Cap_Touch_Left
-Text GLabel 2500 7520 0    50   Output ~ 0
+Text GLabel 7460 1310 2    50   Input ~ 0
 Cap_Touch_Right
-Text GLabel 2500 7620 0    50   Output ~ 0
+Text GLabel 7460 1410 2    50   Input ~ 0
 Cap_Touch_Up
-Text GLabel 2500 7720 0    50   Output ~ 0
+Text GLabel 7460 1510 2    50   Input ~ 0
 Cap_Touch_Down
-Text GLabel 2500 7820 0    50   Output ~ 0
+Text GLabel 7460 1610 2    50   Input ~ 0
 Cap_Touch_Power
-Text GLabel 3590 7680 0    50   Output ~ 0
-Display_Detect
-Text GLabel 1220 6540 0    50   Input ~ 0
+Text GLabel 3460 3460 0    50   Output ~ 0
 Anode_B
+Text GLabel 7460 3510 2    50   Input ~ 0
+VBAT_ADC
+Text GLabel 3460 2960 0    50   Output ~ 0
+POS3P3_BCKP_ADC_Enable
+Text GLabel 7460 3610 2    50   Output ~ 0
+VBAT_ADC_Enable
+Text GLabel 3460 3060 0    50   Input ~ 0
+POS3P3_BCKP_ADC
+Text GLabel 7460 1710 2    40   Input ~ 0
+~Display_Detect
+NoConn ~ 3460 2110
+NoConn ~ 3460 2560
+NoConn ~ 3460 2660
+NoConn ~ 3460 2760
+NoConn ~ 3460 2860
+NoConn ~ 3460 4510
+NoConn ~ 3460 4610
+NoConn ~ 3460 4810
+NoConn ~ 7460 5910
+NoConn ~ 7460 4110
+NoConn ~ 7460 4310
+NoConn ~ 7460 4410
+NoConn ~ 7460 4510
+NoConn ~ 7460 1910
+NoConn ~ 7460 2010
+Text GLabel 7460 5810 2    50   Output ~ 0
+BLE_RESET
+Text GLabel 7460 3910 2    50   Output ~ 0
+BLE_UART_TX
+Text GLabel 7460 4010 2    50   Input ~ 0
+BLE_UART_RX
+NoConn ~ 3460 2010
 $EndSCHEMATC

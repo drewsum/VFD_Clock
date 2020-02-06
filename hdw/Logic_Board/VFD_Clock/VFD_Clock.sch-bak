@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 30
+Sheet 1 31
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -166,30 +166,34 @@ F1 "USB_Telemetry.sch" 50
 $EndSheet
 $Sheet
 S 8270 3790 500  150 
+U 5E3C514F
+F0 "BLE" 50
+F1 "BLE.sch" 50
+$EndSheet
+$Sheet
+S 8270 4140 500  150 
 U 5CB8A16A
 F0 "IO Buffers 1" 50
 F1 "IO_Buffers_1.sch" 50
 $EndSheet
 $Sheet
-S 8270 4140 500  150 
+S 8270 4490 500  150 
 U 5CC31B3E
 F0 "IO Buffers 2" 50
 F1 "IO_Buffers_2.sch" 50
 $EndSheet
 $Sheet
-S 8270 4490 500  150 
+S 8270 4840 500  150 
 U 5CB7B79E
 F0 "IO Connectors" 50
 F1 "IO_Connectors.sch" 50
 $EndSheet
 $Sheet
-S 8270 4840 500  150 
+S 8270 5190 500  150 
 U 5B583C3D
 F0 "Mechanical" 50
 F1 "Mechanical.sch" 50
 $EndSheet
-Text Notes 6280 6020 0    50   ~ 0
-Consider adding net ties on all current sense shunt resistors for net isolation
 Text Notes 3380 980  0    250  ~ 50
 VFD Clock Logic Board
 Text Notes 720  1490 0    100  ~ 20
@@ -244,12 +248,14 @@ Text Notes 6370 3240 0    100  ~ 20
 25. USB UART Isolation
 Text Notes 6370 3590 0    100  ~ 20
 26. USB Telemetry
-Text Notes 6370 3940 0    100  ~ 20
-27. IO Buffers 1
 Text Notes 6370 4290 0    100  ~ 20
-28. IO Buffers 2
+28. IO Buffers 1
 Text Notes 6370 4640 0    100  ~ 20
-29. IO Connectors
+29. IO Buffers 2
 Text Notes 6370 4990 0    100  ~ 20
-30. Mechanical
+30. IO Connectors
+Text Notes 6370 5340 0    100  ~ 20
+31. Mechanical
+Text Notes 6370 3940 0    100  ~ 20
+27. BLE
 $EndSCHEMATC
