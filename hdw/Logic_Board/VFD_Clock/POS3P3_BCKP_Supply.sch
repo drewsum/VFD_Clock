@@ -906,37 +906,6 @@ Wire Wire Line
 	3300 1330 2640 1330
 Wire Wire Line
 	2640 1330 2640 2570
-$Comp
-L Device:Battery_Cell BT1201
-U 1 1 5E31F428
-P 1220 6330
-F 0 "BT1201" H 1320 6430 50  0000 L CNN
-F 1 "BR-2/3AE5SPN" H 1320 6330 50  0000 L CNN
-F 2 "Custom Footprints Library:BR-2_3AE5SPN" V 1220 6390 50  0001 C CNN
-F 3 "~" V 1220 6390 50  0001 C CNN
-F 4 "DNP" H 1400 6250 50  0000 C CNN "Digi-Key PN"
-	1    1220 6330
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5E3203B8
-P 1220 6430
-AR Path="/5CB7718D/5E3203B8" Ref="#PWR?"  Part="1" 
-AR Path="/5E0DC082/5E3203B8" Ref="#PWR?"  Part="1" 
-AR Path="/5E0F9110/5E3203B8" Ref="#PWR?"  Part="1" 
-AR Path="/5A557C58/5E3203B8" Ref="#PWR01201"  Part="1" 
-F 0 "#PWR01201" H 1220 6180 50  0001 C CNN
-F 1 "GND" H 1220 6280 50  0000 C CNN
-F 2 "" H 1220 6430 50  0001 C CNN
-F 3 "" H 1220 6430 50  0001 C CNN
-	1    1220 6430
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2130 6050 1220 6050
-Wire Wire Line
-	1220 6050 1220 6130
 Connection ~ 2130 6050
 $Comp
 L Custom_Library:R_Custom R1210
