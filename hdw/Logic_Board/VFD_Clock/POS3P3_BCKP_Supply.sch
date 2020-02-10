@@ -948,4 +948,50 @@ F 3 "~" H 6330 2490 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6330 2490 6330 2670
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5E426A4D
+P 8140 1250
+AR Path="/5C1D5CD8/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5C1D5C9E/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5C1E3A08/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5D779AE1/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5CB7718D/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5E0DC082/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5E0F9110/5E426A4D" Ref="TP?"  Part="1" 
+AR Path="/5A557C58/5E426A4D" Ref="TP1202"  Part="1" 
+F 0 "TP1202" H 8140 1400 50  0000 C CNN
+F 1 "TP" H 8140 1400 50  0001 C CNN
+F 2 "Custom Footprints Library:Test_Point" H 8140 1250 60  0001 C CNN
+F 3 "" H 8140 1250 60  0000 C CNN
+	1    8140 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8140 1250 8140 1330
+Connection ~ 8140 1330
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5E42B4A2
+P 5220 5970
+AR Path="/5C1D5CD8/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5C1D5C9E/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5C1E3A08/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5D779AE1/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5CB7718D/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5E0DC082/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5E0F9110/5E42B4A2" Ref="TP?"  Part="1" 
+AR Path="/5A557C58/5E42B4A2" Ref="TP1201"  Part="1" 
+F 0 "TP1201" H 5220 6120 50  0000 C CNN
+F 1 "TP" H 5220 6120 50  0001 C CNN
+F 2 "Custom Footprints Library:Test_Point" H 5220 5970 60  0001 C CNN
+F 3 "" H 5220 5970 60  0000 C CNN
+	1    5220 5970
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5220 5970 5220 6050
+Wire Wire Line
+	5220 6050 4840 6050
+Connection ~ 4840 6050
 $EndSCHEMATC

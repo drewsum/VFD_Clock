@@ -26,37 +26,37 @@ F 4 "SAM14116CT-ND" H 5340 3770 50  0001 C CNN "Digi-Key PN"
 	1    5340 3770
 	1    0    0    -1  
 $EndComp
-Text GLabel 5140 3870 0    50   Input ~ 0
-Anode_A_DSP
-Text GLabel 5140 3970 0    50   Input ~ 0
-Anode_B_DSP
-Text GLabel 5140 4070 0    50   Input ~ 0
-Anode_C_DSP
-Text GLabel 5140 4170 0    50   Input ~ 0
-Anode_D_DSP
-Text GLabel 5140 4270 0    50   Input ~ 0
-Anode_E_DSP
-Text GLabel 5140 4370 0    50   Input ~ 0
-Anode_F_DSP
-Text GLabel 5140 4470 0    50   Input ~ 0
-Anode_G_DSP
 Text GLabel 5140 4570 0    50   Input ~ 0
+Anode_A_DSP
+Text GLabel 5140 4470 0    50   Input ~ 0
+Anode_B_DSP
+Text GLabel 5140 4370 0    50   Input ~ 0
+Anode_C_DSP
+Text GLabel 5140 4270 0    50   Input ~ 0
+Anode_D_DSP
+Text GLabel 5140 4170 0    50   Input ~ 0
+Anode_E_DSP
+Text GLabel 5140 4070 0    50   Input ~ 0
+Anode_F_DSP
+Text GLabel 5140 3970 0    50   Input ~ 0
+Anode_G_DSP
+Text GLabel 5140 3870 0    50   Input ~ 0
 Anode_DP_DSP
-Text GLabel 5640 3870 2    50   Input ~ 0
-Grid_0_DSP
-Text GLabel 5640 3970 2    50   Input ~ 0
-Grid_1_DSP
-Text GLabel 5640 4070 2    50   Input ~ 0
-Grid_2_DSP
-Text GLabel 5640 4170 2    50   Input ~ 0
-Grid_3_DSP
-Text GLabel 5640 4270 2    50   Input ~ 0
-Grid_4_DSP
-Text GLabel 5640 4370 2    50   Input ~ 0
-Grid_5_DSP
-Text GLabel 5640 4470 2    50   Input ~ 0
-Colon_0_DSP
 Text GLabel 5640 4570 2    50   Input ~ 0
+Grid_0_DSP
+Text GLabel 5640 4470 2    50   Input ~ 0
+Grid_1_DSP
+Text GLabel 5640 4370 2    50   Input ~ 0
+Grid_2_DSP
+Text GLabel 5640 4270 2    50   Input ~ 0
+Grid_3_DSP
+Text GLabel 5640 4170 2    50   Input ~ 0
+Grid_4_DSP
+Text GLabel 5640 4070 2    50   Input ~ 0
+Grid_5_DSP
+Text GLabel 5640 3970 2    50   Input ~ 0
+Colon_0_DSP
+Text GLabel 5640 3870 2    50   Input ~ 0
 Colon_1_DSP
 Text GLabel 5140 4770 0    50   Output ~ 0
 Cap_Touch_Left_DSP

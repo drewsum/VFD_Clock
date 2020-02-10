@@ -274,19 +274,6 @@ Wire Wire Line
 	4090 6350 4190 6350
 Wire Wire Line
 	3490 6350 4090 6350
-$Comp
-L Custom_Library:TP TP?
-U 1 1 5B52EF33
-P 9030 1440
-AR Path="/5A557C58/5B52EF33" Ref="TP?"  Part="1" 
-AR Path="/5A0BC776/5B52EF33" Ref="TP1001"  Part="1" 
-F 0 "TP1001" H 9030 1590 50  0000 C CNN
-F 1 "TP" H 9030 1590 50  0001 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9030 1440 60  0001 C CNN
-F 3 "" H 9030 1440 60  0000 C CNN
-	1    9030 1440
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9030 1440 9030 1520
 Text Notes 2960 1060 0    100  ~ 20
@@ -1045,5 +1032,24 @@ F 3 "http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf" H 6590 1520 50  
 F 4 "MBR0580S1-7DICT-ND" H 6590 1520 50  0001 C CNN "Digi-Key PN"
 	1    6590 1520
 	-1   0    0    1   
+$EndComp
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5E42239B
+P 9030 1440
+AR Path="/5C1D5CD8/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5C1D5C9E/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5C1E3A08/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5D779AE1/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5CB7718D/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5E0DC082/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5E0F9110/5E42239B" Ref="TP?"  Part="1" 
+AR Path="/5A0BC776/5E42239B" Ref="TP1001"  Part="1" 
+F 0 "TP1001" H 9030 1590 50  0000 C CNN
+F 1 "TP" H 9030 1590 50  0001 C CNN
+F 2 "Custom Footprints Library:Test_Point" H 9030 1440 60  0001 C CNN
+F 3 "" H 9030 1440 60  0000 C CNN
+	1    9030 1440
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

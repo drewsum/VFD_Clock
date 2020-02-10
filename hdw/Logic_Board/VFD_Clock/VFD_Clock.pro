@@ -1,4 +1,4 @@
-update=2/4/2020 10:06:38 PM
+update=2/9/2020 6:00:44 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -23,7 +23,7 @@ ERC_TestSimilarLabels=1
 version=1
 PageLayoutDescrFile=
 LastNetListRead=VFD_Clock.net
-CopperLayerCount=4
+CopperLayerCount=6
 BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
@@ -35,8 +35,8 @@ MinViaDrill=0.199898
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.127
-TrackWidth1=0.127
-ViaDiameter1=0.56
+TrackWidth1=0.254
+ViaDiameter1=0.4318
 ViaDrill1=0.2
 dPairWidth1=0.2
 dPairGap1=0.25
@@ -70,21 +70,21 @@ Name=F.Cu
 Type=2
 Enabled=1
 [pcbnew/Layer.In1.Cu]
-Name=PWR
-Type=2
+Name=GND
+Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=GND
+Name=In2.Cu
 Type=2
 Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
-Type=0
-Enabled=0
+Type=2
+Enabled=1
 [pcbnew/Layer.In4.Cu]
-Name=In4.Cu
-Type=0
-Enabled=0
+Name=PWR
+Type=1
+Enabled=1
 [pcbnew/Layer.In5.Cu]
 Name=In5.Cu
 Type=0
@@ -235,8 +235,8 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.127
-TrackWidth=0.127
-ViaDiameter=0.56
+TrackWidth=0.254
+ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
@@ -247,7 +247,7 @@ dPairViaGap=0.25
 Name=Power
 Clearance=0.127
 TrackWidth=0.635
-ViaDiameter=0.56
+ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
@@ -257,8 +257,8 @@ dPairViaGap=0.25
 [pcbnew/Netclasses/2]
 Name=Signal
 Clearance=0.127
-TrackWidth=0.127
-ViaDiameter=0.56
+TrackWidth=0.254
+ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
