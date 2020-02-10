@@ -1,4 +1,4 @@
-update=2/9/2020 6:00:44 PM
+update=2/9/2020 10:02:33 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -38,8 +38,8 @@ MinHoleToHole=0.127
 TrackWidth1=0.254
 ViaDiameter1=0.4318
 ViaDrill1=0.2
-dPairWidth1=0.2
-dPairGap1=0.25
+dPairWidth1=0.254
+dPairGap1=0.127
 dPairViaGap1=0.25
 SilkLineWidth=0.15
 SilkTextSizeV=1
@@ -240,8 +240,8 @@ ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
-dPairWidth=0.2
-dPairGap=0.25
+dPairWidth=0.254
+dPairGap=0.127
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
@@ -262,6 +262,6 @@ ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
-dPairWidth=0.2
-dPairGap=0.25
+dPairWidth=0.254
+dPairGap=0.127
 dPairViaGap=0.25
