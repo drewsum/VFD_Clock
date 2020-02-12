@@ -184,9 +184,9 @@ Text GLabel 3460 2210 0    50   Output ~ 0
 I2C_MCU_SCL
 Text GLabel 7460 1810 2    50   Output ~ 0
 I2C_EN
-Text GLabel 7460 5410 2    50   Input ~ 0
+Text GLabel 9150 4830 2    50   Input ~ 0
 POS12_PGOOD
-Text GLabel 7460 5510 2    50   Input ~ 0
+Text GLabel 9190 4570 2    50   Input ~ 0
 POS3P3_PGOOD
 Text GLabel 7460 5010 2    50   Output ~ 0
 POS5_RUN
@@ -198,9 +198,9 @@ Text GLabel 7460 4710 2    50   Input ~ 0
 BCKP_ON
 Text GLabel 7460 2110 2    50   Output ~ 0
 VBAT_Enable
-Text GLabel 7460 5210 2    50   Output ~ 0
+Text GLabel 9220 5180 2    50   Output ~ 0
 POS1P2_VFF_RUN
-Text GLabel 7460 5310 2    50   Input ~ 0
+Text GLabel 9220 5280 2    50   Input ~ 0
 POS1P2_VFF_PGOOD
 Text GLabel 7460 5710 2    50   Output ~ 0
 POS60_VAN_RUN
@@ -210,7 +210,7 @@ Text GLabel 3460 5010 0    50   Output ~ 0
 MCU_POSC_Enable
 Text GLabel 3460 1910 0    50   Output ~ 0
 Buzzer_Enable
-Text GLabel 3460 1210 0    50   Output ~ 0
+Text GLabel 2190 800  0    50   Output ~ 0
 Heartbeat_LED
 Text GLabel 3460 1310 0    50   Output ~ 0
 Analog_Error_LED
@@ -230,69 +230,63 @@ Text GLabel 7460 2310 2    50   Output ~ 0
 USB_UART_TX
 Text GLabel 7460 4610 2    40   Input ~ 0
 ~USB_Detect
-Text GLabel 3460 3360 0    50   Output ~ 0
+Text GLabel 3460 2760 0    50   Output ~ 0
 Anode_A
-Text GLabel 3460 3560 0    50   Output ~ 0
+Text GLabel 3460 2960 0    50   Output ~ 0
 Anode_C
-Text GLabel 3460 3660 0    50   Output ~ 0
+Text GLabel 3460 3060 0    50   Output ~ 0
 Anode_D
-Text GLabel 3460 3760 0    50   Output ~ 0
+Text GLabel 7460 3610 2    50   Output ~ 0
 Anode_E
-Text GLabel 3460 3860 0    50   Output ~ 0
+Text GLabel 7460 3510 2    50   Output ~ 0
 Anode_F
-Text GLabel 3460 3960 0    50   Output ~ 0
+Text GLabel 3460 1210 0    50   Output ~ 0
 Anode_G
-Text GLabel 3460 4060 0    50   Output ~ 0
+Text GLabel 7460 5510 2    50   Output ~ 0
 Anode_DP
-Text GLabel 3460 4310 0    40   Output ~ 0
+Text GLabel 2590 4070 0    40   Output ~ 0
 ~IO_Level_Shift_Enable
-Text GLabel 7460 2710 2    50   Output ~ 0
+Text GLabel 7460 5410 2    50   Output ~ 0
 Grid_0
-Text GLabel 7460 2810 2    50   Output ~ 0
+Text GLabel 7460 5310 2    50   Output ~ 0
 Grid_1
-Text GLabel 7460 2910 2    50   Output ~ 0
+Text GLabel 7460 5210 2    50   Output ~ 0
 Grid_2
-Text GLabel 7460 3010 2    50   Output ~ 0
+Text GLabel 3460 4610 0    50   Output ~ 0
 Grid_3
-Text GLabel 7460 3110 2    50   Output ~ 0
+Text GLabel 3460 4510 0    50   Output ~ 0
 Grid_4
-Text GLabel 7460 3210 2    50   Output ~ 0
+Text GLabel 3460 4410 0    50   Output ~ 0
 Grid_5
-Text GLabel 7460 3310 2    50   Output ~ 0
+Text GLabel 3460 4310 0    50   Output ~ 0
 Colon_0
 Text GLabel 7460 3410 2    50   Output ~ 0
 Colon_1
-Text GLabel 3460 4410 0    50   Output ~ 0
+Text GLabel 2590 4170 0    50   Output ~ 0
 I2C_DSP_EN
-Text GLabel 7460 1210 2    50   Input ~ 0
+Text GLabel 3460 2660 0    50   Input ~ 0
 Cap_Touch_Left
-Text GLabel 7460 1310 2    50   Input ~ 0
+Text GLabel 3460 2560 0    50   Input ~ 0
 Cap_Touch_Right
-Text GLabel 7460 1410 2    50   Input ~ 0
+Text GLabel 3460 2010 0    50   Input ~ 0
 Cap_Touch_Up
-Text GLabel 7460 1510 2    50   Input ~ 0
+Text GLabel 3460 2110 0    50   Input ~ 0
 Cap_Touch_Down
-Text GLabel 7460 1610 2    50   Input ~ 0
+Text GLabel 3460 3360 0    50   Input ~ 0
 Cap_Touch_Power
-Text GLabel 3460 3460 0    50   Output ~ 0
+Text GLabel 3460 2860 0    50   Output ~ 0
 Anode_B
-Text GLabel 7460 3510 2    50   Input ~ 0
+Text GLabel 8850 3350 2    50   Input ~ 0
 VBAT_ADC
-Text GLabel 3460 2960 0    50   Output ~ 0
+Text GLabel 2790 3780 0    50   Output ~ 0
 POS3P3_BCKP_ADC_Enable
-Text GLabel 7460 3610 2    50   Output ~ 0
+Text GLabel 8850 3450 2    50   Output ~ 0
 VBAT_ADC_Enable
-Text GLabel 3460 3060 0    50   Input ~ 0
+Text GLabel 2660 3560 0    50   Input ~ 0
 POS3P3_BCKP_ADC
-Text GLabel 7460 1710 2    40   Input ~ 0
+Text GLabel 3460 3460 0    40   Input ~ 0
 ~Display_Detect
 NoConn ~ 3460 2110
-NoConn ~ 3460 2560
-NoConn ~ 3460 2660
-NoConn ~ 3460 2760
-NoConn ~ 3460 2860
-NoConn ~ 3460 4510
-NoConn ~ 3460 4610
 NoConn ~ 3460 4810
 NoConn ~ 7460 5910
 NoConn ~ 7460 4110

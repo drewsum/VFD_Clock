@@ -1047,7 +1047,7 @@ F 2 "Resistors_SMD:R_0612" H 8650 1520 50  0001 C CNN
 F 3 "" H 8650 1520 50  0001 C CNN
 F 4 "0612" V 8750 1520 50  0000 C CNN "display_footprint"
 F 5 "1%" V 8850 1520 50  0000 C CNN "Tolerance"
-F 6 "1/4W" V 8950 1520 50  0000 C CNN "Wattage"
+F 6 "1W" V 8950 1520 50  0000 C CNN "Wattage"
 F 7 "RHM1220CT-ND" H 8650 1520 50  0001 C CNN "Digi-Key PN"
 	1    8650 1520
 	0    -1   -1   0   
