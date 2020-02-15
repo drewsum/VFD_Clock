@@ -208,7 +208,7 @@ Text GLabel 7460 5610 2    50   Input ~ 0
 POS60_VAN_PGOOD
 Text GLabel 3460 5010 0    50   Output ~ 0
 MCU_POSC_Enable
-Text GLabel 1160 1330 0    50   Output ~ 0
+Text GLabel 3460 1710 0    50   Output ~ 0
 Buzzer_Enable
 Text GLabel 2190 800  0    50   Output ~ 0
 Heartbeat_LED
@@ -224,10 +224,6 @@ Text GLabel 2070 1550 0    50   Output ~ 0
 Other_Error_LED
 Text GLabel 1160 1230 0    50   Output ~ 0
 I2C_Error_LED
-Text GLabel 7460 2410 2    50   Input ~ 0
-USB_UART_RX
-Text GLabel 7460 2310 2    50   Output ~ 0
-USB_UART_TX
 Text GLabel 7460 4610 2    40   Input ~ 0
 ~USB_Detect
 Text GLabel 3460 2760 0    50   Output ~ 0
@@ -289,7 +285,6 @@ Text GLabel 3460 3460 0    40   Input ~ 0
 NoConn ~ 3460 4810
 NoConn ~ 7460 5910
 NoConn ~ 7460 4110
-NoConn ~ 7460 4310
 NoConn ~ 7460 4410
 NoConn ~ 7460 4510
 NoConn ~ 7460 1910
@@ -300,4 +295,13 @@ Text GLabel 7460 3910 2    50   Output ~ 0
 BLE_UART_TX
 Text GLabel 7460 4010 2    50   Input ~ 0
 BLE_UART_RX
+NoConn ~ 7460 4310
+Text GLabel 7460 2410 2    50   Input ~ 0
+USB_UART_RX
+Text GLabel 7460 2310 2    50   Output ~ 0
+USB_UART_TX
+Text GLabel 7460 3210 2    50   Output ~ 0
+Colon_2
+Text GLabel 7460 3310 2    50   Output ~ 0
+Colon_4
 $EndSCHEMATC

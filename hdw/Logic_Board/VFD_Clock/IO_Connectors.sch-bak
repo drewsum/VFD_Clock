@@ -70,9 +70,9 @@ Text GLabel 5140 5170 0    50   Output ~ 0
 Cap_Touch_Power_DSP
 Text GLabel 5140 5270 0    40   Output ~ 0
 ~Display_Detect_DSP
-Text GLabel 5640 4870 2    50   BiDi ~ 0
+Text GLabel 5640 2470 2    50   BiDi ~ 0
 I2C_DSP_SDA
-Text GLabel 5640 4770 2    50   Input ~ 0
+Text GLabel 5640 2370 2    50   Input ~ 0
 I2C_DSP_SCL
 $Comp
 L Custom_Library:+60VAN #PWR03001
@@ -117,28 +117,6 @@ F 2 "" H 5140 2670 50  0000 C CNN
 F 3 "" H 5140 2670 50  0000 C CNN
 	1    5140 2670
 	0    -1   1    0   
-$EndComp
-$Comp
-L power:GND #PWR03014
-U 1 1 5E46B5F5
-P 5640 2370
-F 0 "#PWR03014" H 5640 2120 50  0001 C CNN
-F 1 "GND" V 5640 2220 50  0000 R CNN
-F 2 "" H 5640 2370 50  0001 C CNN
-F 3 "" H 5640 2370 50  0001 C CNN
-	1    5640 2370
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR03015
-U 1 1 5E46BBBE
-P 5640 2470
-F 0 "#PWR03015" H 5640 2220 50  0001 C CNN
-F 1 "GND" V 5640 2320 50  0000 R CNN
-F 2 "" H 5640 2470 50  0001 C CNN
-F 3 "" H 5640 2470 50  0001 C CNN
-	1    5640 2470
-	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR03016

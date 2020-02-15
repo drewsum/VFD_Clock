@@ -20,7 +20,7 @@ U 1 1 5CC525BF
 P 4070 1580
 F 0 "H3101" H 4070 1780 50  0000 C CNN
 F 1 "MountingHole" H 4070 1705 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 4070 1580 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 4070 1580 50  0001 C CNN
 F 3 "~" H 4070 1580 50  0001 C CNN
 	1    4070 1580
 	1    0    0    -1  
@@ -31,7 +31,7 @@ U 1 1 5CC5295F
 P 4820 1580
 F 0 "H3103" H 4820 1780 50  0000 C CNN
 F 1 "MountingHole" H 4820 1705 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 4820 1580 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 4820 1580 50  0001 C CNN
 F 3 "~" H 4820 1580 50  0001 C CNN
 	1    4820 1580
 	1    0    0    -1  
@@ -42,7 +42,7 @@ U 1 1 5CC52BE4
 P 5570 1580
 F 0 "H3105" H 5570 1780 50  0000 C CNN
 F 1 "MountingHole" H 5570 1705 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 5570 1580 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 5570 1580 50  0001 C CNN
 F 3 "~" H 5570 1580 50  0001 C CNN
 	1    5570 1580
 	1    0    0    -1  
@@ -53,7 +53,7 @@ U 1 1 5CC530EC
 P 6320 1580
 F 0 "H3107" H 6320 1780 50  0000 C CNN
 F 1 "MountingHole" H 6320 1705 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 6320 1580 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 6320 1580 50  0001 C CNN
 F 3 "~" H 6320 1580 50  0001 C CNN
 	1    6320 1580
 	1    0    0    -1  
@@ -64,7 +64,7 @@ U 1 1 5CC53950
 P 4070 2080
 F 0 "H3102" H 4070 2280 50  0000 C CNN
 F 1 "MountingHole" H 4070 2205 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 4070 2080 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 4070 2080 50  0001 C CNN
 F 3 "~" H 4070 2080 50  0001 C CNN
 	1    4070 2080
 	1    0    0    -1  
@@ -75,7 +75,7 @@ U 1 1 5CC5395A
 P 4820 2080
 F 0 "H3104" H 4820 2280 50  0000 C CNN
 F 1 "MountingHole" H 4820 2205 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 4820 2080 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 4820 2080 50  0001 C CNN
 F 3 "~" H 4820 2080 50  0001 C CNN
 	1    4820 2080
 	1    0    0    -1  
@@ -86,7 +86,7 @@ U 1 1 5CC53964
 P 5570 2080
 F 0 "H3106" H 5570 2280 50  0000 C CNN
 F 1 "MountingHole" H 5570 2205 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 5570 2080 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 5570 2080 50  0001 C CNN
 F 3 "~" H 5570 2080 50  0001 C CNN
 	1    5570 2080
 	1    0    0    -1  
@@ -97,7 +97,7 @@ U 1 1 5CC5396E
 P 6320 2080
 F 0 "H3108" H 6320 2280 50  0000 C CNN
 F 1 "MountingHole" H 6320 2205 50  0000 C CNN
-F 2 "MountingHole:MountingHole_3mm_Pad_Via" H 6320 2080 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3mm" H 6320 2080 50  0001 C CNN
 F 3 "~" H 6320 2080 50  0001 C CNN
 	1    6320 2080
 	1    0    0    -1  

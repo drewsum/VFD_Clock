@@ -1,4 +1,4 @@
-update=2/9/2020 10:02:33 PM
+update=2/14/2020 7:26:51 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -255,6 +255,17 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/2]
+Name=Power_HV
+Clearance=0.762
+TrackWidth=0.635
+ViaDiameter=0.4318
+ViaDrill=0.2
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.254
+dPairGap=0.127
+dPairViaGap=0.25
+[pcbnew/Netclasses/3]
 Name=Signal
 Clearance=0.127
 TrackWidth=0.254
