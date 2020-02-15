@@ -183,7 +183,7 @@ Text GLabel 3460 2210 0    50   Output ~ 0
 I2C_MCU_SCL
 Text GLabel 7460 1810 2    50   Output ~ 0
 I2C_EN
-Text GLabel 9150 4830 2    50   Input ~ 0
+Text GLabel 3460 1610 0    50   Input ~ 0
 POS12_PGOOD
 Text GLabel 7460 1910 2    50   Input ~ 0
 POS3P3_PGOOD
