@@ -169,7 +169,6 @@ Wire Wire Line
 	3290 5490 3290 5410
 Wire Wire Line
 	3290 5410 3460 5410
-NoConn ~ 7460 4210
 Text GLabel 3460 4710 0    50   Input ~ 0
 MCU_POSC
 Text GLabel 3460 4910 0    50   Input ~ 0
@@ -188,9 +187,9 @@ Text GLabel 9150 4830 2    50   Input ~ 0
 POS12_PGOOD
 Text GLabel 9190 4570 2    50   Input ~ 0
 POS3P3_PGOOD
-Text GLabel 8120 4650 2    50   Output ~ 0
+Text GLabel 8340 5010 2    50   Output ~ 0
 POS5_RUN
-Text GLabel 8130 4810 2    50   Input ~ 0
+Text GLabel 8350 5170 2    50   Input ~ 0
 POS5_PGOOD
 Text GLabel 7460 2210 2    50   Input ~ 0
 VBAT_PGOOD
@@ -198,33 +197,31 @@ Text GLabel 7460 1510 2    50   Input ~ 0
 BCKP_ON
 Text GLabel 7460 2110 2    50   Output ~ 0
 VBAT_Enable
-Text GLabel 9220 5180 2    50   Output ~ 0
-POS1P2_VFF_RUN
-Text GLabel 9220 5280 2    50   Input ~ 0
+Text GLabel 3460 1510 0    50   Input ~ 0
 POS1P2_VFF_PGOOD
-Text GLabel 7460 5710 2    50   Output ~ 0
+Text GLabel 7460 1210 2    50   Output ~ 0
 POS60_VAN_RUN
-Text GLabel 7460 5610 2    50   Input ~ 0
+Text GLabel 3460 4810 0    50   Input ~ 0
 POS60_VAN_PGOOD
 Text GLabel 3460 5010 0    50   Output ~ 0
 MCU_POSC_Enable
-Text GLabel 3460 1710 0    50   Output ~ 0
+Text GLabel 7460 5910 2    50   Output ~ 0
 Buzzer_Enable
-Text GLabel 2190 800  0    50   Output ~ 0
+Text GLabel 7460 4610 2    50   Output ~ 0
 Heartbeat_LED
-Text GLabel 1160 730  0    50   Output ~ 0
+Text GLabel 7460 4510 2    50   Output ~ 0
 Analog_Error_LED
-Text GLabel 1160 830  0    50   Output ~ 0
+Text GLabel 7460 4210 2    50   Output ~ 0
 Reset_LED
-Text GLabel 1160 930  0    50   Output ~ 0
+Text GLabel 3460 3560 0    50   Output ~ 0
 CPU_Exception_LED
-Text GLabel 1160 1030 0    50   Output ~ 0
+Text GLabel 3460 1310 0    50   Output ~ 0
 USB_Error_LED
-Text GLabel 2070 1550 0    50   Output ~ 0
+Text GLabel 3460 3660 0    50   Output ~ 0
 Other_Error_LED
-Text GLabel 1160 1230 0    50   Output ~ 0
+Text GLabel 7460 4710 2    50   Output ~ 0
 I2C_Error_LED
-Text GLabel 7460 4610 2    40   Input ~ 0
+Text GLabel 8810 4330 2    40   Input ~ 0
 ~USB_Detect
 Text GLabel 3460 2760 0    50   Output ~ 0
 Anode_A
@@ -258,7 +255,7 @@ Text GLabel 3460 4310 0    50   Output ~ 0
 Colon_0
 Text GLabel 7460 3410 2    50   Output ~ 0
 Colon_1
-Text GLabel 1930 3810 0    50   Output ~ 0
+Text GLabel 3460 1710 0    50   Output ~ 0
 I2C_DSP_EN
 Text GLabel 3460 2660 0    50   Input ~ 0
 Cap_Touch_Left
@@ -282,11 +279,7 @@ Text GLabel 3460 4060 0    50   Input ~ 0
 POS3P3_BCKP_ADC
 Text GLabel 3460 3460 0    40   Input ~ 0
 ~Display_Detect
-NoConn ~ 3460 4810
-NoConn ~ 7460 5910
-NoConn ~ 7460 4110
 NoConn ~ 7460 4410
-NoConn ~ 7460 4510
 NoConn ~ 7460 1910
 NoConn ~ 7460 2010
 Text GLabel 7460 5110 2    50   Output ~ 0
@@ -300,8 +293,11 @@ Text GLabel 7460 2410 2    50   Input ~ 0
 USB_UART_RX
 Text GLabel 7460 2310 2    50   Output ~ 0
 USB_UART_TX
-Text GLabel 7460 3210 2    50   Output ~ 0
-Colon_2
 Text GLabel 7460 3310 2    50   Output ~ 0
-Colon_4
+Colon_2
+Text GLabel 7460 3210 2    50   Output ~ 0
+Colon_3
+Text GLabel 3460 1410 0    50   Output ~ 0
+POS1P2_VFF_RUN
+NoConn ~ 7460 4110
 $EndSCHEMATC
