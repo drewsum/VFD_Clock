@@ -1,4 +1,4 @@
-update=2/14/2020 7:26:51 PM
+update=2/14/2020 10:30:21 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -23,7 +23,7 @@ ERC_TestSimilarLabels=1
 version=1
 PageLayoutDescrFile=
 LastNetListRead=VFD_Clock.net
-CopperLayerCount=6
+CopperLayerCount=4
 BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
@@ -71,20 +71,20 @@ Type=2
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=GND
-Type=1
+Type=2
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=In2.Cu
+Name=PWR
 Type=2
 Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
-Type=2
-Enabled=1
+Type=0
+Enabled=0
 [pcbnew/Layer.In4.Cu]
-Name=PWR
-Type=1
-Enabled=1
+Name=In4.Cu
+Type=0
+Enabled=0
 [pcbnew/Layer.In5.Cu]
 Name=In5.Cu
 Type=0

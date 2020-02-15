@@ -183,13 +183,13 @@ Text GLabel 3460 2210 0    50   Output ~ 0
 I2C_MCU_SCL
 Text GLabel 7460 1810 2    50   Output ~ 0
 I2C_EN
-Text GLabel 9150 4830 2    50   Input ~ 0
+Text GLabel 3460 1610 0    50   Input ~ 0
 POS12_PGOOD
-Text GLabel 9190 4570 2    50   Input ~ 0
+Text GLabel 7460 1910 2    50   Input ~ 0
 POS3P3_PGOOD
-Text GLabel 8340 5010 2    50   Output ~ 0
+Text GLabel 7460 4310 2    50   Output ~ 0
 POS5_RUN
-Text GLabel 8350 5170 2    50   Input ~ 0
+Text GLabel 7460 4410 2    50   Input ~ 0
 POS5_PGOOD
 Text GLabel 7460 2210 2    50   Input ~ 0
 VBAT_PGOOD
@@ -211,7 +211,7 @@ Text GLabel 7460 4610 2    50   Output ~ 0
 Heartbeat_LED
 Text GLabel 7460 4510 2    50   Output ~ 0
 Analog_Error_LED
-Text GLabel 7460 4210 2    50   Output ~ 0
+Text GLabel 7460 4110 2    50   Output ~ 0
 Reset_LED
 Text GLabel 3460 3560 0    50   Output ~ 0
 CPU_Exception_LED
@@ -221,7 +221,7 @@ Text GLabel 3460 3660 0    50   Output ~ 0
 Other_Error_LED
 Text GLabel 7460 4710 2    50   Output ~ 0
 I2C_Error_LED
-Text GLabel 8810 4330 2    40   Input ~ 0
+Text GLabel 7460 2010 2    40   Input ~ 0
 ~USB_Detect
 Text GLabel 3460 2760 0    50   Output ~ 0
 Anode_A
@@ -237,7 +237,7 @@ Text GLabel 3460 1210 0    50   Output ~ 0
 Anode_G
 Text GLabel 7460 5510 2    50   Output ~ 0
 Anode_DP
-Text GLabel 1930 3710 0    40   Output ~ 0
+Text GLabel 7460 3110 2    40   Output ~ 0
 ~IO_Level_Shift_Enable
 Text GLabel 7460 5410 2    50   Output ~ 0
 Grid_0
@@ -279,16 +279,12 @@ Text GLabel 3460 4060 0    50   Input ~ 0
 POS3P3_BCKP_ADC
 Text GLabel 3460 3460 0    40   Input ~ 0
 ~Display_Detect
-NoConn ~ 7460 4410
-NoConn ~ 7460 1910
-NoConn ~ 7460 2010
 Text GLabel 7460 5110 2    50   Output ~ 0
 BLE_RESET
 Text GLabel 7460 3910 2    50   Output ~ 0
 BLE_UART_TX
 Text GLabel 7460 4010 2    50   Input ~ 0
 BLE_UART_RX
-NoConn ~ 7460 4310
 Text GLabel 7460 2410 2    50   Input ~ 0
 USB_UART_RX
 Text GLabel 7460 2310 2    50   Output ~ 0
@@ -299,5 +295,5 @@ Text GLabel 7460 3210 2    50   Output ~ 0
 Colon_3
 Text GLabel 3460 1410 0    50   Output ~ 0
 POS1P2_VFF_RUN
-NoConn ~ 7460 4110
+NoConn ~ 7460 4210
 $EndSCHEMATC
