@@ -486,4 +486,22 @@ F 4 "1772-2080-ND" H 6320 5110 50  0001 C CNN "Digi-Key PN"
 	1    6320 5110
 	1    0    0    -1  
 $EndComp
+Wire Notes Line
+	3750 2230 6720 2230
+Wire Notes Line
+	6720 3360 3740 3360
+Wire Notes Line
+	6720 4410 3740 4410
+Wire Notes Line
+	3740 5370 6720 5370
+Wire Notes Line
+	6720 2230 6720 5370
+Wire Notes Line
+	3740 2230 3740 5370
+Text Notes 2940 2980 0    50   ~ 0
+Bottom
+Text Notes 2940 3860 0    50   ~ 0
+Between Boards
+Text Notes 2940 4910 0    50   ~ 0
+Top
 $EndSCHEMATC
