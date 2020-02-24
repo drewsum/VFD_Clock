@@ -331,8 +331,6 @@ Text GLabel 2630 3380 0    50   Input ~ 0
 BLE_UART_TX
 Text GLabel 2630 3480 0    50   Output ~ 0
 BLE_UART_RX
-Text GLabel 5830 3880 2    50   Output ~ 0
-BLE_ACTIVE_LED
 $Comp
 L Custom_Library:R_Custom R2701
 U 1 1 5E44DA52
@@ -356,4 +354,5 @@ NoConn ~ 5830 3980
 NoConn ~ 4430 3580
 NoConn ~ 4430 3880
 NoConn ~ 4430 3980
+NoConn ~ 5830 3880
 $EndSCHEMATC

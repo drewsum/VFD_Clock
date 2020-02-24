@@ -296,4 +296,18 @@ Colon_3
 Text GLabel 3460 1410 0    50   Output ~ 0
 POS1P2_VFF_RUN
 NoConn ~ 7460 4210
+NoConn ~ 3460 1810
+NoConn ~ 3460 1910
+NoConn ~ 7460 1310
+NoConn ~ 7460 1410
+NoConn ~ 7460 1610
+NoConn ~ 7460 1710
+NoConn ~ 7460 2710
+NoConn ~ 7460 2810
+NoConn ~ 7460 2910
+NoConn ~ 7460 3010
+NoConn ~ 7460 5010
+NoConn ~ 7460 5610
+NoConn ~ 7460 5710
+NoConn ~ 7460 5810
 $EndSCHEMATC

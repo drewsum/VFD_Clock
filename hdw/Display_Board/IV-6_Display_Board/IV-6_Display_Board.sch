@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 13
+Sheet 1 14
 Title ""
 Date ""
 Rev ""
@@ -85,5 +85,11 @@ S 1640 5270 500  150
 U 5E2A7EE3
 F0 "Time of Flight" 50
 F1 "Time_of_Flight.sch" 50
+$EndSheet
+$Sheet
+S 1640 5620 500  150 
+U 5E539601
+F0 "Mechanical" 50
+F1 "Mechanical.sch" 50
 $EndSheet
 $EndSCHEMATC
