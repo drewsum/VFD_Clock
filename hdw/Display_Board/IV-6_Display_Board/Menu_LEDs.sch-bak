@@ -63,21 +63,21 @@ Text GLabel 2260 2300 0    50   BiDi ~ 0
 I2C_DSP_SDA
 Text GLabel 2260 2400 0    50   Input ~ 0
 I2C_DSP_SCL
-Text GLabel 3660 3300 2    50   Output ~ 0
-24HR_Mode_LED
-Text GLabel 3660 2300 2    50   Output ~ 0
-Display_Time_LED
-Text GLabel 3660 2500 2    50   Output ~ 0
-Display_Date_LED
-Text GLabel 3660 2900 2    50   Output ~ 0
-Display_Alarm_LED
 Text GLabel 3660 2400 2    50   Output ~ 0
-Set_Time_LED
-Text GLabel 3660 2600 2    50   Output ~ 0
-Set_Date_LED
-Text GLabel 3660 3000 2    50   Output ~ 0
-Set_Alarm_LED
+24HR_Mode_LED
+Text GLabel 3660 3400 2    50   Output ~ 0
+Display_Time_LED
+Text GLabel 3660 3200 2    50   Output ~ 0
+Display_Date_LED
 Text GLabel 3660 2700 2    50   Output ~ 0
+Display_Alarm_LED
+Text GLabel 3660 3300 2    50   Output ~ 0
+Set_Time_LED
+Text GLabel 3660 3000 2    50   Output ~ 0
+Set_Date_LED
+Text GLabel 3660 2600 2    50   Output ~ 0
+Set_Alarm_LED
+Text GLabel 3660 2900 2    50   Output ~ 0
 Display_Weekday_LED
 Text GLabel 3660 2800 2    50   Output ~ 0
 Set_Weekday_LED
@@ -92,7 +92,7 @@ F 3 "" H 4030 4830 60  0001 C CNN
 	1    4030 4480
 	1    0    0    -1  
 $EndComp
-Text GLabel 3660 3200 2    50   Output ~ 0
+Text GLabel 3660 2500 2    50   Output ~ 0
 Alarm_Enable_LED
 $Comp
 L Custom_Library:C_Custom C?
@@ -594,7 +594,7 @@ Text GLabel 7670 3150 0    50   Input ~ 0
 Set_Weekday_LED
 Text GLabel 7670 4050 0    50   Input ~ 0
 Alarm_Enable_LED
-Text GLabel 3660 3400 2    50   Output ~ 0
+Text GLabel 3660 2300 2    50   Output ~ 0
 Set_Brightness_LED
 $Comp
 L Device:LED D511
