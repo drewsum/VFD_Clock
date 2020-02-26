@@ -64,7 +64,7 @@ F 3 "" H 3290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 2890 3250 3    50   UnSpc ~ 0
-Grid_0_VFD
+Grid_5_VFD
 $Comp
 L vfd:IV-6 VFD403
 U 1 1 5E09E42E
@@ -99,7 +99,7 @@ F 3 "" H 5290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 4890 3250 3    50   UnSpc ~ 0
-Grid_1_VFD
+Grid_4_VFD
 $Comp
 L vfd:IV-6 VFD405
 U 1 1 5E09E57F
@@ -134,7 +134,7 @@ F 3 "" H 7290 2300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 6890 3250 3    50   UnSpc ~ 0
-Grid_2_VFD
+Grid_3_VFD
 $Comp
 L vfd:IV-6 VFD402
 U 1 1 5E0A247C
@@ -169,7 +169,7 @@ F 3 "" H 3290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 2890 5750 3    50   UnSpc ~ 0
-Grid_3_VFD
+Grid_2_VFD
 $Comp
 L vfd:IV-6 VFD404
 U 1 1 5E0A24A3
@@ -204,7 +204,7 @@ F 3 "" H 5290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 4890 5750 3    50   UnSpc ~ 0
-Grid_4_VFD
+Grid_1_VFD
 $Comp
 L vfd:IV-6 VFD406
 U 1 1 5E0A24CA
@@ -239,7 +239,7 @@ F 3 "" H 7290 4800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 6890 5750 3    50   UnSpc ~ 0
-Grid_5_VFD
+Grid_0_VFD
 Text GLabel 2440 4200 0    50   UnSpc ~ 0
 Anode_B_VFD
 Text GLabel 2440 4350 0    50   UnSpc ~ 0
