@@ -72,17 +72,17 @@ $EndComp
 Wire Wire Line
 	1800 2500 1590 2500
 Text GLabel 1290 2500 0    50   Input ~ 0
-Grid_0_DSP
-Text GLabel 3620 2500 0    50   Input ~ 0
-Grid_1_DSP
-Text GLabel 6030 2500 0    50   Input ~ 0
-Grid_2_DSP
-Text GLabel 1290 4830 0    50   Input ~ 0
-Grid_3_DSP
-Text GLabel 3620 4830 0    50   Input ~ 0
-Grid_4_DSP
-Text GLabel 6030 4830 0    50   Input ~ 0
 Grid_5_DSP
+Text GLabel 3620 2500 0    50   Input ~ 0
+Grid_4_DSP
+Text GLabel 6030 2500 0    50   Input ~ 0
+Grid_3_DSP
+Text GLabel 1290 4830 0    50   Input ~ 0
+Grid_2_DSP
+Text GLabel 3620 4830 0    50   Input ~ 0
+Grid_1_DSP
+Text GLabel 6030 4830 0    50   Input ~ 0
+Grid_0_DSP
 Wire Wire Line
 	2540 2260 2480 2260
 Connection ~ 2480 2260
@@ -387,17 +387,17 @@ Wire Wire Line
 	7280 4590 7220 4590
 Connection ~ 7220 4590
 Text GLabel 2540 2260 2    50   Output ~ 0
-Grid_0_VFD
-Text GLabel 4870 2260 2    50   Output ~ 0
-Grid_1_VFD
-Text GLabel 7280 2260 2    50   Output ~ 0
-Grid_2_VFD
-Text GLabel 2540 4590 2    50   Output ~ 0
-Grid_3_VFD
-Text GLabel 4870 4590 2    50   Output ~ 0
-Grid_4_VFD
-Text GLabel 7280 4590 2    50   Output ~ 0
 Grid_5_VFD
+Text GLabel 4870 2260 2    50   Output ~ 0
+Grid_4_VFD
+Text GLabel 7280 2260 2    50   Output ~ 0
+Grid_3_VFD
+Text GLabel 2540 4590 2    50   Output ~ 0
+Grid_2_VFD
+Text GLabel 4870 4590 2    50   Output ~ 0
+Grid_1_VFD
+Text GLabel 7280 4590 2    50   Output ~ 0
+Grid_0_VFD
 $Comp
 L Device:R R301
 U 1 1 5A34ED94

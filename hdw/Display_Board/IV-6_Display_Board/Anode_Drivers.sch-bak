@@ -117,15 +117,15 @@ $EndComp
 Wire Wire Line
 	1800 2500 1590 2500
 Text GLabel 1290 2500 0    50   Input ~ 0
-Anode_A_DSP
+Anode_G_DSP
 Text GLabel 3620 2500 0    50   Input ~ 0
-Anode_B_DSP
-Text GLabel 6030 2500 0    50   Input ~ 0
-Anode_C_DSP
-Text GLabel 8360 2500 0    50   Input ~ 0
-Anode_D_DSP
-Text GLabel 1290 4830 0    50   Input ~ 0
 Anode_E_DSP
+Text GLabel 6030 2500 0    50   Input ~ 0
+Anode_DP_DSP
+Text GLabel 8360 2500 0    50   Input ~ 0
+Anode_F_DSP
+Text GLabel 1290 4830 0    50   Input ~ 0
+Anode_D_DSP
 Text GLabel 3620 4830 0    50   Input ~ 0
 Anode_F_DSP
 Text GLabel 6030 4830 0    50   Input ~ 0
@@ -193,7 +193,7 @@ $EndComp
 Wire Wire Line
 	4130 2500 3920 2500
 Text GLabel 4870 2260 2    50   Output ~ 0
-Anode_B_VFD
+Anode_E_VFD
 Wire Wire Line
 	4870 2260 4810 2260
 Connection ~ 4810 2260
@@ -243,7 +243,7 @@ $EndComp
 Wire Wire Line
 	6540 2500 6330 2500
 Text GLabel 7280 2260 2    50   Output ~ 0
-Anode_C_VFD
+Anode_DP_VFD
 Wire Wire Line
 	7280 2260 7220 2260
 Connection ~ 7220 2260
@@ -305,7 +305,7 @@ $EndComp
 Wire Wire Line
 	8870 2500 8660 2500
 Text GLabel 9610 2260 2    50   Output ~ 0
-Anode_D_VFD
+Anode_F_VFD
 Wire Wire Line
 	9610 2260 9550 2260
 Connection ~ 9550 2260
@@ -367,7 +367,7 @@ $EndComp
 Wire Wire Line
 	1800 4830 1590 4830
 Text GLabel 2540 4590 2    50   Output ~ 0
-Anode_E_VFD
+Anode_D_VFD
 Wire Wire Line
 	2540 4590 2480 4590
 Connection ~ 2480 4590
@@ -1035,7 +1035,7 @@ Wire Wire Line
 Wire Wire Line
 	9550 4590 9550 4450
 Text GLabel 2540 2260 2    50   Output ~ 0
-Anode_A_VFD
+Anode_G_VFD
 $Comp
 L Custom_Library:+60VAN #PWR0201
 U 1 1 5E0985F3
