@@ -1,4 +1,4 @@
-update=2/23/2020 9:45:55 PM
+update=2/29/2020 5:03:53 PM
 version=1
 last_client=kicad
 [general]
@@ -74,7 +74,7 @@ Type=2
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=GND
-Type=2
+Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=PWR
