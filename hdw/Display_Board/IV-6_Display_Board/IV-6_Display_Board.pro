@@ -1,4 +1,4 @@
-update=2/29/2020 5:03:53 PM
+update=2/29/2020 6:14:46 PM
 version=1
 last_client=kicad
 [general]
@@ -70,7 +70,7 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
-Type=2
+Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=GND
@@ -78,7 +78,7 @@ Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=PWR
-Type=2
+Type=1
 Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
@@ -194,7 +194,7 @@ Type=0
 Enabled=0
 [pcbnew/Layer.B.Cu]
 Name=B.Cu
-Type=2
+Type=0
 Enabled=1
 [pcbnew/Layer.B.Adhes]
 Enabled=1
