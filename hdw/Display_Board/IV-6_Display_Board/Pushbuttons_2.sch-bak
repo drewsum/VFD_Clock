@@ -362,6 +362,7 @@ F 0 "U802" H 3960 1735 50  0000 C CNN
 F 1 "TLV71333PDBV" H 4110 1735 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4110 1810 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv713p.pdf" H 4110 1510 50  0001 C CNN
+F 4 "296-35591-1-ND" H 4110 1510 50  0001 C CNN "Digi-Key PN"
 	1    4110 1510
 	1    0    0    -1  
 $EndComp
@@ -815,6 +816,7 @@ F 0 "U801" H 3950 4225 50  0000 C CNN
 F 1 "TLV71333PDBV" H 4100 4225 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4100 4300 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv713p.pdf" H 4100 4000 50  0001 C CNN
+F 4 "296-35591-1-ND" H 4100 4000 50  0001 C CNN "Digi-Key PN"
 	1    4100 4000
 	1    0    0    -1  
 $EndComp
@@ -952,6 +954,7 @@ F 0 "U805" H 7040 5100 50  0000 L CNN
 F 1 "74LVC1G97" H 6470 5100 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7030 4950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7030 4950 50  0001 C CNN
+F 4 "296-17671-1-ND" H 6980 4950 50  0001 C CNN "Digi-Key PN"
 	1    6980 4950
 	1    0    0    -1  
 $EndComp
@@ -965,6 +968,7 @@ F 0 "U806" H 7050 2610 50  0000 L CNN
 F 1 "74LVC1G97" H 6480 2610 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7040 2460 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7040 2460 50  0001 C CNN
+F 4 "296-17671-1-ND" H 6990 2460 50  0001 C CNN "Digi-Key PN"
 	1    6990 2460
 	1    0    0    -1  
 $EndComp

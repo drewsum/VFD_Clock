@@ -147,6 +147,7 @@ F 3 "" H 2635 4230 50  0001 C CNN
 F 4 "1210" H 2460 4230 50  0000 R CNN "display_footprint"
 F 5 "100V" H 2460 4130 50  0000 R CNN "Voltage"
 F 6 "X7R" H 2460 4030 50  0000 R CNN "Dielectric"
+F 7 "399-17668-1-ND" H 2610 4130 50  0001 C CNN "Digi-Key PN"
 	1    2610 4130
 	1    0    0    -1  
 $EndComp

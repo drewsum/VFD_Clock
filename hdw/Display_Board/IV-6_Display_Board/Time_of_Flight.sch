@@ -55,6 +55,7 @@ F 3 "" H 4505 3220 50  0001 C CNN
 F 4 "0603" H 4330 3220 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4330 3120 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4330 3020 50  0000 R CNN "Dielectric"
+F 7 "311-1344-1-ND" H 4480 3120 50  0001 C CNN "Digi-Key PN"
 	1    4480 3120
 	1    0    0    -1  
 $EndComp
@@ -229,6 +230,7 @@ F 0 "D1301" V 2590 2550 50  0000 R CNN
 F 1 "MBR0530" V 2490 2550 50  0000 R CNN
 F 2 "Diode_SMD:D_SOD-123" H 2530 2485 50  0001 C CNN
 F 3 "http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf" H 2530 2660 50  0001 C CNN
+F 4 "MBR0530T1GOSCT-ND" H 2530 2660 50  0001 C CNN "Digi-Key PN"
 	1    2530 2660
 	0    -1   -1   0   
 $EndComp
@@ -352,6 +354,7 @@ F 3 "" H 7155 3260 50  0001 C CNN
 F 4 "0603" H 6980 3260 50  0000 R CNN "display_footprint"
 F 5 "50V" H 6980 3160 50  0000 R CNN "Voltage"
 F 6 "X7R" H 6980 3060 50  0000 R CNN "Dielectric"
+F 7 "311-1344-1-ND" H 7130 3160 50  0001 C CNN "Digi-Key PN"
 	1    7130 3160
 	1    0    0    -1  
 $EndComp
@@ -428,6 +431,7 @@ F 3 "" H 8010 5060 50  0001 C CNN
 F 4 "0603" H 8110 5130 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8110 5030 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8110 4930 50  0000 L CNN "Wattage"
+F 7 "311-392KHRCT-ND" H 8010 5060 50  0001 C CNN "Digi-Key PN"
 	1    8010 5060
 	1    0    0    -1  
 $EndComp
@@ -455,7 +459,7 @@ F 3 "" H 8620 4830 50  0001 C CNN
 F 4 "0603" V 8720 4830 50  0000 C CNN "display_footprint"
 F 5 "1%" V 8820 4830 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 8920 4830 50  0000 C CNN "Wattage"
-F 7 "PN" H 8920 5230 60  0001 C CNN "Digi-Key PN"
+F 7 "311-1.00MHRCT-ND" H 8920 5230 60  0001 C CNN "Digi-Key PN"
 	1    8620 4830
 	0    1    1    0   
 $EndComp

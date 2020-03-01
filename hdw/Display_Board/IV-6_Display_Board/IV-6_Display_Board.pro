@@ -1,4 +1,4 @@
-update=2/29/2020 6:14:46 PM
+update=2/29/2020 6:18:29 PM
 version=1
 last_client=kicad
 [general]
@@ -78,7 +78,7 @@ Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=PWR
-Type=1
+Type=2
 Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu

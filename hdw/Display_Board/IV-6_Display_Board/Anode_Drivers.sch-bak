@@ -127,11 +127,11 @@ Anode_F_DSP
 Text GLabel 1290 4830 0    50   Input ~ 0
 Anode_D_DSP
 Text GLabel 3620 4830 0    50   Input ~ 0
-Anode_F_DSP
+Anode_C_DSP
 Text GLabel 6030 4830 0    50   Input ~ 0
-Anode_G_DSP
+Anode_B_DSP
 Text GLabel 8360 4830 0    50   Input ~ 0
-Anode_DP_DSP
+Anode_A_DSP
 Wire Wire Line
 	2540 2260 2480 2260
 Connection ~ 2480 2260
@@ -489,7 +489,7 @@ $EndComp
 Wire Wire Line
 	6540 4830 6330 4830
 Text GLabel 7280 4590 2    50   Output ~ 0
-Anode_G_VFD
+Anode_B_VFD
 Wire Wire Line
 	7280 4590 7220 4590
 Connection ~ 7220 4590
@@ -551,7 +551,7 @@ $EndComp
 Wire Wire Line
 	8870 4830 8660 4830
 Text GLabel 9610 4590 2    50   Output ~ 0
-Anode_DP_VFD
+Anode_A_VFD
 Wire Wire Line
 	9610 4590 9550 4590
 Connection ~ 9550 4590
@@ -1213,5 +1213,5 @@ F 3 "" H 2100 3870 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4870 4590 2    50   Output ~ 0
-Anode_F_VFD
+Anode_C_VFD
 $EndSCHEMATC
