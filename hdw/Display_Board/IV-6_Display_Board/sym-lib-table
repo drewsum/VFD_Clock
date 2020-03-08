@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name vfd)(type Legacy)(uri "C:/Users/Drew Maatman/Documents/KiCad Projects/Libraries/KiCad-libs/vfd.lib")(options "")(descr ""))
+  (lib (name IV-6_Display_Board-rescue)(type Legacy)(uri ${KIPRJMOD}/IV-6_Display_Board-rescue.lib)(options "")(descr ""))
+)
