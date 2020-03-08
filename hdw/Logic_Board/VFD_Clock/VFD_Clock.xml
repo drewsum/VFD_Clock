@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>C:\Users\Drew Maatman\Documents\KiCad Projects\Projects\VFD_Clock\hdw\Logic_Board\VFD_Clock\VFD_Clock.sch</source>
-    <date>2/15/2020 7:25:46 PM</date>
+    <date>3/4/2020 8:27:09 PM</date>
     <tool>Eeschema (5.1.4)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -3742,7 +3742,7 @@
       <footprint>Buzzer_Beeper:MagneticBuzzer_CUI_CST-931RP-A</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digi-Key PN">439-1070-ND</field>
+        <field name="Digi-Key PN">102-1461-ND</field>
       </fields>
       <libsource lib="Device" part="Buzzer" description="Buzzer, polarized"/>
       <sheetpath names="/Misc Circuits/" tstamps="/5E2843EF/"/>
