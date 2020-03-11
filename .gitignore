@@ -4,5 +4,5 @@
 *.raw
 *.op.raw
 *.log
-/sfw/*.o
-/sfw/*.o.d
+sfw/**/*.o
+sfw/**/*.o.d
