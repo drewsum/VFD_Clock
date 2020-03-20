@@ -18,6 +18,9 @@
 void main(void) {
     
     
+    // setup GPIO pins
+    gpioInitialize();
+    
     // Disable reset LED
     RESET_LED_PIN = LOW;
     
