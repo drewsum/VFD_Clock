@@ -11,6 +11,7 @@
         <itemPath>32mz_interrupt_control.h</itemPath>
         <itemPath>configuration.h</itemPath>
         <itemPath>watchdog_timer.h</itemPath>
+        <itemPath>heartbeat_timer.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.h</itemPath>
@@ -33,6 +34,7 @@
         <itemPath>cause_of_reset.c</itemPath>
         <itemPath>32mz_interrupt_control.c</itemPath>
         <itemPath>watchdog_timer.c</itemPath>
+        <itemPath>heartbeat_timer.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
