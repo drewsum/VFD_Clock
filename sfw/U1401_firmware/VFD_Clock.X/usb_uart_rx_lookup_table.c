@@ -214,11 +214,11 @@ usb_uart_command_function_t deviceOnTimeComand(char * input_str) {
 //    
 //}
 //
-//usb_uart_command_function_t pmdStatusCommand(char * input_str) {
-// 
-//    printPMDStatus();
-//    
-//}
+usb_uart_command_function_t pmdStatusCommand(char * input_str) {
+ 
+    printPMDStatus();
+    
+}
 
 //usb_uart_command_function_t timeAndDateCommand(char * input_str) {
 // 
@@ -562,9 +562,9 @@ void usbUartHashTableInitialize(void) {
 //    usbUartAddCommand("Clear Errors",
 //            "Clears all error handler flags",
 //            clearErrorsCommand);
-//    usbUartAddCommand("PMD Status?",
-//            "Prints status of peripheral module disable settings",
-//            pmdStatusCommand);
+    usbUartAddCommand("PMD Status?",
+            "Prints status of peripheral module disable settings",
+            pmdStatusCommand);
 //    usbUartAddCommand("PGOOD Status?",
 //            "Prints current state of power good signals for all voltage rails",
 //            pgoodStatusCommand);

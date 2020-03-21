@@ -31,6 +31,9 @@
 #include "usb_uart_rx_lookup_table.h"
 #include "terminal_control.h"
 
+// Application Specific
+#include "power_saving.h"
+
 void main(void) {
     
     // Clear the terminal
@@ -75,6 +78,10 @@ void main(void) {
     // Setup prefetch module
     prefetchInitialize();
     printf("    CPU Instruction Prefetch Module Enabled\r\n");
+    
+    // Disable unused peripherals for power savings
+    PMDInitialize();
+    printf("    Unused Peripheral Modules Disabled\n\r");
     
     // Setup USB UART debugging
     usbUartInitialize();
