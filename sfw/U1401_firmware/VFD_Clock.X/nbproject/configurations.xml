@@ -18,6 +18,7 @@
         <itemPath>watchdog_timer.h</itemPath>
         <itemPath>heartbeat_timer.h</itemPath>
         <itemPath>prefetch.h</itemPath>
+        <itemPath>rtcc.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.h</itemPath>
@@ -39,6 +40,7 @@
       <logicalFolder name="f4" displayName="Application" projectFiles="true">
         <itemPath>power_saving.c</itemPath>
         <itemPath>usb_uart_rx_lookup_table.c</itemPath>
+        <itemPath>pgood_monitor.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>
@@ -48,6 +50,7 @@
         <itemPath>watchdog_timer.c</itemPath>
         <itemPath>heartbeat_timer.c</itemPath>
         <itemPath>prefetch.c</itemPath>
+        <itemPath>rtcc.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
@@ -57,7 +60,6 @@
         <itemPath>usb_uart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>pgood_monitor.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

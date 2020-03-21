@@ -20,6 +20,7 @@
 #include "heartbeat_timer.h"
 #include "watchdog_timer.h"
 #include "prefetch.h"
+#include "rtcc.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -99,17 +100,13 @@ void main(void) {
     enableGlobalInterrupts();
     printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
     
-    // Setup heartbeat timer
-    heartbeatTimerInitialize();
-    printf("    Heartbeat Timer Initialized\n\r");
-    
-    // setup watchdog timer
-    watchdogTimerInitialize();
-    printf("    Watchdog Timer Initialized\n\r");
-    
     // Setup error handling
     errorHandlerInitialize();
     printf("    Error Handler Initialized\n\r");
+    
+    // Setup USB UART debugging
+    usbUartInitialize();
+    printf("    USB UART Initialized, DMA buffer method used\n\r");
     
     // Setup prefetch module
     prefetchInitialize();
@@ -119,9 +116,18 @@ void main(void) {
     PMDInitialize();
     printf("    Unused Peripheral Modules Disabled\n\r");
     
-    // Setup USB UART debugging
-    usbUartInitialize();
-    printf("    USB UART Initialized, DMA buffer method used\n\r");
+    // Setup the real time clock-calendar
+    rtccInitialize();
+    if (reset_cause == POR_Reset) rtccClear();
+    printf("    Real Time Clock-Calendar Initialized\r\n");
+    
+    // Setup heartbeat timer
+    heartbeatTimerInitialize();
+    printf("    Heartbeat Timer Initialized\n\r");
+    
+    // setup watchdog timer
+    watchdogTimerInitialize();
+    printf("    Watchdog Timer Initialized\n\r");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

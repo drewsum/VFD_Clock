@@ -88,8 +88,8 @@ void PMDInitialize(void) {
     // Disable USB Module (UART 3 is used for USB debug)
     PMD5bits.USBMD = 1;
     
-    // Disable real time clock/calendar
-    PMD6bits.RTCCMD = 1;
+    // Enable real time clock/calendar
+    PMD6bits.RTCCMD = 0;
     
     // Enable all reference clocks, per device errata
     PMD6bits.REFO1MD = 0;
