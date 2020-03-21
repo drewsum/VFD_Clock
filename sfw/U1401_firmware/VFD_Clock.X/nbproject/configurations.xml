@@ -12,6 +12,7 @@
         <itemPath>configuration.h</itemPath>
         <itemPath>watchdog_timer.h</itemPath>
         <itemPath>heartbeat_timer.h</itemPath>
+        <itemPath>prefetch.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.h</itemPath>
@@ -38,6 +39,7 @@
         <itemPath>32mz_interrupt_control.c</itemPath>
         <itemPath>watchdog_timer.c</itemPath>
         <itemPath>heartbeat_timer.c</itemPath>
+        <itemPath>prefetch.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
@@ -167,7 +169,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="2048"/>
+        <property key="heap-size" value="32768"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -299,7 +301,6 @@
         <property key="UART5" value="true"/>
         <property key="UART6" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

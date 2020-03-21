@@ -8,7 +8,8 @@ device_control.h  \
 heartbeat_timer.h  \
 pin_macros.h  \
 watchdog_timer.h  \
- gpio_setup.h  \
+ prefetch.h  \
+gpio_setup.h  \
 uthash.h  \
 usb_uart.h  \
 usb_uart_rx_lookup_table.h  \

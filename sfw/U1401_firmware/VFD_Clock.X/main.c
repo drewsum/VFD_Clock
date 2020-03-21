@@ -19,6 +19,7 @@
 #include "error_handler.h"
 #include "heartbeat_timer.h"
 #include "watchdog_timer.h"
+#include "prefetch.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -70,6 +71,10 @@ void main(void) {
     // setup watchdog timer
     watchdogTimerInitialize();
     printf("    Watchdog Timer Initialized\n\r");
+    
+    // Setup prefetch module
+    prefetchInitialize();
+    printf("    CPU Instruction Prefetch Module Enabled\r\n");
     
     // Setup USB UART debugging
     usbUartInitialize();

@@ -69,13 +69,13 @@ usb_uart_command_function_t idnCommand(char * input_str) {
     terminalTextAttributesReset();    
 }
 
-//usb_uart_command_function_t repositoryCommand(char * input_str) {
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Project Git repository is hosted at: https://github.com/drewsum/VFD_Clock\r\n");
-//    terminalTextAttributesReset();    
-//}
-//
+usb_uart_command_function_t repositoryCommand(char * input_str) {
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Project Git repository is hosted at: https://github.com/drewsum/VFD_Clock\r\n");
+    terminalTextAttributesReset();    
+}
+
 //usb_uart_command_function_t causeOfResetCommand(char * input_str) {
 //    // Print cause of reset
 //    if (    reset_cause == Undefined ||
@@ -102,45 +102,45 @@ usb_uart_command_function_t idnCommand(char * input_str) {
 //    terminalTextAttributesReset();
 //}
 //
-//usb_uart_command_function_t mcuIdCommand(char * input_str) {
-//    
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    
-//    // Print serial number
-//    printf("    PIC32MZ Serial Number retrieved from Flash: %s\n\r",
-//                getStringSerialNumber());
-//        
-//    // Print device ID
-//    printf("    Device ID retrieved from Flash: %s (0x%X)\n\r", 
-//        getDeviceIDString(getDeviceID()), 
-//        getDeviceID());
-//
-//        // Print revision ID
-//    printf("    Revision ID retrieved from Flash: %s (0x%X)\n\r", 
-//        getRevisionIDString(getRevisionID()), 
-//        getRevisionID());
-//
-//    terminalTextAttributesReset();
-//    
-//}
-//
-//usb_uart_command_function_t mcuStatusCommand(char * input_str) {
-//
-//    printWatchdogStatus();
-//        
-//    printDeadmanStatus();
-//        
-//    // printPrefetchStatus();
-//
-//}
-//
-//usb_uart_command_function_t interruptStatusCommand(char * input_str) {
-// 
-//    printInterruptStatus();
-//    
-//}
-//
+usb_uart_command_function_t mcuIdCommand(char * input_str) {
+    
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
+    // Print serial number
+    printf("    PIC32MZ Serial Number retrieved from Flash: %s\n\r",
+                getStringSerialNumber());
+        
+    // Print device ID
+    printf("    Device ID retrieved from Flash: %s (0x%X)\n\r", 
+        getDeviceIDString(getDeviceID()), 
+        getDeviceID());
+
+        // Print revision ID
+    printf("    Revision ID retrieved from Flash: %s (0x%X)\n\r", 
+        getRevisionIDString(getRevisionID()), 
+        getRevisionID());
+
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t mcuStatusCommand(char * input_str) {
+
+    printWatchdogStatus();
+        
+    printDeadmanStatus();
+        
+    printPrefetchStatus();
+
+}
+
+usb_uart_command_function_t interruptStatusCommand(char * input_str) {
+ 
+    printInterruptStatus();
+    
+}
+
 //usb_uart_command_function_t clockStatusCommand(char * input_str) {
 //
 //    printClockStatus(SYSCLK_INT);
@@ -538,18 +538,18 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("*IDN?", 
             "Prints identification string", 
             idnCommand);
-//    usbUartAddCommand("Repository?",
-//            "Prints project Git repo location",
-//            repositoryCommand);
-//    usbUartAddCommand("MCU IDs?", 
-//            "Prints microcontroller serial number, device ID, and silicon revision ID", 
-//            mcuIdCommand);
-//    usbUartAddCommand("MCU Status?", 
-//            "Prints the status of the watchdog timer, deadman timer and predictive prefetch module", 
-//            mcuStatusCommand);
-//    usbUartAddCommand("Interrupt Status?",
-//            "Prints MCU interrupt settings", 
-//            interruptStatusCommand);
+    usbUartAddCommand("Repository?",
+            "Prints project Git repo location",
+            repositoryCommand);
+    usbUartAddCommand("MCU IDs?", 
+            "Prints microcontroller serial number, device ID, and silicon revision ID", 
+            mcuIdCommand);
+    usbUartAddCommand("MCU Status?",
+            "Prints the status of the watchdog timer, deadman timer and predictive prefetch module", 
+            mcuStatusCommand);
+    usbUartAddCommand("Interrupt Status?",
+            "Prints MCU interrupt settings", 
+            interruptStatusCommand);
 //    usbUartAddCommand("Clock Status?", 
 //            "Prints MCU clock and oscillator settings", 
 //            clockStatusCommand);
