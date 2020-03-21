@@ -810,21 +810,13 @@ void printClockStatus(uint32_t input_sysclk) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\n\r    Boot PLL Input Divider is set to: %d\n\r", (DEVCFG2bits.FPLLIDIV + 1));
     printf("    Boot PLL Multiplier is set to: %d\n\r", (DEVCFG2bits.FPLLMULT + 1));
-    printf("    Boot PLL Output Divider is set to: %d\n\r", (DEVCFG2bits.FPLLODIV + 1));
-    
-    printf("    Overall Boot PLL Gain is: %.3f\n\r", 
-            (float) (DEVCFG2bits.FPLLMULT + 1) / ((DEVCFG2bits.FPLLIDIV) + (DEVCFG2bits.FPLLODIV) + 1));
-    
-    
+    printf("    Boot PLL Output Divider is set to: %d\n\r", (1 << DEVCFG2bits.FPLLODIV));
+
     // Print changed PLL status
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\n\r    Operational PLL Input Divider is set to: %d\n\r", (SPLLCONbits.PLLIDIV + 1));
     printf("    Operational PLL Multiplier is set to: %d\n\r", (SPLLCONbits.PLLMULT + 1));
-    printf("    Operational PLL Output Divider is set to: %d\n\r", (SPLLCONbits.PLLODIV + 1));
-    
-    printf("    Overall Operational PLL Gain is: %.3f\n\r", 
-            (float) (SPLLCONbits.PLLMULT + 1) / ((SPLLCONbits.PLLIDIV) + (SPLLCONbits.PLLODIV) + 1));
-    
+    printf("    Operational PLL Output Divider is set to: %d\n\r", (1 << SPLLCONbits.PLLODIV));
     
     // Determine refclk1
     if (REFO1CONbits.ON == 0) {

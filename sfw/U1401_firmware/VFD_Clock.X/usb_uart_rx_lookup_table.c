@@ -141,22 +141,22 @@ usb_uart_command_function_t interruptStatusCommand(char * input_str) {
     
 }
 
-//usb_uart_command_function_t clockStatusCommand(char * input_str) {
-//
-//    printClockStatus(SYSCLK_INT);
-//    
-//}
-//
-//usb_uart_command_function_t deviceOnTimeComand(char * input_str) {
-// 
-//    terminalTextAttributesReset();
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        printf("On time since last device reset: %s\n\r", 
-//                getStringSecondsAsTime(device_on_time_counter));
-//        terminalTextAttributesReset();
-//    
-//}
-//
+usb_uart_command_function_t clockStatusCommand(char * input_str) {
+
+    printClockStatus(SYSCLK_INT);
+    
+}
+
+usb_uart_command_function_t deviceOnTimeComand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("On time since last device reset: %s\n\r", 
+                getStringSecondsAsTime(device_on_time_counter));
+        terminalTextAttributesReset();
+    
+}
+
 //usb_uart_command_function_t errorStatusCommand(char * input_str) {
 // 
 //    // Print error handler status
@@ -550,12 +550,12 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Interrupt Status?",
             "Prints MCU interrupt settings", 
             interruptStatusCommand);
-//    usbUartAddCommand("Clock Status?", 
-//            "Prints MCU clock and oscillator settings", 
-//            clockStatusCommand);
-//    usbUartAddCommand("Device On Time?", 
-//            "Prints the MCU on time since the last device reset", 
-//            deviceOnTimeComand);
+    usbUartAddCommand("Clock Status?", 
+            "Prints MCU clock and oscillator settings", 
+            clockStatusCommand);
+    usbUartAddCommand("Device On Time?", 
+            "Prints the MCU on time since the last device reset", 
+            deviceOnTimeComand);
 //    usbUartAddCommand("Error Status?",
 //            "Prints the status of various error handler flags",
 //            errorStatusCommand);
