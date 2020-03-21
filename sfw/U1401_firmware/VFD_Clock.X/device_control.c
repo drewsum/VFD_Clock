@@ -21,6 +21,7 @@
 
 #include "device_control.h"
 #include "terminal_control.h"
+#include "pin_macros.h"
 
 // private function prototype
 
@@ -156,6 +157,9 @@ void clockInitialize(void) {
     // This sets FRCDIV frequency to 8 MHz
     OSCCONbits.FRCDIV = 0b000;
     
+    // Enable external clock into primary oscillator
+    MCU_POSC_ENABLE_PIN = HIGH;
+    
     // Initialize the PLL
     PLLInitialize();
     
@@ -182,14 +186,17 @@ void PLLInitialize(void) {
     // Set PLL input range as 5-10 MHz
     SPLLCONbits.PLLRANGE = 0b001;
     
+    // wait for POSC to be ready
+    while (CLKSTATbits.POSCRDY == 0);
+    
     // Set the input to the PLL as FRC
-    SPLLCONbits.PLLICLK = 1;
+    SPLLCONbits.PLLICLK = 0;
     
-    // Set PLL input divider to 1
-    SPLLCONbits.PLLIDIV = 0b000;
+    // Set PLL input divider to 2
+    SPLLCONbits.PLLIDIV = 0b001;
     
-    // Set PLL multiplier to 50
-    SPLLCONbits.PLLMULT = 0b110001; // (49 in binary, 0b0000000 => PLL X 1)
+    // Set PLL multiplier to 100
+    SPLLCONbits.PLLMULT = 0b1100011; // (99 in binary, 0b0000000 => PLL X 1)
     
     // Set PLL output divider to 2
     SPLLCONbits.PLLODIV = 0b001;

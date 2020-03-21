@@ -16,9 +16,9 @@
 #pragma config FUSBIDIO = OFF           // USB USBID Selection (Controlled by Port Function)
 
 // DEVCFG2
-#pragma config FPLLIDIV = DIV_4         // System PLL Input Divider (1x Divider)
+#pragma config FPLLIDIV = DIV_4         // System PLL Input Divider (4x Divider)
 #pragma config FPLLRNG = RANGE_5_10_MHZ // System PLL Input Range (5-10 MHz Input)
-#pragma config FPLLICLK = PLL_FRC       // System PLL Input Clock Selection (FRC is input to the System PLL)
+#pragma config FPLLICLK = PLL_POSC       // System PLL Input Clock Selection (POSC is input to the System PLL)
 #pragma config FPLLMULT = MUL_50        // System PLL Multiplier (PLL Multiply by 50)
 #pragma config FPLLODIV = DIV_2         // System PLL Output Clock Divider (2x Divider)
 #pragma config UPLLFSEL = FREQ_24MHZ    // USB PLL Input Frequency Selection (USB PLL input is 24 MHz)
@@ -28,7 +28,7 @@
 #pragma config DMTINTV = WIN_127_128    // DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config FSOSCEN = OFF            // Secondary Oscillator Enable (Disable SOSC)
 #pragma config IESO = OFF               // Internal/External Switch Over (Disabled)
-#pragma config POSCMOD = OFF            // Primary Oscillator Configuration (Primary osc disabled)
+#pragma config POSCMOD = EC            // Primary Oscillator Configuration (Primary osc = ecternal clock)
 #pragma config OSCIOFNC = OFF           // CLKO Output Signal Active on the OSCO Pin (Disabled)
 #pragma config FCKSM = CSECME           // Clock Switching and Monitor Selection (Clock Switch Enabled, FSCM Enabled)
 #pragma config WDTPS = PS8192           // Watchdog Timer Postscaler (1:4096)
@@ -85,9 +85,9 @@
 #pragma config_alt FUSBIDIO = OFF       // USB USBID Selection (Controlled by Port Function)
 
 // ADEVCFG2
-#pragma config_alt FPLLIDIV = DIV_4     // System PLL Input Divider (1x Divider)
+#pragma config_alt FPLLIDIV = DIV_4     // System PLL Input Divider (4x Divider)
 #pragma config_alt FPLLRNG = RANGE_5_10_MHZ// System PLL Input Range (5-10 MHz Input)
-#pragma config_alt FPLLICLK = PLL_FRC   // System PLL Input Clock Selection (FRC is input to the System PLL)
+#pragma config_alt FPLLICLK = PLL_POSC   // System PLL Input Clock Selection (POSC is input to the System PLL)
 #pragma config_alt FPLLMULT = MUL_50    // System PLL Multiplier (PLL Multiply by 50)
 #pragma config_alt FPLLODIV = DIV_2     // System PLL Output Clock Divider (2x Divider)
 #pragma config_alt UPLLFSEL = FREQ_24MHZ// USB PLL Input Frequency Selection (USB PLL input is 24 MHz)
@@ -97,7 +97,7 @@
 #pragma config_alt DMTINTV = WIN_127_128// DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config_alt FSOSCEN = OFF        // Secondary Oscillator Enable (Disable SOSC)
 #pragma config_alt IESO = OFF           // Internal/External Switch Over (Disabled)
-#pragma config_alt POSCMOD = OFF        // Primary Oscillator Configuration (Primary osc disabled)
+#pragma config_alt POSCMOD = EC        // Primary Oscillator Configuration (Primary osc = ecternal clock)
 #pragma config_alt OSCIOFNC = OFF       // CLKO Output Signal Active on the OSCO Pin (Disabled)
 #pragma config_alt FCKSM = CSECME       // Clock Switching and Monitor Selection (Clock Switch Enabled, FSCM Enabled)
 #pragma config_alt WDTPS = PS8192       // Watchdog Timer Postscaler (1:2048)
@@ -142,9 +142,9 @@
 #pragma config_auba FUSBIDIO = OFF      // USB USBID Selection (Controlled by Port Function)
 
 // AUBADEVCFG2
-#pragma config_auba FPLLIDIV = DIV_4    // System PLL Input Divider (1x Divider)
+#pragma config_auba FPLLIDIV = DIV_4    // System PLL Input Divider (4x Divider)
 #pragma config_auba FPLLRNG = RANGE_5_10_MHZ// System PLL Input Range (5-10 MHz Input)
-#pragma config_auba FPLLICLK = PLL_FRC  // System PLL Input Clock Selection (FRC is input to the System PLL)
+#pragma config_auba FPLLICLK = PLL_POSC  // System PLL Input Clock Selection (POSC is input to the System PLL)
 #pragma config_auba FPLLMULT = MUL_50   // System PLL Multiplier (PLL Multiply by 50)
 #pragma config_auba FPLLODIV = DIV_2    // System PLL Output Clock Divider (2x Divider)
 #pragma config_auba UPLLFSEL = FREQ_24MHZ// USB PLL Input Frequency Selection (USB PLL input is 24 MHz)
@@ -154,7 +154,7 @@
 #pragma config_auba DMTINTV = WIN_127_128// DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config_auba FSOSCEN = OFF       // Secondary Oscillator Enable (Disable SOSC)
 #pragma config_auba IESO = OFF           // Internal/External Switch Over (Disabled)
-#pragma config_auba POSCMOD = OFF       // Primary Oscillator Configuration (Primary osc disabled)
+#pragma config_auba POSCMOD = EC       // Primary Oscillator Configuration (Primary osc = ecternal clock)
 #pragma config_auba OSCIOFNC = OFF      // CLKO Output Signal Active on the OSCO Pin (Disabled)
 #pragma config_auba FCKSM = CSECME      // Clock Switching and Monitor Selection (Clock Switch Enabled, FSCM Enabled)
 #pragma config_auba WDTPS = PS8192      // Watchdog Timer Postscaler (1:2048)
@@ -199,9 +199,9 @@
 #pragma config_uba FUSBIDIO = OFF       // USB USBID Selection (Controlled by Port Function)
 
 // UBADEVCFG2
-#pragma config_uba FPLLIDIV = DIV_4     // System PLL Input Divider (1x Divider)
+#pragma config_uba FPLLIDIV = DIV_4     // System PLL Input Divider (4x Divider)
 #pragma config_uba FPLLRNG = RANGE_5_10_MHZ// System PLL Input Range (5-10 MHz Input)
-#pragma config_uba FPLLICLK = PLL_FRC   // System PLL Input Clock Selection (FRC is input to the System PLL)
+#pragma config_uba FPLLICLK = PLL_POSC   // System PLL Input Clock Selection (POSC is input to the System PLL)
 #pragma config_uba FPLLMULT = MUL_50    // System PLL Multiplier (PLL Multiply by 50)
 #pragma config_uba FPLLODIV = DIV_2     // System PLL Output Clock Divider (2x Divider)
 #pragma config_uba UPLLFSEL = FREQ_24MHZ// USB PLL Input Frequency Selection (USB PLL input is 24 MHz)
@@ -211,7 +211,7 @@
 #pragma config_uba DMTINTV = WIN_127_128// DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config_uba FSOSCEN = OFF        // Secondary Oscillator Enable (Disable SOSC)
 #pragma config_uba IESO = OFF            // Internal/External Switch Over (Disabled)
-#pragma config_uba POSCMOD = OFF        // Primary Oscillator Configuration (Primary osc disabled)
+#pragma config_uba POSCMOD = EC        // Primary Oscillator Configuration (Primary osc = ecternal clock)
 #pragma config_uba OSCIOFNC = OFF       // CLKO Output Signal Active on the OSCO Pin (Disabled)
 #pragma config_uba FCKSM = CSECME       // Clock Switching and Monitor Selection (Clock Switch Enabled, FSCM Enabled)
 #pragma config_uba WDTPS = PS8192       // Watchdog Timer Postscaler (1:2048)
