@@ -295,12 +295,14 @@ void portDGPIOInitialize (void) {
     ODCDbits.ODCD14         = ODC_DISABLE;
     LATDbits.LATD14         = LAT_LOW;
     TRISDbits.TRISD14       = TRIS_INPUT;
+    RPD14Rbits.RPD14R       = 0b0001;           // Assign UART 3 TX to RD14
     
     // RD15
     ANSELDbits.ANSD15       = ANALOG_DISABLE;
     ODCDbits.ODCD15         = ODC_DISABLE;
     LATDbits.LATD15         = LAT_LOW;
     TRISDbits.TRISD15       = TRIS_INPUT;
+    U3RXRbits.U3RXR         = 0b1011;           // Assign UART 3 RX to RD15
     
 }
 
