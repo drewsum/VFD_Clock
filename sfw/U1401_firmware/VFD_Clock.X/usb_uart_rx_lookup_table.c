@@ -40,7 +40,7 @@ usb_uart_command_function_t helpCommandFunction(char * input_str) {
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Measurement responses appear in cyan\n\r");
     terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Urgent/interrupt messages appear in cyan\n\r");
+    printf("Urgent/interrupt messages appear in magenta\n\r");
     terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Errors and negative responses appear in red\n\r");
     terminalTextAttributesReset();
