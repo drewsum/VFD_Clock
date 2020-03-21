@@ -33,6 +33,7 @@
 
 // Application Specific
 #include "power_saving.h"
+#include "pgood_monitor.h"
 
 void main(void) {
     

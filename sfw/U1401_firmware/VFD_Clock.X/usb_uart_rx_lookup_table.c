@@ -14,7 +14,7 @@
 // #include "rtcc.h"
 // #include "adc.h"
 #include "error_handler.h"
-// #include "misc_IO_functions.h"
+#include "pgood_monitor.h"
 // #include "telemetry.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
@@ -76,7 +76,7 @@ usb_uart_command_function_t repositoryCommand(char * input_str) {
     terminalTextAttributesReset();    
 }
 
-usb_uart_command_function_t mcuStatusCommand(char * input_str) {
+usb_uart_command_function_t hostStatusCommand(char * input_str) {
 
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
@@ -126,6 +126,12 @@ usb_uart_command_function_t mcuStatusCommand(char * input_str) {
     
     printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
+    
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Up time since last device reset: %s\n\r", 
+            getStringSecondsAsTime(device_on_time_counter));
+    terminalTextAttributesReset();
 
 }
 
@@ -138,16 +144,6 @@ usb_uart_command_function_t interruptStatusCommand(char * input_str) {
 usb_uart_command_function_t clockStatusCommand(char * input_str) {
 
     printClockStatus(SYSCLK_INT);
-    
-}
-
-usb_uart_command_function_t deviceOnTimeComand(char * input_str) {
- 
-    terminalTextAttributesReset();
-        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("On time since last device reset: %s\n\r", 
-                getStringSecondsAsTime(device_on_time_counter));
-        terminalTextAttributesReset();
     
 }
 
@@ -412,13 +408,13 @@ usb_uart_command_function_t pmdStatusCommand(char * input_str) {
 //    terminalTextAttributesReset();
 //    
 //}
-//
-//usb_uart_command_function_t pgoodStatusCommand(char * input_str) {
-// 
-//    printPGOODStatus();
-//    
-//}
-//
+
+usb_uart_command_function_t railStatusCommand(char * input_str) {
+ 
+    printPGOODStatus();
+    
+}
+
 //usb_uart_command_function_t vbatIsolateCommand(char * input_str) {
 // 
 //    // Snipe out received string
@@ -502,30 +498,27 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Repository?",
             "Prints project Git repo location",
             repositoryCommand);
-    usbUartAddCommand("MCU Status?",
-            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset", 
-            mcuStatusCommand);
+    usbUartAddCommand("Host Status?",
+            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
+            hostStatusCommand);
     usbUartAddCommand("Interrupt Status?",
             "Prints MCU interrupt settings", 
             interruptStatusCommand);
     usbUartAddCommand("Clock Status?", 
             "Prints MCU clock and oscillator settings", 
             clockStatusCommand);
-    usbUartAddCommand("Device On Time?", 
-            "Prints the MCU on time since the last device reset", 
-            deviceOnTimeComand);
+    usbUartAddCommand("PMD Status?",
+            "Prints status of peripheral module disable settings",
+            pmdStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",
             errorStatusCommand);
     usbUartAddCommand("Clear Errors",
             "Clears all error handler flags",
             clearErrorsCommand);
-    usbUartAddCommand("PMD Status?",
-            "Prints status of peripheral module disable settings",
-            pmdStatusCommand);
-//    usbUartAddCommand("PGOOD Status?",
-//            "Prints current state of power good signals for all voltage rails",
-//            pgoodStatusCommand);
+    usbUartAddCommand("Rail Status?",
+            "Prints current state of run and power good signals for all voltage rails",
+            railStatusCommand);
 //    usbUartAddCommand("Set Battery Isolation: ",
 //            "\b\b<isolation_state>: Connects or disconnects the MCU backup battery. 1 for isolated, 0 for connected.",
 //            vbatIsolateCommand);
