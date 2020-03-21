@@ -157,15 +157,9 @@ void updateErrorLEDs(void) {
             error_handler.flags.system_bus_protection_violation ||
             error_handler.flags.prefetch_module_SEC ||
             error_handler.flags.clock_failure ||
-            error_handler.flags.temp_I2C_bus_collision ||
-            error_handler.flags.temp_i2c_stall ||
             error_handler.flags.WDT_timeout ||
             error_handler.flags.DMT_timeout ||
-            error_handler.flags.vdd_brownout ||
-            error_handler.flags.bckp_temp_error ||
-            error_handler.flags.ambient_temp_error ||
-            error_handler.flags.pos12_temp_error ||
-            error_handler.flags.pos3p3_temp_error) {
+            error_handler.flags.vdd_brownout) {
         
         OTHER_ERROR_LED_PIN = HIGH;
         

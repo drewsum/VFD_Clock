@@ -151,63 +151,33 @@ usb_uart_command_function_t deviceOnTimeComand(char * input_str) {
     
 }
 
-//usb_uart_command_function_t errorStatusCommand(char * input_str) {
-// 
-//    // Print error handler status
-//    printErrorHandlerStatus();
-//
-//    // Print help message
-//    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("\n\rCall 'Clear Errors' command to clear any errors that have been set\n\r");
-//    terminalTextAttributesReset();
-//    
-//}
-//
-//usb_uart_command_function_t clearErrorsCommand(char * input_str) {
-// 
-//    // Zero out all error handler flags
-//    clearErrorHandler();
-//
-//    // Update error LEDs based on error handler status
-//    update_error_leds_flag = 1;
-//
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Error Handler flags cleared\n\r");
-//    terminalTextAttributesReset();
-//    
-//}
-//
-//usb_uart_command_function_t causeOfResetCOmmand(char * input_str) {
-// 
-//    terminalTextAttributesReset();
-//
-//    if (    reset_cause == Undefined ||
-//            reset_cause == Primary_Config_Registers_Error ||
-//            reset_cause == Primary_Secondary_Config_Registers_Error ||
-//            reset_cause == Config_Mismatch ||
-//            reset_cause == DMT_Reset ||
-//            reset_cause == WDT_Reset ||
-//            reset_cause == Software_Reset ||
-//            reset_cause == External_Reset ||
-//            reset_cause == BOR_Reset) {
-//
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//
-//    }
-//
-//    else {
-//
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//
-//    }
-//
-//    printf("Cause of the most recent device reset: %s\n\r",
-//            getResetCauseString(reset_cause));
-//    terminalTextAttributesReset();
-//    
-//}
-//
+usb_uart_command_function_t errorStatusCommand(char * input_str) {
+ 
+    // Print error handler status
+    printErrorHandlerStatus();
+
+    // Print help message
+    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\n\rCall 'Clear Errors' command to clear any errors that have been set\n\r");
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t clearErrorsCommand(char * input_str) {
+ 
+    // Zero out all error handler flags
+    clearErrorHandler();
+
+    // Update error LEDs based on error handler status
+    update_error_leds_flag = 1;
+
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Error Handler flags cleared\n\r");
+    terminalTextAttributesReset();
+    
+}
+
 usb_uart_command_function_t pmdStatusCommand(char * input_str) {
  
     printPMDStatus();
@@ -544,12 +514,12 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Device On Time?", 
             "Prints the MCU on time since the last device reset", 
             deviceOnTimeComand);
-//    usbUartAddCommand("Error Status?",
-//            "Prints the status of various error handler flags",
-//            errorStatusCommand);
-//    usbUartAddCommand("Clear Errors",
-//            "Clears all error handler flags",
-//            clearErrorsCommand);
+    usbUartAddCommand("Error Status?",
+            "Prints the status of various error handler flags",
+            errorStatusCommand);
+    usbUartAddCommand("Clear Errors",
+            "Clears all error handler flags",
+            clearErrorsCommand);
     usbUartAddCommand("PMD Status?",
             "Prints status of peripheral module disable settings",
             pmdStatusCommand);

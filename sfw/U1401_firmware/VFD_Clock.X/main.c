@@ -106,6 +106,10 @@ void main(void) {
     watchdogTimerInitialize();
     printf("    Watchdog Timer Initialized\n\r");
     
+    // Setup error handling
+    errorHandlerInitialize();
+    printf("    Error Handler Initialized\n\r");
+    
     // Setup prefetch module
     prefetchInitialize();
     printf("    CPU Instruction Prefetch Module Enabled\r\n");
@@ -128,10 +132,17 @@ void main(void) {
     printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
     terminalTextAttributesReset();
     
+    // check to see if a clock fail has occurred and latch it
+    clockFailCheck();
+    
     // Main loop, do this stuff forever and ever
     while (1) {
         
-        Nop();
+        // check to see if a clock fail has occurred and latch it
+        clockFailCheck();
+        
+        // update error LEDs if needed
+        if (update_error_leds_flag) updateErrorLEDs();
         
     }
     

@@ -812,11 +812,37 @@ void printClockStatus(uint32_t input_sysclk) {
     printf("    Boot PLL Multiplier is set to: %d\n\r", (DEVCFG2bits.FPLLMULT + 1));
     printf("    Boot PLL Output Divider is set to: %d\n\r", (1 << DEVCFG2bits.FPLLODIV));
 
-    // Print changed PLL status
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    // Print operational PLL status
     printf("\n\r    Operational PLL Input Divider is set to: %d\n\r", (SPLLCONbits.PLLIDIV + 1));
     printf("    Operational PLL Multiplier is set to: %d\n\r", (SPLLCONbits.PLLMULT + 1));
     printf("    Operational PLL Output Divider is set to: %d\n\r", (1 << SPLLCONbits.PLLODIV));
+
+    // print PLL input clock source
+    printf("\n\r    SPLL Clock Source set to: %s\n\r", SPLLCONbits.PLLICLK ? "FRC" : "POSC");
+    
+    // print PLL input frequency range
+    // Print current oscillator configuration
+    printf("    SPLL Input Frequency Range Selection: ");
+    switch (SPLLCONbits.PLLRANGE) {
+        case 0b101:
+            printf("34-64 MHz\r\n\r\n");
+            break;
+        case 0b100: 
+            printf("21-42 MHz\r\n\r\n");
+            break;
+        case 0b011: 
+            printf("13-26 MHz\r\n\r\n");
+            break;
+        case 0b010: 
+            printf("8-16 MHz\r\n\r\n");
+            break;
+        case 0b001:
+            printf("5-10 MHz\r\n");
+            break;
+        case 0b000:
+            printf("Bypass\r\n\r\n");
+            break;
+    }
     
     // Determine refclk1
     if (REFO1CONbits.ON == 0) {
@@ -829,7 +855,7 @@ void printClockStatus(uint32_t input_sysclk) {
     else {
      
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    REFCLK1 (Reference Clock 1) is set to: %s\n\r",
+        printf("\n\r    REFCLK1 (Reference Clock 1) is set to: %s\n\r",
                 stringFromClockSetting(input_sysclk / (REFO1CONbits.RODIV + 1)));
         
     }
@@ -904,10 +930,6 @@ void printClockStatus(uint32_t input_sysclk) {
     printf("    PBCLK5 (Peripheral Bus Clock 5) is set to: %s\n\r",
             stringFromClockSetting(input_sysclk / (PB5DIVbits.PBDIV + 1)));
     
-    // No PBCLK6
-    terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    No Peripheral Bus Clock 6 Present\n\r");
-    
     // Determine PBCLK7
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    PBCLK7 (Peripheral Bus Clock 7) is set to: %s\n\r",
@@ -920,7 +942,7 @@ void printClockStatus(uint32_t input_sysclk) {
     // Print clock lock status
     if (OSCCONbits.CLKLOCK) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("\n\r    Clock Lock: %s\n\r", OSCCONbits.CLKLOCK ? "Enabled" : "Disabled");
+    printf("\n\r    Clock Settings: %s\n\r", OSCCONbits.CLKLOCK ? "Locked" : "Unlocked");
     
     // Print clock failure status
     if (OSCCONbits.CF) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);

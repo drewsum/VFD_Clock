@@ -74,6 +74,9 @@ void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
     // Increment on time counter
     device_on_time_counter++;
     
+    // update error leds next run through main loop
+    update_error_leds_flag = 1;
+    
     // Clear interrupt flag
     clearInterruptFlag(Timer1);
     
