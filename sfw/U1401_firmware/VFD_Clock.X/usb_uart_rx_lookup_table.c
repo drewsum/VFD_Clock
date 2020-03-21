@@ -76,35 +76,11 @@ usb_uart_command_function_t repositoryCommand(char * input_str) {
     terminalTextAttributesReset();    
 }
 
-//usb_uart_command_function_t causeOfResetCommand(char * input_str) {
-//    // Print cause of reset
-//    if (    reset_cause == Undefined ||
-//            reset_cause == Primary_Config_Registers_Error ||
-//            reset_cause == Primary_Secondary_Config_Registers_Error ||
-//            reset_cause == Config_Mismatch ||
-//            reset_cause == DMT_Reset ||
-//            reset_cause == WDT_Reset ||
-//            reset_cause == Software_Reset ||
-//            reset_cause == External_Reset ||
-//            reset_cause == BOR_Reset) {
-//    
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//    }
-//    
-//    else {
-//     
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//    }
-//    
-//    printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
-//    terminalTextAttributesReset();
-//}
-//
-usb_uart_command_function_t mcuIdCommand(char * input_str) {
-    
+usb_uart_command_function_t mcuStatusCommand(char * input_str) {
+
     terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Host Device IDs:\r\n");
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     
     // Print serial number
@@ -123,15 +99,33 @@ usb_uart_command_function_t mcuIdCommand(char * input_str) {
 
     terminalTextAttributesReset();
     
-}
-
-usb_uart_command_function_t mcuStatusCommand(char * input_str) {
-
     printWatchdogStatus();
-        
     printDeadmanStatus();
-        
     printPrefetchStatus();
+    
+    // Print cause of reset
+    if (    reset_cause == Undefined ||
+            reset_cause == Primary_Config_Registers_Error ||
+            reset_cause == Primary_Secondary_Config_Registers_Error ||
+            reset_cause == Config_Mismatch ||
+            reset_cause == DMT_Reset ||
+            reset_cause == WDT_Reset ||
+            reset_cause == Software_Reset ||
+            reset_cause == External_Reset ||
+            reset_cause == BOR_Reset) {
+    
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        
+    }
+    
+    printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
+    terminalTextAttributesReset();
 
 }
 
@@ -529,9 +523,6 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Reset", 
             "Executes an MCU software reset", 
             resetCommand);
-//    usbUartAddCommand("Cause of Reset?",
-//            "Prints the cause of the most recent device reset",
-//            causeOfResetCommand);
     usbUartAddCommand("Clear Screen", 
             "Clears the serial port terminal", 
             clearCommand);
@@ -541,11 +532,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Repository?",
             "Prints project Git repo location",
             repositoryCommand);
-    usbUartAddCommand("MCU IDs?", 
-            "Prints microcontroller serial number, device ID, and silicon revision ID", 
-            mcuIdCommand);
     usbUartAddCommand("MCU Status?",
-            "Prints the status of the watchdog timer, deadman timer and predictive prefetch module", 
+            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset", 
             mcuStatusCommand);
     usbUartAddCommand("Interrupt Status?",
             "Prints MCU interrupt settings", 

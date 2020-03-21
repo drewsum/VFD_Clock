@@ -36,6 +36,10 @@
 
 void main(void) {
     
+    // Save the cause of the most recent device reset
+    // This also checks for configuration errors
+    reset_cause = getResetCause();
+    
     // Clear the terminal
     terminalClearScreen();
     terminalSetCursorHome();
@@ -44,6 +48,33 @@ void main(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("VFD Clock\r\n");
     printf("Created by Drew Maatman, 2020\r\n");
+    terminalTextAttributesReset();
+    
+     // Print cause of reset
+    if (    reset_cause == Undefined ||
+            reset_cause == Primary_Config_Registers_Error ||
+            reset_cause == Primary_Secondary_Config_Registers_Error ||
+            reset_cause == Config_Mismatch ||
+            reset_cause == DMT_Reset ||
+            reset_cause == WDT_Reset ||
+            reset_cause == Software_Reset ||
+            reset_cause == External_Reset ||
+            reset_cause == BOR_Reset) {
+    
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+    }
+    
+    // only clear persistent error flags if we've seen a POR... keep old values after other resets
+    if (reset_cause == POR_Reset) clearErrorHandler();
+    
+    printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
