@@ -19,19 +19,18 @@ reset_cause_t getResetCause(void) {
         
     }
     
+    else if (RCONbits.EXTR) {
+     
+        reset_cause = External_Reset;
+        RCONbits.EXTR = 0;
+        
+    }
+       
     else if (RCONbits.BOR) {
      
         reset_cause = BOR_Reset;
         RCONbits.BOR = 0;
         error_handler.flags.vdd_brownout = 1;
-        
-    }
-    
-    
-    else if (RCONbits.EXTR) {
-     
-        reset_cause = External_Reset;
-        RCONbits.EXTR = 0;
         
     }
     
