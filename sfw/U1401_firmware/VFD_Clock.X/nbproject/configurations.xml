@@ -24,6 +24,9 @@
         <itemPath>gpio_setup.h</itemPath>
         <itemPath>pin_macros.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f5" displayName="I2C" projectFiles="true">
+        <itemPath>i2c_master.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="USB_UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
         <itemPath>uthash.h</itemPath>
@@ -54,6 +57,9 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="I2C" projectFiles="true">
+        <itemPath>i2c_master.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="USB_UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>

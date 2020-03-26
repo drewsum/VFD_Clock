@@ -32,6 +32,9 @@
 #include "usb_uart_rx_lookup_table.h"
 #include "terminal_control.h"
 
+// I2C
+#include "i2c_master.h"
+
 // Application Specific
 #include "power_saving.h"
 #include "pgood_monitor.h"
@@ -128,6 +131,10 @@ void main(void) {
     // setup watchdog timer
     watchdogTimerInitialize();
     printf("    Watchdog Timer Initialized\n\r");
+    
+    // setup temperature sensor I2C bus
+    I2C_Initialize();
+    printf("    I2C Bus Controller Initialized\r\n");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
