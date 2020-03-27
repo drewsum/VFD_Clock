@@ -34,6 +34,7 @@
 
 // I2C
 #include "i2c_master.h"
+#include "temperature_sensors.h"
 
 // Application Specific
 #include "power_saving.h"
@@ -135,6 +136,11 @@ void main(void) {
     // setup temperature sensor I2C bus
     I2C_Initialize();
     printf("    I2C Bus Controller Initialized\r\n");
+    softwareDelay(0xFFFFF);
+    I2C_EN_PIN = HIGH;
+    softwareDelay(0xFFFFF);
+    tempSensorsInitialize();
+    printf("    Temperature Sensors Initialized\r\n");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

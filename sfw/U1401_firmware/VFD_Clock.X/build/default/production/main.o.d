@@ -16,5 +16,7 @@ usb_uart.h  \
  usb_uart_rx_lookup_table.h  \
 terminal_control.h  \
 i2c_master.h  \
- power_saving.h  \
-pgood_monitor.h 
+ temperature_sensors.h  \
+mcp9804_temp_sensor.h  \
+power_saving.h  \
+ pgood_monitor.h 

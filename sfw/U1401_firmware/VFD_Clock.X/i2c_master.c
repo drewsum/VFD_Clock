@@ -95,7 +95,7 @@ typedef enum
 /* defined for I2C */
 
 #ifndef I2C_CONFIG_TR_QUEUE_LENGTH
-        #define I2C_CONFIG_TR_QUEUE_LENGTH 64
+        #define I2C_CONFIG_TR_QUEUE_LENGTH 2048
 #endif
 
 
@@ -170,7 +170,7 @@ void I2C_Initialize(void)
 
     // setup I2C clocking
     // clock source is PBCLK2
-    I2C1BRG = 0x001E;
+    I2C1BRG = 0x0030;
     
     // clear the interrupt flags
     clearInterruptFlag(I2C1_Bus_Collision_Event);

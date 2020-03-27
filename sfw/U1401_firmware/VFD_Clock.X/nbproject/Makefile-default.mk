@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=power_saving.c usb_uart_rx_lookup_table.c pgood_monitor.c device_control.c error_handler.c cause_of_reset.c 32mz_interrupt_control.c watchdog_timer.c heartbeat_timer.c prefetch.c rtcc.c gpio_setup.c terminal_control.c usb_uart.c main.c i2c_master.c
+SOURCEFILES_QUOTED_IF_SPACED=power_saving.c usb_uart_rx_lookup_table.c pgood_monitor.c device_control.c error_handler.c cause_of_reset.c 32mz_interrupt_control.c watchdog_timer.c heartbeat_timer.c prefetch.c rtcc.c gpio_setup.c terminal_control.c usb_uart.c main.c i2c_master.c mcp9804_temp_sensor.c temperature_sensors.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/i2c_master.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/i2c_master.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/i2c_master.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/temperature_sensors.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/i2c_master.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/temperature_sensors.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/i2c_master.o
+OBJECTFILES=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/i2c_master.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/temperature_sensors.o
 
 # Source Files
-SOURCEFILES=power_saving.c usb_uart_rx_lookup_table.c pgood_monitor.c device_control.c error_handler.c cause_of_reset.c 32mz_interrupt_control.c watchdog_timer.c heartbeat_timer.c prefetch.c rtcc.c gpio_setup.c terminal_control.c usb_uart.c main.c i2c_master.c
+SOURCEFILES=power_saving.c usb_uart_rx_lookup_table.c pgood_monitor.c device_control.c error_handler.c cause_of_reset.c 32mz_interrupt_control.c watchdog_timer.c heartbeat_timer.c prefetch.c rtcc.c gpio_setup.c terminal_control.c usb_uart.c main.c i2c_master.c mcp9804_temp_sensor.c temperature_sensors.c
 
 
 CFLAGS=
@@ -202,6 +202,18 @@ ${OBJECTDIR}/i2c_master.o: i2c_master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/i2c_master.o 
 	@${FIXDEPS} "${OBJECTDIR}/i2c_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/i2c_master.o.d" -o ${OBJECTDIR}/i2c_master.o i2c_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/power_saving.o: power_saving.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -298,6 +310,18 @@ ${OBJECTDIR}/i2c_master.o: i2c_master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/i2c_master.o.d 
 	@${RM} ${OBJECTDIR}/i2c_master.o 
 	@${FIXDEPS} "${OBJECTDIR}/i2c_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/i2c_master.o.d" -o ${OBJECTDIR}/i2c_master.o i2c_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

@@ -7031,6 +7031,14 @@ void printInterruptStatus(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Interrupt Priority Shadow Register Setting: 0x%08X\n\r", PRISS);
     
+    // Print latest serviced interrupt priority
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Latest interrupt priority serviced: 0x%08X\n\r", INTSTATbits.SRIPL);
+    
+    // Print latest serviced interrupt
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Latest interrupt serviced: 0x%08X\n\r", INTSTATbits.SIRQ);
+    
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("\n\rInterrupts in list are marked green if they are enabled or have IPL > 0\n\r");
     

@@ -189,7 +189,15 @@ void updateErrorLEDs(void) {
     else ANALOG_ERROR_LED_PIN = LOW;
     
     if (    error_handler.flags.i2c_bus_collision ||
-            error_handler.flags.i2c_stall) {
+            error_handler.flags.i2c_stall ||
+            error_handler.flags.pos12_temp ||
+            error_handler.flags.pos3p3_temp ||
+            error_handler.flags.pos5_temp ||
+            error_handler.flags.pos1p2_vff_temp ||
+            error_handler.flags.pos60_van_temp ||
+            error_handler.flags.usb_temp ||
+            error_handler.flags.amb_temp ||
+            error_handler.flags.dsply_temp) {
         
         I2C_ERROR_LED_PIN = HIGH;
         
