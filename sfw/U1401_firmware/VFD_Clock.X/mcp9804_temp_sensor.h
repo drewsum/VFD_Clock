@@ -42,13 +42,10 @@
 void MCP9804TempSensorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
 // this function converts the ray two byte data return from MCP9804 to a double representing temperature
-// double MCP9804BytesToFloat(uint8_t input_array[2]);
-
-// This function accesses temperature sensor data over I2C
-// void MCP9804AcquisitionHandler(void);
+double MCP9804BytesToFloat(uint8_t input_array[2]);
 
 // this function gets data over I2C from the given I2C address and returns the converted temperature
-// double MCP9804GetTemperature(uint8_t input_address);
+double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
 
 #endif /* _MCP9804_TEMP_SENSOR_H */
 

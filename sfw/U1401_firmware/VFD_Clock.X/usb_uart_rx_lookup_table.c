@@ -9,13 +9,13 @@
 
 #include "terminal_control.h"
 #include "device_control.h"
-#include "heartbeat_timer.h"
 #include "cause_of_reset.h"
 #include "rtcc.h"
 // #include "adc.h"
 #include "error_handler.h"
 #include "pgood_monitor.h"
 // #include "telemetry.h"
+#include "heartbeat_requests.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 

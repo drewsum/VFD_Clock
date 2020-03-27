@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 #include "heartbeat_timer.h"
-#include "error_handler.h"
+#include "heartbeat_requests.h"
 
 // This function initializes the heartbeat timer
 void heartbeatTimerInitialize(void) {
@@ -68,14 +68,8 @@ void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
     // Toggle heartbeat LED
     HEARTBEAT_LED_PIN = !(HEARTBEAT_LED_PIN);
     
-    // Update error LEDs based on error handler status
-    update_error_leds_flag = 1;
-    
-    // Increment on time counter
-    device_on_time_counter++;
-    
-    // update error leds next run through main loop
-    update_error_leds_flag = 1;
+    // Set flags to execute 1 Hz code
+    heartbeatRequests();
     
     // Clear interrupt flag
     clearInterruptFlag(Timer1);

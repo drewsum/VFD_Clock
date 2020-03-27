@@ -158,6 +158,9 @@ void main(void) {
     // Main loop, do this stuff forever and ever
     while (1) {
         
+        // get temperature sensor data
+        if (temp_sense_data_request) tempSensorsRetrieveData();
+        
         // check to see if a clock fail has occurred and latch it
         clockFailCheck();
         

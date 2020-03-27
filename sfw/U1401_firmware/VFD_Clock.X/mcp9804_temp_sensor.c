@@ -4,6 +4,7 @@
 #include "i2c_master.h"
 
 #include "error_handler.h"
+#include "device_control.h"
 
 // #include "telemetry.h"
 
@@ -48,65 +49,30 @@ double MCP9804BytesToFloat(uint8_t input_array[2]) {
 
 }
 
-//// This function accesses temperature sensor data over I2C
-//void MCP9804AcquisitionHandler(void) {
-//    
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
-//        
-//        // log the fault
-//        error_handler.flags.temp_i2c_stall = 1;
-//        
-//        // reset the I2C controller if it's enabled
-//        // if (getTempI2COnState) tempI2COnStateReset();
-//        
-//    }
-//    
-//    // input temp sensor
-//    telemetry.current.params.input_temperature = MCP9804GetTemperature(INPUT_TEMP_SENS_ADDR);
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) error_handler.flags.pos12_temp_error = 1;
-//    
-//    // pos3p3 temp sensor
-//    telemetry.current.params.pos3p3_temperature = MCP9804GetTemperature(POS3P3_TEMP_SENS_ADDR);
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) error_handler.flags.pos3p3_temp_error = 1;
-//    
-//    // amb temp sensor
-//    telemetry.current.params.ambient_temperature = MCP9804GetTemperature(AMB_TEMP_SENS_ADDR);
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) error_handler.flags.ambient_temp_error = 1;
-//    
-//    // bckp temp sensor
-//    telemetry.current.params.backup_temperature = MCP9804GetTemperature(BCKP_TEMP_SENS_ADDR);
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) error_handler.flags.bckp_temp_error = 1;
-//    
-//    // we're done acquiring new data
-//    MCP9804_start_flag = 0;
-//    
-//    telemetry_update_flag_i2c = 1;
-//    
-//}
+// this function gets data over I2C from the given I2C address and returns the converted temperature
+double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {
 
-//// this function gets data over I2C from the given I2C address and returns the converted temperature
-//double MCP9804GetTemperature(uint8_t input_address) {
-//
-//    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
-//        
-//        // log the fault
-//        error_handler.flags.temp_i2c_stall = 1;
-//        
-//        // reset the I2C controller if it's enabled
-//        // if (getTempI2COnState) tempI2COnStateReset();
-//        
-//    }
-//    
-//    uint8_t data_reg_pointer[1];
-//    uint8_t temp[2];
-//    data_reg_pointer[0] = MCP9804_TA_REG;
-//    I2C_MasterWrite(data_reg_pointer, 1, input_address, &I2C_STATUS);
-//    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-//    // Read two bytes from temp reg
-//    I2C_MasterRead(temp, 2, input_address, &I2C_STATUS);
-//    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-//    
-//    if (I2C_STATUS == I2C_MESSAGE_COMPLETE) return MCP9804BytesToFloat(temp);
-//    else return 0.0;
-//    
-//}
+    // Check to see if we're starting up into a broken I2C state machine
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
+        // log the fault
+        error_handler.flags.i2c_stall = 1;
+        // reset the I2C controller if it's enabled
+        if (getTempI2COnState) tempI2COnStateReset();
+    }
+    
+    uint8_t data_reg_pointer[1];
+    uint8_t temp[2];
+    data_reg_pointer[0] = MCP9804_TA_REG;
+    I2C_MasterWrite(data_reg_pointer, 1, input_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    // Read two bytes from temp reg
+    I2C_MasterRead(temp, 2, input_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    
+    if (I2C_STATUS == I2C_MESSAGE_COMPLETE) return MCP9804BytesToFloat(temp);
+    else {
+        *device_error_handler_flag = 1;
+        return 0.0;
+    }
+    
+}

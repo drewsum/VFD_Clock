@@ -95,7 +95,7 @@ typedef enum
 /* defined for I2C */
 
 #ifndef I2C_CONFIG_TR_QUEUE_LENGTH
-        #define I2C_CONFIG_TR_QUEUE_LENGTH 2048
+        #define I2C_CONFIG_TR_QUEUE_LENGTH 4096
 #endif
 
 
@@ -168,9 +168,10 @@ void I2C_Initialize(void)
     I2C1CONbits.DISSLW = 0;     // enable slew rate control
     I2C1CONbits.SMEN = 0;       // disable SMBus threshold levels
 
-    // setup I2C clocking
+    // setup I2C baud rate
     // clock source is PBCLK2
-    I2C1BRG = 0x0030;
+    // Larger numbers in this register correspond to slower baud rates
+    I2C1BRG = 0x030;
     
     // clear the interrupt flags
     clearInterruptFlag(I2C1_Bus_Collision_Event);

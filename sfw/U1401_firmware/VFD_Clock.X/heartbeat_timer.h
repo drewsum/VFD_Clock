@@ -26,11 +26,6 @@
 
 #include "pin_macros.h"
 
-
-// API Variables
-volatile uint32_t device_on_time_counter;
-
-
 // API Functions
 // This function initializes the heartbeat timer
 void heartbeatTimerInitialize(void);
