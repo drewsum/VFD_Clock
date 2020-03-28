@@ -19,4 +19,5 @@ i2c_master.h  \
  temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
 power_saving.h  \
- pgood_monitor.h 
+ pgood_monitor.h  \
+telemetry.h 

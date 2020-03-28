@@ -14,7 +14,7 @@
 // #include "adc.h"
 #include "error_handler.h"
 #include "pgood_monitor.h"
-// #include "telemetry.h"
+#include "telemetry.h"
 #include "heartbeat_requests.h"
 #include "watchdog_timer.h"
 
@@ -307,116 +307,18 @@ usb_uart_command_function_t setWeekdayCommand(char * input_str) {
     
 }
 
-//usb_uart_command_function_t adcStatusCommand(char * input_str) {
-// 
-//    printADCStatus();
-//    
-//}
-//
-//usb_uart_command_function_t telemetryCommand(char * input_str) {
-// 
-//    if (error_handler.flags.ADC_configuration_error) {
-//         
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("ADC Configuration Error\n\r");
-//            terminalTextAttributesReset();
-//            
-//        }
-//        
-//        else {
-//
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-//            printf("Most recent system telemetry:\n\r");
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("    +12V Input Voltage: %+0.3f V\n\r", telemetry.current.params.pos12_voltage);
-//            printf("    +12V Input Current: %+0.3f A\n\r", telemetry.current.params.pos12_current);
-//            printf("    +12V Input MOSFET Temperature: %+0.3f C\n\r", telemetry.current.params.input_temperature);
-//            printf("    +3.3V Power Supply Voltage: %+0.3f V\n\r", telemetry.current.params.pos3p3_voltage);
-//            printf("    +3.3V Power Supply Current: %+0.3f A\n\r", telemetry.current.params.pos3p3_current);
-//            printf("    +3.3V Power Supply Temperature: %+0.3f C\n\r", telemetry.current.params.pos3p3_temperature);
-//            printf("    +5V USB Power Supply Voltage: %+0.3f V\n\r", telemetry.current.params.pos5_usb_voltage);
-//            printf("    Backup Battery Voltage: %+0.3f V\n\r", telemetry.current.params.vbat_voltage);
-//            printf("    Backup Ideal Diode Temperature: %+0.3f C\n\r", telemetry.current.params.backup_temperature);
-//            printf("    Internal VREF Voltage: %+0.3f V\n\r", telemetry.current.params.mcu_vref_voltage);
-//            printf("    Internal Die Temperature Temperature: %+0.3f C\n\r", telemetry.current.params.mcu_die_temp);
-//            printf("    Ambient Temperature: %+0.3f C\n\r", telemetry.current.params.ambient_temperature);
-//            terminalTextAttributesReset();
-//
-//        }
-//    
-//}
-//
-//usb_uart_command_function_t minTelemetryCommand(char * input_str) {
-// 
-//    if (error_handler.flags.ADC_configuration_error) {
-//         
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("ADC Configuration Error\n\r");
-//            terminalTextAttributesReset();
-//            
-//        }
-//        
-//        else {
-//
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-//            printf("Minimum system telemetry recorded:\n\r");
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("    +12V Input Voltage: %+0.3f V\n\r", telemetry.min.params.pos12_voltage);
-//            printf("    +12V Input Current: %+0.3f A\n\r", telemetry.min.params.pos12_current);
-//            printf("    +12V Input MOSFET Temperature: %+0.3f C\n\r", telemetry.min.params.input_temperature);
-//            printf("    +3.3V Power Supply Voltage: %+0.3f V\n\r", telemetry.min.params.pos3p3_voltage);
-//            printf("    +3.3V Power Supply Current: %+0.3f A\n\r", telemetry.min.params.pos3p3_current);
-//            printf("    +3.3V Power Supply Temperature: %+0.3f C\n\r", telemetry.min.params.pos3p3_temperature);
-//            printf("    +5V USB Power Supply Voltage: %+0.3f V\n\r", telemetry.min.params.pos5_usb_voltage);
-//            printf("    Backup Battery Voltage: %+0.3f V\n\r", telemetry.min.params.vbat_voltage);
-//            printf("    Backup Ideal Diode Temperature: %+0.3f C\n\r", telemetry.min.params.backup_temperature);
-//            printf("    Internal VREF Voltage: %+0.3f V\n\r", telemetry.min.params.mcu_vref_voltage);
-//            printf("    Internal Die Temperature Temperature: %+0.3f C\n\r", telemetry.min.params.mcu_die_temp);
-//            printf("    Ambient Temperature: %+0.3f C\n\r", telemetry.min.params.ambient_temperature);
-//            terminalTextAttributesReset();
-//
-//        }
-//    
-//}
-//
-//usb_uart_command_function_t maxTelemetryCommand(char * input_str) {
-// 
-//    if (error_handler.flags.ADC_configuration_error) {
-//         
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("ADC Configuration Error\n\r");
-//            terminalTextAttributesReset();
-//            
-//        }
-//        
-//        else {
-//
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-//            printf("Maximum system telemetry recorded:\n\r");
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("    +12V Input Voltage: %+0.3f V\n\r", telemetry.max.params.pos12_voltage);
-//            printf("    +12V Input Current: %+0.3f A\n\r", telemetry.max.params.pos12_current);
-//            printf("    +12V Input MOSFET Temperature: %+0.3f C\n\r", telemetry.max.params.input_temperature);
-//            printf("    +3.3V Power Supply Voltage: %+0.3f V\n\r", telemetry.max.params.pos3p3_voltage);
-//            printf("    +3.3V Power Supply Current: %+0.3f A\n\r", telemetry.max.params.pos3p3_current);
-//            printf("    +3.3V Power Supply Temperature: %+0.3f C\n\r", telemetry.max.params.pos3p3_temperature);
-//            printf("    +5V USB Power Supply Voltage: %+0.3f V\n\r", telemetry.max.params.pos5_usb_voltage);
-//            printf("    Backup Battery Voltage: %+0.3f V\n\r", telemetry.max.params.vbat_voltage);
-//            printf("    Backup Ideal Diode Temperature: %+0.3f C\n\r", telemetry.max.params.backup_temperature);
-//            printf("    Internal VREF Voltage: %+0.3f V\n\r", telemetry.max.params.mcu_vref_voltage);
-//            printf("    Internal Die Temperature Temperature: %+0.3f C\n\r", telemetry.max.params.mcu_die_temp);
-//            printf("    Ambient Temperature: %+0.3f C\n\r", telemetry.max.params.ambient_temperature);
-//            terminalTextAttributesReset();
-//
-//        }
-//    
-//}
+usb_uart_command_function_t telemetryCommand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Most recent system telemetry:\n\r");
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Input Protect Temp: %f\r\n", telemetry.pos12.temperature);
+    printf("    +3.3V temp: %f\r\n", telemetry.pos3p3.temperature);
+    printf("    +5V temp: %f\r\n", telemetry.pos5.temperature);
+    terminalTextAttributesReset();
+   
+}
 
 usb_uart_command_function_t setUnixTimeCommand(char * input_str) {
  
@@ -546,15 +448,9 @@ void usbUartHashTableInitialize(void) {
             "       POS1P2_VFF\r\n"
             "       VBAT",
             setRailEnableCommand);
-//    usbUartAddCommand("Telemetry?",
-//            "Prints board level parameter measurements",
-//            telemetryCommand);
-//    usbUartAddCommand("Max Telemetry?",
-//            "Prints maximum recorded board level parameter measurements",
-//            maxTelemetryCommand);
-//    usbUartAddCommand("Min Telemetry?",
-//            "Prints minimum recorded board level parameter measurements",
-//            minTelemetryCommand);
+    usbUartAddCommand("Telemetry?",
+            "Prints board level telemetry measurements",
+            telemetryCommand);
     usbUartAddCommand("Time and Date?",
             "Prints the current system time and date",
             timeAndDateCommand);

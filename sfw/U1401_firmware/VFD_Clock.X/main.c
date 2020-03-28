@@ -39,6 +39,7 @@
 // Application Specific
 #include "power_saving.h"
 #include "pgood_monitor.h"
+#include "telemetry.h"
 
 void main(void) {
     
