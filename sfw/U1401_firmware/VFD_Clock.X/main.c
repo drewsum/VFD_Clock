@@ -136,10 +136,10 @@ void main(void) {
     printf("    Watchdog Timer Initialized\n\r");
     
     // setup temperature sensor I2C bus
+    I2C_EN_PIN = HIGH;
+    softwareDelay(0xFFFFF);
     I2C_Initialize();
     printf("    I2C Bus Controller Initialized\r\n");
-    softwareDelay(0xFFFFF);
-    I2C_EN_PIN = HIGH;
     softwareDelay(0xFFFFF);
     tempSensorsInitialize();
     printf("    Temperature Sensors Initialized\r\n");
