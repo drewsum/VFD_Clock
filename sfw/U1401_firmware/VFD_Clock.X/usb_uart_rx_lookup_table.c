@@ -15,7 +15,7 @@
 #include "error_handler.h"
 #include "pgood_monitor.h"
 #include "telemetry.h"
-#include "heartbeat_requests.h"
+#include "heartbeat_services.h"
 #include "watchdog_timer.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {

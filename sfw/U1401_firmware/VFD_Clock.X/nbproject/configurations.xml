@@ -8,8 +8,8 @@
         <itemPath>power_saving.h</itemPath>
         <itemPath>usb_uart_rx_lookup_table.h</itemPath>
         <itemPath>pgood_monitor.h</itemPath>
-        <itemPath>heartbeat_requests.h</itemPath>
         <itemPath>telemetry.h</itemPath>
+        <itemPath>heartbeat_services.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.h</itemPath>
@@ -50,8 +50,8 @@
         <itemPath>power_saving.c</itemPath>
         <itemPath>usb_uart_rx_lookup_table.c</itemPath>
         <itemPath>pgood_monitor.c</itemPath>
-        <itemPath>heartbeat_requests.c</itemPath>
         <itemPath>telemetry.c</itemPath>
+        <itemPath>heartbeat_services.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

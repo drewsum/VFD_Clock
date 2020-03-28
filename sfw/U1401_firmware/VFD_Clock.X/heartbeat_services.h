@@ -15,8 +15,8 @@
  */
 /* ************************************************************************** */
 
-#ifndef _HEARTBEAT_REQUESTS_H    /* Guard against multiple inclusion */
-#define _HEARTBEAT_REQUESTS_H
+#ifndef _HEARTBEAT_SERVICES_H    /* Guard against multiple inclusion */
+#define _HEARTBEAT_SERVICES_H
 
 #include "xc.h"
 
@@ -24,9 +24,9 @@
 volatile uint32_t device_on_time_counter;
 
 // This function executes actions every call of the heartbeat timer, and is used as an easy interface to do some action every second
-void heartbeatRequests(void);
+void heartbeatServices(void);
 
-#endif /* _HEARTBEAT_REQUESTS_H */
+#endif /* _HEARTBEAT_SERVICES_H */
 
 /* *****************************************************************************
  End of File

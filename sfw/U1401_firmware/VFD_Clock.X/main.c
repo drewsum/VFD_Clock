@@ -40,6 +40,7 @@
 #include "power_saving.h"
 #include "pgood_monitor.h"
 #include "telemetry.h"
+#include "heartbeat_services.h"
 
 void main(void) {
     

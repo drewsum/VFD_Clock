@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 #include "heartbeat_timer.h"
-#include "heartbeat_requests.h"
+#include "heartbeat_services.h"
 
 // This function initializes the heartbeat timer
 void heartbeatTimerInitialize(void) {
@@ -69,7 +69,7 @@ void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
     HEARTBEAT_LED_PIN = !(HEARTBEAT_LED_PIN);
     
     // Set flags to execute 1 Hz code
-    heartbeatRequests();
+    heartbeatServices();
     
     // Clear interrupt flag
     clearInterruptFlag(Timer1);

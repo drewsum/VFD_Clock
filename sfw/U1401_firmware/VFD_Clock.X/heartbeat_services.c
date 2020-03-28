@@ -1,11 +1,12 @@
 
-#include "heartbeat_requests.h"
+
+#include "heartbeat_services.h"
 
 #include "error_handler.h"
 #include "temperature_sensors.h"
 
 // This function executes actions every call of the heartbeat timer, and is used as an easy interface to do some action every second
-void heartbeatRequests(void) {
+void heartbeatServices(void) {
  
     // Get new temperature sensor data
     temp_sense_data_request = 1;

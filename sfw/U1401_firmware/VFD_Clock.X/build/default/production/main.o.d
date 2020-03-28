@@ -20,4 +20,5 @@ i2c_master.h  \
 mcp9804_temp_sensor.h  \
 power_saving.h  \
  pgood_monitor.h  \
-telemetry.h 
+telemetry.h  \
+heartbeat_services.h 
