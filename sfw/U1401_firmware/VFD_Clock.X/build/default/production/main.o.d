@@ -21,4 +21,6 @@ mcp9804_temp_sensor.h  \
 power_saving.h  \
  pgood_monitor.h  \
 telemetry.h  \
-heartbeat_services.h 
+heartbeat_services.h  \
+power_monitors.h  \
+ ina219_power_monitor.h 

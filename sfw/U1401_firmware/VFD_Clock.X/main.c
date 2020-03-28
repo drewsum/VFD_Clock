@@ -41,6 +41,7 @@
 #include "pgood_monitor.h"
 #include "telemetry.h"
 #include "heartbeat_services.h"
+#include "power_monitors.h"
 
 void main(void) {
     
@@ -161,7 +162,10 @@ void main(void) {
     while (1) {
         
         // get temperature sensor data
-        if (temp_sense_data_request) tempSensorsRetrieveData();
+        // if (temp_sense_data_request) tempSensorsRetrieveData();
+        
+        // get power monitor data
+        if (power_monitor_data_request) powerMonitorGetData();
         
         // check to see if a clock fail has occurred and latch it
         clockFailCheck();
