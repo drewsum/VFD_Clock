@@ -7,6 +7,7 @@
 
 #include "device_control.h"
 #include "32mz_interrupt_control.h"
+#include "terminal_control.h"
 
 // This function unlocks the RTCC for writing
 void rtccUnlock(void) {
@@ -431,5 +432,151 @@ void setRTCCCalibration(uint16_t input_cal) {
     
     // set calibration
     RTCCONbits.CAL = input_cal;
+    
+}
+
+// this function prints debug info about the RTCC setings
+void printRTCCStatus(void) {
+ 
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Real Time Clock and Calendar Module Status:\n\r");
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Current system time and date:\r\n        ");
+    printTimeAndDate();
+    
+    // Print if RTCC is on
+    if (RTCCONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC Enable: %s\n\r",
+            RTCCONbits.ON ? "On" : "Off");
+    
+    // prints stop in idle status
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC stop in idle: %s\n\r",
+            RTCCONbits.SIDL ? "Enabled" : "Disabled");
+    
+    printf("    RTCC Calibration bits: 0x%08X\r\n", RTCCONbits.CAL);
+    
+    printf("    RTCC Clock Source: %s\n\r",
+            RTCCONbits.RTCCLKSEL ? "SOSC" : "LPRC (INTOSC)");
+    
+    // print RTC output selection
+    printf("    RTC output selection: ");
+    switch (RTCCONbits.RTCOUTSEL) {
+        case 0b00:
+            printf("Alarm Pulse is presented on the RTCC pin when the alarm interrupt is triggered\n\r");
+            break;
+        case 0b01:
+            printf("Seconds Clock is presented on the RTCC pin\n\r");
+            break;
+        case 0b10:
+            printf("RTCC Clock is presented on the RTCC pin\n\r");
+            break;
+        case 0b11:
+            printf("reserved\n\r");
+            break;
+    }
+    
+    // Print if RTCC clock is on
+    if (RTCCONbits.RTCCLKON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC Clock is %s\n\r",
+            RTCCONbits.RTCCLKON ? "actively running" : "not actively running");
+    
+    // Print RTCC write enable
+    if (RTCCONbits.RTCWREN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC control registers %s\n\r",
+            RTCCONbits.RTCWREN ? "can be written to" : "cannot be written to (at time of printing)");
+    
+    // Print RTCC sync enable
+    if (!RTCCONbits.RTCSYNC) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC value registers %s\n\r",
+            !RTCCONbits.RTCSYNC ? "can be read" : "cannot be read (data is changing)");
+    
+    // prints RTCC output status
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC output is %s\n\r",
+            RTCCONbits.RTCOE ? "Enabled" : "Disabled");
+    
+    // Print RTCC alarm enable
+    if (RTCALRMbits.ALRMEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC Alarm is %s\n\r",
+            RTCALRMbits.ALRMEN ? "enabled" : "disabled");
+    
+    // Print RTCC chime enable
+    if (RTCALRMbits.CHIME) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC Alarm chime is %s\n\r",
+            RTCALRMbits.CHIME ? "enabled" : "disabled");
+    
+    // Print RTCC PIV
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC Alarm pulse is %d\n\r",
+            RTCALRMbits.PIV);
+    
+    // Print RTCC sync enable
+    if (!RTCALRMbits.ALRMSYNC) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTCC alarm value registers %s\n\r",
+            !RTCALRMbits.ALRMSYNC ? "can be read" : "cannot be read (data is changing)");
+    
+    // print RTC alarm mask
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    RTC alarm mask: ");
+    switch (RTCALRMbits.AMASK) {
+        case 0b0000: 
+            printf("Every half-second\r\n");
+            break;
+        case 0b0001: 
+            printf("Every second\r\n");
+            break;
+        case 0b0010: 
+            printf("Every 10 seconds\r\n");
+            break;
+        case 0b0011: 
+            printf("Every minute\r\n");
+            break;
+        case 0b0100: 
+            printf("Every 10 minutes\r\n");
+            break;
+        case 0b0101: 
+            printf("Every hour\r\n");
+            break;
+        case 0b0110: 
+            printf("Once a day\r\n");
+            break;
+        case 0b0111: 
+            printf("Once a week\r\n");
+            break;
+        case 0b1000: 
+            printf("Once a month\r\n");
+            break;
+        case 0b1001: 
+            printf("Once a year (except when configured for February 29, once every four years)\r\n");
+            break;
+    }
+    
+    // print alarm repeat
+    printf("    RTCC Alarm repeat value is %d\n\r",
+            RTCALRMbits.ARPT);
+    
+    // print alarm settings
+    printf("    Alarm values:\r\n");
+        printf("        Time: %02u:%02u:%02u",
+            (ALRMTIMEbits.HR10 * 10) + ALRMTIMEbits.HR01,
+            (ALRMTIMEbits.MIN10 * 10) + ALRMTIMEbits.MIN01,
+            (ALRMTIMEbits.SEC10 * 10) + ALRMTIMEbits.SEC01);
+    
+    printf("        Date: %s, %02u/%02u\r\n",
+            getDayOfWeek(ALRMDATEbits.WDAY01),
+            (ALRMDATEbits.MONTH10 * 10) + ALRMDATEbits.MONTH01,
+            (ALRMDATEbits.DAY10 * 10) + ALRMDATEbits.DAY01);
+    
+    terminalTextAttributesReset();
     
 }

@@ -135,16 +135,41 @@ usb_uart_command_function_t hostStatusCommand(char * input_str) {
 
 }
 
-usb_uart_command_function_t interruptStatusCommand(char * input_str) {
+usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
  
-    printInterruptStatus();
-    
-}
+    // Snipe out received arguments
+    char rx_peripheral_name[32];
+    sscanf(input_str, "Peripheral Status? %s", rx_peripheral_name);
 
-usb_uart_command_function_t clockStatusCommand(char * input_str) {
+    // Determine the rail we're enabling or disabling
+    if (strcmp(rx_peripheral_name, "Interrupts") == 0) {
+        printInterruptStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "Clocks") == 0) {
+        printClockStatus(SYSCLK_INT);
+    }
+    else if (strcmp(rx_peripheral_name, "PMD") == 0) {
+        printPMDStatus();
+    }
+//    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
+//        printADCStatus();
+//    }
+    else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
+        printRTCCStatus();
+    }
+    else {
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a peripheral to view status. Received %s as peripheral name\r\n", rx_peripheral_name);
+        printf("Peripherals that can be monitored include:\r\n"
+                "   Interrupts\r\n"
+                "   Clocks\r\n"
+                "   PMD\r\n"
+                // "   ADC\r\n"
+                "   RTCC\r\n");
+        terminalTextAttributesReset();
+        return;
+    }
 
-    printClockStatus(SYSCLK_INT);
-    
 }
 
 usb_uart_command_function_t errorStatusCommand(char * input_str) {
@@ -171,12 +196,6 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Error Handler flags cleared\n\r");
     terminalTextAttributesReset();
-    
-}
-
-usb_uart_command_function_t pmdStatusCommand(char * input_str) {
- 
-    printPMDStatus();
     
 }
 
@@ -488,15 +507,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Host Status?",
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);
-    usbUartAddCommand("Interrupt Status?",
-            "Prints MCU interrupt settings", 
-            interruptStatusCommand);
-    usbUartAddCommand("Clock Status?", 
-            "Prints MCU clock and oscillator settings", 
-            clockStatusCommand);
-    usbUartAddCommand("PMD Status?",
-            "Prints status of peripheral module disable settings",
-            pmdStatusCommand);
+    usbUartAddCommand("Peripheral Status? ",
+            "\b\b<peripheral_name>: Prints status about passed peripheral. Call command for available peripherals",
+            peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",
             errorStatusCommand);
@@ -507,11 +520,8 @@ void usbUartHashTableInitialize(void) {
             "Prints current state of run and power good signals for all voltage rails",
             railStatusCommand);
     usbUartAddCommand("Set Rail Enable: ",
-            "\b\b<rail_name> <rail_state>: Sets RUN pin state for rail_name power supply. 1 for enabled, 0 for disabled.",
+            "\b\b<rail_name>, <rail_state>: Sets RUN pin state for rail_name power supply. 1 for enabled, 0 for disabled.",
             setRailEnableCommand);
-//    usbUartAddCommand("ADC Status?",
-//            "Prints status information for the Analog to Digital Converter",
-//            adcStatusCommand);
 //    usbUartAddCommand("Telemetry?",
 //            "Prints board level parameter measurements",
 //            telemetryCommand);

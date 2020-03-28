@@ -113,6 +113,9 @@ uint16_t getRTCCCalibration(void);
 // this function sets the RTCC calibration from raw 10 bit value
 void setRTCCCalibration(uint16_t input_cal);
 
+// this function prints debug info about the RTCC setings
+void printRTCCStatus(void);
+
 #endif /* _RTCC_H */
 
 /* *****************************************************************************
