@@ -16,6 +16,7 @@
 #include "pgood_monitor.h"
 // #include "telemetry.h"
 #include "heartbeat_requests.h"
+#include "watchdog_timer.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -151,6 +152,15 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "PMD") == 0) {
         printPMDStatus();
     }
+    else if (strcmp(rx_peripheral_name, "WDT") == 0) {
+        printWatchdogStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "DMT") == 0) {
+        printDeadmanStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
+        printPrefetchStatus();
+    }
 //    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
 //        printADCStatus();
 //    }
@@ -164,6 +174,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   Interrupts\r\n"
                 "   Clocks\r\n"
                 "   PMD\r\n"
+                "   WDT\r\n"
+                "   DMT\r\n"
+                "   Prefetch\r\n"
                 // "   ADC\r\n"
                 "   RTCC\r\n");
         terminalTextAttributesReset();
@@ -508,7 +521,14 @@ void usbUartHashTableInitialize(void) {
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);
     usbUartAddCommand("Peripheral Status? ",
-            "\b\b<peripheral_name>: Prints status about passed peripheral. Call command for available peripherals",
+            "\b\b<peripheral_name>: Prints status about passed peripheral. Available peripherals:\r\n"
+            "       Interrupts\r\n"
+            "       Clocks\r\n"
+            "       PMD\r\n"
+            "       WDT\r\n"
+            "       DMT\r\n"
+            "       Prefetch\r\n"
+            "       RTCC",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",
@@ -520,7 +540,11 @@ void usbUartHashTableInitialize(void) {
             "Prints current state of run and power good signals for all voltage rails",
             railStatusCommand);
     usbUartAddCommand("Set Rail Enable: ",
-            "\b\b<rail_name>, <rail_state>: Sets RUN pin state for rail_name power supply. 1 for enabled, 0 for disabled.",
+            "\b\b<rail_name>, <rail_state>: Sets RUN pin state for rail_name power supply. 1 for enabled, 0 for disabled. Available rails:\r\n"
+            "       POS5\r\n"
+            "       POS60_VAN\r\n"
+            "       POS1P2_VFF\r\n"
+            "       VBAT",
             setRailEnableCommand);
 //    usbUartAddCommand("Telemetry?",
 //            "Prints board level parameter measurements",
