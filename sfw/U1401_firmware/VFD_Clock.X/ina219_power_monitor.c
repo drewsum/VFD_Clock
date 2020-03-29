@@ -1,6 +1,9 @@
 
 #include "ina219_power_monitor.h"
 
+#include <math.h>
+#include <stdio.h>
+
 #include "i2c_master.h"
 
 #include "error_handler.h"
@@ -26,6 +29,28 @@ void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *devi
     
 }
 
+// this function sets the calibration register for the INA219
+// Pass a device address, pointer to an error handler flag, 
+// CURRENT_LSB, and RSHUNT value. See section 8.5.1 in the datasheet
+void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error_handler_flag, double current_lsb, double rshunt) {
+ 
+    // first let's figure out what Cal should be based on equation 3 of the datasheet
+    uint16_t calibration_value = (uint16_t) floor((0.04096) / (current_lsb * rshunt));
+    
+    // Write cal data to cal register on input temp sensor
+    uint8_t output_data_array[3];
+    output_data_array[0] = INA219_CALIBRATION_REG;
+    output_data_array[1] = (uint8_t) (calibration_value >> 8);
+    output_data_array[2] = (uint8_t) (calibration_value & 0xFF);
+    I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    
+    softwareDelay(0x1FF);
+    
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+
+}
 
 // this function gets data over I2C from the given I2C address and returns the converted current
 double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {

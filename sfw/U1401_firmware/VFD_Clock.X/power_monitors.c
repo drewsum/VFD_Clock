@@ -9,6 +9,7 @@
 void powerMonitorsInitialize(void) {
  
     INA219PowerMonitorInitialize(POS12_MON_ADDR, &error_handler.flags.pos12_mon);
+    INA219SetCalibration(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB, POS12_MON_RSHUNT);
     INA219PowerMonitorInitialize(POS3P3_IN_MON_ADDR, &error_handler.flags.pos3p3_in_mon);
     INA219PowerMonitorInitialize(POS3P3_OUT_MON_ADDR, &error_handler.flags.pos3p3_out_mon);
     INA219PowerMonitorInitialize(POS5_IN_MON_ADDR, &error_handler.flags.pos5_in_mon);

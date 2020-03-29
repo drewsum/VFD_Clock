@@ -50,6 +50,11 @@
 // This function initializes a power monitor at passed address. Also pass pointer to error handler flag for device
 void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
+// this function sets the calibration register for the INA219
+// Pass a device address, pointer to an error handler flag, 
+// CURRENT_LSB, and RSHUNT value. See section 8.5.1 in the datasheet
+void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error_handler_flag, double current_lsb, double rshunt);
+
 // this function gets data over I2C from the given I2C address and returns the converted voltage
 double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
 

@@ -35,6 +35,7 @@
 // I2C
 #include "i2c_master.h"
 #include "temperature_sensors.h"
+#include "power_monitors.h"
 
 // Application Specific
 #include "power_saving.h"
@@ -144,6 +145,8 @@ void main(void) {
     softwareDelay(0xFFFFF);
     tempSensorsInitialize();
     printf("    Temperature Sensors Initialized\r\n");
+    powerMonitorsInitialize();
+    printf("    Power Monitors Initialized\r\n");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
