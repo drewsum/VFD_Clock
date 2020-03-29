@@ -165,7 +165,7 @@ void main(void) {
         // if (temp_sense_data_request) tempSensorsRetrieveData();
         
         // get power monitor data
-        if (power_monitor_data_request) powerMonitorGetData();
+        if (power_monitor_data_request) powerMonitorsGetData();
         
         // check to see if a clock fail has occurred and latch it
         clockFailCheck();

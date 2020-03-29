@@ -8,12 +8,21 @@
 // This function initializes all temperature sensors in the project, if available
 void powerMonitorsInitialize(void) {
  
-    Nop();
+    INA219PowerMonitorInitialize(POS12_MON_ADDR, &error_handler.flags.pos12_mon);
+    INA219PowerMonitorInitialize(POS3P3_IN_MON_ADDR, &error_handler.flags.pos3p3_in_mon);
+    INA219PowerMonitorInitialize(POS3P3_OUT_MON_ADDR, &error_handler.flags.pos3p3_out_mon);
+    INA219PowerMonitorInitialize(POS5_IN_MON_ADDR, &error_handler.flags.pos5_in_mon);
+    INA219PowerMonitorInitialize(POS5_OUT_MON_ADDR, &error_handler.flags.pos5_out_mon);
+    INA219PowerMonitorInitialize(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon);
+    INA219PowerMonitorInitialize(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon);
+    INA219PowerMonitorInitialize(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon);
+    // INA219PowerMonitorInitialize(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
+    
     
 }
 
 // this function gets temperature data for all temperature sensors
-void powerMonitorGetData(void) {
+void powerMonitorsGetData(void) {
  
     // Get bus voltage data for each power monitor and stash in telemetry structure
     telemetry.pos12.output_voltage = INA219GetVoltage(POS12_MON_ADDR, &error_handler.flags.pos12_mon);

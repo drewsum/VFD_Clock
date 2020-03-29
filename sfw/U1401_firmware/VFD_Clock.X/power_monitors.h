@@ -40,7 +40,7 @@ uint8_t power_monitor_data_request = 0;
 void powerMonitorsInitialize(void);
 
 // this function gets data from all power monitors
-void powerMonitorGetData(void);
+void powerMonitorsGetData(void);
 
 
 #endif /* _POWER_MONITORS_H */

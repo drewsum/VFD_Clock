@@ -34,8 +34,18 @@
 #define INA219_CALIBRATION_REG      0x05
 
 // these macros hold hardcoded config data for the sensors
-// #define INA219_CONFIG_LSB          0
-// #define INA219_CONFIG_MSB          0
+// These settings come from section 8.6.2.1 of the INA219 datasheet and set the following:
+/*
+ * RST = 0
+ * BRNG = 0 (16V)
+ * PG = 0b11 (/8)
+ * BADC = 0b1111 (128 sample average)
+ * SADC = 0b1111 (128 sample average)
+ * MODE = 0b11 (Shunt and bus, continuous)
+ * 
+ */
+#define INA219_CONFIG_LSB          0b11111111
+#define INA219_CONFIG_MSB          0b00011111
 
 // This function initializes a power monitor at passed address. Also pass pointer to error handler flag for device
 void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);

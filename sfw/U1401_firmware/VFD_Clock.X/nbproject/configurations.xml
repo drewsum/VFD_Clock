@@ -10,10 +10,10 @@
         <itemPath>pgood_monitor.h</itemPath>
         <itemPath>telemetry.h</itemPath>
         <itemPath>heartbeat_services.h</itemPath>
+        <itemPath>error_handler.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.h</itemPath>
-        <itemPath>error_handler.h</itemPath>
         <itemPath>cause_of_reset.h</itemPath>
         <itemPath>32mz_interrupt_control.h</itemPath>
         <itemPath>configuration.h</itemPath>
@@ -54,10 +54,10 @@
         <itemPath>pgood_monitor.c</itemPath>
         <itemPath>telemetry.c</itemPath>
         <itemPath>heartbeat_services.c</itemPath>
+        <itemPath>error_handler.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>
-        <itemPath>error_handler.c</itemPath>
         <itemPath>cause_of_reset.c</itemPath>
         <itemPath>32mz_interrupt_control.c</itemPath>
         <itemPath>watchdog_timer.c</itemPath>
