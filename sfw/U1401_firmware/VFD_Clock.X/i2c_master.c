@@ -722,14 +722,14 @@ void __ISR(_I2C1_BUS_VECTOR, IPL4SRS) I2C_BusCollisionISR( void )
 } 
 
 // this function returns if the temp I2C peripheral is currently turned on
-uint8_t getTempI2COnState(void) {
+uint8_t getI2COnState(void) {
  
     return I2C1CONbits.ON;
     
 }
 
 // this function resets Temp I2C on state, a workaround for errata
-void tempI2COnStateReset(void) {
+void I2COnStateReset(void) {
     
     
     // per Pic32MZ EF errata

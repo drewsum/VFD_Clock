@@ -38,14 +38,17 @@
 /*
  * RST = 0
  * BRNG = 0 (16V)
- * PG = 0b11 (/8)
+ * PG = 0b00 (/1)
  * BADC = 0b1111 (128 sample average)
  * SADC = 0b1111 (128 sample average)
- * MODE = 0b11 (Shunt and bus, continuous)
+ * MODE = 0b111 (Shunt and bus, continuous)
  * 
  */
 #define INA219_CONFIG_LSB          0b11111111
-#define INA219_CONFIG_MSB          0b00011111
+#define INA219_CONFIG_MSB          0b00000111
+
+// this function resets an INA219 power monitor
+void INA219Reset(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
 // This function initializes a power monitor at passed address. Also pass pointer to error handler flag for device
 void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
@@ -57,6 +60,9 @@ void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error
 
 // this function gets data over I2C from the given I2C address and returns the converted voltage
 double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
+
+// this function gets data over I2C from the given I2C address and returns the converted current
+double INA219GetCurrent(uint8_t input_address, volatile uint8_t *device_error_handler_flag, double current_lsb);
 
 
 #endif /* _INA219_POWER_MONITOR_H */

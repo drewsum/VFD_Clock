@@ -59,7 +59,7 @@ double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_err
         // log the fault
         error_handler.flags.i2c_stall = 1;
         // reset the I2C controller if it's enabled
-        if (getTempI2COnState) tempI2COnStateReset();
+        if (getI2COnState) I2COnStateReset();
     }
     
     uint8_t data_reg_pointer[1];
