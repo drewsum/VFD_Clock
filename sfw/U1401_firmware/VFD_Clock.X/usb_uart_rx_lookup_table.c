@@ -416,6 +416,17 @@ usb_uart_command_function_t setRailEnableCommand(char * input_str) {
     }
 }
 
+usb_uart_command_function_t pingCommand(char * input_str) {
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Pinging Buzzer\r\n");
+    terminalTextAttributesReset();
+    
+    BUZZER_ENABLE_PIN = HIGH;
+    softwareDelay(0x1FFFFF);
+    BUZZER_ENABLE_PIN = LOW;
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -435,6 +446,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Repository?",
             "Prints project Git repo location",
             repositoryCommand);
+    usbUartAddCommand("Ping",
+            "Pings the alarm buzzer for a short duration",
+            pingCommand);
     usbUartAddCommand("Host Status?",
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);

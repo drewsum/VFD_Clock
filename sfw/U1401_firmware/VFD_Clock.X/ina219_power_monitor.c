@@ -54,7 +54,7 @@ void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *devi
 void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error_handler_flag, double current_lsb, double rshunt) {
 
     // first let's figure out what Cal should be based on equation 3 of the datasheet
-    uint16_t calibration_value = (uint16_t) floor((0.04096) / (current_lsb * rshunt));
+    uint16_t calibration_value = (uint16_t) floor((0.04096 * INA219_CAL_CORRECTION) / (current_lsb * rshunt));
     
     // Write cal data to cal register on input temp sensor
     uint8_t output_data_array[3];
