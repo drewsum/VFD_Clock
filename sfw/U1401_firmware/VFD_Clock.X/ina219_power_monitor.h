@@ -34,7 +34,7 @@
 #define INA219_CALIBRATION_REG      0x05
 
 // From equation 6 in the datasheet, and board levl measurements
-#define INA219_CAL_CORRECTION        0.22314049586777
+// #define INA219_CAL_CORRECTION        0.22314049586777
 
 // these macros hold hardcoded config data for the sensors
 // These settings come from section 8.6.2.1 of the INA219 datasheet and set the following:

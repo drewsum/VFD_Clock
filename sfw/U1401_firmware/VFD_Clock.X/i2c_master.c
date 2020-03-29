@@ -95,7 +95,7 @@ typedef enum
 /* defined for I2C */
 
 #ifndef I2C_CONFIG_TR_QUEUE_LENGTH
-        #define I2C_CONFIG_TR_QUEUE_LENGTH 4096
+        #define I2C_CONFIG_TR_QUEUE_LENGTH 512
 #endif
 
 
