@@ -317,6 +317,25 @@ usb_uart_command_function_t telemetryCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+    
+    if (live_telemetry_enable == 0) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Enabling Live Telemetry\n\r");
+        live_telemetry_enable = 1;
+    }
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Disabling Live Telemetry\n\r");
+        live_telemetry_enable = 0;
+    }
+    
+    terminalTextAttributesReset();
+    
+}
+
 usb_uart_command_function_t setUnixTimeCommand(char * input_str) {
  
     // Snipe out received string
@@ -448,6 +467,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Telemetry?",
             "Prints board level telemetry measurements",
             telemetryCommand);
+    usbUartAddCommand("Live Telemetry",
+            "Toggles live updates of board level telemetry",
+            liveTelemetryCommand);
     usbUartAddCommand("Time and Date?",
             "Prints the current system time and date",
             timeAndDateCommand);

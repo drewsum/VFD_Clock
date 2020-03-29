@@ -165,10 +165,30 @@ void main(void) {
     while (1) {
         
         // get temperature sensor data
-        // if (temp_sense_data_request) tempSensorsRetrieveData();
+        if (temp_sense_data_request) tempSensorsRetrieveData();
         
         // get power monitor data
         if (power_monitor_data_request) powerMonitorsGetData();
+        
+        if (live_telemetry_request && live_telemetry_enable) {
+            
+            // Clear the terminal
+            terminalClearScreen();
+            terminalSetCursorHome();
+            
+            terminalTextAttributesReset();
+            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+            printf("Live system telemetry:\n\r");
+            
+            printCurrentTelemetry();
+            
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("Call 'Live Telemetry' command to disable\n\r");
+            terminalTextAttributesReset();
+            
+            live_telemetry_request = 0;
+            
+        }
         
         // check to see if a clock fail has occurred and latch it
         clockFailCheck();
