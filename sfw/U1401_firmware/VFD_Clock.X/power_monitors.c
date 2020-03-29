@@ -51,11 +51,24 @@ void powerMonitorsGetData(void) {
     telemetry.pos3p3.input_current = INA219GetCurrent(POS3P3_IN_MON_ADDR, &error_handler.flags.pos3p3_in_mon, POS3P3_IN_MON_CLSB);
     telemetry.pos3p3.output_current = INA219GetCurrent(POS3P3_OUT_MON_ADDR, &error_handler.flags.pos3p3_out_mon, POS3P3_OUT_MON_CLSB);
     telemetry.pos5.input_current = INA219GetCurrent(POS5_IN_MON_ADDR, &error_handler.flags.pos5_in_mon, POS5_IN_MON_CLSB);
-    telemetry.pos5.input_current = INA219GetCurrent(POS5_OUT_MON_ADDR, &error_handler.flags.pos5_out_mon, POS5_OUT_MON_CLSB);
+    telemetry.pos5.output_current = INA219GetCurrent(POS5_OUT_MON_ADDR, &error_handler.flags.pos5_out_mon, POS5_OUT_MON_CLSB);
     telemetry.pos1p2_vff.input_current = INA219GetCurrent(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon, POS1P2_VFF_IN_MON_CLSB);
     telemetry.pos1p2_vff.output_current = INA219GetCurrent(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon, POS1P2_VFF_OUT_MON_CLSB);
     telemetry.pos60_van.input_current = INA219GetCurrent(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon, POS60_VAN_IN_MON_CLSB);
     // telemetry.pos60_van.output_current = INA219GetCurrent(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_CLSB);
+    
+    // Get power data for each power monitor and stash in telemetry structure
+    telemetry.pos12.output_power = INA219GetPower(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB);
+    telemetry.pos3p3.input_power = INA219GetPower(POS3P3_IN_MON_ADDR, &error_handler.flags.pos3p3_in_mon, POS3P3_IN_MON_CLSB);
+    telemetry.pos3p3.output_power = INA219GetPower(POS3P3_OUT_MON_ADDR, &error_handler.flags.pos3p3_out_mon, POS3P3_OUT_MON_CLSB);
+    telemetry.pos5.input_power = INA219GetPower(POS5_IN_MON_ADDR, &error_handler.flags.pos5_in_mon, POS5_IN_MON_CLSB);
+    telemetry.pos5.output_power = INA219GetPower(POS5_OUT_MON_ADDR, &error_handler.flags.pos5_out_mon, POS5_OUT_MON_CLSB);
+    telemetry.pos1p2_vff.input_power = INA219GetPower(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon, POS1P2_VFF_IN_MON_CLSB);
+    telemetry.pos1p2_vff.output_power = INA219GetPower(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon, POS1P2_VFF_OUT_MON_CLSB);
+    telemetry.pos60_van.input_power = INA219GetPower(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon, POS60_VAN_IN_MON_CLSB);
+    // telemetry.pos60_van.output_power = INA219GetPower(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_CLSB);
+    
+    
     
     power_monitor_data_request = 0;
     

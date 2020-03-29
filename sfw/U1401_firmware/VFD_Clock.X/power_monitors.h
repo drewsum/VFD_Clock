@@ -35,16 +35,16 @@
 #define POS5_USB_MON_ADDR           0x48
 
 // These macros set the CLSB (current lsb, resolution) for each power monitor
-#define POS12_MON_CLSB              122.07e-6
-#define POS3P3_IN_MON_CLSB          122.07e-6
-#define POS3P3_OUT_MON_CLSB         122.07e-6
-#define POS5_IN_MON_CLSB            122.07e-6
-#define POS5_OUT_MON_CLSB           122.07e-6
-#define POS1P2_VFF_IN_MON_CLSB      122.07e-6
-#define POS1P2_VFF_OUT_MON_CLSB     122.07e-6
-#define POS60_VAN_IN_MON_CLSB       122.07e-6
+#define POS12_MON_CLSB              61.0352e-6
+#define POS3P3_IN_MON_CLSB          61.0352e-6
+#define POS3P3_OUT_MON_CLSB         61.0352e-6
+#define POS5_IN_MON_CLSB            61.0352e-6
+#define POS5_OUT_MON_CLSB           61.0352e-6
+#define POS1P2_VFF_IN_MON_CLSB      61.0352e-6
+#define POS1P2_VFF_OUT_MON_CLSB     61.0352e-6
+#define POS60_VAN_IN_MON_CLSB       61.0352e-6
 #define POS60_VAN_OUT_MON_CLSB      0.0
-#define POS5_USB_MON_CLSB           122.07e-6
+#define POS5_USB_MON_CLSB           61.0352e-6
 
 // These macros set the RSHUNT value (shunt resistance) for each power monitor
 #define POS12_MON_RSHUNT              0.02
