@@ -28,11 +28,17 @@ double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_ha
     I2C_MasterRead(temp, 2, input_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
     
-    softwareDelay(0x1FF);
+    // softwareDelay(0x1FF);
     
-    // convert received data to volts
-    // from section 8.6.3.2 of datasheet
-    uint16_t received_data = (temp[0] << 8 | temp[1]) >> 3;
-    return received_data * 0.004;
+    if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
+        // convert received data to volts
+        // from section 8.6.3.2 of datasheet
+        uint16_t received_data = (temp[0] << 8 | temp[1]) >> 3;
+        return received_data * 0.004;
+    }
+    else {
+        *device_error_handler_flag = 1;
+        return 0.0;
+    }
     
 }

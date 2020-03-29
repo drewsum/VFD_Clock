@@ -120,18 +120,25 @@ void printErrorHandlerStatus(void) {
     // Print heading
     printf("Error Handler Status:\n\r");
   
+    terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
     // loop through all error handler flags and print if they are set or not
     uint32_t index;
+    uint32_t error_count = 0;
     for (index = 0; index < ERROR_HANDLER_NUM_FLAGS; index++) {
-
-        if (error_handler.flag_array[index]) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    %s Error %s\n\r", 
-                error_handler_flag_names[index],
-                error_handler.flag_array[index] ? "has occurred" : "has not occurred");
+        if (error_handler.flag_array[index]) {
+            printf("    %s Error has occurred\r\n", error_handler_flag_names[index]);
+            error_count++;
+        }
     }
     
-    terminalTextAttributesReset();    
+    // print message if no errors have occurred
+    if (error_count == 0) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    No errors have been recorded since last call of 'Clear Errors' command\r\n");
+    }
+    
+    terminalTextAttributesReset();
     
 }
 

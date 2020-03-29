@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile uint32_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  27
+#define ERROR_HANDLER_NUM_FLAGS  36
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -62,6 +62,16 @@ volatile uint32_t update_error_leds_flag;
         uint8_t amb_temp;
         uint8_t usb_temp;
         uint8_t dsply_temp;
+        uint8_t pos12_mon;
+        uint8_t pos3p3_in_mon;
+        uint8_t pos3p3_out_mon;
+        uint8_t pos5_in_mon;
+        uint8_t pos5_out_mon;
+        uint8_t pos1p2_vff_in_mon;
+        uint8_t pos1p2_vff_out_mon;
+        uint8_t pos60_van_in_mon;
+        uint8_t pos60_out_mon;
+        uint8_t usb_mon;
         
     } flags;
 
@@ -97,7 +107,17 @@ const char *  error_handler_flag_names[] = {
     "+60VAN Temperature Sensor",
     "Ambient Temperature Sensor",
     "USB Temperature Sensor",
-    "Display Board Temperature Sensor"
+    "Display Board Temperature Sensor",
+    "+12V Power Monitor",
+    "+3.3V Input Power Monitor",
+    "+3.3V Output Power Monitor",
+    "+5V Input Power Monitor",
+    "+5V Output Power Monitor",
+    "+1.2VFF Input Power Monitor",
+    "+1.2VFF Output Power Monitor",
+    "+60VAN Input Power Monitor",
+    "+60VAN Output Power Monitor",
+    "USB Power Monitor"
     
 };
 

@@ -312,14 +312,9 @@ usb_uart_command_function_t telemetryCommand(char * input_str) {
     terminalTextAttributesReset();
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("Most recent system telemetry:\n\r");
-    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Input Protect Temp: %f\r\n", telemetry.pos12.temperature);
-    printf("    Input Voltage: %f\r\n", telemetry.pos12.output_voltage);
-    printf("    +3.3V temp: %f\r\n", telemetry.pos3p3.temperature);
-    printf("    +3.3V Output Volt: %f\r\n", telemetry.pos3p3.output_voltage);
-    printf("    +5V temp: %f\r\n", telemetry.pos5.temperature);
-    terminalTextAttributesReset();
-   
+    
+    printCurrentTelemetry();
+    
 }
 
 usb_uart_command_function_t setUnixTimeCommand(char * input_str) {

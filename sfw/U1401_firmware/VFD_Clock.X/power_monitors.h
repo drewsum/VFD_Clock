@@ -28,6 +28,11 @@
 #define POS3P3_OUT_MON_ADDR         0x42
 #define POS5_IN_MON_ADDR            0x43
 #define POS5_OUT_MON_ADDR           0x44
+#define POS1P2_VFF_IN_MON_ADDR      0x45
+#define POS1P2_VFF_OUT_MON_ADDR     0x46
+#define POS60_VAN_IN_MON_ADDR       0x47
+#define POS60_VAN_OUT_MON_ADDR      0x6A
+#define POS5_USB_MON_ADDR           0x48
 
 uint8_t power_monitor_data_request = 0;
 

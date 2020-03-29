@@ -46,6 +46,9 @@ struct telemetry_s {
     
 } telemetry;
 
+// This prints all telemetry data in an easily digested format
+void printCurrentTelemetry(void);
+
 
 #endif /* _TELEMETRY_H */
 
