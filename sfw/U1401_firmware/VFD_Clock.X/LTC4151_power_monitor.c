@@ -39,19 +39,25 @@ double LTC4151GetVoltage(uint8_t input_address, volatile uint8_t *device_error_h
     }
     
     uint8_t data_reg_pointer[1];
-    uint8_t temp[2];
-    I2C_TRANSACTION_REQUEST_BLOCK readTRB[2];
+    uint8_t tempH[1], tempL[1];
+    I2C_TRANSACTION_REQUEST_BLOCK readTRBH[2];
     data_reg_pointer[0] = LTC4151_VIN_C_REG;
-    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRB[1], temp, 2, input_address);
-    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBH[1], tempH, 1, input_address);
+    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-
+    softwareDelay(0x1FF);
+    I2C_TRANSACTION_REQUEST_BLOCK readTRBL[2];
+    data_reg_pointer[0] = LTC4151_VIN_D_REG;
+    I2C_MasterWriteTRBBuild(&readTRBL[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBL[1], tempL, 1, input_address);
+    I2C_MasterTRBInsert(2, readTRBL, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
     softwareDelay(0x1FF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to volts
-        uint16_t received_data = ((uint16_t) temp[0] << 4) | (temp[1] >> 4);
+        uint16_t received_data = (tempH[0] << 4) | (tempL[0] >> 4);
         return received_data * 0.025;
     }
     else {
@@ -74,19 +80,25 @@ double LTC4151GetCurrent(uint8_t input_address, volatile uint8_t *device_error_h
     }
     
     uint8_t data_reg_pointer[1];
-    uint8_t temp[2];
+    uint8_t tempH[1], tempL[1];
+    I2C_TRANSACTION_REQUEST_BLOCK readTRBH[2];
     data_reg_pointer[0] = LTC4151_SENSE_A_REG;
-    I2C_MasterWrite(data_reg_pointer, 1, input_address, &I2C_STATUS);
+    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBH[1], tempH, 1, input_address);
+    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    // Read two bytes from temp reg
-    I2C_MasterRead(temp, 2, input_address, &I2C_STATUS);
+    softwareDelay(0x1FF);
+    I2C_TRANSACTION_REQUEST_BLOCK readTRBL[2];
+    data_reg_pointer[0] = LTC4151_SENSE_B_REG;
+    I2C_MasterWriteTRBBuild(&readTRBL[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBL[1], tempL, 1, input_address);
+    I2C_MasterTRBInsert(2, readTRBL, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    
     softwareDelay(0x1FF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to amps
-        uint16_t received_data = (temp[0] << 4 | temp[1]) >> 4;
+        uint16_t received_data = (tempH[0] << 4 | tempL[0]) >> 4;
         return ((double) received_data) * 0.20e-6 / rshunt;
     }
     else {
