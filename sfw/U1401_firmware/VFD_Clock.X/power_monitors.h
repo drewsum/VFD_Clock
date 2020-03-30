@@ -19,6 +19,7 @@
 #define _POWER_MONITORS_H
 
 #include "ina219_power_monitor.h"
+#include "LTC4151_power_monitor.h"
 
 #include "error_handler.h"
 
@@ -43,7 +44,6 @@
 #define POS1P2_VFF_IN_MON_CLSB      60e-6
 #define POS1P2_VFF_OUT_MON_CLSB     60e-6
 #define POS60_VAN_IN_MON_CLSB       60e-6
-#define POS60_VAN_OUT_MON_CLSB      0.0
 #define POS5_USB_MON_CLSB           60e-6
 
 // These macros set the RSHUNT value (shunt resistance) for each power monitor

@@ -70,7 +70,7 @@ volatile uint32_t update_error_leds_flag;
         uint8_t pos1p2_vff_in_mon;
         uint8_t pos1p2_vff_out_mon;
         uint8_t pos60_van_in_mon;
-        uint8_t pos60_out_mon;
+        uint8_t pos60_van_out_mon;
         uint8_t usb_mon;
         
     } flags;

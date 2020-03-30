@@ -20,7 +20,8 @@ i2c_master.h  \
 mcp9804_temp_sensor.h  \
 power_monitors.h  \
  ina219_power_monitor.h  \
+LTC4151_power_monitor.h  \
 power_saving.h  \
-pgood_monitor.h  \
+ pgood_monitor.h  \
 telemetry.h  \
- heartbeat_services.h 
+heartbeat_services.h 

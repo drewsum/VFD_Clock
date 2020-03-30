@@ -197,7 +197,16 @@ void updateErrorLEDs(void) {
             error_handler.flags.pos60_van_temp ||
             error_handler.flags.usb_temp ||
             error_handler.flags.amb_temp ||
-            error_handler.flags.dsply_temp) {
+            error_handler.flags.dsply_temp ||
+            error_handler.flags.pos12_mon ||
+            error_handler.flags.pos3p3_in_mon ||
+            error_handler.flags.pos3p3_out_mon ||
+            error_handler.flags.pos5_in_mon ||
+            error_handler.flags.pos5_out_mon ||
+            error_handler.flags.pos1p2_vff_in_mon ||
+            error_handler.flags.pos1p2_vff_out_mon ||
+            error_handler.flags.pos60_van_in_mon ||
+            error_handler.flags.pos60_van_out_mon) {
         
         I2C_ERROR_LED_PIN = HIGH;
         

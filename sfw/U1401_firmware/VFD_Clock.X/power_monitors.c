@@ -17,7 +17,7 @@ void powerMonitorsInitialize(void) {
     INA219PowerMonitorInitialize(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon);
     INA219PowerMonitorInitialize(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon);
     INA219PowerMonitorInitialize(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon);
-    // INA219PowerMonitorInitialize(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
+    LTC4151PowerMonitorInitialize(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
     
     // Write calibration data to allow power monitors to calculate current
     INA219SetCalibration(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB, POS12_MON_RSHUNT);
@@ -28,7 +28,6 @@ void powerMonitorsInitialize(void) {
     INA219SetCalibration(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon, POS1P2_VFF_IN_MON_CLSB, POS1P2_VFF_IN_MON_RSHUNT);
     INA219SetCalibration(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon, POS1P2_VFF_OUT_MON_CLSB, POS1P2_VFF_OUT_MON_RSHUNT);
     INA219SetCalibration(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon, POS60_VAN_IN_MON_CLSB, POS60_VAN_IN_MON_RSHUNT);
-    // INA219SetCalibration(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_CLSB, POS600_VAN_OUT_MON_RSHUNT);
     
 }
 
@@ -44,7 +43,7 @@ void powerMonitorsGetData(void) {
     telemetry.pos1p2_vff.input_voltage = INA219GetVoltage(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon);
     telemetry.pos1p2_vff.output_voltage = INA219GetVoltage(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon);
     telemetry.pos60_van.input_voltage = INA219GetVoltage(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon);
-    // telemetry.pos60_van.output_voltage = INA219GetVoltage(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
+    telemetry.pos60_van.output_voltage = LTC4151GetVoltage(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
     
     // Get current data for each power monitor and stash in telemetry structure
     telemetry.pos12.output_current = INA219GetCurrent(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB);
@@ -55,7 +54,7 @@ void powerMonitorsGetData(void) {
     telemetry.pos1p2_vff.input_current = INA219GetCurrent(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon, POS1P2_VFF_IN_MON_CLSB);
     telemetry.pos1p2_vff.output_current = INA219GetCurrent(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon, POS1P2_VFF_OUT_MON_CLSB);
     telemetry.pos60_van.input_current = INA219GetCurrent(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon, POS60_VAN_IN_MON_CLSB);
-    // telemetry.pos60_van.output_current = INA219GetCurrent(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_CLSB);
+    telemetry.pos60_van.output_current = LTC4151GetCurrent(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_RSHUNT);
     
     // Get power data for each power monitor and stash in telemetry structure
     telemetry.pos12.output_power = INA219GetPower(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB);
@@ -66,9 +65,7 @@ void powerMonitorsGetData(void) {
     telemetry.pos1p2_vff.input_power = INA219GetPower(POS1P2_VFF_IN_MON_ADDR, &error_handler.flags.pos1p2_vff_in_mon, POS1P2_VFF_IN_MON_CLSB);
     telemetry.pos1p2_vff.output_power = INA219GetPower(POS1P2_VFF_OUT_MON_ADDR, &error_handler.flags.pos1p2_vff_out_mon, POS1P2_VFF_OUT_MON_CLSB);
     telemetry.pos60_van.input_power = INA219GetPower(POS60_VAN_IN_MON_ADDR, &error_handler.flags.pos60_van_in_mon, POS60_VAN_IN_MON_CLSB);
-    // telemetry.pos60_van.output_power = INA219GetPower(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon, POS60_VAN_OUT_MON_CLSB);
-    
-    
+    telemetry.pos60_van.output_power = telemetry.pos60_van.output_current * telemetry.pos60_van.output_voltage; // LTC4151 does not calculate power for us
     
     power_monitor_data_request = 0;
     
