@@ -40,9 +40,9 @@
  * ADC channel label for snapshot = 0b00 (snapshot disabled)
  * Test Mode Enabled = 0 (Test Mode Disabled)
  * Page Read/Write = 1 (page read/write enabled)
- * Stuck-bus timer enable = 1 (enable stuck bus timer)
+ * Stuck-bus timer enable = 0 (disable stuck bus timer)
  */
-#define LTC4151_CONTROL_DATA          0b00001100
+#define LTC4151_CONTROL_DATA          0b00001000
 
 // This function initializes a power monitor at passed address. Also pass pointer to error handler flag for device
 void LTC4151PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);

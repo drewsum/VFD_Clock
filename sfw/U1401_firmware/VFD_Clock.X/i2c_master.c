@@ -171,7 +171,7 @@ void I2C_Initialize(void)
     // setup I2C baud rate
     // clock source is PBCLK2
     // Larger numbers in this register correspond to slower baud rates
-    I2C1BRG = 0x033;
+    I2C1BRG = 0x035;
     
     // clear the interrupt flags
     clearInterruptFlag(I2C1_Bus_Collision_Event);
