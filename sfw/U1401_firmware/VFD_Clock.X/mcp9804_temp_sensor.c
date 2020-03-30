@@ -64,13 +64,12 @@ double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_err
     
     uint8_t data_reg_pointer[1];
     uint8_t temp[2];
+    I2C_TRANSACTION_REQUEST_BLOCK readTRBH[2];
     data_reg_pointer[0] = MCP9804_TA_REG;
-    I2C_MasterWrite(data_reg_pointer, 1, input_address, &I2C_STATUS);
+    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
+    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    // Read two bytes from temp reg
-    I2C_MasterRead(temp, 2, input_address, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    
     softwareDelay(0x1FF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) return MCP9804BytesToFloat(temp);
