@@ -34,13 +34,14 @@ void tempSensorsRetrieveData(void) {
     telemetry.pos5.temperature          = MCP9804GetTemperature(POS5_TEMP_SNS_ADDR, &error_handler.flags.pos5_temp);
     telemetry.pos1p2_vff.temperature    = MCP9804GetTemperature(POS1P2_VFF_TEMP_SNS_ADDR, &error_handler.flags.pos1p2_vff_temp);
     telemetry.pos60_van.temperature     = MCP9804GetTemperature(POS60_VAN_TEMP_SNS_ADDR, &error_handler.flags.pos60_van_temp);
-    MCP9804GetTemperature(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
+    telemetry.ambient_temperature       = MCP9804GetTemperature(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
+    telemetry.backup_rtc_temperature    = DS3231MRTCGetTemperature(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
 //    if (nUSB_DETECT_PIN == LOW) {
 //        MCP9804GetTemperature(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
 //    }
     
     if (nDISPLAY_DETECT_PIN == LOW && I2C_DSP_EN_PIN == HIGH) {
-        MCP9804GetTemperature(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
+        MCP9804GetTemperature(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);
     }
     
     temp_sense_data_request = 0;

@@ -26,3 +26,10 @@ uint32_t logicBoardGetPowerCycles(void) {
     return (uint32_t) DS1683GetEventCount(LOGIC_TOF_ADDR, &error_handler.flags.logic_tof);
     
 }
+
+// This function sets up the backup RTC to act as a fail safe to count while input power is removed
+void backupRTCInitialize(void) {
+ 
+    DS3231MRTCInitialize(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+}

@@ -32,6 +32,7 @@
           <itemPath>ina219_power_monitor.h</itemPath>
           <itemPath>LTC4151_power_monitor.h</itemPath>
           <itemPath>ds1683_time_of_flight.h</itemPath>
+          <itemPath>ds3231_rtc.h</itemPath>
         </logicalFolder>
         <itemPath>i2c_master.h</itemPath>
         <itemPath>temperature_sensors.h</itemPath>
@@ -77,6 +78,7 @@
           <itemPath>ina219_power_monitor.c</itemPath>
           <itemPath>LTC4151_power_monitor.c</itemPath>
           <itemPath>ds1683_time_of_flight.c</itemPath>
+          <itemPath>ds3231_rtc.c</itemPath>
         </logicalFolder>
         <itemPath>i2c_master.c</itemPath>
         <itemPath>temperature_sensors.c</itemPath>

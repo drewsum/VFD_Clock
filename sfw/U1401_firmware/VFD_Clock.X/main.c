@@ -150,6 +150,8 @@ void main(void) {
     printf("    Power Monitors Initialized\r\n");
     logicBoardTOFInitialize();
     printf("    Initialized Time of Flight Counter\r\n");
+    backupRTCInitialize();
+    printf("    Backup Real-Time Clock Initialized\r\n");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

@@ -99,6 +99,13 @@ void printCurrentTelemetry(void) {
             telemetry.pos60_van.output_power,
             telemetry.pos60_van.temperature);
     
+    // print stuff off other random data points
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("\tMiscellaneous Telemetry:\r\n");
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\t\tBackup RTC Temperature: %.3fC\r\n", telemetry.backup_rtc_temperature);
+    printf("\t\tAmbient Temperature: %.3fC\r\n\r\n", telemetry.ambient_temperature);
+    
     terminalTextAttributesReset();
 
     

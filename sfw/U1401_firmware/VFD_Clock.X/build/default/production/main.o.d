@@ -18,12 +18,13 @@ terminal_control.h  \
 i2c_master.h  \
  temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
+ds3231_rtc.h  \
+ misc_i2c_devices.h  \
+ds1683_time_of_flight.h  \
 power_monitors.h  \
  ina219_power_monitor.h  \
 LTC4151_power_monitor.h  \
-misc_i2c_devices.h  \
- ds1683_time_of_flight.h  \
 power_saving.h  \
-pgood_monitor.h  \
+ pgood_monitor.h  \
 telemetry.h  \
- heartbeat_services.h 
+heartbeat_services.h 

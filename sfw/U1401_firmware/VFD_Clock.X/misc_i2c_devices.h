@@ -27,6 +27,8 @@
 
 #define LOGIC_TOF_ADDR      0x6B
 
+#define BACKUP_RTC_ADDR     0x68
+
 // this function initializes the logic board TOF counter
 void logicBoardTOFInitialize(void);
 
@@ -35,6 +37,9 @@ double logicBoardGetTOF(void);
 
 // this function returns the number of power cycles for the logic board from I2C time of flight counter
 uint32_t logicBoardGetPowerCycles(void);
+
+// This function sets up the backup RTC to act as a fail safe to count while input power is removed
+void backupRTCInitialize(void);
 
 #endif /* _MISC_I2C_DEVICES_H */
 
