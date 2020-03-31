@@ -77,8 +77,8 @@ void usbUartInitialize(void);
 void __ISR(_UART3_FAULT_VECTOR, ipl1SRS) usbUartFaultISR(void);
 
 // These are the USB UART DMA Interrupt Service Routines
-void __ISR(_DMA0_VECTOR, IPL5SRS) usbUartTxDmaISR(void);
-void __ISR(_DMA1_VECTOR, IPL6SRS) usbUartRxDmaISR(void);
+void __ISR(_DMA0_VECTOR, IPL1SRS) usbUartTxDmaISR(void);
+void __ISR(_DMA1_VECTOR, IPL2SRS) usbUartRxDmaISR(void);
 
 // this function adds a usb_uart command to the usb_uart_commands hash table
 void usbUartHashTableAdd(char * input_cmd_name, char * input_cmd_help_message, usb_uart_command_function_t input_cmd_func);

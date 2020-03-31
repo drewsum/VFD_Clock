@@ -2,6 +2,7 @@
 #include <xc.h>
 #include <string.h>
 #include <stdio.h>
+#include <math.h>
 
 #include "usb_uart_rx_lookup_table.h"
 #include "usb_uart.h"
@@ -17,6 +18,7 @@
 #include "telemetry.h"
 #include "heartbeat_services.h"
 #include "watchdog_timer.h"
+#include "misc_i2c_devices.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -327,6 +329,8 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
         live_telemetry_enable = 1;
     }
     else {
+        terminalClearScreen();
+        terminalSetCursorHome();
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Disabling Live Telemetry\n\r");
         live_telemetry_enable = 0;
@@ -427,6 +431,20 @@ usb_uart_command_function_t pingCommand(char * input_str) {
     BUZZER_ENABLE_PIN = LOW;
 }
 
+usb_uart_command_function_t timeOfFlightCommand(char * input_str) {
+ 
+    double tof_temp = logicBoardGetTOF();
+    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
+    uint32_t power_cycle_temp = logicBoardGetPowerCycles();
+    
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Logic Board Time of Flight is %s\r\n", getStringSecondsAsTime(tof_temp_int));
+    printf("Logic Board has power cycled %u times\r\n", power_cycle_temp);
+    terminalTextAttributesReset();
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -468,6 +486,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Clear Errors",
             "Clears all error handler flags",
             clearErrorsCommand);
+    usbUartAddCommand("Time of Flight?",
+            "Returns time of flight for logic board",
+            timeOfFlightCommand);
     usbUartAddCommand("Rail Status?",
             "Prints current state of run and power good signals for all voltage rails",
             railStatusCommand);
