@@ -2,6 +2,7 @@
 #include "ds3231_rtc.h"
 
 #include <stdio.h>
+#include <time.h>
 
 #include "i2c_master.h"
 
@@ -67,5 +68,99 @@ double DS3231MRTCGetTemperature(uint8_t device_address, volatile uint8_t *device
         return 0.0;
     }
     
+    
+}
+
+// This function stores the passed time into the RTC. Pass time as a time_t structure
+void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag, struct tm input_time) {
+ 
+    // save passed time into variables for writing into RTC
+    // First, convert time elements into BCD and shift into format for RTC
+    uint8_t write_seconds_01    = input_time.tm_sec % 10;
+    uint8_t write_seconds_10    = (input_time.tm_sec / 10) % 10;
+    uint8_t write_seconds       = (write_seconds_10 << 4) | write_seconds_01;
+    uint8_t write_minutes_01    = input_time.tm_min % 10;
+    uint8_t write_minutes_10    = (input_time.tm_min / 10) % 10;
+    uint8_t write_minutes       = (write_minutes_10 << 4) | write_minutes_01;
+    uint8_t write_hours_01      = input_time.tm_hour % 10;
+    uint8_t write_hours_10      = (input_time.tm_hour / 10) % 10;
+    uint8_t write_hours         = (write_hours_10 << 4) | write_hours_01;
+    
+    // Now do the same with date
+    uint8_t write_day           = input_time.tm_wday + 1;       // 1 indexed, unlike time.c
+    uint8_t write_date_01       = input_time.tm_mday % 10;
+    uint8_t write_date_10       = (input_time.tm_mday / 10) % 10;
+    uint8_t write_date          = (write_date_10 << 4) | write_date_01;
+    uint8_t write_month_01      = (input_time.tm_mon + 1) % 10;     // time.c encodes month 0 indexed
+    uint8_t write_month_10      = ((input_time.tm_mon + 1) / 10) % 10;      // time.c encodes month as 0 indexed
+    uint8_t write_month         = (write_month_10 << 4) | write_month_01;
+    uint8_t write_year_01       = (input_time.tm_year - 100) % 10;      // time.c encodes year as year since 1900
+    uint8_t write_year_10       = ((input_time.tm_year - 100) / 10) % 10;      // time.c encodes year as year since 1900
+    uint8_t write_year          = (write_year_10 << 4) | write_year_01;
+    
+    // Now shit all this stuff out to the RTC itself over I2C bus
+    // Seconds
+    uint8_t output_data_array[2];
+    output_data_array[0] = DS3231M_SECONDS_REG;
+    output_data_array[1] = write_seconds;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // Minutes
+    output_data_array[0] = DS3231M_MINUTES_REG;
+    output_data_array[1] = write_minutes;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // hours
+    output_data_array[0] = DS3231M_HOURS_REG;
+    output_data_array[1] = write_hours;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // weekday
+    output_data_array[0] = DS3231M_DAY_REG;
+    output_data_array[1] = write_day;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // date
+    output_data_array[0] = DS3231M_DATE_REG;
+    output_data_array[1] = write_date;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // month
+    output_data_array[0] = DS3231M_MONTH_CENT_REG;
+    output_data_array[1] = write_month;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
+    
+    // year
+    output_data_array[0] = DS3231M_YEAR_REG;
+    output_data_array[1] = write_year;
+    I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    // Pass error back to function call
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
 }

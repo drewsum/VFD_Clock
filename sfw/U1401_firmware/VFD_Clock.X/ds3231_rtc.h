@@ -21,6 +21,7 @@
 
 #include <xc.h>
 #include <stdbool.h>
+#include <time.h>
 
 #include "i2c_master.h"
 
@@ -71,6 +72,9 @@ void DS3231MRTCInitialize(uint8_t device_address, volatile uint8_t *device_error
 
 // This function reads temperature sensor data from the RTC
 double DS3231MRTCGetTemperature(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
+// This function stores the passed time into the RTC. Pass time as a time_t structure
+void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag, struct tm input_time);
 
 
 

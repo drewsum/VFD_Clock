@@ -4,6 +4,8 @@
 
 #include "pin_macros.h"
 #include "error_handler.h"
+#include "ds3231_rtc.h"
+#include "rtcc.h"
 
 
 // this function initializes the logic board TOF counter
@@ -31,5 +33,12 @@ uint32_t logicBoardGetPowerCycles(void) {
 void backupRTCInitialize(void) {
  
     DS3231MRTCInitialize(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+}
+
+// This function stashes the current date and time saved in the internal RTCC into the backup RTC
+void backupRTCStashTime(void) {
+ 
+    DS3231MRTCStoreTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc, getRTCTimeStruct());
     
 }

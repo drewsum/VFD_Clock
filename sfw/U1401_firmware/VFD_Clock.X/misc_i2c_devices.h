@@ -20,6 +20,7 @@
 
 
 #include <xc.h>
+#include <time.h>
 
 #include "i2c_master.h"
 
@@ -40,6 +41,9 @@ uint32_t logicBoardGetPowerCycles(void);
 
 // This function sets up the backup RTC to act as a fail safe to count while input power is removed
 void backupRTCInitialize(void);
+
+// This function stashes the current date and time saved in the internal RTCC into the backup RTC
+void backupRTCStashTime(void);
 
 #endif /* _MISC_I2C_DEVICES_H */
 

@@ -19,6 +19,7 @@
 #define _RTCC_H
 
 #include <xc.h>
+#include <time.h>
 
 // These are macros needed for defining ISRs, included in XC32
 #include <sys/attribs.h>
@@ -112,6 +113,9 @@ uint16_t getRTCCCalibration(void);
 
 // this function sets the RTCC calibration from raw 10 bit value
 void setRTCCCalibration(uint16_t input_cal);
+
+// this function returns the contents of the RTC shadow register as a time.h tm struct
+struct tm getRTCTimeStruct(void);
 
 // this function prints debug info about the RTCC setings
 void printRTCCStatus(void);

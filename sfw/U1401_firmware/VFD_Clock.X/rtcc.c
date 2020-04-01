@@ -435,6 +435,26 @@ void setRTCCCalibration(uint16_t input_cal) {
     
 }
 
+// this function returns the contents of the RTC shadow register as a time.h tm struct
+struct tm getRTCTimeStruct(void) {
+ 
+    // create a return structure to build
+    struct tm return_time;
+    
+    // copy all time variables from RTCC shadow registers into return time structure
+    return_time.tm_wday = rtcc_shadow.weekday;
+    return_time.tm_mday = rtcc_shadow.day;
+    return_time.tm_mon = rtcc_shadow.month - 1;         // month, 0 indexed
+    return_time.tm_year = rtcc_shadow.year + 100;       // years since 1900
+    return_time.tm_sec = rtcc_shadow.seconds;
+    return_time.tm_min = rtcc_shadow.minutes;
+    return_time.tm_hour = rtcc_shadow.hours;
+    
+    // send back to function caller
+    return return_time;
+    
+}
+
 // this function prints debug info about the RTCC setings
 void printRTCCStatus(void) {
  

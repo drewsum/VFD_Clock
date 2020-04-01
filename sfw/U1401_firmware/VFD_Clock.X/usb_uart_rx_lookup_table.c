@@ -445,6 +445,16 @@ usb_uart_command_function_t timeOfFlightCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t backupTimeCommand(char * input_str) {
+ 
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Stashing internal RTC time into backup RTC\r\n");
+    terminalTextAttributesReset();
+    
+    backupRTCStashTime();
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -520,5 +530,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Unix Time: ",
             "\b\b<decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setUnixTimeCommand);
+    usbUartAddCommand("Backup Time",
+            "REMOVE MEEEEEE, for testing only",
+            backupTimeCommand);
     
 }
