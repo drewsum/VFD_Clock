@@ -531,7 +531,7 @@ void usbUartHashTableInitialize(void) {
             "\b\b<decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setUnixTimeCommand);
     usbUartAddCommand("Backup Time",
-            "REMOVE MEEEEEE, for testing only",
+            "Saves internal RTCC time into external backup RTC",
             backupTimeCommand);
     
 }

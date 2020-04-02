@@ -140,7 +140,7 @@ void rtccClear(void) {
     RTCCONbits.ON = 0;
     
     // wait for RTCC to turn off
-    while (RTCCONbits.RTCCLKON);
+    // while (RTCCONbits.RTCCLKON);
     
     // Write 0's everywhere
     RTCTIME = 0x00000000;
@@ -165,7 +165,7 @@ void rtccClear(void) {
     RTCCONbits.ON = 1;
     
     // wait for RTCC to turn on
-    while (RTCCONbits.RTCCLKON == 0);
+    // while (RTCCONbits.RTCCLKON == 0);
     
     // lock RTCC
     rtccLock();
@@ -182,7 +182,7 @@ void rtccWriteDate(uint8_t month, uint8_t day, uint16_t year) {
     RTCCONbits.ON = 0;
     
     // wait for RTCC to turn off
-    while (RTCCONbits.RTCCLKON);
+    // while (RTCCONbits.RTCCLKON);
     
     // Set month
     RTCDATEbits.MONTH10 = (month / 10) % 10;
@@ -210,7 +210,7 @@ void rtccWriteDate(uint8_t month, uint8_t day, uint16_t year) {
     RTCCONbits.ON = 1;
     
     // wait for RTCC to turn on
-    while (RTCCONbits.RTCCLKON == 0);
+    // while (RTCCONbits.RTCCLKON == 0);
     
     // lock RTCC
     rtccLock();
@@ -227,7 +227,7 @@ void rtccWriteTime(uint8_t hour, uint8_t minute, uint8_t second) {
     RTCCONbits.ON = 0;
     
     // wait for RTCC to turn off
-    while (RTCCONbits.RTCCLKON);
+    // while (RTCCONbits.RTCCLKON);
     
     // Set hour
     RTCTIMEbits.HR10 = (hour / 10) % 10;
@@ -254,7 +254,7 @@ void rtccWriteTime(uint8_t hour, uint8_t minute, uint8_t second) {
     RTCCONbits.ON = 1;
     
     // wait for RTCC to turn on
-    while (RTCCONbits.RTCCLKON == 0);
+    // while (RTCCONbits.RTCCLKON == 0);
     
     // lock RTCC
     rtccLock();
@@ -271,7 +271,7 @@ void rtccWriteWeekday(weekday_t weekday) {
     RTCCONbits.ON = 0;
     
     // wait for RTCC to turn off
-    while (RTCCONbits.RTCCLKON);
+    // while (RTCCONbits.RTCCLKON);
     
     // Set weekday
     RTCDATEbits.WDAY01 = weekday;
@@ -289,7 +289,7 @@ void rtccWriteWeekday(weekday_t weekday) {
     RTCCONbits.ON = 1;
     
     // wait for RTCC to turn on
-    while (RTCCONbits.RTCCLKON == 0);
+    // while (RTCCONbits.RTCCLKON == 0);
     
     // lock RTCC
     rtccLock();
