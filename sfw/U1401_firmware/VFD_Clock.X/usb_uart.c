@@ -316,17 +316,7 @@ void __ISR(_DMA1_VECTOR, IPL2SRS) usbUartRxDmaISR(void) {
         // Clear interrupt flag
         clearInterruptFlag(DMA_Channel_1);
 
-        // Determine length of received string
-        uint32_t length = strlen(usb_uart_rx_buffer);
-
-        // parse received string
-        usbUartRxLUTInterface(usb_uart_rx_buffer);
-
-        // clear rx buffer
-        uint32_t index;
-        for (index = 0; index < length; index++) {
-            usb_uart_rx_buffer[index] = '\0';
-        }
+        usb_uart_rx_ready = 1;
         
     }
     
@@ -373,6 +363,9 @@ void usbUartAddCommand(char * input_cmd_name, char * input_cmd_help_message, usb
 
 // This function is what interprets strings sent over USB Virtual COM Port
 void usbUartRxLUTInterface(char * cmd_string) {
+    
+    usb_uart_rx_ready = 0;
+    
     // Remove trailing newlines and carriage returns
     strtok(cmd_string, "\n");
     strtok(cmd_string, "\r");

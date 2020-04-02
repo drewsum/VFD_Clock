@@ -170,6 +170,19 @@ void main(void) {
     // Main loop, do this stuff forever and ever
     while (1) {
         
+        // parse received USB strings if we have a new one received
+        if (usb_uart_rx_ready) {
+            usbUartRxLUTInterface(usb_uart_rx_buffer);
+            // Determine length of received string
+            uint32_t length = strlen(usb_uart_rx_buffer);
+        
+            // clear rx buffer
+            uint32_t index;
+            for (index = 0; index < length; index++) {
+                usb_uart_rx_buffer[index] = '\0';
+            }
+        }
+            
         // get temperature sensor data
         if (temp_sense_data_request) tempSensorsRetrieveData();
         

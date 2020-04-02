@@ -1,5 +1,6 @@
 
 #include <time.h>
+#include <stdio.h>
 
 #include "misc_i2c_devices.h"
 
@@ -48,6 +49,8 @@ void backupRTCStashTime(void) {
 void backupRTCRestoreTime(void) {
  
     struct tm read_time = DS3231MRTCReadTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
-    rtccWriteUnixTime(mktime(&read_time));
+    rtccWriteTime(read_time.tm_hour, read_time.tm_min, read_time.tm_sec);
+    rtccWriteWeekday(read_time.tm_wday);
+    rtccWriteDate(read_time.tm_mon + 1, read_time.tm_mday, read_time.tm_year + 1900);
     
 }

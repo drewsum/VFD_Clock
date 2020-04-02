@@ -235,7 +235,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     softwareDelay(0x1FF);
     uint8_t read_month_01 = readBytes[0] & 0x0F;
     uint8_t read_month_10 = (readBytes[0] >> 4) & 0x01;
-    return_time.tm_mon = read_hours_01 + (read_hours_10 * 10) - 1;
+    return_time.tm_mon = read_month_01 + (read_month_10 * 10) - 1;
     
     // read year
     data_reg_pointer[0] = DS3231M_YEAR_REG;
@@ -246,7 +246,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     softwareDelay(0x1FF);
     uint8_t read_year_01 = readBytes[0] & 0x0F;
     uint8_t read_year_10 = (readBytes[0] >> 4) & 0x0F;
-    return_time.tm_hour = read_hours_01 + (read_hours_10 * 10) + 100;
+    return_time.tm_year = read_year_01 + (read_year_10 * 10) + 100;
     
     // send return time structure back to function call
     return return_time;
