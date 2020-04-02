@@ -45,6 +45,9 @@ void backupRTCInitialize(void);
 // This function stashes the current date and time saved in the internal RTCC into the backup RTC
 void backupRTCStashTime(void);
 
+// This function recovers the time from the backup RTC and stores it into the internal RTCC
+void backupRTCRestoreTime(void);
+
 #endif /* _MISC_I2C_DEVICES_H */
 
 /* *****************************************************************************

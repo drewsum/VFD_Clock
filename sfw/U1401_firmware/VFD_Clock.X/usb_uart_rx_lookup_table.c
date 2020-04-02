@@ -446,12 +446,30 @@ usb_uart_command_function_t timeOfFlightCommand(char * input_str) {
 }
 
 usb_uart_command_function_t backupTimeCommand(char * input_str) {
- 
+
+    // Save time from internal RTCC into external backup RTC
+    backupRTCStashTime();
+    
+    // print out what we just did
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Stashing internal RTC time into backup RTC\r\n");
+    printf("Backed up RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+    printf("Backed up RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
+    printf("Backed up RTCC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
     terminalTextAttributesReset();
     
-    backupRTCStashTime();
+}
+
+usb_uart_command_function_t restoreBackupTimeCommand(char * input_str) {
+ 
+    // Restore time from external RTC into internal RTCC
+    backupRTCRestoreTime();
+    
+    // print out what we just did
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Restored RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+    printf("Restored RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
+    printf("Restored RTC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
+    terminalTextAttributesReset();
     
 }
 
@@ -533,5 +551,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Backup Time",
             "Saves internal RTCC time into external backup RTC",
             backupTimeCommand);
+    usbUartAddCommand("Restore Time",
+            "Restores time from external backup RTC into internal RTCC",
+            restoreBackupTimeCommand);
     
 }

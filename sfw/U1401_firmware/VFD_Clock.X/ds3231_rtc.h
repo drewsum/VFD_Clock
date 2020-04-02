@@ -76,6 +76,8 @@ double DS3231MRTCGetTemperature(uint8_t device_address, volatile uint8_t *device
 // This function stores the passed time into the RTC. Pass time as a time_t structure
 void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag, struct tm input_time);
 
+// This function reads the time from the RTC
+struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
 
 #endif /* _DS3231M_RTC_H */

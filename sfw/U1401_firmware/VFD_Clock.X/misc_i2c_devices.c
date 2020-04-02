@@ -1,4 +1,5 @@
 
+#include <time.h>
 
 #include "misc_i2c_devices.h"
 
@@ -40,5 +41,13 @@ void backupRTCInitialize(void) {
 void backupRTCStashTime(void) {
  
     DS3231MRTCStoreTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc, getRTCTimeStruct());
+    
+}
+
+// This function recovers the time from the backup RTC and stores it into the internal RTCC
+void backupRTCRestoreTime(void) {
+ 
+    struct tm read_time = DS3231MRTCReadTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    rtccWriteUnixTime(mktime(&read_time));
     
 }

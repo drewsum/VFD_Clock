@@ -164,3 +164,91 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
 }
+
+// This function reads the time from the RTC
+struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
+    
+    struct tm return_time;
+    uint8_t data_reg_pointer[1];
+    uint8_t readBytes[1];
+    I2C_TRANSACTION_REQUEST_BLOCK readTRB[2];
+    
+    // read seconds
+    data_reg_pointer[0] = DS3231M_SECONDS_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_seconds_01 = readBytes[0] & 0x0F;
+    uint8_t read_seconds_10 = (readBytes[0] >> 4) & 0x07;
+    return_time.tm_sec = read_seconds_01 + (read_seconds_10 * 10);
+    
+    // read minutes
+    data_reg_pointer[0] = DS3231M_MINUTES_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_minutes_01 = readBytes[0] & 0x0F;
+    uint8_t read_minutes_10 = (readBytes[0] >> 4) & 0x07;
+    return_time.tm_min = read_minutes_01 + (read_minutes_10 * 10);
+    
+    // read hours
+    data_reg_pointer[0] = DS3231M_HOURS_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_hours_01 = readBytes[0] & 0x0F;
+    uint8_t read_hours_10 = (readBytes[0] >> 4) & 0x03;
+    return_time.tm_hour = read_hours_01 + (read_hours_10 * 10);
+    
+    // read weekday
+    data_reg_pointer[0] = DS3231M_DAY_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    return_time.tm_wday = readBytes[0] - 1;
+    
+    // read date
+    data_reg_pointer[0] = DS3231M_DATE_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_date_01 = readBytes[0] & 0x0F;
+    uint8_t read_date_10 = (readBytes[0] >> 4) & 0x03;
+    return_time.tm_mday = read_date_01 + (read_date_10 * 10);
+    
+    // read month
+    data_reg_pointer[0] = DS3231M_MONTH_CENT_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_month_01 = readBytes[0] & 0x0F;
+    uint8_t read_month_10 = (readBytes[0] >> 4) & 0x01;
+    return_time.tm_mon = read_hours_01 + (read_hours_10 * 10) - 1;
+    
+    // read year
+    data_reg_pointer[0] = DS3231M_YEAR_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0x1FF);
+    uint8_t read_year_01 = readBytes[0] & 0x0F;
+    uint8_t read_year_10 = (readBytes[0] >> 4) & 0x0F;
+    return_time.tm_hour = read_hours_01 + (read_hours_10 * 10) + 100;
+    
+    // send return time structure back to function call
+    return return_time;
+    
+}
