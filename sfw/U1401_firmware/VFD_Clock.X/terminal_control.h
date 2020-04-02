@@ -67,6 +67,9 @@ void terminalTextAttributesReset(void);
 // This function tests terminal control
 void terminalPrintTestMessage(void);
 
+// this function sets the window title of remote terminal
+void terminalSetTitle(char * title_string);
+
 
 
 #endif /* _TERMINAL_CONTROL_H */

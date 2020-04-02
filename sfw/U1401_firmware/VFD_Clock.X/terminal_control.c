@@ -184,4 +184,9 @@ void terminalPrintTestMessage(void) {
     printf("Finished test message, type 'Help' for list of commands\n\r\n\r");
     terminalTextAttributesReset();
 
+}// this function sets the window title of remote terminal
+void terminalSetTitle(char * title_string) {
+ 
+    printf("\033]0;%s\007", title_string);
+    
 }

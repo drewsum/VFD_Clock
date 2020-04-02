@@ -54,6 +54,7 @@ void main(void) {
     // Clear the terminal
     terminalClearScreen();
     terminalSetCursorHome();
+    terminalSetTitle("VFD Clock Serial Terminal");
     
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
