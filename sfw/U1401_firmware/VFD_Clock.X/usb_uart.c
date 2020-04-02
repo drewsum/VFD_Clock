@@ -78,7 +78,7 @@ void usbUartTrasmitDmaInitialize(void) {
     DCH0INTbits.CHERIE = 1;
     
     // Set up DMA0 interrupts
-    setInterruptPriority(DMA_Channel_0, 5);
+    setInterruptPriority(DMA_Channel_0, 1);
     setInterruptSubpriority(DMA_Channel_0, 3);
     clearInterruptFlag(DMA_Channel_0);
     enableInterrupt(DMA_Channel_0);
@@ -139,7 +139,7 @@ void usbUartReceiveDmaInitialize(void) {
     DCH1INTbits.CHERIE = 1;
     
     // Set up DMA1 interrupts
-    setInterruptPriority(DMA_Channel_1, 6);
+    setInterruptPriority(DMA_Channel_1, 2);
     setInterruptSubpriority(DMA_Channel_1, 3);
     clearInterruptFlag(DMA_Channel_1);
     enableInterrupt(DMA_Channel_1);
@@ -256,7 +256,7 @@ void usbUartInitialize(void) {
 }
 
 // This is the UAB UART fault interrupt service routine
-void __ISR(_UART3_FAULT_VECTOR, ipl5SRS) usbUartFaultISR(void) {
+void __ISR(_UART3_FAULT_VECTOR, ipl1SRS) usbUartFaultISR(void) {
     
     error_handler.flags.USB_general_error = 1;
     if (U3STAbits.FERR) error_handler.flags.USB_framing_error = 1;
@@ -307,7 +307,7 @@ void __ISR(_DMA0_VECTOR, IPL1SRS) usbUartTxDmaISR(void) {
 }
 
 // These are the USB UART DMA Interrupt Service Routines
-void __ISR(_DMA1_VECTOR, IPL6SRS) usbUartRxDmaISR(void) {
+void __ISR(_DMA1_VECTOR, IPL2SRS) usbUartRxDmaISR(void) {
     
     // Determine source of DMA 1 interrupt
     // Channel block transfer complete interrupt flag (or pattern match)
