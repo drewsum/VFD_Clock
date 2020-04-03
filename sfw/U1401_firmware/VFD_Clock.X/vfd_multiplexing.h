@@ -24,6 +24,7 @@
 #include <sys/attribs.h>
 
 #include "32mz_interrupt_control.h"
+#include "pin_macros.h"
 
 /*
  * 
@@ -52,6 +53,25 @@
  * 
  * */
 
+// This enum keeps track of which VFD tube we're currently driving
+// This includes the six numerals as well as the two colons
+enum active_tube_e {
+    
+    vfd_tube_0 = 0,
+    vfd_tube_1 = 1,
+    vfd_tube_2 = 2,
+    vfd_tube_3 = 3,
+    vfd_tube_4 = 4,
+    vfd_tube_5 = 5,
+    right_colon = 6,
+    left_colon = 7
+    
+} active_tube;
+
+// This buffer keeps track of which characters are displayed on which tubes
+// Copy a <= 6 character string into it
+char vfd_display_buffer[6];
+
 // This function initializes the multiplexing timer (using timer 4)
 void vfdMultiplexingTimerInitialize(void);
 
@@ -63,6 +83,19 @@ void __ISR(_TIMER_4_VECTOR, IPL5SRS) vfdMultiplexingTimerISR(void);
 
 // brightness timer interrupt service routine
 void __ISR(_TIMER_5_VECTOR, IPL5SRS) vfdBrightnessTimerISR(void);
+
+// This function sets all VFD tube grids low
+void blankVFDGrids(void);
+
+// This function blanks all VFD anodes
+void blankVFDAnodes(void);
+
+// This function sets up the grids for driving tubes based on active_tube enum
+void setVFDGrids(void);
+
+// This function sets the proper anodes to display the character passed 
+// PASS A CHARACTER, NOT A NUMBER!
+void setVFDAnodes(char input_char);
 
 
 #endif /* _VFD_MULTIPLEXING_H */
