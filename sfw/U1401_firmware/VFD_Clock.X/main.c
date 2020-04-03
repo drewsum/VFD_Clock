@@ -150,9 +150,54 @@ void main(void) {
     powerMonitorsInitialize();
     printf("    Power Monitors Initialized\r\n");
     logicBoardTOFInitialize();
-    printf("    Initialized Time of Flight Counter\r\n");
+    printf("    Logic Board Time of Flight Counter Initialized\r\n");
     backupRTCInitialize();
     printf("    Backup Real-Time Clock Initialized\r\n");
+    
+    // We're done with logic board init, move onto to display board
+    // First, turn on +5V power supply
+    POS5_RUN_PIN = HIGH;
+    uint32_t timeout = 0xFFFF;
+    while (timeout > 0 && POS5_PGOOD_PIN == LOW) timeout--;
+    // This if statement is true if we were bale to turn on the +5V power supply
+    if (POS5_PGOOD_PIN) {
+        printf("    +5V Power Supply Enabled, +5V rail in regulation\r\n");
+    }
+    else {
+        POS5_RUN_PIN = LOW;
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    +5V Power Supply failed to enable\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    // If we enabled POS5, enable level shifters to check for display board
+    if (POS5_PGOOD_PIN) {
+        nIO_LEVEL_SHIFT_ENABLE_PIN = LOW;
+        printf("    Logic Board IO Level Shifters Enabled\r\n");
+    }
+    
+    // If we found a display board, print this, if not, disable level shifters and POS5
+    if (nDISPLAY_DETECT_PIN == LOW) {
+        printf("    Display Board Detected\r\n");
+        I2C_DSP_EN_PIN = HIGH;
+        printf("    Display Board I2C Buffer Enabled\r\n");
+    }
+    else {
+        nIO_LEVEL_SHIFT_ENABLE_PIN = HIGH;
+        POS5_RUN_PIN = LOW;
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    No display board detected, install one and reset host (or power cycle)\r\n");
+        printf("    Logic Board IO Level Shifters Disabled\r\n");
+        printf("    +5V Power Supply Disabled\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    // setup display board GPIO expander
+    if (I2C_DSP_EN_PIN) {
+        
+    }
+    
+    
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
@@ -167,7 +212,7 @@ void main(void) {
     // check to see if a clock fail has occurred and latch it
     clockFailCheck();
     
-    // Main loop, do this stuff forever and ever
+    // Main loop, do this stuff forever and ever and never get tired of it
     while (1) {
         
         // parse received USB strings if we have a new one received
