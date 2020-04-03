@@ -45,6 +45,7 @@ struct telemetry_s {
     telemetry_parameters_ps_t pos1p2_vff;
     double backup_rtc_temperature;
     double ambient_temperature;
+    double display_temperature;
     
 } telemetry;
 

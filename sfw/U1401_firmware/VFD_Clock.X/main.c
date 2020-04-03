@@ -194,7 +194,8 @@ void main(void) {
     
     // setup display board GPIO expander
     if (I2C_DSP_EN_PIN) {
-        
+        displayI2CInitialize();
+        printf("    Display Board I2C Devices Initialized\r\n");
     }
     
     

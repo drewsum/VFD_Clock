@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile uint32_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  38
+#define ERROR_HANDLER_NUM_FLAGS  39
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -74,6 +74,7 @@ volatile uint32_t update_error_leds_flag;
         uint8_t usb_mon;
         uint8_t logic_tof;
         uint8_t backup_rtc;
+        uint8_t dsply_io;
         
     } flags;
 
@@ -121,7 +122,8 @@ const char *  error_handler_flag_names[] = {
     "+60VAN Output Power Monitor",
     "USB Power Monitor",
     "Logic Board time of Flight Counter",
-    "Backup RTC"
+    "Backup RTC",
+    "Display IO Expander"
     
 };
 

@@ -19,11 +19,6 @@ void tempSensorsInitialize(void) {
 //        MCP9804TempSensorInitialize(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
 //    }
     
-    if (nDISPLAY_DETECT_PIN == LOW && I2C_DSP_EN_PIN == HIGH) {
-        MCP9804TempSensorInitialize(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
-    }
-    
-    
 }
 
 // this function gets temperature data for all temperature sensors
@@ -40,8 +35,8 @@ void tempSensorsRetrieveData(void) {
 //        MCP9804GetTemperature(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
 //    }
     
-    if (nDISPLAY_DETECT_PIN == LOW && I2C_DSP_EN_PIN == HIGH) {
-        MCP9804GetTemperature(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);
+    if (I2C_DSP_EN_PIN == HIGH) {
+        telemetry.display_temperature = MCP9804GetTemperature(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);
     }
     
     temp_sense_data_request = 0;

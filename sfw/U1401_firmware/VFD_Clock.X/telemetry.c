@@ -104,7 +104,8 @@ void printCurrentTelemetry(void) {
     printf("\tMiscellaneous Telemetry:\r\n");
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\t\tBackup RTC Temperature: %.3fC\r\n", telemetry.backup_rtc_temperature);
-    printf("\t\tAmbient Temperature: %.3fC\r\n\r\n", telemetry.ambient_temperature);
+    printf("\t\tAmbient Temperature: %.3fC\r\n", telemetry.ambient_temperature);
+    printf("\t\tDisplay Temperature: %.3fC\r\n\r\n", telemetry.display_temperature);
     
     terminalTextAttributesReset();
 

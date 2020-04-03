@@ -8,6 +8,7 @@
 #include "error_handler.h"
 #include "ds3231_rtc.h"
 #include "rtcc.h"
+#include "temperature_sensors.h"
 
 
 // this function initializes the logic board TOF counter
@@ -53,4 +54,12 @@ void backupRTCRestoreTime(void) {
     rtccWriteWeekday(read_time.tm_wday);
     rtccWriteDate(read_time.tm_mon + 1, read_time.tm_mday, read_time.tm_year + 1900);
     
+}
+
+// This function sets up the I2C devices on the display board
+void displayI2CInitialize(void) {
+
+    MCP9804TempSensorInitialize(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
+    TCA9555IOExpanderInitialize(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io);
+
 }
