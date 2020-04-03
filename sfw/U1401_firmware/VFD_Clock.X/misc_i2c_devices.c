@@ -32,6 +32,21 @@ uint32_t logicBoardGetPowerCycles(void) {
     
 }
 
+// this function returns time of flight in seconds (w/ 0.25 second granularity) for display board from I2C time of flight counter
+double displayBoardGetTOF(void) {
+ 
+    return DS1683GetETC(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    
+}
+
+// this function returns the number of power cycles for the display board from I2C time of flight counter
+uint32_t displayBoardGetPowerCycles(void) {
+ 
+    return (uint32_t) DS1683GetEventCount(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    
+}
+
+
 // This function sets up the backup RTC to act as a fail safe to count while input power is removed
 void backupRTCInitialize(void) {
  
@@ -61,5 +76,6 @@ void displayI2CInitialize(void) {
 
     MCP9804TempSensorInitialize(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
     TCA9555IOExpanderInitialize(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io);
-
+    DS1683TimeOfFlightInitialize(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    
 }

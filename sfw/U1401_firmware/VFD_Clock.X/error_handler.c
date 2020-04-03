@@ -209,7 +209,8 @@ void updateErrorLEDs(void) {
             error_handler.flags.pos60_van_out_mon ||
             error_handler.flags.logic_tof ||
             error_handler.flags.backup_rtc ||
-            error_handler.flags.dsply_io) {
+            error_handler.flags.dsply_io ||
+            error_handler.flags.dsply_tof) {
         
         I2C_ERROR_LED_PIN = HIGH;
         

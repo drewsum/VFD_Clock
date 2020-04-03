@@ -75,6 +75,7 @@ volatile uint32_t update_error_leds_flag;
         uint8_t logic_tof;
         uint8_t backup_rtc;
         uint8_t dsply_io;
+        uint8_t dsply_tof;
         
     } flags;
 
@@ -123,7 +124,8 @@ const char *  error_handler_flag_names[] = {
     "USB Power Monitor",
     "Logic Board time of Flight Counter",
     "Backup RTC",
-    "Display IO Expander"
+    "Display IO Expander",
+    "Display Board time of Flight Counter"
     
 };
 

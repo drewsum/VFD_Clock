@@ -30,6 +30,8 @@
 
 #define LOGIC_TOF_ADDR      0x6B
 
+#define DISPLAY_TOF_ADDR    0x6F
+
 #define BACKUP_RTC_ADDR     0x68
 
 #define DISPLAY_IO_ADDR     0x20
@@ -42,6 +44,13 @@ double logicBoardGetTOF(void);
 
 // this function returns the number of power cycles for the logic board from I2C time of flight counter
 uint32_t logicBoardGetPowerCycles(void);
+
+// this function returns time of flight in seconds (w/ 0.25 second granularity) for display board from I2C time of flight counter
+double displayBoardGetTOF(void);
+
+// this function returns the number of power cycles for the display board from I2C time of flight counter
+uint32_t displayBoardGetPowerCycles(void);
+
 
 // This function sets up the backup RTC to act as a fail safe to count while input power is removed
 void backupRTCInitialize(void);

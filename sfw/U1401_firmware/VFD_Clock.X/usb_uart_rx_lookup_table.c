@@ -433,14 +433,26 @@ usb_uart_command_function_t pingCommand(char * input_str) {
 
 usb_uart_command_function_t timeOfFlightCommand(char * input_str) {
  
-    double tof_temp = logicBoardGetTOF();
-    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
-    uint32_t power_cycle_temp = logicBoardGetPowerCycles();
+    double logic_tof_temp = logicBoardGetTOF();
+    uint32_t logic_tof_temp_int = (uint32_t) floor(logic_tof_temp);
+    uint32_t logic_power_cycle_temp = logicBoardGetPowerCycles();
     
+    // first print stuff for logic board
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Logic Board Time of Flight is %s\r\n", getStringSecondsAsTime(tof_temp_int));
-    printf("Logic Board has power cycled %u times\r\n", power_cycle_temp);
+    printf("Logic Board Time of Flight is %s\r\n", getStringSecondsAsTime(logic_tof_temp_int));
+    printf("Logic Board has power cycled %u times\r\n", logic_power_cycle_temp);
+    
+    // Next, print stuff for display board if it's installed
+    if (I2C_DSP_EN_PIN) {
+        double display_tof_temp = displayBoardGetTOF();
+        uint32_t display_tof_temp_int = (uint32_t) floor(display_tof_temp);
+        uint32_t display_power_cycle_temp = displayBoardGetPowerCycles();
+
+        printf("Display Board Time of Flight is %s\r\n", getStringSecondsAsTime(display_tof_temp_int));
+        printf("Display Board has power cycled %u times\r\n", display_power_cycle_temp);
+    }
+    
     terminalTextAttributesReset();
     
 }
