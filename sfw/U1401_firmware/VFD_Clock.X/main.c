@@ -44,6 +44,7 @@
 #include "telemetry.h"
 #include "heartbeat_services.h"
 #include "power_monitors.h"
+#include "vfd_multiplexing.h"
 
 void main(void) {
     
@@ -195,7 +196,14 @@ void main(void) {
     // setup display board GPIO expander
     if (I2C_DSP_EN_PIN) {
         displayI2CInitialize();
-        printf("    Display Board I2C Devices Initialized\r\n");
+        printf("    Display Board I2C Devices Initialized\r\n");   
+    }
+    
+    // Setup display board specific stuff
+    if (nDISPLAY_DETECT_PIN == LOW) {
+        vfdMultiplexingTimerInitialize();
+        vfdBrightnessTimerInitialize();
+        printf("    Multiplexing Timers Initialized\r\n");
     }
     
     
