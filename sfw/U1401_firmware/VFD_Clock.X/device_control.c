@@ -1027,6 +1027,8 @@ void printTimerStatus(uint8_t timer_number) {
             
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 1 Clock Source: %s\n\r", T1CONbits.TCS ? "External Clock on T1CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 1 Timer Value: %u\r\n", TMR1);
+            printf("    Timer 1 Period: %u\r\n", PR1);
             
             printf("    Timer 1 Prescalar: ");
             switch (T1CONbits.TCKPS) {
@@ -1061,6 +1063,8 @@ void printTimerStatus(uint8_t timer_number) {
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 2 32 bit mode: %s\n\r", T2CONbits.T32 ? "Enabled" : "Disabled");
             printf("    Timer 2 Clock Source: %s\n\r", T2CONbits.TCS ? "External Clock on T2CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 2 Timer Value: %u\r\n", TMR2);
+            printf("    Timer 2 Period: %u\r\n", PR2);
             
             printf("    Timer 2 Prescalar: ");
             switch (T2CONbits.TCKPS) {
@@ -1107,6 +1111,8 @@ void printTimerStatus(uint8_t timer_number) {
         
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 3 Clock Source: %s\n\r", T3CONbits.TCS ? "External Clock on T3CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 3 Timer Value: %u\r\n", TMR3);
+            printf("    Timer 3 Period: %u\r\n", PR3);
             
             printf("    Timer 3 Prescalar: ");
             switch (T3CONbits.TCKPS) {
@@ -1154,6 +1160,8 @@ void printTimerStatus(uint8_t timer_number) {
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 4 32 bit mode: %s\n\r", T4CONbits.T32 ? "Enabled" : "Disabled");
             printf("    Timer 4 Clock Source: %s\n\r", T4CONbits.TCS ? "External Clock on T4CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 4 Timer Value: %u\r\n", TMR4);
+            printf("    Timer 4 Period: %u\r\n", PR4);
             
             printf("    Timer 4 Prescalar: ");
             switch (T4CONbits.TCKPS) {
@@ -1200,6 +1208,8 @@ void printTimerStatus(uint8_t timer_number) {
         
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 5 Clock Source: %s\n\r", T5CONbits.TCS ? "External Clock on T5CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 5 Timer Value: %u\r\n", TMR5);
+            printf("    Timer 5 Period: %u\r\n", PR5);
             
             printf("    Timer 5 Prescalar: ");
             switch (T5CONbits.TCKPS) {
@@ -1247,6 +1257,8 @@ void printTimerStatus(uint8_t timer_number) {
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 6 32 bit mode: %s\n\r", T6CONbits.T32 ? "Enabled" : "Disabled");
             printf("    Timer 6 Clock Source: %s\n\r", T6CONbits.TCS ? "External Clock on T6CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 6 Timer Value: %u\r\n", TMR6);
+            printf("    Timer 6 Period: %u\r\n", PR6);
             
             printf("    Timer 6 Prescalar: ");
             switch (T6CONbits.TCKPS) {
@@ -1293,6 +1305,8 @@ void printTimerStatus(uint8_t timer_number) {
         
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 7 Clock Source: %s\n\r", T7CONbits.TCS ? "External Clock on T7CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 7 Timer Value: %u\r\n", TMR7);
+            printf("    Timer 7 Period: %u\r\n", PR7);
             
             printf("    Timer 7 Prescalar: ");
             switch (T7CONbits.TCKPS) {
@@ -1340,6 +1354,8 @@ void printTimerStatus(uint8_t timer_number) {
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 8 32 bit mode: %s\n\r", T8CONbits.T32 ? "Enabled" : "Disabled");
             printf("    Timer 8 Clock Source: %s\n\r", T8CONbits.TCS ? "External Clock on T8CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 8 Timer Value: %u\r\n", TMR8);
+            printf("    Timer 8 Period: %u\r\n", PR8);
             
             printf("    Timer 8 Prescalar: ");
             switch (T8CONbits.TCKPS) {
@@ -1386,6 +1402,8 @@ void printTimerStatus(uint8_t timer_number) {
         
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
             printf("    Timer 9 Clock Source: %s\n\r", T9CONbits.TCS ? "External Clock on T9CKI pin" : "Peripheral Bus Clock 3");
+            printf("    Timer 9 Timer Value: %u\r\n", TMR9);
+            printf("    Timer 9 Period: %u\r\n", PR9);
             
             printf("    Timer 9 Prescalar: ");
             switch (T9CONbits.TCKPS) {
