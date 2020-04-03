@@ -85,9 +85,11 @@ char * getRevisionIDString(uint8_t revision_ID);
 // This function prints clock settings, requires a given input sysclk
 void printClockStatus(uint32_t input_sysclk);
 
-
 // This function initializes the random number generator
 void RNGInitialize(void);
+
+// this function prints status for the passed timer. Pass timer 1-9
+void printTimerStatus(uint8_t timer_number);
 
 #endif /* _DEVICE_CONTROL_H */
 

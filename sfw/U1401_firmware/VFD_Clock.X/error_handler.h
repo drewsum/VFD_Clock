@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile uint32_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  39
+#define ERROR_HANDLER_NUM_FLAGS  40
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2

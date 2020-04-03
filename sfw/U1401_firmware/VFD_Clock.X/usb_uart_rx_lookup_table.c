@@ -142,7 +142,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
  
     // Snipe out received arguments
     char rx_peripheral_name[32];
-    sscanf(input_str, "Peripheral Status? %s", rx_peripheral_name);
+    sscanf(input_str, "Peripheral Status? %[^\t\n\r]", rx_peripheral_name);
 
     // Determine the rail we're enabling or disabling
     if (strcmp(rx_peripheral_name, "Interrupts") == 0) {
@@ -169,6 +169,18 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
+    else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
+        uint32_t read_timer_number;
+        sscanf(rx_peripheral_name, "Timer %u", &read_timer_number);
+        if (read_timer_number < 1 || read_timer_number > 9) {
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("Please enter a timer number between 1 and 9, user entered %u\r\n", read_timer_number);
+            terminalTextAttributesReset();
+        }
+        else {
+            printTimerStatus((uint8_t) read_timer_number);
+        }
+    }
     else {
         terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
         printf("Please enter a peripheral to view status. Received %s as peripheral name\r\n", rx_peripheral_name);
@@ -180,7 +192,8 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   DMT\r\n"
                 "   Prefetch\r\n"
                 // "   ADC\r\n"
-                "   RTCC\r\n");
+                "   RTCC\r\n"
+                "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
         return;
     }
@@ -518,7 +531,8 @@ void usbUartHashTableInitialize(void) {
             "       WDT\r\n"
             "       DMT\r\n"
             "       Prefetch\r\n"
-            "       RTCC",
+            "       RTCC\r\n"
+            "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",

@@ -991,3 +991,434 @@ void RNGInitialize(void) {
     RNGCONbits.LOAD = 1;
     
 }
+
+// this function prints status for the passed timer. Pass timer 1-9
+void printTimerStatus(uint8_t timer_number) {
+
+    // kick out if passed an invalid timer
+    if (timer_number < 0 || timer_number > 9) return;
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Timer %u Status:\r\n", timer_number);
+    
+    // determine what to print based on timer number
+    switch (timer_number) {
+        
+        case 1:
+            if (T1CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Enable: %s\n\r", T1CONbits.ON ? "On" : "Off");
+            
+            if (T1CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Stop in Idle: %s\n\r", T1CONbits.SIDL ? "True" : "False");
+            
+            if (T1CONbits.TWDIS) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Async. Write: %s\n\r", T1CONbits.TWDIS ? "Enabled" : "Disabled");
+            
+            if (T1CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Gating: %s\n\r", T1CONbits.TGATE ? "Enabled" : "Disabled");
+            
+            if (T1CONbits.TSYNC) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Sync: %s\n\r", T1CONbits.TSYNC ? "Enabled" : "Disabled");
+            
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 1 Clock Source: %s\n\r", T1CONbits.TCS ? "External Clock on T1CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 1 Prescalar: ");
+            switch (T1CONbits.TCKPS) {
+                case 0b11: 
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b10:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b01:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b00:
+                    printf("1:1 prescale value\r\n");
+                    break;
+            }
+            break;
+        
+        case 2:
+            if (T2CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 2 Enable: %s\n\r", T2CONbits.ON ? "On" : "Off");
+            
+            if (T2CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 2 Stop in Idle: %s\n\r", T2CONbits.SIDL ? "True" : "False");
+            
+            if (T2CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 2 Gating: %s\n\r", T2CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 2 32 bit mode: %s\n\r", T2CONbits.T32 ? "Enabled" : "Disabled");
+            printf("    Timer 2 Clock Source: %s\n\r", T2CONbits.TCS ? "External Clock on T2CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 2 Prescalar: ");
+            switch (T2CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 3:
+            if (T3CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 3 Enable: %s\n\r", T3CONbits.ON ? "On" : "Off");
+            
+            if (T3CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 3 Stop in Idle: %s\n\r", T3CONbits.SIDL ? "True" : "False");
+            
+            if (T3CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 3 Gating: %s\n\r", T3CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 3 Clock Source: %s\n\r", T3CONbits.TCS ? "External Clock on T3CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 3 Prescalar: ");
+            switch (T3CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 4:
+            if (T4CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 4 Enable: %s\n\r", T4CONbits.ON ? "On" : "Off");
+            
+            if (T4CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 4 Stop in Idle: %s\n\r", T4CONbits.SIDL ? "True" : "False");
+            
+            if (T4CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 4 Gating: %s\n\r", T4CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 4 32 bit mode: %s\n\r", T4CONbits.T32 ? "Enabled" : "Disabled");
+            printf("    Timer 4 Clock Source: %s\n\r", T4CONbits.TCS ? "External Clock on T4CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 4 Prescalar: ");
+            switch (T4CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 5:
+            if (T5CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 5 Enable: %s\n\r", T5CONbits.ON ? "On" : "Off");
+            
+            if (T5CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 5 Stop in Idle: %s\n\r", T5CONbits.SIDL ? "True" : "False");
+            
+            if (T5CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 5 Gating: %s\n\r", T5CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 5 Clock Source: %s\n\r", T5CONbits.TCS ? "External Clock on T5CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 5 Prescalar: ");
+            switch (T5CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 6:
+            if (T6CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 6 Enable: %s\n\r", T6CONbits.ON ? "On" : "Off");
+            
+            if (T6CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 6 Stop in Idle: %s\n\r", T6CONbits.SIDL ? "True" : "False");
+            
+            if (T6CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 6 Gating: %s\n\r", T6CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 6 32 bit mode: %s\n\r", T6CONbits.T32 ? "Enabled" : "Disabled");
+            printf("    Timer 6 Clock Source: %s\n\r", T6CONbits.TCS ? "External Clock on T6CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 6 Prescalar: ");
+            switch (T6CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 7:
+            if (T7CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 7 Enable: %s\n\r", T7CONbits.ON ? "On" : "Off");
+            
+            if (T7CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 7 Stop in Idle: %s\n\r", T7CONbits.SIDL ? "True" : "False");
+            
+            if (T7CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 7 Gating: %s\n\r", T7CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 7 Clock Source: %s\n\r", T7CONbits.TCS ? "External Clock on T7CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 7 Prescalar: ");
+            switch (T7CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 8:
+            if (T8CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 8 Enable: %s\n\r", T8CONbits.ON ? "On" : "Off");
+            
+            if (T8CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 8 Stop in Idle: %s\n\r", T8CONbits.SIDL ? "True" : "False");
+            
+            if (T8CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 8 Gating: %s\n\r", T8CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 8 32 bit mode: %s\n\r", T8CONbits.T32 ? "Enabled" : "Disabled");
+            printf("    Timer 8 Clock Source: %s\n\r", T8CONbits.TCS ? "External Clock on T8CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 8 Prescalar: ");
+            switch (T8CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+            
+        case 9:
+            if (T9CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 9 Enable: %s\n\r", T9CONbits.ON ? "On" : "Off");
+            
+            if (T9CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 9 Stop in Idle: %s\n\r", T9CONbits.SIDL ? "True" : "False");
+            
+            if (T9CONbits.TGATE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 9 Gating: %s\n\r", T9CONbits.TGATE ? "Enabled" : "Disabled");
+        
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Timer 9 Clock Source: %s\n\r", T9CONbits.TCS ? "External Clock on T9CKI pin" : "Peripheral Bus Clock 3");
+            
+            printf("    Timer 9 Prescalar: ");
+            switch (T9CONbits.TCKPS) {
+                case 0b111:
+                    printf("1:256 prescale value\r\n");
+                    break;
+                case 0b110:
+                    printf("1:64 prescale value\r\n");
+                    break;
+                case 0b101:
+                    printf("1:32 prescale value\r\n");
+                    break;
+                case 0b100:
+                    printf("1:16 prescale value\r\n");
+                    break;
+                case 0b011:
+                    printf("1:8 prescale value\r\n");
+                    break;
+                case 0b010:
+                    printf("1:4 prescale value\r\n");
+                    break;
+                case 0b001:
+                    printf("1:2 prescale value\r\n");
+                    break;
+                case 0b000:
+                    printf("1:1 prescale value\r\n");
+                    break;
+                    
+            }
+            break;
+        
+    }
+    
+    terminalTextAttributesReset();
+    
+}
