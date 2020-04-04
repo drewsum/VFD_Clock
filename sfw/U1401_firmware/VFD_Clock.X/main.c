@@ -91,7 +91,7 @@ void main(void) {
     terminalTextAttributesReset();
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Beginning Peripheral Initialization:\r\n");
+    printf("Beginning Logic Board Initialization:\r\n");
     
     // setup GPIO pins
     gpioInitialize();
@@ -179,7 +179,7 @@ void main(void) {
     
     // If we found a display board, print this, if not, disable level shifters and POS5
     if (nDISPLAY_DETECT_PIN == LOW) {
-        printf("    Display Board Detected\r\n");
+        printf("Display Board Detected, Beginning Display Board Initialization:\r\n");
         I2C_DSP_EN_PIN = HIGH;
         printf("    Display Board I2C Buffer Enabled\r\n");
     }
@@ -187,7 +187,7 @@ void main(void) {
         nIO_LEVEL_SHIFT_ENABLE_PIN = HIGH;
         POS5_RUN_PIN = LOW;
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    No display board detected, install one and reset host (or power cycle)\r\n");
+        printf("No display board detected, install one and reset host (or power cycle)\r\n");
         printf("    Logic Board IO Level Shifters Disabled\r\n");
         printf("    +5V Power Supply Disabled\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
