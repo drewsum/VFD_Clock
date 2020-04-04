@@ -204,11 +204,39 @@ void main(void) {
         vfdMultiplexingTimerInitialize();
         vfdBrightnessTimerInitialize();
         printf("    Multiplexing Timers Initialized\r\n");
+        
+        // fill display buffer with garbage for now
+        strcpy(vfd_display_buffer, "444444");
+        
+        POS1P2_VFF_RUN_PIN = HIGH;
+        timeout = 0xFFFF;
+        while (timeout > 0 && POS1P2_VFF_PGOOD_PIN == LOW) timeout--;
+        // This if statement is true if we were bale to turn on the +5V power supply
+        if (POS1P2_VFF_PGOOD_PIN) {
+            printf("    +1.2VFF Power Supply Enabled, +1.2VFF rail in regulation\r\n");
+        }
+        else {
+            POS1P2_VFF_RUN_PIN = LOW;
+            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    +1.2VFF Power Supply failed to enable\r\n");
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        }
+        
+        POS60_VAN_RUN_PIN = HIGH;
+        timeout = 0xFFFF;
+        while (timeout > 0 && POS60_VAN_PGOOD_PIN == LOW) timeout--;
+        // This if statement is true if we were bale to turn on the +5V power supply
+        if (POS60_VAN_PGOOD_PIN) {
+            printf("    +60VAN Power Supply Enabled, +60VAN rail in regulation\r\n");
+        }
+        else {
+            POS60_VAN_RUN_PIN = LOW;
+            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    +60VAN Power Supply failed to enable\r\n");
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        }
+        
     }
-    
-    
-    
-    
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

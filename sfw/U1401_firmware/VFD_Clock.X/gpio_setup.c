@@ -44,7 +44,7 @@ void portAGPIOInitialize (void) {
     
     // RA3
     ODCAbits.ODCA3          = ODC_DISABLE;
-    TRISAbits.TRISA0        = TRIS_INPUT;
+    TRISAbits.TRISA3        = TRIS_INPUT;
     
     // RA4
     ODCAbits.ODCA4          = ODC_DISABLE;

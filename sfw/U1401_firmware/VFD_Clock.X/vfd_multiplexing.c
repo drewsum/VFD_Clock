@@ -19,11 +19,11 @@ void vfdMultiplexingTimerInitialize(void) {
     // Disable gating
     T4CONbits.TGATE = 0;
     
-    // prescaler of 1:4 and period of 12500 gives a muxing period of ~4ms
-    // this gives a refresh rate of around 30 Hz
+    // prescaler of 1:2 and period of 12500 gives a muxing period of ~2ms
+    // this gives a refresh rate of around 60 Hz
     
-    // Set prescaler to 1:4
-    T4CONbits.TCKPS = 0b010;
+    // Set prescaler to 1:2
+    T4CONbits.TCKPS = 0b001;
     
     // Set period to 12500
     PR4 = 12500;
@@ -50,9 +50,6 @@ void vfdMultiplexingTimerInitialize(void) {
     // set first tube to drive to vfd_tube_0
     active_tube = vfd_tube_0;
     
-    // fill display buffer with garbage for now
-    strcpy(vfd_display_buffer, "123456");
-    
     // Start timer
     T4CONbits.ON = 1;
     
@@ -70,13 +67,13 @@ void vfdBrightnessTimerInitialize(void) {
     // Disable gating
     T5CONbits.TGATE = 0;
     
-    // prescaler of 1:4 and period of 11000 gives an on time of ~3.5ms
+    // prescaler of 1:2 and period of 11000 gives an on time of ~1.75ms
     
-    // Set prescaler to 1:4
-    T5CONbits.TCKPS = 0b010;
+    // Set prescaler to 1:2
+    T5CONbits.TCKPS = 0b001;
     
-    // Set period to 11000
-    PR5 = 11000;
+    // Set period to 9000
+    PR5 = 9000;
     
     // Set clock source to PBCLK3
     T5CONbits.TCS = 0;
@@ -173,8 +170,6 @@ void blankVFDAnodes(void) {
 // This function sets up the grids for driving tubes based on active_tube enum
 void setVFDGrids(void) {
 
-    blankVFDGrids();
-    
     // decide what to do based on which tube we want to drive
     switch (active_tube) {
      
@@ -221,8 +216,6 @@ void setVFDGrids(void) {
 // PASS A CHARACTER, NOT A NUMBER!
 void setVFDAnodes(char input_char) {
  
-    blankVFDAnodes();
-    
     // Set anodes based on input_char
     // This is a mapping of all supported characters
     // This switch statement acts as a seven segment decoder
