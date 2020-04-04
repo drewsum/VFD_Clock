@@ -104,11 +104,11 @@ void __ISR(_TIMER_4_VECTOR, IPL5SRS) vfdMultiplexingTimerISR(void) {
     // only do this for tubes that display numbers, not the colons
     // inverse which number appears where, since we want data to show up left to right,
     // to match the order of characters in vfd_display_buffer[]
-    if (active_tube < right_colon) setVFDAnodes(vfd_display_buffer[5 - active_tube]);
+    setVFDAnodes(vfd_display_buffer[7 - active_tube]);
     
     // increment active tube and reset if needed
     active_tube++;
-    if (active_tube >= left_colon) active_tube = vfd_tube_0;
+    if (active_tube > vfd_tube_5) active_tube = vfd_tube_0;
     
     // start brightness timer
     T5CONbits.ON = 1;
@@ -181,10 +181,6 @@ void setVFDGrids(void) {
             GRID_1_PIN = HIGH;
             break;
             
-        case right_colon:
-            Nop();                          // CHANGE MEEEEEE
-            break;
-            
         case vfd_tube_2:
             GRID_2_PIN = HIGH;
             break;
@@ -193,16 +189,20 @@ void setVFDGrids(void) {
             GRID_3_PIN = HIGH;
             break;    
             
-        case left_colon:
-            Nop();                          // CHANGE MEEEEEEE
-            break;
-            
         case vfd_tube_4:
             GRID_4_PIN = HIGH;
             break;
             
         case vfd_tube_5:
             GRID_5_PIN = HIGH;
+            break;
+            
+        case right_colon:
+            setVFDColonAnodes(0, vfd_display_buffer[5]);
+            break;
+            
+        case left_colon:
+            setVFDColonAnodes(1, vfd_display_buffer[2]);
             break;
             
         default:
@@ -347,5 +347,63 @@ void setVFDAnodes(char input_char) {
             break;
         
     }
+    
+}
+
+// This function sets anodes for the colons
+// pass a colon number (0:1) and a character to display (:, _, and *)
+void setVFDColonAnodes(uint8_t colon_number, char input_char) {
+ 
+    // Kick out if stuff is passed incorrectly
+    if (colon_number >= 2) return;
+    
+    if (colon_number == 0) {
+     
+        switch (input_char) {
+         
+            case '*':
+                COLON_2_PIN = HIGH;
+                break;
+                
+            case '_':
+                COLON_3_PIN = HIGH;
+                break;
+                
+            case ':':
+                COLON_2_PIN = HIGH;
+                COLON_3_PIN = HIGH;
+                break;
+            
+            default:
+                break;
+                
+        }
+        
+    }
+    
+    else if (colon_number == 1) {
+     
+        switch (input_char) {
+         
+            case '*':
+                COLON_0_PIN = HIGH;
+                break;
+                
+            case '_':
+                COLON_1_PIN = HIGH;
+                break;
+                
+            case ':':
+                COLON_0_PIN = HIGH;
+                COLON_1_PIN = HIGH;
+                break;
+            
+            default:
+                break;
+                
+        }
+        
+    }
+    
     
 }

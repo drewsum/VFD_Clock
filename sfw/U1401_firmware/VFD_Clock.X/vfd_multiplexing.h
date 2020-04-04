@@ -59,18 +59,19 @@ enum active_tube_e {
     
     vfd_tube_0 = 0,
     vfd_tube_1 = 1,
-    vfd_tube_2 = 2,
-    vfd_tube_3 = 3,
-    vfd_tube_4 = 4,
-    vfd_tube_5 = 5,
-    right_colon = 6,
-    left_colon = 7
+    right_colon = 2,
+    vfd_tube_2 = 3,
+    vfd_tube_3 = 4,
+    left_colon = 5,
+    vfd_tube_4 = 6,
+    vfd_tube_5 = 7
     
 } active_tube;
 
 // This buffer keeps track of which characters are displayed on which tubes
-// Copy a <= 6 character string into it
-char vfd_display_buffer[6];
+// Copy a <= 8 character string into it
+// characters [2] and [5] can only display *, _ and : (these are the colons)
+char vfd_display_buffer[8];
 
 // This function initializes the multiplexing timer (using timer 4)
 void vfdMultiplexingTimerInitialize(void);
@@ -96,6 +97,10 @@ void setVFDGrids(void);
 // This function sets the proper anodes to display the character passed 
 // PASS A CHARACTER, NOT A NUMBER!
 void setVFDAnodes(char input_char);
+
+// This function sets anodes for the colons
+// pass a colon number (0:1) and a character to display (:, _, and *)
+void setVFDColonAnodes(uint8_t colon_number, char input_char);
 
 
 #endif /* _VFD_MULTIPLEXING_H */

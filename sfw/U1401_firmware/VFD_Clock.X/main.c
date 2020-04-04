@@ -205,9 +205,6 @@ void main(void) {
         vfdBrightnessTimerInitialize();
         printf("    Multiplexing Timers Initialized\r\n");
         
-        // fill display buffer with garbage for now
-        strcpy(vfd_display_buffer, "444444");
-        
         POS1P2_VFF_RUN_PIN = HIGH;
         timeout = 0xFFFF;
         while (timeout > 0 && POS1P2_VFF_PGOOD_PIN == LOW) timeout--;
