@@ -23,6 +23,9 @@
 #include "vfd_multiplexing.h"
 #include "rtcc.h"
 
+// These are macros needed for defining ISRs, included in XC32
+#include <sys/attribs.h>
+
 // These macros set the data to be sent to the display board GPIO expander
 // to set display LEDs to show what clock_display_state enum is set to
 #define DISPLAY_LEDS_DISPLAY_TIME_STATE         0b0000010000000000
@@ -64,6 +67,18 @@ void displayBoardInitialize(void);
 
 // this function sets the state of the display board LEDs to match what clock_display_state enum is set to
 void displayBoardSetLEDs(void);
+
+// This function initializes capacitive pushbuttons located on the display board
+void displayBoardCapTouchInitialize(void);
+
+// PORTA CNF ISR
+void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void);
+
+// PORTB CNF ISR
+void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void);
+
+// Power Button ISR
+void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void);
 
 
 #endif /* _CLOCK_FUNCTIONALITY_H */

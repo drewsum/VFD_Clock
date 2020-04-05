@@ -10,6 +10,7 @@
 #include "rtcc.h"
 #include "terminal_control.h"
 #include "misc_i2c_devices.h"
+#include "32mz_interrupt_control.h"
 
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
@@ -155,6 +156,10 @@ void displayBoardInitialize(void) {
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         }
         
+        displayBoardCapTouchInitialize();
+        printf("    Capacitive Pushbuttons Initialized\r\n");
+        terminalTextAttributesReset();
+        
     }
     
 }
@@ -214,6 +219,126 @@ void displayBoardSetLEDs(void) {
             break;
         
     }
+       
+}
+
+// This function initializes capacitive pushbuttons located on the display board
+void displayBoardCapTouchInitialize(void) {
+ 
+    // Configure PORT A CNF
+    disableInterrupt(PORTA_Input_Change_Interrupt);
+    CNCONAbits.EDGEDETECT = 1;
+    CNCONAbits.ON = 1;
+    setInterruptPriority(PORTA_Input_Change_Interrupt, 2);
+    setInterruptSubpriority(PORTA_Input_Change_Interrupt, 0);
     
+    
+    // Set rising edge detection on pins RA9, RA10
+    CNENA = 0;
+    CNNEA = 0;
+    CNENAbits.CNIEA9 = 1;
+    CNENAbits.CNIEA10 = 1;
+    
+    // Configure PORT B CNF
+    disableInterrupt(PORTB_Input_Change_Interrupt);
+    CNCONBbits.EDGEDETECT = 1;
+    CNCONBbits.ON = 1;
+    setInterruptPriority(PORTB_Input_Change_Interrupt, 2);
+    setInterruptSubpriority(PORTB_Input_Change_Interrupt, 1);
+    
+    // Set rising edge detection on RB0, RB1
+    CNENB = 0;
+    CNNEB = 0;
+    CNENBbits.CNIEB0 = 1;
+    CNENBbits.CNIEB1 = 1;
+    
+    // Setup INT2 (power cap touch pushbutton), rising edge
+    disableInterrupt(External_Interrupt_2);
+    INTCONbits.INT2EP = 1;
+    setInterruptPriority(External_Interrupt_2, 2);
+    setInterruptSubpriority(External_Interrupt_2, 2);
+    
+    // Enable interrupts
+    clearInterruptFlag(PORTA_Input_Change_Interrupt);
+    clearInterruptFlag(PORTB_Input_Change_Interrupt);
+    clearInterruptFlag(External_Interrupt_2);
+    enableInterrupt(PORTA_Input_Change_Interrupt);
+    enableInterrupt(PORTB_Input_Change_Interrupt);
+    enableInterrupt(External_Interrupt_2);
+    
+}
+
+// PORTA CNF ISR
+void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void) {
+    
+    if (CNFAbits.CNFA9 && CNENAbits.CNIEA9) {
+            
+        terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("User pressed Up button\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    if (CNFAbits.CNFA10 && CNENAbits.CNIEA10) {
+            
+        terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("User pressed Down button\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    
+    // Clear all change notification flags
+    // If this is not done, we'll continuously trigger on edges that aren't there
+    CNFA    = 0;
+    CNSTATA = 0;
+    
+    // Read PORTF, this clears more CN flags
+    uint16_t dummy = PORTA;
+    
+    clearInterruptFlag(PORTA_Input_Change_Interrupt);
+    
+}
+
+// PORTB CNF ISR
+void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void) {
+    
+    if (CNFBbits.CNFB0 && CNENBbits.CNIEB0) {
+            
+        terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("User pressed Right button\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    if (CNFBbits.CNFB1 && CNENBbits.CNIEB1) {
+            
+        terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("User pressed Left button\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    
+    // Clear all change notification flags
+    // If this is not done, we'll continuously trigger on edges that aren't there
+    CNFB    = 0;
+    CNSTATB = 0;
+    
+    // Read PORTF, this clears more CN flags
+    uint16_t dummy = PORTB;
+    
+    clearInterruptFlag(PORTB_Input_Change_Interrupt);
+    
+}
+
+// Power Button ISR
+void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void) {
+ 
+    terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("User pressed Power button\r\n");
+    terminalTextAttributesReset();
+    
+    clearInterruptFlag(External_Interrupt_2);
     
 }

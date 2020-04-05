@@ -139,6 +139,7 @@ void portBGPIOInitialize (void) {
     ANSELBbits.ANSB8        = ANALOG_DISABLE;
     ODCBbits.ODCB8          = ODC_DISABLE;
     TRISBbits.TRISB8        = TRIS_INPUT;
+    INT2Rbits.INT2R         = 0b0010;           // Assign INT2 to RB8
 
     // RB9
     ANSELBbits.ANSB9        = ANALOG_DISABLE;
