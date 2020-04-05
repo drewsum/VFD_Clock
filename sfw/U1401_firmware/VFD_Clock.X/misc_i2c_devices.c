@@ -79,3 +79,10 @@ void displayI2CInitialize(void) {
     DS1683TimeOfFlightInitialize(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
     
 }
+
+// This function sets the display board IO expander output
+void displayBoardSetIOExpanderOutput(uint16_t output_data) {
+ 
+    TCA9555IOExpanderSetOutput(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io, output_data);
+    
+}

@@ -39,7 +39,7 @@ void printPGOODStatus(void) {
     
     if (!nUSB_DETECT_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    USB Bus Voltage is %s\n\r", !nUSB_DETECT_PIN ? "within regulation" : "out of regulation (or USB cable is unplugged)");
+    printf("    USB Bus Voltage is %s\n\r", !nUSB_DETECT_PIN ? "within tolerance" : "out of tolerance (or USB cable is unplugged)");
     
     if (VBAT_PGOOD_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);

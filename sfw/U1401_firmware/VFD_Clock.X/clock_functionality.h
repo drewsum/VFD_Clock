@@ -23,6 +23,20 @@
 #include "vfd_multiplexing.h"
 #include "rtcc.h"
 
+// These macros set the data to be sent to the display board GPIO expander
+// to set display LEDs to show what clock_display_state enum is set to
+#define DISPLAY_LEDS_DISPLAY_TIME_STATE         0b0000010000000000
+#define DISPLAY_LEDS_SET_TIME_STATE             0b0000001000000000
+#define DISPLAY_LEDS_DISPLAY_DATE_STATE         0b0000000100000000
+#define DISPLAY_LEDS_SET_DATE_STATE             0b0000000010000000
+#define DISPLAY_LEDS_DISPLAY_WEEKDAY_STATE      0b0000000001000000
+#define DISPLAY_LEDS_SET_WEEKDAY_STATE          0b0000000000100000
+#define DISPLAY_LEDS_DISPLAY_ALARM_STATE        0b0000000000010000
+#define DISPLAY_LEDS_SET_ALARM_STATE            0b0000000000001000
+#define DISPLAY_LEDS_ALARM_ENABLE_STATE         0b0000000000000100
+#define DISPLAY_LEDS_SET_24HR_MODE_STATE        0b0000000000000010
+#define DISPLAY_LEDS_SET_BRIGHTNESS_STATE       0b0000000000000001
+
 // This global enum keeps track of what we want to display on the VFD display
 // This needs to be volatile because a bunch of different functions can modify it
 enum clock_display_state_e {
@@ -44,6 +58,12 @@ enum clock_display_state_e {
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
 void updateClockDisplay(void);
+
+// This function setups up the display board. It assumes that I2C, USB UART and GPIO have already been configured
+void displayBoardInitialize(void);
+
+// this function sets the state of the display board LEDs to match what clock_display_state enum is set to
+void displayBoardSetLEDs(void);
 
 
 #endif /* _CLOCK_FUNCTIONALITY_H */
