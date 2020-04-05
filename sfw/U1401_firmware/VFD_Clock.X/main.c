@@ -45,6 +45,7 @@
 #include "heartbeat_services.h"
 #include "power_monitors.h"
 #include "vfd_multiplexing.h"
+#include "clock_functionality.h"
 
 void main(void) {
     
@@ -205,6 +206,10 @@ void main(void) {
         vfdBrightnessTimerInitialize();
         printf("    Multiplexing Timers Initialized\r\n");
         
+        // start off displaying the time
+        clock_display_state = display_time_state;
+    
+        
         POS1P2_VFF_RUN_PIN = HIGH;
         timeout = 0xFFFF;
         while (timeout > 0 && POS1P2_VFF_PGOOD_PIN == LOW) timeout--;
@@ -250,6 +255,14 @@ void main(void) {
     
     // Main loop, do this stuff forever and ever and never get tired of it
     while (1) {
+               
+        // Only do these actions if a display is detected
+        if (nDISPLAY_DETECT_PIN == LOW) {
+         
+            // update what's the the vfd_display_buffer[] based on what we want to display
+            updateClockDisplay();
+            
+        }
         
         // parse received USB strings if we have a new one received
         if (usb_uart_rx_ready) {

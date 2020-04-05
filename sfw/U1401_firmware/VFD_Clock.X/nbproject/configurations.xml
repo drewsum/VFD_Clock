@@ -11,6 +11,7 @@
         <itemPath>telemetry.h</itemPath>
         <itemPath>heartbeat_services.h</itemPath>
         <itemPath>vfd_multiplexing.h</itemPath>
+        <itemPath>clock_functionality.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.h</itemPath>
@@ -61,6 +62,7 @@
         <itemPath>telemetry.c</itemPath>
         <itemPath>heartbeat_services.c</itemPath>
         <itemPath>vfd_multiplexing.c</itemPath>
+        <itemPath>clock_functionality.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

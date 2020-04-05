@@ -242,7 +242,7 @@ usb_uart_command_function_t setDateCommand(char * input_str) {
  
     // Snipe out received string
     uint32_t read_month, read_day, read_year;
-    sscanf(input_str, "Set Date: %u/%u/%u", &read_month, &read_day, &read_year);
+    sscanf(input_str, "Set Date: %02u/%02u/%04u", &read_month, &read_day, &read_year);
 
     // Write received data into RTCC
     if (read_year >= 2000) {
@@ -273,7 +273,7 @@ usb_uart_command_function_t setTimeCommand(char * input_str) {
  
     // Snipe out received string
     uint32_t read_hour, read_minute, read_second;
-    sscanf(input_str, "Set Time: %u:%u:%u", &read_hour, &read_minute, &read_second);
+    sscanf(input_str, "Set Time: %02u:%02u:%02u", &read_hour, &read_minute, &read_second);
 
     rtccWriteTime((uint8_t) read_hour, (uint8_t) read_minute, (uint16_t) read_second);
 

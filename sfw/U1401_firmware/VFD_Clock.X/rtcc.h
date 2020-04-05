@@ -60,8 +60,7 @@ typedef enum {
 } month_t;
 
 // This structure is a shadow register copy of the data within the RTCC, but is 
-// conglomerated into binary instead of BCD
-// also, copy BCD for time for use with binary clock
+// conglomerated into binary instead of BCD (as the hdw RTCC encodes stuff in BCD)
 // year includes the leading 2000
 struct rtcc_shadow_t {
     
@@ -73,7 +72,7 @@ struct rtcc_shadow_t {
     uint8_t minutes;
     uint8_t seconds;
     
-} rtcc_shadow;
+} volatile __attribute__((coherent)) rtcc_shadow;
 
 // This function unlocks the RTCC for writing
 void rtccUnlock(void);

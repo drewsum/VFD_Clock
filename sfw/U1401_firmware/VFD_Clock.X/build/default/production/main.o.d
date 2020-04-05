@@ -29,4 +29,5 @@ LTC4151_power_monitor.h  \
 pgood_monitor.h  \
 telemetry.h  \
 heartbeat_services.h  \
- vfd_multiplexing.h 
+ vfd_multiplexing.h  \
+clock_functionality.h 

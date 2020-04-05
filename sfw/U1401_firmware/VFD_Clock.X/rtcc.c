@@ -18,7 +18,12 @@ void rtccUnlock(void) {
     disableGlobalInterrupts();
     
     // unlock device
-    deviceUnlock();     // may have to explicitly write SYSKEY values instead
+    // deviceUnlock();     // may have to explicitly write SYSKEY values instead
+    // write key1 to SYSKEY per datasheet
+    SYSKEY = 0xAA996655;
+    // write key2 to SYSKEY per datasheet
+    SYSKEY = 0x556699AA;
+    
     
     // Suspend any DMA transactions
     DMACONbits.SUSPEND = 1;
