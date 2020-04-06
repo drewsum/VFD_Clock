@@ -80,6 +80,12 @@ void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void);
 // Power Button ISR
 void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void);
 
+// These functions are handler functions for each button, called when pressed
+void upPushbuttonHandler(void);
+void downPushbuttonHandler(void);
+void leftPushbuttonHandler(void);
+void rightPushbuttonHandler(void);
+void powerPushbuttonHandler(void);
 
 #endif /* _CLOCK_FUNCTIONALITY_H */
 

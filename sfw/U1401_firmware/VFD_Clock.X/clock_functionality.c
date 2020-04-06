@@ -276,6 +276,8 @@ void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void) {
         terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("User pressed Up button\r\n");
         terminalTextAttributesReset();
+        
+        upPushbuttonHandler();
     
     }
     
@@ -284,6 +286,8 @@ void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void) {
         terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("User pressed Down button\r\n");
         terminalTextAttributesReset();
+        
+        downPushbuttonHandler();
     
     }
     
@@ -340,5 +344,37 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void) {
     terminalTextAttributesReset();
     
     clearInterruptFlag(External_Interrupt_2);
+    
+}
+
+// These functions are handler functions for each button, called when pressed
+void upPushbuttonHandler(void) {
+    
+    if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
+    else clock_display_state--;
+    
+    displayBoardSetLEDs();
+    
+    
+}
+
+void downPushbuttonHandler(void) {
+        
+    if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
+    else clock_display_state++;
+    
+    displayBoardSetLEDs();
+    
+}
+
+void leftPushbuttonHandler(void) {
+    
+}
+
+void rightPushbuttonHandler(void) {
+    
+}
+
+void powerPushbuttonHandler(void) {
     
 }
