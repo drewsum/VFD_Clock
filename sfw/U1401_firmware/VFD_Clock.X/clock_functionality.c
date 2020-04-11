@@ -11,6 +11,7 @@
 #include "terminal_control.h"
 #include "misc_i2c_devices.h"
 #include "32mz_interrupt_control.h"
+#include "heartbeat_services.h"
 
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
@@ -29,6 +30,39 @@ void updateClockDisplay(void) {
             break;
             
         case set_time_state:
+            if (device_on_time_counter % 2 == 0) {
+                switch (clock_time_setting) {
+                    case set_time_hours_state:
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                    case set_time_minutes_state:
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                    case set_time_seconds_state:
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                    case clock_time_setting_finished_state:
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                        
+                }
+            }
+            else {
+                switch (clock_time_setting) {
+                    case set_time_hours_state:
+                            sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                    case set_time_minutes_state:
+                        sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                        break;
+                    case set_time_seconds_state:
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                        break;
+                    case clock_time_setting_finished_state:
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        break;
+                }
+            }
             break;
             
         case display_date_state:
@@ -313,6 +347,8 @@ void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void) {
         printf("User pressed Right button\r\n");
         terminalTextAttributesReset();
     
+        rightPushbuttonHandler();
+        
     }
     
     if (CNFBbits.CNFB1 && CNENBbits.CNIEB1) {
@@ -320,6 +356,8 @@ void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void) {
         terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("User pressed Left button\r\n");
         terminalTextAttributesReset();
+        
+        leftPushbuttonHandler();
     
     }
     
@@ -349,30 +387,160 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void) {
 
 // These functions are handler functions for each button, called when pressed
 void upPushbuttonHandler(void) {
+
+    if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+        
+        switch (clock_time_setting) {
+        
+            case set_time_hours_state:
+                if (rtcc_shadow.hours == 23) {
+                    rtccWriteTime(0, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours + 1, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+                
+            case set_time_minutes_state:
+                if (rtcc_shadow.minutes == 59) {
+                    rtccWriteTime(rtcc_shadow.hours, 0, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes + 1, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+                
+            case set_time_seconds_state:
+                if (rtcc_shadow.seconds == 59) {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, 0);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds + 1);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+        }
+        
+    }
     
-    if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
-    else clock_display_state--;
+    else {
     
-    displayBoardSetLEDs();
-    
+        if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
+        else clock_display_state--;
+
+        displayBoardSetLEDs();
+        
+        clock_time_setting = set_time_hours_state;
+        
+    }
+
     
 }
 
 void downPushbuttonHandler(void) {
+       
+    if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+        switch (clock_time_setting) {
         
-    if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
-    else clock_display_state++;
+            case set_time_hours_state:
+                if (rtcc_shadow.hours == 0) {
+                    rtccWriteTime(23, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours - 1, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+                
+            case set_time_minutes_state:
+                if (rtcc_shadow.minutes == 0) {
+                    rtccWriteTime(rtcc_shadow.hours, 59, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes - 1, rtcc_shadow.seconds);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+                
+            case set_time_seconds_state:
+                if (rtcc_shadow.seconds == 0) {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, 59);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else {
+                    rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds - 1);
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                break;
+        }
+    }
     
-    displayBoardSetLEDs();
+    else {
+    
+        if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
+        else clock_display_state++;
+
+        displayBoardSetLEDs();
+        
+        clock_time_setting = set_time_hours_state;
+        
+    }
     
 }
 
 void leftPushbuttonHandler(void) {
     
+    if (clock_display_state == set_time_state) {
+        if (clock_time_setting == set_time_hours_state) clock_time_setting = clock_time_setting_finished_state;
+        else clock_time_setting--;
+        
+        switch (clock_time_setting) {
+            case set_time_hours_state:
+                    sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                break;
+            case set_time_minutes_state:
+                sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                break;
+            case set_time_seconds_state:
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                break;
+            case clock_time_setting_finished_state:
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                break;
+        }
+    }
+    
 }
 
 void rightPushbuttonHandler(void) {
-    
+
+    if (clock_display_state == set_time_state) {
+        if (clock_time_setting == clock_time_setting_finished_state) clock_time_setting = set_time_hours_state;
+        else clock_time_setting++;
+        
+        switch (clock_time_setting) {
+            case set_time_hours_state:
+                sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                break;
+            case set_time_minutes_state:
+                sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                break;
+            case set_time_seconds_state:
+                sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                break;
+            case clock_time_setting_finished_state:
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                break;
+        }
+    }
+        
 }
 
 void powerPushbuttonHandler(void) {

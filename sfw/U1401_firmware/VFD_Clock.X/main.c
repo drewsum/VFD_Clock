@@ -186,7 +186,7 @@ void main(void) {
         // Only do these actions if a display is detected
         if (nDISPLAY_DETECT_PIN == LOW) {
          
-            // update what's the the vfd_display_buffer[] based on what we want to display
+            // update what's in the vfd_display_buffer[] based on what we want to display
             updateClockDisplay();
             
         }

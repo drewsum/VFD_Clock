@@ -58,6 +58,18 @@ enum clock_display_state_e {
     
 } volatile clock_display_state = 0;
 
+// This enum keeps track of which time setting we're changing when the user wants
+// to change the time (hours, minutes, seconds
+enum clock_time_setting_s {
+    
+    set_time_hours_state = 0,
+    set_time_minutes_state = 1,
+    set_time_seconds_state = 2,
+    clock_time_setting_finished_state = 3
+    
+}
+volatile clock_time_setting = 0;
+
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
 void updateClockDisplay(void);
