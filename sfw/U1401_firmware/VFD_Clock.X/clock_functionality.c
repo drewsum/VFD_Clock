@@ -30,7 +30,7 @@ void updateClockDisplay(void) {
             break;
             
         case set_time_state:
-            if (device_on_time_counter % 2 == 0) {
+            if (clock_set_blank_request == 0) {
                 switch (clock_time_setting) {
                     case set_time_hours_state:
                             sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
@@ -300,6 +300,8 @@ void displayBoardCapTouchInitialize(void) {
     enableInterrupt(PORTB_Input_Change_Interrupt);
     enableInterrupt(External_Interrupt_2);
     
+    clockSetBlankingTimerInitialize();
+    
 }
 
 // PORTA CNF ISR
@@ -390,6 +392,9 @@ void upPushbuttonHandler(void) {
 
     if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
         
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
         switch (clock_time_setting) {
         
             case set_time_hours_state:
@@ -445,6 +450,10 @@ void upPushbuttonHandler(void) {
 void downPushbuttonHandler(void) {
        
     if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
         switch (clock_time_setting) {
         
             case set_time_hours_state:
@@ -498,6 +507,10 @@ void downPushbuttonHandler(void) {
 void leftPushbuttonHandler(void) {
     
     if (clock_display_state == set_time_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
         if (clock_time_setting == set_time_hours_state) clock_time_setting = clock_time_setting_finished_state;
         else clock_time_setting--;
         
@@ -513,6 +526,7 @@ void leftPushbuttonHandler(void) {
                 break;
             case clock_time_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                clock_set_blank_request = 0;
                 break;
         }
     }
@@ -522,6 +536,10 @@ void leftPushbuttonHandler(void) {
 void rightPushbuttonHandler(void) {
 
     if (clock_display_state == set_time_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
         if (clock_time_setting == clock_time_setting_finished_state) clock_time_setting = set_time_hours_state;
         else clock_time_setting++;
         
@@ -537,6 +555,7 @@ void rightPushbuttonHandler(void) {
                 break;
             case clock_time_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                clock_set_blank_request = 0;
                 break;
         }
     }
@@ -544,5 +563,51 @@ void rightPushbuttonHandler(void) {
 }
 
 void powerPushbuttonHandler(void) {
+    
+}
+
+// This timer is used to blink values that are being changed using the pushbuttons
+// Using timer 6 for this
+void clockSetBlankingTimerInitialize(void) {
+    
+    // Stop timer 6
+    T6CONbits.ON = 0;
+    
+    // Set timer 6 prescalar to 256
+    T6CONbits.TCKPS = 0b111;
+    
+    // Set timer clock input as PBCLK3
+    T6CONbits.TCS = 0;
+    
+    // Clear timer 6
+    TMR6 = 0x0000;
+    
+    // Set timer 6 period match to 48828
+    // This will give an interrupt rate of 1 Hz
+    PR6 = 48828;
+    
+    // Clear Timer1 Interrupt Flag
+    clearInterruptFlag(Timer6);
+    
+    // Set Timer 1 interrupt priority
+    setInterruptPriority(Timer6, 6);
+    setInterruptSubpriority(Timer6, 0);
+    
+    // Enable timer 6 interrupt
+    enableInterrupt(Timer6);
+    
+    // Start timer 6
+    T6CONbits.ON = 1;
+}
+
+// this is the ISR for the clock set blanking timer
+void __ISR(_TIMER_6_VECTOR, IPL6SRS) clockSetBlankingTimerISR(void) {
+ 
+    // toggle blanking the value we're setting
+    if (clock_set_blank_request) clock_set_blank_request = 0;
+    else clock_set_blank_request = 1;
+    
+    // clear IRQ
+    clearInterruptFlag(Timer6);
     
 }

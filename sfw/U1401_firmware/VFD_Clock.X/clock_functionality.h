@@ -40,6 +40,10 @@
 #define DISPLAY_LEDS_SET_24HR_MODE_STATE        0b0000000000000010
 #define DISPLAY_LEDS_SET_BRIGHTNESS_STATE       0b0000000000000001
 
+// This flag is what allows values to alternate on and off when setting them
+// with capacitive pushbuttons
+volatile uint8_t clock_set_blank_request = 0;
+
 // This global enum keeps track of what we want to display on the VFD display
 // This needs to be volatile because a bunch of different functions can modify it
 enum clock_display_state_e {
@@ -98,6 +102,13 @@ void downPushbuttonHandler(void);
 void leftPushbuttonHandler(void);
 void rightPushbuttonHandler(void);
 void powerPushbuttonHandler(void);
+
+// This timer is used to blink values that are being changed using the pushbuttons
+// Using timer 6 for this
+void clockSetBlankingTimerInitialize(void);
+
+// this is the ISR for the clock set blanking timer
+void __ISR(_TIMER_6_VECTOR, IPL6SRS) clockSetBlankingTimerISR(void);
 
 #endif /* _CLOCK_FUNCTIONALITY_H */
 
