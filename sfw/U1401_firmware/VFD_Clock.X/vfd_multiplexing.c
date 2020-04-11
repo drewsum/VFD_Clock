@@ -93,6 +93,22 @@ void vfdBrightnessTimerInitialize(void) {
     
 }
 
+// This function stops both multiplexing timers
+void vfdTimersStop(void) {
+ 
+    T4CONbits.ON = 0;
+    T5CONbits.ON = 0;
+    TMR4 = 0;
+    TMR5 = 0;
+    
+    // blank all grids
+    blankVFDGrids();
+    
+    // Blank all anodes
+    blankVFDAnodes();
+    
+}
+
 
 // muxing timer interrupt service routine
 void __ISR(_TIMER_4_VECTOR, IPL5SRS) vfdMultiplexingTimerISR(void) {

@@ -91,8 +91,9 @@ void main(void) {
     printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
     
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("Beginning Logic Board Initialization:\r\n");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     
     // setup GPIO pins
     gpioInitialize();

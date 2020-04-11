@@ -149,7 +149,9 @@ void displayBoardInitialize(void) {
     
     // If we found a display board, print this, if not, disable level shifters and POS5
     if (nDISPLAY_DETECT_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Display Board Detected, Beginning Display Board Initialization:\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         I2C_DSP_EN_PIN = HIGH;
         printf("    Display Board I2C Buffer Enabled\r\n");
     }
@@ -211,6 +213,9 @@ void displayBoardInitialize(void) {
         displayBoardCapTouchInitialize();
         printf("    Capacitive Pushbuttons Initialized\r\n");
         terminalTextAttributesReset();
+        
+        // save the state that we've enabled the display
+        display_power_toggle_flag = 1;
         
     }
     
@@ -331,7 +336,7 @@ void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void) {
         printf("User pressed Up button\r\n");
         terminalTextAttributesReset();
         
-        upPushbuttonHandler();
+        if (display_power_toggle_flag) upPushbuttonHandler();
     
     }
     
@@ -341,7 +346,7 @@ void __ISR(_CHANGE_NOTICE_A_VECTOR, IPL2SRS) displayBoardCapTouchISR1(void) {
         printf("User pressed Down button\r\n");
         terminalTextAttributesReset();
         
-        downPushbuttonHandler();
+        if (display_power_toggle_flag) downPushbuttonHandler();
     
     }
     
@@ -367,7 +372,7 @@ void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void) {
         printf("User pressed Right button\r\n");
         terminalTextAttributesReset();
     
-        rightPushbuttonHandler();
+        if (display_power_toggle_flag) rightPushbuttonHandler();
         
     }
     
@@ -377,7 +382,7 @@ void __ISR(_CHANGE_NOTICE_B_VECTOR, IPL2SRS) displayBoardCapTouchISR2(void) {
         printf("User pressed Left button\r\n");
         terminalTextAttributesReset();
         
-        leftPushbuttonHandler();
+        if (display_power_toggle_flag) leftPushbuttonHandler();
     
     }
     
@@ -400,6 +405,8 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void) {
     terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("User pressed Power button\r\n");
     terminalTextAttributesReset();
+    
+    powerPushbuttonHandler();
     
     clearInterruptFlag(External_Interrupt_2);
     
@@ -789,6 +796,84 @@ void rightPushbuttonHandler(void) {
 }
 
 void powerPushbuttonHandler(void) {
+    
+    // If the display is currently on, turn it off
+    if (display_power_toggle_flag) {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Powering down VFD display:\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        vfdTimersStop();
+        printf("    VFD Multiplexing Timers Suspended\r\n");
+        printf("    VFD Grids and Anodes cleared\r\n");
+        
+        POS1P2_VFF_RUN_PIN = LOW;
+        printf("    Disabled +1.2VFF Power Supply\r\n");
+                
+        POS60_VAN_RUN_PIN = LOW;
+        printf("    Disabled +60VAN Power Supply\r\n");
+        
+        // clear the menu LEDs
+        displayBoardSetIOExpanderOutput(0x0000);
+        printf("    Cleared menu LEDs\r\n");
+        
+        terminalTextAttributesReset();
+        
+        // save the state that we've enabled the display
+        display_power_toggle_flag = 0;
+        
+    }
+    
+    // else, enable the display since it was shut down
+    else {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Powering up VFD display:\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        vfdMultiplexingTimerInitialize();
+        vfdBrightnessTimerInitialize();
+        printf("    Multiplexing Timers Initialized\r\n");
+        
+        // start off displaying the time
+        clock_display_state = display_time_state;
+        displayBoardSetLEDs();
+    
+        POS1P2_VFF_RUN_PIN = HIGH;
+        uint32_t timeout = 0xFFFF;
+        while (timeout > 0 && POS1P2_VFF_PGOOD_PIN == LOW) timeout--;
+        // This if statement is true if we were bale to turn on the +5V power supply
+        if (POS1P2_VFF_PGOOD_PIN) {
+            printf("    +1.2VFF Power Supply Enabled, +1.2VFF rail in regulation\r\n");
+        }
+        else {
+            POS1P2_VFF_RUN_PIN = LOW;
+            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    +1.2VFF Power Supply failed to enable\r\n");
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        }
+        
+        POS60_VAN_RUN_PIN = HIGH;
+        timeout = 0xFFFF;
+        while (timeout > 0 && POS60_VAN_PGOOD_PIN == LOW) timeout--;
+        // This if statement is true if we were bale to turn on the +5V power supply
+        if (POS60_VAN_PGOOD_PIN) {
+            printf("    +60VAN Power Supply Enabled, +60VAN rail in regulation\r\n");
+        }
+        else {
+            POS60_VAN_RUN_PIN = LOW;
+            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    +60VAN Power Supply failed to enable\r\n");
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        }
+
+        terminalTextAttributesReset();
+        
+        // save the state that we've enabled the display
+        display_power_toggle_flag = 1;
+        
+    }
     
 }
 

@@ -79,6 +79,9 @@ void vfdMultiplexingTimerInitialize(void);
 // This function initializes the brightness timer (using timer 5)
 void vfdBrightnessTimerInitialize(void);
 
+// This function stops both multiplexing timers
+void vfdTimersStop(void);
+
 // muxing timer interrupt service routine
 void __ISR(_TIMER_4_VECTOR, IPL5SRS) vfdMultiplexingTimerISR(void);
 

@@ -40,6 +40,10 @@
 #define DISPLAY_LEDS_SET_24HR_MODE_STATE        0b0000000000000010
 #define DISPLAY_LEDS_SET_BRIGHTNESS_STATE       0b0000000000000001
 
+// this flag is used to keep track of if the display is enabled or not
+// pressing the power button toggles this
+volatile uint8_t display_power_toggle_flag = 0;
+
 // This flag is what allows values to alternate on and off when setting them
 // with capacitive pushbuttons
 volatile uint8_t clock_set_blank_request = 0;
