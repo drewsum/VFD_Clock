@@ -31,21 +31,7 @@ void updateClockDisplay(void) {
             
         case set_time_state:
             if (clock_set_blank_request == 0) {
-                switch (clock_time_setting) {
-                    case set_time_hours_state:
-                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                        break;
-                    case set_time_minutes_state:
-                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                        break;
-                    case set_time_seconds_state:
-                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                        break;
-                    case clock_time_setting_finished_state:
-                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                        break;
-                        
-                }
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
             }
             else {
                 switch (clock_time_setting) {
@@ -70,6 +56,25 @@ void updateClockDisplay(void) {
             break;
             
         case set_date_state:
+            if (clock_set_blank_request == 0) {
+                sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+            }
+            else {
+                switch (clock_date_setting) {
+                    case set_date_month_state:
+                        sprintf(vfd_display_buffer, "  _%02u_%02u", rtcc_shadow.day, rtcc_shadow.year - 2000);
+                        break;
+                    case set_date_day_state:
+                        sprintf(vfd_display_buffer, "%02u_  _%02u", rtcc_shadow.month, rtcc_shadow.year - 2000);
+                        break;
+                    case set_date_year_state:
+                        sprintf(vfd_display_buffer, "%02u_%02u_  ", rtcc_shadow.month, rtcc_shadow.day);
+                        break;
+                    case clock_date_setting_finished_state:
+                        sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                        break;
+                }
+            }
             break;
             
         case display_weekday_state:
@@ -433,6 +438,49 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_date_state && clock_date_setting != clock_date_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        switch (clock_date_setting) {
+        
+            case set_date_month_state:
+                if (rtcc_shadow.month == 12) {
+                    rtccWriteDate(1, rtcc_shadow.day, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month + 1, rtcc_shadow.day, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+                
+            case set_date_day_state:
+                if (rtcc_shadow.day == 31) {
+                    rtccWriteDate(rtcc_shadow.month, 1, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day + 1, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+                
+            case set_date_year_state:
+                if (rtcc_shadow.year == 99) {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day, 2000);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year + 1);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
@@ -441,6 +489,7 @@ void upPushbuttonHandler(void) {
         displayBoardSetLEDs();
         
         clock_time_setting = set_time_hours_state;
+        clock_date_setting = set_date_month_state;
         
     }
 
@@ -491,6 +540,49 @@ void downPushbuttonHandler(void) {
         }
     }
     
+    else if (clock_display_state == set_date_state && clock_date_setting != clock_date_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        switch (clock_date_setting) {
+        
+            case set_date_month_state:
+                if (rtcc_shadow.month == 1) {
+                    rtccWriteDate(12, rtcc_shadow.day, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month - 1, rtcc_shadow.day, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+                
+            case set_date_day_state:
+                if (rtcc_shadow.day == 1) {
+                    rtccWriteDate(rtcc_shadow.month, 31, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day - 1, rtcc_shadow.year);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+                
+            case set_date_year_state:
+                if (rtcc_shadow.year == 0) {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day, 2099);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                else {
+                    rtccWriteDate(rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 1);
+                    sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                }
+                break;
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
@@ -499,6 +591,7 @@ void downPushbuttonHandler(void) {
         displayBoardSetLEDs();
         
         clock_time_setting = set_time_hours_state;
+        clock_date_setting = set_date_month_state;
         
     }
     
@@ -531,6 +624,31 @@ void leftPushbuttonHandler(void) {
         }
     }
     
+    else if (clock_display_state == set_date_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_date_setting == set_date_month_state) clock_date_setting = clock_date_setting_finished_state;
+        else clock_date_setting--;
+        
+        switch (clock_date_setting) {
+            case set_date_month_state:
+                sprintf(vfd_display_buffer, "  _%02u_%02u", rtcc_shadow.day, rtcc_shadow.year - 2000);
+                break;
+            case set_date_day_state:
+                sprintf(vfd_display_buffer, "%02u_  _%02u", rtcc_shadow.month, rtcc_shadow.year - 2000);
+                break;
+            case set_date_year_state:
+                sprintf(vfd_display_buffer, "%02u_%02u_  ", rtcc_shadow.month, rtcc_shadow.day);
+                break;
+            case clock_date_setting_finished_state:
+                sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
 }
 
 void rightPushbuttonHandler(void) {
@@ -555,6 +673,31 @@ void rightPushbuttonHandler(void) {
                 break;
             case clock_time_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
+    else if (clock_display_state == set_date_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_date_setting == clock_date_setting_finished_state) clock_date_setting = set_date_month_state;
+        else clock_date_setting++;
+        
+        switch (clock_date_setting) {
+            case set_date_month_state:
+                sprintf(vfd_display_buffer, "  _%02u_%02u", rtcc_shadow.day, rtcc_shadow.year - 2000);
+                break;
+            case set_date_day_state:
+                sprintf(vfd_display_buffer, "%02u_  _%02u", rtcc_shadow.month, rtcc_shadow.year - 2000);
+                break;
+            case set_date_year_state:
+                sprintf(vfd_display_buffer, "%02u_%02u_  ", rtcc_shadow.month, rtcc_shadow.day);
+                break;
+            case clock_date_setting_finished_state:
+                sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
                 clock_set_blank_request = 0;
                 break;
         }

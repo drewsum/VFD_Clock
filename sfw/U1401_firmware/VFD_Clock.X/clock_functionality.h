@@ -74,6 +74,19 @@ enum clock_time_setting_s {
 }
 volatile clock_time_setting = 0;
 
+// This enum keeps track of which date setting we're changing when the user wants
+// to change the date (months, days, year
+enum clock_date_setting_s {
+    
+    set_date_month_state = 0,
+    set_date_day_state = 1,
+    set_date_year_state = 2,
+    clock_date_setting_finished_state = 3
+    
+}
+volatile clock_date_setting = 0;
+
+
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
 void updateClockDisplay(void);
