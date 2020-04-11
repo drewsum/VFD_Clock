@@ -111,7 +111,7 @@ void updateClockDisplay(void) {
             
         case set_24hr_mode_state:
             if (clock_set_blank_request == 0) {
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
             }
             else {
                 switch (clock_24hr_setting) {
@@ -119,7 +119,7 @@ void updateClockDisplay(void) {
                         sprintf(vfd_display_buffer, "        ");
                         break;
                     case clock_24hr_setting_finished_state:
-                        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
                         break;
                 }
             }
@@ -553,7 +553,7 @@ void upPushbuttonHandler(void) {
         
         if (am_pm_enable == 1) am_pm_enable = 0;
         else am_pm_enable = 1;
-        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
         
     }
     
@@ -695,7 +695,7 @@ void downPushbuttonHandler(void) {
         
         if (am_pm_enable == 1) am_pm_enable = 0;
         else am_pm_enable = 1;
-        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
         
     }
     
@@ -810,7 +810,7 @@ void leftPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_24hr_setting_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
                 clock_set_blank_request = 0;
                 break;
         }
@@ -923,7 +923,7 @@ void rightPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_24hr_setting_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
                 clock_set_blank_request = 0;
                 break;
         }

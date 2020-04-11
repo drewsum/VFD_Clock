@@ -488,6 +488,33 @@ usb_uart_command_function_t setDisplayBrightnessCommand(char * input_str) {
     }
 }
 
+usb_uart_command_function_t setTimeFormatCommand(char * input_str) {
+ 
+    // Snipe out received arguments
+    uint32_t read_mode;
+    sscanf(input_str, "Set Time Format: %u", &read_mode);
+    
+    if (read_mode == 0 || read_mode == 1) {
+    
+        // copy logical inverse
+        am_pm_enable = read_mode ? 0 : 1;
+        
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set time display format as %s\r\n", am_pm_enable ? "AM/PM" : "24hr");
+        terminalTextAttributesReset();
+    
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter time format as 1 for 24hr or 0 for am/pm. User entered %u\r\n", read_mode);
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -569,5 +596,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Display Brightness: ",
             "\b\b<percent>: Sets the VFD display to the entered brightness as a percentage",
             setDisplayBrightnessCommand);
+    usbUartAddCommand("Set Time Format: ",
+            "\b\b <mode>: Sets time display format. mode = 1 for 24 hour, mode = 0 for AM/PM",
+            setTimeFormatCommand);
     
 }
