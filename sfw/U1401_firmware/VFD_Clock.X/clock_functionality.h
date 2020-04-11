@@ -86,6 +86,17 @@ enum clock_date_setting_s {
 }
 volatile clock_date_setting = 3;
 
+// This enum keeps track of which weekday setting we're changing when the user wants
+// to change the weekday
+// (only lets you set the weekday or nothing, since there is only one parameter to change
+enum clock_weekday_setting_s {
+    
+    set_weekday_day_state = 0,
+    clock_weekday_setting_finished_state = 1
+    
+}
+volatile clock_weekday_setting = 1;
+
 
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules

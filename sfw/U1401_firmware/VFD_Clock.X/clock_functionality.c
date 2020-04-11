@@ -78,10 +78,23 @@ void updateClockDisplay(void) {
             break;
             
         case display_weekday_state:
-            sprintf(vfd_display_buffer, "       %u", rtcc_shadow.day);
+            sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
             break;
             
         case set_weekday_state:
+            if (clock_set_blank_request == 0) {
+                sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+            }
+            else {
+                switch (clock_weekday_setting) {
+                    case set_weekday_day_state:
+                        sprintf(vfd_display_buffer, "        ");
+                        break;
+                    case clock_weekday_setting_finished_state:
+                        sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+                        break;
+                }
+            }
             break;
             
         case display_alarm_state:
@@ -481,6 +494,22 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_weekday_state && clock_weekday_setting != clock_weekday_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (rtcc_shadow.weekday == 6) {
+            rtccWriteWeekday(0);
+            sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+        }
+        else {
+            rtccWriteWeekday(rtcc_shadow.weekday + 1);
+            sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
@@ -583,6 +612,22 @@ void downPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_weekday_state && clock_weekday_setting != clock_weekday_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (rtcc_shadow.weekday == 0) {
+            rtccWriteWeekday(6);
+            sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+        }
+        else {
+            rtccWriteWeekday(rtcc_shadow.weekday - 1);
+            sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
@@ -649,6 +694,25 @@ void leftPushbuttonHandler(void) {
         }
     }
     
+    else if (clock_display_state == set_weekday_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_weekday_setting == set_weekday_day_state) clock_weekday_setting = clock_weekday_setting_finished_state;
+        else clock_weekday_setting--;
+        
+        switch (clock_weekday_setting) {
+            case set_weekday_day_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_weekday_setting_finished_state:
+                sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
 }
 
 void rightPushbuttonHandler(void) {
@@ -698,6 +762,25 @@ void rightPushbuttonHandler(void) {
                 break;
             case clock_date_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
+    else if (clock_display_state == set_weekday_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_weekday_setting == clock_weekday_setting_finished_state) clock_weekday_setting = set_weekday_day_state;
+        else clock_weekday_setting++;
+        
+        switch (clock_weekday_setting) {
+            case set_weekday_day_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_weekday_setting_finished_state:
+                sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
                 clock_set_blank_request = 0;
                 break;
         }
