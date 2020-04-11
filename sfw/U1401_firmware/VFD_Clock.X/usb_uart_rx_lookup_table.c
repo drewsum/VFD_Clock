@@ -503,7 +503,7 @@ usb_uart_command_function_t restoreBackupTimeCommand(char * input_str) {
 usb_uart_command_function_t displayLampTestCommand(char * input_str) {
  
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Testing all display segments. Press an arrow key to exit\r\n");
+    printf("Testing all display segments. Press up arrow key to exit\r\n");
     terminalTextAttributesReset();
     
     clock_display_state = display_lamp_test;
