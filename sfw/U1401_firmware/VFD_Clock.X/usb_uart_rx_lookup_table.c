@@ -384,57 +384,6 @@ usb_uart_command_function_t railStatusCommand(char * input_str) {
     
 }
 
-usb_uart_command_function_t setRailEnableCommand(char * input_str) {
-
-    // Snipe out received arguments
-    char rx_rail_name[32];
-    uint32_t rx_rail_enable;
-    sscanf(input_str, "Set Rail Enable: %[^,], %u", rx_rail_name, &rx_rail_enable);
-    
-    // Make sure the enable state we've received is valid, print help if not
-    if (rx_rail_enable > 1) {
-        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Please enter a power supply enable state that is either 0 or 1, received %u\r\n", rx_rail_enable);
-        terminalTextAttributesReset();
-        return;
-    }
-    
-    else {
-        
-        // Determine the rail we're enabling or disabling
-        if (strcmp(rx_rail_name, "POS5") == 0) {
-            POS5_RUN_PIN = rx_rail_enable;
-        }
-        else if (strcmp(rx_rail_name, "POS60_VAN") == 0) {
-            POS60_VAN_RUN_PIN = rx_rail_enable;
-        }
-        else if (strcmp(rx_rail_name, "POS1P2_VFF") == 0) {
-            POS1P2_VFF_RUN_PIN = rx_rail_enable;
-        }
-        else if (strcmp(rx_rail_name, "VBAT") == 0) {
-            VBAT_ENABLE_PIN = rx_rail_enable;
-        }
-        else {
-            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-            printf("Please enter a power supply which can be enabled. Received %s as rail name, %u as enable state\r\n", rx_rail_name, rx_rail_enable);
-            printf("Power supplies that can be enabled include:\r\n"
-                    "   POS5\r\n"
-                    "   POS60_VAN\r\n"
-                    "   POS1P2_VFF\r\n"
-                    "   VBAT\r\n");
-            terminalTextAttributesReset();
-            return;
-        }
-
-        // print feedback back to terminal
-        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Set Rail %s RUN pin to %u\r\n", rx_rail_name, rx_rail_enable);
-        terminalTextAttributesReset();
-        return;
-    
-    }
-}
-
 usb_uart_command_function_t pingCommand(char * input_str) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -561,13 +510,6 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Rail Status?",
             "Prints current state of run and power good signals for all voltage rails",
             railStatusCommand);
-    usbUartAddCommand("Set Rail Enable: ",
-            "\b\b<rail_name>, <rail_state>: Sets RUN pin state for rail_name power supply. 1 for enabled, 0 for disabled. Available rails:\r\n"
-            "       POS5\r\n"
-            "       POS60_VAN\r\n"
-            "       POS1P2_VFF\r\n"
-            "       VBAT",
-            setRailEnableCommand);
     usbUartAddCommand("Telemetry?",
             "Prints board level telemetry measurements",
             telemetryCommand);
