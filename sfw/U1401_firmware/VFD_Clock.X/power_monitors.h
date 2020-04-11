@@ -59,7 +59,7 @@
 #define POS5_USB_MON_RSHUNT           0.02
 
 // This flag is set when the application wants to poll for new power monitor data
-uint8_t power_monitor_data_request = 0;
+volatile __attribute__((coherent)) uint8_t power_monitor_data_request = 0;
 
 // This function initializes all power monitors in the project, if available
 void powerMonitorsInitialize(void);

@@ -13,13 +13,13 @@
 
 typedef union
 {
-    struct
+    volatile __attribute__((coherent)) struct
     {
             uint8_t full:1;
             uint8_t empty:1;
             uint8_t reserved:6;
     }s;
-    uint8_t status;
+    volatile __attribute__((coherent)) uint8_t status;
 }I2C_TR_QUEUE_STATUS;
 
 /**
@@ -31,7 +31,7 @@ typedef union
     of a list of TRBs, the number of the TRBs and the status of the
     currently processed TRB.
  */
-typedef struct
+volatile __attribute__((coherent)) typedef struct
 {
     uint8_t                             count;          // a count of trb's in the trb list
     I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list;     // pointer to the trb list
@@ -49,7 +49,7 @@ typedef struct
     i2c master transactions.
   */
 
-typedef struct
+volatile __attribute__((coherent)) typedef struct
 {
     /* Read/Write Queue */
     I2C_TR_QUEUE_ENTRY          *pTrTail;       // tail of the queue
@@ -71,7 +71,7 @@ typedef struct
     used to process transactions on the i2c bus.
 */
 
-typedef enum
+volatile __attribute__((coherent)) typedef enum
 {
     S_MASTER_IDLE,
     S_MASTER_RESTART,
@@ -95,7 +95,7 @@ typedef enum
 /* defined for I2C */
 
 #ifndef I2C_CONFIG_TR_QUEUE_LENGTH
-        #define I2C_CONFIG_TR_QUEUE_LENGTH 4096
+        #define I2C_CONFIG_TR_QUEUE_LENGTH 2048
 #endif
 
 
@@ -195,7 +195,7 @@ uint8_t I2C_ErrorCountGet(void)
     return ret;
 }
 
-void __ISR(_I2C1_MASTER_VECTOR) I2C_MASTER_ISR ( void )
+void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
 {
 
     static uint8_t  *pi2c_buf_ptr;

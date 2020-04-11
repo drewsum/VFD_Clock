@@ -63,7 +63,7 @@ void heartbeatTimerStop(void) {
 void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
 
     // Clear the watchdog timer
-    kickTheDog();
+    wdt_clear_request = 1;
     
     // Toggle heartbeat LED
     HEARTBEAT_LED_PIN = !(HEARTBEAT_LED_PIN);

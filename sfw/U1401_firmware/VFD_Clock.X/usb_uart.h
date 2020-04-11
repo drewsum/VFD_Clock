@@ -35,7 +35,7 @@
 #define USB_UART_FLOW_CONTROL_STR       "None"
 
 // this flag is set when we need to parse a received string
-volatile uint8_t usb_uart_rx_ready = 0;
+volatile __attribute__((coherent))  uint8_t usb_uart_rx_ready = 0;
 
 // This is the outgoing TX USB UART buffer
 char __attribute__((coherent)) usb_uart_tx_buffer[USB_UART_TX_BUFFER_SIZE];

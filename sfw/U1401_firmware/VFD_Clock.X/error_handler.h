@@ -23,7 +23,7 @@
 #include <sys/attribs.h>
 
 // set this flag high to update the error LEDs the next loop through main()
-volatile uint32_t update_error_leds_flag;
+volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
 #define ERROR_HANDLER_NUM_FLAGS  40
 

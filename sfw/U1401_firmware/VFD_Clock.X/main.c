@@ -177,6 +177,12 @@ void main(void) {
     // Main loop, do this stuff forever and ever and never get tired of it
     while (1) {
                
+        // clear the watchdog if we need to
+        if (wdt_clear_request) {
+            kickTheDog();
+            wdt_clear_request = 0;
+        }
+        
         // Only do these actions if a display is detected
         if (nDISPLAY_DETECT_PIN == LOW) {
          
@@ -199,10 +205,10 @@ void main(void) {
         }
             
         // get temperature sensor data
-        if (temp_sense_data_request) tempSensorsRetrieveData();
+        // if (temp_sense_data_request) tempSensorsRetrieveData();
         
         // get power monitor data
-        if (power_monitor_data_request) powerMonitorsGetData();
+        // if (power_monitor_data_request) powerMonitorsGetData();
         
         if (live_telemetry_request && live_telemetry_enable) {
             

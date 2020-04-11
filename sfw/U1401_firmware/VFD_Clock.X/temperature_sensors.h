@@ -34,7 +34,7 @@
 #define USB_TEMP_SNS_ADDR           0x1E
 #define DSPLY_TEMP_SNS_ADDR         0x1F
 
-uint8_t temp_sense_data_request = 0;
+volatile __attribute__((coherent)) uint8_t temp_sense_data_request = 0;
 
 // This function initializes all temperature sensors in the project, if available
 void tempSensorsInitialize(void);

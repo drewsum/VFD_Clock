@@ -26,6 +26,9 @@
 
 #include "pin_macros.h"
 
+// This flag is set when we want to clear the watchdog timer
+volatile __attribute__((coherent)) uint8_t wdt_clear_request = 0;
+
 // API Functions
 // This function initializes the heartbeat timer
 void heartbeatTimerInitialize(void);

@@ -43,7 +43,7 @@
     driver or a recovery can be performed to resend the transaction.
  */
 
-typedef enum
+volatile __attribute__((coherent)) typedef enum
 {
     I2C_MESSAGE_COMPLETE,
     I2C_MESSAGE_FAIL,
