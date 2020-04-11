@@ -72,8 +72,8 @@ void vfdBrightnessTimerInitialize(void) {
     // Set prescaler to 1:2
     T5CONbits.TCKPS = 0b001;
     
-    // Set period to 9000
-    PR5 = 9000;
+    // Set brightness to 100%
+    PR5 = 100 * vfd_display_brightness_setting;
     
     // Set clock source to PBCLK3
     T5CONbits.TCS = 0;
@@ -90,6 +90,16 @@ void vfdBrightnessTimerInitialize(void) {
     
     // Enable timer interrupt
     enableInterrupt(Timer5);
+    
+}
+
+// this function sets the brightness of the display based on what you pass it
+// number must be between 10 and 100
+void vfdSetBrightness(uint8_t input_brightness) {
+ 
+    if (input_brightness > 100 || input_brightness < 10) return;
+    
+    PR5 = 100 * input_brightness;
     
 }
 

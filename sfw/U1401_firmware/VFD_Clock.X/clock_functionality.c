@@ -110,6 +110,19 @@ void updateClockDisplay(void) {
             break;
             
         case set_brightness_state:
+            if (clock_set_blank_request == 0) {
+                sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+            }
+            else {
+                switch (clock_brightness_setting) {
+                    case set_brightness_value_state:
+                        sprintf(vfd_display_buffer, "        ");
+                        break;
+                    case clock_brightness_setting_finished_state:
+                        sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+                        break;
+                }
+            }
             break;
             
         default:
@@ -517,6 +530,19 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_brightness_state && clock_brightness_setting != clock_brightness_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (vfd_display_brightness_setting < 100) {
+            vfd_display_brightness_setting += 10;
+            vfdSetBrightness(vfd_display_brightness_setting);
+            sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
@@ -635,6 +661,19 @@ void downPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_brightness_state && clock_brightness_setting != clock_brightness_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (vfd_display_brightness_setting > 10) {
+            vfd_display_brightness_setting -= 10;
+            vfdSetBrightness(vfd_display_brightness_setting);
+            sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+        }
+        
+    }
+    
     else {
     
         if (clock_display_state == set_brightness_state) clock_display_state = display_time_state;
@@ -720,6 +759,26 @@ void leftPushbuttonHandler(void) {
         }
     }
     
+    else if (clock_display_state == set_brightness_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_brightness_setting == set_brightness_value_state) clock_brightness_setting = clock_brightness_setting_finished_state;
+        else clock_brightness_setting--;
+        
+        switch (clock_brightness_setting) {
+            case set_brightness_value_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_brightness_setting_finished_state:
+                sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
+    }
+    
 }
 
 void rightPushbuttonHandler(void) {
@@ -791,6 +850,26 @@ void rightPushbuttonHandler(void) {
                 clock_set_blank_request = 0;
                 break;
         }
+    }
+    
+    else if (clock_display_state == set_brightness_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_brightness_setting == clock_brightness_setting_finished_state) clock_brightness_setting = set_brightness_value_state;
+        else clock_brightness_setting++;
+        
+        switch (clock_brightness_setting) {
+            case set_brightness_value_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_brightness_setting_finished_state:
+                sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
     }
         
 }

@@ -53,6 +53,10 @@
  * 
  * */
 
+// This unsigned int is what's used to set brightness of the display
+// brightness timer is set to 10 * this value
+volatile __attribute__((coherent)) uint8_t vfd_display_brightness_setting = 100;
+
 // This enum keeps track of which VFD tube we're currently driving
 // This includes the six numerals as well as the two colons
 enum active_tube_e {
@@ -78,6 +82,10 @@ void vfdMultiplexingTimerInitialize(void);
 
 // This function initializes the brightness timer (using timer 5)
 void vfdBrightnessTimerInitialize(void);
+
+// this function sets the brightness of the display based on what you pass it
+// number must be between 10 and 100
+void vfdSetBrightness(uint8_t input_brightness);
 
 // This function stops both multiplexing timers
 void vfdTimersStop(void);

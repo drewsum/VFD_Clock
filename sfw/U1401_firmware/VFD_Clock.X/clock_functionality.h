@@ -102,6 +102,17 @@ enum clock_weekday_setting_s {
 }
 volatile clock_weekday_setting = 1;
 
+// This enum keeps track of which brightness setting we're changing when the user wants
+// to change the brightness
+// (only lets you set the brightness or nothing, since there is only one parameter to change
+enum clock_brightness_setting_s {
+    
+    set_brightness_value_state = 0,
+    clock_brightness_setting_finished_state = 1
+    
+}
+volatile clock_brightness_setting = 1;
+
 
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
