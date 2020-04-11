@@ -488,8 +488,8 @@ void upPushbuttonHandler(void) {
 
         displayBoardSetLEDs();
         
-        clock_time_setting = set_time_hours_state;
-        clock_date_setting = set_date_month_state;
+        clock_time_setting = clock_time_setting_finished_state;
+        clock_date_setting = clock_date_setting_finished_state;
         
     }
 
@@ -590,8 +590,8 @@ void downPushbuttonHandler(void) {
 
         displayBoardSetLEDs();
         
-        clock_time_setting = set_time_hours_state;
-        clock_date_setting = set_date_month_state;
+        clock_time_setting = clock_time_setting_finished_state;
+        clock_date_setting = clock_date_setting_finished_state;
         
     }
     
@@ -647,7 +647,6 @@ void leftPushbuttonHandler(void) {
             case clock_date_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
                 clock_set_blank_request = 0;
-                clock_display_state = display_date_state;
                 displayBoardSetLEDs();
                 break;
         }
@@ -678,7 +677,6 @@ void rightPushbuttonHandler(void) {
             case clock_time_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
                 clock_set_blank_request = 0;
-                clock_display_state = display_date_state;
                 displayBoardSetLEDs();
                 break;
         }
@@ -733,9 +731,8 @@ void clockSetBlankingTimerInitialize(void) {
     // Clear timer 6
     TMR6 = 0x0000;
     
-    // Set timer 6 period match to 48828
-    // This will give an interrupt rate of 1 Hz
-    PR6 = 48828;
+    // Set timer 6 period match to 25000
+    PR6 = 25000;
     
     // Clear Timer1 Interrupt Flag
     clearInterruptFlag(Timer6);

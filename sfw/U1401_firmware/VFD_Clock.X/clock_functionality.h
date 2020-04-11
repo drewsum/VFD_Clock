@@ -72,7 +72,7 @@ enum clock_time_setting_s {
     clock_time_setting_finished_state = 3
     
 }
-volatile clock_time_setting = 0;
+volatile clock_time_setting = 3;
 
 // This enum keeps track of which date setting we're changing when the user wants
 // to change the date (months, days, year
@@ -84,7 +84,7 @@ enum clock_date_setting_s {
     clock_date_setting_finished_state = 3
     
 }
-volatile clock_date_setting = 0;
+volatile clock_date_setting = 3;
 
 
 // This function updates the VFD display based on the current state of what we want to display
