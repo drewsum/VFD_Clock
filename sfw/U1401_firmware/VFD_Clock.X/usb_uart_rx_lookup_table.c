@@ -19,6 +19,8 @@
 #include "heartbeat_services.h"
 #include "watchdog_timer.h"
 #include "misc_i2c_devices.h"
+#include "clock_functionality.h"
+#include "vfd_multiplexing.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -498,6 +500,19 @@ usb_uart_command_function_t restoreBackupTimeCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t displayLampTestCommand(char * input_str) {
+ 
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Testing all display segments. Press an arrow key to exit\r\n");
+    terminalTextAttributesReset();
+    
+    clock_display_state = display_lamp_test;
+    strcpy(vfd_display_buffer, "88:88:88");
+    #warning "Add decimal point test here once driving the DP is figured out"
+    // ANODE_DP_PIN = HIGH;
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -580,5 +595,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Restore Time",
             "Restores time from external backup RTC into internal RTCC",
             restoreBackupTimeCommand);
+    usbUartAddCommand("Display Lamp Test",
+            "Tests all VFD display segments",
+            displayLampTestCommand);
     
 }

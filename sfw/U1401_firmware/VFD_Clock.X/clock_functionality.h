@@ -58,7 +58,8 @@ enum clock_display_state_e {
     set_alarm_state = 7,
     alarm_enable_state = 8,
     set_24hr_mode_state = 9,
-    set_brightness_state = 10
+    set_brightness_state = 10,
+    display_lamp_test = 11
     
 } volatile clock_display_state = 0;
 
