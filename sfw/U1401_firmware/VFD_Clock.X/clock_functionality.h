@@ -44,6 +44,11 @@
 // pressing the power button toggles this
 volatile uint8_t display_power_toggle_flag = 0;
 
+// this flag is used to keep track of if the display is showing 24hr time or
+// 12 hr time. This is set high if we're showing 12hr time, and set low
+// if we're showing 24hr time
+volatile uint8_t am_pm_enable = 1;
+
 // This flag is what allows values to alternate on and off when setting them
 // with capacitive pushbuttons
 volatile uint8_t clock_set_blank_request = 0;
@@ -112,6 +117,14 @@ enum clock_brightness_setting_s {
     
 }
 volatile clock_brightness_setting = 1;
+
+enum clock_24hr_setting_s {
+    
+    set_24hr_value_state = 0,
+    clock_24hr_setting_finished_state = 1
+    
+}
+volatile clock_24hr_setting = 1;
 
 
 // This function updates the VFD display based on the current state of what we want to display

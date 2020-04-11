@@ -98,15 +98,31 @@ void updateClockDisplay(void) {
             break;
             
         case display_alarm_state:
+            #warning "This menu entry is not implemented yet"
             break;
             
         case set_alarm_state:
+            #warning "This menu entry is not implemented yet"
             break;
             
         case alarm_enable_state:
+            #warning "This menu entry is not implemented yet"
             break;
             
         case set_24hr_mode_state:
+            if (clock_set_blank_request == 0) {
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+            }
+            else {
+                switch (clock_24hr_setting) {
+                    case set_24hr_value_state:
+                        sprintf(vfd_display_buffer, "        ");
+                        break;
+                    case clock_24hr_setting_finished_state:
+                        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                        break;
+                }
+            }
             break;
             
         case set_brightness_state:
@@ -530,6 +546,17 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_24hr_mode_state && clock_24hr_setting != clock_24hr_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (am_pm_enable == 1) am_pm_enable = 0;
+        else am_pm_enable = 1;
+        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+        
+    }
+    
     else if (clock_display_state == set_brightness_state && clock_brightness_setting != clock_brightness_setting_finished_state) {
         
         clock_set_blank_request = 0;
@@ -542,7 +569,7 @@ void upPushbuttonHandler(void) {
         }
         
     }
-    
+
     else {
     
         if (clock_display_state == display_time_state) clock_display_state = set_brightness_state;
@@ -661,6 +688,17 @@ void downPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_24hr_mode_state && clock_24hr_setting != clock_24hr_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (am_pm_enable == 1) am_pm_enable = 0;
+        else am_pm_enable = 1;
+        sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+        
+    }
+    
     else if (clock_display_state == set_brightness_state && clock_brightness_setting != clock_brightness_setting_finished_state) {
         
         clock_set_blank_request = 0;
@@ -759,6 +797,26 @@ void leftPushbuttonHandler(void) {
         }
     }
     
+    else if (clock_display_state == set_24hr_mode_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_24hr_setting == set_24hr_value_state) clock_24hr_setting = clock_24hr_setting_finished_state;
+        else clock_24hr_setting--;
+        
+        switch (clock_24hr_setting) {
+            case set_24hr_value_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_24hr_setting_finished_state:
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
+    }
+    
     else if (clock_display_state == set_brightness_state) {
      
         clock_set_blank_request = 1;
@@ -850,6 +908,26 @@ void rightPushbuttonHandler(void) {
                 clock_set_blank_request = 0;
                 break;
         }
+    }
+    
+    else if (clock_display_state == set_24hr_mode_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_24hr_setting == clock_24hr_setting_finished_state) clock_24hr_setting = set_24hr_value_state;
+        else clock_24hr_setting++;
+        
+        switch (clock_24hr_setting) {
+            case set_24hr_value_state:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_24hr_setting_finished_state:
+                sprintf(vfd_display_buffer, "       %01u", am_pm_enable);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
     }
     
     else if (clock_display_state == set_brightness_state) {
