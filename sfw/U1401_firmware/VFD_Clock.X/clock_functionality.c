@@ -537,7 +537,7 @@ void upPushbuttonHandler(void) {
         
         if (vfd_display_brightness_setting < 100) {
             vfd_display_brightness_setting += 10;
-            vfdSetBrightness(vfd_display_brightness_setting);
+            vfdSetDisplayBrightness(vfd_display_brightness_setting);
             sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
         }
         
@@ -668,7 +668,7 @@ void downPushbuttonHandler(void) {
         
         if (vfd_display_brightness_setting > 10) {
             vfd_display_brightness_setting -= 10;
-            vfdSetBrightness(vfd_display_brightness_setting);
+            vfdSetDisplayBrightness(vfd_display_brightness_setting);
             sprintf(vfd_display_buffer, "      %02u", vfd_display_brightness_setting / 10);
         }
         

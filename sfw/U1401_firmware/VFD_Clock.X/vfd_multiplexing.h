@@ -85,7 +85,7 @@ void vfdBrightnessTimerInitialize(void);
 
 // this function sets the brightness of the display based on what you pass it
 // number must be between 10 and 100
-void vfdSetBrightness(uint8_t input_brightness);
+void vfdSetDisplayBrightness(uint8_t input_brightness);
 
 // This function stops both multiplexing timers
 void vfdTimersStop(void);

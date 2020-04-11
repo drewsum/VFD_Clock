@@ -462,6 +462,32 @@ usb_uart_command_function_t displayLampTestCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setDisplayBrightnessCommand(char * input_str) {
+    
+    // Snipe out received arguments
+    uint32_t read_brightness;
+    sscanf(input_str, "Set Display Brightness: %3u", &read_brightness);
+    
+    if (read_brightness <= 100 && read_brightness >= 10) {
+    
+        vfd_display_brightness_setting = (uint8_t) read_brightness;
+        vfdSetDisplayBrightness(vfd_display_brightness_setting);
+        
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set display brightness as %u%%\r\n", vfd_display_brightness_setting);
+        terminalTextAttributesReset();
+    
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter brightness as an integer between 10 and 100. User entered %u%%\r\n", read_brightness);
+        terminalTextAttributesReset();
+        
+    }
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -540,5 +566,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Display Lamp Test",
             "Tests all VFD display segments",
             displayLampTestCommand);
+    usbUartAddCommand("Set Display Brightness: ",
+            "\b\b<percent>: Sets the VFD display to the entered brightness as a percentage",
+            setDisplayBrightnessCommand);
     
 }
