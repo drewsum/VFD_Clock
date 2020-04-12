@@ -527,7 +527,7 @@ usb_uart_command_function_t alarmStatusCommand(char * input_str) {
     
     // Print alarm settings
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Alarm Time Settings (24hr time format): %02u:%02u:%02u\r\n",
+    printf("    Alarm Time Setting: %02u:%02u:%02u (24hr time format)\r\n",
             clock_alarm.alarm_hour,
             clock_alarm.alarm_minute,
             clock_alarm.alarm_second);

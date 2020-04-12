@@ -212,7 +212,86 @@ void updateClockDisplay(void) {
             break;
             
         case set_alarm_state:
-            #warning "This menu entry is not implemented yet"
+            if (clock_set_blank_request == 0) {
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
+            }
+            else {
+                switch (clock_alarm_setting) {
+                    case set_alarm_hours_state:
+                        sprintf(vfd_display_buffer, "  :%02u:%02u", clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                        break;
+                    case set_alarm_minutes_state:
+                        if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_second);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                            dp_anode_request = 1;
+                        }
+                        else {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour, clock_alarm.alarm_second);
+                            dp_anode_request = 0;
+                        }
+                        break;
+                    case set_alarm_seconds_state:
+                        if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                            dp_anode_request = 1;
+                        }
+                        else {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour, clock_alarm.alarm_minute);
+                            dp_anode_request = 0;
+                        }
+                        break;
+                    case clock_alarm_setting_finished_state:
+                        if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                            dp_anode_request = 1;
+                        }
+                        else {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                            dp_anode_request = 0;
+                        }
+                        break;
+                }
+            }
             break;
             
         case alarm_enable_state:
@@ -761,6 +840,139 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_alarm_state && clock_alarm_setting != clock_alarm_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        switch (clock_alarm_setting) {
+        
+            case set_alarm_hours_state:
+                if (clock_alarm.alarm_hour == 23) {
+                    clock_alarm.alarm_hour = 0;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_hour++;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+                
+            case set_alarm_minutes_state:
+                if (clock_alarm.alarm_minute == 59) {
+                    clock_alarm.alarm_minute = 0;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_minute++;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+                
+            case set_alarm_seconds_state:
+                if (clock_alarm.alarm_second == 59) {
+                    clock_alarm.alarm_second = 0;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_second++;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+        }
+        
+    }
+    
     else if (clock_display_state == alarm_enable_state && clock_alarm_enable_setting != clock_alarm_enable_finished_state) {
         
         clock_set_blank_request = 0;
@@ -805,6 +1017,11 @@ void upPushbuttonHandler(void) {
         
         clock_time_setting = clock_time_setting_finished_state;
         clock_date_setting = clock_date_setting_finished_state;
+        clock_weekday_setting = clock_weekday_setting_finished_state;
+        clock_alarm_setting = clock_alarm_setting_finished_state;
+        clock_brightness_setting = clock_brightness_setting_finished_state;
+        clock_24hr_setting = clock_24hr_setting_finished_state;
+        clock_alarm_enable_setting = clock_alarm_enable_finished_state;
         
     }
 
@@ -1004,6 +1221,139 @@ void downPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == set_alarm_state && clock_alarm_setting != clock_alarm_setting_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        switch (clock_alarm_setting) {
+        
+            case set_alarm_hours_state:
+                if (clock_alarm.alarm_hour == 0) {
+                    clock_alarm.alarm_hour = 23;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_hour--;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+                
+            case set_alarm_minutes_state:
+                if (clock_alarm.alarm_minute == 0) {
+                    clock_alarm.alarm_minute = 59;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_minute--;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+                
+            case set_alarm_seconds_state:
+                if (clock_alarm.alarm_second == 0) {
+                    clock_alarm.alarm_second = 59;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                else {
+                    clock_alarm.alarm_second--;
+                    if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                        dp_anode_request = 0;
+                    }
+                }
+                break;
+        }
+        
+    }
+    
     else if (clock_display_state == alarm_enable_state && clock_alarm_enable_setting != clock_alarm_enable_finished_state) {
         
         clock_set_blank_request = 0;
@@ -1048,6 +1398,11 @@ void downPushbuttonHandler(void) {
         
         clock_time_setting = clock_time_setting_finished_state;
         clock_date_setting = clock_date_setting_finished_state;
+        clock_weekday_setting = clock_weekday_setting_finished_state;
+        clock_alarm_setting = clock_alarm_setting_finished_state;
+        clock_brightness_setting = clock_brightness_setting_finished_state;
+        clock_24hr_setting = clock_24hr_setting_finished_state;
+        clock_alarm_enable_setting = clock_alarm_enable_finished_state;
         
     }
     
@@ -1162,6 +1517,74 @@ void leftPushbuttonHandler(void) {
                 break;
             case clock_weekday_setting_finished_state:
                 sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
+    else if (clock_display_state == set_alarm_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_alarm_setting == set_alarm_hours_state) clock_alarm_setting = clock_alarm_setting_finished_state;
+        else clock_alarm_setting--;
+        
+        switch (clock_alarm_setting) {
+            case set_alarm_hours_state:
+                sprintf(vfd_display_buffer, "  :%02u:%02u", clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 0;
+                break;
+            case set_alarm_minutes_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
+                break;
+            case set_alarm_seconds_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour, clock_alarm.alarm_minute);
+                    dp_anode_request = 0;
+                }
+                break;
+            case clock_alarm_setting_finished_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
                 clock_set_blank_request = 0;
                 break;
         }
@@ -1338,6 +1761,74 @@ void rightPushbuttonHandler(void) {
                 break;
             case clock_weekday_setting_finished_state:
                 sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+                clock_set_blank_request = 0;
+                break;
+        }
+    }
+    
+    else if (clock_display_state == set_alarm_state) {
+        
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_alarm_setting == clock_alarm_setting_finished_state) clock_alarm_setting = set_alarm_hours_state;
+        else clock_alarm_setting++;
+        
+        switch (clock_alarm_setting) {
+            case set_alarm_hours_state:
+                sprintf(vfd_display_buffer, "  :%02u:%02u", clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 0;
+                break;
+            case set_alarm_minutes_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", clock_alarm.alarm_hour, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
+                break;
+            case set_alarm_seconds_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, clock_alarm.alarm_minute);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", clock_alarm.alarm_hour, clock_alarm.alarm_minute);
+                    dp_anode_request = 0;
+                }
+                break;
+            case clock_alarm_setting_finished_state:
+                if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                    dp_anode_request = 0;
+                }
                 clock_set_blank_request = 0;
                 break;
         }

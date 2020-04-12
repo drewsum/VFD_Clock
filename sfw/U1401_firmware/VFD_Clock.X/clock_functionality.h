@@ -107,6 +107,18 @@ enum clock_weekday_setting_s {
 }
 volatile clock_weekday_setting = 1;
 
+// This enum keeps track of which time setting we're changing when the user wants
+// to change the alarm time (hours, minutes, seconds
+enum clock_alarm_setting_s {
+    
+    set_alarm_hours_state = 0,
+    set_alarm_minutes_state = 1,
+    set_alarm_seconds_state = 2,
+    clock_alarm_setting_finished_state = 3
+    
+}
+volatile clock_alarm_setting = 3;
+
 // This enum keeps track of which brightness setting we're changing when the user wants
 // to change the brightness
 // (only lets you set the brightness or nothing, since there is only one parameter to change
