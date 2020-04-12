@@ -22,30 +22,121 @@ void updateClockDisplay(void) {
     
         case display_time_state:
             if (rtcc_shadow.seconds % 2 == 0) {
-                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
             }
             else {
-                sprintf(vfd_display_buffer, "%02u %02u %02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u %02u %02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u %02u %02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u %02u %02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u %02u %02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
             }
             break;
             
         case set_time_state:
             if (clock_set_blank_request == 0) {
-                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
             }
             else {
                 switch (clock_time_setting) {
                     case set_time_hours_state:
-                            sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
                         break;
                     case set_time_minutes_state:
-                        sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                        if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours - 12, rtcc_shadow.seconds);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                            dp_anode_request = 1;
+                        }
+                        else {
+                            sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                            dp_anode_request = 0;
+                        }
                         break;
                     case set_time_seconds_state:
+                        if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours - 12, rtcc_shadow.minutes);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                            dp_anode_request = 1;
+                        }
+                        else {
                             sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                            dp_anode_request = 0;
+                        }
                         break;
                     case clock_time_setting_finished_state:
-                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                            dp_anode_request = 0;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                            dp_anode_request = 1;
+                        }
+                        else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                            dp_anode_request = 1;
+                        }
+                        else {
+                            sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                            dp_anode_request = 0;
+                        }
                         break;
                 }
             }
@@ -53,6 +144,7 @@ void updateClockDisplay(void) {
             
         case display_date_state:
             sprintf(vfd_display_buffer, "%02u_%02u_%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
+            dp_anode_request = 0;
             break;
             
         case set_date_state:
@@ -75,10 +167,12 @@ void updateClockDisplay(void) {
                         break;
                 }
             }
+            dp_anode_request = 0;
             break;
             
         case display_weekday_state:
             sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
+            dp_anode_request = 0;
             break;
             
         case set_weekday_state:
@@ -95,6 +189,7 @@ void updateClockDisplay(void) {
                         break;
                 }
             }
+            dp_anode_request = 0;
             break;
             
         case display_alarm_state:
@@ -123,6 +218,7 @@ void updateClockDisplay(void) {
                         break;
                 }
             }
+            dp_anode_request = 0;
             break;
             
         case set_brightness_state:
@@ -139,10 +235,11 @@ void updateClockDisplay(void) {
                         break;
                 }
             }
+            dp_anode_request = 0;
             break;
             
         default:
-            Nop();
+            dp_anode_request = 0;
             break;
         
     }
@@ -454,33 +551,123 @@ void upPushbuttonHandler(void) {
             case set_time_hours_state:
                 if (rtcc_shadow.hours == 23) {
                     rtccWriteTime(0, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours + 1, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
                 
             case set_time_minutes_state:
                 if (rtcc_shadow.minutes == 59) {
                     rtccWriteTime(rtcc_shadow.hours, 0, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes + 1, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
                 
             case set_time_seconds_state:
                 if (rtcc_shadow.seconds == 59) {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, 0);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds + 1);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
         }
@@ -597,33 +784,123 @@ void downPushbuttonHandler(void) {
             case set_time_hours_state:
                 if (rtcc_shadow.hours == 0) {
                     rtccWriteTime(23, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours - 1, rtcc_shadow.minutes, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
                 
             case set_time_minutes_state:
                 if (rtcc_shadow.minutes == 0) {
                     rtccWriteTime(rtcc_shadow.hours, 59, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes - 1, rtcc_shadow.seconds);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
                 
             case set_time_seconds_state:
                 if (rtcc_shadow.seconds == 0) {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, 59);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 else {
                     rtccWriteTime(rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds - 1);
-                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 1;
+                    }
+                    else {
+                        sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                        dp_anode_request = 0;
+                    }
                 }
                 break;
         }
@@ -738,16 +1015,59 @@ void leftPushbuttonHandler(void) {
         
         switch (clock_time_setting) {
             case set_time_hours_state:
-                    sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                dp_anode_request = 0;
                 break;
             case set_time_minutes_state:
-                sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours - 12, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
                 break;
             case set_time_seconds_state:
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours - 12, rtcc_shadow.minutes);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                    dp_anode_request = 1;
+                }
+                else {
                     sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                    dp_anode_request = 0;
+                }
                 break;
             case clock_time_setting_finished_state:
-                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
                 clock_set_blank_request = 0;
                 break;
         }
@@ -852,15 +1172,58 @@ void rightPushbuttonHandler(void) {
         switch (clock_time_setting) {
             case set_time_hours_state:
                 sprintf(vfd_display_buffer, "  :%02u:%02u", rtcc_shadow.minutes, rtcc_shadow.seconds);
+                dp_anode_request = 0;
                 break;
             case set_time_minutes_state:
-                sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours - 12, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", 12, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:  :%02u", rtcc_shadow.hours, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
                 break;
             case set_time_seconds_state:
-                sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours - 12, rtcc_shadow.minutes);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", 12, rtcc_shadow.minutes);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:  ", rtcc_shadow.hours, rtcc_shadow.minutes);
+                    dp_anode_request = 0;
+                }
                 break;
             case clock_time_setting_finished_state:
-                sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                if (am_pm_enable == 1 && rtcc_shadow.hours == 0) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours > 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours - 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else if (am_pm_enable == 1 && rtcc_shadow.hours == 12) {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 1;
+                }
+                else {
+                    sprintf(vfd_display_buffer, "%02u:%02u:%02u", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+                    dp_anode_request = 0;
+                }
                 clock_set_blank_request = 0;
                 break;
         }

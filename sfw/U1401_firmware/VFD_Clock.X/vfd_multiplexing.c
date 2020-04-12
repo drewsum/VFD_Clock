@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "vfd_multiplexing.h"
+#include "clock_functionality.h"
 
 #include "pin_macros.h"
 #include "32mz_interrupt_control.h"
@@ -131,6 +132,9 @@ void __ISR(_TIMER_4_VECTOR, IPL5SRS) vfdMultiplexingTimerISR(void) {
     // inverse which number appears where, since we want data to show up left to right,
     // to match the order of characters in vfd_display_buffer[]
     setVFDAnodes(vfd_display_buffer[7 - active_tube]);
+    
+    // Set the DP anode high if we want to display PM/AM time
+    if (am_pm_enable == 1 && active_tube == vfd_tube_4 && dp_anode_request == 1) ANODE_DP_PIN = HIGH;
     
     // increment active tube and reset if needed
     active_tube++;

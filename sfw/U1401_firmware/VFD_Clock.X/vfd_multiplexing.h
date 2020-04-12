@@ -57,6 +57,9 @@
 // brightness timer is set to 10 * this value
 volatile __attribute__((coherent)) uint8_t vfd_display_brightness_setting = 100;
 
+// Set this flag to use the DP as an AM/PM indicator on tube 4
+volatile __attribute__((coherent)) uint8_t dp_anode_request = 0;
+
 // This enum keeps track of which VFD tube we're currently driving
 // This includes the six numerals as well as the two colons
 enum active_tube_e {
