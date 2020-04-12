@@ -190,6 +190,9 @@ void main(void) {
             // update what's in the vfd_display_buffer[] based on what we want to display
             updateClockDisplay();
             
+            // check to see if we need to trigger the alarm
+            clockAlarmCheckMatch();
+            
         }
         
         // parse received USB strings if we have a new one received

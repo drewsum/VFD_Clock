@@ -168,6 +168,10 @@ void displayBoardInitialize(void);
 // this function sets the state of the display board LEDs to match what clock_display_state enum is set to
 void displayBoardSetLEDs(void);
 
+// this function checks if the current time matches the alarm time and sets the buzzer
+// if the alarm is armed.
+void clockAlarmCheckMatch(void);
+
 // This function initializes capacitive pushbuttons located on the display board
 void displayBoardCapTouchInitialize(void);
 

@@ -512,6 +512,25 @@ void displayBoardSetLEDs(void) {
        
 }
 
+// this function checks if the current time matches the alarm time and sets the buzzer
+// if the alarm is armed.
+void clockAlarmCheckMatch(void) {
+ 
+    // only evaluate this stuff if the alarm is armed and not currently sounding
+    if (clock_alarm.alarm_arm && BUZZER_ENABLE_PIN == LOW) {
+     
+        // If the alarm settings and current time match, trigger the alarm
+        if (    clock_alarm.alarm_hour == rtcc_shadow.hours &&
+                clock_alarm.alarm_minute == rtcc_shadow.minutes &&
+                clock_alarm.alarm_second == rtcc_shadow.seconds) {
+            BUZZER_ENABLE_PIN = HIGH;
+            
+        }
+        
+    }
+    
+}
+
 // This function initializes capacitive pushbuttons located on the display board
 void displayBoardCapTouchInitialize(void) {
  
@@ -648,7 +667,16 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL2SRS) displayBoardCapTouchPowerISR(void) {
 // These functions are handler functions for each button, called when pressed
 void upPushbuttonHandler(void) {
 
-    if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+    // If we're currently sounding the alarm, disable it. If not, do normal functions
+    if (clock_alarm.alarm_arm == 1 && BUZZER_ENABLE_PIN == HIGH) {
+     
+        BUZZER_ENABLE_PIN = LOW;
+        
+    }
+    
+    else if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+        
+        clock_alarm.alarm_arm = 0;
         
         clock_set_blank_request = 0;
         TMR6 = 0;
@@ -1030,7 +1058,16 @@ void upPushbuttonHandler(void) {
 
 void downPushbuttonHandler(void) {
        
-    if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+    // If we're currently sounding the alarm, disable it. If not, do normal functions
+    if (clock_alarm.alarm_arm == 1 && BUZZER_ENABLE_PIN == HIGH) {
+     
+        BUZZER_ENABLE_PIN = LOW;
+        
+    }
+    
+    else if (clock_display_state == set_time_state && clock_time_setting != clock_time_setting_finished_state) {
+        
+        clock_alarm.alarm_arm = 0;
         
         clock_set_blank_request = 0;
         TMR6 = 0;
@@ -1410,7 +1447,14 @@ void downPushbuttonHandler(void) {
 
 void leftPushbuttonHandler(void) {
     
-    if (clock_display_state == set_time_state) {
+    // If we're currently sounding the alarm, disable it. If not, do normal functions
+    if (clock_alarm.alarm_arm == 1 && BUZZER_ENABLE_PIN == HIGH) {
+     
+        BUZZER_ENABLE_PIN = LOW;
+        
+    }
+    
+    else if (clock_display_state == set_time_state) {
         
         clock_set_blank_request = 1;
         TMR6 = 0;
@@ -1654,7 +1698,14 @@ void leftPushbuttonHandler(void) {
 
 void rightPushbuttonHandler(void) {
 
-    if (clock_display_state == set_time_state) {
+    // If we're currently sounding the alarm, disable it. If not, do normal functions
+    if (clock_alarm.alarm_arm == 1 && BUZZER_ENABLE_PIN == HIGH) {
+     
+        BUZZER_ENABLE_PIN = LOW;
+        
+    }
+    
+    else if (clock_display_state == set_time_state) {
         
         clock_set_blank_request = 1;
         TMR6 = 0;
@@ -1898,8 +1949,15 @@ void rightPushbuttonHandler(void) {
 
 void powerPushbuttonHandler(void) {
     
+    // If we're currently sounding the alarm, disable it. If not, do normal functions
+    if (clock_alarm.alarm_arm == 1 && BUZZER_ENABLE_PIN == HIGH) {
+     
+        BUZZER_ENABLE_PIN = LOW;
+        
+    }
+    
     // If the display is currently on, turn it off
-    if (display_power_toggle_flag) {
+    else if (display_power_toggle_flag) {
      
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Powering down VFD display:\r\n");
@@ -1923,6 +1981,9 @@ void powerPushbuttonHandler(void) {
         
         // save the state that we've enabled the display
         display_power_toggle_flag = 0;
+        
+        // disable alarm
+        clock_alarm.alarm_arm = 0;
         
     }
     
