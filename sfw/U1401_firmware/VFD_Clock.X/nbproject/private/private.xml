@@ -4,7 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/main.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/clock_functionality.h</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/usb_uart_rx_lookup_table.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/vfd_multiplexing.h</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/clock_functionality.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/VFD_Clock/sfw/U1401_firmware/VFD_Clock.X/vfd_multiplexing.c</file>
         </group>
     </open-files>
 </project-private>

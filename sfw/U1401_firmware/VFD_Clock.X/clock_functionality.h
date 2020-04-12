@@ -127,6 +127,17 @@ enum clock_24hr_setting_s {
 volatile clock_24hr_setting = 1;
 
 
+// This struct holds alarm settings
+// Lets you set alrm hours and minutes, as well as arm the alarm
+volatile struct clock_alarm_s {
+    
+    uint8_t alarm_hour;
+    uint8_t alarm_minute;
+    uint8_t alarm_second;
+    uint8_t alarm_arm;
+    
+} clock_alarm;
+
 // This function updates the VFD display based on the current state of what we want to display
 // relies on global variables in vfd_multiplexing and rtcc modules
 void updateClockDisplay(void);
