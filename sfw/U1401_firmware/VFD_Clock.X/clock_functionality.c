@@ -193,7 +193,22 @@ void updateClockDisplay(void) {
             break;
             
         case display_alarm_state:
-            #warning "This menu entry is not implemented yet"
+            if (am_pm_enable == 1 && clock_alarm.alarm_hour == 0) {
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 0;
+            }
+            else if (am_pm_enable == 1 && clock_alarm.alarm_hour > 12) {
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour - 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 1;
+            }
+            else if (am_pm_enable == 1 && clock_alarm.alarm_hour == 12) {
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", 12, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 1;
+            }
+            else {
+                sprintf(vfd_display_buffer, "%02u:%02u:%02u", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+                dp_anode_request = 0;
+            }
             break;
             
         case set_alarm_state:
@@ -201,7 +216,20 @@ void updateClockDisplay(void) {
             break;
             
         case alarm_enable_state:
-            #warning "This menu entry is not implemented yet"
+            if (clock_set_blank_request == 0) {
+                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+            }
+            else {
+                switch (clock_alarm_enable_setting) {
+                    case set_alarm_arm:
+                        sprintf(vfd_display_buffer, "        ");
+                        break;
+                    case clock_alarm_enable_finished_state:
+                        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                        break;
+                }
+            }
+            dp_anode_request = 0;
             break;
             
         case set_24hr_mode_state:
@@ -733,6 +761,17 @@ void upPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == alarm_enable_state && clock_alarm_enable_setting != clock_alarm_enable_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (clock_alarm.alarm_arm == 1) clock_alarm.alarm_arm = 0;
+        else clock_alarm.alarm_arm = 1;
+        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+        
+    }
+    
     else if (clock_display_state == set_24hr_mode_state && clock_24hr_setting != clock_24hr_setting_finished_state) {
         
         clock_set_blank_request = 0;
@@ -965,6 +1004,17 @@ void downPushbuttonHandler(void) {
         
     }
     
+    else if (clock_display_state == alarm_enable_state && clock_alarm_enable_setting != clock_alarm_enable_finished_state) {
+        
+        clock_set_blank_request = 0;
+        TMR6 = 0;
+        
+        if (clock_alarm.alarm_arm == 1) clock_alarm.alarm_arm = 0;
+        else clock_alarm.alarm_arm = 1;
+        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+        
+    }
+    
     else if (clock_display_state == set_24hr_mode_state && clock_24hr_setting != clock_24hr_setting_finished_state) {
         
         clock_set_blank_request = 0;
@@ -1115,6 +1165,26 @@ void leftPushbuttonHandler(void) {
                 clock_set_blank_request = 0;
                 break;
         }
+    }
+    
+    else if (clock_display_state == alarm_enable_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_alarm_enable_setting == set_alarm_arm) clock_alarm_enable_setting = clock_alarm_enable_finished_state;
+        else clock_alarm_enable_setting--;
+        
+        switch (clock_alarm_enable_setting) {
+            case set_alarm_arm:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_alarm_enable_finished_state:
+                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
     }
     
     else if (clock_display_state == set_24hr_mode_state) {
@@ -1271,6 +1341,26 @@ void rightPushbuttonHandler(void) {
                 clock_set_blank_request = 0;
                 break;
         }
+    }
+    
+    else if (clock_display_state == alarm_enable_state) {
+     
+        clock_set_blank_request = 1;
+        TMR6 = 0;
+        
+        if (clock_alarm_enable_setting == clock_alarm_enable_finished_state) clock_alarm_enable_setting = set_alarm_arm;
+        else clock_alarm_enable_setting++;
+        
+        switch (clock_alarm_enable_setting) {
+            case set_alarm_arm:
+                sprintf(vfd_display_buffer, "        ");
+                break;
+            case clock_alarm_enable_finished_state:
+                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                clock_set_blank_request = 0;
+                break;
+        }
+        
     }
     
     else if (clock_display_state == set_24hr_mode_state) {

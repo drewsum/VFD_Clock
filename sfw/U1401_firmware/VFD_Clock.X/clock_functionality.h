@@ -126,6 +126,14 @@ enum clock_24hr_setting_s {
 }
 volatile clock_24hr_setting = 1;
 
+enum clock_alarm_enable_setting_s {
+    
+    set_alarm_arm = 0,
+    clock_alarm_enable_finished_state = 1
+    
+}
+volatile clock_alarm_enable_setting = 1;
+
 
 // This struct holds alarm settings
 // Lets you set alrm hours and minutes, as well as arm the alarm
