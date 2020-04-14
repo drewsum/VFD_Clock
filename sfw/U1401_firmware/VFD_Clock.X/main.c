@@ -156,6 +156,8 @@ void main(void) {
     printf("    Logic Board Time of Flight Counter Initialized\r\n");
     backupRTCInitialize();
     printf("    Backup Real-Time Clock Initialized\r\n");
+    backupRTCRestoreTime();
+    printf("    Restored time backup from previous sessions\r\n");
     terminalTextAttributesReset();
    
     // Try to find an installed display board and set it up
