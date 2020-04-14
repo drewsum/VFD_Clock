@@ -151,7 +151,7 @@ void I2C_Initialize(void)
     i2c2_object.i2cErrors = 0;
 
     disableInterrupt(I2C1_Master_Event);
-    setInterruptPriority(I2C1_Master_Event, 4);
+    setInterruptPriority(I2C1_Master_Event, 7);
     setInterruptSubpriority(I2C1_Master_Event, 1);
 
     disableInterrupt(I2C1_Bus_Collision_Event);
@@ -195,7 +195,7 @@ uint32_t I2C_ErrorCountGet(void)
     return ret;
 }
 
-void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
+void __ISR(_I2C1_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
 {
 
     static uint8_t  *pi2c_buf_ptr;

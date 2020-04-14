@@ -15,10 +15,6 @@ void tempSensorsInitialize(void) {
     MCP9804TempSensorInitialize(POS60_VAN_TEMP_SNS_ADDR, &error_handler.flags.pos60_van_temp);
     MCP9804TempSensorInitialize(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
     
-//    if (nUSB_DETECT_PIN == LOW) {
-//        MCP9804TempSensorInitialize(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
-//    }
-    
 }
 
 // this function gets temperature data for all temperature sensors
@@ -31,9 +27,6 @@ void tempSensorsRetrieveData(void) {
     telemetry.pos60_van.temperature     = MCP9804GetTemperature(POS60_VAN_TEMP_SNS_ADDR, &error_handler.flags.pos60_van_temp);
     telemetry.ambient_temperature       = MCP9804GetTemperature(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
     telemetry.backup_rtc_temperature    = DS3231MRTCGetTemperature(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
-//    if (nUSB_DETECT_PIN == LOW) {
-//        MCP9804GetTemperature(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
-//    }
     
     if (I2C_DSP_EN_PIN == HIGH) {
         telemetry.display_temperature = MCP9804GetTemperature(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);

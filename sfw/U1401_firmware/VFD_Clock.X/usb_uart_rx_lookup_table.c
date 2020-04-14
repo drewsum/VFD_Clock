@@ -324,16 +324,6 @@ usb_uart_command_function_t setWeekdayCommand(char * input_str) {
     
 }
 
-usb_uart_command_function_t telemetryCommand(char * input_str) {
- 
-    terminalTextAttributesReset();
-    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-    printf("Most recent system telemetry:\n\r");
-    
-    printCurrentTelemetry();
-    
-}
-
 usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
  
     terminalTextAttributesReset();
@@ -444,7 +434,7 @@ usb_uart_command_function_t restoreBackupTimeCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Restored RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
     printf("Restored RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
-    printf("Restored RTC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
+    printf("Restored RTCC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
     terminalTextAttributesReset();
     
 }
@@ -651,9 +641,6 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Rail Status?",
             "Prints current state of run and power good signals for all voltage rails",
             railStatusCommand);
-    usbUartAddCommand("Telemetry?",
-            "Prints board level telemetry measurements",
-            telemetryCommand);
     usbUartAddCommand("Live Telemetry",
             "Toggles live updates of board level telemetry",
             liveTelemetryCommand);

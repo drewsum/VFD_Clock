@@ -10,11 +10,16 @@
 // This function executes actions every call of the heartbeat timer, and is used as an easy interface to do some action every second
 void heartbeatServices(void) {
  
-    // Get new temperature sensor data
-    temp_sense_data_request = 1;
+    // gather new I2C telemetry data next loop through main if we're streaming that data somewhere
+    if (live_telemetry_enable) {
     
-    // Get new power monitor data
-    power_monitor_data_request = 1;
+        // Get new temperature sensor data
+        temp_sense_data_request = 1;
+
+        // Get new power monitor data
+        power_monitor_data_request = 1;
+
+    }
     
     if (live_telemetry_enable) live_telemetry_request = 1;
     

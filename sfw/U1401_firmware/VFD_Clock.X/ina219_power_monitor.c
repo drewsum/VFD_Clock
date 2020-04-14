@@ -19,8 +19,8 @@ void INA219Reset(uint8_t device_address, volatile uint8_t *device_error_handler_
     output_data_array[2] = 0x00;
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    
     softwareDelay(0x1FF);
+    
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -40,8 +40,8 @@ void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *devi
     output_data_array[2] = INA219_CONFIG_LSB;
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    
     softwareDelay(0x1FF);
+    
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -63,8 +63,8 @@ void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error
     output_data_array[2] = (uint8_t) (calibration_value & 0xFF);
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    
     softwareDelay(0x1FF);
+    
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
