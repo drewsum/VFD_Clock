@@ -81,7 +81,7 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
     uint8_t flag_array[ERROR_HANDLER_NUM_FLAGS];
     
-} error_handler __attribute__((persistent));
+} error_handler __attribute__((persistent)) __attribute__((coherent));
     
 // this array holds the names of error handler flags
 const char *  error_handler_flag_names[] = {
