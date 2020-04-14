@@ -209,10 +209,10 @@ void main(void) {
         }
             
         // get temperature sensor data
-        // if (temp_sense_data_request) tempSensorsRetrieveData();
+        if (temp_sense_data_request) tempSensorsRetrieveData();
         
         // get power monitor data
-        // if (power_monitor_data_request) powerMonitorsGetData();
+        if (power_monitor_data_request) powerMonitorsGetData();
         
         if (live_telemetry_request && live_telemetry_enable) {
             

@@ -72,7 +72,7 @@ typedef struct
     uint16_t  address;          // Bits <10:1> are the 10 bit address.
                                 // Bits <7:1> are the 7 bit address
                                 // Bit 0 is R/W (1 for read)
-    uint8_t   length;           // the # of bytes in the buffer
+    uint32_t   length;           // the # of bytes in the buffer
     uint8_t   *pbuffer;         // a pointer to a buffer of length bytes
 } I2C_TRANSACTION_REQUEST_BLOCK;
 
@@ -192,7 +192,7 @@ void I2C_Initialize(void);
 
 void I2C_MasterWrite(
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pstatus);
 
@@ -313,7 +313,7 @@ void I2C_MasterWrite(
 
 void I2C_MasterRead(
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pstatus);
 
@@ -401,7 +401,7 @@ void I2C_MasterRead(
 */
 
 void I2C_MasterTRBInsert(
-                                uint8_t count,
+                                uint32_t count,
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list,
                                 I2C_MESSAGE_STATUS *pflag);
 
@@ -437,7 +437,7 @@ void I2C_MasterTRBInsert(
 void I2C_MasterReadTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address);
 
 /**
@@ -472,7 +472,7 @@ void I2C_MasterReadTRBBuild(
 void I2C_MasterWriteTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address);
 
 /**
@@ -542,7 +542,7 @@ void __ISR(_I2C1_BUS_VECTOR, IPL4SRS) I2C_BusCollisionISR( void );
 void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void );
 
 // this function returns if the temp I2C peripheral is currently turned on
-uint8_t getI2COnState(void);
+uint32_t getI2COnState(void);
 
 // this function resets Temp I2C on state, a workaround for errata
 void I2COnStateReset(void);

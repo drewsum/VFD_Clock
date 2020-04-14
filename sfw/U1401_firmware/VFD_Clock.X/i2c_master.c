@@ -33,7 +33,7 @@ typedef union
  */
 volatile __attribute__((coherent)) typedef struct
 {
-    uint8_t                             count;          // a count of trb's in the trb list
+    uint32_t                             count;          // a count of trb's in the trb list
     I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list;     // pointer to the trb list
     I2C_MESSAGE_STATUS            *pTrFlag;       // set with the error of the last trb sent.
                                                         // if all trb's are sent successfully,
@@ -55,9 +55,9 @@ volatile __attribute__((coherent)) typedef struct
     I2C_TR_QUEUE_ENTRY          *pTrTail;       // tail of the queue
     I2C_TR_QUEUE_ENTRY          *pTrHead;       // head of the queue
     I2C_TR_QUEUE_STATUS         trStatus;       // status of the last transaction
-    uint8_t                         i2cDoneFlag;    // flag to indicate the current
+    uint32_t                         i2cDoneFlag;    // flag to indicate the current
                                                     // transaction is done
-    uint8_t                         i2cErrors;      // keeps track of errors
+    uint32_t                         i2cErrors;      // keeps track of errors
 
 
 } I2C_OBJECT ;
@@ -131,10 +131,10 @@ void I2C_Stop(I2C_MESSAGE_STATUS completion_code);
 static I2C_TR_QUEUE_ENTRY                  i2c2_tr_queue[I2C_CONFIG_TR_QUEUE_LENGTH];
 static I2C_OBJECT                          i2c2_object;
 static I2C_MASTER_STATES                   i2c2_state = S_MASTER_IDLE;
-static uint8_t                             i2c2_trb_count = 0;
+static uint32_t                            i2c2_trb_count = 0;
 
 static I2C_TRANSACTION_REQUEST_BLOCK      *p_i2c2_trb_current = NULL;
-static volatile I2C_TR_QUEUE_ENTRY         *p_i2c2_current = NULL;
+static volatile I2C_TR_QUEUE_ENTRY        *p_i2c2_current = NULL;
 
 
 /**
@@ -152,7 +152,7 @@ void I2C_Initialize(void)
 
     disableInterrupt(I2C1_Master_Event);
     setInterruptPriority(I2C1_Master_Event, 4);
-    setInterruptSubpriority(I2C1_Master_Event, 0);
+    setInterruptSubpriority(I2C1_Master_Event, 1);
 
     disableInterrupt(I2C1_Bus_Collision_Event);
     setInterruptPriority(I2C1_Bus_Collision_Event, 4);
@@ -187,9 +187,9 @@ void I2C_Initialize(void)
 }
 
 
-uint8_t I2C_ErrorCountGet(void)
+uint32_t I2C_ErrorCountGet(void)
 {
-    uint8_t ret;
+    uint32_t ret;
 
     ret = i2c2_object.i2cErrors;
     return ret;
@@ -200,8 +200,8 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
 
     static uint8_t  *pi2c_buf_ptr;
     static uint16_t i2c_address         = 0;
-    static uint8_t  i2c_bytes_left      = 0;
-    static uint8_t  i2c_10bit_address_restart = 0;
+    static uint32_t  i2c_bytes_left      = 0;
+    static uint32_t  i2c_10bit_address_restart = 0;
 
     clearInterruptFlag(I2C1_Master_Event);
 
@@ -562,7 +562,7 @@ void I2C_Stop(I2C_MESSAGE_STATUS completion_code)
 
 void I2C_MasterWrite(
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pflag)
 {
@@ -583,7 +583,7 @@ void I2C_MasterWrite(
 
 void I2C_MasterRead(
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pflag)
 {
@@ -627,7 +627,7 @@ inline void I2C_WaitForLastPacketToComplete()
 }
 
 void I2C_MasterTRBInsert(
-                                uint8_t count,
+                                uint32_t count,
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list,
                                 I2C_MESSAGE_STATUS *pflag)
 {
@@ -683,7 +683,7 @@ void I2C_MasterTRBInsert(
 void I2C_MasterReadTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address)
 {
     ptrb->address  = address << 1;
@@ -696,7 +696,7 @@ void I2C_MasterReadTRBBuild(
 void I2C_MasterWriteTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
-                                uint8_t length,
+                                uint32_t length,
                                 uint16_t address)
 {
     ptrb->address = address << 1;
@@ -722,7 +722,7 @@ void __ISR(_I2C1_BUS_VECTOR, IPL4SRS) I2C_BusCollisionISR( void )
 } 
 
 // this function returns if the temp I2C peripheral is currently turned on
-uint8_t getI2COnState(void) {
+uint32_t getI2COnState(void) {
  
     return I2C1CONbits.ON;
     
