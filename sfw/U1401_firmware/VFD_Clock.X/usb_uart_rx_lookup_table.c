@@ -425,20 +425,6 @@ usb_uart_command_function_t backupTimeCommand(char * input_str) {
     
 }
 
-usb_uart_command_function_t restoreBackupTimeCommand(char * input_str) {
- 
-    // Restore time from external RTC into internal RTCC
-    backupRTCRestoreTime();
-    
-    // print out what we just did
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Restored RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
-    printf("Restored RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
-    printf("Restored RTCC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
-    terminalTextAttributesReset();
-    
-}
-
 usb_uart_command_function_t displayLampTestCommand(char * input_str) {
  
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -636,7 +622,7 @@ void usbUartHashTableInitialize(void) {
             "Clears all error handler flags",
             clearErrorsCommand);
     usbUartAddCommand("Time of Flight?",
-            "Returns time of flight for logic board",
+            "Returns time of flight for logic board and display board (if installed)",
             timeOfFlightCommand);
     usbUartAddCommand("Rail Status?",
             "Prints current state of run and power good signals for all voltage rails",
@@ -662,9 +648,6 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Backup Time",
             "Saves internal RTCC time into external backup RTC",
             backupTimeCommand);
-    usbUartAddCommand("Restore Time",
-            "Restores time from external backup RTC into internal RTCC",
-            restoreBackupTimeCommand);
     usbUartAddCommand("Display Lamp Test",
             "Tests all VFD display segments",
             displayLampTestCommand);
