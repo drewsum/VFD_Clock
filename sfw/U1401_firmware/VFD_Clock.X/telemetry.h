@@ -35,7 +35,7 @@ typedef struct telemetry_paramaters_ps_u {
 
 
 // This is the structure that holds all telemetry data in the entire system
-struct telemetry_s {
+volatile __attribute__((coherent)) struct telemetry_s {
     
     telemetry_parameters_ps_t pos12;
     telemetry_parameters_ps_t pos3p3;

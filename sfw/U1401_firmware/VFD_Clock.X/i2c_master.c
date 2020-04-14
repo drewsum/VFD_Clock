@@ -203,7 +203,7 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
     static uint32_t  i2c_bytes_left      = 0;
     static uint32_t  i2c_10bit_address_restart = 0;
 
-    clearInterruptFlag(I2C1_Master_Event);
+    // clearInterruptFlag(I2C1_Master_Event);
 
     // Check first if there was a collision.
     // If we have a Write Collision, reset and go to idle state */
@@ -273,63 +273,6 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
 
             break;
 
-        case S_MASTER_SEND_ADDR_10BIT_LSB:
-
-            if(I2C_ACKNOWLEDGE_STATUS_BIT)
-            {
-                i2c2_object.i2cErrors++;
-                I2C_Stop(I2C_MESSAGE_ADDRESS_NO_ACK);
-            }
-            else
-            {
-                // Remove bit 0 as R/W is never sent here
-                I2C_TRANSMIT_REG = (i2c_address >> 1) & 0x00FF;
-
-                // determine the next state, check R/W
-                if(i2c_address & 0x01)
-                {
-                    // if this is a read we must repeat start
-                    // the bus to perform a read
-                    i2c2_state = S_MASTER_10BIT_RESTART;
-                }
-                else
-                {
-                    // this is a write continue writing data
-                    i2c2_state = S_MASTER_SEND_DATA;
-                }
-            }
-
-            break;
-
-        case S_MASTER_10BIT_RESTART:
-
-            if(I2C_ACKNOWLEDGE_STATUS_BIT)
-            {
-                i2c2_object.i2cErrors++;
-                I2C_Stop(I2C_MESSAGE_ADDRESS_NO_ACK);
-            }
-            else
-            {
-                // ACK Status is good
-                // restart the bus
-                I2C_REPEAT_START_CONDITION_ENABLE_BIT = 1;
-
-                // fudge the address so S_MASTER_SEND_ADDR works correctly
-                // we only do this on a 10-bit address resend
-                i2c_address = 0x00F0 | ((i2c_address >> 8) & 0x0006);
-
-                // set the R/W flag
-                i2c_address |= 0x0001;
-
-                // set the address restart flag so we do not change the address
-                i2c_10bit_address_restart = 1;
-
-                // Resend the address as a read
-                i2c2_state = S_MASTER_SEND_ADDR;
-            }
-
-            break;
-
         case S_MASTER_SEND_ADDR:
 
             /* Start has been sent, send the address byte */
@@ -343,48 +286,23 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
                 i2c_10bit_address_restart prevents the  address to
                 be re-written.
              */
-            if(i2c_10bit_address_restart != 1)
+            
+            // extract the information for this message
+            i2c_address    = p_i2c2_trb_current->address;
+            pi2c_buf_ptr   = p_i2c2_trb_current->pbuffer;
+            i2c_bytes_left = p_i2c2_trb_current->length;
+            
+            // Transmit the address
+            I2C_TRANSMIT_REG = i2c_address;
+            if(i2c_address & 0x01)
             {
-                // extract the information for this message
-                i2c_address    = p_i2c2_trb_current->address;
-                pi2c_buf_ptr   = p_i2c2_trb_current->pbuffer;
-                i2c_bytes_left = p_i2c2_trb_current->length;
-            }
-
-            // check for 10-bit address
-            if(!I2C_7bit && (0x0 != i2c_address))
-            {  
-                if (0 == i2c_10bit_address_restart)
-                {
-                    // we have a 10 bit address
-                    // send bits<9:8>
-                    // mask bit 0 as this is always a write                    
-                    I2C_TRANSMIT_REG = 0xF0 | ((i2c_address >> 8) & 0x0006);
-                    i2c2_state = S_MASTER_SEND_ADDR_10BIT_LSB;
-                }
-                else
-                {
-                    // resending address bits<9:8> to trigger read
-                    I2C_TRANSMIT_REG = i2c_address;
-                    i2c2_state = S_MASTER_ACK_ADDR;
-                    // reset the flag so the next access is ok
-                    i2c_10bit_address_restart = 0;
-                }
+                // Next state is to wait for address to be acked
+                i2c2_state = S_MASTER_ACK_ADDR;
             }
             else
             {
-                // Transmit the address
-                I2C_TRANSMIT_REG = i2c_address;
-                if(i2c_address & 0x01)
-                {
-                    // Next state is to wait for address to be acked
-                    i2c2_state = S_MASTER_ACK_ADDR;
-                }
-                else
-                {
-                    // Next state is transmit
-                    i2c2_state = S_MASTER_SEND_DATA;
-                }
+                // Next state is transmit
+                i2c2_state = S_MASTER_SEND_DATA;
             }
             break;
 
@@ -406,7 +324,7 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
             else
             {
                 // Did we send them all ?
-                if(i2c_bytes_left-- == 0U)
+                if(i2c_bytes_left-- == 0)
                 {
                     // yup sent them all!
 
@@ -507,7 +425,6 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
             I2C_ACKNOWLEDGE_ENABLE_BIT = 1;
             break;
 
-        case S_MASTER_RCV_STOP:                
         case S_MASTER_SEND_STOP:
 
             // Send the stop flag
@@ -523,6 +440,8 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL4SRS) I2C_MASTER_ISR ( void )
             break;
 
     }
+    
+    clearInterruptFlag(I2C1_Master_Event);
 }
 
 void I2C_FunctionComplete(void)
@@ -607,7 +526,7 @@ void I2C_MasterRead(
 inline void I2C_WaitForLastPacketToComplete()
 {
     
-    uint32_t timeout = 0xFFFFFFFF;
+    uint32_t timeout = 0xFFFFFFF;
     while(i2c2_state != S_MASTER_IDLE && timeout != 0)
     {
         // If your code gets stuck here it is because the last packet is never completing
@@ -621,6 +540,8 @@ inline void I2C_WaitForLastPacketToComplete()
      
         error_handler.flags.i2c_stall = 1;
         clearInterruptFlag(I2C1_Master_Event);
+        I2COnStateReset();
+        I2C_Stop(I2C_MESSAGE_FAIL);
         
         
     }
