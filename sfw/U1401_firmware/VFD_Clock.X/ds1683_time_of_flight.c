@@ -19,7 +19,7 @@ void DS1683TimeOfFlightInitialize(uint8_t device_address, volatile uint8_t *devi
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
     
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -47,7 +47,7 @@ double DS1683GetETC(uint8_t device_address, volatile uint8_t *device_error_handl
     I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 4, device_address);
     I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to volts
@@ -81,7 +81,7 @@ uint32_t DS1683GetEventCount(uint8_t device_address, volatile uint8_t *device_er
     I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 2, device_address);
     I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to volts

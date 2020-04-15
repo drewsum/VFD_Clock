@@ -20,7 +20,7 @@ void MCP9804TempSensorInitialize(uint8_t device_address, volatile uint8_t *devic
     length = 3;
     I2C_MasterWrite(output_data_array, length, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     
     // Pass error back to function call
@@ -70,7 +70,7 @@ double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_err
     I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) return MCP9804BytesToFloat(temp);
     else {

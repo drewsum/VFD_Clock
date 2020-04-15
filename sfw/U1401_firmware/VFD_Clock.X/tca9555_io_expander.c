@@ -18,7 +18,7 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
     output_data_array[1] = TCA9555_OUTPUT_PORT_0_DATA;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
@@ -26,7 +26,7 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
     output_data_array[1] = TCA9555_OUTPUT_PORT_1_DATA;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
 
@@ -34,7 +34,7 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
     output_data_array[1] = TCA9555_CONFIG_0_DATA;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
@@ -42,7 +42,7 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
     output_data_array[1] = TCA9555_CONFIG_1_DATA;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
@@ -56,7 +56,7 @@ void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device
     output_data_array[1] = output_word & 0xFF;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
@@ -64,7 +64,7 @@ void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device
     output_data_array[1] = (output_word & 0xFF00) >> 8;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
     
