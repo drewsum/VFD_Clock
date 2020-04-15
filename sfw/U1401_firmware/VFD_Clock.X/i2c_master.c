@@ -82,9 +82,7 @@ volatile __attribute__((coherent)) typedef enum
     S_MASTER_RCV_DATA,
     S_MASTER_RCV_STOP,
     S_MASTER_ACK_RCV_DATA,
-    S_MASTER_NOACK_STOP,
-    S_MASTER_SEND_ADDR_10BIT_LSB,
-    S_MASTER_10BIT_RESTART,
+    S_MASTER_NOACK_STOP
 
 } I2C_MASTER_STATES;
 
@@ -201,9 +199,6 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
     static uint8_t  *pi2c_buf_ptr;
     static uint16_t i2c_address         = 0;
     static uint32_t  i2c_bytes_left      = 0;
-    static uint32_t  i2c_10bit_address_restart = 0;
-
-    // clearInterruptFlag(I2C1_Master_Event);
 
     // Check first if there was a collision.
     // If we have a Write Collision, reset and go to idle state */
@@ -276,16 +271,6 @@ void __ISR(_I2C1_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
         case S_MASTER_SEND_ADDR:
 
             /* Start has been sent, send the address byte */
-
-            /* Note: 
-                On a 10-bit address resend (done only during a 10-bit
-                device read), the original i2c_address was modified in
-                S_MASTER_10BIT_RESTART state. So the check if this is
-                a 10-bit address will fail and a normal 7-bit address
-                is sent with the R/W bit set to read. The flag
-                i2c_10bit_address_restart prevents the  address to
-                be re-written.
-             */
             
             // extract the information for this message
             i2c_address    = p_i2c2_trb_current->address;
