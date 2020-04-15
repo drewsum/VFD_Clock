@@ -332,6 +332,10 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Enabling Live Telemetry\n\r");
         live_telemetry_enable = 1;
+        // Disable pushbuttons
+        disableInterrupt(PORTA_Input_Change_Interrupt);
+        disableInterrupt(PORTB_Input_Change_Interrupt);
+        disableInterrupt(External_Interrupt_2);
     }
     else {
         terminalClearScreen();
@@ -339,6 +343,13 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Disabling Live Telemetry\n\r");
         live_telemetry_enable = 0;
+        // enable pushbuttons
+        clearInterruptFlag(PORTA_Input_Change_Interrupt);
+        clearInterruptFlag(PORTB_Input_Change_Interrupt);
+        clearInterruptFlag(External_Interrupt_2);
+        enableInterrupt(PORTA_Input_Change_Interrupt);
+        enableInterrupt(PORTB_Input_Change_Interrupt);
+        enableInterrupt(External_Interrupt_2);
     }
     
     terminalTextAttributesReset();
