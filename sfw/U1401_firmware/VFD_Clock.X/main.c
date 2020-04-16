@@ -156,6 +156,8 @@ void main(void) {
     printf("    Logic Board Time of Flight Counter Initialized\r\n");
     backupRTCInitialize();
     printf("    Backup Real-Time Clock Initialized\r\n");
+    backupRTCRestoreTime();
+    printf("    Restored time backup from previous sessions\r\n");
     terminalTextAttributesReset();
    
     // Try to find an installed display board and set it up
@@ -165,6 +167,10 @@ void main(void) {
     RESET_LED_PIN = LOW;
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Reset LED Disabled\r\n");
+    
+    BUZZER_ENABLE_PIN = HIGH;
+    softwareDelay(0x1FFFFF);
+    BUZZER_ENABLE_PIN = LOW;
     
     // Print end of boot message, reset terminal for user input
     terminalTextAttributesReset();
@@ -207,15 +213,15 @@ void main(void) {
                 usb_uart_rx_buffer[index] = '\0';
             }
         }
+                    
+            // get temperature sensor data
+            if (temp_sense_data_request) tempSensorsRetrieveData();
+
+            // get power monitor data
+            if (power_monitor_data_request) powerMonitorsGetData();
             
-        // get temperature sensor data
-        // if (temp_sense_data_request) tempSensorsRetrieveData();
-        
-        // get power monitor data
-        // if (power_monitor_data_request) powerMonitorsGetData();
-        
         if (live_telemetry_request && live_telemetry_enable) {
-            
+
             // Clear the terminal
             terminalClearScreen();
             terminalSetCursorHome();

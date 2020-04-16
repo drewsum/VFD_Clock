@@ -41,15 +41,5 @@ void printPGOODStatus(void) {
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    USB Bus Voltage is %s\n\r", !nUSB_DETECT_PIN ? "within tolerance" : "out of tolerance (or USB cable is unplugged)");
     
-    if (VBAT_PGOOD_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Backup Battery is %s, battery is %s\n\r", 
-            VBAT_ENABLE_PIN ? "in circuit" : "out of circuit",
-            VBAT_PGOOD_PIN ? "charged" : "discharged");
-    
-    if (BCKP_ON_PIN) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Power Backup Circuit is %s\n\r", BCKP_ON_PIN ? "in circuit" : "out of circuit");
-    
     terminalTextAttributesReset();
 }

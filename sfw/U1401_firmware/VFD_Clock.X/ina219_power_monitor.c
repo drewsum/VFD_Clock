@@ -19,8 +19,8 @@ void INA219Reset(uint8_t device_address, volatile uint8_t *device_error_handler_
     output_data_array[2] = 0x00;
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
     
-    softwareDelay(0x1FF);
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -40,8 +40,8 @@ void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *devi
     output_data_array[2] = INA219_CONFIG_LSB;
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
     
-    softwareDelay(0x1FF);
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -63,8 +63,8 @@ void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error
     output_data_array[2] = (uint8_t) (calibration_value & 0xFF);
     I2C_MasterWrite(output_data_array, 3, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
     
-    softwareDelay(0x1FF);
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -90,7 +90,7 @@ double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_ha
     I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to volts
@@ -124,7 +124,7 @@ double INA219GetCurrent(uint8_t input_address, volatile uint8_t *device_error_ha
     I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to amps
@@ -158,7 +158,7 @@ double INA219GetPower(uint8_t input_address, volatile uint8_t *device_error_hand
     I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to amps

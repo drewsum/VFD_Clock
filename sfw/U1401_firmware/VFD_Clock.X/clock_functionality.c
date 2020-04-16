@@ -1958,7 +1958,7 @@ void powerPushbuttonHandler(void) {
     
     // If the display is currently on, turn it off
     else if (display_power_toggle_flag) {
-     
+        
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Powering down VFD display:\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);

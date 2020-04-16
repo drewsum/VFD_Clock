@@ -19,8 +19,8 @@ void LTC4151PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *dev
     output_data_array[1] = LTC4151_CONTROL_DATA;
     I2C_MasterWrite(output_data_array, 2, device_address, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
     
-    softwareDelay(0x1FF);
     
     // Pass error back to function call
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
@@ -46,14 +46,14 @@ double LTC4151GetVoltage(uint8_t input_address, volatile uint8_t *device_error_h
     I2C_MasterReadTRBBuild(&readTRBH[1], tempH, 1, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     I2C_TRANSACTION_REQUEST_BLOCK readTRBL[2];
     data_reg_pointer[0] = LTC4151_VIN_D_REG;
     I2C_MasterWriteTRBBuild(&readTRBL[0], data_reg_pointer, 1, input_address);
     I2C_MasterReadTRBBuild(&readTRBL[1], tempL, 1, input_address);
     I2C_MasterTRBInsert(2, readTRBL, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to volts
@@ -87,14 +87,14 @@ double LTC4151GetCurrent(uint8_t input_address, volatile uint8_t *device_error_h
     I2C_MasterReadTRBBuild(&readTRBH[1], tempH, 1, input_address);
     I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     I2C_TRANSACTION_REQUEST_BLOCK readTRBL[2];
     data_reg_pointer[0] = LTC4151_SENSE_B_REG;
     I2C_MasterWriteTRBBuild(&readTRBL[0], data_reg_pointer, 1, input_address);
     I2C_MasterReadTRBBuild(&readTRBL[1], tempL, 1, input_address);
     I2C_MasterTRBInsert(2, readTRBL, &I2C_STATUS);
     while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0x1FF);
+    softwareDelay(0xFF);
     
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to amps

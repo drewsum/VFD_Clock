@@ -80,7 +80,7 @@ void printCurrentTelemetry(void) {
             telemetry.pos1p2_vff.output_power,
             telemetry.pos1p2_vff.temperature);
     
-    // print stuff off for POS1P2_VFF
+    // print stuff off for POS60_VAN
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("\t+60VAN Power Supply:\r\n");
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -88,15 +88,15 @@ void printCurrentTelemetry(void) {
            "\tIin:  %.3fA"
            "\tPin:  %.3fW\r\n"
            "\t\tVout: %.3fV"
-           "\tIout: %.3fA"
-           "\tPout: %.3fW\r\n"
+           "\tIout: %.3fmA"
+           "\tPout: %.3fmW\r\n"
            "\t\tTemp: %.3fC\r\n\r\n",
             telemetry.pos60_van.input_voltage,
             telemetry.pos60_van.input_current,
             telemetry.pos60_van.input_power,
             telemetry.pos60_van.output_voltage,
-            telemetry.pos60_van.output_current,
-            telemetry.pos60_van.output_power,
+            telemetry.pos60_van.output_current * 1000.0,
+            telemetry.pos60_van.output_power * 1000.0,
             telemetry.pos60_van.temperature);
     
     // print stuff off other random data points
