@@ -168,6 +168,10 @@ void main(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Reset LED Disabled\r\n");
     
+    BUZZER_ENABLE_PIN = HIGH;
+    softwareDelay(0x1FFFFF);
+    BUZZER_ENABLE_PIN = LOW;
+    
     // Print end of boot message, reset terminal for user input
     terminalTextAttributesReset();
     terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
