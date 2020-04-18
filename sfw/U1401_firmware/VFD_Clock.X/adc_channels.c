@@ -1,7 +1,4 @@
 
-#warning "remove this shit"
-#include <stdio.h>
-
 #include "adc_channels.h"
 
 #include "32mz_interrupt_control.h"
@@ -49,8 +46,12 @@ void adcChannelsInitialize(void) {
     setInterruptSubpriority(ADC_Data_44, 3);
     
     /* Configure common scan */
+    ADCCSS1 = 0;
+    ADCCSS2 = 0;
     ADCCSS1bits.CSS7 = 1;           // Enable channel 7 for common scan
+    ADCTRG2bits.TRGSRC7 = 0b00011;  // Set AN7 conversion trigger as common scan
     ADCCSS1bits.CSS10 = 1;          // Enable channel 10 for common scan
+    ADCTRG3bits.TRGSRC10 = 0b00011; // Set AN10 conversion trigger as common scan
     ADCCSS2bits.CSS43 = 1;          // Enable Channel 43 for common scan
     ADCCSS2bits.CSS44 = 1;          // Enable Channel 44 for common scan
     
