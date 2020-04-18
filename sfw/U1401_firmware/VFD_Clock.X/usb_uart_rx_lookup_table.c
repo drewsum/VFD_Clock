@@ -329,6 +329,8 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
     terminalTextAttributesReset();
     
     if (live_telemetry_enable == 0) {
+        terminalClearScreen();
+        terminalSetCursorHome();
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Enabling Live Telemetry\n\r");
         live_telemetry_enable = 1;

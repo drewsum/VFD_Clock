@@ -32,9 +32,6 @@ volatile double adc_cal_gain = 1.0;
 // This function initializes the ADC modules
 void ADCInitialize(void);
 
-// This is the ADC end of scan interrupt service routine
-void __ISR(_ADC_EOS_VECTOR, IPL3SRS) ADCEndOfScanISR(void);
-
 // this is the ADC fault interrupt service routine
 void __ISR(_ADC_FAULT_VECTOR, IPL3SRS) ADCFaultISR(void);
 

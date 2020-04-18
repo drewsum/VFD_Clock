@@ -16,12 +16,6 @@
 // This function initializes the ADC modules
 void ADCInitialize(void) {
     
-    // Setup ADC end of scan interrupt
-    disableInterrupt(ADC_End_Of_Scan_Ready);
-    setInterruptPriority(ADC_End_Of_Scan_Ready, 3);
-    setInterruptSubpriority(ADC_End_Of_Scan_Ready, 1);
-    clearInterruptFlag(ADC_End_Of_Scan_Ready);
-    
     // setup ADC fault interrupt
     disableInterrupt(ADC_Fault);
     setInterruptPriority(ADC_Fault, 3);
@@ -66,10 +60,16 @@ void ADCInitialize(void) {
     ADCCON2bits.SAMC = 8;
     ADCCON1bits.SELRES = 3;     // 12 bit result
     
-    ADCCON2bits.EOSIEN = 1;         // Enable interrupt on end of scan
-    
     // Setup used ADC channels
     adcChannelsInitialize();
+    
+    ADCCON2bits.EOSIEN = 1;         // Enable interrupt on end of scan
+    
+    // Setup ADC end of scan interrupt
+    disableInterrupt(ADC_End_Of_Scan_Ready);
+    setInterruptPriority(ADC_End_Of_Scan_Ready, 3);
+    setInterruptSubpriority(ADC_End_Of_Scan_Ready, 1);
+    clearInterruptFlag(ADC_End_Of_Scan_Ready);
     
     /* Configure ADCCMPCONx */
     ADCCMPCON1 = 0; // No digital comparators are used. Setting the ADCCMPCONx
@@ -107,37 +107,18 @@ void ADCInitialize(void) {
     
     while (ADCANCONbits.WKRDY7);    // wait for ADC7 AN to be ready
     
-    
     /* Enable the ADC module */
     ADCCON3bits.DIGEN7 = 1; // Enable ADC7 digital circuits
     
     // Unblock triggers
     ADCCON3bits.TRGSUSP = 0;
     
-    // Enable ADC end of scan interrupt
-    enableInterrupt(ADC_End_Of_Scan_Ready);
-    
     // enable ADC fault interrupt
     ADCCON2bits.REFFLTIEN = 1;
     enableInterrupt(ADC_Fault);
     
-}
-
-
-// This is the ADC end of scan interrupt service routine
-void __ISR(_ADC_EOS_VECTOR, IPL3SRS) ADCEndOfScanISR(void) {
-    
-
-    // Make sure end of scan is complete
-    if (ADCCON2bits.EOSRDY) {
-        
-        // track min and max values on next loop through main();
-        // telemetry_update_flag_adc = 1;
-        
-    }
-
-    // Clear IRQ
-    clearInterruptFlag(ADC_End_Of_Scan_Ready);
+    // Enable ADC end of scan interrupt
+    enableInterrupt(ADC_End_Of_Scan_Ready);
     
 }
 
@@ -155,6 +136,22 @@ void __ISR(_ADC_FAULT_VECTOR, IPL3SRS) ADCFaultISR(void) {
     }
     
     clearInterruptFlag(ADC_Fault);
+    
+}
+
+// This is the ADC end of scan interrupt service routine
+void __ISR(_ADC_EOS_VECTOR, IPL3SRS) ADCEndOfScanISR(void) {
+    
+
+    // Make sure end of scan is complete
+    if (ADCCON2bits.EOSRDY) {
+        
+        
+        
+    }
+
+    // Clear IRQ
+    clearInterruptFlag(ADC_End_Of_Scan_Ready);
     
 }
 

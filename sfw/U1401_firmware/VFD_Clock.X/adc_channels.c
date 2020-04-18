@@ -1,4 +1,7 @@
 
+#warning "remove this shit"
+#include <stdio.h>
+
 #include "adc_channels.h"
 
 #include "32mz_interrupt_control.h"
@@ -28,8 +31,6 @@ void adcChannelsInitialize(void) {
     ADCIMCON3bits.SIGN44 = 0; // unsigned data format
     
     /* Configure interrupt enables */
-    ADCGIRQEN1 = 0;
-    ADCGIRQEN2 = 0;
     ADCGIRQEN1bits.AGIEN7  = 1;     // enable data ready 7 IRQ
     ADCGIRQEN1bits.AGIEN10 = 1;     // enable data ready 10 IRQ
     ADCGIRQEN2bits.AGIEN43 = 1;     // enable data ready 43 IRQ
@@ -48,8 +49,6 @@ void adcChannelsInitialize(void) {
     setInterruptSubpriority(ADC_Data_44, 3);
     
     /* Configure common scan */
-    ADCCSS1 = 0;
-    ADCCSS2 = 0;
     ADCCSS1bits.CSS7 = 1;           // Enable channel 7 for common scan
     ADCCSS1bits.CSS10 = 1;          // Enable channel 10 for common scan
     ADCCSS2bits.CSS43 = 1;          // Enable Channel 43 for common scan
@@ -74,7 +73,7 @@ void __ISR(_ADC_DATA7_VECTOR, IPL1SRS) ADCData7ISR(void) {
  
     // check to see if data is actually ready
     if (ADCDSTAT1bits.ARDY7) {
-     
+        
         // copy ADC conversion result into telemetry
         telemetry.battery_voltage = (double) (ADCDATA7 * ADC_VOLTS_PER_LSB * adc_cal_gain * 2.0);
         
@@ -89,7 +88,7 @@ void __ISR(_ADC_DATA10_VECTOR, IPL1SRS) ADCData10ISR(void) {
  
     // check to see if data is actually ready
     if (ADCDSTAT1bits.ARDY10) {
-     
+        
         // copy ADC conversion result into telemetry
         telemetry.mcu_vdd = (double) (ADCDATA10 * ADC_VOLTS_PER_LSB * adc_cal_gain * 2.0);
         
@@ -104,7 +103,6 @@ void __ISR(_ADC_DATA43_VECTOR, IPL1SRS) ADCData43ISR(void) {
 
     // check to see if data is actually ready
     if (ADCDSTAT2bits.ARDY43) {
-     
         // copy ADC conversion result into telemetry
         telemetry.adc_vref_voltage = (double) ADCDATA43 * ADC_VOLTS_PER_LSB;
         // compensate for errors in the ADC, we know VREF is supposed to be 1.2V
@@ -121,7 +119,7 @@ void __ISR(_ADC_DATA44_VECTOR, IPL1SRS) ADCData44ISR(void) {
     
     // check to see if data is actually ready
     if (ADCDSTAT2bits.ARDY44) {
-     
+
         // copy ADC conversion result into telemetry
         telemetry.mcu_die_temp = (double) ((ADCDATA44 * ADC_VOLTS_PER_LSB * adc_cal_gain) - 0.7) / 0.005;
         

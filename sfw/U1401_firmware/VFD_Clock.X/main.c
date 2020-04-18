@@ -66,8 +66,6 @@ void main(void) {
     printf("Created by Drew Maatman, 2020\r\n");
     terminalTextAttributesReset();
     
-    softwareDelay(0xFFF);
-    
      // Print cause of reset
     if (    reset_cause == Undefined ||
             reset_cause == Primary_Config_Registers_Error ||
@@ -233,17 +231,17 @@ void main(void) {
         if (live_telemetry_request && live_telemetry_enable) {
 
             // Clear the terminal
-            terminalClearScreen();
+            //terminalClearScreen();
             terminalSetCursorHome();
             
             terminalTextAttributesReset();
             terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-            printf("Live system telemetry:\n\r");
+            printf("Live system telemetry:\033[K\n\r\033[K");
             
             printCurrentTelemetry();
             
             terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-            printf("Call 'Live Telemetry' command to disable\n\r");
+            printf("Call 'Live Telemetry' command to disable\033[K\n\r");
             terminalTextAttributesReset();
             
             live_telemetry_request = 0;
