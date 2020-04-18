@@ -103,6 +103,10 @@ void printCurrentTelemetry(void) {
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("\tMiscellaneous Telemetry:\r\n");
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\t\tHost Die Temperature: %.3fC\r\n", telemetry.mcu_die_temp);
+    printf("\t\tHost ADC Reference Voltage: %.3fV\r\n", telemetry.adc_vref_voltage);
+    printf("\t\tHost Supply Voltage: %.3fV\r\n", telemetry.mcu_vdd);
+    printf("\t\tBackup Battery Voltage: %.3fV\r\n", telemetry.battery_voltage);
     printf("\t\tBackup RTC Temperature: %.3fC\r\n", telemetry.backup_rtc_temperature);
     printf("\t\tAmbient Temperature: %.3fC\r\n", telemetry.ambient_temperature);
     printf("\t\tDisplay Temperature: %.3fC\r\n\r\n", telemetry.display_temperature);

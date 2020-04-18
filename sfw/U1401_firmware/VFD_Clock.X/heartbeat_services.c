@@ -18,6 +18,9 @@ void heartbeatServices(void) {
 
         // Get new power monitor data
         power_monitor_data_request = 1;
+        
+        /* Trigger an ADC conversion scan */
+        ADCCON3bits.GSWTRG = 1;
 
     }
     

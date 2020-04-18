@@ -21,6 +21,8 @@
 #include "watchdog_timer.h"
 #include "prefetch.h"
 #include "rtcc.h"
+#include "adc.h"
+#include "adc_channels.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -64,6 +66,8 @@ void main(void) {
     printf("Created by Drew Maatman, 2020\r\n");
     terminalTextAttributesReset();
     
+    softwareDelay(0xFFF);
+    
      // Print cause of reset
     if (    reset_cause == Undefined ||
             reset_cause == Primary_Config_Registers_Error ||
@@ -86,7 +90,11 @@ void main(void) {
     }
     
     // only clear persistent error flags if we've seen a POR... keep old values after other resets
-    if (reset_cause == POR_Reset) clearErrorHandler();
+    if (reset_cause == POR_Reset) {
+        live_telemetry_enable = 0;
+        live_telemetry_request = 0;
+        clearErrorHandler();
+    }
     
     printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
@@ -129,6 +137,12 @@ void main(void) {
     PMDInitialize();
     printf("    Unused Peripheral Modules Disabled\n\r");
     
+    // Enable ADC
+    VBAT_ADC_ENABLE_PIN = HIGH;
+    POS3P3_BCKP_ADC_ENABLE_PIN = HIGH;
+    ADCInitialize();
+    printf("    Analog to Digital Converter Initialized\n\r");
+    
     // Setup the real time clock-calendar
     rtccInitialize();
     if (reset_cause == POR_Reset) rtccClear();
@@ -168,10 +182,6 @@ void main(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Reset LED Disabled\r\n");
     
-    BUZZER_ENABLE_PIN = HIGH;
-    softwareDelay(0x1FFFFF);
-    BUZZER_ENABLE_PIN = LOW;
-    
     // Print end of boot message, reset terminal for user input
     terminalTextAttributesReset();
     terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -183,7 +193,13 @@ void main(void) {
     
     // Main loop, do this stuff forever and ever and never get tired of it
     while (1) {
-               
+        
+        // get temperature sensor data
+        if (temp_sense_data_request) tempSensorsRetrieveData();
+
+        // get power monitor data
+        if (power_monitor_data_request) powerMonitorsGetData();
+        
         // clear the watchdog if we need to
         if (wdt_clear_request) {
             kickTheDog();
@@ -213,13 +229,7 @@ void main(void) {
                 usb_uart_rx_buffer[index] = '\0';
             }
         }
-                    
-            // get temperature sensor data
-            if (temp_sense_data_request) tempSensorsRetrieveData();
-
-            // get power monitor data
-            if (power_monitor_data_request) powerMonitorsGetData();
-            
+        
         if (live_telemetry_request && live_telemetry_enable) {
 
             // Clear the terminal

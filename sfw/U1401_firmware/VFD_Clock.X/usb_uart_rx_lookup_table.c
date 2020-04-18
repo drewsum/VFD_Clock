@@ -165,9 +165,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
         printPrefetchStatus();
     }
-//    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
-//        printADCStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
+        printADCStatus();
+    }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
@@ -193,7 +193,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   WDT\r\n"
                 "   DMT\r\n"
                 "   Prefetch\r\n"
-                // "   ADC\r\n"
+                "   ADC\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -624,6 +624,7 @@ void usbUartHashTableInitialize(void) {
             "       DMT\r\n"
             "       Prefetch\r\n"
             "       RTCC\r\n"
+            "       ADC\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",

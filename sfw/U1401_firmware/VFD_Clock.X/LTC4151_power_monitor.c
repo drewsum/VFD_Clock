@@ -99,7 +99,7 @@ double LTC4151GetCurrent(uint8_t input_address, volatile uint8_t *device_error_h
     if (I2C_STATUS == I2C_MESSAGE_COMPLETE) {
         // convert received data to amps
         uint16_t received_data = (tempH[0] << 4 | tempL[0]) >> 4;
-        return ((double) received_data) * 0.20e-6 / rshunt;
+        return ((double) received_data) * 20e-6 / rshunt;
     }
     else {
         *device_error_handler_flag = 1;
