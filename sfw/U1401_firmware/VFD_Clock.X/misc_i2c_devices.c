@@ -92,5 +92,6 @@ void miscI2CDevicesPrintStatus(void) {
  
     DS1683PrintStatus(LOGIC_TOF_ADDR, &error_handler.flags.logic_tof);
     if (nDISPLAY_DETECT_PIN == LOW) DS1683PrintStatus(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
     
 }

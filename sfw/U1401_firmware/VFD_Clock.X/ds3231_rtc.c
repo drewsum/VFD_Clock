@@ -8,6 +8,7 @@
 
 #include "error_handler.h"
 #include "device_control.h"
+#include "terminal_control.h"
 
 
 
@@ -251,4 +252,108 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     // send return time structure back to function call
     return return_time;
     
+}
+
+// this function prints out status messages for the RTC
+void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
+    
+    // Check to see if we're starting up into a broken I2C state machine
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
+        // log the fault
+        error_handler.flags.i2c_stall = 1;
+        // reset the I2C controller if it's enabled
+        if (getI2COnState) I2COnStateReset();
+    }
+    
+    // read control register
+    uint8_t data_reg_pointer[1];
+    uint8_t readBytes[1];
+    I2C_TRANSACTION_REQUEST_BLOCK readTRB[2];
+    data_reg_pointer[0] = DS3231M_CONTROL_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
+    uint8_t read_nEOSC = (readBytes[0] >> 7) & 0b1;
+    uint8_t read_bbsqw = (readBytes[0] >> 6) & 0b1;
+    uint8_t read_conv = (readBytes[0] >> 5) & 0b1;
+    uint8_t read_rs = (readBytes[0] >> 3) & 0b11;
+    uint8_t read_intcn = (readBytes[0] >> 2) & 0b1;
+    uint8_t read_a2ie = (readBytes[0] >> 1) & 0b1;
+    uint8_t read_a1ie = (readBytes[0] >> 0) & 0b1;
+    
+    // read status register
+    data_reg_pointer[0] = DS3231M_STATUS_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
+    uint8_t read_osf = (readBytes[0] >> 7) & 0b1;
+    uint8_t read_en32khz = (readBytes[0] >> 3) & 0b1;
+    uint8_t read_bsy = (readBytes[0] >> 2) & 0b1;
+    uint8_t read_a2f = (readBytes[0] >> 1) & 0b1;
+    uint8_t read_a1f = (readBytes[0] >> 0) & 0b1;
+    
+    // read aging offset
+    data_reg_pointer[0] = DS3231M_AGING_REG;
+    I2C_MasterWriteTRBBuild(&readTRB[0], data_reg_pointer, 1, device_address);
+    I2C_MasterReadTRBBuild(&readTRB[1], readBytes, 1, device_address);
+    I2C_MasterTRBInsert(2, readTRB, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
+    int8_t read_aging = readBytes[0];
+    
+    // print all this stuff out
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("DS3231 Real Time Clock, located at 0x%02X\r\n", device_address);
+    if (read_nEOSC) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Internal oscillator is %s\r\n", read_nEOSC ? "disabled" : "enabled");
+    if (read_bbsqw) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Battery Backed Square Wave is %s\r\n", read_bbsqw ? "enabled" : "disabled");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Square Wave Output Frequency: ");
+    switch (read_rs) {
+        case 0b00: 
+            printf("1Hz\r\n");
+            break;
+        case 0b01: 
+            printf("1.024kHz\r\n");
+            break;
+        case 0b10: 
+            printf("4.096kHz\r\n");
+            break;
+        case 0b11: 
+            printf("8.192kHz\r\n");
+            break;
+    }
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    nINT/SQW pin is used for is %s\r\n", read_intcn ? "alarm interrupt output" : "square wave output");
+    if (read_a2ie) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm 2 is %s\r\n", read_a2ie ? "enabled" : "disabled");
+    if (read_a1ie) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm 1 is %s\r\n", read_a1ie ? "enabled" : "disabled");
+    if (read_a2f) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm 2 is %s\r\n", read_a2f ? "triggered" : "not triggered");
+    if (read_a1f) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm 1 is %s\r\n", read_a1f ? "triggered" : "not triggered");
+    if (read_osf) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Oscillator fault has %s\r\n", read_osf ? "occurred" : "not occurred");
+    if (read_en32khz) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    32kHz output pin %s\r\n", read_en32khz ? "enabled" : "disabled");
+    if (read_bsy) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Internal temperature sensor ADC is currently %s\r\n", read_bsy ? "converting" : "not converting");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Aging compensation set to %d\r\n", read_aging);
+    terminalTextAttributesReset();
 }
