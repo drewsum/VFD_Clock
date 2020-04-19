@@ -547,6 +547,9 @@ uint32_t getI2COnState(void);
 // this function resets Temp I2C on state, a workaround for errata
 void I2COnStateReset(void);
 
+// this function prints out status about the I2C module used in master mode
+void printI2CMasterStatus(void);
+
 #endif /* _I2C_H */
 
 /* *****************************************************************************

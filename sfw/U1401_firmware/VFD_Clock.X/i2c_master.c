@@ -2,6 +2,8 @@
 
 #include "32mz_interrupt_control.h"
 #include "error_handler.h"
+#include <stdio.h>
+#include "terminal_control.h"
 
 /**
   I2C Driver Queue Status Type
@@ -648,5 +650,109 @@ void I2COnStateReset(void) {
     Nop();
     
     I2C1CONbits.ON = 1;
+    
+}
+
+// this function prints out status about the I2C module used in master mode
+void printI2CMasterStatus(void) {
+    
+    // print I2CXCON bitfield
+    if (I2C1CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    I2C Master Module is %s\n\r", I2C1CONbits.ON ? "enabled" : "disabled");
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    I2C SDA hold time set to %s\n\r", I2C1CONbits.SDAHT ? "300ns" : "100ns");
+    
+    if (I2C1CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    I2C Master Module %s in Idle Mode\n\r", I2C1CONbits.SIDL ? "Disabled" : "Enabled");
+    
+    if (I2C1CONbits.STRICT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Strict address enforcement is %s\n\r", I2C1CONbits.STRICT ? "enabled" : "disabled");
+    
+    if (I2C1CONbits.A10M) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    10 bit addressing is %s\n\r", I2C1CONbits.A10M ? "enabled" : "disabled");
+    
+    if (I2C1CONbits.DISSLW) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Drive strength slew rate control is %s\n\r", I2C1CONbits.DISSLW ? "disabled" : "enabled");
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    I/O logic thresholds set to %s levels\n\r", I2C1CONbits.SMEN ? "SMBus" : "I2C");
+    printf("    Next acknowledge sequence is a data %s\n\r", I2C1CONbits.ACKDT ? "NACK" : "ACL");
+    
+    if (I2C1CONbits.ACKEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Acknowledge sequence is currently %s\n\r", I2C1CONbits.ACKEN ? "Enabled" : "Disabled");
+    
+    if (I2C1CONbits.RCEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Master is currently %s\n\r", I2C1CONbits.RCEN ? "reading" : "writing");
+    
+    if (I2C1CONbits.PEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Stop condition is currently %s\n\r", I2C1CONbits.PEN ? "enabled" : "disabled");
+    
+    if (I2C1CONbits.RSEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Repeated start condition is %s\n\r", I2C1CONbits.RSEN ? "in progress" : "not in progress");
+    
+    if (I2C1CONbits.SEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Start condition is currently %s\n\r", I2C1CONbits.SEN ? "in progress" : "not in progress");
+    
+    // Print out bitfield for I2CXSTAT register
+    if (I2C1STATbits.ACKSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    %s received from slave\n\r", I2C1STATbits.ACKSTAT ? "NACK" : "ACK");
+    
+    if (I2C1STATbits.TRSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Master transmit is currently %s\n\r", I2C1STATbits.TRSTAT ? "in progress" : "not in progress");
+    
+    if (I2C1STATbits.BCL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Bus collision %s\n\r", I2C1STATbits.BCL ? "detected" : "not detected");
+    
+    if (I2C1STATbits.ADD10) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    10 bit address %s\n\r", I2C1STATbits.ADD10 ? "matched" : "not matched");
+    
+    if (I2C1STATbits.IWCOL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Write collision has %s\n\r", I2C1STATbits.IWCOL ? "occurred" : "not occurred");
+    
+    if (I2C1STATbits.I2COV) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Receive overflow has %s\n\r", I2C1STATbits.I2COV ? "occurred" : "not occurred");
+    
+    if (I2C1STATbits.P) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Stop bit was %s\n\r", I2C1STATbits.P ? "detected" : "not detected");
+    
+    if (I2C1STATbits.S) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Start or repeated start %s\n\r", I2C1STATbits.S ? "detected" : "not detected");
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Master is currently %s\n\r", I2C1STATbits.R_W ? "reading" : "writing");
+    
+    if (I2C1STATbits.RBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Receive buffer is currently %s\n\r", I2C1STATbits.RBF ? "full" : "empty");
+    
+    if (I2C1STATbits.TBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Transmit buffer is currently %s\n\r", I2C1STATbits.TBF ? "full" : "empty");
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    I2C Baud Rate Generator is set to 0x%04X\r\n", I2C1BRG);
+    printf("    Current transmit buffer contents: 0x%02X\r\n", I2C1TRN);
+    printf("    Current receive buffer contents: 0x%02X\r\n", I2C1RCV);
+    
+    terminalTextAttributesReset();
     
 }

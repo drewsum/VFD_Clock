@@ -22,6 +22,7 @@
 #include "misc_i2c_devices.h"
 #include "clock_functionality.h"
 #include "vfd_multiplexing.h"
+#include "i2c_master.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -172,6 +173,11 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "ADC") == 0) {
         printADCStatus();
     }
+    else if (strcmp(rx_peripheral_name, "I2C Master") == 0) {    
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("I2C Bus Master Controller Status:\r\n");
+        printI2CMasterStatus();
+    }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
@@ -199,6 +205,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   Prefetch\r\n"
                 "   ADC\r\n"
                 "   ADC Channels\r\n"
+                "   I2C Master\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -633,6 +640,7 @@ void usbUartHashTableInitialize(void) {
             "       RTCC\r\n"
             "       ADC\r\n"
             "       ADC Channels\r\n"
+            "       I2C Master\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
