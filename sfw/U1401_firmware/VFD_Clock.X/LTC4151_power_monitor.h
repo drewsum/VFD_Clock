@@ -53,7 +53,8 @@ double LTC4151GetVoltage(uint8_t input_address, volatile uint8_t *device_error_h
 // this function gets data over I2C from the given I2C address and returns the converted current
 double LTC4151GetCurrent(uint8_t input_address, volatile uint8_t *device_error_handler_flag, double rshunt);
 
-
+// This function prints status for the device at the passed address
+void LTC4151printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
 
 
 
