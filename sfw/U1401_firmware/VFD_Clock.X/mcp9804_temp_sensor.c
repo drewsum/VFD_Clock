@@ -6,8 +6,6 @@
 #include "error_handler.h"
 #include "device_control.h"
 
-// #include "telemetry.h"
-
 // This function initializes a temperature sensor at passed address. Also pass pointer to error handler flag for device
 void MCP9804TempSensorInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag){
     

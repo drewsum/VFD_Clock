@@ -33,8 +33,6 @@
 #define INA219_CURRENT_REG          0x04
 #define INA219_CALIBRATION_REG      0x05
 
-// From equation 6 in the datasheet, and board levl measurements
-#define INA219_CAL_CORRECTION        0.22314049586777
 
 // these macros hold hardcoded config data for the sensors
 // These settings come from section 8.6.2.1 of the INA219 datasheet and set the following:
@@ -69,6 +67,9 @@ double INA219GetCurrent(uint8_t input_address, volatile uint8_t *device_error_ha
 
 // this function gets data over I2C from the given I2C address and returns the converted power
 double INA219GetPower(uint8_t input_address, volatile uint8_t *device_error_handler_flag, double current_lsb);
+
+// this function prints configuration status to stdio for the passed device address
+double INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
 
 
 #endif /* _INA219_POWER_MONITOR_H */

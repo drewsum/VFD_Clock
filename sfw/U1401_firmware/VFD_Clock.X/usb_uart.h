@@ -56,7 +56,7 @@ typedef void (*usb_uart_command_function_t)(char *);
 typedef struct usb_uart_command_s {
   
     char command_name[32];
-    char command_help_message[256];
+    char command_help_message[512];
     usb_uart_command_function_t func;
     UT_hash_handle hh;
     

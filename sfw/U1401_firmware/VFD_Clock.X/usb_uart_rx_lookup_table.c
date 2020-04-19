@@ -178,6 +178,11 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         printf("I2C Bus Master Controller Status:\r\n");
         printI2CMasterStatus();
     }
+    else if (strcmp(rx_peripheral_name, "I2C Slaves") == 0) {    
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("I2C Bus Slave Device Status:\r\n");
+        printPowerMonitorStatus();
+    }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
@@ -206,6 +211,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   ADC\r\n"
                 "   ADC Channels\r\n"
                 "   I2C Master\r\n"
+                "   I2C Slaves\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -641,6 +647,7 @@ void usbUartHashTableInitialize(void) {
             "       ADC\r\n"
             "       ADC Channels\r\n"
             "       I2C Master\r\n"
+            "       I2C Slaves\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",

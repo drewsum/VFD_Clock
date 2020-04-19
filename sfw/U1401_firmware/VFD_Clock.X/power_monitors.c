@@ -1,9 +1,11 @@
 
+#include <stdio.h>
+
 #include "power_monitors.h"
 
 #include "pin_macros.h"
 #include "telemetry.h"
-
+#include "terminal_control.h"
 
 // This function initializes all temperature sensors in the project, if available
 void powerMonitorsInitialize(void) {
@@ -69,4 +71,12 @@ void powerMonitorsGetData(void) {
     
     power_monitor_data_request = 0;
     
+}
+
+// this function prints status for all used power monitors to stdio
+void printPowerMonitorStatus(void) {
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("INA219 Power Monitor, located at 0x%02X\r\n", POS12_MON_ADDR);
+    INA219printStatus(POS12_MON_ADDR, &error_handler.flags.pos12_mon);
+    terminalTextAttributesReset();
 }
