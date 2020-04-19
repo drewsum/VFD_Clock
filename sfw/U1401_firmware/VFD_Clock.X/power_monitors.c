@@ -102,5 +102,4 @@ void printPowerMonitorStatus(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("LTC4151 Power Monitor, located at 0x%02X\r\n", POS60_VAN_OUT_MON_ADDR);
     LTC4151printStatus(POS60_VAN_OUT_MON_ADDR, &error_handler.flags.pos60_van_out_mon);
-    terminalTextAttributesReset();
 }

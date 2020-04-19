@@ -175,7 +175,7 @@ double INA219GetPower(uint8_t input_address, volatile uint8_t *device_error_hand
 }
 
 // this function prints configuration status to stdio for the passed device address
-double INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {
+void INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {
  
     // Check to see if we're starting up into a broken I2C state machine
     if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {

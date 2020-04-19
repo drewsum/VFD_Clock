@@ -179,8 +179,10 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         printI2CMasterStatus();
     }
     else if (strcmp(rx_peripheral_name, "I2C Slaves") == 0) {    
-        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
         printf("I2C Bus Slave Device Status:\r\n");
+        terminalTextAttributesReset();
+        printTemperatureSensorStatus();
         printPowerMonitorStatus();
     }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {

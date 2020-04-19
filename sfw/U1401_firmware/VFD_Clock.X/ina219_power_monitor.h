@@ -69,7 +69,7 @@ double INA219GetCurrent(uint8_t input_address, volatile uint8_t *device_error_ha
 double INA219GetPower(uint8_t input_address, volatile uint8_t *device_error_handler_flag, double current_lsb);
 
 // this function prints configuration status to stdio for the passed device address
-double INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
+void INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag);
 
 
 #endif /* _INA219_POWER_MONITOR_H */
