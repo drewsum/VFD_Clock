@@ -135,8 +135,13 @@ void LTC4151printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     uint8_t read_page_wr = (temp[0] >> 3) & 0b1;
     uint8_t read_stuck_bus = (temp[0] >> 2) & 0b1;
     
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("LTC4151 Power Monitor, located at 0x%02X\r\n", input_address);
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (read_snap_enable) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    ADC Snapshot Mode: %s\r\n", read_snap_enable ? "enabled" : "disabled");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    ADC Snapshot Channel: ");
     switch (read_snap_channel) {
         case 0b00: 
@@ -149,8 +154,14 @@ void LTC4151printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
             printf("ADIN\r\n");
             break;
     }
+    if (read_test_mode) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Device Test Mode: %s\r\n", read_test_mode ? "enabled" : "disabled");
+    if (read_page_wr) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Page Read/Write: %s\r\n", read_page_wr ? "enabled" : "disabled");
+    if (read_stuck_bus) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Stuck I2C Bus Timer: %s\r\n", read_stuck_bus ? "enabled" : "disabled");
     terminalTextAttributesReset();
 }

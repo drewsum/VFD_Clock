@@ -218,6 +218,8 @@ void INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_han
     
     uint16_t read_cal = (temp[0] << 8) | temp[1];
     
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("INA219 Power Monitor, located at 0x%02X\r\n", input_address);
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Bus Voltage Range setting: %s\r\n", read_brng ? "16V" : "32V");
     printf("    PGA Gain Settings: ");

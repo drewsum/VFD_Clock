@@ -184,6 +184,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         terminalTextAttributesReset();
         printTemperatureSensorStatus();
         printPowerMonitorStatus();
+        miscI2CDevicesPrintStatus();
     }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();

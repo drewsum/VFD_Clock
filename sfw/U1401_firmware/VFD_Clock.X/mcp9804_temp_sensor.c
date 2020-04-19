@@ -142,6 +142,8 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     uint8_t read_alert_mod = (temp[1]) & 0b1;
     
     // print read data out
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("MCP9804 Temperature Sensor, located at 0x%02X\r\n", input_address);
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Manufacturer ID: 0x%04X\r\n", read_mfg_id);
     printf("    Device ID: 0x%02X\r\n", read_device_id);
@@ -176,12 +178,24 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
             printf("6.0C\r\n");
             break;
     }
+    if (read_shutdown) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Shutdown mode: %s\r\n", read_shutdown ? "Low Power Mode" : "Continuous Conversion Mode");
+    if (read_crit_lock) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Critical Lock: %s\r\n", read_crit_lock ? "Locked" : "Unlocked");
+    if (read_win_lock) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Window Lock: %s\r\n", read_win_lock ? "Locked" : "Unlocked");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Interrupt Clear: %s\r\n", read_int_clear ? "No Effect" : "Clear IRQ");
+    if (read_alert_stat) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Alert Output Status: %s\r\n", read_alert_stat ? "Alert is asserted" : "Alert is not asserted");
+    if (read_alert_cnt) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Alert Output Control: %s\r\n", read_alert_cnt ? "Enabled" : "Disabled");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Alert Output Select: %s\r\n", 
             read_alert_sel ? 
             "TA > TCRIT only. (TUPPER and TLOWER temperature boundaries are disabled.)" 
