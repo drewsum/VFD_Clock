@@ -12,7 +12,8 @@
 #include "device_control.h"
 #include "cause_of_reset.h"
 #include "rtcc.h"
-// #include "adc.h"
+#include "adc.h"
+#include "adc_channels.h"
 #include "error_handler.h"
 #include "pgood_monitor.h"
 #include "telemetry.h"
@@ -165,6 +166,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
         printPrefetchStatus();
     }
+    else if (strcmp(rx_peripheral_name, "ADC Channels") == 0) {
+        printADCChannelStatus();
+    }
     else if (strcmp(rx_peripheral_name, "ADC") == 0) {
         printADCStatus();
     }
@@ -194,6 +198,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   DMT\r\n"
                 "   Prefetch\r\n"
                 "   ADC\r\n"
+                "   ADC Channels\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -627,6 +632,7 @@ void usbUartHashTableInitialize(void) {
             "       Prefetch\r\n"
             "       RTCC\r\n"
             "       ADC\r\n"
+            "       ADC Channels\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",

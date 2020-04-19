@@ -34,6 +34,10 @@ void __ISR(_ADC_DATA10_VECTOR, IPL1SRS) ADCData10ISR(void);
 void __ISR(_ADC_DATA43_VECTOR, IPL1SRS) ADCData43ISR(void);
 void __ISR(_ADC_DATA44_VECTOR, IPL1SRS) ADCData44ISR(void);
 
+
+// this function prints out ADC channel status
+void printADCChannelStatus(void);
+
 #endif /* _ADC_CHANNELS_H */
 
 /* *****************************************************************************
