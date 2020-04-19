@@ -79,6 +79,8 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
 // This function reads the time from the RTC
 struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
+// this function prints out status messages for the RTC
+void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
 #endif /* _DS3231M_RTC_H */
 

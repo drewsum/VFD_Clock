@@ -10,6 +10,8 @@ pin_macros.h  \
 watchdog_timer.h  \
  prefetch.h  \
 rtcc.h  \
+adc.h  \
+adc_channels.h  \
 gpio_setup.h  \
 uthash.h  \
 usb_uart.h  \

@@ -66,6 +66,9 @@ void displayI2CInitialize(void);
 // This function sets the display board IO expander output
 void displayBoardSetIOExpanderOutput(uint16_t output_data);
 
+// this function prints config status for misc I2C devices
+void miscI2CDevicesPrintStatus(void);
+
 #endif /* _MISC_I2C_DEVICES_H */
 
 /* *****************************************************************************

@@ -42,7 +42,8 @@ void tempSensorsInitialize(void);
 // this function gets temperature data for all temperature sensors
 void tempSensorsRetrieveData(void);
 
-
+// this function prints out the status for all temperature sensors
+void printTemperatureSensorStatus(void);
 
 #endif /* _TEMPERATURE_SENSORS_H */
 

@@ -12,7 +12,8 @@
 #include "device_control.h"
 #include "cause_of_reset.h"
 #include "rtcc.h"
-// #include "adc.h"
+#include "adc.h"
+#include "adc_channels.h"
 #include "error_handler.h"
 #include "pgood_monitor.h"
 #include "telemetry.h"
@@ -21,6 +22,7 @@
 #include "misc_i2c_devices.h"
 #include "clock_functionality.h"
 #include "vfd_multiplexing.h"
+#include "i2c_master.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -165,9 +167,25 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
         printPrefetchStatus();
     }
-//    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
-//        printADCStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "ADC Channels") == 0) {
+        printADCChannelStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
+        printADCStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "I2C Master") == 0) {    
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("I2C Bus Master Controller Status:\r\n");
+        printI2CMasterStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "I2C Slaves") == 0) {    
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+        printf("I2C Bus Slave Device Status:\r\n");
+        terminalTextAttributesReset();
+        printTemperatureSensorStatus();
+        printPowerMonitorStatus();
+        miscI2CDevicesPrintStatus();
+    }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
@@ -193,7 +211,10 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   WDT\r\n"
                 "   DMT\r\n"
                 "   Prefetch\r\n"
-                // "   ADC\r\n"
+                "   ADC\r\n"
+                "   ADC Channels\r\n"
+                "   I2C Master\r\n"
+                "   I2C Slaves\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -329,6 +350,8 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
     terminalTextAttributesReset();
     
     if (live_telemetry_enable == 0) {
+        terminalClearScreen();
+        terminalSetCursorHome();
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Enabling Live Telemetry\n\r");
         live_telemetry_enable = 1;
@@ -588,7 +611,32 @@ usb_uart_command_function_t setAlarmEnableCommand(char * input_str) {
     
 }
 
-
+usb_uart_command_function_t writeDisplayCommand(char * input_str) {
+ 
+    // Snipe out received string
+    char read_string[32];
+    sscanf(input_str, "Write Display: %[^ \n\t\r\f\v]", read_string);
+    
+    clock_display_state = display_lamp_test;
+    dp_anode_request = 0;
+    // have to distinctly copy instead of using strcpy because we want to skip colon characters
+    vfd_display_buffer[0] = read_string[0];
+    vfd_display_buffer[1] = read_string[1];
+    vfd_display_buffer[2] = ' ';
+    vfd_display_buffer[3] = read_string[2];
+    vfd_display_buffer[4] = read_string[3];
+    vfd_display_buffer[5] = ' ';
+    vfd_display_buffer[6] = read_string[4];
+    vfd_display_buffer[7] = read_string[5];
+    read_string[6] = '\0';
+    // Clear display board LEDs since we're not in a valid state in the display state machine
+    displayBoardSetLEDs();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Displaying string %s on VFD display, press up button to exit\r\n", read_string);
+    terminalTextAttributesReset();
+    
+}
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -624,6 +672,10 @@ void usbUartHashTableInitialize(void) {
             "       DMT\r\n"
             "       Prefetch\r\n"
             "       RTCC\r\n"
+            "       ADC\r\n"
+            "       ADC Channels\r\n"
+            "       I2C Master\r\n"
+            "       I2C Slaves\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
@@ -662,6 +714,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Display Lamp Test",
             "Tests all VFD display segments",
             displayLampTestCommand);
+    usbUartAddCommand("Write Display: ",
+            "\b\b<string>: Writes the passed string to the VFD display",
+            writeDisplayCommand);
     usbUartAddCommand("Set Display Brightness: ",
             "\b\b<percent>: Sets the VFD display to the entered brightness as a percentage",
             setDisplayBrightnessCommand);

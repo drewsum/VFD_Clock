@@ -46,6 +46,9 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
 // This function writes output to both output registers
 void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint16_t output_word);
 
+// this function prints out status for the IO expander at passed address
+void TCA9555IOExpanderPrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
 #endif /* _TCA9555_IO_EXPANDER_H */
 
 /* *****************************************************************************

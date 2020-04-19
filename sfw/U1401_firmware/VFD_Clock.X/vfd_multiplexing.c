@@ -375,6 +375,216 @@ void setVFDAnodes(char input_char) {
             ANODE_F_PIN = HIGH;
             ANODE_G_PIN = HIGH;
             break;
+            
+        // these are more supported characters that are not hex digits
+        case 'O':
+            ANODE_A_PIN = HIGH;
+            ANODE_B_PIN = HIGH;
+            ANODE_C_PIN = HIGH;
+            ANODE_D_PIN = HIGH;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            break;
+        
+        case 'o':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = LOW;
+            ANODE_C_PIN = HIGH;
+            ANODE_D_PIN = HIGH;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = LOW;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'H':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = HIGH;
+            ANODE_C_PIN = HIGH;
+            ANODE_D_PIN = LOW;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'L':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = LOW;
+            ANODE_C_PIN = LOW;
+            ANODE_D_PIN = HIGH;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = LOW;
+            break;
+            
+        case 'l':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = LOW;
+            ANODE_C_PIN = LOW;
+            ANODE_D_PIN = LOW;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = LOW;
+            break;
+            
+        case 'c':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = LOW;
+            ANODE_C_PIN = LOW;
+            ANODE_D_PIN = HIGH;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = LOW;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'h':
+            ANODE_A_PIN = LOW;
+            ANODE_B_PIN = LOW;
+            ANODE_C_PIN = HIGH;
+            ANODE_D_PIN = LOW;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'P':
+            ANODE_A_PIN = HIGH;
+            ANODE_B_PIN = HIGH;
+            ANODE_C_PIN = LOW;
+            ANODE_D_PIN = LOW;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'p':
+            ANODE_A_PIN = HIGH;
+            ANODE_B_PIN = HIGH;
+            ANODE_C_PIN = LOW;
+            ANODE_D_PIN = LOW;
+            ANODE_E_PIN = HIGH;
+            ANODE_F_PIN = HIGH;
+            ANODE_G_PIN = HIGH;
+            break;
+            
+        case 'S':
+            ANODE_A_PIN = 1;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 0;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 'a':
+            ANODE_A_PIN = 1;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 0;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 'G':
+            ANODE_A_PIN = 1;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 0;
+            break;
+            
+        case 'J':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 0;
+            ANODE_G_PIN = 0;
+            break;
+            
+        case 'n':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 0;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 0;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 'q':
+            ANODE_A_PIN = 1;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 0;
+            ANODE_E_PIN = 0;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 'r':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 0;
+            ANODE_D_PIN = 0;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 0;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 't':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 0;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 1;
+            break;
+            
+        case 'U':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 0;
+            break;
+            
+        case 'u':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 0;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 1;
+            ANODE_F_PIN = 0;
+            ANODE_G_PIN = 0;
+            break;
+            
+        case 'Y':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 0;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 1;
+            break;
+        
+        case 'y':
+            ANODE_A_PIN = 0;
+            ANODE_B_PIN = 1;
+            ANODE_C_PIN = 1;
+            ANODE_D_PIN = 1;
+            ANODE_E_PIN = 0;
+            ANODE_F_PIN = 1;
+            ANODE_G_PIN = 1;
+            break;    
         
     }
     

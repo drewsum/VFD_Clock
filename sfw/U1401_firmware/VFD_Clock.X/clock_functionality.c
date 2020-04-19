@@ -296,7 +296,7 @@ void updateClockDisplay(void) {
             
         case alarm_enable_state:
             if (clock_set_blank_request == 0) {
-                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
             }
             else {
                 switch (clock_alarm_enable_setting) {
@@ -304,7 +304,7 @@ void updateClockDisplay(void) {
                         sprintf(vfd_display_buffer, "        ");
                         break;
                     case clock_alarm_enable_finished_state:
-                        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                        sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
                         break;
                 }
             }
@@ -313,7 +313,7 @@ void updateClockDisplay(void) {
             
         case set_24hr_mode_state:
             if (clock_set_blank_request == 0) {
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+                sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
             }
             else {
                 switch (clock_24hr_setting) {
@@ -321,7 +321,7 @@ void updateClockDisplay(void) {
                         sprintf(vfd_display_buffer, "        ");
                         break;
                     case clock_24hr_setting_finished_state:
-                        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+                        sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
                         break;
                 }
             }
@@ -1008,7 +1008,7 @@ void upPushbuttonHandler(void) {
         
         if (clock_alarm.alarm_arm == 1) clock_alarm.alarm_arm = 0;
         else clock_alarm.alarm_arm = 1;
-        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+        sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
         
     }
     
@@ -1019,7 +1019,7 @@ void upPushbuttonHandler(void) {
         
         if (am_pm_enable == 1) am_pm_enable = 0;
         else am_pm_enable = 1;
-        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+        sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
         
     }
     
@@ -1398,7 +1398,7 @@ void downPushbuttonHandler(void) {
         
         if (clock_alarm.alarm_arm == 1) clock_alarm.alarm_arm = 0;
         else clock_alarm.alarm_arm = 1;
-        sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+        sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
         
     }
     
@@ -1409,7 +1409,7 @@ void downPushbuttonHandler(void) {
         
         if (am_pm_enable == 1) am_pm_enable = 0;
         else am_pm_enable = 1;
-        sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+        sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
         
     }
     
@@ -1647,7 +1647,7 @@ void leftPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_alarm_enable_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
                 clock_set_blank_request = 0;
                 break;
         }
@@ -1667,7 +1667,7 @@ void leftPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_24hr_setting_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+                sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
                 clock_set_blank_request = 0;
                 break;
         }
@@ -1898,7 +1898,7 @@ void rightPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_alarm_enable_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", clock_alarm.alarm_arm ? 1 : 0);
+                sprintf(vfd_display_buffer, "%s", clock_alarm.alarm_arm ? "tr uE   " : "FA LS E ");
                 clock_set_blank_request = 0;
                 break;
         }
@@ -1918,7 +1918,7 @@ void rightPushbuttonHandler(void) {
                 sprintf(vfd_display_buffer, "        ");
                 break;
             case clock_24hr_setting_finished_state:
-                sprintf(vfd_display_buffer, "       %01u", am_pm_enable ? 0 : 1);
+                sprintf(vfd_display_buffer, "%s", am_pm_enable ? "FA LS E " : "tr uE   ");
                 clock_set_blank_request = 0;
                 break;
         }

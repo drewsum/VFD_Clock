@@ -86,3 +86,13 @@ void displayBoardSetIOExpanderOutput(uint16_t output_data) {
     TCA9555IOExpanderSetOutput(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io, output_data);
     
 }
+
+// this function prints config status for misc I2C devices
+void miscI2CDevicesPrintStatus(void) {
+ 
+    DS1683PrintStatus(LOGIC_TOF_ADDR, &error_handler.flags.logic_tof);
+    if (nDISPLAY_DETECT_PIN == LOW) DS1683PrintStatus(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    if (nDISPLAY_DETECT_PIN == LOW) TCA9555IOExpanderPrintStatus(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io);
+    
+}
