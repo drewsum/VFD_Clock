@@ -611,7 +611,32 @@ usb_uart_command_function_t setAlarmEnableCommand(char * input_str) {
     
 }
 
-
+usb_uart_command_function_t writeDisplayCommand(char * input_str) {
+ 
+    // Snipe out received string
+    char read_string[32];
+    sscanf(input_str, "Write Display: %[^ \n\t\r\f\v]", read_string);
+    
+    clock_display_state = display_lamp_test;
+    dp_anode_request = 0;
+    // have to distinctly copy instead of using strcpy because we want to skip colon characters
+    vfd_display_buffer[0] = read_string[0];
+    vfd_display_buffer[1] = read_string[1];
+    vfd_display_buffer[2] = ' ';
+    vfd_display_buffer[3] = read_string[2];
+    vfd_display_buffer[4] = read_string[3];
+    vfd_display_buffer[5] = ' ';
+    vfd_display_buffer[6] = read_string[4];
+    vfd_display_buffer[7] = read_string[5];
+    read_string[6] = '\0';
+    // Clear display board LEDs since we're not in a valid state in the display state machine
+    displayBoardSetLEDs();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Displaying string %s on VFD display, press up button to exit\r\n", read_string);
+    terminalTextAttributesReset();
+    
+}
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -689,6 +714,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Display Lamp Test",
             "Tests all VFD display segments",
             displayLampTestCommand);
+    usbUartAddCommand("Write Display: ",
+            "\b\b<string>: Writes the passed string to the VFD display",
+            writeDisplayCommand);
     usbUartAddCommand("Set Display Brightness: ",
             "\b\b<percent>: Sets the VFD display to the entered brightness as a percentage",
             setDisplayBrightnessCommand);
