@@ -201,6 +201,23 @@ double INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_h
     uint8_t read_sadc = (temp[1] >> 3) & 0b1111;
     uint8_t read_mode = temp[1] & 0b111;
     
+    // Check to see if we're starting up into a broken I2C state machine
+    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
+        // log the fault
+        error_handler.flags.i2c_stall = 1;
+        // reset the I2C controller if it's enabled
+        if (getI2COnState) I2COnStateReset();
+    }
+    
+    data_reg_pointer[0] = INA219_CALIBRATION_REG;
+    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
+    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
+    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
+    while(I2C_STATUS == I2C_MESSAGE_PENDING);
+    softwareDelay(0xFF);
+    
+    uint16_t read_cal = (temp[0] << 8) | temp[1];
+    
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Bus Voltage Range setting: %s\r\n", read_brng ? "16V" : "32V");
     printf("    PGA Gain Settings: ");
@@ -347,5 +364,6 @@ double INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_h
             printf("Shunt and bus, continuous\r\n");
             break;
     }
+    printf("    Calibration value: 0x%04X\r\n", read_cal);
     terminalTextAttributesReset();
 }
