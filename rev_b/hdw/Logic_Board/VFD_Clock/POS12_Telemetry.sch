@@ -162,6 +162,7 @@ F 1 "MCP9804" H 5510 4990 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 4010 4040 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf" H 4860 4990 50  0001 C CNN
 F 4 "MCP9804T-E/MCCT-ND" H 5110 4540 50  0001 C CNN "Digi-Key PN"
+F 5 "Telemetry" H 5110 4540 50  0001 C CNN "Config"
 	1    5110 4540
 	-1   0    0    -1  
 $EndComp
@@ -267,6 +268,7 @@ F 1 "INA219BxDCN" H 5360 2390 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-8" H 5760 1690 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/ina219.pdf" H 5460 1940 50  0001 C CNN
 F 4 "296-46420-1-ND" H 5110 2040 50  0001 C CNN "Digi-Key PN"
+F 5 "Telemetry" H 5110 2040 50  0001 C CNN "Config"
 	1    5110 2040
 	1    0    0    -1  
 $EndComp

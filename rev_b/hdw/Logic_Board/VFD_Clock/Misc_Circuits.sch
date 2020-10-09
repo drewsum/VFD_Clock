@@ -71,6 +71,7 @@ F 1 "MCP9804" H 8100 2360 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 6600 1410 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf" H 7450 2360 50  0001 C CNN
 F 4 "MCP9804T-E/MCCT-ND" H 7700 1910 50  0001 C CNN "Digi-Key PN"
+F 5 "Telemetry" H 7700 1910 50  0001 C CNN "Config"
 	1    7700 1910
 	-1   0    0    -1  
 $EndComp
@@ -708,4 +709,223 @@ Wire Wire Line
 	2440 5060 2520 5060
 Text Notes 3430 5010 0    50   ~ 0
 Fosc ~~ 2kHz
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F80B4C2
+P 3800 3290
+AR Path="/5A0BC776/5F80B4C2" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F80B4C2" Ref="R1802"  Part="1" 
+F 0 "R1802" H 3740 3290 50  0000 R CNN
+F 1 "10k" V 3800 3290 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3800 3290 50  0001 C CNN
+F 3 "" H 3800 3290 50  0001 C CNN
+F 4 "0603" H 3870 3370 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3870 3290 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3870 3220 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H -290 -2300 50  0001 C CNN "Digi-Key PN"
+	1    3800 3290
+	-1   0    0    1   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F80C21C
+P 4750 3290
+AR Path="/5A0BC776/5F80C21C" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F80C21C" Ref="R1808"  Part="1" 
+F 0 "R1808" H 4690 3290 50  0000 R CNN
+F 1 "10k" V 4750 3290 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4750 3290 50  0001 C CNN
+F 3 "" H 4750 3290 50  0001 C CNN
+F 4 "0603" H 4820 3370 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4820 3290 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 4820 3220 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 660 -2300 50  0001 C CNN "Digi-Key PN"
+	1    4750 3290
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F80CE77
+P 3800 3140
+AR Path="/5E0652BA/5F80CE77" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5F80CE77" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5F80CE77" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9112/5F80CE77" Ref="#PWR?"  Part="1" 
+AR Path="/5E2843EF/5F80CE77" Ref="#PWR01809"  Part="1" 
+F 0 "#PWR01809" H 3800 2990 50  0001 C CNN
+F 1 "+3.3V" H 3800 3280 50  0000 C CNN
+F 2 "" H 3800 3140 50  0001 C CNN
+F 3 "" H 3800 3140 50  0001 C CNN
+	1    3800 3140
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F80D464
+P 4750 3140
+AR Path="/5E0652BA/5F80D464" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5F80D464" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5F80D464" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9112/5F80D464" Ref="#PWR?"  Part="1" 
+AR Path="/5E2843EF/5F80D464" Ref="#PWR01827"  Part="1" 
+F 0 "#PWR01827" H 4750 2990 50  0001 C CNN
+F 1 "+3.3V" H 4750 3280 50  0000 C CNN
+F 2 "" H 4750 3140 50  0001 C CNN
+F 3 "" H 4750 3140 50  0001 C CNN
+	1    4750 3140
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01826
+U 1 1 5F813665
+P 3800 3900
+F 0 "#PWR01826" H 3800 3650 50  0001 C CNN
+F 1 "GND" H 3800 3750 50  0000 C CNN
+F 2 "" H 3800 3900 50  0001 C CNN
+F 3 "" H 3800 3900 50  0001 C CNN
+	1    3800 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 3600 3800 3520
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F813073
+P 3800 3750
+AR Path="/5CB0BC26/5F813073" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5F813073" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5F813073" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F813073" Ref="R1803"  Part="1" 
+F 0 "R1803" V 3700 3750 50  0000 C CNN
+F 1 "10" V 3800 3750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3800 3750 50  0001 C CNN
+F 3 "" H 3800 3750 50  0001 C CNN
+F 4 "0603" V 3900 3750 50  0001 C CNN "display_footprint"
+F 5 "1%" V 4000 3750 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 4100 3750 50  0001 C CNN "Wattage"
+F 7 "YAG3351CT-ND" H 4100 4150 60  0001 C CNN "Digi-Key PN"
+F 8 "Telemetry" H 4060 3750 50  0000 C CNN "Configuration"
+	1    3800 3750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01828
+U 1 1 5F8158E4
+P 4750 3900
+F 0 "#PWR01828" H 4750 3650 50  0001 C CNN
+F 1 "GND" H 4750 3750 50  0000 C CNN
+F 2 "" H 4750 3900 50  0001 C CNN
+F 3 "" H 4750 3900 50  0001 C CNN
+	1    4750 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 3600 4750 3520
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F8158F3
+P 4750 3750
+AR Path="/5CB0BC26/5F8158F3" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5F8158F3" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5F8158F3" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F8158F3" Ref="R1809"  Part="1" 
+F 0 "R1809" V 4650 3750 50  0000 C CNN
+F 1 "10" V 4750 3750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 4750 3750 50  0001 C CNN
+F 3 "" H 4750 3750 50  0001 C CNN
+F 4 "0603" V 4850 3750 50  0001 C CNN "display_footprint"
+F 5 "1%" V 4950 3750 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 5050 3750 50  0001 C CNN "Wattage"
+F 7 "YAG3351CT-ND" H 5050 4150 60  0001 C CNN "Digi-Key PN"
+F 8 "TOF" H 4890 3750 50  0000 C CNN "Configuration"
+	1    4750 3750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F819A4F
+P 5690 3290
+AR Path="/5A0BC776/5F819A4F" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F819A4F" Ref="R1810"  Part="1" 
+F 0 "R1810" H 5630 3290 50  0000 R CNN
+F 1 "10k" V 5690 3290 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5690 3290 50  0001 C CNN
+F 3 "" H 5690 3290 50  0001 C CNN
+F 4 "0603" H 5760 3370 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5760 3290 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 5760 3220 50  0000 L CNN "Wattage"
+F 7 "P10.0KHCT-ND" H 1600 -2300 50  0001 C CNN "Digi-Key PN"
+	1    5690 3290
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F819A59
+P 5690 3140
+AR Path="/5E0652BA/5F819A59" Ref="#PWR?"  Part="1" 
+AR Path="/5E0A0E29/5F819A59" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC084/5F819A59" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F9112/5F819A59" Ref="#PWR?"  Part="1" 
+AR Path="/5E2843EF/5F819A59" Ref="#PWR01829"  Part="1" 
+F 0 "#PWR01829" H 5690 2990 50  0001 C CNN
+F 1 "+3.3V" H 5690 3280 50  0000 C CNN
+F 2 "" H 5690 3140 50  0001 C CNN
+F 3 "" H 5690 3140 50  0001 C CNN
+	1    5690 3140
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01830
+U 1 1 5F819A63
+P 5690 3900
+F 0 "#PWR01830" H 5690 3650 50  0001 C CNN
+F 1 "GND" H 5690 3750 50  0000 C CNN
+F 2 "" H 5690 3900 50  0001 C CNN
+F 3 "" H 5690 3900 50  0001 C CNN
+	1    5690 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5690 3600 5690 3520
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F819A73
+P 5690 3750
+AR Path="/5CB0BC26/5F819A73" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5F819A73" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5F819A73" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/5F819A73" Ref="R1811"  Part="1" 
+F 0 "R1811" V 5590 3750 50  0000 C CNN
+F 1 "10" V 5690 3750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 5690 3750 50  0001 C CNN
+F 3 "" H 5690 3750 50  0001 C CNN
+F 4 "0603" V 5790 3750 50  0001 C CNN "display_footprint"
+F 5 "1%" V 5890 3750 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 5990 3750 50  0001 C CNN "Wattage"
+F 7 "YAG3351CT-ND" H 5990 4150 60  0001 C CNN "Digi-Key PN"
+F 8 "Backup_RTC" H 5990 3750 50  0000 C CNN "Configuration"
+	1    5690 3750
+	-1   0    0    -1  
+$EndComp
+Text GLabel 3880 3520 2    50   UnSpc ~ 0
+Telemetry_Config
+Wire Wire Line
+	3880 3520 3800 3520
+Connection ~ 3800 3520
+Wire Wire Line
+	3800 3520 3800 3440
+Text GLabel 4830 3520 2    50   UnSpc ~ 0
+TOF_Config
+Wire Wire Line
+	4830 3520 4750 3520
+Connection ~ 4750 3520
+Wire Wire Line
+	4750 3520 4750 3440
+Text GLabel 5770 3520 2    50   UnSpc ~ 0
+Backup_RTC_Config
+Wire Wire Line
+	5770 3520 5690 3520
+Connection ~ 5690 3520
+Wire Wire Line
+	5690 3520 5690 3440
 $EndSCHEMATC

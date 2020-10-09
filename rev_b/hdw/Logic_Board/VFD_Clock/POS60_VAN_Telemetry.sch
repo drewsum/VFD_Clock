@@ -71,6 +71,7 @@ F 1 "MCP9804" H 3560 5310 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 2060 4360 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf" H 2910 5310 50  0001 C CNN
 F 4 "MCP9804T-E/MCCT-ND" H 3160 4860 50  0001 C CNN "Digi-Key PN"
+F 5 "Telemetry" H 3160 4860 50  0001 C CNN "Config"
 	1    3160 4860
 	-1   0    0    -1  
 $EndComp
