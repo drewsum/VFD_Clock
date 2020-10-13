@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 17 31
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "VFD Clock"
+Date "2020-10-12"
+Rev "B"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""

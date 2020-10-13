@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 28 31
-Title "Electronic Display Logic Board"
-Date "2018-12-15"
-Rev "A"
-Comp "Marquette University Senior Design 2018/2019 Group E44"
+Title "VFD Clock"
+Date "2020-10-12"
+Rev "B"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""

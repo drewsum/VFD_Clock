@@ -5,33 +5,15 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 6 31
-Title "QI Charger"
-Date "2019-01-03"
-Rev "A"
-Comp ""
+Title "VFD Clock"
+Date "2020-10-12"
+Rev "B"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Custom_Library:L_Custom L?
-U 1 1 5E2AA968
-P 5850 3320
-AR Path="/5CB7718D/5E2AA968" Ref="L?"  Part="1" 
-AR Path="/5E0DC082/5E2AA968" Ref="L601"  Part="1" 
-AR Path="/5E0F9110/5E2AA968" Ref="L?"  Part="1" 
-F 0 "L601" V 5800 3320 50  0000 C CNN
-F 1 "2.2u" V 5925 3320 50  0000 C CNN
-F 2 "Inductors_SMD:L_Vishay_IHLP-2020" H 5850 3320 50  0001 C CNN
-F 3 "" H 5850 3320 50  0001 C CNN
-F 4 "541-1236-1-ND" H 5850 3320 50  0001 C CNN "Digi-Key PN"
-F 5 "IHLP2020" V 6000 3320 50  0000 C CNN "display_footprint"
-F 6 "5.5A" V 6100 3320 50  0000 C CNN "Ampacity"
-F 7 "20%" V 6200 3320 50  0000 C CNN "Tolerance"
-	1    5850 3320
-	0    -1   -1   0   
-$EndComp
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5C26F85F
@@ -374,21 +356,6 @@ Wire Wire Line
 	7590 3320 7590 3410
 Connection ~ 6840 3320
 $Comp
-L Custom_Library:TPS62130 U?
-U 1 1 5E2AA974
-P 4910 4020
-AR Path="/5CB7718D/5E2AA974" Ref="U?"  Part="1" 
-AR Path="/5E0DC082/5E2AA974" Ref="U601"  Part="1" 
-AR Path="/5E0F9110/5E2AA974" Ref="U?"  Part="1" 
-F 0 "U601" H 4910 5270 50  0000 C CNN
-F 1 "TPS62130" H 4910 4020 50  0000 C CNN
-F 2 "Housings_DFN_QFN:QFN-16-1EP_3x3mm_Pitch0.5mm" H 4910 4020 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps62130.pdf" H 4910 4020 50  0001 C CNN
-F 4 "296-37878-1-ND" H 4810 4020 50  0001 C CNN "Digi-Key PN"
-	1    4910 4020
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:PWR_FLAG #FLG?
 U 1 1 5E2AA98A
 P 10150 3240
@@ -680,5 +647,35 @@ F 6 "1/10W" V 9060 3010 50  0001 C CNN "Wattage"
 F 7 "YAG3351CT-ND" H 9060 3410 60  0001 C CNN "Digi-Key PN"
 	1    8760 3010
 	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:TPS62150A U601
+U 1 1 5F88A5F8
+P 4910 4020
+F 0 "U601" H 4910 5270 50  0000 C CNN
+F 1 "TPS62150A" H 4910 4020 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm" H 4910 4020 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316" H 4910 4020 50  0001 C CNN
+F 4 "296-41757-1-ND" H 4810 4020 50  0001 C CNN "Digi-Key PN"
+	1    4910 4020
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:L_Custom L?
+U 1 1 5F88FDD1
+P 5850 3320
+AR Path="/5CB7718D/5F88FDD1" Ref="L?"  Part="1" 
+AR Path="/5E0DC082/5F88FDD1" Ref="L601"  Part="1" 
+AR Path="/5E0F263A/5F88FDD1" Ref="L?"  Part="1" 
+F 0 "L601" V 5800 3320 50  0000 C CNN
+F 1 "2.2uH" V 5925 3320 50  0000 C CNN
+F 2 "Inductors_SMD:L_Vishay_IHLP-1212" H 5850 3320 50  0001 C CNN
+F 3 "" H 5850 3320 50  0001 C CNN
+F 4 "541-1322-1-ND" H 5850 3320 50  0001 C CNN "Digi-Key PN"
+F 5 "IHLP1212" V 6000 3320 50  0000 C CNN "display_footprint"
+F 6 "3A" V 6100 3320 50  0000 C CNN "Ampacity"
+F 7 "20%" V 6200 3320 50  0000 C CNN "Tolerance"
+	1    5850 3320
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
