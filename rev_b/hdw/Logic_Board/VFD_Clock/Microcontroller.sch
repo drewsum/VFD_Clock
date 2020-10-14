@@ -112,30 +112,8 @@ Wire Wire Line
 Connection ~ 5710 6200
 Wire Wire Line
 	5710 6200 5810 6200
-$Comp
-L power:GNDA #PWR01403
-U 1 1 5CB07CEA
-P 4810 6240
-F 0 "#PWR01403" H 4810 5990 50  0001 C CNN
-F 1 "GNDA" H 4810 6090 50  0000 C CNN
-F 2 "" H 4810 6240 50  0001 C CNN
-F 3 "" H 4810 6240 50  0001 C CNN
-	1    4810 6240
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4810 6160 4810 6240
-$Comp
-L power:+3.3VA #PWR01402
-U 1 1 5CB087D9
-P 4810 880
-F 0 "#PWR01402" H 4810 730 50  0001 C CNN
-F 1 "+3.3VA" H 4810 1020 50  0000 C CNN
-F 2 "" H 4810 880 50  0001 C CNN
-F 3 "" H 4810 880 50  0001 C CNN
-	1    4810 880 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4810 880  4810 960 
 Text GLabel 3460 5910 0    40   Input ~ 0
@@ -248,8 +226,6 @@ Text GLabel 3460 2860 0    50   Output ~ 0
 Anode_B
 Text GLabel 3460 3760 0    50   Input ~ 0
 VBAT_ADC
-Text GLabel 3460 3860 0    50   Output ~ 0
-VBAT_ADC_Enable
 Text GLabel 3460 3460 0    40   Input ~ 0
 ~Display_Detect
 Text GLabel 7460 2410 2    50   Input ~ 0
@@ -288,4 +264,41 @@ F 3 "" H 5310 880 50  0001 C CNN
 	1    5310 880 
 	1    0    0    -1  
 $EndComp
+$Comp
+L Custom_Library:+3.3VA_MZ #PWR0105
+U 1 1 5F8B249B
+P 4810 880
+F 0 "#PWR0105" H 4810 730 50  0001 C CNN
+F 1 "+3.3VA_MZ" H 4810 1020 50  0000 C CNN
+F 2 "" H 4810 880 50  0001 C CNN
+F 3 "" H 4810 880 50  0001 C CNN
+	1    4810 880 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:GNDA_MZ #PWR0106
+U 1 1 5F8B35CB
+P 4810 6240
+F 0 "#PWR0106" H 4810 5990 50  0001 C CNN
+F 1 "GNDA_MZ" H 4810 6090 50  0000 C CNN
+F 2 "" H 4810 6240 50  0001 C CNN
+F 3 "" H 4810 6240 50  0001 C CNN
+	1    4810 6240
+	1    0    0    -1  
+$EndComp
+Text GLabel 3460 4060 0    50   UnSpc ~ 0
+Telemetry_Config
+Text GLabel 3460 3960 0    50   UnSpc ~ 0
+TOF_Config
+Text GLabel 3460 3860 0    50   UnSpc ~ 0
+Backup_RTC_Config
+NoConn ~ 3460 1310
+NoConn ~ 7460 1510
+NoConn ~ 7460 2010
+NoConn ~ 7460 2110
+NoConn ~ 7460 3910
+NoConn ~ 7460 4010
+NoConn ~ 7460 4510
+NoConn ~ 7460 4710
+NoConn ~ 7460 5110
 $EndSCHEMATC

@@ -253,64 +253,10 @@ Text GLabel 3600 2250 0    50   BiDi ~ 0
 I2C_SDA
 Text GLabel 3600 2150 0    50   Input ~ 0
 I2C_SCL
-Wire Wire Line
-	3600 2150 3940 2150
-Wire Wire Line
-	3600 2250 4520 2250
-Wire Wire Line
-	3940 2070 3940 2150
-Connection ~ 3940 2150
-Wire Wire Line
-	3940 2150 4940 2150
-Wire Wire Line
-	4520 2070 4520 2250
-Connection ~ 4520 2250
-Wire Wire Line
-	4520 2250 4940 2250
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E0D01CC
-P 4520 1770
-AR Path="/5E0CF7BC/5E0D01CC" Ref="#PWR?"  Part="1" 
-AR Path="/5CC31B3E/5E0D01CC" Ref="#PWR02908"  Part="1" 
-F 0 "#PWR02908" H 4520 1620 50  0001 C CNN
-F 1 "+3.3V" H 4520 1910 50  0000 C CNN
-F 2 "" H 4520 1770 50  0001 C CNN
-F 3 "" H 4520 1770 50  0001 C CNN
-	1    4520 1770
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E0D01D2
-P 3940 1770
-AR Path="/5E0CF7BC/5E0D01D2" Ref="#PWR?"  Part="1" 
-AR Path="/5CC31B3E/5E0D01D2" Ref="#PWR02904"  Part="1" 
-F 0 "#PWR02904" H 3940 1620 50  0001 C CNN
-F 1 "+3.3V" H 3940 1910 50  0000 C CNN
-F 2 "" H 3940 1770 50  0001 C CNN
-F 3 "" H 3940 1770 50  0001 C CNN
-	1    3940 1770
-	-1   0    0    -1  
-$EndComp
 Text GLabel 7080 2250 2    50   Output ~ 0
 I2C_DSP_SDA
 Text GLabel 7080 2150 2    50   Output ~ 0
 I2C_DSP_SCL
-Wire Wire Line
-	7080 2150 6740 2150
-Wire Wire Line
-	7080 2250 6160 2250
-Wire Wire Line
-	6740 2070 6740 2150
-Connection ~ 6740 2150
-Wire Wire Line
-	6740 2150 5740 2150
-Wire Wire Line
-	6160 2070 6160 2250
-Connection ~ 6160 2250
-Wire Wire Line
-	6160 2250 5740 2250
 $Comp
 L power:+5V #PWR02916
 U 1 1 5E0E5BB2
@@ -320,28 +266,6 @@ F 1 "+5V" H 5440 1890 50  0000 C CNN
 F 2 "" H 5440 1750 50  0001 C CNN
 F 3 "" H 5440 1750 50  0001 C CNN
 	1    5440 1750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR02920
-U 1 1 5E0E5F7B
-P 6160 1770
-F 0 "#PWR02920" H 6160 1620 50  0001 C CNN
-F 1 "+5V" H 6160 1910 50  0000 C CNN
-F 2 "" H 6160 1770 50  0001 C CNN
-F 3 "" H 6160 1770 50  0001 C CNN
-	1    6160 1770
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR02924
-U 1 1 5E0E632C
-P 6740 1770
-F 0 "#PWR02924" H 6740 1620 50  0001 C CNN
-F 1 "+5V" H 6740 1910 50  0000 C CNN
-F 2 "" H 6740 1770 50  0001 C CNN
-F 3 "" H 6740 1770 50  0001 C CNN
-	1    6740 1770
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -750,98 +674,6 @@ F 7 "RMCF0603FT1K00CT-ND" H 8360 4240 60  0001 C CNN "Digi-Key PN"
 	1    8060 3840
 	0    1    1    0   
 $EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E3503EA
-P 6160 1920
-AR Path="/5BAAE1F3/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5C1D5CB6/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5CB0BC26/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5E0CF7BC/5E3503EA" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E3503EA" Ref="R2905"  Part="1" 
-F 0 "R2905" H 6100 1920 50  0000 R CNN
-F 1 "10k" V 6160 1920 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 6160 1920 50  0001 C CNN
-F 3 "" H 6160 1920 50  0001 C CNN
-F 4 "0603" H 6350 2000 50  0000 C CNN "display_footprint"
-F 5 "1%" H 6340 1920 50  0000 C CNN "Tolerance"
-F 6 "1/10W" H 6370 1850 50  0000 C CNN "Wattage"
-F 7 "DNP" H 6330 1770 50  0000 C CNN "Digi-Key PN"
-	1    6160 1920
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E3503F4
-P 6740 1920
-AR Path="/5BAAE1F3/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5C1D5CB6/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5CB0BC26/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5E0CF7BC/5E3503F4" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E3503F4" Ref="R2906"  Part="1" 
-F 0 "R2906" H 6680 1920 50  0000 R CNN
-F 1 "10k" V 6740 1920 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 6740 1920 50  0001 C CNN
-F 3 "" H 6740 1920 50  0001 C CNN
-F 4 "0603" H 6930 2000 50  0000 C CNN "display_footprint"
-F 5 "1%" H 6920 1920 50  0000 C CNN "Tolerance"
-F 6 "1/10W" H 6950 1850 50  0000 C CNN "Wattage"
-F 7 "DNP" H 6910 1770 50  0000 C CNN "Digi-Key PN"
-	1    6740 1920
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E356684
-P 3940 1920
-AR Path="/5BAAE1F3/5E356684" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E356684" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5E356684" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5E356684" Ref="R?"  Part="1" 
-AR Path="/5C1D5CB6/5E356684" Ref="R?"  Part="1" 
-AR Path="/5CB0BC26/5E356684" Ref="R?"  Part="1" 
-AR Path="/5E0CF7BC/5E356684" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E356684" Ref="R2901"  Part="1" 
-F 0 "R2901" H 3880 1920 50  0000 R CNN
-F 1 "10k" V 3940 1920 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 3940 1920 50  0001 C CNN
-F 3 "" H 3940 1920 50  0001 C CNN
-F 4 "0603" H 4130 2000 50  0000 C CNN "display_footprint"
-F 5 "1%" H 4120 1920 50  0000 C CNN "Tolerance"
-F 6 "1/10W" H 4150 1850 50  0000 C CNN "Wattage"
-F 7 "DNP" H 4110 1770 50  0000 C CNN "Digi-Key PN"
-	1    3940 1920
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E35668E
-P 4520 1920
-AR Path="/5BAAE1F3/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5C1D5CB6/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5CB0BC26/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5E0CF7BC/5E35668E" Ref="R?"  Part="1" 
-AR Path="/5CC31B3E/5E35668E" Ref="R2902"  Part="1" 
-F 0 "R2902" H 4460 1920 50  0000 R CNN
-F 1 "10k" V 4520 1920 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 4520 1920 50  0001 C CNN
-F 3 "" H 4520 1920 50  0001 C CNN
-F 4 "0603" H 4710 2000 50  0000 C CNN "display_footprint"
-F 5 "1%" H 4700 1920 50  0000 C CNN "Tolerance"
-F 6 "1/10W" H 4730 1850 50  0000 C CNN "Wattage"
-F 7 "DNP" H 4690 1770 50  0000 C CNN "Digi-Key PN"
-	1    4520 1920
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	7910 4340 6620 4340
 Text GLabel 8210 4340 2    40   Input ~ 0
@@ -968,4 +800,12 @@ F 3 "" H 2380 5060 50  0001 C CNN
 	1    2380 5060
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5740 2150 7080 2150
+Wire Wire Line
+	5740 2250 7080 2250
+Wire Wire Line
+	3600 2150 4940 2150
+Wire Wire Line
+	3600 2250 4940 2250
 $EndSCHEMATC
