@@ -294,11 +294,12 @@ Text GLabel 3460 3860 0    50   UnSpc ~ 0
 Backup_RTC_Config
 NoConn ~ 3460 1310
 NoConn ~ 7460 1510
-NoConn ~ 7460 2010
 NoConn ~ 7460 2110
 NoConn ~ 7460 3910
 NoConn ~ 7460 4010
 NoConn ~ 7460 4510
 NoConn ~ 7460 4710
 NoConn ~ 7460 5110
+Text GLabel 7460 2010 2    50   Input ~ 0
+POS5_USB_PGOOD
 $EndSCHEMATC
