@@ -23,6 +23,7 @@ F 1 "DS3231MZ" H 5500 2350 50  0000 R CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5050 1500 50  0001 C CNN
 F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 5050 1400 50  0001 C CNN
 F 4 "DS3231MZ+-ND" H 5050 2000 50  0001 C CNN "Digi-Key PN"
+F 5 "Backup_RTC" H 5050 2000 50  0001 C CNN "Config"
 	1    5050 2000
 	1    0    0    -1  
 $EndComp
@@ -159,6 +160,7 @@ F 1 "CR1616" H 1240 4760 50  0000 L CNN
 F 2 "" V 1140 4820 50  0001 C CNN
 F 3 "~" V 1140 4820 50  0001 C CNN
 F 4 "P034-ND" H 1140 4760 50  0001 C CNN "Digi-Key PN"
+F 5 "Backup_RTC" H 1140 4760 50  0001 C CNN "Config"
 	1    1140 4760
 	1    0    0    -1  
 $EndComp
@@ -173,6 +175,7 @@ F 1 "CR1616_Holder" H 1980 4760 50  0000 L CNN
 F 2 "Custom Footprints Library:BAT_BU1632SM-JJ-GTR" V 1880 4820 50  0001 C CNN
 F 3 "~" V 1880 4820 50  0001 C CNN
 F 4 "BU1632SM-JJ-GCT-ND" H 1880 4760 50  0001 C CNN "Digi-Key PN"
+F 5 "Backup_RTC" H 1880 4760 50  0001 C CNN "Config"
 	1    1880 4760
 	1    0    0    -1  
 $EndComp

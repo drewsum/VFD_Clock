@@ -804,7 +804,7 @@ F 4 "0603" V 3900 3750 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4000 3750 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 4100 3750 50  0001 C CNN "Wattage"
 F 7 "YAG3351CT-ND" H 4100 4150 60  0001 C CNN "Digi-Key PN"
-F 8 "Telemetry" H 4060 3750 50  0000 C CNN "Configuration"
+F 8 "Telemetry" H 4060 3750 50  0000 C CNN "Config"
 	1    3800 3750
 	-1   0    0    -1  
 $EndComp
@@ -837,7 +837,7 @@ F 4 "0603" V 4850 3750 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4950 3750 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 5050 3750 50  0001 C CNN "Wattage"
 F 7 "YAG3351CT-ND" H 5050 4150 60  0001 C CNN "Digi-Key PN"
-F 8 "TOF" H 4890 3750 50  0000 C CNN "Configuration"
+F 8 "TOF" H 4890 3750 50  0000 C CNN "Config"
 	1    4750 3750
 	-1   0    0    -1  
 $EndComp
@@ -903,7 +903,7 @@ F 4 "0603" V 5790 3750 50  0001 C CNN "display_footprint"
 F 5 "1%" V 5890 3750 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 5990 3750 50  0001 C CNN "Wattage"
 F 7 "YAG3351CT-ND" H 5990 4150 60  0001 C CNN "Digi-Key PN"
-F 8 "Backup_RTC" H 5990 3750 50  0000 C CNN "Configuration"
+F 8 "Backup_RTC" H 5990 3750 50  0000 C CNN "Config"
 	1    5690 3750
 	-1   0    0    -1  
 $EndComp
