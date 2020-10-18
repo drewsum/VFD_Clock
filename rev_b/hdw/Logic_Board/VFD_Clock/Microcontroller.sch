@@ -250,9 +250,6 @@ NoConn ~ 7460 2810
 NoConn ~ 7460 2910
 NoConn ~ 7460 3010
 NoConn ~ 7460 5010
-NoConn ~ 7460 5610
-NoConn ~ 7460 5710
-NoConn ~ 7460 5810
 $Comp
 L power:+3.3V #PWR01404
 U 1 1 5F8086E1
@@ -286,11 +283,11 @@ F 3 "" H 4810 6240 50  0001 C CNN
 	1    4810 6240
 	1    0    0    -1  
 $EndComp
-Text GLabel 3460 4060 0    50   UnSpc ~ 0
+Text GLabel 7460 5810 2    50   UnSpc ~ 0
 Telemetry_Config
-Text GLabel 3460 3960 0    50   UnSpc ~ 0
+Text GLabel 7460 5710 2    50   UnSpc ~ 0
 TOF_Config
-Text GLabel 3460 3860 0    50   UnSpc ~ 0
+Text GLabel 7460 5610 2    50   UnSpc ~ 0
 Backup_RTC_Config
 NoConn ~ 3460 1310
 NoConn ~ 7460 1510
@@ -302,4 +299,7 @@ NoConn ~ 7460 4710
 NoConn ~ 7460 5110
 Text GLabel 7460 2010 2    50   Input ~ 0
 POS5_USB_PGOOD
+NoConn ~ 3460 3860
+NoConn ~ 3460 3960
+NoConn ~ 3460 4060
 $EndSCHEMATC
