@@ -13,7 +13,6 @@
 
 // Port A
 #define ANODE_G_PIN             LATAbits.LATA0
-#define USB_ERROR_LED_PIN       LATAbits.LATA1
 #define POS1P2_VFF_RUN_PIN      LATAbits.LATA2
 #define POS1P2_VFF_PGOOD_PIN    PORTAbits.RA3
 #define POS12_PGOOD_PIN         PORTAbits.RA4
@@ -31,9 +30,7 @@
 #define CAP_TOUCH_POWER_PIN     PORTBbits.RB8
 #define nDISPLAY_DETECT_PIN     PORTBbits.RB9
 #define CPU_EXCEPTION_LED_PIN   LATBbits.LATB10
-#define OTHER_ERROR_LED_PIN     LATBbits.LATB11
-#define VBAT_ADC_ENABLE_PIN     LATBbits.LATB13
-#define POS3P3_BCKP_ADC_ENABLE_PIN   LATBbits.LATB14
+#define ERROR_LED_PIN           LATBbits.LATB11
 
 // Port C
 #define COLON_0_PIN             LATCbits.LATC1
@@ -45,11 +42,9 @@
 
 // Port D
 #define POS60_VAN_RUN_PIN       LATDbits.LATD0
-#define BCKP_ON_PIN             PORTDbits.RD3
 #define I2C_EN_PIN              LATDbits.LATD9
 #define POS3P3_PGOOD_PIN        PORTDbits.RD10
-#define nUSB_DETECT_PIN         PORTDbits.RD11
-#define VBAT_ENABLE_PIN         LATDbits.LATD12
+#define POS5_USB_PGOOD          PORTDbits.RD11
 #define VBAT_PGOOD_PIN          PORTDbits.RD13
 
 // Port E
@@ -64,18 +59,17 @@
 #define RESET_LED_PIN           LATFbits.LATF2
 #define POS5_RUN_PIN            LATFbits.LATF4
 #define POS5_PGOOD_PIN          PORTFbits.RF5
-#define ANALOG_ERROR_LED_PIN    LATFbits.LATF8
 #define HEARTBEAT_LED_PIN       LATFbits.LATF12
-#define I2C_ERROR_LED_PIN       LATFbits.LATF13
 
 // Port G
-#define BLE_RESET_PIN           LATGbits.LATG1
 #define GRID_2_PIN              LATGbits.LATG6
 #define GRID_1_PIN              LATGbits.LATG7
 #define GRID_0_PIN              LATGbits.LATG8
 #define ANODE_DP_PIN            LATGbits.LATG9
+#define nBACKUP_RTC_CONFIG_PIN  PORTGbits.RG12
+#define nTOF_CONFIG_PIN         PORTGbits.RG13
+#define TELEMETRY_CONFIG_PIN    PORTGbits.RG14
 #define BUZZER_ENABLE_PIN       LATGbits.LATG15
-
 
 
 #endif /* _PIN_MACROS_H */
