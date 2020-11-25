@@ -1,0 +1,525 @@
+Source:,C:\Users\Drew Maatman\Documents\KiCad Projects\Projects\VFD_Clock\rev_b\hdw\Logic_Board\VFD_Clock\VFD_Clock.sch,,,,,,,,,,,,,,,,,,
+Date:,10/18/2020 13:45,,,,,,,,,,,,,,,,,,
+Tool:,Eeschema (5.1.4)-1,,,,,,,,,,,,,,,,,,
+Generator:,C:\Program Files\KiCad\bin\scripting\plugins/bom_csv_grouped_by_value.py,,,,,,,,,,,,,,,,,,
+Component Count:,400,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Individual Components:,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,Ampacity,Baud_Rate,Config,Data_Length,Dielectric,Digi-Key PN,Flow_Control,Parity,Stop_Bits,Tolerance,Voltage,Wattage,display_footprint
+,,BT1901,CR1616,Device:Battery_Cell,,~,,,Backup_RTC,,,P034-ND,,,,,,,
+,,BT1902,CR1616_Holder,Device:Battery_Cell,Custom Footprints Library:BAT_BU1632SM-JJ-GTR,~,,,Backup_RTC,,,BU1632SM-JJ-GCT-ND,,,,,,,
+,,BZ1801,CST-931RP-A,Device:Buzzer,Buzzer_Beeper:MagneticBuzzer_CUI_CST-931RP-A,~,,,,,,102-1461-ND,,,,,,,
+,,C201,10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7842-1-ND,,,,,50V,,603
+,,C202,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+,,C205,100uF,Custom_Library:CP_Tant_Custom,Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow,,,,,,,718-1102-1-ND,,,,10%,16V,,7343
+,,C301,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C302,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C303,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C401,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-7031-1-ND,,,,,25V,,1206
+,,C402,10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,1276-1921-1-ND,,,,,50V,,603
+,,C403,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C404,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C405,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C406,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C503,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C504,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C505,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C601,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-7031-1-ND,,,,,25V,,1206
+,,C602,10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,1276-1921-1-ND,,,,,50V,,603
+,,C603,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C604,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C605,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C606,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C703,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C704,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C705,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C801,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-7031-1-ND,,,,,25V,,1206
+,,C802,10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,1276-1921-1-ND,,,,,50V,,603
+,,C803,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C804,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C805,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C806,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,490-8020-1-ND,,,,,50V,,603
+,,C903,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C904,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C905,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1001,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-1804-6-ND,,,,,25V,,1206
+,,C1002,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-1804-6-ND,,,,,25V,,1206
+,,C1003,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1004,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1005,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1007,6.8nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1084-1-ND,,,,,50V,,603
+,,C1009,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+,,C1010,1uF,Custom_Library:C_Custom,Capacitors_SMD:C_1210,,,,,,X7R,490-1857-1-ND,,,,,100V,,1210
+,,C1011,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,490-4789-1-ND,,,,,100V,,805
+,,C1102,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1104,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1105,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,490-4789-1-ND,,,,,100V,,805
+,,C1301,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1302,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1303,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1501,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C1502,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C1601,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1602,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1603,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1604,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1605,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1606,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1607,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1608,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1609,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1610,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1615,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1616,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1617,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1622,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1623,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1624,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1701,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1702,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1703,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1704,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C1801,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1803,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1804,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C1901,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+,,C1902,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-10474-1-ND,,,,,10V,,603
+,,C1903,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+,,C1904,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+,,C1905,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+,,C2001,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2003,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2004,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2006,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2101,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2102,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+,,C2103,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2104,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2105,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2106,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2107,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2108,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2201,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2202,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+,,C2203,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2204,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+,,C2301,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-14372-1-ND,,,,,10V,,603
+,,C2302,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-14372-1-ND,,,,,10V,,603
+,,C2303,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-14372-1-ND,,,,,10V,,603
+,,C2304,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2401,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2402,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2403,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2404,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2405,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2972-1-ND,,,,,10V,,805
+,,C2406,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2407,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2408,47pF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,NP0,478-1171-1-ND,,,,,50V,,603
+,,C2409,47pF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,NP0,478-1171-1-ND,,,,,50V,,603
+,,C2410,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2601,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C2602,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C2603,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-6856-1-ND,,,,,50V,,603
+,,C2801,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2802,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2807,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2808,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2901,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2904,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2905,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+,,C2906,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1344-1-ND,,,,,50V,,603
+,,C2907,4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+,,C3001,0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,490-4789-1-ND,,,,,100V,,805
+,,C3002,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,C3003,22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+,,D201,24V,Device:D_TVS_ALT,Diodes_SMD:D_SMA,~,,,,,,SMAJ24CALFCT-ND,,,,,,,
+,,D1001,MBR0580,Diode:MBR0580,Diode_SMD:D_SOD-123,http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf,,,,,,MBR0580S1-7DICT-ND,,,,,,,
+,,D1301,BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,,,,,,,,
+,,D1302,BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,,,,,,,,
+,,D1303,BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,,,,,,,,
+,,D1801,MBR0580,Diode:MBR0580,Diode_SMD:D_SOD-123,http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf,,,,,,MBR0580S1-7DICT-ND,,,,,,,
+,,D2001,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2003,Red,Device:LED,LEDs:LED_0603,~,,,,,,160-1447-1-ND,,,,,,,
+,,D2004,Red,Device:LED,LEDs:LED_0603,~,,,,,,160-1447-1-ND,,,,,,,
+,,D2006,Red,Device:LED,LEDs:LED_0603,~,,,,,,160-1447-1-ND,,,,,,,
+,,D2101,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2102,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2103,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2104,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2105,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2106,Red,Device:LED,LEDs:LED_0603,~,,,,,,160-1447-1-ND,,,,,,,
+,,D2107,Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+,,D2301,BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,,,,,,,,
+,,D2401,Yellow,Device:LED,LEDs:LED_0603,~,,,,,,160-1448-1-ND,,,,,,,
+,,DOC301,0x40,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC302,0x18,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC502,0x19,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC503,0x42,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC702,0x1A,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC703,0x44,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC902,0x1B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC903,0x46,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC1101,0x1C,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC1103,0x6A,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC1801,0x1D,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC1901,0x68,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC2301,0x6B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC2401,COM_Port_Settings,Custom_Library:COM_Port_Settings,,,,115200 bps,,8 bit,,,None,None,1,,,,
+,,DOC2601,0x48,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,DOC2602,0x1E,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+,,H3101,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3102,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3103,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3104,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3105,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3106,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3107,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,H3108,MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+,,J201,+12V IN,Connector:Barrel_Jack_Switch,Connectors:BARREL_JACK,~,,,,,,,,,,,,,
+,,J1501,PICKIT4,Connector_Generic:Conn_01x08,Custom Footprints Library:PICKIT4_Header,~,,,,,,,,,,,,,
+,,J1801,I2C,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+,,J1802,USB UART,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+,,J2401,USB_B_Mini,Connector:USB_B_Mini,Connectors:USB_Mini-B,~,,,,,,732-2109-1-ND,,,,,,,
+,,J3001,DSP_IO_Connector,Connector_Generic:Conn_02x30_Odd_Even,Custom Footprints Library:ERF8-030-07.0-S-DV-K-TR,~,,,,,,ERF8-030-07.0-S-DV-K-TR,,,,,,,
+,,L401,2.2uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-1212,,3A,,,,,541-1322-1-ND,,,,20%,,,IHLP1212
+,,L601,2.2uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-1212,,3A,,,,,541-1322-1-ND,,,,20%,,,IHLP1212
+,,L801,2.2uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-1212,,3A,,,,,541-1322-1-ND,,,,20%,,,IHLP1212
+,,L1001,100uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-4040,,2.25A,,,,,541-1310-1-ND,,,,20%,,,IHLP-4040
+,,L1601,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,L1602,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,L1701,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,L1702,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,L2401,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,L2402,600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+,,MK3101,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3102,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3103,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3104,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3105,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3106,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3107,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3108,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3109,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3110,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3111,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3112,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3113,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3114,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3115,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3116,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3117,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3118,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3119,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3120,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3121,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3122,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3123,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3124,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3125,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3126,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3127,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3128,Standoff,Custom_Library:Standoff,,,,,,,,1772-1220-ND,,,,,,,
+,,MK3129,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3130,Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+,,MK3131,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,MK3132,Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+,,N201,+12V 1A Power Supply,Mechanical:Housing,,~,,,,,,993-1335-ND,,,,,,,
+,,Q1001,IRFL214TRPBF,Device:Q_NMOS_GDS,Package_TO_SOT_SMD:SOT-223-3_TabPin2,,,,,,,IRFL214PBFCT-ND,,,,,,,
+,,Q1301,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+,,Q1302,ZXMS6004FFTA,Custom_Library:ZXMS6004FFTA,Package_TO_SOT_SMD:SOT-23,https://www.diodes.com/assets/Datasheets/ZXMS6004FF.pdf,,,,,,ZXMS6004FFCT-ND,,,,,,,
+,,Q1304,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+,,Q1306,ZXMS6004FFTA,Custom_Library:ZXMS6004FFTA,Package_TO_SOT_SMD:SOT-23,https://www.diodes.com/assets/Datasheets/ZXMS6004FF.pdf,,,,,,ZXMS6004FFCT-ND,,,,,,,
+,,Q1307,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+,,Q1308,ZXMS6004FFTA,Custom_Library:ZXMS6004FFTA,Package_TO_SOT_SMD:SOT-23,https://www.diodes.com/assets/Datasheets/ZXMS6004FF.pdf,,,,,,ZXMS6004FFCT-ND,,,,,,,
+,,Q1501,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+,,Q1801,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+,,R201,51.1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT51K1TR-ND,,,,1%,,1/10W,603
+,,R202,1.15k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K15CT-ND,,,,1%,,1/10W,603
+,,R203,5.11k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,CR0603-FX-5111ELFCT-ND,,,,1%,,1/10W,603
+,,R204,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R205,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R206,0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+,,R207,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R208,13k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-13.0KHRCT-ND,,,,1%,,1/10W,603
+,,R209,5.11k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,CR0603-FX-5111ELFCT-ND,,,,1%,,1/10W,603
+,,R210,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R211,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R404,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R405,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R406,0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+,,R407,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R408,562k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-562KHRCT-ND,,,,1%,,1/10W,603
+,,R409,180k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,749-1763-1-ND,,,,1%,,1/10W,603
+,,R604,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R605,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R606,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R607,0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+,,R608,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R609,10.5k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-10.5KHRCT-ND,,,,1%,,1/10W,603
+,,R610,2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-2.00KHRCT-ND,,,,1%,,1/10W,603
+,,R804,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R805,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R806,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R807,0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+,,R808,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R809,75k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,749-1681-1-ND,,,,1%,,1/10W,603
+,,R810,150k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A129714CT-ND,,,,1%,,1/10W,603
+,,R1003,196k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P196KHCT-ND,,,,1%,,1/10W,603
+,,R1004,237,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-237HCT-ND,,,,1%,,1/10W,603
+,,R1005,1.2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P1.20KHCT-ND,,,,1%,,1/10W,603
+,,R1007,17.4k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-17.4KHRCT-ND,,,,1%,,1/10W,603
+,,R1008,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1009,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1010,22k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A129704CT-ND,,,,1%,,1/10W,603
+,,R1011,2,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-2.00SCT-ND,,,,1%,,1/16W,603
+,,R1012,0.16,Custom_Library:R_Custom,Resistors_SMD:R_0805,,,,,,,P.16BJCT-ND,,,,1%,,1/4W,805
+,,R1013,10k,Custom_Library:R_Custom,Resistors_SMD:R_2512,,,,,,,541-10.0KAFCT-ND,,,,1%,,1W,2512
+,,R1014,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1015,1,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,RHM1220CT-ND,,,,1%,,1W,612
+,,R1016,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1017,36.5k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT36K5CT-ND,,,,1%,,1/10W,603
+,,R1018,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R1301,100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106047CT-ND,,,,1%,,1/10W,603
+,,R1302,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1306,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1310,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1501,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1502,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R1503,100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106047CT-ND,,,,1%,,1/10W,603
+,,R1504,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R1505,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R1701,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R1702,100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106047CT-ND,,,,1%,,1/10W,603
+,,R1703,100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106047CT-ND,,,,1%,,1/10W,603
+,,R1704,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R1705,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R1801,1.07M,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-1.07MHCT-ND,,,,1%,,1/10W,603
+,,R1802,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1803,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,Telemetry,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1804,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1805,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1806,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1807,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1808,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1809,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,TOF,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1810,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P10.0KHCT-ND,,,,1%,,1/10W,603
+,,R1811,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,Backup_RTC,,,YAG3351CT-ND,,,,1%,,1/10W,603
+,,R1901,1.07M,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1M07CT-ND,,,,1%,,1/10W,603
+,,R1902,220k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT220KCT-ND,,,,1%,,1/10W,603
+,,R1903,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R2001,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2003,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2005,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2006,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2007,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2008,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2010,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2012,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2101,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2102,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2103,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2104,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2105,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2106,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2107,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2201,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2202,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2203,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2401,100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106046CT-ND,,,,1%,,1/10W,603
+,,R2402,487k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-487KHRCT-ND,,,,1%,,1/10W,603
+,,R2403,6.04k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT6K04CT-ND,,,,1%,,1/10W,603
+,,R2404,40.2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-40.2KHRCT-ND,,,,1%,,1/10W,603
+,,R2405,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2406,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R2407,0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+,,R2408,27,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT27R0CT-ND,,,,1%,,1/10W,603
+,,R2409,27,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT27R0CT-ND,,,,1%,,1/10W,603
+,,R2410,10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+,,R2411,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2412,100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106046CT-ND,,,,1%,,1/10W,603
+,,R2413,100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106046CT-ND,,,,1%,,1/10W,603
+,,R2414,100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106046CT-ND,,,,1%,,1/10W,603
+,,R2801,10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R2802,10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R2803,10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R2804,10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R2903,10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT10K0CT-ND,,,,1%,,1/10W,603
+,,R2904,10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+,,R2907,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2908,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2909,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2910,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2911,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,R2912,1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+,,RN2801,10k,Device:R_Pack08,Resistors_SMD:R_Array_Convex_8x0602,~,,,,,,Y1103CT-ND,,,,,,,
+,,RN2802,10k,Device:R_Pack08,Resistors_SMD:R_Array_Convex_8x0602,~,,,,,,Y1103CT-ND,,,,,,,
+,,RN2901,10k,Device:R_Pack08,Resistors_SMD:R_Array_Convex_8x0602,~,,,,,,Y1103CT-ND,,,,,,,
+,,RN2902,10k,Device:R_Pack08,Resistors_SMD:R_Array_Convex_8x0602,~,,,,,,Y1103CT-ND,,,,,,,
+,,SW1501,MRST,Switch:SW_Push,Buttons_Switches_THT:SW_PUSH_6mm,,,,,,,,,,,,,,
+,,U201,TPS26600RHFT,Custom_Library:TPS26600RHFT,Housings_DFN_QFN:QFN-24-1EP_4x5mm_Pitch0.5mm,http://www.ti.com/lit/ds/symlink/tps2660.pdf,,,,,,296-45478-1-ND,,,,,,,
+,,U301,INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+,,U302,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U401,TPS62150A,Custom_Library:TPS62150A,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316,,,,,,296-41757-1-ND,,,,,,,
+,,U502,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U503,INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+,,U601,TPS62150A,Custom_Library:TPS62150A,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316,,,,,,296-41757-1-ND,,,,,,,
+,,U702,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U703,INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+,,U801,TPS62150A,Custom_Library:TPS62150A,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316,,,,,,296-41757-1-ND,,,,,,,
+,,U902,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U903,INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+,,U1001,TLV6700,Custom_Library:TLV6700,Package_TO_SOT_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+,,U1002,LT3757,Custom_Library:LT3757,Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm,http://www.analog.com/media/en/technical-documentation/data-sheets/3757Afe.pdf,,,,,,LT3757EDD#PBF-ND,,,,,,,
+,,U1101,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U1103,LTC4151DD,Custom_Library:LTC4151DD,Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm,https://www.analog.com/media/en/technical-documentation/data-sheets/4151ff.pdf,,,,,,LTC4151CDD#PBF-ND,,,,,,,
+,,U1401,PIC32MZ2048EFG100_IPT,Custom_Library:PIC32MZ2048EFG100_IPT,Housings_QFP:TQFP-100_14x14mm_Pitch0.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf,,,ALL,,,PIC32MZ2048EFG100-I/PT-ND,,,,,,,
+,,U1801,LTC6900,Custom_Library:LTC6900,Package_TO_SOT_SMD:SOT-23-5,https://www.analog.com/media/en/technical-documentation/data-sheets/6900fa.pdf,,,,,,LTC6900CS5#TRMPBFCT-ND,,,,,,,
+,,U1802,74LVC1G97,Custom_Library:74LVC1G97_Power_AND,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U1803,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U1901,DS3231MZ,Timer_RTC:DS3231MZ,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf,,,Backup_RTC,,,DS3231MZ+-ND,,,,,,,
+,,U1902,TLV6700,Custom_Library:TLV6700,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+,,U2001,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2003,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2004,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2006,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2101,TPS71533,Regulator_Linear:TPS71533__SC70,Package_TO_SOT_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/ds/symlink/tps715.pdf,,,,,,296-12008-1-ND,,,,,,,
+,,U2102,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2103,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2104,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2105,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2106,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2107,74LVC1G97,Custom_Library:74LVC1G97_Power_BUF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2108,74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2201,TCA9803,Interface:TCA9803,Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm,http://www.ti.com/lit/ds/symlink/tca9803.pdf,,,,,,296-47829-1-ND,,,,,,,
+,,U2301,DS1683,Custom_Library:DS1683,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,https://datasheets.maximintegrated.com/en/ds/DS1683.pdf,,,TOF,,,DS1683S+-ND,,,,,,,
+,,U2401,TLV6700,Custom_Library:TLV6700,Package_TO_SOT_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+,,U2402,FT234XD,Custom_Library:FT234XD,Housings_DFN_QFN:DFN-12-1EP_3x3mm_Pitch0.45mm,http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT234XD.pdf,,,,,,768-1178-1-ND,,,,,,,
+,,U2403,TPD3S014DBVR,Custom_Library:TPD3S014DBVR,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tpd3s014.pdf,,,,,,296-38835-1-ND,,,,,,,
+,,U2404,SN74AVC2T245,Custom_Library:SN74AVC2T245,Housings_DFN_QFN:UQFN-10_1.4x1.8mm_Pitch0.4mm,https://www.ti.com/lit/ds/symlink/sn74avc2t245.pdf?ts=1602203798059&ref_url=https%253A%252F%252Fwww.google.com%252F,,,,,,296-23684-1-ND,,,,,,,
+,,U2601,INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+,,U2602,MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+,,U2801,74VHC541,Custom_Library:74VHC541,Package_DFN_QFN:WQFN-20-1EP_2.5x4.5mm_P0.5mm_EP1x2.9mm,https://assets.nexperia.com/documents/data-sheet/74VHC_VHCT541.pdf,,,,,,1727-7068-1-ND,,,,,,,
+,,U2802,74VHC541,Custom_Library:74VHC541,Package_DFN_QFN:WQFN-20-1EP_2.5x4.5mm_P0.5mm_EP1x2.9mm,https://assets.nexperia.com/documents/data-sheet/74VHC_VHCT541.pdf,,,,,,1727-7068-1-ND,,,,,,,
+,,U2803,74LVC1G97,Custom_Library:74LVC1G97_Power_BUF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2804,74LVC1G97,Custom_Library:74LVC1G97_Power_BUF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+,,U2901,TCA9803,Interface:TCA9803,Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm,http://www.ti.com/lit/ds/symlink/tca9803.pdf,,,,,,296-47829-1-ND,,,,,,,
+,,U2902,74VHC541,Custom_Library:74VHC541,Package_DFN_QFN:WQFN-20-1EP_2.5x4.5mm_P0.5mm_EP1x2.9mm,https://assets.nexperia.com/documents/data-sheet/74VHC_VHCT541.pdf,,,,,,1727-7068-1-ND,,,,,,,
+,,X1701,ASE-8.000MHz,Oscillator:ASE-xxxMHz,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,http://www.abracon.com/Oscillators/ASV.pdf,,,,,,"	535-9558-1-ND",,,,,,,
+,,X1702,ECS-327KE,Custom_Library:ECS-327KE,Custom Footprints Library:ECS-327KE,,,,,,,XC1751CT-ND,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Collated Components:,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,Ampacity,Baud_Rate,Config,Data_Length,Dielectric,Digi-Key PN,Flow_Control,Parity,Stop_Bits,Tolerance,Voltage,Wattage,display_footprint
+1,1,BT1901,CR1616,Device:Battery_Cell,,~,,,Backup_RTC,,,P034-ND,,,,,,,
+2,1,BT1902,CR1616_Holder,Device:Battery_Cell,Custom Footprints Library:BAT_BU1632SM-JJ-GTR,~,,,Backup_RTC,,,BU1632SM-JJ-GCT-ND,,,,,,,
+3,1,BZ1801,CST-931RP-A,Device:Buzzer,Buzzer_Beeper:MagneticBuzzer_CUI_CST-931RP-A,~,,,,,,102-1461-ND,,,,,,,
+4,4,"C201, C402, C602, C802",10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7842-1-ND,,,,,50V,,603
+5,74,"C202, C301, C302, C303, C403, C406, C503, C504, C505, C603, C606, C703, C704, C705, C803, C806, C903, C904, C905, C1003, C1004, C1005, C1102, C1104, C1501, C1502, C1601, C1602, C1608, C1609, C1615, C1616, C1622, C1623, C1701, C1702, C1801, C1803, C1804, C1901, C1903, C1904, C1905, C2001, C2003, C2004, C2006, C2101, C2103, C2104, C2105, C2106, C2107, C2108, C2201, C2203, C2304, C2401, C2402, C2403, C2404, C2406, C2407, C2410, C2601, C2602, C2603, C2801, C2802, C2807, C2808, C2901, C2904, C2906",0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+6,1,C205,100uF,Custom_Library:CP_Tant_Custom,Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow,,,,,,,718-1102-1-ND,,,,10%,16V,,7343
+7,5,"C401, C601, C801, C1001, C1002",10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-7031-1-ND,,,,,25V,,1206
+8,8,"C404, C405, C604, C605, C804, C805, C3002, C3003",22uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-3148-1-ND,,,,,10V,,1206
+9,1,C1007,6.8nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,311-1084-1-ND,,,,,50V,,603
+10,6,"C1009, C2202, C2204, C2405, C2905, C2907",4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+11,1,C1010,1uF,Custom_Library:C_Custom,Capacitors_SMD:C_1210,,,,,,X7R,490-1857-1-ND,,,,,100V,,1210
+12,3,"C1011, C1105, C3001",0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,490-4789-1-ND,,,,,100V,,805
+13,18,"C1301, C1302, C1303, C1603, C1604, C1605, C1606, C1607, C1610, C1617, C1624, C1703, C1704, C1902, C2102, C2301, C2302, C2303",10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-12538-1-ND,,,,,6.3V,,603
+14,2,"C2408, C2409",47pF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,NP0,478-1171-1-ND,,,,,50V,,603
+15,1,D201,24V,Device:D_TVS_ALT,Diodes_SMD:D_SMA,~,,,,,,SMAJ24CALFCT-ND,,,,,,,
+16,2,"D1001, D1801",MBR0580,Diode:MBR0580,Diode_SMD:D_SOD-123,http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf,,,,,,MBR0580S1-7DICT-ND,,,,,,,
+17,4,"D1301, D1302, D1303, D2301",BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,,,,,,,,
+18,7,"D2001, D2101, D2102, D2103, D2104, D2105, D2107",Green,Device:LED,LEDs:LED_0603,~,,,,,,160-1446-1-ND,,,,,,,
+19,4,"D2003, D2004, D2006, D2106",Red,Device:LED,LEDs:LED_0603,~,,,,,,160-1447-1-ND,,,,,,,
+20,1,D2401,Yellow,Device:LED,LEDs:LED_0603,~,,,,,,160-1448-1-ND,,,,,,,
+21,1,DOC301,0x40,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+22,1,DOC302,0x18,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+23,1,DOC502,0x19,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+24,1,DOC503,0x42,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+25,1,DOC702,0x1A,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+26,1,DOC703,0x44,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+27,1,DOC902,0x1B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+28,1,DOC903,0x46,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+29,1,DOC1101,0x1C,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+30,1,DOC1103,0x6A,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+31,1,DOC1801,0x1D,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+32,1,DOC1901,0x68,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+33,1,DOC2301,0x6B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+34,1,DOC2401,COM_Port_Settings,Custom_Library:COM_Port_Settings,,,,115200 bps,,8 bit,,,None,None,1,,,,
+35,1,DOC2601,0x48,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+36,1,DOC2602,0x1E,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+37,8,"H3101, H3102, H3103, H3104, H3105, H3106, H3107, H3108",MountingHole,Mechanical:MountingHole,MountingHole:MountingHole_3mm,~,,,,,,,,,,,,,
+38,1,J201,+12V IN,Connector:Barrel_Jack_Switch,Connectors:BARREL_JACK,~,,,,,,,,,,,,,
+39,1,J1501,PICKIT4,Connector_Generic:Conn_01x08,Custom Footprints Library:PICKIT4_Header,~,,,,,,,,,,,,,
+40,1,J1801,I2C,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+41,1,J1802,USB UART,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+42,1,J2401,USB_B_Mini,Connector:USB_B_Mini,Connectors:USB_Mini-B,~,,,,,,732-2109-1-ND,,,,,,,
+43,1,J3001,DSP_IO_Connector,Connector_Generic:Conn_02x30_Odd_Even,Custom Footprints Library:ERF8-030-07.0-S-DV-K-TR,~,,,,,,ERF8-030-07.0-S-DV-K-TR,,,,,,,
+44,3,"L401, L601, L801",2.2uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-1212,,3A,,,,,541-1322-1-ND,,,,20%,,,IHLP1212
+45,1,L1001,100uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-4040,,2.25A,,,,,541-1310-1-ND,,,,20%,,,IHLP-4040
+46,6,"L1601, L1602, L1701, L1702, L2401, L2402",600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-2389-1-ND,,,,,,,
+47,24,"MK3101, MK3102, MK3103, MK3104, MK3105, MK3106, MK3109, MK3110, MK3111, MK3112, MK3113, MK3114, MK3117, MK3118, MK3119, MK3120, MK3121, MK3122, MK3125, MK3126, MK3127, MK3128, MK3129, MK3130",Standoff,Custom_Library:Standoff,,,,,,,,1772-2080-ND,,,,,,,
+48,8,"MK3107, MK3108, MK3115, MK3116, MK3123, MK3124, MK3131, MK3132",Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+49,1,N201,+12V 1A Power Supply,Mechanical:Housing,,~,,,,,,993-1335-ND,,,,,,,
+50,1,Q1001,IRFL214TRPBF,Device:Q_NMOS_GDS,Package_TO_SOT_SMD:SOT-223-3_TabPin2,,,,,,,IRFL214PBFCT-ND,,,,,,,
+51,5,"Q1301, Q1304, Q1307, Q1501, Q1801",BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+52,3,"Q1302, Q1306, Q1308",ZXMS6004FFTA,Custom_Library:ZXMS6004FFTA,Package_TO_SOT_SMD:SOT-23,https://www.diodes.com/assets/Datasheets/ZXMS6004FF.pdf,,,,,,ZXMS6004FFCT-ND,,,,,,,
+53,1,R201,51.1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT51K1TR-ND,,,,1%,,1/10W,603
+54,1,R202,1.15k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K15CT-ND,,,,1%,,1/10W,603
+55,2,"R203, R209",5.11k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,CR0603-FX-5111ELFCT-ND,,,,1%,,1/10W,603
+56,34,"R204, R207, R211, R404, R604, R605, R804, R805, R1008, R1009, R1302, R1306, R1310, R1502, R1504, R1701, R1704, R1705, R1802, R1804, R1805, R1807, R1808, R1810, R1903, R2001, R2005, R2006, R2010, R2201, R2202, R2203, R2405, R2903",10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+57,17,"R205, R210, R405, R407, R606, R608, R806, R808, R1014, R1016, R1501, R1803, R1806, R1809, R1811, R2406, R2410",10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,Telemetry,,,YAG2321CT-ND,,,,1%,,1/10W,603
+58,5,"R206, R406, R607, R807, R2407",0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+59,1,R208,13k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-13.0KHRCT-ND,,,,1%,,1/10W,603
+60,1,R408,562k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-562KHRCT-ND,,,,1%,,1/10W,603
+61,1,R409,180k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,749-1763-1-ND,,,,1%,,1/10W,603
+62,1,R609,10.5k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-10.5KHRCT-ND,,,,1%,,1/10W,603
+63,1,R610,2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-2.00KHRCT-ND,,,,1%,,1/10W,603
+64,1,R809,75k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,749-1681-1-ND,,,,1%,,1/10W,603
+65,1,R810,150k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A129714CT-ND,,,,1%,,1/10W,603
+66,1,R1003,196k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P196KHCT-ND,,,,1%,,1/10W,603
+67,1,R1004,237,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-237HCT-ND,,,,1%,,1/10W,603
+68,1,R1005,1.2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,P1.20KHCT-ND,,,,1%,,1/10W,603
+69,1,R1007,17.4k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-17.4KHRCT-ND,,,,1%,,1/10W,603
+70,1,R1010,22k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A129704CT-ND,,,,1%,,1/10W,603
+71,1,R1011,2,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-2.00SCT-ND,,,,1%,,1/16W,603
+72,1,R1012,0.16,Custom_Library:R_Custom,Resistors_SMD:R_0805,,,,,,,P.16BJCT-ND,,,,1%,,1/4W,805
+73,1,R1013,10k,Custom_Library:R_Custom,Resistors_SMD:R_2512,,,,,,,541-10.0KAFCT-ND,,,,1%,,1W,2512
+74,1,R1015,1,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,RHM1220CT-ND,,,,1%,,1W,612
+75,1,R1017,36.5k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT36K5CT-ND,,,,1%,,1/10W,603
+76,20,"R1018, R1505, R2003, R2007, R2008, R2012, R2101, R2102, R2103, R2104, R2105, R2106, R2107, R2411, R2907, R2908, R2909, R2910, R2911, R2912",1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K00CT-ND,,,,1%,,1/10W,603
+77,4,"R1301, R1503, R1702, R1703",100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106047CT-ND,,,,1%,,1/10W,603
+78,2,"R1801, R1901",1.07M,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,541-1.07MHCT-ND,,,,1%,,1/10W,603
+79,1,R1902,220k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT220KCT-ND,,,,1%,,1/10W,603
+80,4,"R2401, R2412, R2413, R2414",100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,A106046CT-ND,,,,1%,,1/10W,603
+81,1,R2402,487k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-487KHRCT-ND,,,,1%,,1/10W,603
+82,1,R2403,6.04k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT6K04CT-ND,,,,1%,,1/10W,603
+83,1,R2404,40.2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-40.2KHRCT-ND,,,,1%,,1/10W,603
+84,2,"R2408, R2409",27,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT27R0CT-ND,,,,1%,,1/10W,603
+85,5,"R2801, R2802, R2803, R2804, R2904",10K,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RHM10KADCT-ND,,,,1%,,1/10W,603
+86,4,"RN2801, RN2802, RN2901, RN2902",10k,Device:R_Pack08,Resistors_SMD:R_Array_Convex_8x0602,~,,,,,,Y1103CT-ND,,,,,,,
+87,1,SW1501,MRST,Switch:SW_Push,Buttons_Switches_THT:SW_PUSH_6mm,,,,,,,,,,,,,,
+88,1,U201,TPS26600RHFT,Custom_Library:TPS26600RHFT,Housings_DFN_QFN:QFN-24-1EP_4x5mm_Pitch0.5mm,http://www.ti.com/lit/ds/symlink/tps2660.pdf,,,,,,296-45478-1-ND,,,,,,,
+89,5,"U301, U503, U703, U903, U2601",INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+90,7,"U302, U502, U702, U902, U1101, U1803, U2602",MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+91,3,"U401, U601, U801",TPS62150A,Custom_Library:TPS62150A,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316,,,,,,296-41757-1-ND,,,,,,,
+92,2,"U1001, U2401",TLV6700,Custom_Library:TLV6700,Package_TO_SOT_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+93,1,U1002,LT3757,Custom_Library:LT3757,Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm,http://www.analog.com/media/en/technical-documentation/data-sheets/3757Afe.pdf,,,,,,LT3757EDD#PBF-ND,,,,,,,
+94,1,U1103,LTC4151DD,Custom_Library:LTC4151DD,Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm,https://www.analog.com/media/en/technical-documentation/data-sheets/4151ff.pdf,,,,,,LTC4151CDD#PBF-ND,,,,,,,
+95,1,U1401,PIC32MZ2048EFG100_IPT,Custom_Library:PIC32MZ2048EFG100_IPT,Housings_QFP:TQFP-100_14x14mm_Pitch0.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf,,,ALL,,,PIC32MZ2048EFG100-I/PT-ND,,,,,,,
+96,1,U1801,LTC6900,Custom_Library:LTC6900,Package_TO_SOT_SMD:SOT-23-5,https://www.analog.com/media/en/technical-documentation/data-sheets/6900fa.pdf,,,,,,LTC6900CS5#TRMPBFCT-ND,,,,,,,
+97,1,U1802,74LVC1G97,Custom_Library:74LVC1G97_Power_AND,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+98,1,U1901,DS3231MZ,Timer_RTC:DS3231MZ,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf,,,Backup_RTC,,,DS3231MZ+-ND,,,,,,,
+99,1,U1902,TLV6700,Custom_Library:TLV6700,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+100,10,"U2001, U2003, U2004, U2006, U2102, U2103, U2104, U2105, U2106, U2108",74LVC1G97,Custom_Library:74LVC1G97_Power_NOT,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+101,1,U2101,TPS71533,Regulator_Linear:TPS71533__SC70,Package_TO_SOT_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/ds/symlink/tps715.pdf,,,,,,296-12008-1-ND,,,,,,,
+102,3,"U2107, U2803, U2804",74LVC1G97,Custom_Library:74LVC1G97_Power_BUF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf,,,,,,296-15582-1-ND,,,,,,,
+103,2,"U2201, U2901",TCA9803,Interface:TCA9803,Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm,http://www.ti.com/lit/ds/symlink/tca9803.pdf,,,,,,296-47829-1-ND,,,,,,,
+104,1,U2301,DS1683,Custom_Library:DS1683,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,https://datasheets.maximintegrated.com/en/ds/DS1683.pdf,,,TOF,,,DS1683S+-ND,,,,,,,
+105,1,U2402,FT234XD,Custom_Library:FT234XD,Housings_DFN_QFN:DFN-12-1EP_3x3mm_Pitch0.45mm,http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT234XD.pdf,,,,,,768-1178-1-ND,,,,,,,
+106,1,U2403,TPD3S014DBVR,Custom_Library:TPD3S014DBVR,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tpd3s014.pdf,,,,,,296-38835-1-ND,,,,,,,
+107,1,U2404,SN74AVC2T245,Custom_Library:SN74AVC2T245,Housings_DFN_QFN:UQFN-10_1.4x1.8mm_Pitch0.4mm,https://www.ti.com/lit/ds/symlink/sn74avc2t245.pdf?ts=1602203798059&ref_url=https%253A%252F%252Fwww.google.com%252F,,,,,,296-23684-1-ND,,,,,,,
+108,3,"U2801, U2802, U2902",74VHC541,Custom_Library:74VHC541,Package_DFN_QFN:WQFN-20-1EP_2.5x4.5mm_P0.5mm_EP1x2.9mm,https://assets.nexperia.com/documents/data-sheet/74VHC_VHCT541.pdf,,,,,,1727-7068-1-ND,,,,,,,
+109,1,X1701,ASE-8.000MHz,Oscillator:ASE-xxxMHz,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,http://www.abracon.com/Oscillators/ASV.pdf,,,,,,"	535-9558-1-ND",,,,,,,
+110,1,X1702,ECS-327KE,Custom_Library:ECS-327KE,Custom Footprints Library:ECS-327KE,,,,,,,XC1751CT-ND,,,,,,,
