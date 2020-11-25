@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  31
+#define ERROR_HANDLER_NUM_FLAGS  29
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -51,22 +51,20 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
         uint8_t DMT_timeout;
         uint8_t vdd_brownout;
         uint8_t i2c_bus_collision;
-        uint8_t spi_master;
-        uint8_t platform_tof;
         uint8_t pos12_temp;
         uint8_t pos3p3_temp;
-        uint8_t pos20_temp;
         uint8_t usb_temp;
         uint8_t amb_temp;
         uint8_t pos12_mon;
         uint8_t pos3p3_mon;
-        uint8_t pos20_mon;
+        uint8_t pos5_mon;
+        uint8_t pos1p2_vff_mon;
+        uint8_t pos60_van_mon;
         uint8_t usb_mon;
         uint8_t backup_rtc;
         uint8_t ADC_configuration_error;
         uint8_t ADC_reference_fault;
-        uint8_t meter_backlight_led_driver;
-        uint8_t pos20_pgood;
+        uint8_t dsply_io;
         
     } flags;
 
@@ -92,22 +90,20 @@ const char *  error_handler_flag_names[] = {
     "Deadman Timer Timeout",
     "MCU VDD Brownout",
     "I2C Bus Collision",
-    "SPI Master",
-    "Platform Time of Flight Counter",
     "+12V Temperature Sensor",
     "+3.3V Temperature Sensor",
-    "+20V Temperature Sensor",
     "USB Port Temperature Sensor",
     "Ambient Temperature Sensor",
     "+12V Power Monitor",
     "+3.3V Power Monitor",
-    "+20V Power Monitor",
+    "+5V Power Monitor",
+    "+1.2VFF Power Monitor",
+    "+60VAN Power Monitor",
     "USB Power Monitor",
     "Backup RTC",
     "ADC Configuration Error",
     "ADC Reference Fault",
-    "Meter Backlight",
-    "+20V PGOOD"
+    "Display GPIO Expander"
     
 };
 

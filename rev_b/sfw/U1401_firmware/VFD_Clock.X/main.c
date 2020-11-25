@@ -62,6 +62,7 @@ void main(void) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("VFD Clock\r\n");
+#warning "add firmware version, board rev"
     printf("Created by Drew Maatman, 2020\r\n");
     terminalTextAttributesReset();
     
@@ -152,12 +153,13 @@ void main(void) {
     watchdogTimerInitialize();
     printf("    Watchdog Timer Initialized\n\r");
     
-    // setup temperature sensor I2C bus
+    // setup master I2C bus
     I2C_EN_PIN = HIGH;
     softwareDelay(0xFFFFF);
-    I2C_Initialize();
+    I2CMaster_Initialize();
     printf("    I2C Bus Controller Initialized\r\n");
     softwareDelay(0xFFFFF);
+#warning "fix this"
     tempSensorsInitialize();
     printf("    Temperature Sensors Initialized\r\n");
     powerMonitorsInitialize();

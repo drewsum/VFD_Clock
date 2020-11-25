@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 #include "error_handler.h"
 #include "device_control.h"
