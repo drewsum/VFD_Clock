@@ -15,7 +15,6 @@ void PMDInitialize(void) {
 
     // Unlock PMD
     PMDUnlock();
-    
     /* If a PMD bit is set (1), that peripheral is disabled */
     
     // Enable ADC
@@ -39,19 +38,18 @@ void PMDInitialize(void) {
     PMD3bits.IC8MD = 1;
     PMD3bits.IC9MD = 1;
     
-    // Disable all output compare modules
+    // Disable all output compare modules, except module 5
     PMD3bits.OC1MD = 1;
     PMD3bits.OC2MD = 1;
     PMD3bits.OC3MD = 1;
     PMD3bits.OC4MD = 1;
-    PMD3bits.OC5MD = 1;
+    PMD3bits.OC5MD = 0;
     PMD3bits.OC6MD = 1;
     PMD3bits.OC7MD = 1;
     PMD3bits.OC8MD = 1;
     PMD3bits.OC9MD = 1;
     
-    // Enable all hardware timers
-    // TO-DO: This may change
+    // Enable all unused hardware timers
     PMD4bits.T1MD = 0;
     PMD4bits.T2MD = 0;
     PMD4bits.T3MD = 0;
@@ -62,33 +60,39 @@ void PMDInitialize(void) {
     PMD4bits.T8MD = 0;
     PMD4bits.T9MD = 0;
     
-    // Enable UART3, disable others
-    PMD5bits.U1MD = 1;
+    // Enable UART1, disable others
+    PMD5bits.U1MD = 0;
     PMD5bits.U2MD = 1;
-    PMD5bits.U3MD = 0;
+    PMD5bits.U3MD = 1;
     PMD5bits.U4MD = 1;
     PMD5bits.U5MD = 1;
     PMD5bits.U6MD = 1;
     
-    // Disable all SPI Modules
+    // Disable all SPI Modules except SPI3 (used for DACs)
     PMD5bits.SPI1MD = 1;
     PMD5bits.SPI2MD = 1;
-    PMD5bits.SPI3MD = 1;                
+    PMD5bits.SPI3MD = 0;                
     PMD5bits.SPI4MD = 1;
+    #ifdef SPI5CON
     PMD5bits.SPI5MD = 1;
+    #endif
+    #ifdef SPI6CON
     PMD5bits.SPI6MD = 1;
+    #endif
     
-    // Disable all I2C Modules except for I2C1
-    PMD5bits.I2C1MD = 0;
+    // Disable all I2C Modules besides I2C5
+    PMD5bits.I2C1MD = 1;
+    #ifdef I2C2CON
     PMD5bits.I2C2MD = 1;
+    #endif
     PMD5bits.I2C3MD = 1;
     PMD5bits.I2C4MD = 1;
-    PMD5bits.I2C5MD = 1;
+    PMD5bits.I2C5MD = 0;
     
-    // Disable USB Module (UART 3 is used for USB debug)
+    // Disable USB Module (UART 1 is used for USB debug)
     PMD5bits.USBMD = 1;
     
-    // Enable real time clock/calendar
+    // enable real time clock/calendar
     PMD6bits.RTCCMD = 0;
     
     // Enable all reference clocks, per device errata
@@ -101,12 +105,14 @@ void PMDInitialize(void) {
     PMD6bits.PMPMD = 1;
     
     // Disable external bus interface (EBI)
+    #ifdef EBICS0
     PMD6bits.EBIMD = 1;
+    #endif
     
     // Disable serial quad interface
     PMD6bits.SQI1MD = 1;
     
-    // Disable ethernet module
+    // disable ethernet module
     PMD6bits.ETHMD = 1;
     
     // Enable DMA
@@ -267,24 +273,30 @@ void printPMDStatus(void) {
     if (PMD5bits.SPI4MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("   SPI 4 Enabled:                            %s\n\r", PMD5bits.SPI4MD ? "F" : "T");
+    #ifdef SPI5CON
     if (PMD5bits.SPI5MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, REVERSE_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("   SPI 5 Enabled:                            %s\n\r", PMD5bits.SPI5MD ? "F" : "T");
+    #endif
+    #ifdef SPI6CON
     if (PMD5bits.SPI6MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("   SPI 6 Enabled:                            %s\n\r", PMD5bits.SPI6MD ? "F" : "T");
+    #endif
     
     // I2C Modules
     if (PMD5bits.I2C1MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, REVERSE_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("   I2C 1 Enabled:                            %s\n\r", PMD5bits.I2C1MD ? "F" : "T");
+    #ifdef I2C2CON
     if (PMD5bits.I2C2MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("   I2C 2 Enabled:                            %s\n\r", PMD5bits.I2C2MD ? "F" : "T");
+    #endif
     if (PMD5bits.I2C3MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, REVERSE_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("   I2C 3 Enabled:                            %s\n\r", PMD5bits.I2C3MD ? "F" : "T");
-    if (PMD5bits.I2C2MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (PMD5bits.I2C3MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("   I2C 4 Enabled:                            %s\n\r", PMD5bits.I2C4MD ? "F" : "T");
     if (PMD5bits.I2C5MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, REVERSE_FONT);
@@ -321,9 +333,11 @@ void printPMDStatus(void) {
     printf("   Parallel Master Port Enabled:             %s\n\r", PMD6bits.PMPMD ? "F" : "T");
     
     // EBI
+    #ifdef EBICS0
     if (PMD6bits.EBIMD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, REVERSE_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("   External Bus Interface Enabled:           %s\n\r", PMD6bits.EBIMD ? "F" : "T");
+    #endif
     
     // SQI
     if (PMD6bits.SQI1MD) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -353,4 +367,3 @@ void printPMDStatus(void) {
     terminalTextAttributesReset();
     
 }
-

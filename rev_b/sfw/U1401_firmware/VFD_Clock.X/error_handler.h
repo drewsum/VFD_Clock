@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  40
+#define ERROR_HANDLER_NUM_FLAGS  31
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -46,36 +46,27 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
         uint8_t DMT_error;    // Deadman timer error
         uint8_t system_bus_protection_violation;    // System bus protection event occurred
         uint8_t prefetch_module_SEC;    // Prefetch module recorded an SEC event
-        uint8_t ADC_configuration_error;    // ADC could not be configured properly
-        uint8_t ADC_reference_fault;
         uint8_t clock_failure;
         uint8_t WDT_timeout;
         uint8_t DMT_timeout;
         uint8_t vdd_brownout;
-        uint8_t i2c_stall;
         uint8_t i2c_bus_collision;
+        uint8_t spi_master;
+        uint8_t platform_tof;
         uint8_t pos12_temp;
         uint8_t pos3p3_temp;
-        uint8_t pos5_temp;
-        uint8_t pos1p2_vff_temp;
-        uint8_t pos60_van_temp;
-        uint8_t amb_temp;
+        uint8_t pos20_temp;
         uint8_t usb_temp;
-        uint8_t dsply_temp;
+        uint8_t amb_temp;
         uint8_t pos12_mon;
-        uint8_t pos3p3_in_mon;
-        uint8_t pos3p3_out_mon;
-        uint8_t pos5_in_mon;
-        uint8_t pos5_out_mon;
-        uint8_t pos1p2_vff_in_mon;
-        uint8_t pos1p2_vff_out_mon;
-        uint8_t pos60_van_in_mon;
-        uint8_t pos60_van_out_mon;
+        uint8_t pos3p3_mon;
+        uint8_t pos20_mon;
         uint8_t usb_mon;
-        uint8_t logic_tof;
         uint8_t backup_rtc;
-        uint8_t dsply_io;
-        uint8_t dsply_tof;
+        uint8_t ADC_configuration_error;
+        uint8_t ADC_reference_fault;
+        uint8_t meter_backlight_led_driver;
+        uint8_t pos20_pgood;
         
     } flags;
 
@@ -85,7 +76,7 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
     
 // this array holds the names of error handler flags
 const char *  error_handler_flag_names[] = {
- 
+
     "Configuration",
     "USB General",
     "USB Framing",
@@ -96,36 +87,27 @@ const char *  error_handler_flag_names[] = {
     "Deadman Timer",
     "System Bus Protection Violation",
     "Prefetch Module SEC",
-    "ADC Configuration",
-    "ADC Reference",
     "Clock Failure",
     "Watchdog Timer Timeout",
     "Deadman Timer Timeout",
     "MCU VDD Brownout",
-    "I2C Stall",
     "I2C Bus Collision",
+    "SPI Master",
+    "Platform Time of Flight Counter",
     "+12V Temperature Sensor",
     "+3.3V Temperature Sensor",
-    "+5V Temperature Sensor",
-    "+1.2VFF Temperature Sensor",
-    "+60VAN Temperature Sensor",
+    "+20V Temperature Sensor",
+    "USB Port Temperature Sensor",
     "Ambient Temperature Sensor",
-    "USB Temperature Sensor",
-    "Display Board Temperature Sensor",
     "+12V Power Monitor",
-    "+3.3V Input Power Monitor",
-    "+3.3V Output Power Monitor",
-    "+5V Input Power Monitor",
-    "+5V Output Power Monitor",
-    "+1.2VFF Input Power Monitor",
-    "+1.2VFF Output Power Monitor",
-    "+60VAN Input Power Monitor",
-    "+60VAN Output Power Monitor",
+    "+3.3V Power Monitor",
+    "+20V Power Monitor",
     "USB Power Monitor",
-    "Logic Board time of Flight Counter",
     "Backup RTC",
-    "Display IO Expander",
-    "Display Board time of Flight Counter"
+    "ADC Configuration Error",
+    "ADC Reference Fault",
+    "Meter Backlight",
+    "+20V PGOOD"
     
 };
 

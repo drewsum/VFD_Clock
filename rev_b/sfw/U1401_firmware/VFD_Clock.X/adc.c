@@ -63,11 +63,35 @@ void ADCInitialize(void) {
     // Setup used ADC channels
     adcChannelsInitialize();
     
-    // Setup ADC end of scan interrupt
-    disableInterrupt(ADC_End_Of_Scan_Ready);
-    setInterruptPriority(ADC_End_Of_Scan_Ready, 3);
-    setInterruptSubpriority(ADC_End_Of_Scan_Ready, 1);
-    clearInterruptFlag(ADC_End_Of_Scan_Ready);
+    // Configure ADC0 timing
+    ADC0TIMEbits.ADCEIS = 0b000;    // data ready IRQ is fired 1 adc clock before end of conversion
+    ADC0TIMEbits.SELRES = 0b11;     // 12 bit result
+    ADC0TIMEbits.ADCDIV = 10;        // input clock divider is / 2 
+    ADC0TIMEbits.SAMC = 5;          // conversion takes 5 clk cycles
+    
+    // Configure ADC1 timing
+    ADC1TIMEbits.ADCEIS = 0b000;    // data ready IRQ is fired 1 adc clock before end of conversion
+    ADC1TIMEbits.SELRES = 0b11;     // 12 bit result
+    ADC1TIMEbits.ADCDIV = 10;        // input clock divider is / 2 
+    ADC1TIMEbits.SAMC = 5;          // conversion takes 5 clk cycles
+    
+    // Configure ADC2 timing
+    ADC2TIMEbits.ADCEIS = 0b000;    // data ready IRQ is fired 1 adc clock before end of conversion
+    ADC2TIMEbits.SELRES = 0b11;     // 12 bit result
+    ADC2TIMEbits.ADCDIV = 10;        // input clock divider is / 5
+    ADC2TIMEbits.SAMC = 5;          // conversion takes 5 clk cycles
+    
+    // Configure ADC3 timing
+    ADC3TIMEbits.ADCEIS = 0b000;    // data ready IRQ is fired 1 adc clock before end of conversion
+    ADC3TIMEbits.SELRES = 0b11;     // 12 bit result
+    ADC3TIMEbits.ADCDIV = 10;        // input clock divider is / 5
+    ADC3TIMEbits.SAMC = 5;          // conversion takes 5 clk cycles
+    
+    // Configure ADC4 timing
+    ADC4TIMEbits.ADCEIS = 0b000;    // data ready IRQ is fired 1 adc clock before end of conversion
+    ADC4TIMEbits.SELRES = 0b11;     // 12 bit result
+    ADC4TIMEbits.ADCDIV = 10;        // input clock divider is / 5
+    ADC4TIMEbits.SAMC = 5;          // conversion takes 5 clk cycles
     
     /* Configure ADCCMPCONx */
     ADCCMPCON1 = 0; // No digital comparators are used. Setting the ADCCMPCONx
@@ -86,7 +110,12 @@ void ADCInitialize(void) {
     
     /* Set up the trigger sources */
     ADCCON1bits.STRGLVL = 0;            // Edge trigger mode
-    ADCCON1bits.STRGSRC = 0b00001;      // Trigger source is global software edge trigger
+    ADCCON1bits.STRGSRC = 0b00001;      // Trigger source is GSWTRG
+    ADCTRGSNSbits.LVL0 = 0;             // trigger on edge
+    ADCTRGSNSbits.LVL1 = 0;             // trigger on edge
+    ADCTRGSNSbits.LVL2 = 0;             // trigger on edge
+    ADCTRGSNSbits.LVL3 = 0;             // trigger on edge
+    ADCTRGSNSbits.LVL4 = 0;             // trigger on edge
     
     /* Early interrupt */
     ADCEIEN1 = 0; // No early interrupts used
@@ -101,11 +130,26 @@ void ADCInitialize(void) {
     if (ADCCON2bits.REFFLT) error_handler.flags.ADC_configuration_error = 1;     // Record error if reference fails
     
     /* Enable clock to analog circuit */
+    ADCANCONbits.ANEN0 = 1; // Enable the clock to analog bias
+    ADCANCONbits.ANEN1 = 1; // Enable the clock to analog bias
+    ADCANCONbits.ANEN2 = 1; // Enable the clock to analog bias
+    ADCANCONbits.ANEN3 = 1; // Enable the clock to analog bias
+    ADCANCONbits.ANEN4 = 1; // Enable the clock to analog bias
     ADCANCONbits.ANEN7 = 1; // Enable the clock to analog bias
     
+    while (ADCANCONbits.WKRDY0);    // wait for ADC0 AN to be ready
+    while (ADCANCONbits.WKRDY1);    // wait for ADC1 AN to be ready
+    while (ADCANCONbits.WKRDY2);    // wait for ADC2 AN to be ready
+    while (ADCANCONbits.WKRDY3);    // wait for ADC3 AN to be ready
+    while (ADCANCONbits.WKRDY4);    // wait for ADC4 AN to be ready
     while (ADCANCONbits.WKRDY7);    // wait for ADC7 AN to be ready
     
     /* Enable the ADC module */
+    ADCCON3bits.DIGEN0 = 1; // Enable ADC0 digital circuits
+    ADCCON3bits.DIGEN1 = 1; // Enable ADC1 digital circuits
+    ADCCON3bits.DIGEN2 = 1; // Enable ADC2 digital circuits
+    ADCCON3bits.DIGEN3 = 1; // Enable ADC3 digital circuits
+    ADCCON3bits.DIGEN4 = 1; // Enable ADC4 digital circuits
     ADCCON3bits.DIGEN7 = 1; // Enable ADC7 digital circuits
     
     // Unblock triggers

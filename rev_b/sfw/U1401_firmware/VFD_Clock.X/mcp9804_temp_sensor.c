@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 #include "error_handler.h"
 #include "device_control.h"
@@ -19,14 +19,10 @@ void MCP9804TempSensorInitialize(uint8_t device_address, volatile uint8_t *devic
     output_data_array[1] = MCP9804_CONFIG_MSB;
     output_data_array[2] = MCP9804_CONFIG_LSB;
     length = 3;
-    I2C_MasterWrite(output_data_array, length, device_address, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
-    
-    
-    // Pass error back to function call
-    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) *device_error_handler_flag = 1;
-    
+    if(!I2CMaster_Write(device_address, output_data_array, length)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -55,25 +51,15 @@ double MCP9804BytesToFloat(uint8_t input_array[2]) {
 // this function gets data over I2C from the given I2C address and returns the converted temperature
 double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {
 
-    // Check to see if we're starting up into a broken I2C state machine
-    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
-        // log the fault
-        error_handler.flags.i2c_stall = 1;
-        // reset the I2C controller if it's enabled
-        if (getI2COnState) I2COnStateReset();
-    }
-    
     uint8_t data_reg_pointer[1];
     uint8_t temp[2];
-    I2C_TRANSACTION_REQUEST_BLOCK readTRBH[2];
     data_reg_pointer[0] = MCP9804_TA_REG;
-    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
-    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
+    if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     
-    if (I2C_STATUS == I2C_MESSAGE_COMPLETE) return MCP9804BytesToFloat(temp);
+    if (i2c5Obj.state == I2C_STATE_IDLE) return MCP9804BytesToFloat(temp);
     else {
         *device_error_handler_flag = 1;
         return 0.0;
@@ -84,52 +70,39 @@ double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_err
 // this function prints configuration status to stdio for the passed device address
 void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_handler_flag) {
     
-    // Check to see if we're starting up into a broken I2C state machine
-    if (I2C_STATUS != I2C_MESSAGE_COMPLETE) {
-        // log the fault
-        error_handler.flags.i2c_stall = 1;
-        // reset the I2C controller if it's enabled
-        if (getI2COnState) I2COnStateReset();
-    }
-    
     // first, get manufacturer ID
     uint8_t data_reg_pointer[1];
     uint8_t temp[2];
-    I2C_TRANSACTION_REQUEST_BLOCK readTRBH[2];
     data_reg_pointer[0] = MCP9804_MANF_ID_REG;
-    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
-    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
+    if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     uint16_t read_mfg_id = (temp[0] << 8) | temp[1];
     
     // get dev id and revision
     data_reg_pointer[0] = MCP9804_DEV_ID_REG;
-    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
-    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
+    if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     uint8_t read_device_id = temp[0];
     uint8_t read_rev_id = temp[1];
     
     // get resolution
     data_reg_pointer[0] = MCP9804_RES_REG;
-    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 1, input_address);
-    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
+    if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 1)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     uint8_t read_resolution = temp[0] & 0b11;
     
     //read config register
     data_reg_pointer[0] = MCP9804_CONFIG_REG;
-    I2C_MasterWriteTRBBuild(&readTRBH[0], data_reg_pointer, 1, input_address);
-    I2C_MasterReadTRBBuild(&readTRBH[1], temp, 2, input_address);
-    I2C_MasterTRBInsert(2, readTRBH, &I2C_STATUS);
-    while(I2C_STATUS == I2C_MESSAGE_PENDING);
-    softwareDelay(0xFF);
+    if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
     uint8_t read_hyst = (temp[0] >> 1) & 0b11;
     uint8_t read_shutdown = temp[0] & 0b1;
     uint8_t read_crit_lock = (temp[1] >> 7) & 0b1;

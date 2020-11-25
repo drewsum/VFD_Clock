@@ -29,6 +29,19 @@
 // This flag is set when we want to clear the watchdog timer
 volatile __attribute__((coherent)) uint8_t wdt_clear_request = 0;
 
+// this enum is used to fade the heartbeat LED on and off
+// heartbeat_led_ticks is used to fad eLED on and off
+// heartbeat_ticks is used to time code requiring a 100Hz time base
+enum heartbeat_dir_t {
+    heartbeat_inhale,
+    heartbeat_exhale
+} heartbeat_dir = heartbeat_inhale;
+volatile uint32_t heartbeat_on_time = 0;
+
+// used to time various recurring function calls/heartbeat services
+// increments from 0 to 99 at 100Hz
+volatile uint32_t heartbeat_systick = 0;
+
 // API Functions
 // This function initializes the heartbeat timer
 void heartbeatTimerInitialize(void);

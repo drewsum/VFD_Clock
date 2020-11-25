@@ -21,7 +21,7 @@
 #include <xc.h>
 #include <stdbool.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 // I2C register definitions, Table 3 of datasheet
 #define TCA9555_INPUT_PORT_0_REG        0x00

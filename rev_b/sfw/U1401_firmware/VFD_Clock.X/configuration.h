@@ -2,7 +2,7 @@
 #ifndef _CONFIGURE_H    /* Guard against multiple inclusion */
 #define _CONFIGURE_H
 
-// PIC32MZ2048EFG100 Configuration Bit Settings
+// PIC32MZ0512EFE064 Configuration Bit Settings
 
 // 'C' source line config statements
 

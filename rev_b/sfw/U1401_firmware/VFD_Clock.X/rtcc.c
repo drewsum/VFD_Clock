@@ -591,7 +591,7 @@ void printRTCCStatus(void) {
             RTCALRMbits.ARPT);
     
     // print alarm settings
-    printf("    Alarm values:\r\n");
+    printf("    RTCC Hardware Alarm values:\r\n");
         printf("        Time: %02u:%02u:%02u",
             (ALRMTIMEbits.HR10 * 10) + ALRMTIMEbits.HR01,
             (ALRMTIMEbits.MIN10 * 10) + ALRMTIMEbits.MIN01,

@@ -21,7 +21,7 @@
 #include <xc.h>
 #include <stdbool.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 #define DS1683_COMMAND_REG          0x00
 #define DS1683_STATUS_REG           0x01

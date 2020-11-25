@@ -23,7 +23,7 @@
 #include <stdbool.h>
 #include <time.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 // DS3231M register map
 // from table 2 of datasheet

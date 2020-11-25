@@ -22,7 +22,7 @@
 #include <xc.h>
 #include <stdbool.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 // These register mappings are from table 2 of the LTC4151 datasheet
 #define LTC4151_SENSE_A_REG           0x00

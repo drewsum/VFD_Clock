@@ -35,7 +35,6 @@
 #include "terminal_control.h"
 
 // I2C
-#include "i2c_master.h"
 #include "temperature_sensors.h"
 #include "power_monitors.h"
 #include "misc_i2c_devices.h"
@@ -136,10 +135,9 @@ void main(void) {
     printf("    Unused Peripheral Modules Disabled\n\r");
     
     // Enable ADC
-    VBAT_ADC_ENABLE_PIN = HIGH;
-    POS3P3_BCKP_ADC_ENABLE_PIN = HIGH;
-    ADCInitialize();
-    printf("    Analog to Digital Converter Initialized\n\r");
+    #warning "reneable ADC"
+//    ADCInitialize();
+//    printf("    Analog to Digital Converter Initialized\n\r");
     
     // Setup the real time clock-calendar
     rtccInitialize();
@@ -164,16 +162,16 @@ void main(void) {
     printf("    Temperature Sensors Initialized\r\n");
     powerMonitorsInitialize();
     printf("    Power Monitors Initialized\r\n");
-    logicBoardTOFInitialize();
-    printf("    Logic Board Time of Flight Counter Initialized\r\n");
-    backupRTCInitialize();
-    printf("    Backup Real-Time Clock Initialized\r\n");
-    backupRTCRestoreTime();
-    printf("    Restored time backup from previous sessions\r\n");
-    terminalTextAttributesReset();
+//    logicBoardTOFInitialize();
+//    printf("    Logic Board Time of Flight Counter Initialized\r\n");
+//    backupRTCInitialize();
+//    printf("    Backup Real-Time Clock Initialized\r\n");
+//    backupRTCRestoreTime();
+//    printf("    Restored time backup from previous sessions\r\n");
+//    terminalTextAttributesReset();
    
     // Try to find an installed display board and set it up
-    displayBoardInitialize();
+//    displayBoardInitialize();
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

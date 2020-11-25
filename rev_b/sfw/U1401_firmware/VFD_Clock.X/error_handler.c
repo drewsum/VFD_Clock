@@ -10,6 +10,7 @@
 #include "32mz_interrupt_control.h"
 #include "pin_macros.h"
 #include "terminal_control.h"
+#include "usb_uart.h"
 
 // This function initializes the error handler structure to detect fault conditions
 void errorHandlerInitialize(void) {
@@ -151,72 +152,17 @@ void clearErrorHandler(void) {
 // This function updates the error LEDs based on the error handler state
 void updateErrorLEDs(void) {
  
-    // Configuration Error
-    if (    error_handler.flags.configuration_error ||
-            error_handler.flags.DMT_error ||
-            error_handler.flags.system_bus_protection_violation ||
-            error_handler.flags.prefetch_module_SEC ||
-            error_handler.flags.clock_failure ||
-            error_handler.flags.WDT_timeout ||
-            error_handler.flags.DMT_timeout ||
-            error_handler.flags.vdd_brownout) {
-        
-        OTHER_ERROR_LED_PIN = HIGH;
+    // Clear error LED for now since we'll set it in the below loop if we need to
+    ERROR_LED_PIN = LOW;
+    
+    // loop through all error handler flags and set error LED based on the flags
+    uint32_t index;
+    for (index = 0; index < ERROR_HANDLER_NUM_FLAGS; index++) {
+     
+        if (error_handler.flag_array[index] == 1) ERROR_LED_PIN = HIGH;
         
     }
-    
-    else OTHER_ERROR_LED_PIN = LOW;
-
-    // USB Error
-    if (    error_handler.flags.USB_general_error || 
-            error_handler.flags.USB_tx_dma_error ||
-            error_handler.flags.USB_rx_dma_error ||
-            error_handler.flags.USB_framing_error ||
-            error_handler.flags.USB_overrun_error ||
-            error_handler.flags.USB_parity_error) {
         
-        USB_ERROR_LED_PIN = HIGH;
-    
-    }
-    else USB_ERROR_LED_PIN = LOW;    
-    
-    if (    error_handler.flags.ADC_configuration_error ||
-            error_handler.flags.ADC_reference_fault) {
-    
-        ANALOG_ERROR_LED_PIN = HIGH;
-    
-    }
-    else ANALOG_ERROR_LED_PIN = LOW;
-    
-    if (    error_handler.flags.i2c_bus_collision ||
-            error_handler.flags.i2c_stall ||
-            error_handler.flags.pos12_temp ||
-            error_handler.flags.pos3p3_temp ||
-            error_handler.flags.pos5_temp ||
-            error_handler.flags.pos1p2_vff_temp ||
-            error_handler.flags.pos60_van_temp ||
-            error_handler.flags.usb_temp ||
-            error_handler.flags.amb_temp ||
-            error_handler.flags.dsply_temp ||
-            error_handler.flags.pos12_mon ||
-            error_handler.flags.pos3p3_in_mon ||
-            error_handler.flags.pos3p3_out_mon ||
-            error_handler.flags.pos5_in_mon ||
-            error_handler.flags.pos5_out_mon ||
-            error_handler.flags.pos1p2_vff_in_mon ||
-            error_handler.flags.pos1p2_vff_out_mon ||
-            error_handler.flags.pos60_van_in_mon ||
-            error_handler.flags.pos60_van_out_mon ||
-            error_handler.flags.logic_tof ||
-            error_handler.flags.backup_rtc ||
-            error_handler.flags.dsply_io ||
-            error_handler.flags.dsply_tof) {
-        
-        I2C_ERROR_LED_PIN = HIGH;
-        
-    }
-    else I2C_ERROR_LED_PIN = LOW;
-    
     update_error_leds_flag = 0;
     
 }
@@ -232,10 +178,10 @@ void exceptionPrint(char *input_string) {
         if (input_string[i] == '\0') return;
         
         // send single character
-        U3TXREG = input_string[i];
+        USB_UART_TX_REG = input_string[i];
         
         // wait for buffer to open
-        while(U3STAbits.UTXBF);
+        while(USB_UART_STA_BITFIELD.UTXBF);
         
         
     }
@@ -247,4 +193,3 @@ void clockFailCheck(void) {
     if (OSCCONbits.CF) error_handler.flags.clock_failure = 1;
     
 }
-

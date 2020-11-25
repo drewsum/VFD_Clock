@@ -21,7 +21,7 @@
 #include <xc.h>
 #include <stdbool.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 // MCP9804 register pointers
 // from register 5-1 of MCP9804 datasheet

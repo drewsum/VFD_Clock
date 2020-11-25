@@ -8,7 +8,7 @@
     usb_uart.h
 
   @Summary
- Allows USB debugging over UART6 to a USB virtual COM port
+ Allows USB debugging over UART3 to a USB virtual COM port
 
  */
 /* ************************************************************************** */
@@ -23,16 +23,58 @@
 
 #include "uthash.h"
 
+
 // Sizes of TX and RX ring buffers
 #define USB_UART_TX_BUFFER_SIZE 16384
-#define USB_UART_RX_BUFFER_SIZE 2048
+#define USB_UART_RX_BUFFER_SIZE 1024
 
-// Hardcoded COM Port Descriptor Strings
-#define USB_UART_BAUD_RATE_STR          "115.2 kbs"
-#define USB_UART_DATA_LENGTH_STR        "8 bits"
-#define USB_UART_PARITY_STR             "None"
-#define USB_UART_STOP_BITS_STR          "1"
-#define USB_UART_FLOW_CONTROL_STR       "None"
+// these macros are used to switch which UART module is used for USB_UART,
+// since this is project configurable
+// These map to UART SFRs
+// They must all map to the same UART module
+// Some macros are also used to map to interrupts
+// Make sure UART modules have signals properly routed to pins using PPS
+
+// REGISTER MAPPINGS
+#define USB_UART_MODE_BITFIELD          U3MODEbits
+#define USB_UART_STA_BITFIELD           U3STAbits
+#define USB_UART_TX_REG                 U3TXREG
+#define USB_UART_RX_REG                 U3RXREG
+#define USB_UART_BRG_REG                U3BRG
+
+// INTERRUPT MAPPINGS
+#define USB_UART_TX_INT_SOURCE          UART3_Transfer_Done
+#define USB_UART_RX_INT_SOURCE          UART3_Receive_Done
+#define USB_UART_FAULT_INT_SOURCE       UART3_Fault
+#define USB_UART_FAULT_INT_VECTOR       _UART3_FAULT_VECTOR
+
+// TX DMA MAPPINGS
+#define USB_UART_TX_DMA_CON_BITFIELD    DCH0CONbits
+#define USB_UART_TX_DMA_ECON_BITFIELD   DCH0ECONbits
+#define USB_UART_TX_DMA_DAT_REG         DCH0DAT
+#define USB_UART_TX_DMA_SSA_REG         DCH0SSA
+#define USB_UART_TX_DMA_DSA_REG         DCH0DSA
+#define USB_UART_TX_DMA_SSIZ_REG        DCH0SSIZ
+#define USB_UART_TX_DMA_DSIZ_REG        DCH0DSIZ
+#define USB_UART_TX_DMA_CSIZ_REG        DCH0CSIZ
+#define USB_UART_TX_DMA_INT_BITFIELD    DCH0INTbits
+#define USB_UART_TX_DMA_INT_SOURCE      DMA_Channel_0
+#define USB_UART_TX_DMA_INT_VECTOR      _DMA0_VECTOR
+#define USB_UART_TX_DMA_INTCLR_REG      DCH0INTCLR
+
+// RX DMA MAPPINGS
+#define USB_UART_RX_DMA_CON_BITFIELD    DCH1CONbits
+#define USB_UART_RX_DMA_ECON_BITFIELD   DCH1ECONbits
+#define USB_UART_RX_DMA_DAT_REG         DCH1DAT
+#define USB_UART_RX_DMA_SSA_REG         DCH1SSA
+#define USB_UART_RX_DMA_DSA_REG         DCH1DSA
+#define USB_UART_RX_DMA_SSIZ_REG        DCH1SSIZ
+#define USB_UART_RX_DMA_DSIZ_REG        DCH1DSIZ
+#define USB_UART_RX_DMA_CSIZ_REG        DCH1CSIZ
+#define USB_UART_RX_DMA_INT_BITFIELD    DCH1INTbits
+#define USB_UART_RX_DMA_INT_SOURCE      DMA_Channel_1
+#define USB_UART_RX_DMA_INT_VECTOR      _DMA1_VECTOR
+#define USB_UART_RX_DMA_INTCLR_REG      DCH1INTCLR
 
 // this flag is set when we need to parse a received string
 volatile __attribute__((coherent))  uint8_t usb_uart_rx_ready = 0;
@@ -77,7 +119,7 @@ void usbUartReceiveDmaInitialize(void);
 void usbUartInitialize(void);
 
 // These are the USB UART Interrupt Service Routines
-void __ISR(_UART3_FAULT_VECTOR, ipl1SRS) usbUartFaultISR(void);
+void __ISR(USB_UART_FAULT_INT_VECTOR, ipl1SRS) usbUartFaultISR(void);
 
 // These are the USB UART DMA Interrupt Service Routines
 void __ISR(_DMA0_VECTOR, IPL1SRS) usbUartTxDmaISR(void);

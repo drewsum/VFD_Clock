@@ -22,7 +22,7 @@
 #include <xc.h>
 #include <time.h>
 
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 #include "ds1683_time_of_flight.h"
 #include "tca9555_io_expander.h"

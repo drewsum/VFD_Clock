@@ -23,10 +23,6 @@
 // These are macros needed for defining ISRs, included in XC32
 #include <sys/attribs.h>
 
-uint32_t pushbutton_shutdown_request = 0;   // this flag is set when we want to shutdown due to a pushbutton press
-uint32_t pushbutton_wakeup_request = 0;   // this flag is set when we want to wake up due to a pushbutton press
-uint32_t sleep_state = 0;
-
 // This function disables unused peripherals on startup for power savings
 // THIS FUNCTION CAN ONLY BE CALLED ONCE DUE TO PMD LOCKOUT AFTER ONE WRITE SESSION
 void PMDInitialize(void);

@@ -14,18 +14,13 @@
 #include "32mz_interrupt_control.h"
 #include "pin_macros.h"
 #include "device_control.h"
-// #include "power_saving.h"
-#include "watchdog_timer.h"
 #include "usb_uart.h"
 #include "terminal_control.h"
-#include "error_handler.h"
-#include "cause_of_reset.h"
-// #include "prefetch.h"
 #include "error_handler.h"
 
 // Printable Variables from other header files
 extern uint32_t device_on_time_counter;
-extern reset_cause_t reset_cause;
+// extern reset_cause_t reset_cause;
 
 // This function is used to setup DMA0 for UART transmit
 void usbUartTrasmitDmaInitialize(void) {
@@ -33,55 +28,55 @@ void usbUartTrasmitDmaInitialize(void) {
     // Set up DMA0 for USB UART Transmit
     // From reference manual example 31-2
     // Disable DMA0 interrupt
-    disableInterrupt(DMA_Channel_0);
-    clearInterruptFlag(DMA_Channel_0);
+    disableInterrupt(USB_UART_TX_DMA_INT_SOURCE);
+    clearInterruptFlag(USB_UART_TX_DMA_INT_SOURCE);
     
     // Enable DMA controller
     DMACONbits.ON = 0;
     // Disable DMA CRC
     DCRCCONbits.CRCEN = 0;
     // Turn off channel 0
-    DCH0CONbits.CHEN = 0;
+    USB_UART_TX_DMA_CON_BITFIELD.CHEN = 0;
     // Set channel 0 priority to 2
-    DCH0CONbits.CHPRI = 2;
+    USB_UART_TX_DMA_CON_BITFIELD.CHPRI = 2;
     // Disable DMA chaining
-    DCH0CONbits.CHCHN = 0;
+    USB_UART_TX_DMA_CON_BITFIELD.CHCHN = 0;
     
     // Start interrupt request is UART 3 TX done
-    DCH0ECONbits.CHSIRQ = UART3_Transfer_Done;
+    USB_UART_TX_DMA_ECON_BITFIELD.CHSIRQ = USB_UART_TX_INT_SOURCE;
     // configure DMA0 to start on an IRQ matching CHSIRQ
-    DCH0ECONbits.SIRQEN = 1;
-    // configure DMA0 to abort on pattern match where data matched DCH0DAT
-    DCH0ECONbits.PATEN = 1;
+    USB_UART_TX_DMA_ECON_BITFIELD.SIRQEN = 1;
+    // configure DMA0 to abort on pattern match where data matched USB_UART_TX_DMA_DAT_REG
+    USB_UART_TX_DMA_ECON_BITFIELD.PATEN = 1;
     // pattern is 1 byte long
-    DCH0CONbits.CHPATLEN = 0;
+    USB_UART_TX_DMA_CON_BITFIELD.CHPATLEN = 0;
     // Pattern value is a null ('\0'), end of string
-    DCH0DAT = '\0';
+    USB_UART_TX_DMA_DAT_REG = '\0';
     
     // Set DMA0 source location
-    DCH0SSA = KVA_TO_PA((void *) &usb_uart_tx_buffer);
+    USB_UART_TX_DMA_SSA_REG = KVA_TO_PA((void *) &usb_uart_tx_buffer);
     // Set DMA0 destination location
-    DCH0DSA = KVA_TO_PA((void*)&U3TXREG);
+    USB_UART_TX_DMA_DSA_REG = KVA_TO_PA((void*)&USB_UART_TX_REG);
     // Set source size to size of transmit buffer
-    DCH0SSIZ = USB_UART_TX_BUFFER_SIZE;
-    // Set destination size to 1, since U3TXREG is one byte long
-    DCH0DSIZ = 1;
+    USB_UART_TX_DMA_SSIZ_REG = USB_UART_TX_BUFFER_SIZE;
+    // Set destination size to 1, since USB_UART_TX_REG is one byte long
+    USB_UART_TX_DMA_DSIZ_REG = 1;
     // 1 byte transferred per event (cell size = 1)
-    DCH0CSIZ = 1;
+    USB_UART_TX_DMA_CSIZ_REG = 1;
     
     // clear existing events, disable all interrupts
-    DCH0INTCLR = 0x00000000;
+    USB_UART_TX_DMA_INTCLR_REG = 0x00000000;
     // enable Block Complete and error interrupts
-    DCH0INTbits.CHBCIF = 0;
-    DCH0INTbits.CHBCIE = 1;
-    DCH0INTbits.CHERIF = 0;
-    DCH0INTbits.CHERIE = 1;
+    USB_UART_TX_DMA_INT_BITFIELD.CHBCIF = 0;
+    USB_UART_TX_DMA_INT_BITFIELD.CHBCIE = 1;
+    USB_UART_TX_DMA_INT_BITFIELD.CHERIF = 0;
+    USB_UART_TX_DMA_INT_BITFIELD.CHERIE = 1;
     
     // Set up DMA0 interrupts
-    setInterruptPriority(DMA_Channel_0, 1);
-    setInterruptSubpriority(DMA_Channel_0, 3);
-    clearInterruptFlag(DMA_Channel_0);
-    enableInterrupt(DMA_Channel_0);
+    setInterruptPriority(USB_UART_TX_DMA_INT_SOURCE, 1);
+    setInterruptSubpriority(USB_UART_TX_DMA_INT_SOURCE, 3);
+    clearInterruptFlag(USB_UART_TX_DMA_INT_SOURCE);
+    enableInterrupt(USB_UART_TX_DMA_INT_SOURCE);
     
     // Turn on DMA
     DMACONbits.ON = 1;
@@ -94,60 +89,60 @@ void usbUartReceiveDmaInitialize(void) {
     // Set up DMA1 for USB UART Transmit
     // From reference manual example 31-2
     // Disable DMA1 interrupt
-    disableInterrupt(DMA_Channel_1);
-    clearInterruptFlag(DMA_Channel_1);
+    disableInterrupt(USB_UART_RX_DMA_INT_SOURCE);
+    clearInterruptFlag(USB_UART_RX_DMA_INT_SOURCE);
     
     // Disable DMA controller
     DMACONbits.ON = 0;
     // Disable DMA CRC
     DCRCCONbits.CRCEN = 0;
     // Turn off channel 1
-    DCH1CONbits.CHEN = 0;
+    USB_UART_RX_DMA_CON_BITFIELD.CHEN = 0;
     // Set channel 1 priority to 3
-    DCH1CONbits.CHPRI = 3;
+    USB_UART_RX_DMA_CON_BITFIELD.CHPRI = 3;
     // Disable DMA chaining
-    DCH1CONbits.CHCHN = 0;
+    USB_UART_RX_DMA_CON_BITFIELD.CHCHN = 0;
     
     // Start interrupt request is UART 3 RX done
-    DCH1ECONbits.CHSIRQ = UART3_Receive_Done;
+    USB_UART_RX_DMA_ECON_BITFIELD.CHSIRQ = USB_UART_RX_INT_SOURCE;
     // configure DMA1 to start on an IRQ matching CHSIRQ
-    DCH1ECONbits.SIRQEN = 1;
-    // configure DMA1 to abort on pattern match where data matched DCH1DAT
-    DCH1ECONbits.PATEN = 1;
+    USB_UART_RX_DMA_ECON_BITFIELD.SIRQEN = 1;
+    // configure DMA1 to abort on pattern match where data matched USB_UART_RX_DMA_DAT_REG
+    USB_UART_RX_DMA_ECON_BITFIELD.PATEN = 1;
     // pattern is 1 byte long
-    DCH1CONbits.CHPATLEN = 0;
+    USB_UART_RX_DMA_CON_BITFIELD.CHPATLEN = 0;
     // Pattern value is a carriage return ('\r'), end of string
-    DCH1DAT = '\r';
+    USB_UART_RX_DMA_DAT_REG = '\r';
     
     // Set DMA1 source location
-    DCH1SSA = KVA_TO_PA((void *) &U3RXREG);
+    USB_UART_RX_DMA_SSA_REG = KVA_TO_PA((void *) &USB_UART_RX_REG);
     // Set DMA1 destination location
-    DCH1DSA = KVA_TO_PA((void*) &usb_uart_rx_buffer[0]);
-    // Set source size to size of U3RXREG
-    DCH1SSIZ = 1;
+    USB_UART_RX_DMA_DSA_REG = KVA_TO_PA((void*) &usb_uart_rx_buffer[0]);
+    // Set source size to size of USB_UART_RX_REG
+    USB_UART_RX_DMA_SSIZ_REG = 1;
     // Set destination size to size of receive buffer
-    DCH1DSIZ = USB_UART_RX_BUFFER_SIZE;
+    USB_UART_RX_DMA_DSIZ_REG = USB_UART_RX_BUFFER_SIZE;
     // 1 byte transferred per event (cell size = 1)
-    DCH1CSIZ = 1;
+    USB_UART_RX_DMA_CSIZ_REG = 1;
     
     // clear existing events, disable all interrupts
-    DCH1INTCLR = 0x00000000;
+    USB_UART_RX_DMA_INTCLR_REG = 0x00000000;
     // enable Block Complete and error interrupts
-    DCH1INTbits.CHBCIF = 0;
-    DCH1INTbits.CHBCIE = 1;
-    DCH1INTbits.CHERIF = 0;
-    DCH1INTbits.CHERIE = 1;
+    USB_UART_RX_DMA_INT_BITFIELD.CHBCIF = 0;
+    USB_UART_RX_DMA_INT_BITFIELD.CHBCIE = 1;
+    USB_UART_RX_DMA_INT_BITFIELD.CHERIF = 0;
+    USB_UART_RX_DMA_INT_BITFIELD.CHERIE = 1;
     
     // Set up DMA1 interrupts
-    setInterruptPriority(DMA_Channel_1, 2);
-    setInterruptSubpriority(DMA_Channel_1, 3);
-    clearInterruptFlag(DMA_Channel_1);
-    enableInterrupt(DMA_Channel_1);
+    setInterruptPriority(USB_UART_RX_DMA_INT_SOURCE, 2);
+    setInterruptSubpriority(USB_UART_RX_DMA_INT_SOURCE, 3);
+    clearInterruptFlag(USB_UART_RX_DMA_INT_SOURCE);
+    enableInterrupt(USB_UART_RX_DMA_INT_SOURCE);
     
     // Enable channel for receiving data
-    DCH1CONbits.CHEN = 1;
+    USB_UART_RX_DMA_CON_BITFIELD.CHEN = 1;
     // Set up to auto-enable on pattern match
-    DCH1CONbits.CHAEN = 1;
+    USB_UART_RX_DMA_CON_BITFIELD.CHAEN = 1;
     
     // Turn on DMA
     DMACONbits.ON = 1;
@@ -158,91 +153,91 @@ void usbUartReceiveDmaInitialize(void) {
 void usbUartInitialize(void) {
  
     // Disable UART 3 interrupts
-    disableInterrupt(UART3_Receive_Done);
-    disableInterrupt(UART3_Transfer_Done);
-    disableInterrupt(UART3_Fault);
+    disableInterrupt(USB_UART_RX_INT_SOURCE);
+    disableInterrupt(USB_UART_TX_INT_SOURCE);
+    disableInterrupt(USB_UART_FAULT_INT_SOURCE);
     
     // Turn off UART 3 for configuration
-    U3MODEbits.ON = 0;
+    USB_UART_MODE_BITFIELD.ON = 0;
     
     // stop UART 3 operation in IDLE mode
-    U3MODEbits.SIDL = 1;
+    // USB_UART_MODE_BITFIELD.SIDL = 1;
     
     // Disable IrDA encoding
-    U3MODEbits.IREN = 0;
+    USB_UART_MODE_BITFIELD.IREN = 0;
     
     // Disable CTS, RTS signals
     // (No flow control used)
-    U3MODEbits.UEN = 0b00;
+    USB_UART_MODE_BITFIELD.UEN = 0b00;
     
     // Disable loopback
-    U3MODEbits.LPBACK = 0;
+    USB_UART_MODE_BITFIELD.LPBACK = 0;
     
     // Disable auto-baud
-    U3MODEbits.ABAUD = 0;
+    USB_UART_MODE_BITFIELD.ABAUD = 0;
     
     // RX idle state is logic high
-    U3MODEbits.RXINV = 0;
+    USB_UART_MODE_BITFIELD.RXINV = 0;
     
     // High speed baud rate setting
-    U3MODEbits.BRGH = 0;
+    USB_UART_MODE_BITFIELD.BRGH = 0;
     
     // 8 bit data length and no parity
-    U3MODEbits.PDSEL = 0b00;
+    USB_UART_MODE_BITFIELD.PDSEL = 0b00;
     
     // 1 stop bit
-    U3MODEbits.STSEL = 0;
+    USB_UART_MODE_BITFIELD.STSEL = 0;
     
     // Disable addressing
-    U3STAbits.ADM_EN = 0;
+    USB_UART_STA_BITFIELD.ADM_EN = 0;
     
     // Interrupt on every transmitted character
-    U3STAbits.UTXISEL = 0b01;
+    USB_UART_STA_BITFIELD.UTXISEL = 0b01;
     
     // Idle transmit state is high
-    U3STAbits.UTXINV = 0;
+    USB_UART_STA_BITFIELD.UTXINV = 0;
     
     // Disable break
-    U3STAbits.UTXBRK = 0;
+    USB_UART_STA_BITFIELD.UTXBRK = 0;
     
     // Interrupt on every character received
-    U3STAbits.URXISEL = 0b00;
+    USB_UART_STA_BITFIELD.URXISEL = 0b00;
     
     // Disable address detection
-    U3STAbits.ADDEN = 0;
+    USB_UART_STA_BITFIELD.ADDEN = 0;
     
     // Set baud rate to 115200 bps
     // From section 21.3 of PIC32MZ reference manual
     // Input CLK is PBCLK2 (84 MHz)
     // With PBCLK2 = 84 MHz, BRGH = 1, baud rate error is 0.16%
-    U3BRG = 35;
+    USB_UART_BRG_REG = 35;
     
     // Set interrupt priorities
-    setInterruptPriority(UART3_Fault, 1);
+    setInterruptPriority(USB_UART_FAULT_INT_SOURCE, 1);
     
     // Set interrupt subpriorities
-    setInterruptSubpriority(UART3_Fault, 1);
+    setInterruptSubpriority(USB_UART_FAULT_INT_SOURCE, 1);
     
     // Clear all UART 3 Interrupts
-    clearInterruptFlag(UART3_Fault);
-    clearInterruptFlag(UART3_Transfer_Done);
+    clearInterruptFlag(USB_UART_FAULT_INT_SOURCE);
+    clearInterruptFlag(USB_UART_TX_INT_SOURCE);
     
     // clear receive errors
-    U3STAbits.FERR = 0;
-    U3STAbits.PERR = 0;
-    U3STAbits.OERR = 0;
+    USB_UART_STA_BITFIELD.FERR = 0;
+    USB_UART_STA_BITFIELD.PERR = 0;
+    USB_UART_STA_BITFIELD.OERR = 0;
     
     // Enable UART 3
-    U3MODEbits.ON = 1;
+    USB_UART_MODE_BITFIELD.ON = 1;
     
     // Enable transmitter
-    U3STAbits.UTXEN = 1;
+    USB_UART_STA_BITFIELD.UTXEN = 1;
     
     // Enable receiver
-    U3STAbits.URXEN = 1;
+    USB_UART_STA_BITFIELD.URXEN = 1;
     
     // Enable receive and error interrupts
-    enableInterrupt(UART3_Fault);
+    enableInterrupt(USB_UART_FAULT_INT_SOURCE);
     
     // Setup DMA0 for USB UART Transmit
     usbUartTrasmitDmaInitialize();
@@ -256,28 +251,28 @@ void usbUartInitialize(void) {
 }
 
 // This is the UAB UART fault interrupt service routine
-void __ISR(_UART3_FAULT_VECTOR, ipl1SRS) usbUartFaultISR(void) {
+void __ISR(USB_UART_FAULT_INT_VECTOR, ipl1SRS) usbUartFaultISR(void) {
     
     error_handler.flags.USB_general_error = 1;
-    if (U3STAbits.FERR) error_handler.flags.USB_framing_error = 1;
-    if (U3STAbits.OERR) error_handler.flags.USB_overrun_error = 1;
-    if (U3STAbits.PERR) error_handler.flags.USB_parity_error = 1;
+    if (USB_UART_STA_BITFIELD.FERR) error_handler.flags.USB_framing_error = 1;
+    if (USB_UART_STA_BITFIELD.OERR) error_handler.flags.USB_overrun_error = 1;
+    if (USB_UART_STA_BITFIELD.PERR) error_handler.flags.USB_parity_error = 1;
     
-    U3STAbits.PERR = 0;
-    U3STAbits.FERR = 0;
-    U3STAbits.OERR = 0;
+    USB_UART_STA_BITFIELD.PERR = 0;
+    USB_UART_STA_BITFIELD.FERR = 0;
+    USB_UART_STA_BITFIELD.OERR = 0;
     
     // Clear fault interrupt flag
-    clearInterruptFlag(UART3_Fault);
+    clearInterruptFlag(USB_UART_FAULT_INT_SOURCE);
     
 }
 
 // These are the USB UART DMA Interrupt Service Routines
-void __ISR(_DMA0_VECTOR, IPL1SRS) usbUartTxDmaISR(void) {
+void __ISR(USB_UART_TX_DMA_INT_VECTOR, IPL1SRS) usbUartTxDmaISR(void) {
  
     // Determine source of DMA 0 interrupt
     // Channel block transfer complete interrupt flag (or pattern match)
-    if (DCH0INTbits.CHBCIF) {
+    if (USB_UART_TX_DMA_INT_BITFIELD.CHBCIF) {
         
         // clear tx buffer
         uint32_t index;
@@ -292,46 +287,46 @@ void __ISR(_DMA0_VECTOR, IPL1SRS) usbUartTxDmaISR(void) {
     }
     
     // channel error
-    else if (DCH0INTbits.CHERIF) {
+    else if (USB_UART_TX_DMA_INT_BITFIELD.CHERIF) {
         
         error_handler.flags.USB_tx_dma_error = 1;
         
     }
     
     // Clear DMA controller interrupt flags
-    DCH0INTCLR=0x000000ff;
+    USB_UART_TX_DMA_INTCLR_REG=0x000000ff;
     
     // Clear interrupt flag
-    clearInterruptFlag(DMA_Channel_0);
+    clearInterruptFlag(USB_UART_TX_DMA_INT_SOURCE);
     
 }
 
 // These are the USB UART DMA Interrupt Service Routines
-void __ISR(_DMA1_VECTOR, IPL2SRS) usbUartRxDmaISR(void) {
+void __ISR(USB_UART_RX_DMA_INT_VECTOR, IPL2SRS) usbUartRxDmaISR(void) {
     
     // Determine source of DMA 1 interrupt
     // Channel block transfer complete interrupt flag (or pattern match)
-    if (DCH1INTbits.CHBCIF) {
+    if (USB_UART_RX_DMA_INT_BITFIELD.CHBCIF) {
         
         // Clear interrupt flag
-        clearInterruptFlag(DMA_Channel_1);
+        clearInterruptFlag(USB_UART_RX_DMA_INT_SOURCE);
 
         usb_uart_rx_ready = 1;
         
     }
     
     // channel error
-    else if (DCH1INTbits.CHERIF) {
+    else if (USB_UART_RX_DMA_INT_BITFIELD.CHERIF) {
         
         error_handler.flags.USB_rx_dma_error = 1;
         
     }
     
     // Clear DMA controller interrupt flags
-    DCH1INTCLR=0x000000ff;
+    USB_UART_RX_DMA_INTCLR_REG=0x000000ff;
     
     // Clear interrupt flag
-    clearInterruptFlag(DMA_Channel_1);
+    clearInterruptFlag(USB_UART_RX_DMA_INT_SOURCE);
     
 }
 
@@ -341,10 +336,10 @@ void _mon_putc (char c) {
     usb_uart_tx_buffer[usb_uart_tx_buffer_head] = c;
     usb_uart_tx_buffer_head++;
     
-    if (U3STAbits.UTXBF == 0 || usb_uart_tx_buffer_head == 1) {
+    if (USB_UART_STA_BITFIELD.UTXBF == 0 || usb_uart_tx_buffer_head == 1) {
         
-        DCH0CONbits.CHEN = 1;
-        DCH0ECONbits.CFORCE = 1;
+        USB_UART_TX_DMA_CON_BITFIELD.CHEN = 1;
+        USB_UART_TX_DMA_ECON_BITFIELD.CFORCE = 1;
     }
 }
 
@@ -374,9 +369,22 @@ void usbUartRxLUTInterface(char * cmd_string) {
     usb_uart_command_t *current_command, *temp;
     HASH_ITER(hh, usb_uart_commands, current_command, temp) {
         
+        // print help message if user has passed command with "-h" flag
+        char help_flag_str[64];
+        strcpy(help_flag_str, current_command->command_name);
+        strcat(help_flag_str, " -h");
+        if (strcmp(cmd_string, help_flag_str) == 0) {
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("%s: %s\r\n",
+                    current_command->command_name,
+                    current_command->command_help_message);
+            terminalTextAttributesReset();
+            break;
+        }
+        
         // if the current entry that we've found in the hash table matches cmd_string,
         // call the function pointed to by the current entry in the hash table
-        if (strcmp(cmd_string, current_command->command_name) == 0) {
+        else if (strcmp(cmd_string, current_command->command_name) == 0) {
          
             current_command->func(cmd_string);
             break;

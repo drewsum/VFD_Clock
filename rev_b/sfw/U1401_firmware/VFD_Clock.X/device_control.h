@@ -91,6 +91,9 @@ void RNGInitialize(void);
 // this function prints status for the passed timer. Pass timer 1-9
 void printTimerStatus(uint8_t timer_number);
 
+// this function prints status of all DMA channels
+void printDMAStatus(void);
+
 #endif /* _DEVICE_CONTROL_H */
 
 /* *****************************************************************************

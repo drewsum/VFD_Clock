@@ -120,4 +120,3 @@ char * getResetCauseString(reset_cause_t input_cause) {
     return reset_descriptor_array[input_cause];
     
 }
-

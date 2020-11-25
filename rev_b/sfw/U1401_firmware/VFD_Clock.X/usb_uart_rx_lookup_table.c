@@ -22,7 +22,7 @@
 #include "misc_i2c_devices.h"
 #include "clock_functionality.h"
 #include "vfd_multiplexing.h"
-#include "i2c_master.h"
+#include "plib_i2c.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
