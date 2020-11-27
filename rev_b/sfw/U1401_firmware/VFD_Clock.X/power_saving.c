@@ -60,18 +60,18 @@ void PMDInitialize(void) {
     PMD4bits.T8MD = 0;
     PMD4bits.T9MD = 0;
     
-    // Enable UART1, disable others
-    PMD5bits.U1MD = 0;
+    // Enable UART3, disable others
+    PMD5bits.U1MD = 1;
     PMD5bits.U2MD = 1;
-    PMD5bits.U3MD = 1;
+    PMD5bits.U3MD = 0;
     PMD5bits.U4MD = 1;
     PMD5bits.U5MD = 1;
     PMD5bits.U6MD = 1;
     
-    // Disable all SPI Modules except SPI3 (used for DACs)
+    // Disable all SPI Modules
     PMD5bits.SPI1MD = 1;
     PMD5bits.SPI2MD = 1;
-    PMD5bits.SPI3MD = 0;                
+    PMD5bits.SPI3MD = 1;                
     PMD5bits.SPI4MD = 1;
     #ifdef SPI5CON
     PMD5bits.SPI5MD = 1;
@@ -80,14 +80,14 @@ void PMDInitialize(void) {
     PMD5bits.SPI6MD = 1;
     #endif
     
-    // Disable all I2C Modules besides I2C5
-    PMD5bits.I2C1MD = 1;
+    // Disable all I2C Modules besides I2C1
+    PMD5bits.I2C1MD = 0;
     #ifdef I2C2CON
     PMD5bits.I2C2MD = 1;
     #endif
     PMD5bits.I2C3MD = 1;
     PMD5bits.I2C4MD = 1;
-    PMD5bits.I2C5MD = 0;
+    PMD5bits.I2C5MD = 1;
     
     // Disable USB Module (UART 1 is used for USB debug)
     PMD5bits.USBMD = 1;

@@ -235,8 +235,8 @@ void REFCLK1Initialize(void) {
     // Disable REFCLK1 in Idle mode
     REFO1CONbits.SIDL = 1;
     
-    // enable output of REFCLK1 onto output pin
-    REFO1CONbits.OE = 1;
+    // disable output of REFCLK1 onto output pin
+    REFO1CONbits.OE = 0;
     
     // Disable REFCLK1 in sleep
     REFO1CONbits.RSLP = 0;

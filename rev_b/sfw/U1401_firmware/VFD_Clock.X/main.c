@@ -135,11 +135,6 @@ void main(void) {
     PMDInitialize();
     printf("    Unused Peripheral Modules Disabled\n\r");
     
-    // Enable ADC
-    #warning "reneable ADC based on telemetry config"
-//    ADCInitialize();
-//    printf("    Analog to Digital Converter Initialized\n\r");
-    
     // Setup the real time clock-calendar
     rtccInitialize();
     if (reset_cause == POR_Reset) rtccClear();
@@ -159,19 +154,54 @@ void main(void) {
     I2CMaster_Initialize();
     printf("    I2C Bus Controller Initialized\r\n");
     softwareDelay(0xFFFFF);
-#warning "fix this"
-    tempSensorsInitialize();
-    printf("    Temperature Sensors Initialized\r\n");
-    powerMonitorsInitialize();
-    printf("    Power Monitors Initialized\r\n");    
-//    logicBoardTOFInitialize();
-//    printf("    Logic Board Time of Flight Counter Initialized\r\n");
-//    backupRTCInitialize();
-//    printf("    Backup Real-Time Clock Initialized\r\n");
-//    backupRTCRestoreTime();
-//    printf("    Restored time backup from previous sessions\r\n");
-//    terminalTextAttributesReset();
-   
+
+    if (nTELEMETRY_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Telemetry Configuration Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        // setup I2C slaves
+        tempSensorsInitialize();
+        printf("    Temperature Sensors Initialized\r\n");
+        powerMonitorsInitialize();
+        printf("    Power Monitors Initialized\r\n");
+        // Enable ADC
+        ADCInitialize();
+        printf("    Analog to Digital Converter Initialized\n\r");
+    }
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Telemetry Configuration Not Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+  
+    if (nTOF_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Time of Flight Configuration Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        logicBoardTOFInitialize();
+        printf("    Logic Board Time of Flight Counter Initialized\r\n");
+    }
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Time of Flight Configuration Not Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    if (nBACKUP_RTC_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Backup RTC Configuration Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        backupRTCInitialize();
+        printf("    Backup Real-Time Clock Initialized\r\n");
+        backupRTCRestoreTime();
+        printf("    Restored time backup from previous sessions\r\n");
+    }
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Backup RTC Configuration Not Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
     // Try to find an installed display board and set it up
     displayBoardInitialize();
     
