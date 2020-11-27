@@ -44,7 +44,7 @@
 #define POS60_VAN_RUN_PIN       LATDbits.LATD0
 #define I2C_EN_PIN              LATDbits.LATD9
 #define POS3P3_PGOOD_PIN        PORTDbits.RD10
-#define POS5_USB_PGOOD          PORTDbits.RD11
+#define POS5_USB_PGOOD_PIN      PORTDbits.RD11
 #define VBAT_PGOOD_PIN          PORTDbits.RD13
 
 // Port E

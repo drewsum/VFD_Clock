@@ -7,7 +7,7 @@
 #include "telemetry.h"
 #include "terminal_control.h"
 
-// This function initializes all temperature sensors in the project, if available
+// This function initializes all power monitors in the project
 void powerMonitorsInitialize(void) {
  
     // Reset chips and write data to config registers
@@ -25,7 +25,7 @@ void powerMonitorsInitialize(void) {
     
 }
 
-// this function gets temperature data for all temperature sensors
+// this function gets temperature data for all power monitors
 void powerMonitorsGetData(void) {
  
     // Get bus voltage data for each power monitor and stash in telemetry structure

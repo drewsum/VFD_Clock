@@ -90,7 +90,7 @@ void main(void) {
     // only clear persistent error flags if we've seen a POR... keep old values after other resets
     if (reset_cause == POR_Reset) {
         live_telemetry_enable = 0;
-        live_telemetry_request = 0;
+        live_telemetry_print_request = 0;
         clearErrorHandler();
     }
     
@@ -228,7 +228,7 @@ void main(void) {
             }
         }
         
-        if (live_telemetry_request && live_telemetry_enable) {
+        if (live_telemetry_print_request && live_telemetry_enable) {
 
             // Clear the terminal
             //terminalClearScreen();
@@ -244,7 +244,7 @@ void main(void) {
             printf("Call 'Live Telemetry' command to disable\033[K\n\r");
             terminalTextAttributesReset();
             
-            live_telemetry_request = 0;
+            live_telemetry_print_request = 0;
             
         }
         

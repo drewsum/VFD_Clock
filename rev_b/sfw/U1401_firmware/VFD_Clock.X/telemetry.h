@@ -52,7 +52,7 @@ volatile __attribute__((coherent)) struct telemetry_s {
 
 // These flags are used to keep enable and request live telemetry updates
 volatile __attribute__((coherent)) __attribute__((persistent)) uint8_t live_telemetry_enable;
-volatile __attribute__((coherent)) uint8_t live_telemetry_request;
+volatile __attribute__((coherent)) uint8_t live_telemetry_print_request;
 
 // This prints all telemetry data in an easily digested format
 void printCurrentTelemetry(void);

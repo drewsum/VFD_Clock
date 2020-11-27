@@ -30,8 +30,7 @@ void heartbeatServices(void) {
         if ((heartbeat_systick + 10) % 20 == 0) ADCCON3bits.GSWTRG = 1;
         
         // print new telemetry to terminal every second
-#warning "fix me"
-        // if (heartbeat_systick % 100 == 0) live_telemetry_print_request = 1;
+        if (heartbeat_systick % 100 == 0) live_telemetry_print_request = 1;
         
     }
         
