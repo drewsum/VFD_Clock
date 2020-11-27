@@ -23,13 +23,10 @@
 // This is a typedef for holding the different types of telemetry data for each power supply
 typedef struct telemetry_paramaters_ps_u {
     
-    double input_voltage;
-    double input_current;
-    double input_power;
     double temperature;
-    double output_voltage;
-    double output_current;
-    double output_power;
+    double voltage;
+    double current;
+    double power;
     
 } telemetry_parameters_ps_t;
 
