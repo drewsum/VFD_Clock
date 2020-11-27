@@ -37,7 +37,7 @@ void printPGOODStatus(void) {
     printf("    +1.2VFF Power Supply is %s", POS1P2_VFF_RUN_PIN ? "enabled, " : "disabled\r\n");
     if (POS1P2_VFF_PGOOD_PIN) printf("output voltage is %s\r\n", POS1P2_VFF_PGOOD_PIN ? "within regulation" : "out of regulation");
 
-    #warning "fix me"
+    #warning "fix me, add VBAT"
 //    if (!nUSB_DETECT_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("    USB Bus Voltage is %s\n\r", !nUSB_DETECT_PIN ? "within tolerance" : "out of tolerance (or USB cable is unplugged)");

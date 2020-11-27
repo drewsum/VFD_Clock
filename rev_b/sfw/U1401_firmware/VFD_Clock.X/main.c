@@ -136,7 +136,7 @@ void main(void) {
     printf("    Unused Peripheral Modules Disabled\n\r");
     
     // Enable ADC
-    #warning "reneable ADC"
+    #warning "reneable ADC based on telemetry config"
 //    ADCInitialize();
 //    printf("    Analog to Digital Converter Initialized\n\r");
     
@@ -163,7 +163,7 @@ void main(void) {
     tempSensorsInitialize();
     printf("    Temperature Sensors Initialized\r\n");
     powerMonitorsInitialize();
-    printf("    Power Monitors Initialized\r\n");
+    printf("    Power Monitors Initialized\r\n");    
 //    logicBoardTOFInitialize();
 //    printf("    Logic Board Time of Flight Counter Initialized\r\n");
 //    backupRTCInitialize();
@@ -173,7 +173,7 @@ void main(void) {
 //    terminalTextAttributesReset();
    
     // Try to find an installed display board and set it up
-//    displayBoardInitialize();
+    displayBoardInitialize();
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

@@ -68,7 +68,7 @@
 #define ANODE_DP_PIN            LATGbits.LATG9
 #define nBACKUP_RTC_CONFIG_PIN  PORTGbits.RG12
 #define nTOF_CONFIG_PIN         PORTGbits.RG13
-#define TELEMETRY_CONFIG_PIN    PORTGbits.RG14
+#define nTELEMETRY_CONFIG_PIN   PORTGbits.RG14
 #define BUZZER_ENABLE_PIN       LATGbits.LATG15
 
 

@@ -74,9 +74,11 @@ void backupRTCRestoreTime(void) {
 // This function sets up the I2C devices on the display board
 void displayI2CInitialize(void) {
 
-    MCP9804TempSensorInitialize(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
+    if (nTELEMETRY_CONFIG_PIN == LOW) MCP9804TempSensorInitialize(DSPLY_TEMP_SNS_ADDR, &error_handler.flags.dsply_temp);   
+    
     TCA9555IOExpanderInitialize(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io);
-    DS1683TimeOfFlightInitialize(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    
+    if (nTOF_CONFIG_PIN == LOW) DS1683TimeOfFlightInitialize(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
     
 }
 
@@ -89,10 +91,15 @@ void displayBoardSetIOExpanderOutput(uint16_t output_data) {
 
 // this function prints config status for misc I2C devices
 void miscI2CDevicesPrintStatus(void) {
- 
-    DS1683PrintStatus(LOGIC_TOF_ADDR, &error_handler.flags.logic_tof);
-    if (nDISPLAY_DETECT_PIN == LOW) DS1683PrintStatus(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
-    DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+    if (nTOF_CONFIG_PIN == LOW) {
+        DS1683PrintStatus(LOGIC_TOF_ADDR, &error_handler.flags.logic_tof);
+        if (nDISPLAY_DETECT_PIN == LOW) DS1683PrintStatus(DISPLAY_TOF_ADDR, &error_handler.flags.dsply_tof);
+    }
+    
+    if (nBACKUP_RTC_CONFIG_PIN == LOW) DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+    
     if (nDISPLAY_DETECT_PIN == LOW) TCA9555IOExpanderPrintStatus(DISPLAY_IO_ADDR, &error_handler.flags.dsply_io);
     
 }
