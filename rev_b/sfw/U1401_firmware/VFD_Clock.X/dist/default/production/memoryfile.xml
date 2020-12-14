@@ -3,15 +3,15 @@
   <executable name="dist/default/production/VFD_Clock.X.production.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
-      <length>1049728</length>                 
-      <used>381128</used>                     
-      <free>668600</free>                     
+      <length>2098304</length>                 
+      <used>380428</used>                     
+      <free>1717876</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 
-      <length>262144</length>                 
-      <used>76274</used>                     
-      <free>185870</free>                     
+      <length>524288</length>                 
+      <used>76246</used>                     
+      <free>448042</free>                     
     </memory>                              
   </executable>                            
 </project>                                 

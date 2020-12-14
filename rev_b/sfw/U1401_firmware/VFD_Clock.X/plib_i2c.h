@@ -61,7 +61,7 @@
 
 #endif
         
-volatile I2C_OBJ i2c5Obj;
+volatile I2C_OBJ i2c1Obj;
         
 // DOM-IGNORE-END
 

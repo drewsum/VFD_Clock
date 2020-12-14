@@ -20,7 +20,7 @@ void DS1683TimeOfFlightInitialize(uint8_t device_address, volatile uint8_t *devi
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
 
 }
 
@@ -34,7 +34,7 @@ double DS1683GetETC(uint8_t device_address, volatile uint8_t *device_error_handl
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 4)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // convert received data to volts
     uint32_t received_data = ((readBytes[3] << 24) | (readBytes[2] << 16) | (readBytes[1] << 8) | (readBytes[0]));
@@ -52,9 +52,9 @@ uint32_t DS1683GetEventCount(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) {
+    if (i2c1Obj.state == I2C_STATE_IDLE) {
         // convert received data to volts
         return ((readBytes[1] << 8) | (readBytes[0]));
     }
@@ -76,7 +76,7 @@ void DS1683PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     uint8_t read_event_af = (readBytes[0] >> 1) & 0b1;
     uint8_t read_etc_af = (readBytes[0]) & 0b1;
@@ -86,7 +86,7 @@ void DS1683PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint16_t read_event_alarm = (readBytes[1] << 8) | readBytes[0];
     
     // read ETC alarm limit
@@ -94,7 +94,7 @@ void DS1683PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 4)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint32_t read_etc_alarm = ((readBytes[3] << 24) | (readBytes[2] << 16) | (readBytes[1] << 8) | (readBytes[0]));
     
     // read config register
@@ -102,7 +102,7 @@ void DS1683PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_etc_alarm_en = (readBytes[0] >> 2) & 0b1;
     uint8_t read_event_alarm_en = (readBytes[0] >> 1) & 0b1;
     uint8_t read_alarm_pol = readBytes[0] & 0b1;
@@ -112,7 +112,7 @@ void DS1683PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, data_reg_pointer, 1, readBytes, 16)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t readUserNVM[16];
     uint8_t i;
     for(i=0; i<16; i++)

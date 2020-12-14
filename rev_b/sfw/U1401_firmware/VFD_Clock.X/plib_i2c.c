@@ -6,7 +6,7 @@
     Microchip Technology Inc.
 
   File Name:
-    plib_i2c5.c
+    plib_i2c1.c
 
   Summary:
     I2C PLIB Implementation file
@@ -70,71 +70,71 @@
 void I2CMaster_Initialize(void)
 {
     /* Disable the I2C Master interrupt */
-    IEC5CLR = _IEC5_I2C5MIE_MASK;
+    IEC3CLR = _IEC3_I2C1MIE_MASK;
 
     /* Disable the I2C Bus collision interrupt */
-    IEC5CLR = _IEC5_I2C5BIE_MASK;
+    IEC3CLR = _IEC3_I2C1BIE_MASK;
 
-    I2C5BRG = 0x04A;
+    I2C1BRG = 0x04A;
 
-    I2C5CONCLR = _I2C5CON_SIDL_MASK;
-    I2C5CONCLR = _I2C5CON_DISSLW_MASK;
-    I2C5CONCLR = _I2C5CON_SMEN_MASK;
+    I2C1CONCLR = _I2C1CON_SIDL_MASK;
+    I2C1CONCLR = _I2C1CON_DISSLW_MASK;
+    I2C1CONCLR = _I2C1CON_SMEN_MASK;
 
-    setInterruptPriority(I2C5_Bus_Collision_Event, 4);
-    setInterruptPriority(I2C5_Master_Event, 7);
+    setInterruptPriority(I2C1_Bus_Collision_Event, 4);
+    setInterruptPriority(I2C1_Master_Event, 7);
     
     /* Clear master interrupt flag */
-    IFS5CLR = _IFS5_I2C5MIF_MASK;
+    IFS3CLR = _IFS3_I2C1MIF_MASK;
 
     /* Clear fault interrupt flag */
-    IFS5CLR = _IFS5_I2C5BIF_MASK;
+    IFS3CLR = _IFS3_I2C1BIF_MASK;
 
     /* Turn on the I2C module */
-    I2C5CONSET = _I2C5CON_ON_MASK;
+    I2C1CONSET = _I2C1CON_ON_MASK;
 
     /* Set the initial state of the I2C state machine */
-    i2c5Obj.state = I2C_STATE_IDLE;
+    i2c1Obj.state = I2C_STATE_IDLE;
 }
 
 /* I2C state machine */
 static void I2CMaster_TransferSM(void)
 {
-    IFS5CLR = _IFS5_I2C5MIF_MASK;
+    IFS3CLR = _IFS3_I2C1MIF_MASK;
 
-    switch (i2c5Obj.state)
+    switch (i2c1Obj.state)
     {
         case I2C_STATE_START_CONDITION:
             /* Generate Start Condition */
-            I2C5CONSET = _I2C5CON_SEN_MASK;
-            IEC5SET = _IEC5_I2C5MIE_MASK;
-            IEC5SET = _IEC5_I2C5BIE_MASK;
-            i2c5Obj.state = I2C_STATE_ADDR_BYTE_1_SEND;
+            I2C1CONSET = _I2C1CON_SEN_MASK;
+            IEC3SET = _IEC3_I2C1MIE_MASK;
+            IEC3SET = _IEC3_I2C1BIE_MASK;
+            i2c1Obj.state = I2C_STATE_ADDR_BYTE_1_SEND;
             break;
 
         case I2C_STATE_ADDR_BYTE_1_SEND:
             /* Is transmit buffer full? */
-            if (!(I2C5STAT & _I2C5STAT_TBF_MASK))
+            if (!(I2C1STAT & _I2C1STAT_TBF_MASK))
             {
-                if (i2c5Obj.address > 0x007F)
+                if (i2c1Obj.address > 0x007F)
                 {
                     /* Transmit the MSB 2 bits of the 10-bit slave address, with R/W = 0 */
-                    I2C5TRN = ( 0xF0 | (((uint8_t*)&i2c5Obj.address)[1] << 1));
+                    I2C1TRN = ( 0xF0 | (((uint8_t*)&i2c1Obj.address)[1] << 1));
 
-                    i2c5Obj.state = I2C_STATE_ADDR_BYTE_2_SEND;
+                    i2c1Obj.state = I2C_STATE_ADDR_BYTE_2_SEND;
                 }
                 else
                 {
                     /* 8-bit addressing mode */
-                    I2C5TRN = ((i2c5Obj.address << 1) | i2c5Obj.transferType);
+                    I2C1TRN = ((i2c1Obj.address << 1) | i2c1Obj.transferType);
 
-                    if (i2c5Obj.transferType == I2C_TRANSFER_TYPE_WRITE)
+                    if (i2c1Obj.transferType == I2C_TRANSFER_TYPE_WRITE)
                     {
-                        i2c5Obj.state = I2C_STATE_WRITE;
+                        i2c1Obj.state = I2C_STATE_WRITE;
                     }
                     else
                     {
-                        i2c5Obj.state = I2C_STATE_READ;
+                        i2c1Obj.state = I2C_STATE_READ;
                     }
                 }
             }
@@ -142,175 +142,175 @@ static void I2CMaster_TransferSM(void)
 
         case I2C_STATE_ADDR_BYTE_2_SEND:
             /* Transmit the 2nd byte of the 10-bit slave address */
-            if (!(I2C5STAT & _I2C5STAT_ACKSTAT_MASK))
+            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
             {
-                if (!(I2C5STAT & _I2C5STAT_TBF_MASK))
+                if (!(I2C1STAT & _I2C1STAT_TBF_MASK))
                 {
                     /* Transmit the remaining 8-bits of the 10-bit address */
-                    I2C5TRN = i2c5Obj.address;
+                    I2C1TRN = i2c1Obj.address;
 
-                    if (i2c5Obj.transferType == I2C_TRANSFER_TYPE_WRITE)
+                    if (i2c1Obj.transferType == I2C_TRANSFER_TYPE_WRITE)
                     {
-                        i2c5Obj.state = I2C_STATE_WRITE;
+                        i2c1Obj.state = I2C_STATE_WRITE;
                     }
                     else
                     {
-                        i2c5Obj.state = I2C_STATE_READ_10BIT_MODE;
+                        i2c1Obj.state = I2C_STATE_READ_10BIT_MODE;
                     }
                 }
             }
             else
             {
                 /* NAK received. Generate Stop Condition. */
-                i2c5Obj.error = I2C_ERROR_NACK;
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                i2c1Obj.error = I2C_ERROR_NACK;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_READ_10BIT_MODE:
-            if (!(I2C5STAT & _I2C5STAT_ACKSTAT_MASK))
+            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
             {
                 /* Generate repeated start condition */
-                I2C5CONSET = _I2C5CON_RSEN_MASK;
-                i2c5Obj.state = I2C_STATE_ADDR_BYTE_1_SEND_10BIT_ONLY;
+                I2C1CONSET = _I2C1CON_RSEN_MASK;
+                i2c1Obj.state = I2C_STATE_ADDR_BYTE_1_SEND_10BIT_ONLY;
             }
             else
             {
                 /* NAK received. Generate Stop Condition. */
-                i2c5Obj.error = I2C_ERROR_NACK;
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                i2c1Obj.error = I2C_ERROR_NACK;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_ADDR_BYTE_1_SEND_10BIT_ONLY:
             /* Is transmit buffer full? */
-            if (!(I2C5STAT & _I2C5STAT_TBF_MASK))
+            if (!(I2C1STAT & _I2C1STAT_TBF_MASK))
             {
                 /* Transmit the first byte of the 10-bit slave address, with R/W = 1 */
-                I2C5TRN = ( 0xF1 | ((((uint8_t*)&i2c5Obj.address)[1] << 1)));
-                i2c5Obj.state = I2C_STATE_READ;
+                I2C1TRN = ( 0xF1 | ((((uint8_t*)&i2c1Obj.address)[1] << 1)));
+                i2c1Obj.state = I2C_STATE_READ;
             }
             else
             {
                 /* NAK received. Generate Stop Condition. */
-                i2c5Obj.error = I2C_ERROR_NACK;
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                i2c1Obj.error = I2C_ERROR_NACK;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_WRITE:
-            if (!(I2C5STAT & _I2C5STAT_ACKSTAT_MASK))
+            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
             {
                 /* ACK received */
-                if (i2c5Obj.writeCount < i2c5Obj.writeSize)
+                if (i2c1Obj.writeCount < i2c1Obj.writeSize)
                 {
-                    if (!(I2C5STAT & _I2C5STAT_TBF_MASK))
+                    if (!(I2C1STAT & _I2C1STAT_TBF_MASK))
                     {
                         /* Transmit the data from writeBuffer[] */
-                        I2C5TRN = i2c5Obj.writeBuffer[i2c5Obj.writeCount++];
+                        I2C1TRN = i2c1Obj.writeBuffer[i2c1Obj.writeCount++];
                     }
                 }
                 else
                 {
-                    if (i2c5Obj.readCount < i2c5Obj.readSize)
+                    if (i2c1Obj.readCount < i2c1Obj.readSize)
                     {
                         /* Generate repeated start condition */
-                        I2C5CONSET = _I2C5CON_RSEN_MASK;
+                        I2C1CONSET = _I2C1CON_RSEN_MASK;
 
-                        i2c5Obj.transferType = I2C_TRANSFER_TYPE_READ;
+                        i2c1Obj.transferType = I2C_TRANSFER_TYPE_READ;
 
-                        if (i2c5Obj.address > 0x007F)
+                        if (i2c1Obj.address > 0x007F)
                         {
                             /* Send the I2C slave address with R/W = 1 */
-                            i2c5Obj.state = I2C_STATE_ADDR_BYTE_1_SEND_10BIT_ONLY;
+                            i2c1Obj.state = I2C_STATE_ADDR_BYTE_1_SEND_10BIT_ONLY;
                         }
                         else
                         {
                             /* Send the I2C slave address with R/W = 1 */
-                            i2c5Obj.state = I2C_STATE_ADDR_BYTE_1_SEND;
+                            i2c1Obj.state = I2C_STATE_ADDR_BYTE_1_SEND;
                         }
 
                     }
                     else
                     {
                         /* Transfer Complete. Generate Stop Condition */
-                        I2C5CONSET = _I2C5CON_PEN_MASK;
-                        i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                        I2C1CONSET = _I2C1CON_PEN_MASK;
+                        i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
                     }
                 }
             }
             else
             {
                 /* NAK received. Generate Stop Condition. */
-                i2c5Obj.error = I2C_ERROR_NACK;
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                i2c1Obj.error = I2C_ERROR_NACK;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_READ:
-            if (!(I2C5STAT & _I2C5STAT_ACKSTAT_MASK))
+            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
             {
                 /* Slave ACK'd the device address. Enable receiver. */
-                I2C5CONSET = _I2C5CON_RCEN_MASK;
-                i2c5Obj.state = I2C_STATE_READ_BYTE;
+                I2C1CONSET = _I2C1CON_RCEN_MASK;
+                i2c1Obj.state = I2C_STATE_READ_BYTE;
             }
             else
             {
                 /* NAK received. Generate Stop Condition. */
-                i2c5Obj.error = I2C_ERROR_NACK;
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                i2c1Obj.error = I2C_ERROR_NACK;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_READ_BYTE:
             /* Data received from the slave */
-            if (I2C5STAT & _I2C5STAT_RBF_MASK)
+            if (I2C1STAT & _I2C1STAT_RBF_MASK)
             {
-                i2c5Obj.readBuffer[i2c5Obj.readCount++] = I2C5RCV;
-                if (i2c5Obj.readCount == i2c5Obj.readSize)
+                i2c1Obj.readBuffer[i2c1Obj.readCount++] = I2C1RCV;
+                if (i2c1Obj.readCount == i2c1Obj.readSize)
                 {
                     /* Send NAK */
-                    I2C5CONSET = _I2C5CON_ACKDT_MASK;
-                    I2C5CONSET = _I2C5CON_ACKEN_MASK;
+                    I2C1CONSET = _I2C1CON_ACKDT_MASK;
+                    I2C1CONSET = _I2C1CON_ACKEN_MASK;
                 }
                 else
                 {
                     /* Send ACK */
-                    I2C5CONCLR = _I2C5CON_ACKDT_MASK;
-                    I2C5CONSET = _I2C5CON_ACKEN_MASK;
+                    I2C1CONCLR = _I2C1CON_ACKDT_MASK;
+                    I2C1CONSET = _I2C1CON_ACKEN_MASK;
                 }
-                i2c5Obj.state = I2C_STATE_WAIT_ACK_COMPLETE;
+                i2c1Obj.state = I2C_STATE_WAIT_ACK_COMPLETE;
             }
             break;
 
         case I2C_STATE_WAIT_ACK_COMPLETE:
             /* ACK or NAK sent to the I2C slave */
-            if (i2c5Obj.readCount < i2c5Obj.readSize)
+            if (i2c1Obj.readCount < i2c1Obj.readSize)
             {
                 /* Enable receiver */
-                I2C5CONSET = _I2C5CON_RCEN_MASK;
-                i2c5Obj.state = I2C_STATE_READ_BYTE;
+                I2C1CONSET = _I2C1CON_RCEN_MASK;
+                i2c1Obj.state = I2C_STATE_READ_BYTE;
             }
             else
             {
                 /* Generate Stop Condition */
-                I2C5CONSET = _I2C5CON_PEN_MASK;
-                i2c5Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
+                I2C1CONSET = _I2C1CON_PEN_MASK;
+                i2c1Obj.state = I2C_STATE_WAIT_STOP_CONDITION_COMPLETE;
             }
             break;
 
         case I2C_STATE_WAIT_STOP_CONDITION_COMPLETE:
-            i2c5Obj.state = I2C_STATE_IDLE;
-            IEC5CLR = _IEC5_I2C5MIE_MASK;
-            IEC5CLR = _IEC5_I2C5BIE_MASK;
-            if (i2c5Obj.callback != NULL)
+            i2c1Obj.state = I2C_STATE_IDLE;
+            IEC3CLR = _IEC3_I2C1MIE_MASK;
+            IEC3CLR = _IEC3_I2C1BIE_MASK;
+            if (i2c1Obj.callback != NULL)
             {
-                i2c5Obj.callback(i2c5Obj.context);
+                i2c1Obj.callback(i2c1Obj.context);
             }
             break;
 
@@ -327,14 +327,14 @@ void I2CMaster_CallbackRegister(I2C_CALLBACK callback, uintptr_t contextHandle)
         return;
     }
 
-    i2c5Obj.callback = callback;
-    i2c5Obj.context = contextHandle;
+    i2c1Obj.callback = callback;
+    i2c1Obj.context = contextHandle;
 }
 
 bool I2CMaster_IsBusy(void)
 {
-    if( (i2c5Obj.state != I2C_STATE_IDLE ) || (I2C5CON & 0x0000001F) ||
-        (I2C5STAT & _I2C5STAT_TRSTAT_MASK) || (I2C5STAT & _I2C5STAT_S_MASK) )
+    if( (i2c1Obj.state != I2C_STATE_IDLE ) || (I2C1CON & 0x0000001F) ||
+        (I2C1STAT & _I2C1STAT_TRSTAT_MASK) || (I2C1STAT & _I2C1STAT_S_MASK) )
     {
         return true;
     }
@@ -347,25 +347,25 @@ bool I2CMaster_IsBusy(void)
 bool I2CMaster_Read(uint16_t address, uint8_t* rdata, size_t rlength)
 {
     /* State machine must be idle and I2C module should not have detected a start bit on the bus */
-    if((i2c5Obj.state != I2C_STATE_IDLE) || (I2C5STAT & _I2C5STAT_S_MASK))
+    if((i2c1Obj.state != I2C_STATE_IDLE) || (I2C1STAT & _I2C1STAT_S_MASK))
     {
         return false;
     }
 
-    i2c5Obj.address             = address;
-    i2c5Obj.readBuffer          = rdata;
-    i2c5Obj.readSize            = rlength;
-    i2c5Obj.writeBuffer         = NULL;
-    i2c5Obj.writeSize           = 0;
-    i2c5Obj.writeCount          = 0;
-    i2c5Obj.readCount           = 0;
-    i2c5Obj.transferType        = I2C_TRANSFER_TYPE_READ;
-    i2c5Obj.error               = I2C_ERROR_NONE;
-    i2c5Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.address             = address;
+    i2c1Obj.readBuffer          = rdata;
+    i2c1Obj.readSize            = rlength;
+    i2c1Obj.writeBuffer         = NULL;
+    i2c1Obj.writeSize           = 0;
+    i2c1Obj.writeCount          = 0;
+    i2c1Obj.readCount           = 0;
+    i2c1Obj.transferType        = I2C_TRANSFER_TYPE_READ;
+    i2c1Obj.error               = I2C_ERROR_NONE;
+    i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
 
-    I2C5CONSET                  = _I2C5CON_SEN_MASK;
-    IEC5SET                     = _IEC5_I2C5MIE_MASK;
-    IEC5SET                     = _IEC5_I2C5BIE_MASK;
+    I2C1CONSET                  = _I2C1CON_SEN_MASK;
+    IEC3SET                     = _IEC3_I2C1MIE_MASK;
+    IEC3SET                     = _IEC3_I2C1BIE_MASK;
 
     return true;
 }
@@ -374,25 +374,25 @@ bool I2CMaster_Read(uint16_t address, uint8_t* rdata, size_t rlength)
 bool I2CMaster_Write(uint16_t address, uint8_t* wdata, size_t wlength)
 {
     /* State machine must be idle and I2C module should not have detected a start bit on the bus */
-    if((i2c5Obj.state != I2C_STATE_IDLE) || (I2C5STAT & _I2C5STAT_S_MASK))
+    if((i2c1Obj.state != I2C_STATE_IDLE) || (I2C1STAT & _I2C1STAT_S_MASK))
     {
         return false;
     }
 
-    i2c5Obj.address             = address;
-    i2c5Obj.readBuffer          = NULL;
-    i2c5Obj.readSize            = 0;
-    i2c5Obj.writeBuffer         = wdata;
-    i2c5Obj.writeSize           = wlength;
-    i2c5Obj.writeCount          = 0;
-    i2c5Obj.readCount           = 0;
-    i2c5Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
-    i2c5Obj.error               = I2C_ERROR_NONE;
-    i2c5Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.address             = address;
+    i2c1Obj.readBuffer          = NULL;
+    i2c1Obj.readSize            = 0;
+    i2c1Obj.writeBuffer         = wdata;
+    i2c1Obj.writeSize           = wlength;
+    i2c1Obj.writeCount          = 0;
+    i2c1Obj.readCount           = 0;
+    i2c1Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
+    i2c1Obj.error               = I2C_ERROR_NONE;
+    i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
 
-    I2C5CONSET                  = _I2C5CON_SEN_MASK;
-    IEC5SET                     = _IEC5_I2C5MIE_MASK;
-    IEC5SET                     = _IEC5_I2C5BIE_MASK;
+    I2C1CONSET                  = _I2C1CON_SEN_MASK;
+    IEC3SET                     = _IEC3_I2C1MIE_MASK;
+    IEC3SET                     = _IEC3_I2C1BIE_MASK;
 
     return true;
 }
@@ -401,25 +401,25 @@ bool I2CMaster_Write(uint16_t address, uint8_t* wdata, size_t wlength)
 bool I2CMaster_WriteRead(uint16_t address, uint8_t* wdata, size_t wlength, uint8_t* rdata, size_t rlength)
 {
     /* State machine must be idle and I2C module should not have detected a start bit on the bus */
-    if((i2c5Obj.state != I2C_STATE_IDLE) || (I2C5STAT & _I2C5STAT_S_MASK))
+    if((i2c1Obj.state != I2C_STATE_IDLE) || (I2C1STAT & _I2C1STAT_S_MASK))
     {
         return false;
     }
 
-    i2c5Obj.address             = address;
-    i2c5Obj.readBuffer          = rdata;
-    i2c5Obj.readSize            = rlength;
-    i2c5Obj.writeBuffer         = wdata;
-    i2c5Obj.writeSize           = wlength;
-    i2c5Obj.writeCount          = 0;
-    i2c5Obj.readCount           = 0;
-    i2c5Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
-    i2c5Obj.error               = I2C_ERROR_NONE;
-    i2c5Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.address             = address;
+    i2c1Obj.readBuffer          = rdata;
+    i2c1Obj.readSize            = rlength;
+    i2c1Obj.writeBuffer         = wdata;
+    i2c1Obj.writeSize           = wlength;
+    i2c1Obj.writeCount          = 0;
+    i2c1Obj.readCount           = 0;
+    i2c1Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
+    i2c1Obj.error               = I2C_ERROR_NONE;
+    i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
 
-    I2C5CONSET                  = _I2C5CON_SEN_MASK;
-    IEC5SET                     = _IEC5_I2C5MIE_MASK;
-    IEC5SET                     = _IEC5_I2C5BIE_MASK;
+    I2C1CONSET                  = _I2C1CON_SEN_MASK;
+    IEC3SET                     = _IEC3_I2C1MIE_MASK;
+    IEC3SET                     = _IEC3_I2C1BIE_MASK;
 
     return true;
 }
@@ -428,8 +428,8 @@ I2C_ERROR I2CMaster_ErrorGet(void)
 {
     I2C_ERROR error;
 
-    error = i2c5Obj.error;
-    i2c5Obj.error = I2C_ERROR_NONE;
+    error = i2c1Obj.error;
+    i2c1Obj.error = I2C_ERROR_NONE;
 
     return error;
 }
@@ -465,46 +465,46 @@ bool I2CMaster_TransferSetup(I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq )
         return false;
     }
 
-    I2C5BRG = baudValue;
+    I2C1BRG = baudValue;
 
     /* Enable slew rate for 400 kHz clock speed; disable for all other speeds */
 
     if (i2cClkSpeed == 400000)
     {
-        I2C5CONCLR = _I2C5CON_DISSLW_MASK;;
+        I2C1CONCLR = _I2C1CON_DISSLW_MASK;;
     }
     else
     {
-        I2C5CONSET = _I2C5CON_DISSLW_MASK;;
+        I2C1CONSET = _I2C1CON_DISSLW_MASK;;
     }
 
     return true;
 }
 
-void __ISR(_I2C5_BUS_VECTOR, IPL4SRS) I2CMaster_BUS_InterruptHandler( void )
+void __ISR(_I2C1_BUS_VECTOR, IPL4SRS) I2CMaster_BUS_InterruptHandler( void )
 {
     
     /* Clear the bus collision error status bit */
-    I2C5STATCLR = _I2C5STAT_BCL_MASK;
+    I2C1STATCLR = _I2C1STAT_BCL_MASK;
 
     /* ACK the bus interrupt */
-    IFS5CLR = _IFS5_I2C5BIF_MASK;
+    IFS3CLR = _IFS3_I2C1BIF_MASK;
 
-    i2c5Obj.state = I2C_STATE_IDLE;
+    i2c1Obj.state = I2C_STATE_IDLE;
 
-    i2c5Obj.error = I2C_ERROR_BUS_COLLISION;
+    i2c1Obj.error = I2C_ERROR_BUS_COLLISION;
 
-    if (i2c5Obj.callback != NULL)
+    if (i2c1Obj.callback != NULL)
     {
-        i2c5Obj.callback(i2c5Obj.context);
+        i2c1Obj.callback(i2c1Obj.context);
     }
     
     // enter bus collision handling code here
-	clearInterruptFlag(I2C5_Bus_Collision_Event);
+	clearInterruptFlag(I2C1_Bus_Collision_Event);
     // error_handler.flags.i2c_bus_collision = 1;
 } 
 
-void __ISR(_I2C5_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
+void __ISR(_I2C1_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
 {
     I2CMaster_TransferSM();
 }
@@ -513,101 +513,101 @@ void __ISR(_I2C5_MASTER_VECTOR, IPL7SRS) I2C_MASTER_ISR ( void )
 void printI2CMasterStatus(void) {
     
     // print I2CXCON bitfield
-    if (I2C5CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.ON) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    I2C Master Module is %s\n\r", I2C5CONbits.ON ? "enabled" : "disabled");
+    printf("    I2C Master Module is %s\n\r", I2C1CONbits.ON ? "enabled" : "disabled");
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    I2C SDA hold time set to %s\n\r", I2C5CONbits.SDAHT ? "500ns" : "100ns");
+    printf("    I2C SDA hold time set to %s\n\r", I2C1CONbits.SDAHT ? "500ns" : "100ns");
     
-    if (I2C5CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.SIDL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    I2C Master Module %s in Idle Mode\n\r", I2C5CONbits.SIDL ? "Disabled" : "Enabled");
+    printf("    I2C Master Module %s in Idle Mode\n\r", I2C1CONbits.SIDL ? "Disabled" : "Enabled");
     
-    if (I2C5CONbits.STRICT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.STRICT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Strict address enforcement is %s\n\r", I2C5CONbits.STRICT ? "enabled" : "disabled");
+    printf("    Strict address enforcement is %s\n\r", I2C1CONbits.STRICT ? "enabled" : "disabled");
     
-    if (I2C5CONbits.A10M) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.A10M) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    10 bit addressing is %s\n\r", I2C5CONbits.A10M ? "enabled" : "disabled");
+    printf("    10 bit addressing is %s\n\r", I2C1CONbits.A10M ? "enabled" : "disabled");
     
-    if (I2C5CONbits.DISSLW) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.DISSLW) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Drive strength slew rate control is %s\n\r", I2C5CONbits.DISSLW ? "disabled" : "enabled");
+    printf("    Drive strength slew rate control is %s\n\r", I2C1CONbits.DISSLW ? "disabled" : "enabled");
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    I/O logic thresholds set to %s levels\n\r", I2C5CONbits.SMEN ? "SMBus" : "I2C");
-    printf("    Next acknowledge sequence is a data %s\n\r", I2C5CONbits.ACKDT ? "NACK" : "ACK");
+    printf("    I/O logic thresholds set to %s levels\n\r", I2C1CONbits.SMEN ? "SMBus" : "I2C");
+    printf("    Next acknowledge sequence is a data %s\n\r", I2C1CONbits.ACKDT ? "NACK" : "ACK");
     
-    if (I2C5CONbits.ACKEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.ACKEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Acknowledge sequence is currently %s\n\r", I2C5CONbits.ACKEN ? "Enabled" : "Disabled");
+    printf("    Acknowledge sequence is currently %s\n\r", I2C1CONbits.ACKEN ? "Enabled" : "Disabled");
     
-    if (I2C5CONbits.RCEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.RCEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Master is currently %s\n\r", I2C5CONbits.RCEN ? "reading" : "writing");
+    printf("    Master is currently %s\n\r", I2C1CONbits.RCEN ? "reading" : "writing");
     
-    if (I2C5CONbits.PEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.PEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Stop condition is currently %s\n\r", I2C5CONbits.PEN ? "enabled" : "disabled");
+    printf("    Stop condition is currently %s\n\r", I2C1CONbits.PEN ? "enabled" : "disabled");
     
-    if (I2C5CONbits.RSEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.RSEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Repeated start condition is %s\n\r", I2C5CONbits.RSEN ? "in progress" : "not in progress");
+    printf("    Repeated start condition is %s\n\r", I2C1CONbits.RSEN ? "in progress" : "not in progress");
     
-    if (I2C5CONbits.SEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1CONbits.SEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Start condition is currently %s\n\r", I2C5CONbits.SEN ? "in progress" : "not in progress");
+    printf("    Start condition is currently %s\n\r", I2C1CONbits.SEN ? "in progress" : "not in progress");
     
     // Print out bitfield for I2CXSTAT register
-    if (I2C5STATbits.ACKSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.ACKSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    %s received from slave\n\r", I2C5STATbits.ACKSTAT ? "NACK" : "ACK");
+    printf("    %s received from slave\n\r", I2C1STATbits.ACKSTAT ? "NACK" : "ACK");
     
-    if (I2C5STATbits.TRSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.TRSTAT) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Master transmit is currently %s\n\r", I2C5STATbits.TRSTAT ? "in progress" : "not in progress");
+    printf("    Master transmit is currently %s\n\r", I2C1STATbits.TRSTAT ? "in progress" : "not in progress");
     
-    if (I2C5STATbits.BCL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.BCL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Bus collision %s\n\r", I2C5STATbits.BCL ? "detected" : "not detected");
+    printf("    Bus collision %s\n\r", I2C1STATbits.BCL ? "detected" : "not detected");
     
-    if (I2C5STATbits.ADD10) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.ADD10) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    10 bit address %s\n\r", I2C5STATbits.ADD10 ? "matched" : "not matched");
+    printf("    10 bit address %s\n\r", I2C1STATbits.ADD10 ? "matched" : "not matched");
     
-    if (I2C5STATbits.IWCOL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.IWCOL) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Write collision has %s\n\r", I2C5STATbits.IWCOL ? "occurred" : "not occurred");
+    printf("    Write collision has %s\n\r", I2C1STATbits.IWCOL ? "occurred" : "not occurred");
     
-    if (I2C5STATbits.I2COV) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.I2COV) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Receive overflow has %s\n\r", I2C5STATbits.I2COV ? "occurred" : "not occurred");
+    printf("    Receive overflow has %s\n\r", I2C1STATbits.I2COV ? "occurred" : "not occurred");
     
-    if (I2C5STATbits.P) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.P) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Stop bit was %s\n\r", I2C5STATbits.P ? "detected" : "not detected");
+    printf("    Stop bit was %s\n\r", I2C1STATbits.P ? "detected" : "not detected");
     
-    if (I2C5STATbits.S) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.S) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Start or repeated start %s\n\r", I2C5STATbits.S ? "detected" : "not detected");
+    printf("    Start or repeated start %s\n\r", I2C1STATbits.S ? "detected" : "not detected");
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Master is currently %s\n\r", I2C5STATbits.R_W ? "reading" : "writing");
+    printf("    Master is currently %s\n\r", I2C1STATbits.R_W ? "reading" : "writing");
     
-    if (I2C5STATbits.RBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.RBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Receive buffer is currently %s\n\r", I2C5STATbits.RBF ? "full" : "empty");
+    printf("    Receive buffer is currently %s\n\r", I2C1STATbits.RBF ? "full" : "empty");
     
-    if (I2C5STATbits.TBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    if (I2C1STATbits.TBF) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Transmit buffer is currently %s\n\r", I2C5STATbits.TBF ? "full" : "empty");
+    printf("    Transmit buffer is currently %s\n\r", I2C1STATbits.TBF ? "full" : "empty");
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    I2C Baud Rate Generator is set to 0x%04X\r\n", I2C5BRG);
-    printf("    Current transmit buffer contents: 0x%02X\r\n", I2C5TRN);
-    printf("    Current receive buffer contents: 0x%02X\r\n", I2C5RCV);
+    printf("    I2C Baud Rate Generator is set to 0x%04X\r\n", I2C1BRG);
+    printf("    Current transmit buffer contents: 0x%02X\r\n", I2C1TRN);
+    printf("    Current receive buffer contents: 0x%02X\r\n", I2C1RCV);
     
     terminalTextAttributesReset();
     

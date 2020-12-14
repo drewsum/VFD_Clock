@@ -22,7 +22,7 @@ void MCP9804TempSensorInitialize(uint8_t device_address, volatile uint8_t *devic
     if(!I2CMaster_Write(device_address, output_data_array, length)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -57,9 +57,9 @@ double MCP9804GetTemperature(uint8_t input_address, volatile uint8_t *device_err
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) return MCP9804BytesToFloat(temp);
+    if (i2c1Obj.state == I2C_STATE_IDLE) return MCP9804BytesToFloat(temp);
     else {
         *device_error_handler_flag = 1;
         return 0.0;
@@ -77,7 +77,7 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint16_t read_mfg_id = (temp[0] << 8) | temp[1];
     
     // get dev id and revision
@@ -85,7 +85,7 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_device_id = temp[0];
     uint8_t read_rev_id = temp[1];
     
@@ -94,7 +94,7 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_resolution = temp[0] & 0b11;
     
     //read config register
@@ -102,7 +102,7 @@ void MCP9804printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_hyst = (temp[0] >> 1) & 0b11;
     uint8_t read_shutdown = temp[0] & 0b1;
     uint8_t read_crit_lock = (temp[1] >> 7) & 0b1;

@@ -22,7 +22,7 @@ void DS3231MRTCInitialize(uint8_t device_address, volatile uint8_t *device_error
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     
     // Write config data to config register on input temp sensor
@@ -31,7 +31,7 @@ void DS3231MRTCInitialize(uint8_t device_address, volatile uint8_t *device_error
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -39,7 +39,7 @@ void DS3231MRTCInitialize(uint8_t device_address, volatile uint8_t *device_error
 double DS3231MRTCGetTemperature(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
  
     // Check to see if we're starting up into a broken I2C state machine
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     uint8_t data_reg_pointer[1];
     uint8_t readBytes[2];
@@ -47,9 +47,9 @@ double DS3231MRTCGetTemperature(uint8_t device_address, volatile uint8_t *device
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) {
+    if (i2c1Obj.state == I2C_STATE_IDLE) {
         // convert received data to volts
         // from section 8.6.3.2 of datasheet
         return (readBytes[0] * 1.0) + ((readBytes[1] >> 6) * 0.25);
@@ -97,7 +97,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // Minutes
     output_data_array[0] = DS3231M_MINUTES_REG;
@@ -105,7 +105,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // hours
     output_data_array[0] = DS3231M_HOURS_REG;
@@ -113,7 +113,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // weekday
     output_data_array[0] = DS3231M_DAY_REG;
@@ -121,7 +121,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // date
     output_data_array[0] = DS3231M_DATE_REG;
@@ -129,7 +129,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // month
     output_data_array[0] = DS3231M_MONTH_CENT_REG;
@@ -137,7 +137,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // year
     output_data_array[0] = DS3231M_YEAR_REG;
@@ -145,7 +145,7 @@ void DS3231MRTCStoreTime(uint8_t device_address, volatile uint8_t *device_error_
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -161,7 +161,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_seconds_01 = readBytes[0] & 0x0F;
     uint8_t read_seconds_10 = (readBytes[0] >> 4) & 0x07;
     return_time.tm_sec = read_seconds_01 + (read_seconds_10 * 10);
@@ -171,7 +171,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_minutes_01 = readBytes[0] & 0x0F;
     uint8_t read_minutes_10 = (readBytes[0] >> 4) & 0x07;
     return_time.tm_min = read_minutes_01 + (read_minutes_10 * 10);
@@ -181,7 +181,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_hours_01 = readBytes[0] & 0x0F;
     uint8_t read_hours_10 = (readBytes[0] >> 4) & 0x03;
     return_time.tm_hour = read_hours_01 + (read_hours_10 * 10);
@@ -191,7 +191,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     return_time.tm_wday = readBytes[0] - 1;
     
     // read date
@@ -199,7 +199,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_date_01 = readBytes[0] & 0x0F;
     uint8_t read_date_10 = (readBytes[0] >> 4) & 0x03;
     return_time.tm_mday = read_date_01 + (read_date_10 * 10);
@@ -209,7 +209,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_month_01 = readBytes[0] & 0x0F;
     uint8_t read_month_10 = (readBytes[0] >> 4) & 0x01;
     return_time.tm_mon = read_month_01 + (read_month_10 * 10) - 1;
@@ -219,7 +219,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_year_01 = readBytes[0] & 0x0F;
     uint8_t read_year_10 = (readBytes[0] >> 4) & 0x0F;
     return_time.tm_year = read_year_01 + (read_year_10 * 10) + 100;
@@ -233,7 +233,7 @@ struct tm DS3231MRTCReadTime(uint8_t device_address, volatile uint8_t *device_er
 void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
     
     // Check to see if we're starting up into a broken I2C state machine
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // read control register
     uint8_t data_reg_pointer[1];
@@ -242,7 +242,7 @@ void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_nEOSC = (readBytes[0] >> 7) & 0b1;
     uint8_t read_bbsqw = (readBytes[0] >> 6) & 0b1;
     uint8_t read_conv = (readBytes[0] >> 5) & 0b1;
@@ -256,7 +256,7 @@ void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_osf = (readBytes[0] >> 7) & 0b1;
     uint8_t read_en32khz = (readBytes[0] >> 3) & 0b1;
     uint8_t read_bsy = (readBytes[0] >> 2) & 0b1;
@@ -268,7 +268,7 @@ void DS3231PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, readBytes, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     int8_t read_aging = readBytes[0];
     
     // print all this stuff out

@@ -21,7 +21,7 @@ void INA219Reset(uint8_t device_address, volatile uint8_t *device_error_handler_
     if(!I2CMaster_Write(device_address, output_data_array, 3)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     
 }
@@ -39,7 +39,7 @@ void INA219PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *devi
     if(!I2CMaster_Write(device_address, output_data_array, 3)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -59,7 +59,7 @@ void INA219SetCalibration(uint8_t device_address, volatile uint8_t *device_error
     if(!I2CMaster_Write(device_address, output_data_array, 3)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
 
 }
 
@@ -73,9 +73,9 @@ double INA219GetVoltage(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) {
+    if (i2c1Obj.state == I2C_STATE_IDLE) {
         // convert received data to volts
         // from section 8.6.3.2 of datasheet
         uint16_t received_data = (temp[0] << 8 | temp[1]) >> 3;
@@ -97,9 +97,9 @@ double INA219GetCurrent(uint8_t input_address, volatile uint8_t *device_error_ha
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) {
+    if (i2c1Obj.state == I2C_STATE_IDLE) {
         // convert received data to amps
         int16_t received_data = (temp[0] << 8 | temp[1]);
         return ((double) received_data) * current_lsb;
@@ -121,9 +121,9 @@ double INA219GetPower(uint8_t input_address, volatile uint8_t *device_error_hand
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
-    if (i2c5Obj.state == I2C_STATE_IDLE) {
+    if (i2c1Obj.state == I2C_STATE_IDLE) {
         // convert received data to amps
         int16_t received_data = (temp[0] << 8 | temp[1]);
         return ((double) received_data) * current_lsb * 20;
@@ -145,7 +145,7 @@ void INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_han
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     
     uint8_t read_brng = (temp[0] >> 5) & 0b1;
@@ -158,14 +158,14 @@ void INA219printStatus(uint8_t input_address, volatile uint8_t *device_error_han
     if(!I2CMaster_WriteRead(input_address, data_reg_pointer, 1, temp, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     uint16_t read_cal = (temp[0] << 8) | temp[1];
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("INA219 Power Monitor, located at 0x%02X\r\n", input_address);
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Bus Voltage Range setting: %s\r\n", read_brng ? "16V" : "32V");
+    printf("    Bus Voltage Range setting: %s\r\n", read_brng ? "32V" : "16V");
     printf("    PGA Gain Settings: ");
     switch (read_pg) {
         case 0b00:

@@ -20,7 +20,7 @@ void LTC4151PowerMonitorInitialize(uint8_t device_address, volatile uint8_t *dev
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -34,7 +34,7 @@ double LTC4151GetVoltage(uint8_t input_address, volatile uint8_t *device_error_h
         *device_error_handler_flag = 1;
         return;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // convert received data to volts
     uint16_t received_data = (readBytes[0] << 4) | (readBytes[1] >> 4);
@@ -52,7 +52,7 @@ double LTC4151GetCurrent(uint8_t input_address, volatile uint8_t *device_error_h
         *device_error_handler_flag = 1;
         return;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // convert received data to amps
     uint16_t received_data = (readBytes[0] << 4 | readBytes[1]) >> 4;
@@ -71,7 +71,7 @@ void LTC4151printStatus(uint8_t input_address, volatile uint8_t *device_error_ha
         *device_error_handler_flag = 1;
         return;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     uint8_t read_snap_enable = (readBytes[0] >> 7) & 0b1;
     uint8_t read_snap_channel = (readBytes[0] >> 5) & 0b11;

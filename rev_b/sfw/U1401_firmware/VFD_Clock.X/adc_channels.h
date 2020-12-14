@@ -25,12 +25,13 @@
 
 #include "adc.h"
 
+#define DIE_TEMP_OFFSET     -90.0
+
 // this function sets up ADC channels
 void adcChannelsInitialize(void);
 
 // these ISRs are triggered when data for their respective ADC channel is ready
 void __ISR(_ADC_DATA7_VECTOR, IPL1SRS) ADCData7ISR(void);
-void __ISR(_ADC_DATA10_VECTOR, IPL1SRS) ADCData10ISR(void);
 void __ISR(_ADC_DATA43_VECTOR, IPL1SRS) ADCData43ISR(void);
 void __ISR(_ADC_DATA44_VECTOR, IPL1SRS) ADCData44ISR(void);
 

@@ -20,28 +20,28 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     output_data_array[0] = TCA9555_OUTPUT_PORT_1_REG;
     output_data_array[1] = TCA9555_OUTPUT_PORT_1_DATA;
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     output_data_array[0] = TCA9555_CONFIG_0_REG;
     output_data_array[1] = TCA9555_CONFIG_0_DATA;
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     output_data_array[0] = TCA9555_CONFIG_1_REG;
     output_data_array[1] = TCA9555_CONFIG_1_DATA;
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -49,7 +49,7 @@ void TCA9555IOExpanderInitialize(uint8_t device_address, volatile uint8_t *devic
 void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint16_t output_word) {
 
     // Check to see if we're starting up into a broken I2C state machine
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     uint8_t output_data_array[2];
     output_data_array[0] = TCA9555_OUTPUT_PORT_0_REG;
@@ -57,14 +57,14 @@ void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     output_data_array[0] = TCA9555_OUTPUT_PORT_1_REG;
     output_data_array[1] = (output_word & 0xFF00) >> 8;
     if(!I2CMaster_Write(device_address, output_data_array, 2)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
 }
 
@@ -72,7 +72,7 @@ void TCA9555IOExpanderSetOutput(uint8_t device_address, volatile uint8_t *device
 void TCA9555IOExpanderPrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
     
     // Check to see if we're starting up into a broken I2C state machine
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     
     // read all registers
     uint8_t data_reg_pointer[1];
@@ -81,56 +81,56 @@ void TCA9555IOExpanderPrintStatus(uint8_t device_address, volatile uint8_t *devi
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_input_0 = temp[0];
     
     data_reg_pointer[0] = TCA9555_INPUT_PORT_1_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_input_1 = temp[0];
     
     data_reg_pointer[0] = TCA9555_OUTPUT_PORT_0_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_output_0 = temp[0];
     
     data_reg_pointer[0] = TCA9555_OUTPUT_PORT_1_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_output_1 = temp[0];
     
     data_reg_pointer[0] = TCA9555_POL_INV_0_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_pol_0 = temp[0];
     
     data_reg_pointer[0] = TCA9555_POL_INV_1_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_pol_1 = temp[0];
     
     data_reg_pointer[0] = TCA9555_CONFIG_0_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_config_0 = temp[0];
     
     data_reg_pointer[0] = TCA9555_CONFIG_1_REG;
     if(!I2CMaster_WriteRead(device_address, &data_reg_pointer[0], 1, temp, 1)) {
         *device_error_handler_flag = 1;
     }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
+    while(i2c1Obj.state != I2C_STATE_IDLE);
     uint8_t read_config_1 = temp[0];
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
