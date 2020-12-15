@@ -141,8 +141,23 @@
 #define  OC9_PPS_OUTPUT        0b1101
 #define  C2TX_PPS_OUTPUT       0b1111
 
+typedef enum {
+ 
+    gpio_port_a,
+    gpio_port_b,
+    gpio_port_c,
+    gpio_port_d,
+    gpio_port_e,
+    gpio_port_f,
+    gpio_port_g,
+    gpio_port_h,
+    gpio_port_j,
+    gpio_port_k,
+    
+} port_name_t;
+
 // this function allows for a more convenient way to setup pins
-void gpioPinSetup(volatile uint32_t port_name,
+void gpioPinSetup(port_name_t port_name,
         uint8_t pin_number,
         uint8_t tris_setting,
         uint8_t lat_setting,

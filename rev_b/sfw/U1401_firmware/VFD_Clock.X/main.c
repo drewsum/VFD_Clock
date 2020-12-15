@@ -219,27 +219,6 @@ void main(void) {
     // check to see if a clock fail has occurred and latch it
     clockFailCheck();
     
-    // reinforce VFD drive GPIO settings
-#warning "fix me"
-    TRISAbits.TRISA0 = TRIS_OUTPUT;
-    TRISBbits.TRISB2 = TRIS_OUTPUT;
-    TRISBbits.TRISB3 = TRIS_OUTPUT;
-    TRISBbits.TRISB4 = TRIS_OUTPUT;
-    TRISBbits.TRISB5 = TRIS_OUTPUT;
-    TRISCbits.TRISC1 = TRIS_OUTPUT;
-    TRISCbits.TRISC2 = TRIS_OUTPUT;
-    TRISCbits.TRISC3 = TRIS_OUTPUT;
-    TRISCbits.TRISC4 = TRIS_OUTPUT;
-    TRISEbits.TRISE5 = TRIS_OUTPUT;
-    TRISEbits.TRISE6 = TRIS_OUTPUT;
-    TRISEbits.TRISE7 = TRIS_OUTPUT;
-    TRISEbits.TRISE8 = TRIS_OUTPUT;
-    TRISEbits.TRISE9 = TRIS_OUTPUT;
-    TRISGbits.TRISG6 = TRIS_OUTPUT;
-    TRISGbits.TRISG7 = TRIS_OUTPUT;
-    TRISGbits.TRISG8 = TRIS_OUTPUT;
-    TRISGbits.TRISG9 = TRIS_OUTPUT;
-    
     // Main loop, do this stuff forever and ever and never get tired of it
     while (1) {
         
