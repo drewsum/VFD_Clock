@@ -702,6 +702,36 @@ usb_uart_command_function_t writeDisplayCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setPowerCommand(char * input_str) {
+ 
+    // Snipe out received string
+    char read_string[32];
+    sscanf(input_str, "Set Power: %s", read_string);
+    
+    if (strcmp(read_string, "On") == 0) {
+        
+        display_power_toggle_flag = 0;
+        powerPushbuttonHandler();
+    
+    }
+    
+    else if (strcmp(read_string, "Off") == 0) {
+     
+        display_power_toggle_flag = 1;
+        powerPushbuttonHandler();
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid power state (On or Off)\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -769,23 +799,26 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Display Lamp Test",
             "Tests all VFD display segments",
             displayLampTestCommand);
-    usbUartAddCommand("Write Display: ",
-            "\b\b<string>: Writes the passed string to the VFD display",
+    usbUartAddCommand("Write Display:",
+            "\b\b <string>: Writes the passed string to the VFD display",
             writeDisplayCommand);
-    usbUartAddCommand("Set Display Brightness: ",
-            "\b\b<percent>: Sets the VFD display to the entered brightness as a percentage",
+    usbUartAddCommand("Set Display Brightness:",
+            "\b\b <percent>: Sets the VFD display to the entered brightness as a percentage",
             setDisplayBrightnessCommand);
-    usbUartAddCommand("Set Time Format: ",
-            "\b\b<24/AM_PM>: Sets time display format",
+    usbUartAddCommand("Set Time Format:",
+            "\b\b <24/AM_PM>: Sets time display format",
             setTimeFormatCommand);
     usbUartAddCommand("Alarm Status?",
             "Prints clock alarm settings",
             alarmStatusCommand);
-    usbUartAddCommand("Set Alarm: ",
-            "\b\b<hh>:<mm>:<ss>: Sets the alarm time. (Must be 24 hr time)",
+    usbUartAddCommand("Set Alarm:",
+            "\b\b <hh>:<mm>:<ss>: Sets the alarm time. (Must be 24 hr time)",
             setAlarmCommand);
-    usbUartAddCommand("Arm Alarm: ",
-            "\b\b<Arm/Disarm>: Arms or disarms the clock alarm",
+    usbUartAddCommand("Arm Alarm:",
+            "\b\b <Arm/Disarm>: Arms or disarms the clock alarm",
             setAlarmEnableCommand);
+    usbUartAddCommand("Set Power:",
+            "\b\b <On/Off>: Sets the clock power state",
+            setPowerCommand);
     
 }
