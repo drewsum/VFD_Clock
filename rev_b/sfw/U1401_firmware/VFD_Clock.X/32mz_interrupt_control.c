@@ -526,9 +526,11 @@ void setInterruptEnable(interrupt_source_t input_interrupt, uint8_t input_state)
             IEC3bits.I2C1MIE = input_state;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            IEC3bits.CNAIE = input_state;
-//            break;
+#ifdef PORTA:            
+        case PORTA_Input_Change_Interrupt:
+            IEC3bits.CNAIE = input_state;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             IEC3bits.CNBIE = input_state;
@@ -554,18 +556,21 @@ void setInterruptEnable(interrupt_source_t input_interrupt, uint8_t input_state)
             IEC3bits.CNGIE = input_state;
             break;
             
-//        case PORTH_Input_Change_Interrupt:
-//            IEC3bits.CNHIE = input_state;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            IEC3bits.CNJIE = input_state;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            IEC3bits.CNKIE = input_state;
-//            break;
-            
+#ifdef PORTH:            
+        case PORTH_Input_Change_Interrupt:
+            IEC3bits.CNHIE = input_state;
+            break;
+#endif
+#ifdef PORTJ:      
+        case PORTJ_Input_Change_Interrupt:
+            IEC3bits.CNJIE = input_state;
+            break;
+#endif
+#ifdef PORK:      
+        case PORTK_Input_Change_Interrupt:
+            IEC3bits.CNKIE = input_state;
+            break;
+#endif
         case Parallel_Master_Port:
             IEC4bits.PMPIE = input_state;
             break;
@@ -1362,9 +1367,11 @@ uint8_t getInterruptEnable(interrupt_source_t input_interrupt) {
             return IEC3bits.I2C1MIE;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            return IEC3bits.CNAIE;
-//            break;
+#ifdef PORTA:
+        case PORTA_Input_Change_Interrupt:
+            return IEC3bits.CNAIE;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             return IEC3bits.CNBIE;
@@ -1389,19 +1396,22 @@ uint8_t getInterruptEnable(interrupt_source_t input_interrupt) {
         case PORTG_Input_Change_Interrupt:
             return IEC3bits.CNGIE;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            return IEC3bits.CNHIE;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            return IEC3bits.CNJIE;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            return IEC3bits.CNKIE;
-//            break;
-//            
+
+#ifdef PORTH:
+        case PORTH_Input_Change_Interrupt:
+            return IEC3bits.CNHIE;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            return IEC3bits.CNJIE;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            return IEC3bits.CNKIE;
+            break;
+#endif
         case Parallel_Master_Port:
             return IEC4bits.PMPIE;
             break;
@@ -2204,9 +2214,11 @@ void setInterruptFlag(interrupt_source_t input_interrupt, uint8_t input_state) {
             IFS3bits.I2C1MIF = input_state;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            IFS3bits.CNAIF = input_state;
-//            break;
+#ifdef PORTA:
+        case PORTA_Input_Change_Interrupt:
+            IFS3bits.CNAIF = input_state;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             IFS3bits.CNBIF = input_state;
@@ -2231,19 +2243,21 @@ void setInterruptFlag(interrupt_source_t input_interrupt, uint8_t input_state) {
         case PORTG_Input_Change_Interrupt:
             IFS3bits.CNGIF = input_state;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            IFS3bits.CNHIF = input_state;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            IFS3bits.CNJIF = input_state;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            IFS3bits.CNKIF = input_state;
-//            break;
-//            
+#ifdef PORTH:
+        case PORTH_Input_Change_Interrupt:
+            IFS3bits.CNHIF = input_state;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            IFS3bits.CNJIF = input_state;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            IFS3bits.CNKIF = input_state;
+            break;
+#endif
         case Parallel_Master_Port:
             IFS4bits.PMPIF = input_state;
             break;
@@ -3040,9 +3054,11 @@ uint8_t getInterruptFlag(interrupt_source_t input_interrupt) {
             return IFS3bits.I2C1MIF;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            return IFS3bits.CNAIF;
-//            break;
+#ifdef PORTA:            
+        case PORTA_Input_Change_Interrupt:
+            return IFS3bits.CNAIF;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             return IFS3bits.CNBIF;
@@ -3067,19 +3083,21 @@ uint8_t getInterruptFlag(interrupt_source_t input_interrupt) {
         case PORTG_Input_Change_Interrupt:
             return IFS3bits.CNGIF;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            return IFS3bits.CNHIF;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            return IFS3bits.CNJIF;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            return IFS3bits.CNKIF;
-//            break;
-//            
+#ifdef PORTH:
+        case PORTH_Input_Change_Interrupt:
+            return IFS3bits.CNHIF;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            return IFS3bits.CNJIF;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            return IFS3bits.CNKIF;
+            break;
+#endif
         case Parallel_Master_Port:
             return IFS4bits.PMPIF;
             break;
@@ -3882,9 +3900,11 @@ void setInterruptPriority(interrupt_source_t input_interrupt, uint8_t input_prio
             IPC29bits.I2C1MIP = input_priority;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            IPC29bits.CNAIP = input_priority;
-//            break;
+#ifdef PORTA:            
+        case PORTA_Input_Change_Interrupt:
+            IPC29bits.CNAIP = input_priority;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             IPC29bits.CNBIP = input_priority;
@@ -3909,19 +3929,21 @@ void setInterruptPriority(interrupt_source_t input_interrupt, uint8_t input_prio
         case PORTG_Input_Change_Interrupt:
             IPC31bits.CNGIP = input_priority;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            IPC31bits.CNHIP = input_priority;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            IPC31bits.CNJIP = input_priority;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            IPC31bits.CNKIP = input_priority;
-//            break;
-            
+#ifdef PORTH:
+        case PORTH_Input_Change_Interrupt:
+            IPC31bits.CNHIP = input_priority;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            IPC31bits.CNJIP = input_priority;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            IPC31bits.CNKIP = input_priority;
+            break;
+#endif
         case Parallel_Master_Port:
             IPC32bits.PMPIP = input_priority;
             break;
@@ -4723,9 +4745,11 @@ void setInterruptSubpriority(interrupt_source_t input_interrupt, uint8_t input_s
             IPC29bits.I2C1MIS = input_subpriority;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            IPC29bits.CNAIS = input_subpriority;
-//            break;
+#ifdef PORTA:
+        case PORTA_Input_Change_Interrupt:
+            IPC29bits.CNAIS = input_subpriority;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             IPC29bits.CNBIS = input_subpriority;
@@ -4750,19 +4774,21 @@ void setInterruptSubpriority(interrupt_source_t input_interrupt, uint8_t input_s
         case PORTG_Input_Change_Interrupt:
             IPC31bits.CNGIS = input_subpriority;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            IPC31bits.CNHIS = input_subpriority;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            IPC31bits.CNJIS = input_subpriority;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            IPC31bits.CNKIS = input_subpriority;
-//            break;
-//            
+#ifdef PORTH:            
+        case PORTH_Input_Change_Interrupt:
+            IPC31bits.CNHIS = input_subpriority;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            IPC31bits.CNJIS = input_subpriority;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            IPC31bits.CNKIS = input_subpriority;
+            break;
+#endif
         case Parallel_Master_Port:
             IPC32bits.PMPIS = input_subpriority;
             break;
@@ -5559,10 +5585,12 @@ uint8_t getInterruptPriority(interrupt_source_t input_interrupt) {
             return IPC29bits.I2C1MIP;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            return IPC29bits.CNAIP;
-//            break;
-            
+#ifdef PORTA:
+        case PORTA_Input_Change_Interrupt:
+            return IPC29bits.CNAIP;
+            break;
+#endif    
+        
         case PORTB_Input_Change_Interrupt:
             return IPC29bits.CNBIP;
             break;
@@ -5586,19 +5614,21 @@ uint8_t getInterruptPriority(interrupt_source_t input_interrupt) {
         case PORTG_Input_Change_Interrupt:
             return IPC31bits.CNGIP;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            return IPC31bits.CNHIP;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            return IPC31bits.CNJIP;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            return IPC31bits.CNKIP;
-//            break;
-            
+#ifdef PORTH:
+        case PORTH_Input_Change_Interrupt:
+            return IPC31bits.CNHIP;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            return IPC31bits.CNJIP;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            return IPC31bits.CNKIP;
+            break;
+#endif
         case Parallel_Master_Port:
             return IPC32bits.PMPIP;
             break;
@@ -6395,9 +6425,11 @@ uint8_t getInterruptSubriority(interrupt_source_t input_interrupt) {
             return IPC29bits.I2C1MIS;
             break;
             
-//        case PORTA_Input_Change_Interrupt:
-//            return IPC29bits.CNAIS;
-//            break;
+#ifdef PORTA:            
+        case PORTA_Input_Change_Interrupt:
+            return IPC29bits.CNAIS;
+            break;
+#endif
             
         case PORTB_Input_Change_Interrupt:
             return IPC29bits.CNBIS;
@@ -6422,19 +6454,21 @@ uint8_t getInterruptSubriority(interrupt_source_t input_interrupt) {
         case PORTG_Input_Change_Interrupt:
             return IPC31bits.CNGIS;
             break;
-            
-//        case PORTH_Input_Change_Interrupt:
-//            return IPC31bits.CNHIS;
-//            break;
-//            
-//        case PORTJ_Input_Change_Interrupt:
-//            return IPC31bits.CNJIS;
-//            break;
-//            
-//        case PORTK_Input_Change_Interrupt:
-//            return IPC31bits.CNKIS;
-//            break;
-            
+#ifdef PORTH:    
+        case PORTH_Input_Change_Interrupt:
+            return IPC31bits.CNHIS;
+            break;
+#endif
+#ifdef PORTJ:
+        case PORTJ_Input_Change_Interrupt:
+            return IPC31bits.CNJIS;
+            break;
+#endif
+#ifdef PORTK:
+        case PORTK_Input_Change_Interrupt:
+            return IPC31bits.CNKIS;
+            break;
+#endif
         case Parallel_Master_Port:
             return IPC32bits.PMPIS;
             break;
