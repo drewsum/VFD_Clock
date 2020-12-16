@@ -732,6 +732,53 @@ usb_uart_command_function_t setPowerCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setDisplayModeCommand(char * input_str) {
+ 
+    // Snipe out received string
+    char read_string[32];
+    sscanf(input_str, "Set Display Mode: %s", read_string);
+    
+    
+    if (strcmp(read_string, "Time") == 0) {
+        
+        clock_display_state = display_time_state;
+        displayBoardSetLEDs();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set clock display mode to Time\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    else if (strcmp(read_string, "Date") == 0) {
+        
+        clock_display_state = display_date_state;
+        displayBoardSetLEDs();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set clock display mode to Date\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    else if (strcmp(read_string, "Weekday") == 0) {
+        
+        clock_display_state = display_weekday_state;
+        displayBoardSetLEDs();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set clock display mode to Weekday\r\n");
+        terminalTextAttributesReset();
+    
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid display mode: (Time, Date, Weekday)\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -820,5 +867,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Power:",
             "\b\b <On/Off>: Sets the clock power state",
             setPowerCommand);
+    usbUartAddCommand("Set Display Mode:",
+            "\b\b <Time/Date/Weekday>: Sets the display to show different clock functions",
+            setDisplayModeCommand);
     
 }
