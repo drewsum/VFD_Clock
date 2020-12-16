@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "main.h"
+
 #include "usb_uart_rx_lookup_table.h"
 #include "usb_uart.h"
 #include "uthash.h"
@@ -72,8 +74,8 @@ usb_uart_command_function_t clearCommand(char * input_str) {
 usb_uart_command_function_t idnCommand(char * input_str) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("VFD Clock by Drew Maatman, 2020\r\n");
-    terminalTextAttributesReset();    
+    printf("VFD Clock by Drew Maatman, December 2020, Host Firmware Version %s, Platform Revision %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
+    terminalTextAttributesReset();
 }
 
 usb_uart_command_function_t repositoryCommand(char * input_str) {
@@ -86,6 +88,10 @@ usb_uart_command_function_t repositoryCommand(char * input_str) {
 usb_uart_command_function_t hostStatusCommand(char * input_str) {
 
     terminalTextAttributesReset();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Host Firmware Version: %s\r\n", FIRMWARE_VERSION_STR);
+    
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("Host Device IDs:\r\n");
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -247,6 +253,9 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
 
 usb_uart_command_function_t platformStatusCommand(char * input_str) {
  
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Platform Revision: %s\r\n", PLATFORM_REVISION_STR);
+    
     printPGOODStatus();
     
     if (nTOF_CONFIG_PIN == LOW) {
@@ -257,8 +266,13 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
         // first print stuff for logic board
         terminalTextAttributesReset();
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Logic Board Time of Flight is %s\r\n", getStringSecondsAsTime(logic_tof_temp_int));
-        printf("Logic Board has power cycled %u times\r\n", logic_power_cycle_temp);
+        
+         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("\r\nPlatform Time of Flight Data:\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        printf("    Logic Board Time of Flight is %s\r\n", getStringSecondsAsTime(logic_tof_temp_int));
+        printf("    Logic Board has power cycled %u times\r\n", logic_power_cycle_temp);
 
         // Next, print stuff for display board if it's installed
         if (I2C_DSP_EN_PIN) {
@@ -266,8 +280,8 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
             uint32_t display_tof_temp_int = (uint32_t) floor(display_tof_temp);
             uint32_t display_power_cycle_temp = displayBoardGetPowerCycles();
 
-            printf("Display Board Time of Flight is %s\r\n", getStringSecondsAsTime(display_tof_temp_int));
-            printf("Display Board has power cycled %u times\r\n", display_power_cycle_temp);
+            printf("    Display Board Time of Flight is %s\r\n", getStringSecondsAsTime(display_tof_temp_int));
+            printf("    Display Board has power cycled %u times\r\n", display_power_cycle_temp);
         }
     }
     

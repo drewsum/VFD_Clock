@@ -54,6 +54,7 @@
         <itemPath>uthash.h</itemPath>
         <itemPath>usb_uart.h</itemPath>
       </logicalFolder>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

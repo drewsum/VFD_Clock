@@ -11,6 +11,8 @@
 #include <stdbool.h>
 #include <string.h>
 
+#include "main.h"
+
 // Core Drivers
 #include "configuration.h"
 #include "32mz_interrupt_control.h"
@@ -62,8 +64,8 @@ void main(void) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("VFD Clock\r\n");
-#warning "add firmware version, board rev"
-    printf("Created by Drew Maatman, 2020\r\n");
+    printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
+    printf("Created by Drew Maatman, December 2020\r\n");
     terminalTextAttributesReset();
     
      // Print cause of reset
