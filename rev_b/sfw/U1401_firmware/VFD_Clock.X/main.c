@@ -65,7 +65,7 @@ void main(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("VFD Clock\r\n");
     printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
-    printf("Created by Drew Maatman, December 2020\r\n");
+    printf("Created by Drew Maatman, %s\r\n", PROJECT_DATE_STR);
     terminalTextAttributesReset();
     
      // Print cause of reset
@@ -207,10 +207,17 @@ void main(void) {
     // Try to find an installed display board and set it up
     displayBoardInitialize();
     
+    // start off with clock powered off
+    display_power_toggle_flag = 1;
+    powerPushbuttonHandler();
+    
     // Disable reset LED
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Host boot complete\r\n");
     RESET_LED_PIN = LOW;
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Reset LED Disabled\r\n");
+    
     
     // Print end of boot message, reset terminal for user input
     terminalTextAttributesReset();

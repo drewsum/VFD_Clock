@@ -74,7 +74,8 @@ usb_uart_command_function_t clearCommand(char * input_str) {
 usb_uart_command_function_t idnCommand(char * input_str) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("VFD Clock by Drew Maatman, December 2020, Host Firmware Version %s, Platform Revision %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
+    printf("VFD Clock by Drew Maatman, %s, Host Firmware Version %s, Platform Revision %s\r\n", 
+            PROJECT_DATE_STR, FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
     terminalTextAttributesReset();
 }
 

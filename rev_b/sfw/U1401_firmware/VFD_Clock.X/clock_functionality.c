@@ -412,7 +412,7 @@ void displayBoardInitialize(void) {
         
         // start off displaying the time
         clock_display_state = display_time_state;
-        displayBoardSetLEDs();
+        // displayBoardSetLEDs();
     
         
         POS1P2_VFF_RUN_PIN = HIGH;
