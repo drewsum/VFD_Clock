@@ -16,7 +16,7 @@ else:
 print(local_offset)
 
 # Pump out UTC with local offset to device
-dev.write(b"Set Unix Time: %d, %d\r\n" % (unix_time, local_offset))
+dev.write(b"Set RTCC: Unix Time: %d, %d\r\n" % (unix_time, local_offset))
 
 dev.flush()
 
