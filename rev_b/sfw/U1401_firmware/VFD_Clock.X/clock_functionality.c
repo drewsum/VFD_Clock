@@ -1518,6 +1518,8 @@ void leftPushbuttonHandler(void) {
                     dp_anode_request = 0;
                 }
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
@@ -1543,6 +1545,8 @@ void leftPushbuttonHandler(void) {
             case clock_date_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u*%02u*%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
@@ -1562,6 +1566,8 @@ void leftPushbuttonHandler(void) {
             case clock_weekday_setting_finished_state:
                 sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
@@ -1769,6 +1775,8 @@ void rightPushbuttonHandler(void) {
                     dp_anode_request = 0;
                 }
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
@@ -1794,6 +1802,8 @@ void rightPushbuttonHandler(void) {
             case clock_date_setting_finished_state:
                 sprintf(vfd_display_buffer, "%02u*%02u*%02u", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year - 2000);
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
@@ -1813,6 +1823,8 @@ void rightPushbuttonHandler(void) {
             case clock_weekday_setting_finished_state:
                 sprintf(vfd_display_buffer, "       %u", (uint8_t) rtcc_shadow.weekday + 1);
                 clock_set_blank_request = 0;
+                // Save time from internal RTCC into external backup RTC
+                if (nBACKUP_RTC_CONFIG_PIN == LOW) backupRTCStashTime();
                 break;
         }
     }
